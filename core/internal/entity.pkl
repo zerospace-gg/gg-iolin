@@ -1,0 +1,4 @@
+abstract module entity 
+extends "data.pkl"
+
+fixed type = "entity"

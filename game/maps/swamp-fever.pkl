@@ -1,0 +1,9 @@
+amends ".../core/map.pkl"
+
+id = "map/1v1/swamp-fever"
+slug = "swamp-fever"
+name = "Swamp Fever"
+mapType = "1v1"
+size = "small"
+xpTowers = 2
+fluxDistance = "distant"

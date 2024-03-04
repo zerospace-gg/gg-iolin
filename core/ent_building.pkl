@@ -1,0 +1,4 @@
+module ent_building 
+extends "internal/entity.pkl"
+
+tags { "building" }

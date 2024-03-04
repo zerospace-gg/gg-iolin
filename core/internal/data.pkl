@@ -1,0 +1,9 @@
+abstract module data
+
+fixed type: String
+tags: Listing<String>
+active: Boolean = true
+id: String 
+slug: String 
+name: String 
+description: String = ""

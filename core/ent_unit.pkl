@@ -1,0 +1,4 @@
+module unit 
+extends "internal/entity.pkl"
+
+tags { "unit" }

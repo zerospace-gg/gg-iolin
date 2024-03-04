@@ -1,0 +1,5 @@
+module fac_main 
+
+extends "internal/faction.pkl"
+
+fixed factionType = "main"

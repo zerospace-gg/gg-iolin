@@ -1,0 +1,9 @@
+amends ".../core/map.pkl"
+
+id = "map/1v1/plains"
+slug = "plains"
+name = "Plains"
+mapType = "2v2"
+size = "normal"
+xpTowers = 3
+fluxDistance = "near"

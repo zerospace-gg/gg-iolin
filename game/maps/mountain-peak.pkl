@@ -1,0 +1,9 @@
+amends ".../core/map.pkl"
+
+id = "map/1v1/mountain-peak"
+slug = "mountain-peak"
+name = "Mountain Peak"
+mapType = "1v1"
+size = "small"
+xpTowers = 3
+fluxDistance = "medium-far"

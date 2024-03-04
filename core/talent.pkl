@@ -1,0 +1,4 @@
+module talent
+extends "internal/data.pkl"
+
+fixed type = "talent"

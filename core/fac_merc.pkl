@@ -1,0 +1,5 @@
+module fac_merc 
+
+extends "internal/faction.pkl"
+
+fixed factionType = "merc"

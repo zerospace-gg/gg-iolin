@@ -1,0 +1,21 @@
+module map 
+extends "internal/data.pkl"
+
+typealias MapType = "1v1" | "2v2" // | "1p"
+typealias MapSize = "small" | "normal" | "large"
+typealias FluxDistance = "close" | "near" | "medium-far" | "distant"
+
+fixed type = "map"
+
+mapType: MapType = "1v1"
+
+xpTowers: UInt8 = 0
+fluxDistance: FluxDistance
+
+size: MapSize = "normal"
+
+players: UInt8? = 
+  if (type == "1v1") 2 
+  else if (type == "2v2") 4
+  else if (type == "1p") 1
+  else null

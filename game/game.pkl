@@ -1,0 +1,12 @@
+module game
+
+local everything = import*("*/**.pkl").toMap().values
+function typed(x) = everything.filter((xx) -> xx.type == x).toListing()
+
+hidden data = everything.toListing()
+
+maps = typed("map")
+factions = typed("faction")
+entities = typed("entity")
+talents = typed("talent")
+topbar = typed("topbar")

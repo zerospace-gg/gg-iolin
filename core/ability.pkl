@@ -1,0 +1,4 @@
+module topbar
+extends "internal/data.pkl"
+
+fixed type = "topbar"

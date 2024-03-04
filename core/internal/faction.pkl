@@ -1,0 +1,11 @@
+abstract module faction
+extends "data.pkl"
+
+fixed type = "faction"
+
+tags { 
+  "faction" 
+}
+
+typealias FactionType = "main" | "mercenary" | "map:hostile" | "map:neutral"
+fixed factionType: FactionType

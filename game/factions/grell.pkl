@@ -1,0 +1,5 @@
+amends ".../core/fac_main.pkl"
+
+id = "faction/main/grell" 
+slug = "grell"
+name = "Grell"
