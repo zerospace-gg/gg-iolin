@@ -1,0 +1,12 @@
+amends ".../core/talent.pkl"
+
+tags { "faction:grell" }
+
+id = "grell/talent/tree-of-life"
+slug = "grell-talent-tree-of-life"
+name = "Tree of Life"
+description = "Revives units killed nearby and heals friendly units. Radius: 1500. Starting energy: 30."
+column = 2 
+level = 5
+
+unlocks { "grell/topbar/flowers" }

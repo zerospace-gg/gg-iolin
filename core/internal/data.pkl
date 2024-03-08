@@ -2,8 +2,10 @@ abstract module data
 
 fixed type: String
 tags: Listing<String>
-active: Boolean = true
+inGame: Boolean = true
 id: String 
 slug: String 
 name: String 
+nicknames: Listing<String>
 description: String = ""
+notes: Listing<String>

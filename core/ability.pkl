@@ -1,4 +1,4 @@
-module topbar
+module ability
 extends "internal/data.pkl"
 
-fixed type = "topbar"
+fixed type: string = "ability"

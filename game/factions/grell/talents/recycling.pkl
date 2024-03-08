@@ -1,0 +1,10 @@
+amends ".../core/talent.pkl"
+
+tags { "faction:grell" }
+
+id = "grell/talent/recycling"
+slug = "grell-talent-recycling"
+name = "Recycling"
+description = "Gain resources from killed enemies. 20% of their total cost in hexite."
+column = 2 
+level = 3

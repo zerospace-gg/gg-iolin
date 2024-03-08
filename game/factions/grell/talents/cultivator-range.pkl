@@ -1,0 +1,10 @@
+amends ".../core/talent.pkl"
+
+tags { "faction:grell" }
+
+id = "grell/talent/cultivator-range"
+slug = "grell-talent-cultivator-range"
+name = "Cultivator Range"
+description = "+100% Cultivator vision and biomass generation range"
+column = 2 
+level = 1

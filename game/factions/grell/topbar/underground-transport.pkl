@@ -1,0 +1,14 @@
+amends ".../core/topbar.pkl"
+
+tags { 
+  "topbar:recall"
+  "faction:grell"
+}
+
+id = "grell/topbar/recall/underground-transport"
+slug = "grell-topbar-underground-transport"
+name = "Underground Transport"
+description = "Call a worm to transport your units to the nearest root colony. Click to select designated location, after a few seconds a worm will arrive and devour your units"
+slot = 1
+cost = 5
+cooldown = 120

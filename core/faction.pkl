@@ -1,5 +1,6 @@
 abstract module faction
-extends "data.pkl"
+extends "internal/data.pkl"
+import "talent.pkl"
 
 fixed type = "faction"
 
@@ -9,3 +10,8 @@ tags {
 
 typealias FactionType = "main" | "mercenary" | "map:hostile" | "map:neutral"
 fixed factionType: FactionType
+
+talents: Listing<String>
+topbar: Listing<String>
+heroes: Listing<String>
+entities: Listing<String>

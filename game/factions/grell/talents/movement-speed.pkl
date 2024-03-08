@@ -1,0 +1,8 @@
+amends ".../core/talent.pkl"
+
+id = "grell/talent/movement-speed"
+slug = "grell-talent-movement-speed"
+name = "Movement Speed"
+description = "+10% movement speed"
+column = 1 
+level = 1

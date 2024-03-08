@@ -1,0 +1,5 @@
+module talent_set 
+
+import "talent.pkl"
+
+talents: Listing<talent.Talent>

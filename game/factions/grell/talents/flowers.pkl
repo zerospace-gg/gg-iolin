@@ -1,0 +1,12 @@
+amends ".../core/talent.pkl"
+
+tags { "faction:grell" }
+
+id = "grell/talent/flowers"
+slug = "grell-talent-flowers"
+name = "Flowers"
+description = "Flowers deal damage to enemies and spawn hallucinations of friendly units. Enemy structures are stunned. 20s duration."
+column = 1 
+level = 5
+
+unlocks { "grell/topbar/flowers" }

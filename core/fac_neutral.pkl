@@ -1,5 +1,5 @@
 module fac_neutral 
 
-extends "internal/faction.pkl"
+extends "faction.pkl"
 
 fixed factionType = "map:neutral"

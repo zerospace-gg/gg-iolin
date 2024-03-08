@@ -1,5 +1,5 @@
 module fac_merc 
 
-extends "internal/faction.pkl"
+extends "faction.pkl"
 
 fixed factionType = "merc"

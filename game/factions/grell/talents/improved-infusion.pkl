@@ -1,0 +1,10 @@
+amends ".../core/talent.pkl"
+
+tags { "faction:grell" }
+
+id = "grell/talent/improved-infusion"
+slug = "grell-talent-improved-infusion"
+name = "Improved Infusion"
+description = "+10% movement speed"
+column = 1 
+level = 2

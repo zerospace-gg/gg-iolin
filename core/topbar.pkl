@@ -2,3 +2,8 @@ module topbar
 extends "internal/data.pkl"
 
 fixed type = "topbar"
+
+cost: Int?
+cooldown: Int = 0
+duration: Int?
+slot: Int(isBetween(1,4))

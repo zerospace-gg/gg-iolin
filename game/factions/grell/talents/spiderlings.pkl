@@ -1,0 +1,10 @@
+amends ".../core/talent.pkl"
+
+tags { "faction:grell" }
+
+id = "grell/talent/spiderlings"
+slug = "grell-talent-spiderlings"
+name = "Spiderlings"
+description = "Your units spawn spiderlings on death. The amount scales with unit's supply cost."
+column = 2 
+level = 4
