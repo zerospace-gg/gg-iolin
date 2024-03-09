@@ -1,4 +1,4 @@
-module talent
+open module talent
 extends "data.pkl"
 
 typealias TalentLevel = Int(isBetween(1, 5))

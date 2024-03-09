@@ -1,8 +1,6 @@
-amends ".../core/talent.pkl"
+amends ".../core/grell/talent.pkl"
 
 import "../topbar/flowers.pkl" as tbflowers
-
-tags { "faction:grell" }
 
 id = "grell/talent/flowers"
 slug = "grell-talent-flowers"

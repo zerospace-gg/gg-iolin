@@ -1,6 +1,4 @@
-amends ".../core/talent.pkl"
-
-tags { "faction:grell" }
+amends ".../core/grell/talent.pkl"
 
 id = "grell/talent/spiderlings"
 slug = "grell-talent-spiderlings"

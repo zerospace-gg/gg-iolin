@@ -1,8 +1,6 @@
-amends ".../core/talent.pkl"
+amends ".../core/grell/talent.pkl"
 
 import "../topbar/tree-of-life.pkl" as tbtol
-
-tags { "faction:grell" }
 
 id = "grell/talent/tree-of-life"
 slug = "grell-talent-tree-of-life"

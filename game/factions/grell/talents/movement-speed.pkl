@@ -1,4 +1,4 @@
-amends ".../core/talent.pkl"
+amends ".../core/grell/talent.pkl"
 
 id = "grell/talent/movement-speed"
 slug = "grell-talent-movement-speed"
