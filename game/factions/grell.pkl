@@ -4,17 +4,6 @@ id = "faction/main/grell"
 slug = "grell"
 name = "Grell"
 
-// "Movement Speed
-// +10% Unit movement speed"
-// "Improved Infusion
-// Ranged infused units gain +300 attack range. Melee infused units gain an additional +25% health"
-// "Infused Lifesteal 
-// Infused units gain 15% lifesteal"
-// "Essence Collector
-// Gain topbar power from killed enemies. Only 33% amount compared to when your units are killed."
-// "Flowers
-// Flowers deal damage to enemies and spawn hallucinations of friendly units. Enemy structures are stunned. 20s duration."
-
 talents {
   "grell/talent/movement-speed"
   "grell/talent/improved-infusion"
@@ -38,16 +27,16 @@ topbar {
 
 heroes {
   "grell/hero/grell-hero"
+  "dread/hero/dread-hero"
   "protectorate/hero/prefect-nova"
   "protectorate/hero/tech-hero"
-  "dread/hero/dread-hero"
 }
 
 entities {
   "grell/building/base/root-colony"
   "grell/building/extractor"
   "grell/building/production/incubator"
-  "grell/building/tech/"
+  "grell/building/tech/augmentation-pool"
   "grell/unit/worker/seedling"
   "grell/unit/harvester/harvester"
   "grell/unit/army/stinger"
