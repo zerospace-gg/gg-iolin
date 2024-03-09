@@ -1,5 +1,5 @@
 module map 
-extends "internal/data.pkl"
+extends "data.pkl"
 
 typealias MapType = "1v1" | "2v2" // | "1p"
 typealias MapSize = "small" | "normal" | "large"

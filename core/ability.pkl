@@ -1,4 +1,4 @@
 module ability
-extends "internal/data.pkl"
+extends "data.pkl"
 
 fixed type: string = "ability"

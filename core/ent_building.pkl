@@ -1,4 +1,4 @@
 module ent_building 
-extends "internal/entity.pkl"
+extends "entity.pkl"
 
 tags { "building" }

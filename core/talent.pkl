@@ -1,5 +1,5 @@
 module talent
-extends "internal/data.pkl"
+extends "data.pkl"
 
 typealias TalentLevel = Int(isBetween(1, 5))
 typealias TalentColumn = Int(isBetween(1, 3))

@@ -1,5 +1,5 @@
 module topbar
-extends "internal/data.pkl"
+extends "data.pkl"
 
 fixed type = "topbar"
 
