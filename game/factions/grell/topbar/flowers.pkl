@@ -1,9 +1,6 @@
-amends ".../core/topbar.pkl"
+amends ".../core/grell/topbar.pkl"
 
-tags { 
-  "topbar:ultimate"
-  "faction:grell" 
-}
+tags { "topbar:ultimate" }
 
 id = "grell/topbar/ultimate/flowers"
 slug = "grell-topbar-flowers"

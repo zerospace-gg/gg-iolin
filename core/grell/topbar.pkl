@@ -1,0 +1,4 @@
+module topbar 
+extends "../topbar.pkl"
+
+tags { "faction:grell" }

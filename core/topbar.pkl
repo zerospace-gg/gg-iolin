@@ -1,4 +1,4 @@
-module topbar
+open module topbar
 extends "data.pkl"
 
 fixed type = "topbar"
@@ -7,3 +7,4 @@ cost: Int?
 cooldown: Int = 0
 duration: Int?
 slot: Int(isBetween(1,4))
+unlockedBy: Listing<String>?

@@ -1,9 +1,6 @@
-amends ".../core/topbar.pkl"
+amends ".../core/grell/topbar.pkl"
 
-tags { 
-  "topbar:recall"
-  "faction:grell"
-}
+tags { "topbar:recall" }
 
 id = "grell/topbar/recall/underground-transport"
 slug = "grell-topbar-underground-transport"
