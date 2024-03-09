@@ -1,0 +1,14 @@
+amends ".../core/topbar.pkl"
+
+tags { 
+  "topbar:ultimate"
+  "faction:grell" 
+}
+
+id = "grell/topbar/ultimate/tree-of-life"
+slug = "grell-topbar-tree-of-life"
+name = "infuse"
+description = "Revives units killed nearby and heals friendly units. Radius: 1500. Starting energy: 30."
+cost = 50
+slot = 4
+cooldown = 120
