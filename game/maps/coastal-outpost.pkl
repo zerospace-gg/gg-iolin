@@ -2,7 +2,7 @@ amends ".../core/map.pkl"
 
 slug = "coastal-outpost"
 name = "Coastal Outpost"
-mapType = "1v1"
+map_type = "1v1"
 size = "normal"
 xp_towers = 2
 fluxDistance = "medium-far"

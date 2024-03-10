@@ -3,4 +3,4 @@ module fac_main
 
 extends "faction.pkl"
 
-fixed factionType = "map:hostile"
+fixed faction_type = "map:hostile"

@@ -2,7 +2,7 @@ amends ".../core/map.pkl"
 
 slug = "mountain-peak"
 name = "Mountain Peak"
-mapType = "1v1"
+map_type = "1v1"
 size = "small"
 xp_towers = 3
 fluxDistance = "medium-far"

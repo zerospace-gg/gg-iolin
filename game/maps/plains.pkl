@@ -2,7 +2,7 @@ amends ".../core/map.pkl"
 
 slug = "plains"
 name = "Plains"
-mapType = "2v2"
+map_type = "2v2"
 size = "normal"
 xp_towers = 3
 fluxDistance = "near"

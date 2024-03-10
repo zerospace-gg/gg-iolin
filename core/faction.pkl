@@ -3,14 +3,14 @@ extends "data.pkl"
 import "talent.pkl"
 
 fixed type = "faction"
-fixed subtype = factionType
+fixed subtype = faction_type
 
 /// the three core types of faction
-hidden fixed factionType: FactionType
+hidden fixed faction_type: FactionType
 typealias FactionType = "main" | "mercenary" | "ai"
 
 /// whether or not this type should be playable
-fixed playable = factionType != "ai"
+fixed playable = faction_type != "ai"
 
 /// talents. 10 for main faction, 5 for mercs.
 talents: Listing<String>

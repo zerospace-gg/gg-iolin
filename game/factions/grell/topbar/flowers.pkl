@@ -2,7 +2,7 @@ amends ".../core/grell/topbar.pkl"
 
 slug = "flowers"
 name = "infuse"
-topbarType = "ultimate"
+topbar_type = "ultimate"
 description = "Flowers deal damage to enemies and spawn hallucinations of friendly units. Enemy structures are stunned. 20s duration."
 cost = 50
 slot = 3

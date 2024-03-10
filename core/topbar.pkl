@@ -3,10 +3,10 @@ open module topbar
 extends "data.pkl"
 
 fixed type = "topbar"
-fixed subtype = topbarType
+fixed subtype = topbar_type
 
 /// All main factions have a recall in slot 1 and a special in slot 2, which are unlocked at the beginning of the game, and an ultimate in each of slots 3/4, which are unlocked by talents.
-topbarType: TopbarType
+topbar_type: TopbarType
 typealias TopbarType = "recall" | "special" | "ultimate"
 
 /// topbar energy required, if it is a static number. if it's formulaic, describe it in the `notes` field.

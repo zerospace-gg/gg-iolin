@@ -2,4 +2,4 @@ module fac_neutral
 
 extends "faction.pkl"
 
-fixed factionType = "map:neutral"
+fixed faction_type = "map:neutral"

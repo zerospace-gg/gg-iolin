@@ -2,4 +2,4 @@ module fac_main
 
 extends "faction.pkl"
 
-fixed factionType = "main"
+fixed faction_type = "main"

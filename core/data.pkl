@@ -31,7 +31,7 @@ source: String?
 fixed type: String
 
 /// sub-type. data subclasses will define this as a calculated field, based on a more
-/// explicitly named hidden field, for example in type map, mapType of 1v1 becomes subtype 1v1 in data
+/// explicitly named hidden field, for example in type map, map_type of 1v1 becomes subtype 1v1 in data
 /// if not appropriate, subclass should explicitly define to an empty string
 fixed subtype: String
 

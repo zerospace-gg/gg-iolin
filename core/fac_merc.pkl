@@ -2,4 +2,4 @@ module fac_merc
 
 extends "faction.pkl"
 
-fixed factionType = "merc"
+fixed faction_type = "merc"

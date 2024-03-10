@@ -25,7 +25,7 @@ shields: UInt?
 abes: UInt?
 energy: UInt?
 armor: UInt?
-armorType: ArmorType = "unarmored"
+armor_type: ArmorType = "unarmored"
 stunResist: UInt?
 
 produces: Listing<String>(isDistinct)?

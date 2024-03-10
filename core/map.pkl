@@ -2,10 +2,10 @@ module map
 extends "data.pkl"
 
 fixed type = "map"
-fixed subtype = mapType
+fixed subtype = map_type
 
 /// what type of game can be played on this map
-mapType: MapType = "1v1"
+map_type: MapType = "1v1"
 typealias MapType = "1v1" | "2v2" // | "1p"
 
 /// the number of XP towers. currently this must be 2 or 3, with each providng +4.5 or +3 xp/sec respectively
