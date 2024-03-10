@@ -1,7 +1,6 @@
 amends ".../core/grell/talent.pkl"
 
-id = "grell/talent/movement-speed"
-slug = "grell-talent-movement-speed"
+slug = "movement-speed"
 name = "Movement Speed"
 description = "+10% movement speed"
 column = 1 

@@ -2,8 +2,7 @@ amends ".../core/grell/talent.pkl"
 
 import "../topbar/flowers.pkl" as tbflowers
 
-id = "grell/talent/flowers"
-slug = "grell-talent-flowers"
+slug = "flowers"
 name = "Flowers"
 description = "Unlocks The flowers topbar power: " + tbflowers.description
 column = 1 

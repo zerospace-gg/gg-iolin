@@ -1,6 +1,5 @@
 amends ".../core/map.pkl"
 
-id = "map/1v1/coastal-outpost"
 slug = "coastal-outpost"
 name = "Coastal Outpost"
 mapType = "1v1"

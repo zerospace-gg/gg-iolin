@@ -1,7 +1,6 @@
 amends ".../core/grell/talent.pkl"
 
-id = "grell/talent/infused-lifesteal"
-slug = "grell-talent-infused-lifesteal"
+slug = "infused-lifesteal"
 name = "Infused Lifesteal"
 description = "Infused units gain 15% lifesteal"
 column = 1 

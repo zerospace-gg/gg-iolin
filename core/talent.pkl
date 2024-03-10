@@ -1,13 +1,18 @@
 open module talent
 extends "data.pkl"
 
-typealias TalentLevel = Int(isBetween(1, 5))
-typealias TalentColumn = Int(isBetween(1, 3))
-
 fixed type = "talent"
+fixed subtype = 
+  "column:" + column.toString() + 
+  "level:" + level.toString()
 
+/// the talent level / rank / row number
 level: TalentLevel
-column: TalentColumn
+typealias TalentLevel = UInt(isBetween(1, 5))
 
-/// normally would be a topbar ability if anything? just needs any valid data id 
+/// which column this appears in in the ui
+column: TalentColumn
+typealias TalentColumn = UInt(isBetween(1, 3))
+
+/// usually this is a topbar ability, sometimes a building
 unlocks: Listing<String>?

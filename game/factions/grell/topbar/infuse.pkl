@@ -1,10 +1,8 @@
 amends ".../core/grell/topbar.pkl"
 
-tags { "topbar:special" }
-
-id = "grell/topbar/special/infuse"
-slug = "grell-topbar-infuse"
+slug = "infuse"
 name = "infuse"
+topbarType = "special"
 description = "Make a unit stronger. Doubles vitality, attack speed, cooldown rate, and supply cost. Unit heals 50% over 10s. Seedlings will be faster and fly. The cost is based on unit cost."
 slot = 2
 cooldown = 120

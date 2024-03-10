@@ -1,6 +1,5 @@
 amends ".../core/map.pkl"
 
-id = "map/1v1/plains"
 slug = "plains"
 name = "Plains"
 mapType = "2v2"

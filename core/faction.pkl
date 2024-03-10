@@ -3,15 +3,26 @@ extends "data.pkl"
 import "talent.pkl"
 
 fixed type = "faction"
+fixed subtype = factionType
 
-tags { 
-  "faction" 
-}
+/// the three core types of faction
+hidden fixed factionType: FactionType
+typealias FactionType = "main" | "mercenary" | "ai"
 
-typealias FactionType = "main" | "mercenary" | "map:hostile" | "map:neutral"
-fixed factionType: FactionType
+/// whether or not this type should be playable
+fixed playable = factionType != "ai"
 
+/// talents. 10 for main faction, 5 for mercs.
 talents: Listing<String>
+
+/// topbar abilities. should be 4.
 topbar: Listing<String>
+
+/// which heroes the player can choose if they select this faction
 heroes: Listing<String>
-entities: Listing<String>
+
+/// all of the units that can be built or cast by this faction, including its worker and harvester
+units: Listing<String>
+
+/// all of the buildings that can be built by this faction, including its base and extractor
+buildings: Listing<String>

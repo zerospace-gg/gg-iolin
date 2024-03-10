@@ -1,6 +1,5 @@
 amends ".../core/fac_main.pkl"
 
-id = "faction/main/grell" 
 slug = "grell"
 name = "Grell"
 
@@ -32,11 +31,14 @@ heroes {
   "protectorate/hero/tech-hero"
 }
 
-entities {
+buildings {
   "grell/building/base/root-colony"
   "grell/building/extractor"
   "grell/building/production/incubator"
   "grell/building/tech/augmentation-pool"
+}
+
+units {
   "grell/unit/worker/seedling"
   "grell/unit/harvester/harvester"
   "grell/unit/army/stinger"

@@ -1,10 +1,25 @@
+/// defines a topbar ability
 open module topbar
 extends "data.pkl"
 
 fixed type = "topbar"
+fixed subtype = topbarType
 
+/// All main factions have a recall in slot 1 and a special in slot 2, which are unlocked at the beginning of the game, and an ultimate in each of slots 3/4, which are unlocked by talents.
+topbarType: TopbarType
+typealias TopbarType = "recall" | "special" | "ultimate"
+
+/// topbar energy required, if it is a static number. if it's formulaic, describe it in the `notes` field.
 cost: Int?
+
+/// most topbar powers have a cooldown
 cooldown: Int = 0
+
+/// how long the effect lasts. this is often not shown in UI and needs to be measured 
 duration: Int?
+
+/// the topbar has 4 ability slots
 slot: Int(isBetween(1,4))
+
+/// topbar abilities 3/4 (the ultimate types)
 unlockedBy: Listing<String>?

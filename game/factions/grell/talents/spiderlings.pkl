@@ -1,7 +1,6 @@
 amends ".../core/grell/talent.pkl"
 
-id = "grell/talent/spiderlings"
-slug = "grell-talent-spiderlings"
+slug = "spiderlings"
 name = "Spiderlings"
 description = "Your units spawn spiderlings on death. The amount scales with unit's supply cost."
 column = 2 

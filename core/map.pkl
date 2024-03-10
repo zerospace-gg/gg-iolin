@@ -1,21 +1,27 @@
 module map 
 extends "data.pkl"
 
+fixed type = "map"
+fixed subtype = mapType
+
+/// what type of game can be played on this map
+mapType: MapType = "1v1"
 typealias MapType = "1v1" | "2v2" // | "1p"
-typealias MapSize = "small" | "normal" | "large"
+
+/// the number of XP towers. currently this must be 2 or 3, with each providng +4.5 or +3 xp/sec respectively
+xpTowers: UInt8(isBetween(2,3))
+
+/// how far away flux is from your spawning point
+fluxDistance: FluxDistance
 typealias FluxDistance = "close" | "near" | "medium-far" | "distant"
 
-fixed type = "map"
-
-mapType: MapType = "1v1"
-
-xpTowers: UInt8 = 0
-fluxDistance: FluxDistance
-
+/// would be nice if we had actual dimensions here, these are the map sizes listed in the ui
 size: MapSize = "normal"
+typealias MapSize = "small" | "normal" | "large"
 
+/// number of players this map allows, including AI
 players: UInt8? = 
   if (type == "1v1") 2 
   else if (type == "2v2") 4
-  else if (type == "1p") 1
+  // else if (type == "1p") 1
   else null

@@ -1,0 +1,39 @@
+module types 
+import "types.pkl" as $t
+
+// future restrictions: 
+// ids should match:
+// <category> / <subtypes> / <unit>
+// category is one of:
+//   * a faction name, as if there was an implied category of faction
+//   * map
+// subtypes is one of:
+//   * base
+//   * base/extractor
+//   * unit/worker
+//   * unit/harvester
+//   * unit/army
+//   * building/production
+//   * building/tech
+//   * 
+
+// instead? all data has: 
+//   * type 
+//   * subtype 
+//   * 
+
+function idcheck (s: String) =
+  if (s.matches(Regex(#"([\w-]+)(/[\w-]+)*"#)))
+    true 
+  else 
+    throw("Invalid Id String: '\(s)'. Id should match words/separated-like/this")
+
+typealias Id = String((s) -> $t.idcheck(s))
+
+typealias MainFaction = 
+  "grell" | "legion" | "protectorate" | "xol" 
+
+typealias MercFaction = 
+  "marran" | "dread" | "valkaru" | "chakru" | "arandi" | "koru" 
+
+typealias Faction = MainFaction | MercFaction

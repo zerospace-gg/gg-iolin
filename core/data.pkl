@@ -1,11 +1,48 @@
+/// root object of this engine. basic data type for all game objects & effects.
 abstract module data
 
-fixed type: String
-tags: Listing<String>
-inGame: Boolean = true
-id: String 
-slug: String 
+/// fully-qualified id. this is helpful for searching, as it's a single string 
+/// you can match terms against
+fixed id =
+    List(faction, type, subtype, id).filter((i) -> i != "").join("/")
+
+/// a short but uniquely identifying string. Examples:
+/// `seedling`, `grell-harvester` (as multiple facs have a unit named harvester)
+slug: String
+
+/// nicely formatted display name, as it appears in game (with the exception of things without lore names yet)
 name: String 
+
+/// community nicknames for this
 nicknames: Listing<String>
+
+/// in-game description of this
 description: String = ""
+
+/// short description of the purpose of this, to be used in summaries in UI. Many of these won't be in game. 
+/// examples: "fast melee attacker" for a unit, "vision buff" for an upgrade, etc
+role: String = ""
+
+/// injected by the data processing layer, this is the filename it is defined in.
+/// if explicitly defined it will be silently overwritten.
+source: String?
+
+/// top-level type. data subclasses will define this as a constant literal
+fixed type: String
+
+/// sub-type. data subclasses will define this as a calculated field, based on a more
+/// explicitly named hidden field, for example in type map, mapType of 1v1 becomes subtype 1v1 in data
+/// if not appropriate, subclass should explicitly define to an empty string
+fixed subtype: String
+
+/// faction name. required if type isn't map. should not be defined for faction type
+faction: String = ""
+
+/// tags used in calculating effects of parts of the game, such as `unit` or `vehicle` or `massive`
+tags: Listing<String>
+
+/// whether or not this exists in the game at the current version
+in_game: Boolean = true
+
+/// additional notes and information about this entity
 notes: Listing<String>

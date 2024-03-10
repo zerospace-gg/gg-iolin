@@ -2,8 +2,7 @@ amends ".../core/grell/talent.pkl"
 
 import "../topbar/tree-of-life.pkl" as tbtol
 
-id = "grell/talent/tree-of-life"
-slug = "grell-talent-tree-of-life"
+slug = "tree-of-life"
 name = "Tree of Life"
 description = "Unlocks The Tree of Life topbar power: " + tbtol.description
 column = 2 

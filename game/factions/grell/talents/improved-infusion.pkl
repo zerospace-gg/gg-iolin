@@ -1,7 +1,6 @@
 amends ".../core/grell/talent.pkl"
 
-id = "grell/talent/improved-infusion"
-slug = "grell-talent-improved-infusion"
+slug = "improved-infusion"
 name = "Improved Infusion"
 description = "+10% movement speed"
 column = 1 

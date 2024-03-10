@@ -1,7 +1,6 @@
 amends ".../core/grell/talent.pkl"
 
-id = "grell/talent/cultivator-range"
-slug = "grell-talent-cultivator-range"
+slug = "cultivator-range"
 name = "Cultivator Range"
 description = "+100% Cultivator vision and biomass generation range"
 column = 2 
