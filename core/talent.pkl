@@ -2,15 +2,17 @@ open module talent
 extends "data.pkl"
 
 fixed type = "talent"
-fixed subtype = 
-  "column:" + column.toString() + 
-  "level:" + level.toString()
+fixed subtype = "loc_\(column)x\(level)"
+
+fixed faction_type = 
+  if (column < 3) "main" 
+  else "merc"
 
 /// the talent level / rank / row number
 level: TalentLevel
 typealias TalentLevel = UInt(isBetween(1, 5))
 
-/// which column this appears in in the ui
+/// which column this appears in in the ui. 1/2 are main factions, 3 is merc factions
 column: TalentColumn
 typealias TalentColumn = UInt(isBetween(1, 3))
 

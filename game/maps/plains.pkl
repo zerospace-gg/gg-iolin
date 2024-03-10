@@ -4,5 +4,5 @@ slug = "plains"
 name = "Plains"
 mapType = "2v2"
 size = "normal"
-xpTowers = 3
+xp_towers = 3
 fluxDistance = "near"

@@ -4,5 +4,5 @@ slug = "mountain-peak"
 name = "Mountain Peak"
 mapType = "1v1"
 size = "small"
-xpTowers = 3
+xp_towers = 3
 fluxDistance = "medium-far"

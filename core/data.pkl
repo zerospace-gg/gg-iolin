@@ -4,7 +4,7 @@ abstract module data
 /// fully-qualified id. this is helpful for searching, as it's a single string 
 /// you can match terms against
 fixed id =
-    List(faction, type, subtype, id).filter((i) -> i != "").join("/")
+    List(faction, type, subtype, slug).filter((i) -> i != "").join("/")
 
 /// a short but uniquely identifying string. Examples:
 /// `seedling`, `grell-harvester` (as multiple facs have a unit named harvester)

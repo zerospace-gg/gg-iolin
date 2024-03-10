@@ -4,42 +4,42 @@ slug = "grell"
 name = "Grell"
 
 talents {
-  "grell/talent/movement-speed"
-  "grell/talent/improved-infusion"
-  "grell/talent/infused-lifesteal"
-  "grell/talent/essence-collector"
-  "grell/talent/flowers"
+  "movement-speed"
+  "improved-infusion"
+  "infused-lifesteal"
+  "essence-collector"
+  "talent-flowers"
 
-  "grell/talent/cultivator-range"
-  "grell/talent/bio-nourishment"
-  "grell/talent/recycling"
-  "grell/talent/spiderlings"
-  "grell/talent/tree-of-life"
+  "cultivator-range"
+  "bio-nourishment"
+  "recycling"
+  "spiderlings"
+  "talent-tree-of-life"
 }
 
 topbar {
-  "grell/topbar/underground-recall"
-  "grell/topbar/infuse"
-  "grell/topbar/flowers"
-  "grell/topbar/tree-of-life"
+  "underground-recall"
+  "infuse"
+  "flowers"
+  "tree-of-life"
 }
 
 heroes {
-  "grell/hero/grell-hero"
-  "dread/hero/dread-hero"
-  "protectorate/hero/prefect-nova"
-  "protectorate/hero/tech-hero"
+  "grell-hero"
+  "dread-hero"
+  "prefect-nova"
+  "tech-hero"
 }
 
 buildings {
-  "grell/building/base/root-colony"
-  "grell/building/extractor"
+  "root-colony"
+  "grell-extractor"
   "grell/building/production/incubator"
   "grell/building/tech/augmentation-pool"
 }
 
 units {
-  "grell/unit/worker/seedling"
-  "grell/unit/harvester/harvester"
-  "grell/unit/army/stinger"
+  "seedling"
+  "grell-harvester"
+  "stinger"
 }

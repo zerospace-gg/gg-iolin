@@ -9,7 +9,7 @@ mapType: MapType = "1v1"
 typealias MapType = "1v1" | "2v2" // | "1p"
 
 /// the number of XP towers. currently this must be 2 or 3, with each providng +4.5 or +3 xp/sec respectively
-xpTowers: UInt8(isBetween(2,3))
+xp_towers: UInt8(isBetween(2,3))
 
 /// how far away flux is from your spawning point
 fluxDistance: FluxDistance

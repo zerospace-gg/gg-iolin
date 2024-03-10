@@ -4,5 +4,5 @@ slug = "swamp-fever"
 name = "Swamp Fever"
 mapType = "1v1"
 size = "small"
-xpTowers = 2
+xp_towers = 2
 fluxDistance = "distant"
