@@ -5,4 +5,4 @@ name = "Plains"
 map_type = "2v2"
 size = "normal"
 xp_towers = 3
-fluxDistance = "near"
+flux_distance = "near"

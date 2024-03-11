@@ -5,4 +5,4 @@ name = "Starsand"
 map_type = "1v1"
 size = "large"
 xp_towers = 3
-fluxDistance = "close"
+flux_distance = "close"

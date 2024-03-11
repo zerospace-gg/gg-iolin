@@ -1,12 +1,9 @@
-open module talent
+abstract module talent
 extends "data.pkl"
 
 fixed type = "talent"
-fixed subtype = "loc_\(column)x\(level)"
 
-fixed faction_type = 
-  if (column < 3) "main" 
-  else "merc"
+fixed subtype = "level_\(level)"
 
 /// the talent level / rank / row number
 level: TalentLevel

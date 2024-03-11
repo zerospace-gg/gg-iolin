@@ -5,4 +5,4 @@ name = "Mountain Peak"
 map_type = "1v1"
 size = "small"
 xp_towers = 3
-fluxDistance = "medium-far"
+flux_distance = "medium-far"

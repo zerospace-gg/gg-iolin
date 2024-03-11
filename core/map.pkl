@@ -12,7 +12,7 @@ typealias MapType = "1v1" | "2v2" // | "1p"
 xp_towers: UInt8(isBetween(2,3))
 
 /// how far away flux is from your spawning point
-fluxDistance: FluxDistance
+flux_distance: FluxDistance
 typealias FluxDistance = "close" | "near" | "medium-far" | "distant"
 
 /// would be nice if we had actual dimensions here, these are the map sizes listed in the ui

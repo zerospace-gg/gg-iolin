@@ -1,21 +1,30 @@
+/// entity is the superclass for units, buildings, etc, and represents an on-screen, in-game object. 
 abstract module entity 
 extends "data.pkl"
 
 import "types.pkl" 
 
 fixed type = "entity"
+fixed subtype = entity_type
 
+/// these will get added as tags
 typealias ArmorType = "none" | "light" | "medium" | "heavy"
+
+/// mercs have 3 tiers
+typealias MercTier = "T1" | "T2" | "T3"
+
+/// T0 is workers/harvs
 typealias Tier = "T0" | "T1" | "T2" | "T3" | "T1.5" | "T2.5" | "T3.5"
 
+/// hexite cost to build. 0 for entities that are cast
 hexite: UInt = 0
 flux: UInt = 0
 count: UInt = 1
 cooldown: UInt?
 topbar: UInt?
-buildTime: UInt?
+build_time: UInt?
 rebuildable: Boolean?
-rebuildTime: UInt(rebuildable == true)?
+rebuild_time: UInt(rebuildable == true)?
 
 supply: UInt((i) -> isUnit())?
 hp: UInt?
@@ -25,22 +34,12 @@ shields: UInt?
 abes: UInt?
 energy: UInt?
 armor: UInt?
-armor_type: ArmorType = "unarmored"
-stunResist: UInt?
+armor_type: ArmorType = "none"
+stun_resist: UInt?
 
-produces: Listing<String>(isDistinct)?
-producedBy: Listing<String>(isDistinct)?
+provides_supply: UInt?
+provides_biomass: UInt?
+provides_upgrades_for: Listing<String>(isDistinct)?
 
-builds: Listing<String>(isDistinct)?
-builtBy: Listing<String>(isDistinct)?
-
-unlocks: Listing<String>(isDistinct)?
-unlockedBy: Listing<String>(isDistinct)?
-
-unlocksMercs: Listing<Tier>(isDistinct)?
-providesSupply: UInt?
-providesBiomass: UInt?
-providesUpgrades: Listing<String>(isDistinct)?
-
-transformsFrom: String?
-transformsInto: Listing<String>(isDistinct)?
+transforms_from: String?
+transforms_into: Listing<String>(isDistinct)?

@@ -1,9 +1,10 @@
 amends ".../core/grell/topbar.pkl"
 
-slug = "tree-of-life"
+slug = "tree-of-life-topbar"
 name = "Tree of Life"
 topbar_type = "ultimate"
 description = "Revives units killed nearby and heals friendly units. Radius: 1500. Starting energy: 30."
 cost = 50
 slot = 4
 cooldown = 120
+unlocked_by { "tree-of-life-talent" }

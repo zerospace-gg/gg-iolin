@@ -5,4 +5,4 @@ name = "Swamp Fever"
 map_type = "1v1"
 size = "small"
 xp_towers = 2
-fluxDistance = "distant"
+flux_distance = "distant"

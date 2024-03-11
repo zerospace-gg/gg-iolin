@@ -1,39 +1,45 @@
 module types 
 import "types.pkl" as $t
 
-// future restrictions: 
-// ids should match:
-// <category> / <subtypes> / <unit>
-// category is one of:
-//   * a faction name, as if there was an implied category of faction
-//   * map
-// subtypes is one of:
-//   * base
-//   * base/extractor
-//   * unit/worker
-//   * unit/harvester
-//   * unit/army
-//   * building/production
-//   * building/tech
-//   * 
+local slugrx = Regex(#"^([a-z0-9]+)(-[a-z0-9])*$"#)
 
-// instead? all data has: 
-//   * type 
-//   * subtype 
-//   * 
-
-function idcheck (s: String) =
-  if (s.matches(Regex(#"([\w-]+)(/[\w-]+)*"#)))
+/// this could just be a regex directly instead of a helper, but this way we can provide a more helpful error message
+function slugOk (t: String, s: String) =
+  if (s.matches(slugrx))
     true 
   else 
-    throw("Invalid Id String: '\(s)'. Id should match words/separated-like/this")
+    throw("Invalid \(t): '\(s)'. Should be chunks of lower-case letters and digits, separated by dashes. examples: 'thing', 'other-thing', '3rd-thing'")
 
-typealias Id = String((s) -> $t.idcheck(s))
+/// slugpath is essentially a `/`-separated list of slugs
+function slugpathOk (t: String, s: String) =
+  if (s == "") true 
+  else 
+    let (ct = s.split("/").filter((i) -> !s.matches(slugrx)).length)
+    if (ct == 0) 
+      true
+    else 
+      throw("Invalid \(t): '\(s)'. example valid names: 'one', 'one-two', 'one-two/three/four-five'")
 
-typealias MainFaction = 
-  "grell" | "legion" | "protectorate" | "xol" 
+/// something like `seedling` or `grell-harvester` or `flowers-talent`. 
+typealias Slug = String((s) -> $t.slugOk("Slug", s))
 
-typealias MercFaction = 
-  "marran" | "dread" | "valkaru" | "chakru" | "arandi" | "koru" 
+/// identical to slug, but given a different semantic meaning. This is for the top-level type field
+typealias TopType = String((s) -> $t.slugOk("TopType", s))
 
+/// Id field is auto-generated in classes as a fixed type, this helps make sure it conforms
+typealias Id = String((s) -> $t.slugpathOk("Id", s))
+
+/// identical to id, but given a different semantic meaning. this is used for subtype fields.
+typealias SubType = String((s) -> $t.slugpathOk("SubType", s))
+
+/// definitions for all of these are in game/ folder, but helpful to have them explicitly defined as types
+typealias MainFaction = "grell" | "legion" | "protectorate" | "xol" 
+
+/// definitions for all of these are in game/ folder, but helpful to have them explicitly defined as types
+typealias MercFaction = "marran" | "dread" | "valkaru" | "chakru" | "arandi" | "koru" 
+
+/// definitions for all of these are in game/ folder, but helpful to have them explicitly defined as types
+typealias AIFaction = "neutral" | "hostile"
+
+/// definitions for all of these are in game/ folder, but helpful to have them explicitly defined as types
 typealias Faction = MainFaction | MercFaction

@@ -5,4 +5,4 @@ name = "Coastal Outpost"
 map_type = "1v1"
 size = "normal"
 xp_towers = 2
-fluxDistance = "medium-far"
+flux_distance = "medium-far"

@@ -39,10 +39,25 @@ fixed subtype: String
 faction: String = ""
 
 /// tags used in calculating effects of parts of the game, such as `unit` or `vehicle` or `massive`
-tags: Listing<String>
+tags: Listing<String>(isDistinct)?
 
 /// whether or not this exists in the game at the current version
 in_game: Boolean = true
 
 /// additional notes and information about this entity
 notes: Listing<String>
+
+/// creates handles things that build / produce / cast / otherwise create. should always be paired with created_by on the other side.
+creates: Listing<String>(isDistinct)?
+
+/// opposite side of creates, this should always be paired with unlocks on the other side
+created_by: Listing<String>(isDistinct)?
+
+/// unlocks handles things that allow other things the ability to build / produce / cast / otherwise create. should always be paired with unlocked_by on the other side.
+unlocks: Listing<String>(isDistinct)?
+
+/// opposite side of unlocks, this should always be paired with unlocks on the other side
+unlocked_by: Listing<String>(isDistinct)?
+
+/// currently only buildings do this, but its here because the other unlock/create logic is here. some non-entities entities unlock/create 
+unlocks_merc_tier: Listing<Tier>(isDistinct)?

@@ -8,20 +8,20 @@ talents {
   "improved-infusion"
   "infused-lifesteal"
   "essence-collector"
-  "talent-flowers"
+  "flowers-talent"
 
   "cultivator-range"
   "bio-nourishment"
   "recycling"
   "spiderlings"
-  "talent-tree-of-life"
+  "tree-of-life-talent"
 }
 
 topbar {
   "underground-recall"
   "infuse"
-  "flowers"
-  "tree-of-life"
+  "flowers-topbar"
+  "tree-of-life-topbar"
 }
 
 heroes {
@@ -33,13 +33,26 @@ heroes {
 
 buildings {
   "root-colony"
+  "root-colony-attacker"
   "grell-extractor"
-  "grell/building/production/incubator"
-  "grell/building/tech/augmentation-pool"
+  "nourishing-pod"
+  "cultivator"
+  "cultivator-attacker"
+  "incubator"
+  "medium-incubator"
+  "large-incubator"
+  "augmentation-pool"
+  "medium-augmentation-pool"
+  "special-augmentation-pool"
 }
 
 units {
   "seedling"
   "grell-harvester"
   "stinger"
+  "harbinger"
+  "weaver"
+  "lasher"
+  "skrelling"
+
 }
