@@ -43,3 +43,9 @@ typealias AIFaction = "neutral" | "hostile"
 
 /// definitions for all of these are in game/ folder, but helpful to have them explicitly defined as types
 typealias Faction = MainFaction | MercFaction
+
+/// mercs have 3 tiers
+typealias MercTier = "T1" | "T2" | "T3"
+
+/// T0 is workers/harvs
+typealias Tier = "T0" | "T1" | "T2" | "T3" | "T1.5" | "T2.5" | "T3.5"
