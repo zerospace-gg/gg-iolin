@@ -1,4 +1,4 @@
-module topbar 
+module grell_topbar 
 extends "../topbar.pkl"
 
-tags { "faction:grell" }
+faction = "grell"

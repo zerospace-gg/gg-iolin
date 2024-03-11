@@ -3,7 +3,7 @@ extends "data.pkl"
 
 fixed type = "talent"
 
-fixed subtype = "level_\(level)"
+fixed subtype = "level-\(level)"
 
 /// the talent level / rank / row number
 level: TalentLevel

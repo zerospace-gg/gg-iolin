@@ -1,5 +1,0 @@
-module unitbuilding 
-extends "unit.pkl"
-
-tags { "building" }
-// armor = 1

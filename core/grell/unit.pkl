@@ -1,0 +1,4 @@
+module grell_unit 
+extends "../ent_unit.pkl"
+
+faction = "grell"

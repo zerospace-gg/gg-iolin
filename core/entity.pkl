@@ -7,6 +7,13 @@ import "types.pkl"
 fixed type = "entity"
 fixed subtype = entity_type
 
+entity_type: EntityType
+typealias EntityType =
+  "unit/army" | "unit/worker" | "unit/harvester" |
+  "building/base" | "building/extractor" |
+  "building/supply" | "building/special" |
+  "building/production" | "building/tech" 
+
 /// hexite cost to build. 0 for entities that are cast
 hexite: UInt = 0
 flux: UInt = 0

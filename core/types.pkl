@@ -1,7 +1,7 @@
 module types 
 import "types.pkl" as $t
 
-local slugrx = Regex(#"^([a-z0-9]+)(-[a-z0-9])*$"#)
+local slugrx = Regex(#"^([a-z0-9]+)(-[a-z0-9]+)*$"#)
 
 /// this could just be a regex directly instead of a helper, but this way we can provide a more helpful error message
 function slugOk (t: String, s: String) =
@@ -14,7 +14,7 @@ function slugOk (t: String, s: String) =
 function slugpathOk (t: String, s: String) =
   if (s == "") true 
   else 
-    let (ct = s.split("/").filter((i) -> !s.matches(slugrx)).length)
+    let (ct = s.split("/").filter((i) -> !i.matches(slugrx)).length)
     if (ct == 0) 
       true
     else 
@@ -42,7 +42,7 @@ typealias MercFaction = "marran" | "dread" | "valkaru" | "chakru" | "arandi" | "
 typealias AIFaction = "neutral" | "hostile"
 
 /// definitions for all of these are in game/ folder, but helpful to have them explicitly defined as types
-typealias Faction = MainFaction | MercFaction
+typealias Faction = MainFaction | MercFaction | AIFaction
 
 /// mercs have 3 tiers
 typealias MercTier = "T1" | "T2" | "T3"

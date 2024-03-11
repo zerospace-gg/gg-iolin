@@ -1,4 +1,4 @@
-module talent 
+module grell_talent 
 extends "../talent.pkl"
 
-tags { "faction:grell" }
+faction = "grell"

@@ -1,14 +1,18 @@
 /// root object of this engine. basic data type for all game objects & effects.
 abstract module data
 
+import "types.pkl" as $t
+
 /// fully-qualified id. this is helpful for searching, as it's a single string 
 /// you can match terms against
-fixed id =
-    List(faction, type, subtype, slug).filter((i) -> i != "").join("/")
+fixed id: $t.Id =
+  List(faction ?? "", type, subtype, slug)
+    .filter((i) -> i != "")
+    .join("/")
 
 /// a short but uniquely identifying string. Examples:
 /// `seedling`, `grell-harvester` (as multiple facs have a unit named harvester)
-slug: String
+slug: $t.Slug
 
 /// nicely formatted display name, as it appears in game (with the exception of things without lore names yet)
 name: String 
@@ -28,18 +32,21 @@ role: String = ""
 source: String?
 
 /// top-level type. data subclasses will define this as a constant literal
-fixed type: String
+fixed type: $t.TopType
 
 /// sub-type. data subclasses will define this as a calculated field, based on a more
 /// explicitly named hidden field, for example in type map, map_type of 1v1 becomes subtype 1v1 in data
 /// if not appropriate, subclass should explicitly define to an empty string
-fixed subtype: String
+fixed subtype: $t.SubType
 
 /// faction name. required if type isn't map. should not be defined for faction type
-faction: String = ""
+faction: $t.Faction | "" = ""
 
 /// tags used in calculating effects of parts of the game, such as `unit` or `vehicle` or `massive`
-tags: Listing<String>(isDistinct)?
+hidden tag: Listing<String>(isDistinct)
+
+/// some tags are auto-generated, this is where auto-generation happens
+tags: Listing<String>(isDistinct) = tag
 
 /// whether or not this exists in the game at the current version
 in_game: Boolean = true
@@ -48,16 +55,16 @@ in_game: Boolean = true
 notes: Listing<String>
 
 /// creates handles things that build / produce / cast / otherwise create. should always be paired with created_by on the other side.
-creates: Listing<String>(isDistinct)?
+creates: Listing<$t.Slug>(isDistinct)?
 
 /// opposite side of creates, this should always be paired with unlocks on the other side
-created_by: Listing<String>(isDistinct)?
+created_by: Listing<$t.Slug>(isDistinct)?
 
 /// unlocks handles things that allow other things the ability to build / produce / cast / otherwise create. should always be paired with unlocked_by on the other side.
-unlocks: Listing<String>(isDistinct)?
+unlocks: Listing<$t.Slug>(isDistinct)?
 
 /// opposite side of unlocks, this should always be paired with unlocks on the other side
-unlocked_by: Listing<String>(isDistinct)?
+unlocked_by: Listing<$t.Slug>(isDistinct)?
 
 /// currently only buildings do this, but its here because the other unlock/create logic is here. some non-entities entities unlock/create 
-unlocks_merc_tier: Listing<Tier>(isDistinct)?
+unlocks_merc_tier: Listing<$t.Tier>(isDistinct)?
