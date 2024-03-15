@@ -1,4 +1,4 @@
-amends ".../core/talent.pkl"
+amends ".../engine/talent.pkl"
 
 slug = "improved-infusion"
 name = "Improved Infusion"

@@ -1,6 +1,38 @@
-amends ".../core/unit.pkl" 
+amends ".../engine/unit.pkl" 
+import ".../engine/infuse.pkl" as $i
 
 slug = "seedling"
 name = "Seedling"
-gamepiece_type = "unit/worker"
+faction = "grell"
+description = "Seedlings are built automatically from your Root Colonies, and are consumed in the creation of structures."
+domain = "ground"
+role = "Adorable Sentient Seed"
+unit_type = "worker"
 tier = "T0"
+hp = 20
+speed = 350
+build_time = 5
+
+infusable = true
+infuse_rule = new $i.TransformInfuseRule { into = "infused-seedling" }
+
+created_by { 
+  "root-colony"
+  "root-colony-attacker"
+}
+
+creates {
+  "root-colony"
+  "nourishing-pod"
+  "cultivator"
+  "incubator"
+  "medium-incubator"
+  "large-incubator"
+  "augmentation-pool"
+  "advanced-augmentation-pool"
+  "special-augmentation-pool"
+}
+
+notes { "speed while not on grass is estimated to be 150. Seedlings lose 0.133 HP/sec when not on grass." }
+
+transforms_into { "infused-seedling" }

@@ -1,7 +1,0 @@
-module unit 
-extends "gamepiece.pkl"
-
-tag { "unit" }
-gamepiece_type: "unit/worker" | "unit/harvester" | "unit/army" | "unit/hero"
-
-vision = 1800

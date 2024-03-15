@@ -1,4 +1,4 @@
-module ent_building 
+module building 
 extends "gamepiece.pkl"
 
 tags { "building" }

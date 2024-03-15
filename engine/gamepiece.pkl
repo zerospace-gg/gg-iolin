@@ -4,20 +4,17 @@ extends "data.pkl"
 
 import "types.pkl" as $t
 
-fixed type = "gamepiece"
-fixed subtype = gamepiece_type
-
-gamepiece_type: $t.EntityType
-
 /// hexite cost to build. 0 for gamepieces that are cast
-hexite: UInt = 0
-flux: UInt = 0
-count: UInt = 1
+hexite_cost: UInt? 
+flux_cost: UInt?
+build_count: UInt? = 1
 cooldown: UInt?
-topbar: UInt?
+energy_cost: UInt?
+topbar_cost: UInt?
 build_time: UInt?
 rebuildable: Boolean?
 rebuild_time: UInt(rebuildable == true)?
+domain: $t.DomainType = "ground"
 
 tier: $t.Tier
 
@@ -30,11 +27,12 @@ abes: UInt?
 energy: UInt?
 armor: UInt?
 
-armor_type: ArmorType = "none"
-typealias ArmorType = "none" | "light" | "medium" | "heavy"
+armor_type: $t.ArmorType = "none"
 
 stun_resist: UInt?
 
+provides_flux: UInt?
+provides_hex: UInt?
 provides_supply: UInt?
 provides_biomass: UInt?
 provides_upgrades_for: Listing<String>(isDistinct)?

@@ -1,4 +1,4 @@
-amends ".../core/talent.pkl"
+amends ".../engine/talent.pkl"
 
 slug = "essence-collector"
 name = "Essence Collector"

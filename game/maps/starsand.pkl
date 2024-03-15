@@ -1,4 +1,4 @@
-amends ".../core/map.pkl"
+amends ".../engine/map.pkl"
 
 slug = "starsand"
 name = "Starsand"

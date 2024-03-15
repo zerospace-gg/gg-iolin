@@ -1,4 +1,4 @@
-amends ".../core/topbar.pkl"
+amends ".../engine/topbar.pkl"
 
 slug = "infuse"
 name = "infuse"

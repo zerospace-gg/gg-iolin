@@ -57,4 +57,7 @@ typealias BuildingType =
   "building/base" | "building/extractor" | "building/supply" | 
   "building/special" | "building/production" | "building/tech" 
 
-typealias EntityType = UnitType | BuildingType
+typealias GamePieceType = UnitType | BuildingType
+
+typealias DomainType = "air" | "ground"
+typealias ArmorType = "none" | "light" | "medium" | "heavy"

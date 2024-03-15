@@ -1,0 +1,37 @@
+module infuse
+
+class StatMultiplier { multiplier: Number }
+class StatReplacer { replace: Number }
+class StatAdder { add: Number }
+
+typealias InfuseStat = StatMultiplier | StatReplacer | StatAdder
+
+class TransformInfuseRule {
+  fixed infuse_type = "transform"
+  into: String
+}
+
+class BasicInfuseRule {
+  fixed infuse_type = "basic"
+  supply: InfuseStat?
+  hp: InfuseStat?
+  damage: InfuseStat?
+  reload_time: InfuseStat?
+  cooldown: InfuseStat?
+}
+
+fixed standard_infuse_rule = new BasicInfuseRule {
+  supply = new StatMultiplier { multiplier = 2.0 }
+  hp = new StatMultiplier { multiplier = 2.0 }
+  reload_time = new StatMultiplier  { multiplier = 0.5 }
+  cooldown = new StatMultiplier  { multiplier = 0.5 }
+}
+
+fixed damage_infuse_rule = new BasicInfuseRule {
+  supply = new StatMultiplier  { multiplier = 2.0 }
+  hp = new StatMultiplier { multiplier = 2.0 }
+  damage = new StatMultiplier { multiplier = 2.0 }
+  cooldown = new StatMultiplier { multiplier = 0.5 }
+}
+
+typealias InfuseRule = TransformInfuseRule | BasicInfuseRule

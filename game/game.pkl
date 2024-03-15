@@ -7,6 +7,7 @@ hidden data = everything.toListing()
 
 maps = typed("map")
 factions = typed("faction")
-gamepieces = typed("gamepiece")
+units = typed("unit")
+buildings = typed("building")
 talents = typed("talent")
 topbar = typed("topbar")
