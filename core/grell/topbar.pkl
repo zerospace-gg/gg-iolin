@@ -1,4 +1,0 @@
-module grell_topbar 
-extends "../topbar.pkl"
-
-faction = "grell"

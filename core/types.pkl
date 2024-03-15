@@ -49,3 +49,12 @@ typealias MercTier = "T1" | "T2" | "T3"
 
 /// T0 is workers/harvs
 typealias Tier = "T0" | "T1" | "T2" | "T3" | "T1.5" | "T2.5" | "T3.5"
+
+typealias UnitType = 
+  "unit/army" | "unit/worker" | "unit/harvester" | "unit/hero"
+
+typealias BuildingType =
+  "building/base" | "building/extractor" | "building/supply" | 
+  "building/special" | "building/production" | "building/tech" 
+
+typealias EntityType = UnitType | BuildingType

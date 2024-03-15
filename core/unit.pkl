@@ -1,0 +1,7 @@
+module unit 
+extends "entity.pkl"
+
+tag { "unit" }
+entity_type: "unit/worker" | "unit/harvester" | "unit/army" | "unit/hero"
+
+vision = 1800

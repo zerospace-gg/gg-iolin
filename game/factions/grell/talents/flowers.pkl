@@ -1,10 +1,11 @@
-amends ".../core/grell/talent.pkl"
+amends ".../core/talent.pkl"
 
 import "../topbar/flowers.pkl" as tbflowers
 
 slug = "flowers-talent"
 name = "Flowers"
 description = "Unlocks The flowers topbar power: " + tbflowers.description
+faction = "grell"
 column = 1 
 level = 5
 

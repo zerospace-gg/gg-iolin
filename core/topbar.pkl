@@ -1,5 +1,5 @@
 /// defines a topbar ability
-abstract module topbar
+module topbar
 extends "data.pkl"
 
 fixed type = "topbar"

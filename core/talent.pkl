@@ -1,4 +1,4 @@
-abstract module talent
+module talent
 extends "data.pkl"
 
 fixed type = "talent"

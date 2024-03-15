@@ -1,4 +1,0 @@
-module unit 
-extends "entity.pkl"
-
-tags { "unit" }

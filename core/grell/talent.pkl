@@ -1,4 +1,0 @@
-module grell_talent 
-extends "../talent.pkl"
-
-faction = "grell"

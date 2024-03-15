@@ -1,7 +1,8 @@
-amends ".../core/grell/talent.pkl"
+amends ".../core/talent.pkl"
 
 slug = "movement-speed"
 name = "Movement Speed"
 description = "+10% movement speed"
+faction = "grell"
 column = 1 
 level = 1

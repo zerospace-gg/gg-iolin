@@ -1,10 +1,11 @@
-amends ".../core/grell/talent.pkl"
+amends ".../core/talent.pkl"
 
 import "../topbar/tree-of-life.pkl" as tbtol
 
 slug = "tree-of-life-talent"
 name = "Tree of Life"
 description = "Unlocks The Tree of Life topbar power: " + tbtol.description
+faction = "grell"
 column = 2 
 level = 5
 

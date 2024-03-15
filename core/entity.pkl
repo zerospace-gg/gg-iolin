@@ -2,17 +2,12 @@
 abstract module entity 
 extends "data.pkl"
 
-import "types.pkl" 
+import "types.pkl" as $t
 
 fixed type = "entity"
 fixed subtype = entity_type
 
-entity_type: EntityType
-typealias EntityType =
-  "unit/army" | "unit/worker" | "unit/harvester" |
-  "building/base" | "building/extractor" |
-  "building/supply" | "building/special" |
-  "building/production" | "building/tech" 
+entity_type: $t.EntityType
 
 /// hexite cost to build. 0 for entities that are cast
 hexite: UInt = 0
@@ -24,7 +19,7 @@ build_time: UInt?
 rebuildable: Boolean?
 rebuild_time: UInt(rebuildable == true)?
 
-tier: Tier
+tier: $t.Tier
 
 supply: UInt((i) -> isUnit())?
 hp: UInt?
