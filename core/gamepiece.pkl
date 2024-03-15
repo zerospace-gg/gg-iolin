@@ -1,15 +1,15 @@
-/// entity is the superclass for units, buildings, etc, and represents an on-screen, in-game object. 
-abstract module entity 
+/// gamepiece is the superclass for units, buildings, etc, and represents an on-screen, in-game object. 
+abstract module gamepiece 
 extends "data.pkl"
 
 import "types.pkl" as $t
 
-fixed type = "entity"
-fixed subtype = entity_type
+fixed type = "gamepiece"
+fixed subtype = gamepiece_type
 
-entity_type: $t.EntityType
+gamepiece_type: $t.EntityType
 
-/// hexite cost to build. 0 for entities that are cast
+/// hexite cost to build. 0 for gamepieces that are cast
 hexite: UInt = 0
 flux: UInt = 0
 count: UInt = 1

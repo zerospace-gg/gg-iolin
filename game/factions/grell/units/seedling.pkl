@@ -2,5 +2,5 @@ amends ".../core/unit.pkl"
 
 slug = "seedling"
 name = "Seedling"
-entity_type = "unit/worker"
+gamepiece_type = "unit/worker"
 tier = "T0"

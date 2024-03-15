@@ -51,7 +51,7 @@ tags: Listing<String>(isDistinct) = tag
 /// whether or not this exists in the game at the current version
 in_game: Boolean = true
 
-/// additional notes and information about this entity
+/// additional notes and information about this gamepiece
 notes: Listing<String>
 
 /// creates handles things that build / produce / cast / otherwise create. should always be paired with created_by on the other side.
@@ -66,5 +66,5 @@ unlocks: Listing<$t.Slug>(isDistinct)?
 /// opposite side of unlocks, this should always be paired with unlocks on the other side
 unlocked_by: Listing<$t.Slug>(isDistinct)?
 
-/// currently only buildings do this, but its here because the other unlock/create logic is here. some non-entities entities unlock/create 
+/// currently only buildings do this, but its here because the other unlock/create logic is here. some non-gamepieces gamepieces unlock/create 
 unlocks_merc_tier: Listing<$t.Tier>(isDistinct)?

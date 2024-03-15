@@ -1,7 +1,7 @@
 module unit 
-extends "entity.pkl"
+extends "gamepiece.pkl"
 
 tag { "unit" }
-entity_type: "unit/worker" | "unit/harvester" | "unit/army" | "unit/hero"
+gamepiece_type: "unit/worker" | "unit/harvester" | "unit/army" | "unit/hero"
 
 vision = 1800
