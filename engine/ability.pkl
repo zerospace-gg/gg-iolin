@@ -1,4 +1,40 @@
-module ability
+open module ability
 extends "data.pkl"
+import "types.pkl" as $t
 
-fixed type: string = "ability"
+fixed type: String = "ability"
+
+activation_type: "auto" | "activated" | "passive" = 
+  if (primary) "auto" 
+  else "activated"
+
+ability_type: "attack" | "heal" | "spell" | "switch-attack" | "toggle-siege" = if (primary) "attack" else null
+
+fixed subtype: String = 
+  let (l = List(ability_type, activation_type)) 
+  l.join("/")
+
+hotkey: $t.HotKey?
+targets: Listing<$t.TargetType>
+requires_mode: String?
+toggles_mode: String?
+energy_cost: UInt?
+energy_type: $t.EnergyType?
+/// also called reload_time
+cooldown: Float?
+duration: Float?
+range: UInt?
+/// also called damage point, attack delay, or cast point
+delay: Float?
+damage: UInt?
+num_casts: UInt = 1
+shots_per_cast: UInt = 1
+healing: UInt?
+area: UInt?
+dot_damage: UInt?
+dot_time: Float?
+splash_amount: UInt?
+splash_radius: UInt?
+bonus_percent: UInt?
+bonus_vs_tags: Listing<String>?
+autocast: "always" | "toggle" | "never" = "never"

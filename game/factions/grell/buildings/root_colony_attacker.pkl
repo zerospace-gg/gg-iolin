@@ -1,0 +1,17 @@
+amends "root_colony.pkl"
+import ".../engine/attack.pkl"
+
+tag { "static-defense" }
+name = "Root Colony Attacker"
+description = "Base with built-in Static Defense"
+hexite_cost = 200
+created_by = null
+transforms_into = null
+transforms_from { "root-colony" }
+build_time = 5
+
+primary_attack {
+  damage = 55
+  cooldown = 1.0
+  range = 1800
+}

@@ -1,0 +1,8 @@
+module heal 
+extends "ability.pkl"
+
+ability_type = "heal"
+activation_type = "auto"
+
+/// a lot of the heals don't have names yet, don't wanna have to manually specify this until there's more complete data
+name = "Primary Heal"

@@ -14,7 +14,7 @@ speed = 350
 build_time = 5
 
 infusable = true
-infuse_rule = new $i.TransformInfuseRule { into = "infused-seedling" }
+infuse_rule = $i.transform("infused-seedling")
 
 created_by { 
   "root-colony"

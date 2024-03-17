@@ -1,6 +1,5 @@
 amends ".../engine/talent.pkl"
 
-slug = "cultivator-range"
 name = "Cultivator Range"
 description = "+100% Cultivator vision and biomass generation range"
 faction = "grell"

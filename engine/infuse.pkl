@@ -1,18 +1,18 @@
 module infuse
 
-class StatMultiplier { multiplier: Number }
-class StatReplacer { replace: Number }
-class StatAdder { add: Number }
+class StatMultiplier { fixed type="mult"; num: Number }
+class StatReplacer { fixed type="replace"; num: Number }
+class StatAdder { fixed type = "add"; num: Number }
 
 typealias InfuseStat = StatMultiplier | StatReplacer | StatAdder
 
 class TransformInfuseRule {
-  fixed infuse_type = "transform"
+  fixed type = "transform"
   into: String
 }
 
 class BasicInfuseRule {
-  fixed infuse_type = "basic"
+  fixed type = "basic"
   supply: InfuseStat?
   hp: InfuseStat?
   damage: InfuseStat?
@@ -21,17 +21,19 @@ class BasicInfuseRule {
 }
 
 fixed standard_infuse_rule = new BasicInfuseRule {
-  supply = new StatMultiplier { multiplier = 2.0 }
-  hp = new StatMultiplier { multiplier = 2.0 }
-  reload_time = new StatMultiplier  { multiplier = 0.5 }
-  cooldown = new StatMultiplier  { multiplier = 0.5 }
+  supply = new StatMultiplier { num = 2.0 }
+  hp = new StatMultiplier { num = 2.0 }
+  reload_time = new StatMultiplier  { num = 0.5 }
+  cooldown = new StatMultiplier  { num = 0.5 }
 }
 
 fixed damage_infuse_rule = new BasicInfuseRule {
-  supply = new StatMultiplier  { multiplier = 2.0 }
-  hp = new StatMultiplier { multiplier = 2.0 }
-  damage = new StatMultiplier { multiplier = 2.0 }
-  cooldown = new StatMultiplier { multiplier = 0.5 }
+  supply = new StatMultiplier  { num = 2.0 }
+  hp = new StatMultiplier { num = 2.0 }
+  damage = new StatMultiplier { num = 2.0 }
+  cooldown = new StatMultiplier { num = 0.5 }
 }
 
 typealias InfuseRule = TransformInfuseRule | BasicInfuseRule
+
+function transform (n: String) = new TransformInfuseRule { into = n }

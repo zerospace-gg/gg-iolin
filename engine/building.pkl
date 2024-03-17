@@ -1,4 +1,15 @@
-module building 
+abstract module building 
 extends "gamepiece.pkl"
+import "types.pkl" as $t
 
+fixed type = "building"
+fixed subtype = building_type
 tags { "building" }
+
+hidden building_type: "base" | "extractor" | "supply" | "production" | "tech" | "special"
+
+tier: $t.Tier?
+
+vision = 1800
+
+armor = 2

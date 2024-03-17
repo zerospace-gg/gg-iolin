@@ -1,13 +1,12 @@
 module game
+import "game_flat.pkl"
 
-local everything = import*("*/**.pkl").toMap().values
-function typed(x) = everything.filter((xx) -> xx.type == x).toListing()
+function typed(x) = game_flat.everything.filter((xx) -> xx.type == x).toListing()
 
-hidden data = everything.toListing()
 
 maps = typed("map")
 factions = typed("faction")
-units = typed("unit")
-buildings = typed("building")
 talents = typed("talent")
 topbar = typed("topbar")
+buildings = typed("building")
+units = typed("unit")

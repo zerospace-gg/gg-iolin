@@ -50,14 +50,12 @@ typealias MercTier = "T1" | "T2" | "T3"
 /// T0 is workers/harvs
 typealias Tier = "T0" | "T1" | "T2" | "T3" | "T1.5" | "T2.5" | "T3.5"
 
-typealias UnitType = 
-  "unit/army" | "unit/worker" | "unit/harvester" | "unit/hero"
+typealias HotKey = "q" | "w" | "e" | "r" | "t" | "a" | "s" | "d" | "f" | "g" | "h" | "z" | "x" | "c" | "ctrl-q" | "ctrl-w" | "ctrl-e" | "ctrl-r"
 
-typealias BuildingType =
-  "building/base" | "building/extractor" | "building/supply" | 
-  "building/special" | "building/production" | "building/tech" 
-
-typealias GamePieceType = UnitType | BuildingType
+typealias ArmorType = "none" | "light" | "medium" | "heavy"
 
 typealias DomainType = "air" | "ground"
-typealias ArmorType = "none" | "light" | "medium" | "heavy"
+typealias AllyDomainType = "ally/air" | "ally/ground"
+typealias TargetType = DomainType | AllyDomainType | "location" | "self" | "location/area" | "location/self"
+
+typealias EnergyType = "classic" | "abes"

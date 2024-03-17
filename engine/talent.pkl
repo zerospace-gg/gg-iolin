@@ -3,7 +3,7 @@ extends "data.pkl"
 
 fixed type = "talent"
 
-fixed subtype = "level-\(level)"
+fixed subtype = if (level == 5) "level-5-ultimate" else "level-\(level)"
 
 /// the talent level / rank / row number
 level: TalentLevel

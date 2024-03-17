@@ -1,0 +1,18 @@
+amends ".../engine/base.pkl"
+
+name = "Root Colony"
+role = "Grell main base. Beautiful tree."
+description = "Grell main base"
+faction = "grell"
+hotkey = "q"
+creates {
+  "seedling"
+  "grell-harvester"
+  "grell-extractor"
+}
+created_by {
+  "seedling"
+  "infused-seedling"
+}
+provides_biomass = 1500
+transforms_into { "root-colony-attacker" }

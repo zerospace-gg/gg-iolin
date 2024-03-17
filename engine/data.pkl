@@ -12,7 +12,7 @@ fixed id: $t.Id =
 
 /// a short but uniquely identifying string. Examples:
 /// `seedling`, `grell-harvester` (as multiple facs have a unit named harvester)
-slug: $t.Slug
+slug: $t.Slug = name.toLowerCase().replaceAll(Regex("[^a-z0-9]"), "-")
 
 /// nicely formatted display name, as it appears in game (with the exception of things without lore names yet)
 name: String 
@@ -22,10 +22,6 @@ nicknames: Listing<String>
 
 /// in-game description of this
 description: String = ""
-
-/// short description of the purpose of this, to be used in summaries in UI. Many of these won't be in game. 
-/// examples: "fast melee attacker" for a unit, "vision buff" for an upgrade, etc
-role: String = ""
 
 /// injected by the data processing layer, this is the filename it is defined in.
 /// if explicitly defined it will be silently overwritten.

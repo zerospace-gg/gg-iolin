@@ -1,0 +1,5 @@
+module passive 
+extends "ability.pkl"
+
+ability_type = "spell"
+activation_type = "passive

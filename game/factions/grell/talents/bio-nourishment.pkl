@@ -1,6 +1,5 @@
 amends ".../engine/talent.pkl"
 
-slug = "bio-nourishment"
 name = "Bio Nourishment"
 description = "+50% nourishing pods healing. +100% biomass healing (4 HP/s)"
 faction = "grell"

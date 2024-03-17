@@ -1,0 +1,6 @@
+open module base
+extends "building.pkl"
+tags { "base" }
+hp = 2000 
+hexite_cost = 350
+building_type = "base"
