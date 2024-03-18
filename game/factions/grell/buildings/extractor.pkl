@@ -1,0 +1,8 @@
+amends ".../engine/building/extractor.pkl"
+name = "Grell Extractor"
+role = "Digglebloomer"
+faction = "grell"
+created_by {
+  "root-colony"
+  "root-colony-attacker"
+}

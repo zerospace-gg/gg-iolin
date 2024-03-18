@@ -2,7 +2,7 @@ amends "root_colony.pkl"
 
 tag { "static-defense" }
 name = "Root Colony Attacker"
-description = "Static Defense Base Tree"
+role = "Devastating Defensive Tree"
 hexite_cost = 200
 created_by = null
 transforms_into = null

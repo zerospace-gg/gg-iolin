@@ -1,0 +1,13 @@
+amends ".../engine/building/production.pkl"
+
+faction = "grell"
+name = "Medium Incubator"
+tier = "T2"
+creates {
+  "lasher"
+  "skrelling"
+}
+unlocks {
+  "lasher"
+  "skrelling"
+}

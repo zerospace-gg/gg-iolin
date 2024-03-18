@@ -2,7 +2,7 @@ amends "seedling.pkl"
 
 slug = "infused-seedling"
 name = "Infused Seedling"
-description = "When a seedling is infused, it gains the ability to fly and becomes one of the fastest units and and the very best scouting unit in the game. It retains its abilities to build Grell structures, so it can also effectively create proxy and forward buildings easily."
+description = "When a seedling is infused, it gains the ability to fly and becomes one of the fastest units and the very best scouting unit in the game. It retains its abilities to build Grell structures, so it can also effectively create proxy and forward buildings easily."
 domain = "air"
 role = "Soaring Scouting Speed Seed"
 tier = "T0"

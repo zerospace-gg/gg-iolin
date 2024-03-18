@@ -1,5 +1,6 @@
 amends ".../engine/building/supply.pkl"
 name = "Nourishing Pod"
+role = "Mrs. Sproutbriar"
 energy = 100
 build_time = 15 
 hp = 625

@@ -1,0 +1,15 @@
+amends ".../engine/building/production.pkl"
+
+faction = "grell"
+name = "Large Incubator"
+tier = "T3"
+creates {
+  "reaver"
+  "thresher"
+  "behemoth"
+}
+unlocks {
+  "reaver"
+  "thresher"
+  "behemoth"
+}
