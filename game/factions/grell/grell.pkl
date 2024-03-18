@@ -1,57 +1,5 @@
 amends ".../engine/faction/main.pkl"
 
-import ".../engine/data.pkl" as Data 
-import ".../engine/building/building.pkl" as Building 
-import ".../engine/ability/talent.pkl" as Talent
-
-// talents
-import "talents/movement_speed.pkl" as movement_speed_talent
-import "talents/improved_infusion.pkl" as improved_infusion_talent
-import "talents/infused_lifesteal.pkl" as infused_lifesteal_talent
-import "talents/essence_collector.pkl" as essence_collector_talent
-import "talents/flowers.pkl" as flowers_talent
-import "talents/cultivator_range.pkl" as cultivator_range_talent
-import "talents/bio_nourishment.pkl" as bio_nourishment_talent
-import "talents/recycling.pkl" as recycling_talent
-import "talents/spiderlings.pkl" as spiderlings_talent
-import "talents/tree_of_life.pkl" as tree_of_life_talent
-
-// topbar powers
-import "topbar/underground_transport.pkl" as underground_transport_topbar
-import "topbar/infuse.pkl" as infuse_topbar
-import "topbar/flowers.pkl" as flowers_topbar
-import "topbar/tree_of_life.pkl" as tree_of_life_topbar
-
-// buildings 
-import "buildings/root_colony.pkl" as root_colony
-import "buildings/root_colony_attacker.pkl" as root_colony_attacker
-import "buildings/extractor.pkl" as grell_extractor
-import "buildings/nourishing_pod.pkl" as nourishing_pod
-import "buildings/cultivator.pkl" as cultivator
-import "buildings/cultivator_attacker.pkl" as cultivator_attacker
-import "buildings/incubator.pkl" as incubator
-import "buildings/medium_incubator.pkl" as medium_incubator
-import "buildings/large_incubator.pkl" as large_incubator
-import "buildings/augmentation_pool.pkl" as augmentation_pool
-import "buildings/advanced_augmentation_pool.pkl" as advanced_augmentation_pool
-import "buildings/special_augmentation_pool.pkl" as special_augmentation_pool
-
-// units
-import "units/seedling.pkl" as seedling
-import "units/infused_seedling.pkl" as infused_seedling
-import "units/harvester.pkl" as harvester
-// import "units/stinger.pkl" as stinger
-// import "units/harbinger.pkl" as harbinger
-// import "units/weaver.pkl" as weaver
-// import "units/lasher.pkl" as lasher
-// import "units/skrelling.pkl" as skrelling
-// import "units/reaver.pkl" as reaver
-// import "units/thresher.pkl" as thresher
-// import "units/behemoth.pkl" as behemoth
-
-// heroes 
-import "heroes/grell_hero.pkl" as grell_hero
-
 slug = "grell"
 name = "Grell"
 
@@ -65,58 +13,58 @@ local building_defaults = new Mixin {
 }
 
 talents {
-  movement_speed_talent |> fac_defaults
-  improved_infusion_talent |> fac_defaults
-  infused_lifesteal_talent |> fac_defaults
-  essence_collector_talent |> fac_defaults
-  flowers_talent |> fac_defaults
+  import("talents/movement_speed.pkl") |> fac_defaults
+  import("talents/improved_infusion.pkl") |> fac_defaults
+  import("talents/infused_lifesteal.pkl") |> fac_defaults
+  import("talents/essence_collector.pkl") |> fac_defaults
+  import("talents/flowers.pkl") |> fac_defaults
 
-  cultivator_range_talent |> fac_defaults
-  bio_nourishment_talent |> fac_defaults
-  recycling_talent |> fac_defaults
-  spiderlings_talent |> fac_defaults
-  tree_of_life_talent |> fac_defaults
+  import("talents/cultivator_range.pkl") |> fac_defaults
+  import("talents/bio_nourishment.pkl") |> fac_defaults
+  import("talents/recycling.pkl") |> fac_defaults
+  import("talents/spiderlings.pkl") |> fac_defaults
+  import("talents/tree_of_life.pkl") |> fac_defaults
 }
 
 topbar {
-  underground_transport_topbar |> fac_defaults
-  infuse_topbar |> fac_defaults
-  flowers_topbar |> fac_defaults
-  tree_of_life_topbar |> fac_defaults
+  import("topbar/underground_transport.pkl") |> fac_defaults
+  import("topbar/infuse.pkl") |> fac_defaults
+  import("topbar/flowers.pkl") |> fac_defaults
+  import("topbar/tree_of_life.pkl") |> fac_defaults
 }
 
 
 buildings {
-  root_colony |> building_defaults
-  root_colony_attacker |> building_defaults
-  grell_extractor |> building_defaults
-  nourishing_pod |> building_defaults
-  cultivator |> building_defaults
-  cultivator_attacker |> building_defaults
-  incubator |> building_defaults
-  medium_incubator |> building_defaults
-  large_incubator |> building_defaults
-  augmentation_pool |> building_defaults
-  advanced_augmentation_pool |> building_defaults
-  special_augmentation_pool |> building_defaults
+  import("buildings/root_colony.pkl") |> building_defaults
+  import("buildings/root_colony_attacker.pkl") |> building_defaults
+  import("buildings/extractor.pkl") |> building_defaults
+  import("buildings/nourishing_pod.pkl") |> building_defaults
+  import("buildings/cultivator.pkl") |> building_defaults
+  import("buildings/cultivator_attacker.pkl") |> building_defaults
+  import("buildings/incubator.pkl") |> building_defaults
+  import("buildings/medium_incubator.pkl") |> building_defaults
+  import("buildings/large_incubator.pkl") |> building_defaults
+  import("buildings/augmentation_pool.pkl") |> building_defaults
+  import("buildings/advanced_augmentation_pool.pkl") |> building_defaults
+  import("buildings/special_augmentation_pool.pkl") |> building_defaults
 }
 
 units {
-  seedling |> fac_defaults
-  infused_seedling |> fac_defaults
-  harvester |> fac_defaults
-  // stinger
-  // harbinger
-  // weaver
-  // lasher
-  // skrelling
-  // reaver
-  // thresher
-  // behemoth
+  import("units/seedling.pkl") |> fac_defaults
+  import("units/infused_seedling.pkl") |> fac_defaults
+  import("units/harvester.pkl") |> fac_defaults
+  // import("units/stinger.pkl") |> fac_defaults
+  // import("units/harbinger.pkl") |> fac_defaults
+  // import("units/weaver.pkl") |> fac_defaults
+  // import("units/lasher.pkl") |> fac_defaults
+  // import("units/skrelling.pkl") |> fac_defaults
+  // import("units/reaver.pkl") |> fac_defaults
+  // import("units/thresher.pkl") |> fac_defaults
+  // import("units/behemoth.pkl") |> fac_defaults
 }
 
 heroes {
-  grell_hero |> fac_defaults
+  import("heroes/grell_hero.pkl") |> fac_defaults
 }
 
 cross_faction_heroes {

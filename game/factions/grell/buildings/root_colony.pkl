@@ -1,7 +1,7 @@
 amends ".../engine/building/base.pkl"
 
 name = "Root Colony"
-role = "Gargantuan Glowing Tree"
+flavor = "Gargantuan Glowing Tree"
 description = "Grows flowers in its attacker form"
 hotkey = "q"
 creates {

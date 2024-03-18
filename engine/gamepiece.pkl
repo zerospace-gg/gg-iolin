@@ -10,7 +10,7 @@ import "types.pkl" as $t
 
 /// short description of the purpose of this, to be used in summaries in UI. Many of these won't be in game. 
 /// examples: "fast melee attacker" for a unit, "vision buff" for an upgrade, etc
-role: String = "Submit your suggestion on ZSGG Discord!"
+flavor: String = "Submit your suggestion on ZSGG Discord!"
 
 /// hexite cost to build. 0 for gamepieces that are cast
 hexite_cost: UInt? 

@@ -1,6 +1,5 @@
 amends ".../engine/building/extractor.pkl"
 name = "Grell Extractor"
-role = "Digglebloomer"
 created_by {
   "root-colony"
   "root-colony-attacker"
