@@ -1,6 +1,6 @@
 amends ".../engine/ability/talent.pkl"
 
-import "../topbar/tree-of-life.pkl" as tbtol
+import "../topbar/tree_of_life.pkl" as tbtol
 
 slug = "tree-of-life-talent"
 name = "Tree of Life"

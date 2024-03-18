@@ -8,9 +8,6 @@ import "ability/passive.pkl" as Passive
 
 import "types.pkl" as $t
 
-/// Faction is required
-faction: $t.Faction
-
 /// short description of the purpose of this, to be used in summaries in UI. Many of these won't be in game. 
 /// examples: "fast melee attacker" for a unit, "vision buff" for an upgrade, etc
 role: String = "Submit your suggestion on ZSGG Discord!"
@@ -24,7 +21,7 @@ energy_cost: UInt?
 topbar_cost: UInt?
 build_time: UInt?
 rebuildable: Boolean?
-rebuild_time: UInt(rebuildable == true)?
+rebuild_time: UInt?
 domain: $t.DomainType = "ground"
 
 hotkey: $t.HotKey?
@@ -36,7 +33,7 @@ gathers_rich_flux: Float?
 gathers_hexite: Float?
 gathers_empty_hexite: Float?
 
-supply: UInt((i) -> isUnit())?
+supply: UInt?
 hp: UInt?
 vision: UInt?
 speed: UInt?

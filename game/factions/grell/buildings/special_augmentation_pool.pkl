@@ -1,7 +1,7 @@
 amends ".../engine/building/tech.pkl"
 
 faction = "grell"
-name = "Advanced Augmentation Pool"
+name = "Special Augmentation Pool"
 tier = "T3.5"
 
 provides_upgrades_for { 

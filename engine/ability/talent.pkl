@@ -2,7 +2,7 @@ module talent
 extends "ability.pkl"
 import "../types.pkl" as $t
 
-ability_type = "faction-talent"
+ability_type = "talent"
 activation_type = "passive"
 
 /// faction is required for talents

@@ -8,7 +8,7 @@ activation_type: "auto" | "activated" | "passive" =
   if (primary) "auto" 
   else "activated"
 
-ability_type: "attack" | "heal" | "spell" | "switch-attack" | "toggle-siege" | "talent" | "topbar-ability" = if (primary) "attack" else null
+ability_type: "attack" | "heal" | "spell" | "switch-attack" | "toggle-siege" | "talent" | "topbar-power" = if (primary) "attack" else null
 
 fixed subtype: String = 
   let (l = List(ability_type, activation_type)) 
@@ -21,7 +21,7 @@ toggles_mode: String?
 energy_cost: UInt?
 energy_type: $t.EnergyType?
 /// also called reload_time
-cooldown: Float?
+cooldown: Number?
 cooldown_at_build: Boolean = true
 duration: Float?
 range: UInt?
@@ -32,8 +32,9 @@ ability_of: String?
 num_casts: UInt?
 shots_per_cast: UInt?
 
-local function x_per_sec(val: UInt?, num: UInt?, shots: UInt?, cd: Float) =
+local function x_per_sec(val: UInt?, num: UInt?, shots: UInt?, cd: Number?) =
   if (val == null) null else 
+  if (cd == null) null else
   let (v = val.toFloat())
   let (n = (num ?? 1).toFloat())
   let (s = (shots ?? 1).toFloat())

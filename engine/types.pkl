@@ -55,7 +55,7 @@ typealias HotKey = "q" | "w" | "e" | "r" | "t" | "a" | "s" | "d" | "f" | "g" | "
 typealias ArmorType = "none" | "light" | "medium" | "heavy"
 
 typealias DomainType = "air" | "ground"
-typealias AllyDomainType = "ally/air" | "ally/ground"
+typealias AllyDomainType = "friendly/air" | "friendly/ground"
 typealias TargetType = DomainType | AllyDomainType | "location" | "self" | "location/area" | "location/self"
 
 typealias EnergyType = "classic" | "abes" | "topbar-power"

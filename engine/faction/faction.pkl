@@ -1,6 +1,10 @@
 abstract module faction
 extends "../data.pkl"
-import "talent.pkl"
+import "../ability/talent.pkl" as Talent
+import "../ability/topbar.pkl" as TopBarPower
+import "../building/building.pkl" as Building
+import "../unit/unit.pkl" as Unit
+import "../unit/hero.pkl" as Hero
 
 fixed type = "faction"
 fixed subtype = faction_type
@@ -12,17 +16,29 @@ typealias FactionType = "main" | "mercenary" | "ai"
 /// whether or not this type should be playable
 fixed playable = faction_type != "ai"
 
+local df = this.slug
 /// talents. 10 for main faction, 5 for mercs.
-talents: Listing<String>
+talents: Listing<Talent> = new Listing<Talent> {
+  default { faction = df }
+}
 
 /// topbar abilities. should be 4.
-topbar: Listing<String>
-
-/// which heroes the player can choose if they select this faction
-heroes: Listing<String>
-
-/// all of the units that can be built or cast by this faction, including its worker and harvester
-units: Listing<String>
+topbar: Listing<TopBarPower> = new Listing<TopBarPower> {
+  default { faction = df }
+}
 
 /// all of the buildings that can be built by this faction, including its base and extractor
-buildings: Listing<String>
+buildings: Listing<Building> = new Listing<Building> {
+  default { faction = df }
+}
+
+/// all of the units that can be built or cast by this faction, including its worker and harvester
+units: Listing<Unit> = new Listing<Unit> {
+  default { faction = df }
+}
+
+/// which heroes the player can choose if they select this faction
+heroes: Listing<Hero>
+
+/// cross-faction heroes available to this faction
+cross_faction_heroes: Listing<String> 

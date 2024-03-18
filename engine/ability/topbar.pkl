@@ -4,7 +4,7 @@ extends "ability.pkl"
 import "../types.pkl" as $t
 
 fixed subtype = List(super.subtype, topbar_type).join("/")
-ability_type = "topbar_power"
+ability_type = "topbar-power"
 activation_type = "activated"
 
 faction: $t.Faction

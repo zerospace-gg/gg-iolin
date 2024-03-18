@@ -4,16 +4,16 @@ slug = "chakru"
 name = "Cha'Kru Kingdom"
 
 talents {
-  "hunt"
-  "heavy-focus"
-  "light-armor"
-  "ready-for-hunt"
+  // "hunt"
+  // "heavy-focus"
+  // "light-armor"
+  // "ready-for-hunt"
 }
 
 units {
-  "chakru-crab"
-  "chakru-cultist"
-  "chakru-warrior"
-  "chakru-rageborn"
-  "chakru-wurm"
+  // "chakru-crab"
+  // "chakru-cultist"
+  // "chakru-warrior"
+  // "chakru-rageborn"
+  // "chakru-wurm"
 }
