@@ -8,7 +8,7 @@ activation_type: "auto" | "activated" | "passive" =
   if (primary) "auto" 
   else "activated"
 
-ability_type: "attack" | "heal" | "spell" | "switch-attack" | "toggle-siege" = if (primary) "attack" else null
+ability_type: "attack" | "heal" | "spell" | "switch-attack" | "toggle-siege" | "talent" | "topbar-ability" = if (primary) "attack" else null
 
 fixed subtype: String = 
   let (l = List(ability_type, activation_type)) 
@@ -27,6 +27,7 @@ duration: Float?
 range: UInt?
 /// also called damage point, attack delay, or cast point
 delay: Float?
+ability_of: String?
 
 num_casts: UInt?
 shots_per_cast: UInt?

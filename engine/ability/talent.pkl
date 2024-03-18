@@ -1,9 +1,12 @@
 module talent
-extends "data.pkl"
+extends "ability.pkl"
+import "../types.pkl" as $t
 
-fixed type = "talent"
+ability_type = "faction-talent"
+activation_type = "passive"
 
-fixed subtype = if (level == 5) "level-5-ultimate" else "level-\(level)"
+/// faction is required for talents
+faction: $t.Faction
 
 /// the talent level / rank / row number
 level: TalentLevel

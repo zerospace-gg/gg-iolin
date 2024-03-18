@@ -10,9 +10,11 @@ transforms_from { "cultivator" }
 transforms_into = null
 created_by = null
 
-primary_attack {
-  damage = 12 
-  shots_per_cast = 3
-  cooldown = 3.5
-  range = 1500
+attacks { 
+  new {
+    damage = 12 
+    shots_per_cast = 3
+    cooldown = 3.5
+    range = 1500
+  }
 }

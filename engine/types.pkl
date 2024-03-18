@@ -58,4 +58,4 @@ typealias DomainType = "air" | "ground"
 typealias AllyDomainType = "ally/air" | "ally/ground"
 typealias TargetType = DomainType | AllyDomainType | "location" | "self" | "location/area" | "location/self"
 
-typealias EnergyType = "classic" | "abes"
+typealias EnergyType = "classic" | "abes" | "topbar-power"

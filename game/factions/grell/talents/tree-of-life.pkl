@@ -1,4 +1,4 @@
-amends ".../engine/talent.pkl"
+amends ".../engine/ability/talent.pkl"
 
 import "../topbar/tree-of-life.pkl" as tbtol
 

@@ -57,8 +57,20 @@ provides_upgrades_for: Listing<String>(isDistinct)?
 transforms_from: Listing<String>(isDistinct)?
 transforms_into: Listing<String>(isDistinct)?
 
-primary_attack: Attack?
-secondary_attack: Attack?
-primary_heal: Heal?
-spells: Listing<Spell>?
-passives: Listing<Passive>?
+local df = this.faction
+local ds = this.slug
+
+attacks: Listing<Attack> = new Listing<Attack> {
+  default { faction = df; ability_of = ds }
+}
+
+heals: Listing<Heal> = new Listing<Heal> {
+  default { faction = df; ability_of = ds }
+}
+
+spells: Listing<Spell> = new Listing<Spell> {
+  default { faction = df; ability_of = ds }
+}
+passives: Listing<Passive> = new Listing<Passive> {
+  default { faction = df; ability_of = ds }
+}

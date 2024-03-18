@@ -1,4 +1,4 @@
-amends ".../engine/talent.pkl"
+amends ".../engine/ability/talent.pkl"
 
 slug = "spiderlings"
 name = "Spiderlings"

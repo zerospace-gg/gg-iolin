@@ -9,8 +9,10 @@ transforms_into = null
 transforms_from { "root-colony" }
 build_time = 5
 
-primary_attack {
-  damage = 55
-  cooldown = 1.0
-  range = 1800
+attacks {
+  new {
+    damage = 55
+    cooldown = 1.0
+    range = 1800
+  }
 }
