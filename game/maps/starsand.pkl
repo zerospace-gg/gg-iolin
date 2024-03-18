@@ -1,8 +1,0 @@
-amends ".../engine/map.pkl"
-
-slug = "starsand"
-name = "Starsand"
-map_type = "1v1"
-size = "large"
-xp_towers = 3
-flux_distance = "close"

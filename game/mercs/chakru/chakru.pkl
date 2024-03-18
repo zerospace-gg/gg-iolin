@@ -1,4 +1,4 @@
-amends ".../engine/faction/main.pkl"
+amends ".../engine/faction/merc.pkl"
 
 slug = "chakru"
 name = "Cha'Kru Kingdom"

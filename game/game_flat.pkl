@@ -1,7 +1,0 @@
-module game_flat
-import "../engine/gamepiece.pkl"
-import "../engine/ability.pkl"
-
-hidden everything = import*("*/**.pkl").toMap().values
-
-data = everything.toListing()

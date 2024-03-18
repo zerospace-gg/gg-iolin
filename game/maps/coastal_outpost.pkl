@@ -1,8 +1,0 @@
-amends ".../engine/map.pkl"
-
-slug = "coastal-outpost"
-name = "Coastal Outpost"
-map_type = "1v1"
-size = "normal"
-xp_towers = 2
-flux_distance = "medium-far"

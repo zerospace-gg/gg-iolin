@@ -1,0 +1,48 @@
+import  ".../engine/map.pkl" as ZSMap
+
+maps = new Listing<ZSMap> {
+  new {
+    slug = "coastal-outpost"
+    name = "Coastal Outpost"
+    map_type = "1v1"
+    size = "normal"
+    xp_towers = 2
+    flux_distance = "medium-far"
+  }
+
+  new {
+    slug = "mountain-peak"
+    name = "Mountain Peak"
+    map_type = "1v1"
+    size = "small"
+    xp_towers = 3
+    flux_distance = "medium-far"
+  }
+
+  new {
+    slug = "starsand"
+    name = "Starsand"
+    map_type = "1v1"
+    size = "large"
+    xp_towers = 3
+    flux_distance = "close"
+  }
+
+  new {
+    slug = "swamp-fever"
+    name = "Swamp Fever"
+    map_type = "1v1"
+    size = "small"
+    xp_towers = 2
+    flux_distance = "distant"
+  }
+
+  new {
+    slug = "plains"
+    name = "Plains"
+    map_type = "2v2"
+    size = "normal"
+    xp_towers = 3
+    flux_distance = "near"
+  }
+}

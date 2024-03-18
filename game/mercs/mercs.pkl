@@ -1,0 +1,7 @@
+module all_mercs
+
+import ".../engine/faction/merc.pkl" as Mercenary
+
+mercs: Listing<Mercenary> = new Listing<Mercenary> {
+  import("chakru/chakru.pkl")
+}

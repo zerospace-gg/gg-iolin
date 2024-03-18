@@ -11,7 +11,7 @@ fixed subtype = faction_type
 
 /// the three core types of faction
 hidden fixed faction_type: FactionType
-typealias FactionType = "main" | "mercenary" | "ai"
+typealias FactionType = "main" | "merc" | "ai"
 
 /// whether or not this type should be playable
 fixed playable = faction_type != "ai"

@@ -1,8 +1,0 @@
-amends ".../engine/map.pkl"
-
-slug = "mountain-peak"
-name = "Mountain Peak"
-map_type = "1v1"
-size = "small"
-xp_towers = 3
-flux_distance = "medium-far"
