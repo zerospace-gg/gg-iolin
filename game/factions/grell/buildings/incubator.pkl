@@ -1,6 +1,5 @@
 amends ".../engine/building/production.pkl"
 
-faction = "grell"
 name = "Incubator"
 tier = "T1"
 creates {

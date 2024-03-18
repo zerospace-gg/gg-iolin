@@ -3,6 +3,5 @@ amends ".../engine/ability/talent.pkl"
 slug = "spiderlings"
 name = "Spiderlings"
 description = "Your units spawn spiderlings on death. The amount scales with unit's supply cost."
-faction = "grell"
 column = 2 
 level = 4

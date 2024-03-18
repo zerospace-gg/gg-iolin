@@ -4,7 +4,6 @@ role = "Mrs. Sproutbriar"
 energy = 100
 build_time = 15 
 hp = 625
-faction = "grell"
 
 heals {
   new {

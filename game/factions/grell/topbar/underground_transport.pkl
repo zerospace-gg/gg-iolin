@@ -4,7 +4,6 @@ slug = "underground-transport"
 name = "Underground Transport"
 topbar_type = "recall"
 description = "Call a worm to transport your units to the nearest root colony. Click to select designated location, after a few seconds a worm will arrive and devour your units"
-faction = "grell"
 slot = 1
 cost = 5
 cooldown = 120

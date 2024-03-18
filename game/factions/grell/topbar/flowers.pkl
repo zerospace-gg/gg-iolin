@@ -5,7 +5,6 @@ name = "Flowers"
 topbar_type = "ultimate"
 description = "Flowers deal damage to enemies and spawn hallucinations of friendly units. Enemy structures are stunned. 20s duration."
 cost = 50
-faction = "grell"
 slot = 3
 cooldown = 120
 unlocked_by { "flowers-talent" }

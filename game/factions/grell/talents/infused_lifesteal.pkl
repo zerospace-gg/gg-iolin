@@ -3,6 +3,5 @@ amends ".../engine/ability/talent.pkl"
 slug = "infused-lifesteal"
 name = "Infused Lifesteal"
 description = "Infused units gain 15% lifesteal"
-faction = "grell"
 column = 1 
 level = 3

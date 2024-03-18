@@ -1,6 +1,5 @@
 amends ".../engine/building/tech.pkl"
 
-faction = "grell"
 name = "Augmentation Pool"
 tier = "T1.5"
 

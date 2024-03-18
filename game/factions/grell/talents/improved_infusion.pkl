@@ -3,6 +3,5 @@ amends ".../engine/ability/talent.pkl"
 slug = "improved-infusion"
 name = "Improved Infusion"
 description = "+10% movement speed"
-faction = "grell"
 column = 1 
 level = 2

@@ -3,7 +3,6 @@ import ".../engine/infuse.pkl" as $i
 
 slug = "seedling"
 name = "Seedling"
-faction = "grell"
 domain = "ground"
 role = "Adorable Sentient Structure Seed"
 description = "Seedlings are built automatically from your Root Colonies, and are consumed in the creation of structures. Up to 5 of them are generated per base. When infused it becomes the best scouting unit in ZeroSpace."

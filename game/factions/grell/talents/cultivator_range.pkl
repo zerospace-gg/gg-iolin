@@ -2,6 +2,5 @@ amends ".../engine/ability/talent.pkl"
 
 name = "Cultivator Range"
 description = "+100% Cultivator vision and biomass generation range"
-faction = "grell"
 column = 2 
 level = 1
