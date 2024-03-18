@@ -1,14 +1,12 @@
-amends ".../engine/unit.pkl" 
+amends ".../engine/unit/worker.pkl" 
 import ".../engine/infuse.pkl" as $i
 
 slug = "seedling"
 name = "Seedling"
 faction = "grell"
-description = "Seedlings are built automatically from your Root Colonies, and are consumed in the creation of structures."
 domain = "ground"
-role = "Adorable Sentient Seed"
-unit_type = "worker"
-tier = "T0"
+role = "Adorable Sentient Structure Seed"
+description = "Seedlings are built automatically from your Root Colonies, and are consumed in the creation of structures."
 hp = 20
 speed = 350
 build_time = 5
@@ -33,6 +31,6 @@ creates {
   "special-augmentation-pool"
 }
 
-notes { "speed while not on grass is estimated to be 150. Seedlings lose 0.133 HP/sec when not on grass." }
+notes { "While not on biomass, has 150 speed and loses 0.133 HP/s (1 HP every 7s)" }
 
 transforms_into { "infused-seedling" }

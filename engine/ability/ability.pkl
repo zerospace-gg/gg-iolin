@@ -1,6 +1,6 @@
-open module ability
-extends "data.pkl"
-import "types.pkl" as $t
+abstract module ability
+extends "../data.pkl"
+import "../types.pkl" as $t
 
 fixed type: String = "ability"
 
@@ -22,14 +22,27 @@ energy_cost: UInt?
 energy_type: $t.EnergyType?
 /// also called reload_time
 cooldown: Float?
+cooldown_at_build: Boolean = true
 duration: Float?
 range: UInt?
 /// also called damage point, attack delay, or cast point
 delay: Float?
+
+num_casts: UInt?
+shots_per_cast: UInt?
+
+local function x_per_sec(val: UInt?, num: UInt?, shots: UInt?, cd: Float) =
+  if (val == null) null else 
+  let (v = val.toFloat())
+  let (n = (num ?? 1).toFloat())
+  let (s = (shots ?? 1).toFloat())
+  ((v * n * s) / cd).round().toInt()
+
 damage: UInt?
-num_casts: UInt = 1
-shots_per_cast: UInt = 1
+damage_per_sec: UInt? = x_per_sec(damage, num_casts, shots_per_cast, cooldown)
 healing: UInt?
+healing_per_sec: UInt? = x_per_sec(healing, num_casts, shots_per_cast, cooldown)
+
 area: UInt?
 dot_damage: UInt?
 dot_time: Float?
@@ -37,4 +50,4 @@ splash_amount: UInt?
 splash_radius: UInt?
 bonus_percent: UInt?
 bonus_vs_tags: Listing<String>?
-autocast: "always" | "toggle" | "never" = "never"
+autocast: "always" | "toggle" | "never" = if (activation_type == "auto") "always" else "never"

@@ -48,7 +48,7 @@ typealias Faction = MainFaction | MercFaction | AIFaction
 typealias MercTier = "T1" | "T2" | "T3"
 
 /// T0 is workers/harvs
-typealias Tier = "T0" | "T1" | "T2" | "T3" | "T1.5" | "T2.5" | "T3.5"
+typealias Tier = "T0" | "T1" | "T2" | "T3" | "T1.5" | "T2.5" | "T3.5" | "Hero"
 
 typealias HotKey = "q" | "w" | "e" | "r" | "t" | "a" | "s" | "d" | "f" | "g" | "h" | "z" | "x" | "c" | "ctrl-q" | "ctrl-w" | "ctrl-e" | "ctrl-r"
 

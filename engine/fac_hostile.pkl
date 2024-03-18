@@ -1,6 +1,0 @@
-
-module fac_main 
-
-extends "faction.pkl"
-
-fixed faction_type = "map:hostile"

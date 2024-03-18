@@ -36,7 +36,7 @@ fixed type: $t.TopType
 fixed subtype: $t.SubType
 
 /// faction name. required if type isn't map. should not be defined for faction type
-faction: $t.Faction | "" = ""
+faction: $t.Faction?
 
 /// tags used in calculating effects of parts of the game, such as `unit` or `vehicle` or `massive`
 hidden tag: Listing<String>(isDistinct)

@@ -1,4 +1,4 @@
-amends ".../engine/fac_main.pkl"
+amends ".../engine/faction/main.pkl"
 
 slug = "grell"
 name = "Grell"

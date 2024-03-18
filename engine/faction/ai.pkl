@@ -1,0 +1,6 @@
+
+module ai_faction
+
+extends "faction.pkl"
+
+fixed faction_type = "ai"

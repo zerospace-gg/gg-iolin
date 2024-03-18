@@ -1,0 +1,2 @@
+extends "unit.pkl"
+unit_type = "army"

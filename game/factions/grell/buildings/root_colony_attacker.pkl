@@ -1,9 +1,8 @@
 amends "root_colony.pkl"
-import ".../engine/attack.pkl"
 
 tag { "static-defense" }
 name = "Root Colony Attacker"
-description = "Base with built-in Static Defense"
+description = "Static Defense Base Tree"
 hexite_cost = 200
 created_by = null
 transforms_into = null

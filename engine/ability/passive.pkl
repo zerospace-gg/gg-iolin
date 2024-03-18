@@ -1,5 +1,5 @@
-module spell 
+module passive 
 extends "ability.pkl"
 
 ability_type = "spell"
-activation_type = "active"
+activation_type = "passive"

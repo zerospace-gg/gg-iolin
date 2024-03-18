@@ -1,4 +1,4 @@
-module fac_merc 
+module merc_faction 
 
 extends "faction.pkl"
 

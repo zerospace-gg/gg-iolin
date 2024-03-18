@@ -1,6 +1,6 @@
-open module base
+module base
 extends "building.pkl"
-tags { "base" }
+tag { "base" }
 hp = 2000 
 hexite_cost = 350
 building_type = "base"

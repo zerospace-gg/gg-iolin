@@ -1,13 +1,15 @@
 /// gamepiece is the superclass for units, buildings, etc, and represents an on-screen, in-game object. 
 abstract module gamepiece 
 extends "data.pkl"
-import "ability.pkl"
-import "attack.pkl" as Attack
-import "heal.pkl" as Heal
-import "spell.pkl" as Spell
-import "passive.pkl" as Passive
+import "ability/attack.pkl" as Attack
+import "ability/heal.pkl" as Heal
+import "ability/spell.pkl" as Spell
+import "ability/passive.pkl" as Passive
 
 import "types.pkl" as $t
+
+/// Faction is required
+faction: $t.Faction
 
 /// short description of the purpose of this, to be used in summaries in UI. Many of these won't be in game. 
 /// examples: "fast melee attacker" for a unit, "vision buff" for an upgrade, etc
@@ -27,6 +29,12 @@ domain: $t.DomainType = "ground"
 
 hotkey: $t.HotKey?
 tier: $t.Tier
+
+gathers_flux: Float?
+gathers_rich_flux: Float?
+
+gathers_hexite: Float?
+gathers_empty_hexite: Float?
 
 supply: UInt((i) -> isUnit())?
 hp: UInt?

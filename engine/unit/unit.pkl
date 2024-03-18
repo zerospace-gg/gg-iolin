@@ -1,7 +1,7 @@
-module unit 
-extends "gamepiece.pkl"
+abstract module unit 
+extends "../gamepiece.pkl"
 
-import "infuse.pkl" as $i
+import "../infuse.pkl" as $i
 
 fixed type = "unit"
 fixed subtype = unit_type
@@ -15,7 +15,7 @@ massive: Boolean = false
 
 local tl = tags.toList()
 
-infusable: Boolean = unit_type != "worker"  && !massive
+infusable: Boolean = unit_type == "army" && !massive
 
 infuse_rule: $i.InfuseRule? = 
   if (!infusable) 

@@ -1,5 +1,5 @@
 abstract module faction
-extends "data.pkl"
+extends "../data.pkl"
 import "talent.pkl"
 
 fixed type = "faction"

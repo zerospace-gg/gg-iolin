@@ -1,0 +1,4 @@
+extends "unit.pkl"
+unit_type = "hero"
+tier = "Hero"
+tag { "unit" }

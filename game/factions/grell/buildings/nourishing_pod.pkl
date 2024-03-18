@@ -1,0 +1,15 @@
+amends ".../engine/building/supply.pkl"
+name = "Nourishing Pod"
+energy = 100
+build_time = 15 
+hp = 625
+faction = "grell"
+
+primary_heal {
+  healing = 15
+  cooldown = 1.0
+  energy_cost = 4
+  energy_type = "classic"
+}
+
+notes { "Heal range not listed in UI, needs to be investigated" }

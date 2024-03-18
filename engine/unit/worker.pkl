@@ -1,0 +1,3 @@
+extends "unit.pkl"
+unit_type = "worker"
+tier = "T0"

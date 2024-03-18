@@ -1,15 +1,16 @@
 abstract module building 
-extends "gamepiece.pkl"
-import "types.pkl" as $t
+extends "../gamepiece.pkl"
+import "../types.pkl" as $t
 
 fixed type = "building"
 fixed subtype = building_type
-tags { "building" }
+tag { "building" }
 
 hidden building_type: "base" | "extractor" | "supply" | "production" | "tech" | "special"
+speed = 0
 
 tier: $t.Tier?
 
 vision = 1800
 
-armor = 2
+armor = 1

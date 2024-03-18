@@ -1,0 +1,14 @@
+amends ".../engine/building/special.pkl"
+name = "Cultivator"
+build_time = 8 
+hexite_cost = 5
+hp = 250
+faction = "grell"
+hotkey = "e"
+provides_biomass = 1500
+transforms_into { "cultivator_attacker" }
+
+created_by { 
+  "seedling"
+  "grell-harvester"
+}

@@ -1,4 +1,4 @@
-module fac_main 
+module main_faction 
 
 extends "faction.pkl"
 
