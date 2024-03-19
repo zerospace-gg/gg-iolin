@@ -10,6 +10,26 @@ talents {
     column = 3
     faction = faction_id
   }
+  new {
+    name = "Topbar Energy Buff"
+    description = "+100% max power, +100% passive power gain"
+    level = 1
+  }
+  new {
+    name = "Unit energy regeneration"
+    description = "+100% unit energy regeneration"
+    level = 2
+  }
+  new {
+    name = "Power from Towers"
+    description = "Gain topbar power when holding xp towers (1 power every 10s for each tower)"
+    level = 3
+  }
+  new {
+    name = "Shield Explosion"
+    description = "Shields explode when depleted. Nearby enemy units take 50 damage and are slowed by 50%. Last 3s, 60s cooldown"
+    level = 4
+  }
 }
 
 units {

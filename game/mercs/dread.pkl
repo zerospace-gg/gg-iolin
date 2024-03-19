@@ -12,6 +12,30 @@ talents {
     column = 3
     faction = faction_id
   }
+
+  new {
+    name = "Pillage"
+    description = "Destroying enemy harvesters and buildings provides resources. 33% cost."
+    level = 1
+  }
+
+  new {
+    name = "Pillage More Mercs"
+    description = "Destroying enemy harvesters and buildings reduces merc cooldown 40s per havester, 60s per structure"
+    level = 2
+  }
+
+  new {
+    name = "Advanced Sensors"
+    description = "+40% unit vision"
+    level = 3
+  }
+
+  new {
+    name = "Cloak Buff"
+    description = "+25% damage and movement speed for cloaked units"
+    level = 4
+  }
 }
 
 units {

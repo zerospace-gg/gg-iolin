@@ -10,6 +10,26 @@ talents {
     column = 3
     faction = faction_id
   }
+  new {
+    name = "Merc Cooldown"
+    description = "-50% mercenary production cooldown"
+    level = 1
+  }
+  new {
+    name = "Lifesteal"
+    description = "+7% lifesteal to all units"
+    level = 2
+  }
+  new {
+    name = "Valkaru Rage"
+    description = "Valkaru mercenaries get stronger when friendly units die nearyby (up to +100% attack speed, 10s duration)"
+    level = 3
+  }
+  new {
+    name = "Stronger Hero"
+    description = "+100% attack speed, +25% damage reduction, +25% movement speed (half effect on Legion heroes)"
+    level = 4
+  }
 }
 
 units {
