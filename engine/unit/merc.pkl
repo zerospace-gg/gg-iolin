@@ -1,5 +1,0 @@
-extends "unit.pkl"
-import "../types.pkl" as $t
-unit_type = "merc"
-tag { "merc" }
-tier: $t.MercTier

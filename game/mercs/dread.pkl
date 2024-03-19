@@ -1,5 +1,5 @@
 amends ".../engine/faction/merc.pkl"
-import ".../engine/unit/merc.pkl" as Merc
+import ".../engine/unit/army.pkl" as Army
 
 
 slug = "dread"
@@ -17,5 +17,6 @@ talents {
 units {
   default { 
     faction = faction_id 
+    tag { "merc" }
   }
 }

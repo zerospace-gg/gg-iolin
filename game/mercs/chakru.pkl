@@ -1,34 +1,33 @@
 amends ".../engine/faction/merc.pkl"
-import ".../engine/unit/merc.pkl" as Merc
+import ".../engine/unit/army.pkl" as Army
 
 
 slug = "chakru"
 name = "Cha'Kru Kingdom"
-local faction_id = slug
+local chakru = slug
 
 talents {
-  default { key ->
+  default { 
     tag { "merc" }
     column = 3
-    faction = faction_id
-    slug = key
+    faction = chakru
   }
-  ["hunt"] {
+  new {
     name = "Hunt"
     description = "Units gain stealth after not moving for 5s"
     level = 1
   }
-  ["heavy-focus"] {
+  new {
     name = "Heavy Focus"
     description = "Heavy units take 2 damage less"
     level = 2
   }
-  ["light-armor"] {
+  new {
     name = "Light Armor"
     description = "Light units gain 30% health"
     level = 3
   }
-  ["ready-for-hunt"] {
+  new {
     name = "Ready for Hunt"
     description = "Attack-Based energy (ABES) is also gained outside combat (1 every 4s)"
     level = 4
@@ -36,13 +35,11 @@ talents {
 }
 
 units {
-  default { key ->
-    faction = faction_id 
+  default { 
+    faction = chakru 
     tag { "merc" }
-    slug = key
   }
-
-  ["chakru-crab"] = new Merc {
+  new Army {
     name = "Cha'Kru Crab"
     hexite_cost = 250
     tier = "T1"
@@ -65,7 +62,7 @@ units {
     }
   }
 
-  ["chakru-cultist"] = new Merc {
+  new Army {
     tier = "T1"
     name = "Cha'Kru Cultist"
     hexite_cost = 100
@@ -91,7 +88,7 @@ units {
     }
   }
 
-  ["chakru-warrior"] = new Merc {
+  new Army {
     tier = "T1"
     name = "Cha'Kru Warrior"
     hexite_cost = 200
@@ -117,7 +114,7 @@ units {
     }
   }
 
-  ["chakru-rageborn"] = new Merc {
+  new Army {
     tier = "T2"
     name = "Cha'Kru Rageborn"
     flavor = "Stompy Boi"
@@ -145,7 +142,7 @@ units {
     }
   }
 
-  ["chakru-wurm"] = new Merc {
+  new Army {
     tier = "T3"
     name = "Cha'Kru Wurm"
     flavor = "Bitey-Faced Battlefield Divider"

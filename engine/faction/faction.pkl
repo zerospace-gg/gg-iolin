@@ -18,15 +18,27 @@ fixed playable = faction_type != "ai"
 
 local faction_slug = this.slug
 /// talents. 10 for main faction, 5 for mercs.
-talents: Mapping<String, Talent>?
+talents: Listing<Talent> = new Listing<Talent> {
+  default { faction = faction_slug }
+}
 
 /// topbar abilities. should be 4.
-topbar: Mapping<String, TopBarPower>?
+topbar: Listing<TopBarPower> = new Listing<TopBarPower> {
+  default { faction = faction_slug }
+}
 
 /// all of the buildings that can be built by this faction, including its base and extractor
-buildings: Mapping<String, Building>?
-/// all of the units that can be built or cast by this faction, including its worker and harvester
-units: Mapping<String, Unit>?
-/// which heroes the player can choose if they select this faction
-heroes: Mapping<String, Hero>?
+buildings: Listing<Building> = new Listing<Building> {
+  default { faction = faction_slug }
+}
 
+/// all of the units that can be built or cast by this faction, including its worker and harvester
+units: Listing<Unit> = new Listing<Unit> {
+  default { faction = faction_slug }
+}
+
+/// which heroes the player can choose if they select this faction
+heroes: Listing<Hero>
+
+/// cross-faction heroes available to this faction
+cross_faction_heroes: Listing<String> 

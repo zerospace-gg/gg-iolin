@@ -8,7 +8,7 @@ fixed type = "unit"
 fixed subtype = unit_type
 
 tag { "unit" }
-hidden unit_type: "worker" | "harvester" | "army" | "hero" | "merc"
+hidden unit_type: "worker" | "harvester" | "army" | "hero"
 
 vision = 1800
 

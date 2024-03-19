@@ -2,9 +2,9 @@ module all_factions
 
 import ".../engine/faction/main.pkl" as Faction
 
-factions: Mapping<String, Faction> = new Mapping<String, Faction> {
-  ["grell"] = import("grell/grell.pkl")
-  ["legion"] = import("legion/legion.pkl")
-  ["protectorate"] = import("protectorate/protectorate.pkl")
-  ["xol"] = import("xol/xol.pkl")
+factions: Listing<Faction> = new Listing<Faction> {
+  import("grell/grell.pkl")
+  import("legion/legion.pkl")
+  import("protectorate/protectorate.pkl")
+  import("xol/xol.pkl")
 }

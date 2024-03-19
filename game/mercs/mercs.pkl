@@ -2,12 +2,12 @@ module all_mercs
 
 import ".../engine/faction/merc.pkl" as Mercenary
 
-mercs: Mapping<String, Mercenary> = new Mapping<String, Mercenary> {
-  ["arandi"] = import("arandi.pkl")
-  ["chakru"] = import("chakru.pkl")
-  ["dread"] = import("dread.pkl")
-  ["koru"] = import("koru.pkl")
-  ["marran"] = import("marran.pkl")
-  ["valkaru"] = import("valkaru.pkl")
-  ["mystery"] = import("mystery.pkl")
+mercs: Listing<Mercenary> = new Listing<Mercenary> {
+  import("arandi.pkl")
+  import("chakru.pkl")
+  import("dread.pkl")
+  import("koru.pkl")
+  import("marran.pkl")
+  import("valkaru.pkl")
+  import("mystery.pkl")
 }

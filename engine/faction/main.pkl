@@ -3,6 +3,3 @@ module main_faction
 extends "faction.pkl"
 
 fixed faction_type = "main"
-
-/// cross-faction heroes available to this faction
-cross_faction_heroes: Listing<String> 

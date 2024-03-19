@@ -1,7 +1,7 @@
 import  ".../engine/map.pkl" as ZSMap
 
-maps = new Mapping<String, ZSMap> {
-  ["coastal-outpost"] {
+maps = new Listing<ZSMap> {
+  new {
     slug = "coastal-outpost"
     name = "Coastal Outpost"
     map_type = "1v1"
@@ -10,7 +10,7 @@ maps = new Mapping<String, ZSMap> {
     flux_distance = "medium-far"
   }
 
-  ["mountain-peak"] {
+  new {
     slug = "mountain-peak"
     name = "Mountain Peak"
     map_type = "1v1"
@@ -19,7 +19,7 @@ maps = new Mapping<String, ZSMap> {
     flux_distance = "medium-far"
   }
 
-  ["starsand"] {
+  new {
     slug = "starsand"
     name = "Starsand"
     map_type = "1v1"
@@ -28,7 +28,7 @@ maps = new Mapping<String, ZSMap> {
     flux_distance = "close"
   }
 
-  ["swamp-fever"] {
+  new {
     slug = "swamp-fever"
     name = "Swamp Fever"
     map_type = "1v1"
@@ -37,7 +37,7 @@ maps = new Mapping<String, ZSMap> {
     flux_distance = "distant"
   }
 
-  ["plains"] {
+  new {
     slug = "plains"
     name = "Plains"
     map_type = "2v2"
