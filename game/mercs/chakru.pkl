@@ -1,0 +1,171 @@
+amends ".../engine/faction/merc.pkl"
+import ".../engine/unit/army.pkl" as Army
+
+
+slug = "chakru"
+name = "Cha'Kru Kingdom"
+local chakru = slug
+
+talents {
+  default { 
+    tag { "merc" }
+    column = 3
+    faction = chakru
+  }
+  new {
+    name = "Hunt"
+    description = "Units gain stealth after not moving for 5s"
+    level = 1
+  }
+  new {
+    name = "Heavy Focus"
+    description = "Heavy units take 2 damage less"
+    level = 2
+  }
+  new {
+    name = "Light Armor"
+    description = "Light units gain 30% health"
+    level = 3
+  }
+  new {
+    name = "Ready for Hunt"
+    description = "Attack-Based energy (ABES) is also gained outside combat (1 every 4s)"
+    level = 4
+  }
+}
+
+units {
+  default { 
+    faction = chakru 
+    tag { "merc" }
+  }
+  new Army {
+    name = "Cha'Kru Crab"
+    hexite_cost = 250
+    tier = "T1"
+    flux_cost = 0
+    build_count = 2
+    supply = 6
+    hp = 200
+    speed = 550
+    armor = 4
+    armor_type = "heavy"
+    attacks {
+      new {
+        damage = 18
+        shots_per_cast = 2
+        splash_percent = 50
+        splash_range = 100
+        cooldown = 1.3
+        range = 150
+      }
+    }
+  }
+
+  new Army {
+    tier = "T1"
+    name = "Cha'Kru Cultist"
+    hexite_cost = 100
+    flux_cost = 200
+    build_count = 2
+    supply = 6
+    hp = 250
+    armor_type = "light"
+    attacks {
+      new {
+        damage = 22
+        cooldown = 1.3
+        range = 1200
+      }
+    }
+    spells {
+      new {
+        name = "Heal"
+        energy_cost = 8
+        energy_type = "abes"
+        description = "Heals target for 250 HP and provides stealth and +25% movement speed for 10s"
+      }
+    }
+  }
+
+  new Army {
+    tier = "T1"
+    name = "Cha'Kru Warrior"
+    hexite_cost = 200
+    flux_cost = 100
+    build_count = 2
+    supply = 6
+    hp = 250
+    armor_type = "light"
+    attacks {
+      new {
+        damage = 40
+        cooldown = 1.75
+        range = 1000
+      }
+    }
+    spells {
+      new {
+        name = "Ghost Crabs"
+        energy_cost = 14
+        energy_type = "abes"
+        description = "Spawns 3 ghost crabs that last 30 seconds"
+      }
+    }
+  }
+
+  new Army {
+    tier = "T2"
+    name = "Cha'Kru Rageborn"
+    flavor = "Stompy Boi"
+    hexite_cost = 225
+    flux_cost = 125
+    build_count = 2
+    supply = 6
+    hp = 625
+    armor_type = "medium"
+    attacks {
+      new {
+        damage = 40
+        cooldown = 1.7
+        range = 200
+      }
+    }
+    spells {
+      new {
+        name = "Stomp"
+        area_range = 325
+        area_damage = 25
+        energy_cost = 4
+        energy_type = "abes"
+      }
+    }
+  }
+
+  new Army {
+    tier = "T3"
+    name = "Cha'Kru Wurm"
+    flavor = "Bitey-Faced Battlefield Divider"
+    description = "The Cha'Kru Wurm is a heavy melee bruiser with a powerful zoning ability: It can draw a line through the battlefield, separating an army into two halves. This Rift shoots out in a straight line from the Wurm, meaning positioning the Wurm before casting rift is vital for ensuring its effectiveness."
+    hexite_cost = 100
+    flux_cost = 250
+    build_count = 2
+    supply = 6
+    hp = 1000
+    armor_type = "heavy"
+    attacks {
+      new {
+        damage = 100
+        cooldown = 1.3
+        range = 100
+      }
+    }
+    spells {
+      new {
+        name = "Rift"
+        cooldown = 50.0
+        description = "Create a rift that pushes all units away and creates unpathable area for 7s"
+      }
+    }
+  }
+}

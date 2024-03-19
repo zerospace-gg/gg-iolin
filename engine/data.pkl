@@ -12,7 +12,9 @@ fixed id: $t.Id =
 
 /// a short but uniquely identifying string. Examples:
 /// `seedling`, `grell-harvester` (as multiple facs have a unit named harvester)
-slug: $t.Slug = name.toLowerCase().replaceAll(Regex("[^a-z0-9]"), "-")
+slug: $t.Slug = name.toLowerCase()
+  .replaceAll(Regex("'+"), "")
+  .replaceAll(Regex("[^a-z0-9]"), "-")
 
 /// nicely formatted display name, as it appears in game (with the exception of things without lore names yet)
 name: String 
