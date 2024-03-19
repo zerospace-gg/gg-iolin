@@ -37,4 +37,20 @@ units {
     faction = faction_id 
     tag { "merc" }
   }
+  new Army { 
+    name = "Valkaru Hound"
+    tier = "T1"
+  }
+  new Army { 
+    name = "Valkaru Shock Trooper"
+    tier = "T1"
+  }
+  new Army { 
+    name = "Valkaru Flame Walker"
+    tier = "T2"
+  }
+  new Army { 
+    name = "Valkaru Tow Bot"
+    tier = "T3"
+  }
 }

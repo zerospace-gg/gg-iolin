@@ -37,4 +37,25 @@ units {
     faction = faction_id 
     tag { "merc" }
   }
+
+  new Army { 
+    name = "Marran Hover Tank"
+    tier = "T1"
+  }
+  new Army { 
+    name = "Marran Sharpshooter"
+    tier = "T1"
+  }
+  new Army { 
+    name = "Marran Charger"
+    tier = "T1"
+  }
+  new Army { 
+    name = "Marran Badger"
+    tier = "T2"
+  }
+  new Army { 
+    name = "Marran Halo Tank"
+    tier = "T3"
+  }
 }

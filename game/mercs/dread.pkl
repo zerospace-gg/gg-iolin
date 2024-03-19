@@ -43,4 +43,25 @@ units {
     faction = faction_id 
     tag { "merc" }
   }
+
+  new Army { 
+    name = "Dread Raider"
+    tier = "T1"
+  }
+  new Army { 
+    name = "Dread Rover"
+    tier = "T1"
+  }
+  new Army { 
+    name = "Dread Sniper"
+    tier = "T1"
+  }
+  new Army { 
+    name = "Dread Hovercraft"
+    tier = "T2"
+  }
+  new Army { 
+    name = "Dread Flamer"
+    tier = "T3"
+  }
 }
