@@ -47,21 +47,132 @@ units {
   new Army { 
     name = "Dread Raider"
     tier = "T1"
+    hexite_cost = 250 
+    flux_cost = 0
+    supply = 6
+    hp = 175
+    speed = 575
+    armor_type = "light"
+    attacks {
+      new {
+        damage = 18
+        cooldown = 1.5
+        range = 800
+      }
+    }
+    spells {
+      new {
+        name = "Thieve"
+        cooldown = 60
+        description = "Steals 100 hexite from target extractor or harvester after 5 seconds. The owner does not lose resources."
+      }
+    }
   }
+
   new Army { 
     name = "Dread Rover"
     tier = "T1"
+    hexite_cost = 200
+    flux_cost = 50
+    supply = 6
+    hp = 275
+    armor_type = "light"
+    speed = 650
+    attacks {
+      new {
+        damage = 4
+        shots_per_cast = 2
+        cooldown = 0.47
+        range = 700
+      }
+    }
+    notes {
+      "close-up attack rate: 175%, close-up range: 225"
+    }
   }
+
   new Army { 
     name = "Dread Sniper"
     tier = "T1"
+    hexite_cost = 75
+    flux_cost = 225
+    supply = 8
+    hp = 125
+    shields = 125
+    armor_type = "light"
+    speed = 450
+    attacks {
+      new {
+        damage = 30
+        bonus_percent = 75
+        bonus_vs_tags { "armor:light" }
+        cooldown = 2.2 
+        range = 1500
+      }
+    }
+    spells {
+      new {
+        name = "Crippling Shot"
+        damage = 50
+        cooldown = 75.0
+        description = "deals 50 damage, slows target by 50% for 2 seconds"
+  
+      }
+    }
   }
+
   new Army { 
     name = "Dread Hovercraft"
     tier = "T2"
+    hexite_cost = 200
+    flux_cost = 125
+    supply = 8
+    hp = 375
+    armor_type = "medium"
+    speed = 550
+    attacks { 
+      new {
+        damage = 10 
+        shots_per_cast = 3
+        num_casts = 2
+        cooldown = 3.0
+        range = 900
+      }
+    }
+    spells {
+      new {
+        name = "Lay Mines"
+        cooldown = 75.0
+        range = 400
+        description = "lay 3 mines which deal 30 damage and slow enemies upon contact"
+      }
+    }
+    notes {
+      "3 mines max"
+    }
   }
+
   new Army { 
     name = "Dread Flamer"
     tier = "T3"
+    hexite_cost = 100
+    flux_cost = 200
+    supply = 8
+    hp = 1250
+    armor_type = "heavy"
+    speed = 650
+    attacks { 
+      new {
+        damage = 8 
+        shots_per_cast = 2
+        bonus_percent = 25
+        bonus_vs_tags { "armor:light"; "building" }
+        cooldown = 0.25
+        range = 350
+      }
+    }
+    notes {
+      "flame arc angle: 40"
+    }
   }
 }
