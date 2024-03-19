@@ -1,0 +1,20 @@
+amends ".../engine/faction/merc.pkl"
+import ".../engine/unit/army.pkl" as Army
+
+name = "Marran"
+local faction_id = this.slug
+
+talents {
+  default { 
+    tag { "merc" }
+    column = 3
+    faction = faction_id
+  }
+}
+
+units {
+  default { 
+    faction = faction_id 
+    tag { "merc" }
+  }
+}

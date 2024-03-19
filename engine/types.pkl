@@ -36,7 +36,7 @@ typealias SubType = String((s) -> $t.slugpathOk("SubType", s))
 typealias MainFaction = "grell" | "legion" | "protectorate" | "xol" 
 
 /// definitions for all of these are in game/ folder, but helpful to have them explicitly defined as types
-typealias MercFaction = "marran" | "dread" | "valkaru" | "chakru" | "arandi" | "koru" 
+typealias MercFaction = "marran" | "dread" | "valkaru" | "chakru" | "arandi" | "koru" | "mystery-mercs"
 
 /// definitions for all of these are in game/ folder, but helpful to have them explicitly defined as types
 typealias AIFaction = "neutral" | "hostile"

@@ -3,5 +3,11 @@ module all_mercs
 import ".../engine/faction/merc.pkl" as Mercenary
 
 mercs: Listing<Mercenary> = new Listing<Mercenary> {
+  import("arandi.pkl")
   import("chakru.pkl")
+  import("dread.pkl")
+  import("koru.pkl")
+  import("marran.pkl")
+  import("valkaru.pkl")
+  import("mystery.pkl")
 }

@@ -13,9 +13,6 @@ local building_defaults = new Mixin {
 }
 
 talents {
-  default {
-    faction = faction_id
-  }
   import("talents/movement_speed.pkl") |> fac_defaults
   import("talents/improved_infusion.pkl") |> fac_defaults
   import("talents/infused_lifesteal.pkl") |> fac_defaults
