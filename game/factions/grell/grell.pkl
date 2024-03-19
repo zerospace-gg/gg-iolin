@@ -3,71 +3,72 @@ amends ".../engine/faction/main.pkl"
 slug = "grell"
 name = "Grell"
 
+description = "The Grell are an alien insectoid species, resembling beetles, arachnids, and other real-world insects. They are controlled by the Koru, a plant-based alien species. Grell are adorened with Koru Crystals on their bodies. They have a unique mechanic called Infuse, which can make units bigger, tougher, and do more damage."
+
 local faction_id = this.slug
+
 local fac_defaults = new Mixin {
   faction = faction_id
 }
+
 local building_defaults = new Mixin {
   faction = faction_id
   provides_biomass = super.provides_biomass ?? 750
 }
 
 talents {
-  default {
-    faction = faction_id
-  }
-  import("talents/movement_speed.pkl") |> fac_defaults
-  import("talents/improved_infusion.pkl") |> fac_defaults
-  import("talents/infused_lifesteal.pkl") |> fac_defaults
-  import("talents/essence_collector.pkl") |> fac_defaults
-  import("talents/flowers.pkl") |> fac_defaults
+  ["movement-speed"] = import("talents/movement_speed.pkl") |> fac_defaults
+  ["improved-infusion"] = import("talents/improved_infusion.pkl") |> fac_defaults
+  ["infused-lifesteal"] = import("talents/infused_lifesteal.pkl") |> fac_defaults
+  ["essence-collector"] = import("talents/essence_collector.pkl") |> fac_defaults
+  ["flowers"] = import("talents/flowers.pkl") |> fac_defaults
 
-  import("talents/cultivator_range.pkl") |> fac_defaults
-  import("talents/bio_nourishment.pkl") |> fac_defaults
-  import("talents/recycling.pkl") |> fac_defaults
-  import("talents/spiderlings.pkl") |> fac_defaults
-  import("talents/tree_of_life.pkl") |> fac_defaults
+  ["cultivator-range"] = import("talents/cultivator_range.pkl") |> fac_defaults
+  ["bio-nourishment"] = import("talents/bio_nourishment.pkl") |> fac_defaults
+  ["recycling"] = import("talents/recycling.pkl") |> fac_defaults
+  ["spiderlings"] = import("talents/spiderlings.pkl") |> fac_defaults
+  ["tree-of-life"] = import("talents/tree_of_life.pkl") |> fac_defaults
 }
 
 topbar {
-  import("topbar/underground_transport.pkl") |> fac_defaults
-  import("topbar/infuse.pkl") |> fac_defaults
-  import("topbar/flowers.pkl") |> fac_defaults
-  import("topbar/tree_of_life.pkl") |> fac_defaults
+  ["underground-transport"] = import("topbar/underground_transport.pkl") |> fac_defaults
+  ["infuse"] = import("topbar/infuse.pkl") |> fac_defaults
+  ["flowers"] = import("topbar/flowers.pkl") |> fac_defaults
+  ["tree-of-life"] = import("topbar/tree_of_life.pkl") |> fac_defaults
 }
 
 
 buildings {
-  import("buildings/root_colony.pkl") |> building_defaults
-  import("buildings/root_colony_attacker.pkl") |> building_defaults
-  import("buildings/grell_extractor.pkl") |> building_defaults
-  import("buildings/nourishing_pod.pkl") |> building_defaults
-  import("buildings/cultivator.pkl") |> building_defaults
-  import("buildings/cultivator_attacker.pkl") |> building_defaults
-  import("buildings/incubator.pkl") |> building_defaults
-  import("buildings/medium_incubator.pkl") |> building_defaults
-  import("buildings/large_incubator.pkl") |> building_defaults
-  import("buildings/augmentation_pool.pkl") |> building_defaults
-  import("buildings/advanced_augmentation_pool.pkl") |> building_defaults
-  import("buildings/special_augmentation_pool.pkl") |> building_defaults
+  ["root-colony"] = import("buildings/root_colony.pkl") |> building_defaults
+  ["root-colony-attacker"] = import("buildings/root_colony_attacker.pkl") |> building_defaults
+  ["grell-extractor"] = import("buildings/grell_extractor.pkl") |> building_defaults
+  ["nourishing_pod"] = import("buildings/nourishing_pod.pkl") |> building_defaults
+  ["cultivator"] = import("buildings/cultivator.pkl") |> building_defaults
+  ["cultivator-attacker"] = import("buildings/cultivator_attacker.pkl") |> building_defaults
+  ["incubator"] = import("buildings/incubator.pkl") |> building_defaults
+  ["medium-incubator"] = import("buildings/medium_incubator.pkl") |> building_defaults
+  ["large-incubator"] = import("buildings/large_incubator.pkl") |> building_defaults
+  ["augmentation-pool"] = import("buildings/augmentation_pool.pkl") |> building_defaults
+  ["advanced-augmentation_pool"] = import("buildings/advanced_augmentation_pool.pkl") |> building_defaults
+  ["special-augmentation_pool"] = import("buildings/special_augmentation_pool.pkl") |> building_defaults
 }
 
 units {
-  import("units/seedling.pkl") |> fac_defaults
-  import("units/infused_seedling.pkl") |> fac_defaults
-  import("units/grell_harvester.pkl") |> fac_defaults
-  import("units/stinger.pkl") |> fac_defaults
-  import("units/harbinger.pkl") |> fac_defaults
-  import("units/weaver.pkl") |> fac_defaults
-  import("units/lasher.pkl") |> fac_defaults
-  import("units/skrelling.pkl") |> fac_defaults
-  import("units/reaver.pkl") |> fac_defaults
-  import("units/thresher.pkl") |> fac_defaults
-  import("units/behemoth.pkl") |> fac_defaults
+  ["seedling"] = import("units/seedling.pkl") |> fac_defaults
+  ["infused-seedling"] = import("units/infused_seedling.pkl") |> fac_defaults
+  ["grell-harvester"] = import("units/grell_harvester.pkl") |> fac_defaults
+  ["stinger"] = import("units/stinger.pkl") |> fac_defaults
+  ["harbinger"] = import("units/harbinger.pkl") |> fac_defaults
+  ["weaver"] = import("units/weaver.pkl") |> fac_defaults
+  ["lasher"] = import("units/lasher.pkl") |> fac_defaults
+  ["skrelling"] = import("units/skrelling.pkl") |> fac_defaults
+  ["reaver"] = import("units/reaver.pkl") |> fac_defaults
+  ["thresher"] = import("units/thresher.pkl") |> fac_defaults
+  ["behemoth"] = import("units/behemoth.pkl") |> fac_defaults
 }
 
 heroes {
-  import("heroes/grell_hero.pkl") |> fac_defaults
+  ["grell-hero"] = import("heroes/grell_hero.pkl") |> fac_defaults
 }
 
 cross_faction_heroes {

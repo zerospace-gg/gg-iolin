@@ -1,5 +1,17 @@
 module game
 
+import ".../engine/data.pkl" as Data
+
 maps = import("maps/maps.pkl").maps
 factions = import("factions/factions.pkl").factions
 mercs = import("mercs/mercs.pkl").mercs
+
+local class Location {
+  id: String
+  slug: String
+  name: String
+  type: String
+}
+
+// local flat: Listing<Data> = new Listing<Data> 
+
