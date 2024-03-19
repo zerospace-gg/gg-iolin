@@ -1,0 +1,56 @@
+amends ".../engine/unit/army.pkl"
+
+name = "Behemoth"
+hotkey = "d"
+flavor = "Tasting blood makes her beautiful"
+description = "The Behemoth is a large flying insect with mysterious wings we haven't seen yet. Its role is to damage ground units from the air, providing decent flying support for your army."
+tier = "T3"
+hexite_cost = 150
+flux_cost = 150
+build_time = 60
+domain = "air"
+supply = 8
+hp = 625
+armor_type = "heavy"
+speed = 400
+created_by { "large-incubator" }
+unlocked_by { "large-incubator" }
+upgraded_by { "special-augmentation-pool" }
+
+attacks {
+  new {
+    damage = 30
+    bonus_percent = 75
+    bonus_vs_tags { "armor:heavy" }
+    cooldown = 1
+    range = 1400
+    targets { "ground" }
+  }
+}
+spells {
+  new {
+    name = "Faerie Fire"
+    hotkey = "f"
+    cooldown = 30
+    description = "Sets ground ablaze. Particularly useful against stationary targets. 22dps"
+  }
+}
+
+upgrades {
+  new {
+    tier = "T3.5"
+    name = "Faerie Fire Duration"
+    description = "+%100% Faerie Fire duration"
+  }
+
+  new {
+    tier = "T3.5"
+    name = "Faerie Fire Casting Range"
+    description = "+30% casting range"
+  }
+}
+
+notes {
+  "The wings have been hinted to be showing up in the March 2024 Alpha phase"
+}
+

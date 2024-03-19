@@ -50,7 +50,13 @@ typealias MercTier = "T1" | "T2" | "T3"
 /// T0 is workers/harvs
 typealias Tier = "T0" | "T1" | "T2" | "T3" | "T1.5" | "T2.5" | "T3.5" | "Hero"
 
-typealias HotKey = "q" | "w" | "e" | "r" | "t" | "a" | "s" | "d" | "f" | "g" | "h" | "z" | "x" | "c" | "ctrl-q" | "ctrl-w" | "ctrl-e" | "ctrl-r"
+typealias HotKey = 
+  "q" | "w" | "e" | "r" | "t" | 
+  "a" | "s" | "d" | "f" | "g" | "h" | 
+  "z" | "x" | "c" | 
+  "ctrl-q" | "ctrl-w" | "ctrl-e" | "ctrl-r" | "ctrl-t" | 
+  "ctrl-a" | "ctrl-s" | "ctrl-d" | "ctrl-f" | "ctrl-g" | "ctrl-h" | 
+  "ctrl-z" | "ctrl-x" | "ctrl-c"
 
 typealias ArmorType = "none" | "light" | "medium" | "heavy"
 
@@ -59,3 +65,5 @@ typealias AllyDomainType = "friendly/air" | "friendly/ground"
 typealias TargetType = DomainType | AllyDomainType | "location" | "self" | "location/area" | "location/self"
 
 typealias EnergyType = "classic" | "abes" | "topbar-power"
+
+typealias UpgradeTier = "T1.5" | "T2.5" | "T3.5"

@@ -2,6 +2,7 @@ abstract module unit
 extends "../gamepiece.pkl"
 
 import "../infuse.pkl" as $i
+import "../upgrade/unit_upgrade.pkl" as UnitUpgrade
 
 fixed type = "unit"
 fixed subtype = unit_type
@@ -11,11 +12,9 @@ hidden unit_type: "worker" | "harvester" | "army" | "hero"
 
 vision = 1800
 
-massive: Boolean = false
-
 local tl = tags.toList()
 
-infusable: Boolean = unit_type == "army" && !massive
+infusable: Boolean = unit_type == "army" && !tl.contains("massive")
 
 infuse_rule: $i.InfuseRule? = 
   if (!infusable) 
@@ -30,3 +29,10 @@ infuse_cost: UInt? =
     let (h = hexite_cost ?? 0)
     let (f = flux_cost ?? 0)
     ((h + f) / 10).floor.toInt() + 1
+
+local df = this.faction
+local ds = this.slug
+
+upgrades: Listing<UnitUpgrade> = new Listing<UnitUpgrade> {
+  default { faction = df; upgrade_of = ds }
+}

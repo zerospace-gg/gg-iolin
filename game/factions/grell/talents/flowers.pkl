@@ -1,4 +1,4 @@
-amends ".../engine/ability/talent.pkl"
+amends ".../engine/upgrade/talent.pkl"
 
 import "../topbar/flowers.pkl" as tbflowers
 

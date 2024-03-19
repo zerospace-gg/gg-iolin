@@ -1,0 +1,54 @@
+amends ".../engine/unit/army.pkl"
+
+name = "Stinger"
+description = "This fast melee skirmisher is the Grell's basic Tier 1 Hexite-only unit. They build two at a time and deal low damage quickly at short range, and have a lot of versatility through their upgrades."
+hotkey = "q"
+tier = "T1"
+hexite_cost = 50
+build_time = 18
+supply = 1 
+build_count = 2
+hp = 100 
+armor_type = "light"
+speed = 700
+created_by { "incubator" }
+unlocked_by { "incubator" }
+upgraded_by { "augmentation-pool" }
+
+attacks {
+  new {
+    damage = 5
+    cooldown = 0.6
+    range = 100 
+    delay = 0.06 // one of the few damage point values we know
+  }
+}
+
+upgrades {
+  new {
+    name = "Poison Sting"
+    description = "Attacks deal 3 dps and slows move speed by 20%. Lasts for 5 seconds."
+    tier = "T1.5"
+  }
+  new {
+    name = "Raptor"
+    description = "On BioMass, gain stealth and +50% attack speed"
+    tier = "T1.5"
+  }
+  
+  new {
+    name = "Acid Rupture"
+    description = "When Killed, Spray nearby enemies with acid. Deals 20 damage and targets take +30% damage for 3s."
+    tier = "T2.5"
+  }
+
+  new {
+    name = "Cliff Jumping"
+    description = "Stingers can jump up and down normal cliffs. +20% movement speed."
+    tier = "T2.5"
+  }
+}
+
+notes {
+  "Stinger is the only unit whose damage point / attack delay is known publicly at the moment, due to patch notes during January 2024."
+}

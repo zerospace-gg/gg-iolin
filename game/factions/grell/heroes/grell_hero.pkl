@@ -31,7 +31,7 @@ spells {
     hotkey = "x"
     cooldown = 60
     description = "Teleports the hero and nearby friendly ground units to a visible location on biomass. Cannot be interrupted."
-    area = 300
+    effect_area = 300
     targets { "self" }
     notes { "area is estimated" }
   }

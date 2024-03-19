@@ -37,7 +37,7 @@ topbar {
 buildings {
   import("buildings/root_colony.pkl") |> building_defaults
   import("buildings/root_colony_attacker.pkl") |> building_defaults
-  import("buildings/extractor.pkl") |> building_defaults
+  import("buildings/grell_extractor.pkl") |> building_defaults
   import("buildings/nourishing_pod.pkl") |> building_defaults
   import("buildings/cultivator.pkl") |> building_defaults
   import("buildings/cultivator_attacker.pkl") |> building_defaults
@@ -52,15 +52,15 @@ buildings {
 units {
   import("units/seedling.pkl") |> fac_defaults
   import("units/infused_seedling.pkl") |> fac_defaults
-  import("units/harvester.pkl") |> fac_defaults
-  // import("units/stinger.pkl") |> fac_defaults
-  // import("units/harbinger.pkl") |> fac_defaults
-  // import("units/weaver.pkl") |> fac_defaults
-  // import("units/lasher.pkl") |> fac_defaults
-  // import("units/skrelling.pkl") |> fac_defaults
-  // import("units/reaver.pkl") |> fac_defaults
-  // import("units/thresher.pkl") |> fac_defaults
-  // import("units/behemoth.pkl") |> fac_defaults
+  import("units/grell_harvester.pkl") |> fac_defaults
+  import("units/stinger.pkl") |> fac_defaults
+  import("units/harbinger.pkl") |> fac_defaults
+  import("units/weaver.pkl") |> fac_defaults
+  import("units/lasher.pkl") |> fac_defaults
+  import("units/skrelling.pkl") |> fac_defaults
+  import("units/reaver.pkl") |> fac_defaults
+  import("units/thresher.pkl") |> fac_defaults
+  import("units/behemoth.pkl") |> fac_defaults
 }
 
 heroes {

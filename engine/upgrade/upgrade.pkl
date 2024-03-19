@@ -1,0 +1,7 @@
+abstract module upgrade
+extends "../data.pkl"
+
+// right now upgrades just have an effect description
+fixed type: String = "upgrade"
+
+// subclasses can deal with subtype here, as talent is special and wants an empty subtype

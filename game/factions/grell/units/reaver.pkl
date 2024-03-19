@@ -1,0 +1,57 @@
+amends ".../engine/unit/army.pkl"
+
+name = "Reaver"
+hotkey = "a"
+flavor = "Mama"
+description = "Reaver is hungy mama. It eat you. It eat your friends. It eat your whole family. It have bonk attack. Stingers born when it die. They eat you. They eat your friends. They eat your whole family."
+tier = "T3"
+hexite_cost = 150
+flux_cost = 150
+build_time = 60
+supply = 8
+hp = 1200
+armor_type = "heavy"
+speed = 525
+created_by { "large-incubator" }
+unlocked_by { "large-incubator" }
+upgraded_by { "special-augmentation-pool" }
+
+attacks {
+  new {
+    damage = 55
+    shots_per_cast = 2
+    cooldown = 2.15
+    splash_percent = 50
+    splash_range = 60
+    range = 100
+    targets { "ground" }
+  }
+}
+spells {
+  new {
+    name = "Charge"
+    hotkey = "r"
+    cooldown = 30
+    description = "Charge into enemies knocking them back and dealing 80 damage"
+    damage = 80
+  }
+}
+
+upgrades {
+  new {
+    tier = "T3.5"
+    name = "Double Value"
+    description = "+%100% Spawned Stingers on death"
+  }
+
+  new {
+    tier = "T3.5"
+    name = "Toughened Carapace"
+    description = "+30% Health"
+  }
+}
+
+notes {
+  "An infused reaver is by far the toughest unit in the game, especially with Grell's infusion-related talents and its toughened carapace upgrade."
+}
+

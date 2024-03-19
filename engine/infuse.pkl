@@ -23,7 +23,6 @@ class BasicInfuseRule {
 fixed standard_infuse_rule = new BasicInfuseRule {
   supply = new StatMultiplier { num = 2.0 }
   hp = new StatMultiplier { num = 2.0 }
-  reload_time = new StatMultiplier  { num = 0.5 }
   cooldown = new StatMultiplier  { num = 0.5 }
 }
 
@@ -31,7 +30,6 @@ fixed damage_infuse_rule = new BasicInfuseRule {
   supply = new StatMultiplier  { num = 2.0 }
   hp = new StatMultiplier { num = 2.0 }
   damage = new StatMultiplier { num = 2.0 }
-  cooldown = new StatMultiplier { num = 0.5 }
 }
 
 typealias InfuseRule = TransformInfuseRule | BasicInfuseRule

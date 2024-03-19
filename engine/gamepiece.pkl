@@ -51,6 +51,8 @@ provides_supply: UInt?
 provides_biomass: UInt?
 provides_upgrades_for: Listing<String>(isDistinct)?
 
+upgraded_by: Listing<String>(isDistinct)?
+
 transforms_from: Listing<String>(isDistinct)?
 transforms_into: Listing<String>(isDistinct)?
 
@@ -68,6 +70,7 @@ heals: Listing<Heal> = new Listing<Heal> {
 spells: Listing<Spell> = new Listing<Spell> {
   default { faction = df; ability_of = ds }
 }
+
 passives: Listing<Passive> = new Listing<Passive> {
   default { faction = df; ability_of = ds }
 }

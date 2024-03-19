@@ -15,6 +15,7 @@ fixed subtype: String =
   l.join("/")
 
 hotkey: $t.HotKey?
+reverse_hotkey: $t.HotKey?
 targets: Listing<$t.TargetType>
 requires_mode: String?
 toggles_mode: String?
@@ -22,7 +23,7 @@ energy_cost: UInt?
 energy_type: $t.EnergyType?
 /// also called reload_time
 cooldown: Number?
-cooldown_at_build: Boolean = true
+cooldown_at_build: Boolean?
 duration: Float?
 range: UInt?
 /// also called damage point, attack delay, or cast point
@@ -40,16 +41,31 @@ local function x_per_sec(val: UInt?, num: UInt?, shots: UInt?, cd: Number?) =
   let (s = (shots ?? 1).toFloat())
   ((v * n * s) / cd).round().toInt()
 
-damage: UInt?
-damage_per_sec: UInt? = x_per_sec(damage, num_casts, shots_per_cast, cooldown)
-healing: UInt?
-healing_per_sec: UInt? = x_per_sec(healing, num_casts, shots_per_cast, cooldown)
+effect_area: UInt?
 
-area: UInt?
-dot_damage: UInt?
-dot_time: Float?
-splash_amount: UInt?
-splash_radius: UInt?
+damage: UInt?
+damage_over_time: UInt? // dps will have to change based on this as well
+damage_per_sec: UInt? = 
+  if (damage_over_time != null) null 
+  else x_per_sec(damage, num_casts, shots_per_cast, cooldown)
+
+healing: UInt?
+healing_over_time: UInt?
+healing_per_sec: UInt? = 
+  if (healing_over_time != null) null 
+  else x_per_sec(healing, num_casts, shots_per_cast, cooldown)
+
+area_range: UInt?
+area_damage: UInt?
+area_over_time: UInt?
+
+// like area, but splash should only be attached to a direct dmg amount
+splash_percent: UInt?
+splash_range: UInt?
+splash_over_time: UInt?
+
 bonus_percent: UInt?
 bonus_vs_tags: Listing<String>?
-autocast: "always" | "toggle" | "never" = if (activation_type == "auto") "always" else "never"
+
+autocast: "always" | "toggle" | "never" = 
+  if (activation_type == "auto") "always" else "never"

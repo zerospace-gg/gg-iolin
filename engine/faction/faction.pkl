@@ -1,6 +1,6 @@
 abstract module faction
 extends "../data.pkl"
-import "../ability/talent.pkl" as Talent
+import "../upgrade/talent.pkl" as Talent
 import "../ability/topbar.pkl" as TopBarPower
 import "../building/building.pkl" as Building
 import "../unit/unit.pkl" as Unit

@@ -1,0 +1,55 @@
+amends ".../engine/unit/army.pkl"
+
+name = "Thresher"
+hotkey = "s"
+description = ""
+tier = "T3"
+hexite_cost = 100
+flux_cost = 200
+build_time = 50
+supply = 8
+hp = 500
+armor_type = "heavy"
+speed = 450
+created_by { "large-incubator" }
+unlocked_by { "large-incubator" }
+upgraded_by { "special-augmentation-pool" }
+
+attacks {
+  new {
+    damage = 110
+    bonus_percent = 50
+    bonus_vs_tags { "building" }
+    cooldown = 3.3
+    splash_percent = 85
+    splash_range = 250
+    range = 2700
+    targets { "ground" }
+    requires_mode = "siege"
+  }
+}
+
+spells {
+  new {
+    name = "Siege"
+    toggles_mode = "siege"
+    hotkey = "d"
+    reverse_hotkey = "ctrl-d"
+    description = "Sieging is required for the thresher to attack. Movement requires being unsieged. 1.25s duration."
+  }
+}
+
+upgrades {
+  new {
+    tier = "T3.5"
+    name = "Crackling Energy"
+    description = "Projectiles create a burning effect on ground (140 damage over 6s via 7dmg every 0.3s for 20 hits)"
+  }
+
+  new {
+    tier = "T3.5"
+    name = "Fast Siege mode"
+    description = "Sieging and unsieging is 50% faster (0.625s)" 
+  }
+}
+
