@@ -41,10 +41,10 @@ fixed subtype: $t.SubType
 faction: $t.Faction?
 
 /// tags used in calculating effects of parts of the game, such as `unit` or `vehicle` or `massive`
-hidden tag: Listing<String>(isDistinct)
+hidden tag: Listing<String>
 
 /// some tags are auto-generated, this is where auto-generation happens
-tags: Listing<String>(isDistinct) = tag
+tags: Listing<String>(isDistinct) = tag.toList().distinct.toListing()
 
 /// whether or not this exists in the game at the current version
 in_game: Boolean = true
