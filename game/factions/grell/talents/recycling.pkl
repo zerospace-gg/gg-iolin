@@ -1,7 +1,0 @@
-amends ".../engine/upgrade/talent.pkl"
-
-slug = "recycling"
-name = "Recycling"
-description = "Gain resources from killed enemies. 20% of their total cost in hexite."
-column = 2 
-level = 3

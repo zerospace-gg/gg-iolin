@@ -20,10 +20,10 @@ slug: $t.Slug = name.toLowerCase()
 name: String 
 
 /// community nicknames for this
-nicknames: Listing<String>
+nicknames: Listing<String>?
 
 /// in-game description of this
-description: String = ""
+description: String?
 
 /// injected by the data processing layer, this is the filename it is defined in.
 /// if explicitly defined it will be silently overwritten.
@@ -44,7 +44,7 @@ faction: $t.Faction?
 hidden tag: Listing<String>
 
 /// some tags are auto-generated, this is where auto-generation happens
-tags: Listing<String>(isDistinct) = tag.toList().distinct.toListing()
+tags: Listing<String>(isDistinct) = tag.toList().distinct.sort().toListing()
 
 /// whether or not this exists in the game at the current version
 in_game: Boolean = true

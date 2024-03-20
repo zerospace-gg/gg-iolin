@@ -1,7 +1,0 @@
-amends ".../engine/upgrade/talent.pkl"
-
-slug = "improved-infusion"
-name = "Improved Infusion"
-description = "+10% movement speed"
-column = 1 
-level = 2

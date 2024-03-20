@@ -1,6 +1,0 @@
-amends ".../engine/upgrade/talent.pkl"
-
-name = "Bio Nourishment"
-description = "+50% nourishing pods healing. +100% biomass healing (4 HP/s)"
-column = 2 
-level = 2

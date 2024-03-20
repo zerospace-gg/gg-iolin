@@ -1,7 +1,0 @@
-amends ".../engine/upgrade/talent.pkl"
-
-slug = "infused-lifesteal"
-name = "Infused Lifesteal"
-description = "Infused units gain 15% lifesteal"
-column = 1 
-level = 3

@@ -16,24 +16,137 @@ talents {
   default {
     faction = faction_id
   }
-  import("talents/movement_speed.pkl") |> fac_defaults
-  import("talents/improved_infusion.pkl") |> fac_defaults
-  import("talents/infused_lifesteal.pkl") |> fac_defaults
-  import("talents/essence_collector.pkl") |> fac_defaults
-  import("talents/flowers.pkl") |> fac_defaults
 
-  import("talents/cultivator_range.pkl") |> fac_defaults
-  import("talents/bio_nourishment.pkl") |> fac_defaults
-  import("talents/recycling.pkl") |> fac_defaults
-  import("talents/spiderlings.pkl") |> fac_defaults
-  import("talents/tree_of_life.pkl") |> fac_defaults
+  new {
+    slug = "movement-speed"
+    name = "Movement Speed"
+    description = "+10% movement speed"
+    column = 1 
+    level = 1
+  }
+
+  new {
+    slug = "improved-infusion"
+    name = "Improved Infusion"
+    description = "+10% movement speed"
+    column = 1 
+    level = 2
+  }
+
+  new {
+    slug = "infused-lifesteal"
+    name = "Infused Lifesteal"
+    description = "Infused units gain 15% lifesteal"
+    column = 1 
+    level = 3
+  }
+
+  new {
+    slug = "essence-collector"
+    name = "Essence Collector"
+    description = "Gain topbar power from killed enemies. Only 33% amount compared to when your units are killed."
+    column = 1 
+    level = 4
+  }
+
+  new {
+    local tbp = topbar[2]
+    slug = tbp.slug + "-talent"
+    name = tbp.name + "(Talent)"
+    description = "Unlocks The \(tbp.name) topbar power: \(tbp.description)"
+    column = 1 
+    level = 5
+    unlocks { tbp.slug }
+  }
+
+  new {
+    name = "Cultivator Range"
+    description = "+100% Cultivator vision and biomass generation range"
+    column = 2 
+    level = 1
+  }
+
+  new {
+    name = "Bio Nourishment"
+    description = "+50% nourishing pods healing. +100% biomass healing (4 HP/s)"
+    column = 2 
+    level = 2
+  }
+
+  new {
+    slug = "recycling"
+    name = "Recycling"
+    description = "Gain resources from killed enemies. 20% of their total cost in hexite."
+    column = 2 
+    level = 3
+  }
+
+  new {
+    slug = "spiderlings"
+    name = "Spiderlings"
+    description = "Your units spawn spiderlings on death. The amount scales with unit's supply cost."
+    column = 2 
+    level = 4
+  }
+
+  new {
+    local tbp = topbar[3]
+    slug = tbp.slug + "-talent"
+    name = tbp.name + "(Talent)"
+    description = "Unlocks The \(tbp.name) topbar power: \(tbp.description)"
+    column = 1 
+    level = 5
+    unlocks { tbp.slug }
+  }
 }
 
 topbar {
-  import("topbar/underground_transport.pkl") |> fac_defaults
-  import("topbar/infuse.pkl") |> fac_defaults
-  import("topbar/flowers.pkl") |> fac_defaults
-  import("topbar/tree_of_life.pkl") |> fac_defaults
+  default {
+    faction = faction_id
+  }
+  new {
+    name = "Underground Transport"
+    topbar_type = "recall"
+    description = "Call a worm to transport your units to the nearest root colony. Click to select designated location, after a few seconds a worm will arrive and devour your units"
+    slot = 1
+    cost = 5
+    cooldown = 120
+  }
+
+  new {
+    name = "Infuse"
+    topbar_type = "special"
+    description = "Make a unit stronger. Doubles vitality, attack speed, cooldown rate, and supply cost. Unit heals 50% over 10s. Seedlings will be faster and fly. The cost is based on unit cost."
+    slot = 2
+    cooldown = 120
+
+    notes {
+      "Cost varies by unit. In general the formula is `(floor((fluxCost + hexCost) / 10)) + 1`, although sometimes this value is overridden for balance purposes."
+      "Effects vary by unit. Seedling transforms into a flying seedling, and some units increase damage rather than attack speed. In most cases the listed effects are true."
+      "Requirements for infusing: Must be a unit, must not be massive, must not be a worker other than Seedling."
+      "In 2v2 games, or any other time a non-Grell unit is an ally to you, you can infuse your ally's units."
+    }
+  }
+
+  new {
+    name = "Flowers"
+    topbar_type = "ultimate"
+    description = "Flowers deal damage to enemies and spawn hallucinations of friendly units. Enemy structures are stunned. 20s duration."
+    cost = 50
+    slot = 3
+    cooldown = 120
+    unlocked_by { "flowers-talent" }
+  }
+
+  new {
+    name = "Tree of Life"
+    topbar_type = "ultimate"
+    description = "Revives units killed nearby and heals friendly units. Radius: 1500. Starting energy: 30."
+    cost = 50
+    slot = 4
+    cooldown = 120
+    unlocked_by { "tree-of-life-talent" }
+  }
 }
 
 

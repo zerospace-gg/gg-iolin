@@ -1,7 +1,0 @@
-amends ".../engine/upgrade/talent.pkl"
-
-slug = "essence-collector"
-name = "Essence Collector"
-description = "Gain topbar power from killed enemies. Only 33% amount compared to when your units are killed."
-column = 1 
-level = 4
