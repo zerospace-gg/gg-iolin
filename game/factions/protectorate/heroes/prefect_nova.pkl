@@ -24,7 +24,8 @@ spells {
     hotkey = "z"
     cooldown = 20
     description = "Fire a blast towards your enemies. The blast deals 50 damage and stuns enemies in a small area for 3s"
-    targets { "location/strip" }
+    targets { "ground" }
+    target_mode = "strip"
   }
 
   new { 
@@ -32,14 +33,16 @@ spells {
     hotkey = "x"
     cooldown = 10
     description = "Charge to a location. Gain increased +30% attack speed for 5s upon landing."
-    targets { "location/strip" }
+    target_mode = "strip"
+    targets { "ground" }
   }
 
   new { 
     name = "Construct Light Turret"
     hotkey = "c"
     cooldown = 80
-    targets { "location" }
+    targets { "map" }
+    target_mode = "location" 
     description = "Construct a temporary light turret on the field. its beam attack increases significantly over 30s and slows the movement of the target by 50%."
   }
 }

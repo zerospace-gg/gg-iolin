@@ -34,7 +34,8 @@ spells {
     cooldown = 30
     description = "Charge into enemies knocking them back and dealing 80 damage"
     damage = 80
-    targets { "location/strip" }
+    targets { "ground" }
+    target_mode = "strip"
   }
 }
 

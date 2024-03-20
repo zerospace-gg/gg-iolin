@@ -18,6 +18,7 @@ fixed subtype: String =
 hotkey: $t.HotKey?
 reverse_hotkey: $t.HotKey?
 targets: Listing<$t.TargetType>
+target_mode: $t.TargetMode?
 requires_mode: String?
 toggles_mode: String?
 energy_cost: UInt?

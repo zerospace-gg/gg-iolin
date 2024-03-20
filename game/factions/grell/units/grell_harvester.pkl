@@ -15,7 +15,8 @@ spells {
     cooldown = 60.0
     cooldown_at_build = true
     range = 375
-    targets { "location" }
+    targets { "map" }
+    target_mode = "location"
     creates { "cultivator" }
   }
 }

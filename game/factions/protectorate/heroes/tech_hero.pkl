@@ -20,15 +20,17 @@ spells {
     hotkey = "z"
     cooldown = 25
     description = "A shot pierces enemies in line (up to 6) - damaging them and slowing them down. Enemy hits makes the companion buff permanently stronger: +40% max shields, +2% attack speed"
-    targets { "location/strip" }
+    target_mode = "strip"
+    targets { "map" }
   }
 
   new { 
     name = "Swap"
     hotkey = "x"
     cooldown = 10
-    description = "Charge to a location. Gain increased +30% attack speed for 5s upon landing."
-    targets { "location" }
+    description = "Fire a projectile. If it hits an enemy unit, swap positions with it. If it doesn't hit one or the unit is too close, jump to the target location and leave a decoy behind. The minimum swap range is indicated by the secondary range circle. The decoy lasts 1 minute."
+    targets { "map" }
+    target_mode = "location"
   }
 
   new { 
@@ -36,6 +38,7 @@ spells {
     hotkey = "c"
     cooldown = 20
     targets { "ground"; "air" }
+    target_mode = "gamepiece"
     description = "A friendly unit can become your companion and gains power (+100 shields). When used on a AI-controlled unit (<= 2 supply cost), you gain control over it."
   }
 }

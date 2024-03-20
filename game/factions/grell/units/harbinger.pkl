@@ -28,7 +28,8 @@ spells {
   new {
     name = "Eruption"
     description = "Deals 120 damage to units in the target area after 1.5 seconds"
-    targets { "location" }
+    targets { "air"; "ground"  }
+    target_mode = "location"
     hotkey = "e"
     energy_type = "abes"
     energy_cost = 10

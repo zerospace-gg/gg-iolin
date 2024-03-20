@@ -209,7 +209,8 @@ heroes {
         hotkey = "z"
         cooldown = 20
         description = "The blast deals 50 damage, slows enemies, and prevents them from using weapons and abilities for 5s."
-        targets { "location/strip" }
+        targets { "ground" }
+        target_mode = "strip"
       }
 
       new { 
