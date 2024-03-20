@@ -11,8 +11,9 @@ activation_type: "auto" | "activated" | "passive" =
 ability_type: "attack" | "heal" | "spell" | "switch-attack" | "toggle-siege" | "talent" | "topbar-power" = if (primary) "attack" else null
 
 fixed subtype: String = 
-  let (l = List(ability_type, activation_type)) 
-  l.join("/")
+  List(ability_of, ability_type, activation_type)
+    .filter((i) -> i != "")
+    .join("/")
 
 hotkey: $t.HotKey?
 reverse_hotkey: $t.HotKey?

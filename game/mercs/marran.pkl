@@ -41,21 +41,126 @@ units {
   new Army { 
     name = "Marran Hover Tank"
     tier = "T1"
+    build_count = 2
+    hexite_cost = 200
+    flux_cost = 0
+    supply = 8
+    hp = 150
+    shields = 150
+    armor_type = "medium"
+    speed = 675 
+    attacks {
+      new {
+        damage = 11 
+        cooldown = 0.5 
+        range = 700
+        targets { "air"; "ground" }
+      }
+    }
   }
   new Army { 
     name = "Marran Sharpshooter"
     tier = "T1"
+    build_count = 3
+    hexite_cost = 50
+    flux_cost = 200
+    supply = 9
+    hp = 100
+    shields = 75
+    armor_type = "light"
+    speed = 450 
+    attacks {
+      new {
+        damage = 15
+        cooldown = 1.0 
+        range = 1200
+        targets { "air"; "ground" }
+      }
+    }
+    spells {
+      new {
+        name = "Firing Position"
+        cooldown = 45.0
+        delay = 0.3 
+        description = "45s cooldown. 0.3s to set up. gain 100% range and 50% attack speed against against units in a limited arc. cannot move while in firing position"
+      }
+    }
   }
   new Army { 
     name = "Marran Charger"
     tier = "T1"
+    build_count = 1
+    hexite_cost = 100
+    flux_cost = 50
+    supply = 3
+    hp = 250
+    shields = 250
+    armor_type = "medium"
+    speed = 700
+    attacks {
+      new {
+        damage = 3
+        cooldown = 0.25
+        range = 1200
+        targets { "air"; "ground" }
+      }
+    }
+    spells {
+      new {
+        name = "Unload"
+        cooldown = 0.2
+        description = "0.2s cooldown. unload troops in targeted area"
+      }
+    }
+    passives {
+      new {
+        name = "Charger Shields"
+        description = "Gives shields to nearby units"
+      }
+    }
   }
   new Army { 
     name = "Marran Badger"
     tier = "T2"
+    build_count = 2
+    hexite_cost = 125
+    flux_cost = 125
+    supply = 6
+    hp = 225
+    shields = 225
+    armor_type = "heavy"
+    speed = 450
+    attacks {
+      new {
+        damage = 19
+        cooldown = 1.5
+        range = 1000
+        targets { "air"; "ground" }
+      }
+    }
+
+    notes {
+      "does additional 75 aoe damage after hitting same target repeatedly"
+    }
   }
   new Army { 
     name = "Marran Halo Tank"
     tier = "T3"
+    build_count = 1
+    hexite_cost = 100
+    flux_cost = 225
+    supply = 6
+    hp = 350
+    shields = 350
+    armor_type = "heavy"
+    speed = 400
+    attacks {
+      new {
+        damage = 60
+        cooldown = 436
+        range = 1400
+        targets { "ground" }
+      }
+    }
   }
 }

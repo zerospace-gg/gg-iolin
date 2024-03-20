@@ -2,7 +2,7 @@ module unit_upgrade
 extends "upgrade.pkl"
 import "../types.pkl" as $t
 
-fixed subtype = "unit"
+fixed subtype = upgrade_of + "/" + tier.replaceFirst("T", "tier-").replaceAll(".", "-").toLowerCase()
 upgrade_of: String
 tier: $t.UpgradeTier
 flux_cost: UInt = 
