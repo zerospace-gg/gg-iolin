@@ -51,8 +51,8 @@ talents {
 
   new {
     local tbp = topbar[2]
-    slug = tbp.slug + "-talent"
-    name = tbp.name + "(Talent)"
+    slug = tbp.slug.replaceLast("-topbar", "-talent")
+    name = tbp.name.replaceLast(" (Topbar)", "(Talent)")
     description = "Unlocks The \(tbp.name) topbar power: \(tbp.description)"
     column = 1 
     level = 5
@@ -91,8 +91,8 @@ talents {
 
   new {
     local tbp = topbar[3]
-    slug = tbp.slug + "-talent"
-    name = tbp.name + "(Talent)"
+    slug = tbp.slug.replaceLast("-topbar", "-talent")
+    name = tbp.name.replaceLast(" (Topbar)", "(Talent)")
     description = "Unlocks The \(tbp.name) topbar power: \(tbp.description)"
     column = 1 
     level = 5
@@ -104,6 +104,7 @@ topbar {
   default {
     faction = faction_id
   }
+
   new {
     name = "Underground Transport"
     topbar_type = "recall"

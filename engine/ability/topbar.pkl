@@ -13,8 +13,11 @@ faction: $t.Faction
 hidden topbar_type: TopbarType
 typealias TopbarType = "recall" | "special" | "ultimate"
 
+energy_cost = cost
+energy_type = "topbar"
+
 /// topbar energy required, if it is a static number. if it's formulaic, describe it in the `notes` field.
-cost: Int?
+hidden cost: Int?
 
 /// most topbar powers have a cooldown
 cooldown: Int = 0
