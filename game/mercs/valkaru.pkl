@@ -40,17 +40,102 @@ units {
   new Army { 
     name = "Valkaru Hound"
     tier = "T1"
+    build_count = 4
+    hexite_cost = 250
+    flux_cost = 0
+    supply = 8
+    hp = 350
+    armor_type = "medium"
+    speed = 575
+    attacks {
+      new {
+        damage = 21
+        cooldown = 1.31
+        range = 75
+        targets { "ground" }
+      }
+    }
   }
   new Army { 
     name = "Valkaru Shock Trooper"
     tier = "T1"
+    build_count = 2
+    hexite_cost = 200
+    flux_cost = 75
+    supply = 8
+    hp = 400
+    speed = 400
+    armor_type = "medium"
+    attacks {
+      new {
+        damage = 40
+        splash_percent = 50
+        splash_range = 150
+        cooldown = 3
+        range = 1200
+        targets { "ground" }
+      }
+    }
   }
   new Army { 
     name = "Valkaru Flame Walker"
     tier = "T2"
+    build_count = 1
+    hexite_cost = 75
+    flux_cost = 175
+    supply = 8
+    hp = 800
+    speed = 375
+    armor_type = "heavy"
+    attacks {
+      new {
+        damage = 6
+        bonus_percent = 50
+        bonus_vs_tags { "armor:light" }
+        cooldown = 0.17
+        range = 950
+        targets { "ground" }
+      }
+    }
+    spells {
+      new {
+        name = "Leap-Smash"
+        cooldown = 7.5
+        description = "cooldown 7.5s. jumps to the target location after a small delay. slows nearby enemies for 2 seconds upon landing"
+      }
+    }
+    notes {
+      "flame arc angle: 5"
+    }
   }
   new Army { 
     name = "Valkaru Tow Bot"
     tier = "T3"
+    build_count = 1
+    hexite_cost = 100
+    flux_cost = 200
+    supply = 8
+    hp = 1000
+    speed = 600
+    armor_type = "heavy"
+    attacks {
+      new {
+        damage = 5
+        shots_per_cast = 2
+        cooldown = 0.4
+        range = 1400
+        targets { "ground" }
+      }
+    }
+    spells {
+      new {
+        name = "Pull"
+        cooldown = 15
+        description = "cooldown 15s. pull any targets in targeted area towards itself"
+      }
+    }
+    notes {
+      "charging beam: max dmg in 5s (3x). pull duration: 2s"
+    }
   }
 }
