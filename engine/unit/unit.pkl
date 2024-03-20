@@ -26,9 +26,10 @@ infuse_cost: UInt? =
   if (!infusable) 
     null 
   else
-    let (h = hexite_cost ?? 0)
-    let (f = flux_cost ?? 0)
-    ((h + f) / 10).floor.toInt() + 1
+    let (h = (hexite_cost ?? 0).toFloat())
+    let (f = (flux_cost ?? 0).toFloat())
+    let (b = (build_count ?? 1).toFloat())
+    (((h + f) / b) / 10.0 ).floor.toInt() + 1
 
 local df = this.faction
 local ds = this.slug

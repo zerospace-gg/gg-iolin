@@ -8,6 +8,8 @@ flavor = "Soaring Scouting Speed Seed"
 tier = "T0"
 hp = 150
 speed = 575
+infusable = false
+infuse_rule = null
 
 transforms_into = null
 transforms_from { "seedling" }

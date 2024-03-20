@@ -136,7 +136,10 @@ units {
 }
 
 heroes {
-  // import("heroes/x.pkl") |> fac_defaults
+  import("heroes/prefect_nova.pkl") |> fac_defaults
+  import("heroes/tech_hero.pkl") |> fac_defaults
 }
 
-cross_faction_heroes { }
+cross_faction_heroes { 
+  "dread-hero"
+}

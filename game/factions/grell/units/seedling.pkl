@@ -1,7 +1,6 @@
 amends ".../engine/unit/worker.pkl" 
 import ".../engine/infuse.pkl" as $i
 
-slug = "seedling"
 name = "Seedling"
 domain = "ground"
 flavor = "Adorable Sentient Structure Seed"

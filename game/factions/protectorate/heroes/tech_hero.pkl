@@ -1,0 +1,41 @@
+amends ".../engine/unit/hero.pkl"
+
+name = "Tech Hero"
+hp = 150
+armor_type = "medium"
+speed = 500
+
+attacks {
+  new {
+    damage = 18
+    cooldown = 1.0
+    range = 1200
+    targets { "ground"; "air" }
+  }
+}
+
+spells {
+  new { 
+    name = "Energy Conduit"
+    hotkey = "z"
+    cooldown = 25
+    description = "A shot pierces enemies in line (up to 6) - damaging them and slowing them down. Enemy hits makes the companion buff permanently stronger: +40% max shields, +2% attack speed"
+    targets { "location/strip" }
+  }
+
+  new { 
+    name = "Swap"
+    hotkey = "x"
+    cooldown = 10
+    description = "Charge to a location. Gain increased +30% attack speed for 5s upon landing."
+    targets { "location" }
+  }
+
+  new { 
+    name = "Companion"
+    hotkey = "c"
+    cooldown = 20
+    targets { "ground"; "air" }
+    description = "A friendly unit can become your companion and gains power (+100 shields). When used on a AI-controlled unit (<= 2 supply cost), you gain control over it."
+  }
+}

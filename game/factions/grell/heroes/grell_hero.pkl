@@ -2,14 +2,12 @@ amends ".../engine/unit/hero.pkl"
 
 name = "Grell Hero"
 hp = 300
-armor_type = "heavy"
+armor_type = "medium"
 speed = 500
-supply = 10
 
 
 attacks {
   new {
-    name = "Primary Attack"
     damage = 34
     cooldown = 1.82
     range = 1200

@@ -1,0 +1,45 @@
+amends ".../engine/unit/hero.pkl"
+
+name = "Prefect Nova"
+hp = 150
+armor_type = "medium"
+speed = 500
+
+attacks {
+  new {
+    damage = 16
+    cooldown = 1.0
+    range = 1200
+    targets { "ground"; "air" }
+  }
+}
+
+notes {
+  "50% Stun Resistance"
+}
+
+spells {
+  new { 
+    name = "Stun Blast"
+    hotkey = "z"
+    cooldown = 20
+    description = "Fire a blast towards your enemies. The blast deals 50 damage and stuns enemies in a small area for 3s"
+    targets { "location/strip" }
+  }
+
+  new { 
+    name = "Charge"
+    hotkey = "x"
+    cooldown = 10
+    description = "Charge to a location. Gain increased +30% attack speed for 5s upon landing."
+    targets { "location/strip" }
+  }
+
+  new { 
+    name = "Construct Light Turret"
+    hotkey = "c"
+    cooldown = 80
+    targets { "location" }
+    description = "Construct a temporary light turret on the field. its beam attack increases significantly over 30s and slows the movement of the target by 50%."
+  }
+}
