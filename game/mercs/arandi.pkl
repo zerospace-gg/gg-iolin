@@ -2,8 +2,7 @@ amends ".../engine/faction/merc.pkl"
 import ".../engine/unit/army.pkl" as Army
 
 name = "Arandi"
-description = "Coming Soon!"
-in_game = false
+in_game = true
 
 local faction_id = this.slug
 

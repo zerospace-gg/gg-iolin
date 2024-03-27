@@ -2,7 +2,6 @@ amends ".../engine/unit/army.pkl"
 
 name = "Reaver"
 hotkey = "a"
-flavor = "Mama"
 description = "Reaver is hungy mama. It eat you. It eat your friends. It eat your whole family. It have bonk attack. Stingers born when it die. They eat you. They eat your friends. They eat your whole family."
 tier = "T3"
 hexite_cost = 150
@@ -15,6 +14,7 @@ speed = 525
 created_by { "large-incubator" }
 unlocked_by { "large-incubator" }
 upgraded_by { "special-augmentation-pool" }
+infuse_cost = 31
 
 attacks {
   new {
@@ -42,14 +42,14 @@ spells {
 upgrades {
   new {
     tier = "T3.5"
-    name = "Double Value"
-    description = "+%100% Spawned Stingers on death"
+    name = "Improved Charge"
+    description = "-50% charge channel time and +50% damage dealt"
   }
 
   new {
     tier = "T3.5"
     name = "Toughened Carapace"
-    description = "+30% Health"
+    description = "+20% Health +2 armor"
   }
 }
 

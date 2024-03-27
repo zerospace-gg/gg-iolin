@@ -1,0 +1,5 @@
+module passive 
+extends "ability.pkl"
+
+ability_type = "faction-passive"
+activation_type = "passive"

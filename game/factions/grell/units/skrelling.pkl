@@ -9,9 +9,9 @@ flux_cost = 50
 build_time = 16
 domain = "air"
 supply = 2
-hp = 250
+hp = 140
 armor_type = "light"
-speed = 450
+speed = 700
 created_by { "medium-incubator" }
 unlocked_by { "medium-incubator" }
 upgraded_by { "advanced-augmentation-pool" }

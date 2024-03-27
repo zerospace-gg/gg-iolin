@@ -18,8 +18,8 @@ talents {
     level = 1
   }
   new {
-    name = "Heavy Focus"
-    description = "Heavy units take 2 damage less"
+    name = "Ready for Hunt"
+    description = "Attack-Based energy (ABES) is also gained outside combat (1 every 4s)"
     level = 2
   }
   new {
@@ -28,9 +28,16 @@ talents {
     level = 3
   }
   new {
-    name = "Ready for Hunt"
-    description = "Attack-Based energy (ABES) is also gained outside combat (1 every 4s)"
+    name = "Heavy Focus"
+    description = "Heavy units take 2 damage less"
     level = 4
+  }
+}
+
+passives {
+  new {
+    name = "TopBar Power"
+    description = "+25% topbar power gained from units and structures"
   }
 }
 
@@ -41,11 +48,11 @@ units {
   }
   new Army {
     name = "Cha'Kru Crab"
-    hexite_cost = 250
+    hexite_cost = 225
     tier = "T1"
     flux_cost = 0
     build_count = 2
-    supply = 6
+    supply = 2
     hp = 200
     speed = 550
     armor = 4
@@ -69,7 +76,7 @@ units {
     hexite_cost = 100
     flux_cost = 200
     build_count = 2
-    supply = 6
+    supply = 3
     hp = 250
     armor_type = "light"
     attacks {
@@ -96,7 +103,7 @@ units {
     hexite_cost = 200
     flux_cost = 100
     build_count = 2
-    supply = 6
+    supply = 3
     hp = 250
     armor_type = "light"
     attacks {
@@ -123,13 +130,13 @@ units {
     hexite_cost = 225
     flux_cost = 125
     build_count = 2
-    supply = 6
+    supply = 4
     hp = 625
     armor_type = "medium"
     attacks {
       new {
-        damage = 40
-        cooldown = 1.7
+        damage = 20
+        cooldown = 1.8
         range = 200
         targets { "ground" }
       }
@@ -152,7 +159,7 @@ units {
     description = "The Cha'Kru Wurm is a heavy melee bruiser with a powerful zoning ability: It can draw a line through the battlefield, separating an army into two halves. This Rift shoots out in a straight line from the Wurm, meaning positioning the Wurm before casting rift is vital for ensuring its effectiveness."
     hexite_cost = 100
     flux_cost = 250
-    supply = 6
+    supply = 7
     hp = 1000
     armor_type = "heavy"
     attacks {

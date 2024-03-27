@@ -3,7 +3,7 @@ amends ".../engine/unit/hero.pkl"
 name = "Grell Hero"
 hp = 300
 armor_type = "medium"
-speed = 500
+speed = 450
 
 
 attacks {
@@ -29,7 +29,7 @@ spells {
     name = "Deep Burrow"
     hotkey = "x"
     cooldown = 60
-    description = "Teleports the hero and nearby friendly ground units to a visible location on biomass. Cannot be interrupted."
+    description = "Teleports the hero to a visible location on biomass. Cannot be interrupted."
     effect_area = 300
     targets { "self" }
     notes { "area is estimated" }

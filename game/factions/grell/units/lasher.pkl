@@ -53,7 +53,7 @@ upgrades {
   new {
     tier = "T3.5"
     name = "Extended Camouflage"
-    description = "+100% camouflage duration"
+    description = "-50% camouflage duration"
   }
 }
 

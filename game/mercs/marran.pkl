@@ -32,6 +32,13 @@ talents {
   }
 }
 
+passives {
+  new {
+    name = "Experience Gain"
+    description = "+25% passive and tower XP gain"
+  }
+}
+
 units {
   default { 
     faction = faction_id 
@@ -52,9 +59,15 @@ units {
     attacks {
       new {
         damage = 11 
-        cooldown = 0.5 
+        cooldown = 0.6 
         range = 700
         targets { "air"; "ground" }
+      }
+    }
+    passives {
+      new {
+        name = "Charger Shields"
+        description = "Gives shields to nearby units"
       }
     }
   }
@@ -112,12 +125,6 @@ units {
         description = "0.2s cooldown. unload troops in targeted area"
       }
     }
-    passives {
-      new {
-        name = "Charger Shields"
-        description = "Gives shields to nearby units"
-      }
-    }
   }
   new Army { 
     name = "Marran Badger"
@@ -163,4 +170,13 @@ units {
       }
     }
   }
+}
+
+heroes {
+  new {
+    name = "Hel"
+    tier = "Hero"
+  }
+
+  
 }

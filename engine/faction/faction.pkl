@@ -2,6 +2,7 @@ abstract module faction
 extends "../data.pkl"
 import "../upgrade/talent.pkl" as Talent
 import "../ability/topbar.pkl" as TopBarPower
+import "../ability/faction_passive.pkl" as FactionPassive
 import "../building/building.pkl" as Building
 import "../unit/unit.pkl" as Unit
 import "../unit/hero.pkl" as Hero
@@ -34,6 +35,11 @@ buildings: Listing<Building> = new Listing<Building> {
 
 /// all of the units that can be built or cast by this faction, including its worker and harvester
 units: Listing<Unit> = new Listing<Unit> {
+  default { faction = faction_slug }
+}
+
+/// only mercs have faction talents rn but im doing it here anyway
+passives: Listing<FactionPassive> = new Listing<FactionPassive> {
   default { faction = faction_slug }
 }
 
