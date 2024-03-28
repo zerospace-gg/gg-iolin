@@ -1,7 +1,8 @@
 abstract module upgrade
 extends "../data.pkl"
+import "../types.pkl" as $t
 
 // right now upgrades just have an effect description
-fixed type: String = "upgrade"
+fixed type = "upgrade"
 
 // subclasses can deal with subtype here, as talent is special and wants an empty subtype

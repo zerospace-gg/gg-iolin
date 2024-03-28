@@ -25,7 +25,7 @@ rebuild_time: UInt?
 domain: $t.DomainType = "ground"
 
 hotkey: $t.HotKey?
-tier: $t.Tier
+tier: $t.Tier?
 
 gathers_flux: Float?
 gathers_rich_flux: Float?

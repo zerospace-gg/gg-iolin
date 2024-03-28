@@ -1,4 +1,4 @@
-module passive 
+module faction_passive 
 extends "ability.pkl"
 
 ability_type = "faction-passive"

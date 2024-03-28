@@ -9,8 +9,6 @@ tag { "building" }
 hidden building_type: "base" | "extractor" | "supply" | "production" | "tech" | "special"
 speed = 0
 
-tier: $t.Tier?
-
 vision = 1800
 
 armor = 1

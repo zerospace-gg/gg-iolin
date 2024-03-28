@@ -5,9 +5,6 @@ import "../types.pkl" as $t
 fixed type = "talent"
 fixed subtype = ""
 
-/// faction is required for talents
-faction: $t.Faction
-
 /// the talent level / rank / row number
 level: TalentLevel
 typealias TalentLevel = UInt(isBetween(1, 5))

@@ -2,7 +2,7 @@ abstract module ability
 extends "../data.pkl"
 import "../types.pkl" as $t
 
-fixed type: String = "ability"
+fixed type = "ability"
 
 activation_type: "auto" | "activated" | "passive" = 
   if (primary) "auto" 
@@ -10,7 +10,7 @@ activation_type: "auto" | "activated" | "passive" =
 
 ability_type: "attack" | "heal" | "spell" | "switch-attack" | "toggle-siege" | "faction-passive" | "topbar-power" = if (primary) "attack" else null
 
-fixed subtype: String = 
+fixed subtype = 
   List(ability_of, ability_type, activation_type)
     .filter((i) -> i != "")
     .join("/")

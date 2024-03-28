@@ -24,13 +24,15 @@ function slugpathOk (t: String, s: String) =
 typealias Slug = String((s) -> $t.slugOk("Slug", s))
 
 /// identical to slug, but given a different semantic meaning. This is for the top-level type field
-typealias TopType = String((s) -> $t.slugOk("TopType", s))
+// typealias TopType = String((s) -> $t.slugOk("TopType", s))
+typealias TopType = String // ((s) -> $t.slugOk("TopType", s))
 
 /// Id field is auto-generated in classes as a fixed type, this helps make sure it conforms
 typealias Id = String((s) -> $t.slugpathOk("Id", s))
 
 /// identical to id, but given a different semantic meaning. this is used for subtype fields.
-typealias SubType = String((s) -> $t.slugpathOk("SubType", s))
+// typealias SubType = String((s) -> $t.slugpathOk("SubType", s))
+typealias SubType = String // ((s) -> $t.slugpathOk("SubType", s))
 
 /// definitions for all of these are in game/ folder, but helpful to have them explicitly defined as types
 typealias MainFaction = "grell" | "legion" | "protectorate" | "xol" 
@@ -42,7 +44,7 @@ typealias MercFaction = "marran" | "dread" | "valkaru" | "chakru" | "arandi" | "
 typealias AIFaction = "neutral" | "hostile"
 
 /// definitions for all of these are in game/ folder, but helpful to have them explicitly defined as types
-typealias Faction = MainFaction | MercFaction | AIFaction
+typealias AnyFaction = MainFaction | MercFaction | AIFaction
 
 /// mercs have 3 tiers
 typealias MercTier = "T1" | "T2" | "T3"
