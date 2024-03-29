@@ -1,0 +1,71 @@
+amends ".../engine/unit/army.pkl"
+
+name = "Atlas"
+tier = "T2"
+description = "Yeah, I mean, I like commandos just fine. They're cool. But what if we made a robot commando?"
+supply = 6
+hexite_cost = 50
+flux_cost = 150
+build_time = 60
+energy = 100
+
+hp = 425
+speed = 450
+
+armor_type = "medium"
+
+attacks {
+  new {
+    damage = 6 
+    shots_per_cast = 2 
+    cooldown = 0.5
+    range = 1550
+  }
+}
+
+spells {
+  new {
+    name = "Jump"
+    hotkey = "d"
+    description = "Jumps to the target point, bypassing any terrain. Can attack while jumping"
+    cooldown = 18
+  }
+
+  new {
+    name = "Drone Strike"
+    hotkey = "r"
+    description = "65 Energy. Launch a drone that deals 200 damage over 5 seconds in the target area."
+    energy_cost = 65
+  }
+}
+
+upgrades {
+  new {
+    name = "Faster Legs"
+    description = "+20% Movement Speed"
+    tier = "T2.5"
+  }
+
+  new {
+    name = "Improved Drone Strike"
+    description = "+40% casting range"
+    tier = "T2.5"
+  }
+
+  new {
+    name = "Improved Jump"
+    description = "Gain 150 shields after jumping, lasts 3s. -50% jump cooldown."
+    tier = "T2.5"
+  }
+
+  new {
+    name = "Extra Explosion"
+    description = "Upon expiration, drone explodes dealing 100 damage to nearby enemies. Drone spins faster. "
+    tier = "T2.5"
+  }
+}
+
+created_by { "factory" }
+unlocked_by { "mechanical-research-lab" }
+
+

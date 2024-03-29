@@ -167,17 +167,17 @@ buildings {
 }
 
 units {
-  import("units/seedling.pkl") |> fac_defaults
-  import("units/infused_seedling.pkl") |> fac_defaults
-  import("units/grell_harvester.pkl") |> fac_defaults
-  import("units/stinger.pkl") |> fac_defaults
-  import("units/harbinger.pkl") |> fac_defaults
-  import("units/weaver.pkl") |> fac_defaults
-  import("units/lasher.pkl") |> fac_defaults
-  import("units/skrelling.pkl") |> fac_defaults
-  import("units/reaver.pkl") |> fac_defaults
-  import("units/thresher.pkl") |> fac_defaults
-  import("units/behemoth.pkl") |> fac_defaults
+  import("units/T0/builder/seedling.pkl") |> fac_defaults
+  import("units/T0/builder/infused_seedling.pkl") |> fac_defaults
+  import("units/T0/harvester/grell_harvester.pkl") |> fac_defaults
+  import("units/T1/1_stinger.pkl") |> fac_defaults
+  import("units/T1/2_harbinger.pkl") |> fac_defaults
+  import("units/T1_5/3_weaver.pkl") |> fac_defaults
+  import("units/T2/4_lasher.pkl") |> fac_defaults
+  import("units/T2/5_skrelling.pkl") |> fac_defaults
+  import("units/T3/6_reaver.pkl") |> fac_defaults
+  import("units/T3/7_thresher.pkl") |> fac_defaults
+  import("units/T3/8_behemoth.pkl") |> fac_defaults
 }
 
 heroes {

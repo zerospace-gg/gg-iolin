@@ -1,0 +1,28 @@
+amends ".../engine/unit/worker.pkl"
+
+name = "Engineer"
+domain = "ground"
+description = "Protectorate builder unit. Has a repair/heal."
+hp = 50
+speed = 450
+
+created_by { 
+  "operating-tower"
+  "operating-tower-defensive"
+}
+
+creates {
+  "operating-tower"
+  "supply-platform"
+  "airstrip"
+  "barracks"
+  "factory"
+  "advanced-factory"
+  "research-lab"
+  "mechanical-research-lab"
+  "special-research-lab"
+}
+
+notes {
+  "has a repair ability on autocast, details will be added later"
+}

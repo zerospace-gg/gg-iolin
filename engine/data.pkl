@@ -1,7 +1,10 @@
 /// root object of this engine. basic data type for all game objects & effects.
 abstract module data
-
+import "pkl:reflect"
+import "data.pkl"
 import "types.pkl" as $t
+
+local $data = reflect.moduleOf(data)
 
 /// fully-qualified id. this is helpful for searching, as it's a single string 
 /// you can match terms against
@@ -20,15 +23,10 @@ slug: $t.Slug = name.toLowerCase()
 /// nicely formatted display name, as it appears in game (with the exception of things without lore names yet)
 name: String 
 
-/// community nicknames for this
-nicknames: Listing<String>?
-
 /// in-game description of this
 description: String?
 
-/// injected by the data processing layer, this is the filename it is defined in.
-/// if explicitly defined it will be silently overwritten.
-source: String?
+// source = $data.uri
 
 /// top-level type. data subclasses will define this as a constant literal
 fixed type: $t.TopType

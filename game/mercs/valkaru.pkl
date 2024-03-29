@@ -79,7 +79,7 @@ units {
   }
   new Army {
     name = "Sensor Pod"
-    tag = "detect:cloak"
+    tag { "detect:cloak" }
     tier = "T1"
     build_count = 1
     supply = 2
@@ -87,9 +87,14 @@ units {
     armor_type = "light"
     speed = 650
     vision = 2200
-    damage = 5
-    cooldown = 0.7
-    range = 1200
+    domain = "air"
+    attacks { 
+      new {
+        damage = 5
+        cooldown = 0.7
+        range = 1200
+      } 
+    }
   }
   new Army { 
     name = "Valkaru Flame Walker"

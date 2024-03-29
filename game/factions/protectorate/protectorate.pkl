@@ -128,11 +128,18 @@ topbar {
 
 
 buildings {
-  // import("buildings/x.pkl") |> fac_defaults
+  // import("buildings/operating_tower.pkl") |> fac_defaults
+  // import("buildings/operating_tower_attacker.pkl") |> fac_defaults
 }
 
 units {
-  // import("units/x.pkl") |> fac_defaults
+  import("units/T0/builder/engineer.pkl") |> fac_defaults
+  import("units/T0/harvester/prot_harvester.pkl") |> fac_defaults
+  import("units/T1/1_commando.pkl") |> fac_defaults
+  import("units/T1/2_bastion.pkl") |> fac_defaults
+  import("units/T2/3_avenger.pkl") |> fac_defaults
+  import("units/T2/4_striker.pkl") |> fac_defaults
+  import("units/T2/5_gunship.pkl") |> fac_defaults
 }
 
 heroes {
