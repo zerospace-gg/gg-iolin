@@ -43,7 +43,7 @@ units {
     build_count = 4
     hexite_cost = 250
     flux_cost = 0
-    supply = 8
+    supply = 2
     hp = 350
     armor_type = "medium"
     speed = 575
@@ -62,7 +62,7 @@ units {
     build_count = 2
     hexite_cost = 200
     flux_cost = 75
-    supply = 8
+    supply = 4
     hp = 400
     speed = 400
     armor_type = "medium"
@@ -77,13 +77,27 @@ units {
       }
     }
   }
+  new Army {
+    name = "Sensor Pod"
+    tag = "detect:cloak"
+    tier = "T1"
+    build_count = 1
+    supply = 2
+    hp = 250
+    armor_type = "light"
+    speed = 650
+    vision = 2200
+    damage = 5
+    cooldown = 0.7
+    range = 1200
+  }
   new Army { 
     name = "Valkaru Flame Walker"
     tier = "T2"
     build_count = 1
     hexite_cost = 75
     flux_cost = 175
-    supply = 8
+    supply = 6
     hp = 800
     speed = 375
     armor_type = "heavy"
