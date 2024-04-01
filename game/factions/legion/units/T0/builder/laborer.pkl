@@ -1,0 +1,16 @@
+amends ".../engine/unit/worker.pkl" 
+
+name = "Laborer"
+domain = "ground"
+hp = 50
+speed = 450
+build_time = 5
+created_by { "garrison-tower" }
+
+heals {
+  new {
+    healing = 5
+    cooldown = 0.5
+    range = 100
+  }
+}

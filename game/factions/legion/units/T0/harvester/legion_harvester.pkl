@@ -1,0 +1,16 @@
+amends ".../engine/unit/harvester.pkl"
+
+name = "Legion Harvester"
+created_by { "garrison-tower" }
+
+creates { 
+  "garrison-tower"
+  "idal-conduit"
+  "altar"
+  "barracks"
+  "terror-tank"
+  "dreadnought"
+  "warehouse"
+  "armory"
+}
+
