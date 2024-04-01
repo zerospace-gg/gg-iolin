@@ -1,5 +1,6 @@
 module extractor
 extends "building.pkl"
+tag { "extractor" }
 building_type = "extractor"
 armor = 0
 

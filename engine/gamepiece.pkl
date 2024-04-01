@@ -5,6 +5,7 @@ import "ability/attack.pkl" as Attack
 import "ability/heal.pkl" as Heal
 import "ability/spell.pkl" as Spell
 import "ability/passive.pkl" as Passive
+import "turret/turret.pkl" as Turret
 
 import "types.pkl" as $t
 
@@ -13,48 +14,54 @@ import "types.pkl" as $t
 flavor: String?
 
 /// hexite cost to build. 0 for gamepieces that are cast
-hexite_cost: UInt? 
-flux_cost: UInt?
-build_count: UInt? = 1
-cooldown: UInt?
-energy_cost: UInt?
-topbar_cost: UInt?
-build_time: UInt?
+hexite_cost: Number? 
+flux_cost: Number?
+build_count: Number? = 1
+cooldown: Number?
+energy_cost: Number?
+topbar_cost: Number?
+build_time: Number?
 rebuildable: Boolean?
-rebuild_time: UInt?
+rebuild_time: Number?
 domain: $t.DomainType = "ground"
 
 hotkey: $t.HotKey?
 tier: $t.Tier?
 
-gathers_flux: Float?
-gathers_rich_flux: Float?
+gathers_flux: Number?
+gathers_rich_flux: Number?
 
-gathers_hexite: Float?
-gathers_empty_hexite: Float?
+gathers_hexite: Number?
+gathers_empty_hexite: Number?
 
-supply: UInt?
-hp: UInt?
-vision: UInt?
-speed: UInt?
-shields: UInt?
-abes_energy: UInt?
-energy: UInt?
-armor: UInt?
+supply: Number?
+hp: Number?
+vision: Number?
+speed: Number?
+shields: Number?
+abes_energy: Number?
+energy: Number?
+armor: Number?
 
 armor_type: $t.ArmorType = "none"
-stun_resist: UInt?
+stun_resist: Number?
 
-provides_flux: UInt?
-provides_hex: UInt?
-provides_supply: UInt?
-provides_biomass: UInt?
+provides_flux: Number?
+provides_hex: Number?
+provides_supply: Number?
+provides_biomass: Number?
+provides_detection: Number?
 provides_upgrades_for: Listing<String>(isDistinct)?
 
 upgraded_by: Listing<String>(isDistinct)?
 
 transforms_from: Listing<String>(isDistinct)?
 transforms_into: Listing<String>(isDistinct)?
+
+max_turrets: Number?
+turret_type: "turret" | "sacrifice"? =
+  if (turrets.length == 0) null 
+  else throw("turret_type must be set if turrets is used.")
 
 local df = this.faction
 local ds = this.slug
@@ -73,4 +80,8 @@ spells: Listing<Spell> = new Listing<Spell> {
 
 passives: Listing<Passive> = new Listing<Passive> {
   default { faction = df; ability_of = ds }
+}
+
+turrets: Listing<Turret> = new Listing<Turret> {
+  default { faction = df; turret_of = ds }
 }

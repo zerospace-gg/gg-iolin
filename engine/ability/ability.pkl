@@ -1,5 +1,6 @@
 abstract module ability
 extends "../data.pkl"
+import "ability.pkl" as Ability
 import "../types.pkl" as $t
 
 fixed type = "ability"
@@ -21,53 +22,58 @@ targets: Listing<$t.TargetType>
 target_mode: $t.TargetMode?
 requires_mode: String?
 toggles_mode: String?
-energy_cost: UInt?
+energy_cost: Number?
 energy_type: $t.EnergyType?
 /// also called reload_time
 cooldown: Number?
 cooldown_at_build: Boolean?
-duration: Float?
-range: UInt?
+duration: Number?
+range: Number?
 /// also called damage point, attack delay, or cast point
-delay: Float?
+delay: Number?
 ability_of: String?
 
-num_casts: UInt?
-shots_per_cast: UInt?
+num_casts: Number?
+shots_per_cast: Number?
 
-local function x_per_sec(val: UInt?, num: UInt?, shots: UInt?, cd: Number?) =
+teleport: Number?
+provides_detection: Number? 
+
+local function x_per_sec(val: Number?, num: Number?, shots: Number?, cd: Number?) =
   if (val == null) null else 
   if (cd == null) null else
-  let (v = val.toFloat())
-  let (n = (num ?? 1).toFloat())
-  let (s = (shots ?? 1).toFloat())
+  let (v = val)
+  let (n = (num ?? 1))
+  let (s = (shots ?? 1))
   ((v * n * s) / cd).round().toInt()
 
-effect_area: UInt?
+effect_area: Number?
 
-damage: UInt?
-damage_over_time: UInt? // dps will have to change based on this as well
-damage_per_sec: UInt? = 
+damage: Number?
+damage_over_time: Number? // dps will have to change based on this as well
+damage_per_sec: Number? = 
   if (damage_over_time != null) null 
   else x_per_sec(damage, num_casts, shots_per_cast, cooldown)
 
-healing: UInt?
-healing_over_time: UInt?
-healing_per_sec: UInt? = 
+healing: Number?
+healing_over_time: Number?
+healing_per_sec: Number? = 
   if (healing_over_time != null) null 
   else x_per_sec(healing, num_casts, shots_per_cast, cooldown)
 
-area_range: UInt?
-area_damage: UInt?
-area_over_time: UInt?
+area_range: Number?
+area_damage: Number?
+area_over_time: Number?
 
 // like area, but splash should only be attached to a direct dmg amount
-splash_percent: UInt?
-splash_range: UInt?
-splash_over_time: UInt?
+splash_percent: Number?
+splash_range: Number?
+splash_over_time: Number?
 
-bonus_percent: UInt?
+bonus_percent: Number?
 bonus_vs_tags: Listing<String>?
+
+requires_turret: String?
 
 autocast: "always" | "toggle" | "never" = 
   if (activation_type == "auto") "always" else "never"

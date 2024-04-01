@@ -1,0 +1,31 @@
+module turret
+extends "../gamepiece.pkl"
+import "../ability/attack.pkl" as Attack
+import "../ability/heal.pkl" as Heal
+import "../ability/spell.pkl" as Spell
+import "../ability/passive.pkl" as Passive
+
+fixed type = "turret"
+fixed subtype = "turret"
+
+turret_of: String 
+consumes_unit: String?
+
+local df = this.faction
+local ds = this.slug
+
+attacks: Listing<Attack> = new Listing<Attack> {
+  default { faction = df; ability_of = ds }
+}
+
+heals: Listing<Heal> = new Listing<Heal> {
+  default { faction = df; ability_of = ds }
+}
+
+spells: Listing<Spell> = new Listing<Spell> {
+  default { faction = df; ability_of = ds }
+}
+
+passives: Listing<Passive> = new Listing<Passive> {
+  default { faction = df; ability_of = ds }
+}

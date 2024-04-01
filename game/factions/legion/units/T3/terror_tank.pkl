@@ -1,0 +1,78 @@
+amends ".../engine/unit/army.pkl"
+import ".../engine/turret/turret.pkl" as Turret
+import ".../engine/types.pkl" as $t
+import "terror_tank.pkl" as me
+
+name = "Terror Tank"
+
+tag { "massive" }
+
+hexite_cost = 200 
+flux_cost = 200
+supply = 20
+hp = 1500
+speed = 450
+armor_type = "heavy"
+stun_resist = 75
+build_time = 60
+
+constructing_version {
+  name = "Terror Tank (Constructing)"
+  build_time = 60
+  hp = 1500
+}
+
+attacks {
+  new {
+    name = "Main Gun"
+    damage = 38
+    cooldown = 0.9
+    range = 1300
+  }
+}
+
+local main_weapon: String = "\(me.name)'s \(me.attacks[0].name)"
+
+turret_type = "turret"
+max_turrets = 4
+turrets {
+  default {
+    flux_cost = 125
+    build_time = 25
+    hp = 225
+    armor_type = "heavy"
+    slug = "\(me.slug)-turret-\($t.makeSlug(this.name))"
+  }
+  new {
+    name = "Flame Turret"
+    description = "Each \(name) adds splash damage to \(main_weapon)"
+    attacks { 
+      new {
+        damage = 25
+        cooldown = 2
+        bonus_percent = 100
+        bonus_vs_tags { "armor:light" }
+        range = 1100
+      }
+    }
+  }
+  new {
+    name = "Gatling Gun"
+    description = "Each \(name) adds +30% attack speed and +250 range to \(main_weapon)"
+    attacks { 
+      new {
+        damage = 11
+        cooldown = 0.5
+        range = 1500
+      }
+    }
+  }
+  new {
+    name = "Pulseforge Accelerator"
+    description = "Each \(name) adds +30% attack speed and +250 range to \(main_weapon)"
+  }
+  new {
+    name = "Shield Generator"
+    description = "Each \(name) adds 4 shields charges to the \(me.name). +75 shields for 8 seconds to nearby unit."
+  }
+}

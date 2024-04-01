@@ -1,0 +1,6 @@
+module constructing_unit
+extends "building.pkl"
+tag { "constructing-unit" }
+building_type = "constructing-unit"
+vision = 800
+armor = 0

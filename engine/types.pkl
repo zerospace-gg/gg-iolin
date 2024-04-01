@@ -71,3 +71,9 @@ typealias TargetMode = "gamepiece" | "location" | "around-self" | "strip"
 typealias EnergyType = "classic" | "abes" | "topbar"
 
 typealias UpgradeTier = "T1.5" | "T2.5" | "T3.5"
+
+function makeSlug(s: String): String =
+  s.toLowerCase()
+    .replaceAll(Regex("'+"), "")
+    .replaceAll(Regex("[^a-z0-9]+"), "-")
+    .replaceAll(Regex("(^-+|-+$)"), "")

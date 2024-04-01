@@ -170,14 +170,14 @@ units {
   import("units/T0/builder/seedling.pkl") |> fac_defaults
   import("units/T0/builder/infused_seedling.pkl") |> fac_defaults
   import("units/T0/harvester/grell_harvester.pkl") |> fac_defaults
-  import("units/T1/1_stinger.pkl") |> fac_defaults
-  import("units/T1/2_harbinger.pkl") |> fac_defaults
-  import("units/T1_5/3_weaver.pkl") |> fac_defaults
-  import("units/T2/4_lasher.pkl") |> fac_defaults
-  import("units/T2/5_skrelling.pkl") |> fac_defaults
-  import("units/T3/6_reaver.pkl") |> fac_defaults
-  import("units/T3/7_thresher.pkl") |> fac_defaults
-  import("units/T3/8_behemoth.pkl") |> fac_defaults
+  import("units/T1/stinger.pkl") |> fac_defaults
+  import("units/T1/harbinger.pkl") |> fac_defaults
+  import("units/T1/weaver.pkl") |> fac_defaults
+  import("units/T2/lasher.pkl") |> fac_defaults
+  import("units/T2/skrelling.pkl") |> fac_defaults
+  import("units/T3/reaver.pkl") |> fac_defaults
+  import("units/T3/thresher.pkl") |> fac_defaults
+  import("units/T3/behemoth.pkl") |> fac_defaults
 }
 
 heroes {

@@ -9,7 +9,7 @@ hidden map_type: MapType = "1v1"
 typealias MapType = "1v1" | "2v2" | "1p"
 
 /// the number of XP towers. currently this must be 2 or 3, with each providng +4.5 or +3 xp/sec respectively
-xp_towers: UInt8(isBetween(2,3))
+xp_towers: Number(isBetween(2,3))
 
 /// how far away flux is from your spawning point
 flux_distance: FluxDistance
@@ -20,7 +20,7 @@ size: MapSize = "normal"
 typealias MapSize = "small" | "normal" | "large"
 
 /// number of players this map allows, including AI
-players: UInt8? = 
+players: Number? = 
   if (type == "1p") 1
   else if (type == "1v1") 2 
   else if (type == "2v2") 4

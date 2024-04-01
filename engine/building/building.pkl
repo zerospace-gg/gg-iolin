@@ -6,7 +6,7 @@ fixed type = "building"
 fixed subtype = building_type
 tag { "building" }
 
-hidden building_type: "base" | "extractor" | "supply" | "production" | "tech" | "special"
+hidden building_type: "base" | "extractor" | "supply" | "production" | "tech" | "special" | "constructing-unit"
 speed = 0
 
 vision = 1800

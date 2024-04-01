@@ -5,7 +5,7 @@ import "../types.pkl" as $t
 fixed subtype = upgrade_of + "/" + tier.replaceFirst("T", "tier-").replaceAll(".", "-").toLowerCase()
 upgrade_of: String
 tier: $t.UpgradeTier
-flux_cost: UInt = 
+flux_cost: Number = 
   if (tier == "T1.5") 100 else
   if (tier == "T2.5") 150 else 
   if (tier == "T3.5") 200 else 

@@ -137,7 +137,8 @@ buildings {
 }
 
 units {
-  // import("units/x.pkl") |> fac_defaults
+  import ("units/T3/terror_tank.pkl") |> fac_defaults
+  import ("units/T3/dreadnought.pkl") |> fac_defaults
 }
 
 heroes {
