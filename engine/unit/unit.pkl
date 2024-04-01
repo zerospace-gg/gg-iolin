@@ -11,7 +11,7 @@ fixed subtype = unit_type
 constructing_version: ConstructingUnit?
 
 tag { "unit" }
-hidden unit_type: "worker" | "harvester" | "army" | "hero"
+hidden unit_type: "builder" | "harvester" | "army" | "hero"
 
 vision = 1800
 

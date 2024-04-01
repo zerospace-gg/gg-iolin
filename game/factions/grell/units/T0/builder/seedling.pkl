@@ -1,4 +1,4 @@
-amends ".../engine/unit/worker.pkl" 
+amends ".../engine/unit/builder.pkl" 
 import ".../engine/infuse.pkl" as $i
 
 name = "Seedling"

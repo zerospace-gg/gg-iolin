@@ -33,7 +33,7 @@ buildings: Listing<Building> = new Listing<Building> {
   default { faction = faction_slug }
 }
 
-/// all of the units that can be built or cast by this faction, including its worker and harvester
+/// all of the units that can be built or cast by this faction, including its builder and harvester
 units: Listing<Unit> = new Listing<Unit> {
   default { faction = faction_slug }
 }
