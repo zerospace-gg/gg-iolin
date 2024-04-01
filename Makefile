@@ -12,7 +12,7 @@ JSON_GZ=${DIST}/zsdata.gz
 JSON_ZIP=${DIST}/zsdata.zip
 JSON_PRE=${BUILD}/zsdata.json
 JSON_MANIFEST=${DIST}/zsdata.manifest.json
-TARGETS=${JSON_PLAIN} ${JSON_MIN} ${JSON_GZ} ${JSON_ZIP}
+TARGETS=${JSON_PLAIN} ${JSON_MIN} ${JSON_GZ} ${JSON_ZIP} 
 SHOW=$(shell which bat || which cat)
 
 .PHONY: test
@@ -28,9 +28,11 @@ all: ${TARGETS}
 force: clean all
 
 ${BUILD}:
+	@echo "Creating ${BUILD}
 	@mkdir -p ${BUILD}
 
 ${DIST}:
+	@echo "Creating ${DIST}
 	@mkdir -p ${DIST}
 	
 ${JSON_PRE}: ${ALL_PKL} ${BUILD}
@@ -40,11 +42,13 @@ ${JSON_PRE}: ${ALL_PKL} ${BUILD}
 
 ${JSON_PLAIN}: ${JSON_PRE} ${DIST}
 	@echo "Building ${JSON_PLAIN}"
-	@node bin/add-release-meta.mjs ${VERSION} ${JSON_PRE} ${JSON_PLAIN} ${JSON_MANIFEST} ${VERSION_TEXT}
+	@node bin/add-release-meta.mjs ${VERSION} ${JSON_PRE} ${JSON_PLAIN} ${JSON_MIN} ${JSON_MANIFEST} ${VERSION_TEXT}
+
+${JSON_MANIFEST}: ${JSON_PLAIN}
+
+${VERSION_TEXT}: ${JSON_PLAIN}
 
 ${JSON_MIN}: ${JSON_PLAIN}
-	@echo "Building ${JSON_MIN}"
-	@node -e "const x = require('./dist/zsdata.json'); require('fs').writeFileSync('${JSON_MIN}', JSON.stringify(x), 'utf8');"
 
 ${JSON_GZ}: ${JSON_MIN}
 	@echo "Building ${JSON_GZ}"
@@ -58,6 +62,9 @@ ${JSON_ZIP}: ${JSON_PLAIN}
 show: ${JSON_PLAIN}
 	@echo "current ${JSON_PLAIN}
 	$(SHOW) ${JSON_PLAIN}
+
+deploy: all
+	bash bin/upload.sh $(shell cat ${VERSION_TEXT}) ${JSON_MIN} ${JSON_MANIFEST}
 
 clean:
 	rm -f ${TARGETS}

@@ -6,8 +6,16 @@ const nowtiny = nowstr
   .replace(/\.\d{3}Z/, "")
   .replace(/[^0-9T]+/g, "")
   .replace("T", "-");
-const [, , version, input, outputjson, outputmanifest, outputversion] =
-  process.argv;
+const [
+  ,
+  ,
+  version,
+  input,
+  outputjson,
+  outputjsonmin,
+  outputmanifest,
+  outputversion,
+] = process.argv;
 
 console.log("Version:", version);
 console.log("Input:", input);
@@ -27,9 +35,16 @@ const manifest = JSON.stringify(
   null,
   2,
 );
+const jsonmin = JSON.stringify(data);
+
 console.log("Writing  ", outputjson);
 writeFileSync(outputjson, json, "utf8");
+
+console.log("Writing  ", outputjsonmin);
+writeFileSync(outputjsonmin, jsonmin, "utf8");
+
 console.log("Writing  ", outputversion);
 writeFileSync(outputversion, `${data.releaseId}\n`, "utf8");
+
 console.log("Writing  ", outputmanifest);
 writeFileSync(outputmanifest, manifest, "utf8");
