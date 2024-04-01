@@ -1,0 +1,44 @@
+
+amends ".../engine/unit/army.pkl"
+
+name = "Rhino"
+hotkey = "e"
+tier = "T1"
+hexite_cost = 75
+build_time = 24
+supply = 1 
+hp = 250 
+armor_type = "medium"
+speed = 675
+created_by { "barracks" }
+unlocked_by { "barracks" }
+upgraded_by { "warehouse" }
+
+attacks {
+  new {
+    damage = 26
+    cooldown = 1.4
+    range = 110 
+  }
+}
+
+spells {
+  new {
+    name = "Knockback"
+    description = "Autocasts when available. charges and knocks enemy back. knockback stacks."
+    autocast = "always"
+  }
+}
+
+upgrades {
+  new {
+    name = "Fast Recovery"
+    description = "Energy for Knockback ability regenerates twice as fast"
+    tier = "T1.5"
+  }
+  new {
+    name = "Maul"
+    description = "Knockbacked enemy is slowed by 75% for 4s"
+    tier = "T1.5"
+  }
+}

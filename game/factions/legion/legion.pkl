@@ -137,6 +137,9 @@ buildings {
 }
 
 units {
+  import ("units/T1/thrall.pkl") |> fac_defaults
+  import ("units/T1/armored_thrall.pkl") |> fac_defaults
+  import ("units/T1/rhino.pkl") |> fac_defaults
   import ("units/T3/terror_tank.pkl") |> fac_defaults
   import ("units/T3/dreadnought.pkl") |> fac_defaults
 }
