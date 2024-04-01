@@ -16,3 +16,5 @@ local everything = List(maps, factions, mercenaries).flatMap(get_kids)
 
 all: Mapping<String, Data> = everything.toMap((x) -> x.id, (x) -> x).toMapping()
 
+buildId: String = "v12213rubyWillFixLater"
+
