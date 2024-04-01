@@ -4,6 +4,7 @@ name = "Prefect Nova"
 hp = 150
 armor_type = "medium"
 speed = 500
+stun_resist = 50
 
 attacks {
   new {

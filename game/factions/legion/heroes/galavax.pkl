@@ -1,0 +1,77 @@
+amends ".../engine/unit/hero.pkl"
+
+name = "Galavax"
+hp = 300
+armor_type = "medium"
+speed = 500
+hexite_cost = 200
+flux_cost = 200
+build_time = 30
+stun_resist = 50
+energy = 100
+
+unlocked_by { "altar" }
+created_by { "altar" }
+
+attacks {
+  new {
+    damage = 26
+    cooldown = 1.4
+    range = 1200
+    targets { "ground"; "air" }
+  }
+}
+
+spells {
+  new { 
+    name = "Fireball"
+    hotkey = "d"
+    energy_cost = 40
+    energy_type = "classic"
+    cooldown = 15
+    description = "Hurl a fireball which slowly moves across battlefield and burns enemy units and structures"
+  }
+  new {
+    name = "Sacrificial Spear"
+    hotkey = "f"
+    energy_cost = 25
+    energy_type = "classic"
+    cooldown = 10
+    description = "Target a friendly Thrall or an enemy unit. Enemy unit will take 75 damage and be slowed for 4s. Friendly thrall will get sacrificied and heal friendly units for 300 HP over 30s. Double-clicking ability picks a thrall with the lowest health."
+  }
+}
+
+upgrades {
+  new {
+    name = "Lightning"
+    description = "Every 10s or when a nearby thrall dies, strike a random enemy unit with lightning for 60 dmg"
+    tier = "T1.5"
+  }
+  new {
+    name = "Improved Sacrifice"
+    description = "+40% damage and slow duration of sacrificial spear. +40% radius and duration for sacrificial site."
+    tier = "T1.5"
+  }
+
+  new {
+    name = "Burning Fireball"
+    description = "Fireball explodes when it reaches the target setting the ground on fire."
+    tier = "T2.5"
+  }
+  new {
+    name = "More Sacrifice"
+    description = "When a thrall dies in range of a sacrificial site, it will create a new one. Cooldown 3s."
+    tier = "T2.5"
+  }
+
+  new {
+    name = "From Ashes"
+    description = "When a hero dies nearby, revive them at 50% vitality. 120s cooldown."
+    tier = "T3.5"
+  }
+  new {
+    name = "Sacrificial Bite"
+    description = "Sacrificial Sites have an attack that slows enemy units"
+    tier = "T3.5"
+  }
+}

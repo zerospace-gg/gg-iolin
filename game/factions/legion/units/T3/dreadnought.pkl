@@ -15,6 +15,7 @@ speed = 500
 armor_type = "heavy"
 stun_resist = 75
 build_time = 60
+domain = "air"
 
 constructing_version {
   name = "Terror Tank (Constructing)"

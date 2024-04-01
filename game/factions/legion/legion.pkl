@@ -145,7 +145,7 @@ units {
 }
 
 heroes {
-  // import("heroes/x.pkl") |> fac_defaults
+  import("heroes/galavax.pkl") |> fac_defaults
+  import("heroes/inquisitress.pkl") |> fac_defaults
+  import("heroes/kraegar.pkl") |> fac_defaults
 }
-
-cross_faction_heroes { }

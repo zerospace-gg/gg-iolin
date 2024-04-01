@@ -1,0 +1,78 @@
+amends ".../engine/unit/hero.pkl"
+import "kraegar.pkl" as me
+
+name = "Kraegar"
+hp = 300
+armor_type = "medium"
+speed = 500
+hexite_cost = 200
+flux_cost = 200
+build_time = 30
+stun_resist = 50
+energy = 100
+
+unlocked_by { "altar" }
+created_by { "altar" }
+
+attacks {
+  new {
+    damage = 20
+    cooldown = 1.2
+    range = 1200
+    targets { "ground" }
+  }
+}
+
+spells {
+  new { 
+    name = "Piercing Shot"
+    hotkey = "e"
+    energy_cost = 30
+    energy_type = "classic"
+    cooldown = 8
+    description = "Deals 75 damage in a linear area"
+  }
+  new {
+    name = "Toxic Ammunition"
+    hotkey = "r"
+    energy_cost = 25
+    energy_type = "classic"
+    cooldown = 10
+    description = "Equips toxic ammunition, causing attacked units to take 30% additional damage and move 20% slower for 3s. Lasts 10 seconds."
+  }
+}
+
+upgrades {
+  new {
+    name = "Killer Instinct"
+    description = "Hitting enemy units with Piercing shots boosts hero's attack (40%) and movement speed (10%) for 6s."
+    tier = "T1.5"
+  }
+  new {
+    name = "Stronger Toxins"
+    description = "Increase Toxic Ammunition slow and damage multiplier by 20%"
+    tier = "T1.5"
+  }
+
+  new {
+    name = "Piercing Shot Slow"
+    description = "Units hit by piercing shot are slowed (-50% for 4s)"
+    tier = "T2.5"
+  }
+  new {
+    name = "Attack Range Aura"
+    description = "Increasess attack range of nearby ranged units by 300"
+    tier = "T2.5"
+  }
+
+  new {
+    name = "Explosive Warhead"
+    description = "The piercing shot explodes at the end dealing 300 damage in area. Handling such heavy ammo increases cooldown and channel time"
+    tier = "T3.5"
+  }
+  new {
+    name = "Multishot"
+    description = "Weapon fires 2 additional projectiles at nearby enemies"
+    tier = "T3.5"
+  }
+}
