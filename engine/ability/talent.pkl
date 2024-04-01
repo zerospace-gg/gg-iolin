@@ -1,9 +1,9 @@
 module talent
-extends "upgrade.pkl"
+extends "ability.pkl"
 import "../types.pkl" as $t
 
-fixed type = "talent"
-fixed subtype = ""
+ability_type = "faction-talent"
+activation_type = "passive"
 
 /// the talent level / rank / row number
 level: TalentLevel

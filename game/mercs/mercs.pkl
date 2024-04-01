@@ -1,8 +1,8 @@
 module all_mercs
 
-import ".../engine/faction/merc.pkl" as Mercenary
+import ".../engine/faction/merc.pkl" as MercFaction
 
-mercs: Listing<Mercenary> = new Listing<Mercenary> {
+mercs: Listing<MercFaction> = new Listing<MercFaction> {
   import("arandi.pkl")
   import("chakru.pkl")
   import("dread.pkl")

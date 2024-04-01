@@ -1,9 +1,11 @@
 abstract module unit 
 extends "../gamepiece.pkl"
-
+import "../types.pkl" as $t
 import "../infuse.pkl" as $i
 import "../upgrade/unit_upgrade.pkl" as UnitUpgrade
 import "../building/constructing_unit.pkl" as ConstructingUnit
+import "unit.pkl" as me
+local methis = this
 
 fixed type = "unit"
 fixed subtype = unit_type
@@ -34,9 +36,11 @@ infuse_cost: Number? =
     let (b = (build_count ?? 1))
     (((h + f) / b) / 10.0 ).floor + 1 // it may have been ceil but seedling cost was 1 before it was adjusted to 2 (seedling is 0 cost so 1 infuse means floor+1), but maybe 1 was a manual adjust and it was ceil all along
 
-local df = this.faction
-local ds = this.slug
 
 upgrades: Listing<UnitUpgrade> = new Listing<UnitUpgrade> {
-  default { faction = df; upgrade_of = ds }
+  default { 
+    faction = methis.faction 
+    upgrade_of = methis.slug
+    slug = "\(upgrade_of)-upgrade-\($t.makeSlug(this.name))"
+  }
 }

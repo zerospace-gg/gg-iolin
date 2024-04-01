@@ -63,3 +63,9 @@ unlocked_by: Listing<$t.Slug>(isDistinct)?
 
 /// currently only buildings do this, but its here because the other unlock/create logic is here. some non-gamepieces gamepieces unlock/create 
 unlocks_merc_tier: Listing<$t.Tier>(isDistinct)?
+
+/// not rendered, but used to generate final flat output
+hidden fixed children: List<data> = List()
+
+/// not rendered, but used to generate final flat output
+hidden fixed recursive_children: List<data> = List()

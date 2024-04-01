@@ -9,7 +9,7 @@ activation_type: "auto" | "activated" | "passive" =
   if (primary) "auto" 
   else "activated"
 
-ability_type: "attack" | "heal" | "spell" | "switch-attack" | "toggle-siege" | "faction-passive" | "topbar-power" = if (primary) "attack" else null
+ability_type: "attack" | "heal" | "spell" | "switch-attack" | "toggle-siege" | "faction-passive" | "topbar-power" | "faction-talent" = if (primary) "attack" else null
 
 fixed subtype = 
   List(ability_of, ability_type, activation_type)

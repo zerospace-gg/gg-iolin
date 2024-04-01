@@ -4,28 +4,48 @@ import "../ability/attack.pkl" as Attack
 import "../ability/heal.pkl" as Heal
 import "../ability/spell.pkl" as Spell
 import "../ability/passive.pkl" as Passive
+import "../types.pkl" as $t
+import "turret.pkl" as me
+local methis = this
 
 fixed type = "turret"
 fixed subtype = "turret"
-
+tag { "turret" }
 turret_of: String 
 consumes_unit: String?
 
-local df = this.faction
-local ds = this.slug
-
 attacks: Listing<Attack> = new Listing<Attack> {
-  default { faction = df; ability_of = ds }
+  default { 
+    faction = methis.faction 
+    ability_of = methis.slug
+    slug = $t.makeRecursiveSlug(this.name, ability_of, "attack")
+  }
 }
 
 heals: Listing<Heal> = new Listing<Heal> {
-  default { faction = df; ability_of = ds }
+  default { 
+    faction = methis.faction 
+    ability_of = methis.slug
+    slug = $t.makeRecursiveSlug(this.name, ability_of, "heal")
+  }
 }
 
 spells: Listing<Spell> = new Listing<Spell> {
-  default { faction = df; ability_of = ds }
+  default { 
+    faction = methis.faction 
+    ability_of = methis.slug
+    slug = $t.makeRecursiveSlug(this.name, ability_of, "spell")
+  }
 }
 
 passives: Listing<Passive> = new Listing<Passive> {
-  default { faction = df; ability_of = ds }
+  default { 
+    faction = methis.faction 
+    ability_of = methis.slug
+    slug = $t.makeRecursiveSlug(this.name, ability_of, "passive")
+  }
 }
+
+hidden fixed children = attacks.toList() + heals.toList() + spells.toList() + passives.toList()
+
+

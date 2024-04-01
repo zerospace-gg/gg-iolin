@@ -1,11 +1,14 @@
 abstract module faction
 extends "../data.pkl"
-import "../upgrade/talent.pkl" as Talent
+import "../ability/talent.pkl" as Talent
 import "../ability/topbar.pkl" as TopBarPower
 import "../ability/faction_passive.pkl" as FactionPassive
 import "../building/building.pkl" as Building
 import "../unit/unit.pkl" as Unit
 import "../unit/hero.pkl" as Hero
+import "../types.pkl" as $t
+import "faction.pkl" as me
+local methis = this
 
 fixed type = "faction"
 fixed subtype = faction_type
@@ -17,34 +20,58 @@ typealias FactionType = "main" | "merc" | "ai"
 /// whether or not this type should be playable
 fixed playable = faction_type != "ai"
 
-local faction_slug = this.slug
 /// talents. 10 for main faction, 5 for mercs.
 talents: Listing<Talent> = new Listing<Talent> {
-  default { faction = faction_slug }
+  default { 
+    faction = methis.faction 
+    ability_of = methis.slug
+    slug = $t.makeRecursiveSlug(this.name, ability_of, "talent")
+  }
 }
 
 /// topbar abilities. should be 4.
 topbar: Listing<TopBarPower> = new Listing<TopBarPower> {
-  default { faction = faction_slug }
+  default { 
+    faction = methis.faction 
+    ability_of = methis.slug
+    slug = $t.makeRecursiveSlug(this.name, ability_of, "topbar")
+  }
 }
 
 /// all of the buildings that can be built by this faction, including its base and extractor
 buildings: Listing<Building> = new Listing<Building> {
-  default { faction = faction_slug }
+  default { 
+    faction = methis.faction 
+    slug = $t.makeRecursiveSlug(this.name, methis.slug, "building")
+  }
 }
 
 /// all of the units that can be built or cast by this faction, including its builder and harvester
 units: Listing<Unit> = new Listing<Unit> {
-  default { faction = faction_slug }
+  default { 
+    faction = methis.faction 
+    slug = $t.makeRecursiveSlug(this.name, methis.slug, "unit")
+  }
 }
 
-/// only mercs have faction talents rn but im doing it here anyway
+/// only mercs have faction passives rn but im doing it here anyway
 passives: Listing<FactionPassive> = new Listing<FactionPassive> {
-  default { faction = faction_slug }
+  default { 
+    faction = methis.faction 
+    ability_of = methis.slug
+    slug = $t.makeRecursiveSlug(this.name, ability_of, "faction-passive")
+  }
 }
 
 /// which heroes the player can choose if they select this faction
-heroes: Listing<Hero>
+heroes: Listing<Hero> = new Listing<Hero> {
+  default { 
+    faction = methis.faction 
+    slug = $t.makeRecursiveSlug(this.name, methis.slug, "unit")
+  }
+}
 
 /// cross-faction heroes available to this faction
-cross_faction_heroes: Listing<String> 
+cross_faction_heroes = new Listing<Hero> {
+
+}
