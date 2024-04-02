@@ -2,14 +2,32 @@
 abstract module gamepiece 
 extends "data.pkl"
 import "data.pkl"
-import "ability/attack.pkl" as Attack
-import "ability/heal.pkl" as Heal
-import "ability/spell.pkl" as Spell
-import "ability/passive.pkl" as Passive
 import "turret/turret.pkl" as Turret
+import "gamepiece_ability.pkl" as Ability
 import "types.pkl" as $t
 import "gamepiece.pkl" as me
 local methis = this
+
+fixed extend_tags {
+  when (armor_type != "none") { "armor:\(armor_type)" }
+  when (gathers_rich_flux ?? 0 > 0) { "gathers:flux" }
+  when (gathers_flux ?? 0 > 0) { "gathers:flux" }
+  when (gathers_hexite ?? 0 > 0) { "gathers:hexite" }
+  when (gathers_empty_hexite ?? 0 > 0) { "gathers:hexite" }
+  when (domain == "air") { "flyer" }
+  when (armor ?? 0 > 0) { "armored" }
+  when (provides_supply ?? 0 > 0) { "supply" }
+  when (provides_biomass ?? 0 > 0) { "biomass" }
+  when (provides_detection ?? 0 > 0) { "detection" }
+  when ((provides_upgrades_for?.length ?? 0) > 0) { "upgrades" }
+  when ((upgraded_by?.length ?? 0) > 0) { "upgradable" }
+  when (shields ?? 0 > 0) { "shielded" }
+  when (abes_energy ?? 0 > 0) { "abes" }
+  when (energy ?? 0 > 0) { "energy" }
+  when (stun_resist ?? 0 > 0) { "resist:stun" }
+  when (max_turrets ?? 0 > 0 && turret_type == "turret") { "has:turrets" }
+  when (turret_type == "sacrifice") { "sacrifices" }
+}
 
 /// short description of the purpose of this, to be used in summaries in UI. Many of these won't be in game. 
 /// examples: "fast melee attacker" for a unit, "vision buff" for an upgrade, etc
@@ -28,28 +46,26 @@ rebuild_time: Number?
 domain: $t.DomainType = "ground"
 
 hotkey: $t.HotKey?
-tier: $t.Tier?
+tier: $t.Tier? = from_path.tier
 
-gathers_flux: Number?
-gathers_rich_flux: Number?
+gathers_flux: Number? = from_path.gathers_flux
+gathers_rich_flux: Number? = from_path.gathers_rich_flux
 
 gathers_hexite: Number?
 gathers_empty_hexite: Number?
 
-supply: Number?
-hp: Number?
-vision: Number?
-speed: Number?
-shields: Number?
-abes_energy: Number?
+supply: Number? = from_path.supply
+hp: Number? = from_path.hp
+vision: Number? = from_path.vision
+speed: Number? = from_path.speed
+shields: Number? 
+abes_energy: Number? 
 energy: Number?
-armor: Number?
+armor: Number? = from_path.armor
 
-armor_type: $t.ArmorType = "none"
-stun_resist: Number?
+armor_type: $t.ArmorType = from_path.armor_type ?? "none" 
+stun_resist: Number? 
 
-provides_flux: Number?
-provides_hex: Number?
 provides_supply: Number?
 provides_biomass: Number?
 provides_detection: Number?
@@ -65,46 +81,42 @@ turret_type: "turret" | "sacrifice"? =
   if (turrets.length == 0) null 
   else throw("turret_type must be set if turrets is used.")
 
-//@TODO: should refactor the slug logic into a function but not now
-attacks: Listing<Attack> = new Listing<Attack> {
-  default { 
-    faction = methis.faction 
-    ability_of = methis.slug
-    slug = $t.makeRecursiveSlug(this.name, ability_of, "attack")
-  }
+local parent_info: Ability.ParentInfo = new {
+  id = methis.id
+  slug = methis.slug
+  src = methis.src
+  from_path = methis.from_path
 }
 
-heals: Listing<Heal> = new Listing<Heal> {
-  default { 
-    faction = methis.faction 
-    ability_of = methis.slug
-    slug = $t.makeRecursiveSlug(this.name, ability_of, "heal")
-  }
-}
+function makeMapping(i: Listing<Ability>): Mapping<String, Ability> =
+  i.toList().toMap((x) -> $t.makeSlug(x.name), (x) -> x).toMapping()
 
-spells: Listing<Spell> = new Listing<Spell> {
-  default { 
-    faction = methis.faction 
-    ability_of = methis.slug
-    slug = $t.makeRecursiveSlug(this.name, ability_of, "spell")
-  }
+//@TODO: i duno how to do this more cleanly
+hidden attack: Listing<Ability> = new Listing<Ability> {
+  default { parent = parent_info; ability_type = "attack" }
 }
+fixed attacks: Mapping<String, Ability> = this.makeMapping(attack)
 
-passives: Listing<Passive> = new Listing<Passive> {
-  default { 
-    faction = methis.faction 
-    ability_of = methis.slug
-    slug = $t.makeRecursiveSlug(this.name, ability_of, "passive")
-  }
+hidden heal: Listing<Ability> = new Listing<Ability> {
+  default { parent = parent_info; ability_type = "heal" }
 }
+fixed heals: Mapping<String, Ability> = this.makeMapping(heal)
 
-turrets: Listing<Turret> = new Listing<Turret> {
-  default { 
-    faction = methis.faction 
-    turret_of = methis.slug
-    slug = $t.makeRecursiveSlug(this.name, turret_of, "turret")
-  }
+hidden spell: Listing<Ability> = new Listing<Ability> {
+  default { parent = parent_info; ability_type = "spell" }
 }
+fixed spells: Mapping<String, Ability> = this.makeMapping(spell)
+
+hidden passive: Listing<Ability> = new Listing<Ability> {
+  default { parent = parent_info; ability_type = "passive" }
+}
+fixed passives: Mapping<String, Ability> = this.makeMapping(passive)
+
+hidden turret: Listing<Turret> = new Listing<Turret> {
+  default { parent = parent_info; turret_type = this.turret_type }
+}
+fixed turrets: Mapping<String, Turret> = 
+  this.turret.toList().toMap((x) -> $t.makeSlug(x.name), (x) -> x).toMapping()
 
 hidden fixed children = attacks.toList() + heals.toList() + spells.toList() + passives.toList() + turrets.toList()
 hidden fixed recursive_children = children + children.flatMap((x) -> x.recursive_children)

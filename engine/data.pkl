@@ -1,22 +1,58 @@
 /// root object of this engine. basic data type for all game objects & effects.
 abstract module data
 import "pkl:reflect"
-import "data.pkl"
 import "types.pkl" as $t
+import "path_data.pkl" as $p
+import "data.pkl" as me
 
 
-local $data = reflect.moduleOf(data)
+local meref = reflect.moduleOf(this)
 
-/// fully-qualified id. this is helpful for searching, as it's a single string 
-/// you can match terms against
-fixed id: $t.Id =
-  List(faction ?? "", type, subtype, slug)
-    .filter((i) -> i != "")
-    .join("/")
+hidden path_parts: List<String> = meref.uri
+  .replaceAll(Regex(#"^.*(factions|maps|engine)/"#), "$1/")
+  .split("/")
 
-/// a short but uniquely identifying string. Examples:
-/// `seedling`, `grell-harvester` (as multiple facs have a unit named harvester)
-slug: $t.Slug = $t.makeSlug(name)
+hidden src_dir_parts: List<String> = path_parts.dropLast(1)
+hidden src_dir_slugs: List<String> = src_dir_parts.map((x) -> x.replaceAll("_", "-"))
+hidden fixed src_dir: String = src_dir_parts.join("/")
+hidden fixed src_file: String = path_parts.takeLast(1).first
+fixed src: String = List(src_dir, src_file).join("/")
+fixed slug: $t.Slug = src_file.replaceLast(".pkl", "").replaceAll("_", "-")
+fixed id: $t.Id = (src_dir_slugs + List(slug)).join("/")
+
+// local class FromPath {
+//   faction: String?
+//   faction_type: ("main" | "merc" | "nonplayer")?
+//   type: ("unit" | "building" | "turret" | "faction" | "ability" | "upgrade" | "map")?
+//   subtype: String?
+//   tier: $t.Tier?
+// }
+
+from_path: $p.PathData = $p.dataFromPath(src_dir_parts)
+// from_path: FromPath = new {
+//   when (p[0] == "factions") {
+//     local len = p.length
+//     faction_type = p[1]
+//     faction = p[2]
+//     when (p.length == 3) {
+//       type = "faction"
+//       subtype = faction_type
+//       when (subtype != slug) {
+//         local e = throw("faction slug must match faction subtype directory") 
+//       }
+//     }
+//     when (p[3] == "units") {
+//       type = "unit" 
+//       when (p[4] == "harvester") { subtype = "harvester"; tier = "T0" }
+//       when (p[4] == "builder") { subtype = "builder"; tier = "T0" }
+//       when (p[4] == "tier_1") { subtype = "army"; tier = "T1" }
+//       when (p[4] == "tier_2") { subtype = "army"; tier = "T2" }
+//       when (p[4] == "tier_3") { subtype = "army"; tier = "T3" }
+//       when (p[4] == "hero") { subtype = "hero"; tier = "T2" }
+//       when (p[4] == "ultimate") { subtype = "ultimate"; tier = "T4" }
+//     }
+//   }
+// }
 
 /// nicely formatted display name, as it appears in game (with the exception of things without lore names yet)
 name: String 
@@ -24,24 +60,30 @@ name: String
 /// in-game description of this
 description: String?
 
-// source = $data.uri
-
-/// top-level type. data subclasses will define this as a constant literal
-fixed type: $t.TopType
+/// top-level type. overridden to a specific one of these by a subclass
+fixed type: String = from_path.type
 
 /// sub-type. data subclasses will define this as a calculated field, based on a more
-/// explicitly named hidden field, for example in type map, map_type of 1v1 becomes subtype 1v1 in data
-/// if not appropriate, subclass should explicitly define to an empty string
-fixed subtype: $t.SubType
+fixed subtype: String = from_path.subtype
 
 /// faction name. required if type isn't map. should not be defined for faction type
-faction: $t.AnyFaction?
+fixed faction: String? = from_path.faction
 
 /// tags used in calculating effects of parts of the game, such as `unit` or `vehicle` or `massive`
-hidden tag: Listing<String>
+hidden add_tags: Listing<String>
+
+/// this one is for subclasses, so they dont have to do the distinct filtering below themselves
+hidden fixed extend_tags: Listing<String> 
 
 /// some tags are auto-generated, this is where auto-generation happens
-fixed tags: Listing<String>(isDistinct) = tag.toList().distinct.sort().toListing()
+fixed tags: Listing<String>(isDistinct) = (new Listing<String> {
+  ...from_path.tags
+  ...add_tags
+  ...extend_tags
+  type 
+  "\(type):\(subtype)"
+  when (faction != null) { "faction:\(faction)" }
+}.toList().distinct.toListing())
 
 /// whether or not this exists in the game at the current version
 in_game: Boolean = true
@@ -65,7 +107,7 @@ unlocked_by: Listing<$t.Slug>(isDistinct)?
 unlocks_merc_tier: Listing<$t.Tier>(isDistinct)?
 
 /// not rendered, but used to generate final flat output
-hidden fixed children: List<data> = List()
+hidden fixed children: List<me> = List()
 
 /// not rendered, but used to generate final flat output
-hidden fixed recursive_children: List<data> = List()
+hidden fixed recursive_children: List<me> = List()

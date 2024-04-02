@@ -1,37 +1,30 @@
 module infuse
+import "types.pkl" as $t
 
-class StatMultiplier { fixed type="mult"; num: Number }
-class StatReplacer { fixed type="replace"; num: Number }
-class StatAdder { fixed type = "add"; num: Number }
+class StatMultiplier { fixed type: "mult"; num: Number }
+class StatReplacer { fixed type: "replace"; num: Number }
+class StatAdder { fixed type: "add"; num: Number }
 
-typealias InfuseStat = StatMultiplier | StatReplacer | StatAdder
+typealias Stat = StatMultiplier | StatReplacer | StatAdder
 
-class TransformInfuseRule {
-  fixed type = "transform"
-  into: String
+class Rule {
+  supply: Stat?
+  hp: Stat?
+  damage: Stat?
+  reload_time: Stat?
+  cooldown: Stat?
+  tags: Listing<String>?
+  domain: $t.DomainType
 }
 
-class BasicInfuseRule {
-  fixed type = "basic"
-  supply: InfuseStat?
-  hp: InfuseStat?
-  damage: InfuseStat?
-  reload_time: InfuseStat?
-  cooldown: InfuseStat?
-}
-
-fixed standard_infuse_rule = new BasicInfuseRule {
+fixed default_rule = new Rule {
   supply = new StatMultiplier { num = 2.0 }
   hp = new StatMultiplier { num = 2.0 }
   cooldown = new StatMultiplier  { num = 0.5 }
 }
 
-fixed damage_infuse_rule = new BasicInfuseRule {
+fixed damage_rule = new Rule {
   supply = new StatMultiplier  { num = 2.0 }
   hp = new StatMultiplier { num = 2.0 }
   damage = new StatMultiplier { num = 2.0 }
 }
-
-typealias InfuseRule = TransformInfuseRule | BasicInfuseRule
-
-function transform (n: String) = new TransformInfuseRule { into = n }

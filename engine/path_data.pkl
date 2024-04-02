@@ -1,0 +1,74 @@
+module path_data
+import "types.pkl" as $t
+
+class PathData {
+  faction: String?
+  faction_type: ("main" | "merc" | "nonplayer")?
+  type: ("unit" | "building" | "turret" | "faction" | "ability" | "upgrade" | "map")?
+  subtype: String?
+
+  tier: $t.Tier?
+  hexite_cost: Number?
+  flux_cost: Number?
+  build_time: Number?
+  rebuild_time: Number?
+  gathers_flux: Number?
+  gathers_rich_flux: Number?
+  hp: Number?
+  speed: Number?
+  vision: Number?
+  armor: Number?
+  armor_type: $t.ArmorType?
+  rebuildable: Boolean?
+
+  tags: Listing<String>
+}
+
+function dataFromPath(p: List<String>): PathData = new {
+  when (p[0] == "maps") {
+    type = "map"
+    subtype = p[1]
+  }
+  when (p[0] == "factions") {
+    local len = p.length
+    faction_type = p[1]
+    faction = p[2]
+    when (p.length == 3) {
+      type = "faction"
+      subtype = faction_type
+      tags { "faction:\(faction_type)" }
+      when (subtype != slug) {
+        local e = throw("faction slug must match faction subtype directory") 
+      }
+    }
+    when (p[3] == "units") {
+      type = "unit" 
+      vision = 1800
+      when (p[4] == "harvester") { 
+        subtype = "harvester"; 
+        tier = "T0" 
+        hexite_cost = 175
+        build_time = 25
+        rebuild_time = 60
+        gathers_flux = 1.5
+        gathers_rich_flux = 3.0
+        hp = 400
+        speed = 450
+        armor_type = "medium"
+        rebuildable = true
+      }
+      when (p[4] == "builder") { subtype = "builder"; tier = "T0" }
+      when (p[4] == "tier_1") { subtype = "army"; tier = "T1" }
+      when (p[4] == "tier_2") { subtype = "army"; tier = "T2" }
+      when (p[4] == "tier_3") { subtype = "army"; tier = "T3" }
+      when (p[4] == "hero") { 
+        subtype = "hero"; 
+        tier = "T2" 
+        build_time = 30
+        rebuild_time = 60
+        rebuildable = true
+      }
+      when (p[4] == "ultimate") { subtype = "ultimate"; tier = "T4" }
+    }
+  }
+}

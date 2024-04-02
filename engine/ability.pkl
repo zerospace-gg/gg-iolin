@@ -1,0 +1,97 @@
+abstract module ability
+extends "child.pkl"
+import "types.pkl" as $t
+import "ability.pkl" as me
+local methis = this
+
+activation_type: "auto" | "activated" | "passive" = 
+  if (type == "attack") "auto"
+  else if (type == "heal") "auto" 
+  else if (type == "faction-passive") "passive"
+  else if (type == "faction-talent") "passive"
+  else "activated"
+
+fixed type = "ability"
+fixed subtype = ability_type
+hidden ability_type: "attack" | "heal" | "spell" | "switch-attack" | "toggle-siege" | "faction-passive" | "topbar-power" | "faction-talent" 
+
+name = 
+  if (subtype == "attack") "Attack" 
+  else if (subtype == "heal") "Heal"
+  else if (subtype == "passive") "Passive"
+  else null
+
+hotkey: $t.HotKey?
+reverse_hotkey: $t.HotKey?
+targets: Listing<$t.TargetType>
+target_mode: $t.TargetMode?
+requires_mode: String?
+toggles_mode: String?
+energy_cost: Number?
+energy_type: $t.EnergyType?
+/// also called reload_time
+cooldown: Number?
+cooldown_at_build: Boolean?
+duration: Number?
+range: Number?
+/// also called damage point, attack delay, or cast point
+delay: Number?
+ability_of: String?
+
+shots: Number?
+volleys: Number? 
+
+teleport: Number?
+provides_detection: Number? 
+
+local function x_per_sec(val: Number?, num_shots: Number?, num_volleys: Number?, cd: Number?) =
+  if (val == null) null else 
+  if (cd == null) null else
+  let (amt = val)
+  let (s = (num_shots ?? 1))
+  let (vo = (num_volleys ?? 1))
+  ((amt * s * vo) / cd).round().toInt()
+
+effect_area: Number?
+
+damage: Number?
+damage_over_time: Number? // dps will have to change based on this as well
+damage_per_sec: Number? = 
+  if (damage_over_time != null) null 
+  else x_per_sec(damage, shots, volleys, cooldown)
+damage_display: String =
+  "\(damage)"
+  + (if ((shots ?? 1) > 1) " x\(shots)" else "")
+  + (if ((volleys ?? 1) > 1) " x\(volleys)" else "")
+
+healing: Number?
+healing_over_time: Number?
+healing_per_sec: Number? = 
+  if (healing_over_time != null) null 
+  else x_per_sec(healing, shots, volleys, cooldown)
+healing_display: String =
+  "\(healing)"
+  + (if ((shots ?? 1) > 1) " x\(shots)" else "")
+  + (if ((volleys ?? 1) > 1) " x\(volleys)" else "")
+
+area_range: Number?
+area_damage: Number?
+area_over_time: Number?
+
+// like area, but splash should only be attached to a direct dmg amount
+splash_percent: Number?
+splash_range: Number?
+splash_over_time: Number?
+splash_display: String? = 
+  if (splash_percent == null || splash_range == null) 
+    null 
+  else 
+    "\(splash_percent)% over \(splash_range) range"
+
+bonus_percent: Number?
+bonus_vs_tags: Listing<String>?
+
+requires_turret: String?
+
+autocast: "always" | "toggle" | "never" = 
+  if (activation_type == "auto") "always" else "never"

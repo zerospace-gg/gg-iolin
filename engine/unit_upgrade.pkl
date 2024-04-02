@@ -1,9 +1,10 @@
 module unit_upgrade
-extends "upgrade.pkl"
-import "../types.pkl" as $t
+extends "child.pkl"
+import "types.pkl" as $t
 
-fixed subtype = upgrade_of + "/" + tier.replaceFirst("T", "tier-").replaceAll(".", "-").toLowerCase()
-upgrade_of: String
+fixed type = "upgrade"
+fixed subtype = "upgrade"
+
 tier: $t.UpgradeTier
 flux_cost: Number = 
   if (tier == "T1.5") 100 else

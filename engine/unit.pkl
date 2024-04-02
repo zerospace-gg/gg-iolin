@@ -1,0 +1,53 @@
+module unit 
+extends "gamepiece.pkl"
+import "pkl:reflect"
+import "types.pkl" as $t
+import "infuse.pkl" as infuse
+import "unit_upgrade.pkl" as UnitUpgrade
+import "building/constructing_unit.pkl" as ConstructingUnit
+import "unit.pkl" as me
+local methis = this
+local meref = reflect.moduleOf(this)
+
+fixed tags {
+  when (methis.infusable) { "infusable" }
+}
+
+constructing_version: ConstructingUnit?
+
+vision = 1800
+
+local tag_list = add_tags.toList() + extend_tags.toList()
+
+infusable: Boolean = subtype == "army" && !tag_list.contains("massive")
+
+hidden infuse_rule: infuse.Rule = 
+  if (!infusable) 
+    null 
+  else
+    infuse.default_rule
+
+infuse_cost: Number? = 
+  if (!infusable) 
+    null 
+  else
+    let (h = (hexite_cost ?? 0))
+    let (f = (flux_cost ?? 0))
+    let (b = (build_count ?? 1))
+    (((h + f) / b) / 10.0 ).floor + 1 // it may have been ceil but seedling cost was 1 before it was adjusted to 2 (seedling is 0 cost so 1 infuse means floor+1), but maybe 1 was a manual adjust and it was ceil all along
+
+
+local parent_info: UnitUpgrade.ParentInfo = new {
+  id = methis.id
+  slug = methis.slug
+  src = methis.src
+  from_path = methis.from_path
+}
+
+hidden upgrade: Listing<UnitUpgrade> = new Listing<UnitUpgrade> {
+  default { parent = parent_info }
+}
+
+fixed upgrades: Mapping<String, UnitUpgrade> = 
+  upgrade.toList().toMap((x) -> $t.makeSlug("\(x.tier)-\(x.name)"), (x) -> x).toMapping()
+

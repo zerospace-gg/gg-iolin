@@ -1,0 +1,29 @@
+abstract module child
+extends "data.pkl"
+import "path_data.pkl"
+import "types.pkl" as $t
+
+class ParentInfo {
+  slug: String
+  id: String
+  src: String
+  from_path: path_data.PathData
+}
+
+hidden parent: ParentInfo 
+hidden fixed sub_slug = $t.makeSlug(name)
+
+fixed src = parent.src
+fixed slug = 
+  if (subtype == sub_slug) 
+    "\(parent.slug)-\(sub_slug)" 
+  else 
+  "\(parent.slug)-\(subtype)-\(sub_slug)"
+
+fixed id = "\(parent.id)/\(subtype)/\(slug)"
+fixed belongs_to = parent.slug
+
+fixed faction = parent.from_path.faction
+fixed faction_type = parent.from_path.faction_type
+
+fixed extend_tags { "belongs_to:\(parent.slug)" }

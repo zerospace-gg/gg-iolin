@@ -1,0 +1,50 @@
+module turret
+extends "child.pkl"
+import "ability.pkl" as Ability
+import "types.pkl" as $t
+import "turret.pkl" as me
+local methis = this
+
+fixed type = "turret"
+fixed subtype: "turret" | "sacrifice" 
+
+extend_tags { 
+  when (subtype == "turret") { "turret" } 
+}
+turret_of: String 
+
+local parent_info: Ability.ParentInfo = new {
+  id = methis.id
+  slug = methis.slug
+  src = methis.src
+  from_path = methis.parent.from_path
+}
+
+function makeMapping(i: Listing<Ability>): Mapping<String, Ability> =
+  i.toList().toMap((x) -> $t.makeSlug(x.name), (x) -> x).toMapping()
+
+//@TODO: i duno how to do this more cleanly
+hidden attack: Listing<Ability> = new Listing<Ability> {
+  default { parent = parent_info; ability_type = "attack" }
+}
+fixed attacks: Mapping<String, Ability> = this.makeMapping(attack)
+
+hidden heal: Listing<Ability> = new Listing<Ability> {
+  default { parent = parent_info; ability_type = "heal" }
+}
+fixed heals: Mapping<String, Ability> = this.makeMapping(heal)
+
+hidden spell: Listing<Ability> = new Listing<Ability> {
+  default { parent = parent_info; ability_type = "spell" }
+}
+fixed spells: Mapping<String, Ability> = this.makeMapping(spell)
+
+hidden passive: Listing<Ability> = new Listing<Ability> {
+  default { parent = parent_info; ability_type = "passive" }
+}
+fixed passives: Mapping<String, Ability> = this.makeMapping(passive)
+
+hidden fixed children = attacks.toList() + heals.toList() + spells.toList() + passives.toList()
+
+
+

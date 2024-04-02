@@ -20,37 +20,16 @@ function slugpathOk (t: String, s: String) =
     else 
       throw("Invalid \(t): '\(s)'. example valid names: 'one', 'one-two', 'one-two/three/four-five'")
 
-/// something like `seedling` or `grell-harvester` or `flowers-talent`. 
 typealias Slug = String((s) -> $t.slugOk("Slug", s))
 
-/// identical to slug, but given a different semantic meaning. This is for the top-level type field
-// typealias TopType = String((s) -> $t.slugOk("TopType", s))
-typealias TopType = String // ((s) -> $t.slugOk("TopType", s))
-
-/// Id field is auto-generated in classes as a fixed type, this helps make sure it conforms
 typealias Id = String((s) -> $t.slugpathOk("Id", s))
 
-/// identical to id, but given a different semantic meaning. this is used for subtype fields.
-// typealias SubType = String((s) -> $t.slugpathOk("SubType", s))
-typealias SubType = String // ((s) -> $t.slugpathOk("SubType", s))
-
-/// definitions for all of these are in game/ folder, but helpful to have them explicitly defined as types
-typealias MainFaction = "grell" | "legion" | "protectorate" | "xol" 
-
-/// definitions for all of these are in game/ folder, but helpful to have them explicitly defined as types
-typealias MercFaction = "marran" | "dread" | "valkaru" | "chakru" | "arandi" | "koru" | "mystery-mercs"
-
-/// definitions for all of these are in game/ folder, but helpful to have them explicitly defined as types
-typealias AIFaction = "neutral" | "hostile"
-
-/// definitions for all of these are in game/ folder, but helpful to have them explicitly defined as types
-typealias AnyFaction = MainFaction | MercFaction | AIFaction
-
-/// mercs have 3 tiers
-typealias MercTier = "T1" | "T2" | "T3"
+typealias Faction = "main" | "merc" | "nonplayer"
 
 /// T0 is builders/harvs
-typealias Tier = "T0" | "T1" | "T2" | "T3" | "T1.5" | "T2.5" | "T3.5" | "Hero"
+typealias Tier = "T0" | "T1" | "T2" | "T3" | "T1.5" | "T2.5" | "T3.5" | "T4"
+
+typealias UpgradeTier = "T1.5" | "T2.5" | "T3.5"
 
 typealias HotKey = String
   // im not fixing this before zsgg website lauch lmao. maybe just 
@@ -62,15 +41,14 @@ typealias HotKey = String
   // "ctrl-z" | "ctrl-x" | "ctrl-c"
 
 typealias ArmorType = "none" | "light" | "medium" | "heavy"
-
 typealias DomainType = "air" | "ground"
+
 typealias AllyDomainType = "friendly/air" | "friendly/ground"
 typealias TargetType = DomainType | AllyDomainType | "self" | "map"
 typealias TargetMode = "gamepiece" | "location" | "around-self" | "strip" 
 
 typealias EnergyType = "classic" | "abes" | "topbar"
 
-typealias UpgradeTier = "T1.5" | "T2.5" | "T3.5"
 
 function makeSlug(s: String): String =
   s.toLowerCase()

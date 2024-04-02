@@ -1,0 +1,4 @@
+module faction_ability
+extends "ability.pkl"
+
+hidden ability_type: "faction-passive" | "topbar-power" | "faction-talent" 

@@ -1,0 +1,5 @@
+amends ".../engine/map.pkl"
+name = "Starsand"
+size = "large"
+xp_towers = 3
+flux_distance = "close"

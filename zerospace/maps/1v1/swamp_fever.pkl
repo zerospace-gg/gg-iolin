@@ -1,0 +1,5 @@
+amends ".../engine/map.pkl"
+name = "Swamp Fever"
+size = "small"
+xp_towers = 2
+flux_distance = "distant"
