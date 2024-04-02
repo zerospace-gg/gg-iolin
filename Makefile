@@ -28,11 +28,11 @@ all: ${TARGETS}
 force: clean all
 
 ${BUILD}:
-	@echo "Creating ${BUILD}
+	@echo "Creating ${BUILD}"
 	@mkdir -p ${BUILD}
 
 ${DIST}:
-	@echo "Creating ${DIST}
+	@echo "Creating ${DIST}"
 	@mkdir -p ${DIST}
 	
 ${JSON_PRE}: ${ALL_PKL} ${BUILD}
@@ -60,7 +60,7 @@ ${JSON_ZIP}: ${JSON_PLAIN}
 	@zip -r ${JSON_ZIP} ${JSON_PLAIN}
 
 show: ${JSON_PLAIN}
-	@echo "current ${JSON_PLAIN}
+	@echo "current ${JSON_PLAIN}"
 	$(SHOW) ${JSON_PLAIN}
 
 deploy: all

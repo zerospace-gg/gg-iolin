@@ -75,3 +75,6 @@ heroes: Listing<Hero> = new Listing<Hero> {
 cross_faction_heroes = new Listing<Hero> {
 
 }
+
+hidden fixed children = talents.toList() + topbar.toList() + buildings.toList() + units.toList() + passives.toList() + heroes.toList()
+hidden fixed recursive_children = children + children.flatMap((x) -> x.recursive_children)
