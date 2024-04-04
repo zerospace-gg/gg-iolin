@@ -42,7 +42,7 @@ function dataFromPath(p: List<String>): PathData = new {
         local e = throw("faction slug must match faction subtype directory") 
       }
     }
-    when (p[3] == "units") {
+    when (p[3] == "unit") {
       type = "unit" 
       vision = 1800
       when (p[4] == "harvester") { 
