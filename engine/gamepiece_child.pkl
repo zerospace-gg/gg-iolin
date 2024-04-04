@@ -1,5 +1,5 @@
-abstract module child
-extends "data.pkl"
+abstract module gamepiece_child
+extends "gamepiece.pkl"
 import "parent_info.pkl" as ParentInfo
 import "path_data.pkl"
 import "types.pkl" as $t

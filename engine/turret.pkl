@@ -1,39 +1,40 @@
 module turret
-extends "child.pkl"
+extends "gamepiece_child.pkl"
+import "parent_info.pkl" as ParentInfo
 import "ability.pkl" as Ability
 import "types.pkl" as $t
 import "turret.pkl" as me
 local methis = this
 
 fixed type = "turret"
-fixed subtype: "turret" | "sacrifice" 
+fixed subtype = turret_type
 
 tags { 
   when (subtype == "turret") { "turret" } 
   when (subtype == "sacrifice") { "bonus:sacrifice" }
 }
-turret_of: String 
+turret_type: "turret" | "sacrifice" 
 
-local parent_info: Ability.ParentInfo = new {
+local parent_info: ParentInfo = new {
   id = methis.id
   slug = methis.slug
   src = methis.src
   from_path = methis.parent.from_path
 }
 
-attacks: Mapping<String, Ability> = new Mapping<String, Ability> {
+attacks {
   default { key -> name = $t.makeSlug(key); parent = parent_info; ability_type = "attack" }
 }
 
-heals: Mapping<String, Ability> = new Mapping<String, Ability> {
+heals {
   default { key -> name = $t.makeSlug(key); parent = parent_info; ability_type = "heal" }
 }
 
-spells: Mapping<String, Ability> = new Mapping<String, Ability> {
+spells {
   default { key -> name = $t.makeSlug(key); parent = parent_info; ability_type = "spell" }
 }
 
-passives: Mapping<String, Ability> = new Mapping<String, Ability> {
+passives {
   default { key -> name = $t.makeSlug(key); parent = parent_info; ability_type = "passive" }
 }
 

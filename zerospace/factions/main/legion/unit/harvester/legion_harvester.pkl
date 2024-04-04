@@ -1,4 +1,4 @@
-amends ".../engine/unit/harvester.pkl"
+amends ".../engine/unit.pkl"
 
 name = "Legion Harvester"
 created_by { "garrison-tower" }

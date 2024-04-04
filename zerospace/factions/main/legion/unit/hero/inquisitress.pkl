@@ -1,4 +1,4 @@
-amends ".../engine/unit/hero.pkl"
+amends ".../engine/unit.pkl"
 import "inquisitress.pkl" as me
 
 name = "Inquisitress"
@@ -15,7 +15,7 @@ unlocked_by { "altar" }
 created_by { "altar" }
 
 attacks {
-  new {
+  ["Attack"] {
     damage = 30
     cooldown = 1.05
     range = 150
@@ -24,7 +24,7 @@ attacks {
 }
 
 spells {
-  new { 
+  ["Cleave"] { 
     name = "Cleave"
     hotkey = "q"
     energy_cost = 65
@@ -32,7 +32,7 @@ spells {
     cooldown = 15
     description = "deals 65 damage to enemy units in front of Inquisitress"
   }
-  new {
+  ["Charge"] {
     name = "Charge"
     hotkey = "w"
     energy_cost = 15
@@ -43,35 +43,32 @@ spells {
 }
 
 upgrades {
-  new {
-    name = "Efficient Fighter"
-    description = "-30% energy cost for \(me.spells[0].name) and \(me.spells[1].name)"
+  ["Efficient Fighter"] {
+    description = "-30% energy cost for \(me.spells["Cleave"].name) and \(me.spells["Charge"].name)"
     tier = "T1.5"
   }
-  new {
-    name = "Weapon Slow"
+
+  ["Weapon Slow"] {
     description = "Basic weapon deals +33% damage and slows targets (-30% for 1.5s)"
     tier = "T1.5"
   }
 
-  new {
-    name = "Fortified"
+  ["Fortified"] {
     description = "+50% health"
     tier = "T2.5"
   }
-  new {
-    name = "FIX ME"
+
+  ["Cleave Range"] {
     description = "+125% cleave range"
     tier = "T2.5"
   }
 
-  new {
-    name = "Movement Speed Aura"
+  ["Movement Speed Aura"] {
     description = "+20% move speed for all friendly units nearby"
     tier = "T3.5"
   }
-  new {
-    name = "One Life for Another"
+
+  ["One Life for Another"] {
     description = "When taking fatal damage, sacrifice a nearby Thrall and heal instead. Each sacrifice consumes a green orb. Orbs regenerate when not attacked."
     tier = "T3.5"
   }

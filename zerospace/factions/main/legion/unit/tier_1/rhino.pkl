@@ -1,5 +1,5 @@
 
-amends ".../engine/unit/army.pkl"
+amends ".../engine/unit.pkl"
 
 name = "Rhino"
 hotkey = "e"
@@ -15,7 +15,7 @@ unlocked_by { "barracks" }
 upgraded_by { "warehouse" }
 
 attacks {
-  new {
+  ["Attack"] {
     damage = 26
     cooldown = 1.4
     range = 110 
@@ -23,21 +23,18 @@ attacks {
 }
 
 spells {
-  new {
-    name = "Knockback"
+  ["Knockback"] {
     description = "Autocasts when available. charges and knocks enemy back. knockback stacks."
     autocast = "always"
   }
 }
 
 upgrades {
-  new {
-    name = "Fast Recovery"
+  ["Fast Recovery"] {
     description = "Energy for Knockback ability regenerates twice as fast"
     tier = "T1.5"
   }
-  new {
-    name = "Maul"
+  ["Maul"] {
     description = "Knockbacked enemy is slowed by 75% for 4s"
     tier = "T1.5"
   }

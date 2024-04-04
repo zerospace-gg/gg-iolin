@@ -1,0 +1,7 @@
+module parent_info
+import "path_data.pkl"
+
+slug: String
+id: String
+src: String
+from_path: path_data.PathData

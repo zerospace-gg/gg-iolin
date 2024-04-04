@@ -1,6 +1,7 @@
 module unit 
 extends "gamepiece.pkl"
 import "pkl:reflect"
+import "parent_info.pkl" as ParentInfo
 import "types.pkl" as $t
 import "infuse.pkl" as infuse
 import "unit_upgrade.pkl" as UnitUpgrade
@@ -37,7 +38,7 @@ infuse_cost: Number? =
     (((h + f) / b) / 10.0 ).floor + 1 // it may have been ceil but seedling cost was 1 before it was adjusted to 2 (seedling is 0 cost so 1 infuse means floor+1), but maybe 1 was a manual adjust and it was ceil all along
 
 
-local parent_info: UnitUpgrade.ParentInfo = new {
+local parent_info: ParentInfo = new {
   id = methis.id
   slug = methis.slug
   src = methis.src

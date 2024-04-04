@@ -1,4 +1,4 @@
-amends ".../engine/unit/builder.pkl" 
+amends ".../engine/unit.pkl" 
 
 name = "Laborer"
 domain = "ground"
@@ -18,7 +18,7 @@ creates {
 }
 
 heals {
-  new {
+  ["Heal"] {
     healing = 5
     cooldown = 0.5
     range = 100

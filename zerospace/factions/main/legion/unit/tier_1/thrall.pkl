@@ -1,5 +1,5 @@
 
-amends ".../engine/unit/army.pkl"
+amends ".../engine/unit.pkl"
 
 name = "Thrall"
 hotkey = "q"
@@ -16,7 +16,7 @@ unlocked_by { "barracks" }
 upgraded_by { "warehouse" }
 
 attacks {
-  new {
+  ["Attack"] {
     damage = 5
     cooldown = 0.7
     range = 800 
@@ -24,13 +24,11 @@ attacks {
 }
 
 upgrades {
-  new {
-    name = "Battle Frenzy"
+  ["Battle Frenzy"] {
     description = "Each hit increases attack speed (+10% up to 70%)"
     tier = "T1.5"
   }
-  new {
-    name = "Charged Shot"
+  ["Charged Shot"] {
     description = "Every 15s an attack deals 2x damage"
     tier = "T1.5"
   }

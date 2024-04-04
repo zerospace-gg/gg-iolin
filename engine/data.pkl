@@ -81,13 +81,13 @@ local post_process_tags: Mapping<(Class|String), (unknown) -> Any> = new {
 }
 hidden fixed post_process: Mapping<(Class|String), (unknown) -> Any> = new {
   ...post_process_tags
-  for (_key in nested_mappings) {
+  for (_key in nested_mappings.toList().distinct) {
     [_key] = (v) -> v.toMap().values.map((v) -> v.id)
   }
 }
 hidden fixed post_process_nested: Mapping<(Class|String), (unknown) -> Any> = new {
   ...post_process_tags
-  for (_key in nested_mappings) {
+  for (_key in nested_mappings.toList().distinct) {
     [_key] = (v) -> v.toMap().mapKeys((k,v) -> v.id)
   }
 }
