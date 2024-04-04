@@ -108,6 +108,13 @@ turrets: Mapping<String, Turret> = new Mapping<String, Turret> {
   default { key -> name = key; parent = parent_info; turret_type = this.turret_type }
 }
 
-hidden fixed children = List(attacks, heals, spells, passives, turrets).values.flatMap((x) -> x.toList())
-hidden fixed recursive_children = children + children.flatMap((x) -> x.recursive_children)
+nested_mappings { 
+  "attacks"
+  "heals"
+  "spells"
+  "passives"
+  "turrets"
+}
+
+hidden fixed children = List(attacks, heals, spells, passives, turrets).flatMap((x) -> x.toMap().values.toList())
 

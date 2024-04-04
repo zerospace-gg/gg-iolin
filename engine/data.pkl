@@ -5,8 +5,9 @@ import "types.pkl" as $t
 import "path_data.pkl" as $p
 import "data.pkl" as me
 
-
+local methis = this
 local meref = reflect.moduleOf(this)
+local isimpl = !meref.uri.matches(Regex("/engine/"))
 
 hidden path_parts: List<String> = meref.uri
   .replaceAll(Regex(#"^.*(factions|maps|engine)/"#), "$1/")
@@ -75,9 +76,47 @@ unlocked_by: Listing<$t.Slug>(isDistinct)?
 /// currently only buildings do this, but its here because the other unlock/create logic is here. some non-gamepieces gamepieces unlock/create 
 unlocks_merc_tier: Listing<$t.Tier>(isDistinct)?
 
-/// not rendered, but used to generate final flat output
 hidden fixed children: List<me> = List()
+hidden fixed recursive_children: List<me> = children + children.flatMap((c) -> c.recursive_children)
 
-/// not rendered, but used to generate final flat output
-hidden fixed recursive_children: List<me> = List()
+hidden nested_mappings: Listing<String> 
+hidden post_process: Mapping<(Class|String), (Mapping<String,me>) -> Map<String,String>> = new {
+  for (_key in nested_mappings) {
+    [_key] = (v) -> v.toMap().values.map((v) -> v.id)
+  }
+}
+hidden post_process_nested: Mapping<(Class|String), (Mapping<String,me>) -> Map<String,me>>  = new {
+  for (_key in nested_mappings) {
+    [_key] = (v) -> v.toMap().mapKeys((k,v) -> v.id)
+  }
+}
+
+
+output {
+  files {
+    ["\(id).json"] {
+      renderer = new JsonRenderer { 
+        converters = post_process
+      }
+      value = methis
+    }
+    when (recursive_children.length > 0) {
+      ["\(id)-nested.json"] {
+        renderer = new JsonRenderer { 
+          converters = post_process_nested
+        }
+        value = methis
+      }
+
+      for (child in recursive_children) {
+        ["\(child.id).json"] {
+          renderer = new JsonRenderer { 
+            converters = child.post_process
+          }
+          value = child
+        }
+      }
+    }
+  }
+}
 

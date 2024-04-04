@@ -10,6 +10,7 @@ fixed subtype: "turret" | "sacrifice"
 
 extend_tags { 
   when (subtype == "turret") { "turret" } 
+  when (subtype == "sacrifice") { "bonus:sacrifice" }
 }
 turret_of: String 
 
@@ -36,8 +37,11 @@ passives: Mapping<String, Ability> = new Mapping<String, Ability> {
   default { key -> name = $t.makeSlug(key); parent = parent_info; ability_type = "passive" }
 }
 
-turrets: Mapping<String, Turret> = new Mapping<String, Turret> {
-  default { key -> name = $t.makeSlug(key); parent = parent_info; turret_type = this.turret_type }
+nested_mappings { 
+  "attacks"
+  "heals"
+  "spells"
+  "passives"
 }
 
-hidden fixed children = List(attacks, heals, spells, passives, turrets).values.flatMap((x) -> x.toList())
+hidden fixed children = List(attacks, heals, spells, passives).flatMap((x) -> x.toMap().values.toList())

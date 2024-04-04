@@ -48,5 +48,6 @@ upgrades: Mapping<String, UnitUpgrade> = new Mapping<String, UnitUpgrade> {
   default { key -> name = $t.makeSlug(key); parent = parent_info }
 }
 
+nested_mappings { "upgrades" }
 
-hidden fixed children = super.children + upgrades.values.toList()
+hidden fixed children = super.children + upgrades.toMap().values.toList()
