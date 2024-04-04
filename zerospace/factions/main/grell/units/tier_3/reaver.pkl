@@ -15,8 +15,8 @@ unlocked_by { "large-incubator" }
 upgraded_by { "special-augmentation-pool" }
 infuse_cost = 31
 
-attack {
-  new {
+attacks {
+  ["Attack"] {
     damage = 55
     volleys = 2
     cooldown = 2.15
@@ -27,9 +27,8 @@ attack {
   }
 }
 
-spell {
-  new {
-    name = "Charge"
+spells {
+  ["Charge"] {
     hotkey = "r"
     cooldown = 30
     description = "Charge into enemies knocking them back and dealing 80 damage"
@@ -39,16 +38,14 @@ spell {
   }
 }
 
-upgrade {
-  new {
+upgrades {
+  ["Improved Charge"] {
     tier = "T3.5"
-    name = "Improved Charge"
     description = "-50% charge channel time and +50% damage dealt"
   }
 
-  new {
+  ["Toughened Carapace"] {
     tier = "T3.5"
-    name = "Toughened Carapace"
     description = "+20% Health +2 armor"
   }
 }

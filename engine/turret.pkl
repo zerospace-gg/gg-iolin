@@ -20,31 +20,24 @@ local parent_info: Ability.ParentInfo = new {
   from_path = methis.parent.from_path
 }
 
-function makeMapping(i: Listing<Ability>): Mapping<String, Ability> =
-  i.toList().toMap((x) -> $t.makeSlug(x.name), (x) -> x).toMapping()
-
-//@TODO: i duno how to do this more cleanly
-hidden attack: Listing<Ability> = new Listing<Ability> {
-  default { parent = parent_info; ability_type = "attack" }
+attacks: Mapping<String, Ability> = new Mapping<String, Ability> {
+  default { key -> name = $t.makeSlug(key); parent = parent_info; ability_type = "attack" }
 }
-fixed attacks: Mapping<String, Ability> = this.makeMapping(attack)
 
-hidden heal: Listing<Ability> = new Listing<Ability> {
-  default { parent = parent_info; ability_type = "heal" }
+heals: Mapping<String, Ability> = new Mapping<String, Ability> {
+  default { key -> name = $t.makeSlug(key); parent = parent_info; ability_type = "heal" }
 }
-fixed heals: Mapping<String, Ability> = this.makeMapping(heal)
 
-hidden spell: Listing<Ability> = new Listing<Ability> {
-  default { parent = parent_info; ability_type = "spell" }
+spells: Mapping<String, Ability> = new Mapping<String, Ability> {
+  default { key -> name = $t.makeSlug(key); parent = parent_info; ability_type = "spell" }
 }
-fixed spells: Mapping<String, Ability> = this.makeMapping(spell)
 
-hidden passive: Listing<Ability> = new Listing<Ability> {
-  default { parent = parent_info; ability_type = "passive" }
+passives: Mapping<String, Ability> = new Mapping<String, Ability> {
+  default { key -> name = $t.makeSlug(key); parent = parent_info; ability_type = "passive" }
 }
-fixed passives: Mapping<String, Ability> = this.makeMapping(passive)
 
-hidden fixed children = attacks.toList() + heals.toList() + spells.toList() + passives.toList()
+turrets: Mapping<String, Turret> = new Mapping<String, Turret> {
+  default { key -> name = $t.makeSlug(key); parent = parent_info; turret_type = this.turret_type }
+}
 
-
-
+hidden fixed children = List(attacks, heals, spells, passives, turrets).values.flatMap((x) -> x.toList())

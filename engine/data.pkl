@@ -20,39 +20,8 @@ fixed src: String = List(src_dir, src_file).join("/")
 fixed slug: $t.Slug = src_file.replaceLast(".pkl", "").replaceAll("_", "-")
 fixed id: $t.Id = (src_dir_slugs + List(slug)).join("/")
 
-// local class FromPath {
-//   faction: String?
-//   faction_type: ("main" | "merc" | "nonplayer")?
-//   type: ("unit" | "building" | "turret" | "faction" | "ability" | "upgrade" | "map")?
-//   subtype: String?
-//   tier: $t.Tier?
-// }
-
+/// metadata pulled from path. this includes things used in multiple subclasses
 from_path: $p.PathData = $p.dataFromPath(src_dir_parts)
-// from_path: FromPath = new {
-//   when (p[0] == "factions") {
-//     local len = p.length
-//     faction_type = p[1]
-//     faction = p[2]
-//     when (p.length == 3) {
-//       type = "faction"
-//       subtype = faction_type
-//       when (subtype != slug) {
-//         local e = throw("faction slug must match faction subtype directory") 
-//       }
-//     }
-//     when (p[3] == "units") {
-//       type = "unit" 
-//       when (p[4] == "harvester") { subtype = "harvester"; tier = "T0" }
-//       when (p[4] == "builder") { subtype = "builder"; tier = "T0" }
-//       when (p[4] == "tier_1") { subtype = "army"; tier = "T1" }
-//       when (p[4] == "tier_2") { subtype = "army"; tier = "T2" }
-//       when (p[4] == "tier_3") { subtype = "army"; tier = "T3" }
-//       when (p[4] == "hero") { subtype = "hero"; tier = "T2" }
-//       when (p[4] == "ultimate") { subtype = "ultimate"; tier = "T4" }
-//     }
-//   }
-// }
 
 /// nicely formatted display name, as it appears in game (with the exception of things without lore names yet)
 name: String 
@@ -69,10 +38,10 @@ fixed subtype: String = from_path.subtype
 /// faction name. required if type isn't map. should not be defined for faction type
 fixed faction: String? = from_path.faction
 
-/// tags used in calculating effects of parts of the game, such as `unit` or `vehicle` or `massive`
+/// tags used in calculating effects of parts of the game, such as `unit` or `vehicle` or `massive`. these should be static tags based on type.
 hidden add_tags: Listing<String>
 
-/// this one is for subclasses, so they dont have to do the distinct filtering below themselves
+/// this one is for subclasses, so they dont have to do the distinct filtering below themselves. these are dynamic tags based on other properties.
 hidden fixed extend_tags: Listing<String> 
 
 /// some tags are auto-generated, this is where auto-generation happens
@@ -111,3 +80,4 @@ hidden fixed children: List<me> = List()
 
 /// not rendered, but used to generate final flat output
 hidden fixed recursive_children: List<me> = List()
+

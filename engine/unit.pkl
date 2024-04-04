@@ -44,10 +44,9 @@ local parent_info: UnitUpgrade.ParentInfo = new {
   from_path = methis.from_path
 }
 
-hidden upgrade: Listing<UnitUpgrade> = new Listing<UnitUpgrade> {
-  default { parent = parent_info }
+upgrades: Mapping<String, UnitUpgrade> = new Mapping<String, UnitUpgrade> {
+  default { key -> name = $t.makeSlug(key); parent = parent_info }
 }
 
-fixed upgrades: Mapping<String, UnitUpgrade> = 
-  upgrade.toList().toMap((x) -> $t.makeSlug("\(x.tier)-\(x.name)"), (x) -> x).toMapping()
 
+hidden fixed children = super.children + upgrades.values.toList()
