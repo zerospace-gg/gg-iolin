@@ -1,0 +1,66 @@
+amends ".../engine/unit.pkl"
+
+name = "Gunship"
+flavor = "An airship with TWO guns?!"
+tier = "T2"
+supply = 6
+hexite_cost = 50
+flux_cost = 100
+build_time = 45
+
+hp = 375
+speed = 575
+
+domain = "air"
+created_by { "factory" }
+
+attacks {
+  ["Railgun"] {
+    targets { "ground" }
+    damage = 45 
+    bonus_percent = 100 
+    bonus_vs_tags { "armor:heavy" }
+    cooldown = 3
+    range = 2100
+    splash_percent = 100
+    splash_range = 80
+  }
+
+  ["Gatling Gun"] {
+    targets { "ground"; "air" }
+    damage = 20 
+    cooldown = 3
+    range = 1000
+  }
+}
+
+spells {
+  ["Switch guns"] { 
+    ability_type = "toggle"
+    toggles_mode = "attack"
+    description = "Switch between Gatling Gun and Railgun. Gatling Gun is effective against air units, while Railgun is effective against ground units."
+    notes { "called \"Switch to gatling gun\" and \"Switch to railgun\" depending on mode" }
+  }
+}
+
+upgrades {
+  ["Scouting Drone"] {
+    description = "send a drone to scout the location. The drone cannot be shot down."
+    tier = "T2.5"
+  }
+
+  ["Scouting Drone Clone"] {
+    description = "send a drone to scout the location. The drone cannot be shot down."
+    tier = "T2.5"
+  }
+  
+  ["Bonus Shield"] {
+    description = "Bonus Shield"
+    tier = "T3.5"
+  }
+
+  ["Bonus Shield Clone"] {
+    description = "Bonus Shield"
+    tier = "T3.5"
+  }
+}
