@@ -1,0 +1,60 @@
+amends ".../engine/unit.pkl"
+
+name = "Behemoth"
+hotkey = "d"
+description = "The Behemoth is a large flying insect with mysterious wings we haven't seen yet. Its role is to damage ground units from the air, providing decent flying support for your army."
+tier = "T3"
+hexite_cost = 100
+flux_cost = 200
+build_time = 60
+domain = "air"
+supply = 8
+hp = 625
+armor_type = "heavy"
+speed = 400
+created_by { "large-incubator" }
+unlocked_by { "large-incubator" }
+upgraded_by { "special-augmentation-pool" }
+
+attacks {
+  ["Attack"] {
+    damage = 30
+    bonus_percent = 100
+    bonus_vs_tags { "armor:heavy" }
+    cooldown = 2
+    range = 1400
+    targets { "ground" }
+  }
+}
+spells {
+  ["Sacrifice"] {
+    hotkey = "m"
+    description = "Sacrifices itself, healing nearby units and damaging enemies. Autocast on death."
+  }
+}
+
+upgrades {
+  ["Worthy Sacrifice"] {
+    tier = "T3.5"
+    description = "+100% damage and heal from sacrifice."
+  }
+
+  ["Weapon Range"] {
+    tier = "T3.5"
+    description = "+50% weapon range"
+  }
+}
+
+passives {
+  ["Faerie Fire"] {
+    targets { "ground" }
+    energy_cost = 10
+    energy_type = "abes"
+    autocast = "always"
+    description = "Casts an AOE DOT spell on the ground. 200ish range"
+  }
+}
+
+notes {
+  "Grows wings when it reaches ABES the first time, giving it +50% damage boost. The Faerie Fire does not go off when this happens."
+}

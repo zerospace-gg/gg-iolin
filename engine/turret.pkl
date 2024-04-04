@@ -8,7 +8,7 @@ local methis = this
 fixed type = "turret"
 fixed subtype: "turret" | "sacrifice" 
 
-extend_tags { 
+tags { 
   when (subtype == "turret") { "turret" } 
   when (subtype == "sacrifice") { "bonus:sacrifice" }
 }
@@ -37,7 +37,7 @@ passives: Mapping<String, Ability> = new Mapping<String, Ability> {
   default { key -> name = $t.makeSlug(key); parent = parent_info; ability_type = "passive" }
 }
 
-nested_mappings { 
+fixed nested_mappings { 
   "attacks"
   "heals"
   "spells"

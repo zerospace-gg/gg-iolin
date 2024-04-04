@@ -1,4 +1,4 @@
 module gamepiece_ability
 extends "ability.pkl"
 
-hidden ability_type: "attack" | "heal" | "spell" | "switch-attack" | "toggle-siege" 
+hidden ability_type: "attack" | "heal" | "spell" | "passive" | "switch-attack" | "toggle-siege" 

@@ -8,7 +8,7 @@ import "types.pkl" as $t
 import "gamepiece.pkl" as me
 local methis = this
 
-fixed extend_tags {
+tags {
   when (armor_type != "none") { "armor:\(armor_type)" }
   when (gathers_rich_flux ?? 0 > 0) { "gathers:flux" }
   when (gathers_flux ?? 0 > 0) { "gathers:flux" }
@@ -46,7 +46,6 @@ rebuild_time: Number?
 domain: $t.DomainType = "ground"
 
 hotkey: $t.HotKey?
-tier: $t.Tier? = from_path.tier
 
 gathers_flux: Number? = from_path.gathers_flux
 gathers_rich_flux: Number? = from_path.gathers_rich_flux
@@ -108,7 +107,7 @@ turrets: Mapping<String, Turret> = new Mapping<String, Turret> {
   default { key -> name = key; parent = parent_info; turret_type = this.turret_type }
 }
 
-nested_mappings { 
+fixed nested_mappings { 
   "attacks"
   "heals"
   "spells"

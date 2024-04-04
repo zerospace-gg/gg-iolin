@@ -22,7 +22,7 @@ fixed slug: $t.Slug = src_file.replaceLast(".pkl", "").replaceAll("_", "-")
 fixed id: $t.Id = (src_dir_slugs + List(slug)).join("/")
 
 /// metadata pulled from path. this includes things used in multiple subclasses
-from_path: $p.PathData = $p.dataFromPath(src_dir_parts)
+hidden fixed from_path: $p.PathData = $p.dataFromPath(src_dir_parts)
 
 /// nicely formatted display name, as it appears in game (with the exception of things without lore names yet)
 name: String 
@@ -39,21 +39,19 @@ fixed subtype: String = from_path.subtype
 /// faction name. required if type isn't map. should not be defined for faction type
 fixed faction: String? = from_path.faction
 
+tier: $t.Tier? = from_path.tier
+
 /// tags used in calculating effects of parts of the game, such as `unit` or `vehicle` or `massive`. these should be static tags based on type.
-hidden add_tags: Listing<String>
+tags: Listing<String>
 
-/// this one is for subclasses, so they dont have to do the distinct filtering below themselves. these are dynamic tags based on other properties.
-hidden fixed extend_tags: Listing<String> 
-
-/// some tags are auto-generated, this is where auto-generation happens
-fixed tags: Listing<String>(isDistinct) = (new Listing<String> {
+/// Used to add tags that are dependent on other fields
+hidden fixed dynamic_tags: Listing<String> = new {
+  ...tags
   ...from_path.tags
-  ...add_tags
-  ...extend_tags
   type 
   "\(type):\(subtype)"
   when (faction != null) { "faction:\(faction)" }
-}.toList().distinct.toListing())
+}
 
 /// whether or not this exists in the game at the current version
 in_game: Boolean = true
@@ -76,45 +74,49 @@ unlocked_by: Listing<$t.Slug>(isDistinct)?
 /// currently only buildings do this, but its here because the other unlock/create logic is here. some non-gamepieces gamepieces unlock/create 
 unlocks_merc_tier: Listing<$t.Tier>(isDistinct)?
 
-hidden fixed children: List<me> = List()
-hidden fixed recursive_children: List<me> = children + children.flatMap((c) -> c.recursive_children)
-
-hidden nested_mappings: Listing<String> 
-hidden post_process: Mapping<(Class|String), (Mapping<String,me>) -> Map<String,String>> = new {
+hidden fixed nested_mappings: Listing<String> 
+local post_process_tags: Mapping<(Class|String), (unknown) -> Any> = new {
+  ["tags"] = (v) -> dynamic_tags.toList().distinct
+  ["dynamic_tags"] = (v) -> null
+}
+hidden fixed post_process: Mapping<(Class|String), (unknown) -> Any> = new {
+  ...post_process_tags
   for (_key in nested_mappings) {
     [_key] = (v) -> v.toMap().values.map((v) -> v.id)
   }
 }
-hidden post_process_nested: Mapping<(Class|String), (Mapping<String,me>) -> Map<String,me>>  = new {
+hidden fixed post_process_nested: Mapping<(Class|String), (unknown) -> Any> = new {
+  ...post_process_tags
   for (_key in nested_mappings) {
     [_key] = (v) -> v.toMap().mapKeys((k,v) -> v.id)
   }
 }
 
+hidden fixed children: List<me> = List()
+hidden fixed recursive_children: List<me> = children + children.flatMap((c) -> c.recursive_children)
+
+hidden fixed rendered_files: Listing<String> = new Listing<String> {
+  "\(id).json"
+  when (recursive_children.length > 0) { "\(id)-nested.json" }
+  for (child in recursive_children) { "\(child.id).json" }
+}
 
 output {
   files {
     ["\(id).json"] {
-      renderer = new JsonRenderer { 
-        converters = post_process
-      }
+      renderer = new JsonRenderer { converters = post_process }
       value = methis
     }
     when (recursive_children.length > 0) {
       ["\(id)-nested.json"] {
-        renderer = new JsonRenderer { 
-          converters = post_process_nested
-        }
+        renderer = new JsonRenderer { converters = post_process_nested }
         value = methis
       }
-
-      for (child in recursive_children) {
-        ["\(child.id).json"] {
-          renderer = new JsonRenderer { 
-            converters = child.post_process
-          }
-          value = child
-        }
+    }
+    for (child in recursive_children) {
+      ["\(child.id).json"] {
+        renderer = new JsonRenderer { converters = child.post_process }
+        value = child
       }
     }
   }

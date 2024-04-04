@@ -9,7 +9,7 @@ import "unit.pkl" as me
 local methis = this
 local meref = reflect.moduleOf(this)
 
-fixed tags {
+fixed dynamic_tags {
   when (methis.infusable) { "infusable" }
 }
 
@@ -17,7 +17,7 @@ constructing_version: ConstructingUnit?
 
 vision = 1800
 
-local tag_list = add_tags.toList() + extend_tags.toList()
+local tag_list = tags.toList()
 
 infusable: Boolean = subtype == "army" && !tag_list.contains("massive")
 
@@ -48,6 +48,6 @@ upgrades: Mapping<String, UnitUpgrade> = new Mapping<String, UnitUpgrade> {
   default { key -> name = $t.makeSlug(key); parent = parent_info }
 }
 
-nested_mappings { "upgrades" }
+fixed nested_mappings { "upgrades" }
 
 hidden fixed children = super.children + upgrades.toMap().values.toList()

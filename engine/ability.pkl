@@ -13,7 +13,7 @@ activation_type: "auto" | "activated" | "passive" =
 
 fixed type = "ability"
 fixed subtype = ability_type
-hidden ability_type: "attack" | "heal" | "spell" | "switch-attack" | "toggle-siege" | "faction-passive" | "topbar-power" | "faction-talent" 
+hidden ability_type: "attack" | "heal" | "spell" | "passive" | "switch-attack" | "toggle-siege" | "faction-passive" | "topbar-power" | "faction-talent" 
 
 name = 
   if (subtype == "attack") "Attack" 
