@@ -15,6 +15,7 @@ class PathData {
   gathers_flux: Number?
   gathers_rich_flux: Number?
   hp: Number?
+  supply: Number?
   speed: Number?
   vision: Number?
   armor: Number?
@@ -56,8 +57,9 @@ function dataFromPath(p: List<String>): PathData = new {
         speed = 450
         armor_type = "medium"
         rebuildable = true
+        supply = 0
       }
-      when (p[4] == "builder") { subtype = "builder"; tier = "T0" }
+      when (p[4] == "builder") { subtype = "builder"; tier = "T0"; supply = 0 }
       when (p[4] == "tier_1") { subtype = "army"; tier = "T1" }
       when (p[4] == "tier_2") { subtype = "army"; tier = "T2" }
       when (p[4] == "tier_3") { subtype = "army"; tier = "T3" }
@@ -67,8 +69,9 @@ function dataFromPath(p: List<String>): PathData = new {
         build_time = 30
         rebuild_time = 60
         rebuildable = true
+        supply = 10
       }
-      when (p[4] == "ultimate") { subtype = "ultimate"; tier = "T4" }
+      when (p[4] == "ultimate") { subtype = "ultimate"; tier = "T4"; supply = 0 }
     }
   }
 }

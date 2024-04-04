@@ -13,7 +13,7 @@ activation_type: "auto" | "activated" | "passive" =
 
 fixed type = "ability"
 fixed subtype = ability_type
-hidden ability_type: "attack" | "heal" | "spell" | "passive" | "switch-attack" | "toggle-siege" | "faction-passive" | "topbar-power" | "faction-talent" 
+hidden ability_type: "attack" | "heal" | "spell" | "passive" | "toggle" | "faction-passive" | "topbar-power" | "faction-talent" 
 
 name = 
   if (subtype == "attack") "Attack" 
@@ -26,7 +26,7 @@ reverse_hotkey: $t.HotKey?
 targets: Listing<$t.TargetType>
 target_mode: $t.TargetMode?
 requires_mode: String?
-toggles_mode: String?
+toggles_mode: ("siege" | "attack")? 
 energy_cost: Number?
 energy_type: $t.EnergyType?
 /// also called reload_time

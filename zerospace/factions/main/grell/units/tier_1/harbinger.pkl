@@ -1,0 +1,67 @@
+amends ".../engine/unit.pkl"
+
+name = "Harbinger"
+hotkey = "w"
+description = "Grell's T1 ranged attacker. Has a decent ranged attack and a high damage targeted spell."
+tier = "T1"
+hexite_cost = 75
+flux_cost = 25
+build_time =  25
+supply = 3
+hp = 250
+armor_type = "heavy"
+speed = 450
+created_by { "incubator" }
+unlocked_by { "incubator" }
+upgraded_by { "augmentation-pool" }
+
+infuse_cost = 10
+
+attacks {
+  ["Attack"] {
+    damage = 21
+    range = 800
+    cooldown = 1.75
+    targets { "ground"; "air" }
+  }
+}
+
+spells {
+  ["Eruption"] {
+    name = "Eruption"
+    description = "Deals 120 damage to units in the target area after 1.5 seconds"
+    targets { "air"; "ground"  }
+    target_mode = "location"
+    hotkey = "e"
+    energy_type = "abes"
+    energy_cost = 10
+    delay = 1.5
+    area_damage = 120
+    area_range = 100
+    range = 1400
+    notes { "radius is estimated" }
+  }
+}
+
+upgrades {
+  ["Chitinous Carapace"] {
+    description = "+15% damage reduction"
+    tier = "T1.5"
+  }
+
+  ["Shredding Eruption"] {
+    tier = "T1.5"
+    description = "Affected units take 20% additional damage for 8 seconds"
+  }
+  
+  ["Rapid Regeneration"] {
+    tier = "T2.5"
+    description = "2% of health regenerated each second"
+  }
+
+  ["Wide Eruption"] {
+    tier = "T2.5"
+    description = "Increases the radius of eruption by 50%"
+  }
+}
+

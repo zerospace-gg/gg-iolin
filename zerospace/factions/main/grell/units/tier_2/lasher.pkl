@@ -1,0 +1,56 @@
+amends ".../engine/unit.pkl"
+
+name = "Lasher"
+hotkey = "r"
+description = "The Lasher is a T2 ranged attacker. When it's infused it can be very tanky."
+tier = "T2"
+hexite_cost = 50
+flux_cost = 50
+build_time = 28
+supply = 3
+hp = 250
+armor_type = "light"
+speed = 450
+created_by { "medium-incubator" }
+unlocked_by { "medium-incubator" }
+upgraded_by { "advanced-augmentation-pool" }
+
+attacks {
+  ["Attack"] {
+    damage = 32
+    cooldown = 1.8
+    range = 1000
+    targets { "air"; "ground" }
+  }
+}
+
+spells {
+  ["Camouflage"] {
+    hotkey = "q"
+    cooldown = 30
+    description = "gain light stealth and +20% movement speed for 10 seconds"
+  }
+}
+
+upgrades {
+  ["Corrosive Shots"] {
+    tier = "T2.5"
+    description = "+25% damage against heavy armor"
+  }
+
+  ["Fast Legs"] {
+    tier = "T2.5"
+    description = "Increase lasher movement speed by 30%"
+  }
+  
+  ["Attack Range"] {
+    tier = "T3.5"
+    description = "Increase lasher attack range by 20%"
+  }
+
+  ["Extended Camouflage"] {
+    tier = "T3.5"
+    description = "-50% camouflage duration"
+  }
+}
+

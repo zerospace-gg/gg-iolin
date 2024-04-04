@@ -1,0 +1,51 @@
+amends ".../engine/unit.pkl"
+
+name = "Skrelling"
+hotkey = "t"
+description = "The Skrelling is a light, fast air fighter skilled at anti-air thanks to its upgrades."
+tier = "T2"
+hexite_cost = 25
+flux_cost = 50
+build_time = 16
+domain = "air"
+supply = 2
+hp = 140
+armor_type = "light"
+speed = 700
+created_by { "medium-incubator" }
+unlocked_by { "medium-incubator" }
+upgraded_by { "advanced-augmentation-pool" }
+
+attacks {
+  ["Attack"] {
+    damage = 10
+    cooldown = 1
+    range = 150
+    targets { "air"; "ground" }
+  }
+}
+
+upgrades {
+  ["Suicide"] {
+    tier = "T2.5"
+    name = "Suicide"
+    description = "Suicide itself on enemy air units dealing 200dmg"
+  }
+
+  ["Increased Vitality"] {
+    tier = "T2.5"
+    name = "Increased Vitality"
+    description = "+30% Health"
+  }
+  
+  ["Fast Wings"] {
+    tier = "T3.5"
+    description = "+20% movement speed"
+  }
+
+  ["Volatile Acid"] {
+    tier = "T3.5"
+    description = "When killed, deal 40 damage to enemy units nearby"
+  }
+}
+

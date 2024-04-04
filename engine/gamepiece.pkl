@@ -10,22 +10,22 @@ local methis = this
 
 tags {
   when (armor_type != "none") { "armor:\(armor_type)" }
-  when (gathers_rich_flux ?? 0 > 0) { "gathers:flux" }
-  when (gathers_flux ?? 0 > 0) { "gathers:flux" }
-  when (gathers_hexite ?? 0 > 0) { "gathers:hexite" }
-  when (gathers_empty_hexite ?? 0 > 0) { "gathers:hexite" }
+  when ((gathers_rich_flux ?? 0) > 0) { "gathers:flux" }
+  when ((gathers_flux ?? 0) > 0) { "gathers:flux" }
+  when ((gathers_hexite ?? 0) > 0) { "gathers:hexite" }
+  when ((gathers_empty_hexite ?? 0) > 0) { "gathers:hexite" }
   when (domain == "air") { "flyer" }
-  when (armor ?? 0 > 0) { "armored" }
-  when (provides_supply ?? 0 > 0) { "supply" }
-  when (provides_biomass ?? 0 > 0) { "biomass" }
-  when (provides_detection ?? 0 > 0) { "detection" }
+  when ((armor ?? 0) > 0) { "armored" }
+  when ((provides_supply ?? 0) > 0) { "supply" }
+  when ((provides_biomass ?? 0) > 0) { "biomass" }
+  when ((provides_detection ?? 0) > 0) { "detection" }
   when ((provides_upgrades_for?.length ?? 0) > 0) { "upgrades" }
   when ((upgraded_by?.length ?? 0) > 0) { "upgradable" }
-  when (shields ?? 0 > 0) { "shielded" }
-  when (abes_energy ?? 0 > 0) { "abes" }
-  when (energy ?? 0 > 0) { "energy" }
-  when (stun_resist ?? 0 > 0) { "resist:stun" }
-  when (max_turrets ?? 0 > 0 && turret_type == "turret") { "has:turrets" }
+  when ((shields ?? 0) > 0) { "shielded" }
+  when ((abes_energy ?? 0) > 0) { "abes" }
+  when ((energy ?? 0) > 0) { "energy" }
+  when ((stun_resist ?? 0) > 0) { "resist:stun" }
+  when ((max_turrets ?? 0) > 0 && turret_type == "turret") { "has:turrets" }
   when (turret_type == "sacrifice") { "sacrifices" }
 }
 

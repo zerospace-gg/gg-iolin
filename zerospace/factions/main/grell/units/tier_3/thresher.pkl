@@ -30,8 +30,8 @@ attacks {
 }
 
 spells {
-  ["Siege"] {
-    ability_type = "toggle-siege"
+  ["Siege Mode"] {
+    ability_type = "toggle"
     toggles_mode = "siege"
     hotkey = "d"
     reverse_hotkey = "ctrl-d"

@@ -1,0 +1,21 @@
+amends ".../engine/unit.pkl"
+
+name = "Grell Harvester"
+flavor = "Flux-Gathering Gardener"
+description = "The Grell harvester generates BioMass while it is not moving, and is able to create a free Cultivator every 60s. This unit is often used for rushes and forward positioning, as well as providing the Grell Hero a teleport location."
+created_by { "root-colony" }
+creates { "cultivator" }
+provides_biomass = 375
+
+spells {
+  ["Spawn Cultivator"] {
+    description = "Spawns a free cultivator"
+    hotkey = "g"
+    cooldown = 60.0
+    cooldown_at_build = true
+    range = 375
+    targets { "map" }
+    target_mode = "location"
+    creates { "cultivator" }
+  }
+}
