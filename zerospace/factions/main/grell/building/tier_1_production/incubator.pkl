@@ -1,0 +1,13 @@
+amends ".../engine/building.pkl"
+
+name = "Incubator"
+tier = "T1"
+creates {
+  "stinger"
+  "harbinger"
+  "weaver"
+}
+unlocks {
+  "stinger"
+  "harbinger"
+}

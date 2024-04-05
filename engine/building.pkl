@@ -1,0 +1,10 @@
+module building 
+extends "gamepiece.pkl"
+import "types.pkl" as $t
+
+fixed type = "building"
+fixed subtype: "base" | "extractor" | "supply" | "production" | "tech" | "special" | "constructing-unit" = from_path.subtype
+
+speed = 0
+vision = from_path.vision ?? 1500
+armor = from_path.armor ?? 1

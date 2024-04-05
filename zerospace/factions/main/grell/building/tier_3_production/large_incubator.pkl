@@ -1,0 +1,14 @@
+amends ".../engine/building.pkl"
+
+name = "Large Incubator"
+tier = "T3"
+creates {
+  "reaver"
+  "thresher"
+  "behemoth"
+}
+unlocks {
+  "reaver"
+  "thresher"
+  "behemoth"
+}

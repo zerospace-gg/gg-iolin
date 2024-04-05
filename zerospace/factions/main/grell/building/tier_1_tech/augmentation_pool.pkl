@@ -1,0 +1,11 @@
+amends ".../engine/building.pkl"
+
+name = "Augmentation Pool"
+tier = "T1.5"
+
+unlocks { "weaver" }
+provides_upgrades_for { 
+  "stinger"
+  "harbinger"
+  "weaver"
+}

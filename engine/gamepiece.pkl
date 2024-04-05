@@ -51,8 +51,8 @@ hotkey: $t.HotKey?
 gathers_flux: Number? = from_path.gathers_flux
 gathers_rich_flux: Number? = from_path.gathers_rich_flux
 
-gathers_hexite: Number?
-gathers_empty_hexite: Number?
+gathers_hexite: Number? = from_path.gathers_hexite
+gathers_empty_hexite: Number? = from_path.gathers_empty_hexite
 
 supply: Number? = from_path.supply
 hp: Number? = from_path.hp
@@ -66,8 +66,8 @@ armor: Number? = from_path.armor
 armor_type: $t.ArmorType = from_path.armor_type ?? "none" 
 stun_resist: Number? 
 
-provides_supply: Number?
-provides_biomass: Number?
+provides_supply: Number? = from_path.provides_supply
+provides_biomass: Number? = from_path.provides_biomass
 provides_detection: Number?
 provides_upgrades_for: Listing<String>(isDistinct)?
 

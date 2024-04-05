@@ -1,0 +1,12 @@
+amends ".../engine/building.pkl"
+
+name = "Medium Incubator"
+tier = "T2"
+creates {
+  "lasher"
+  "skrelling"
+}
+unlocks {
+  "lasher"
+  "skrelling"
+}
