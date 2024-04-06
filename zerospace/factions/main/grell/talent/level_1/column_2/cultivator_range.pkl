@@ -1,0 +1,3 @@
+amends ".../engine/talent.pkl"
+name = "Cultivator Range"
+description = "+100% Cultivator vision and biomass generation range"

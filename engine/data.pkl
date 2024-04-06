@@ -24,6 +24,12 @@ fixed id: $t.Id = (src_dir_slugs + List(slug)).join("/")
 /// metadata pulled from path. this includes things used in multiple subclasses
 hidden fixed from_path: $p.PathData = $p.dataFromPath(src_dir_parts)
 
+zs_version: String? = "zs_v1223334444"
+zsgg_version: String? = read("prop:gg_version") ?? read("env:ZSGG_VERSION") ?? "DevelVersion"
+zsgg_updated: String? = read("prop:gg_at") ?? read("env:ZSGG_AT") ?? "UnknownTime"
+release = List(zsgg_version, zs_version, zsgg_updated).join("-")
+full_id: String = "\(id)@\(release)"
+
 /// nicely formatted display name, as it appears in game (with the exception of things without lore names yet)
 name: String 
 

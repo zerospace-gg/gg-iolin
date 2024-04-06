@@ -1,0 +1,9 @@
+amends ".../engine/topbar.pkl"
+name = "Tree of Life"
+description = "Revives units killed nearby and heals friendly units. Radius: 1500. Starting energy: 30."
+energy_cost = 50
+cooldown = 120
+unlocked_by { 
+  import(".../grell/talent/level_5/column_2/tree_of_life_talent.pkl").slug
+}
+

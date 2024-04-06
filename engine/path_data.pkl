@@ -26,15 +26,23 @@ class PathData {
   provides_supply: Number?
   provides_biomass: Number?
 
+  // abilities can be nested or in a full file, cant use subpath for this
+  ability_type: String?
+  ability_of: String?
+  slot: Number?
+  topbar_type: String?
+  level: Number?
+  column: Number?
+
   tags: Listing<String>
 }
 
 function dataFromPath(p: List<String>): PathData = new {
-  when (p[0] == "maps") {
+  when (p.first == "maps") {
     type = "map"
     subtype = p[1]
   }
-  when (p[0] == "factions") {
+  when (p.first == "factions") {
     local len = p.length
     faction_type = p[1]
     faction = p[2]
@@ -46,107 +54,108 @@ function dataFromPath(p: List<String>): PathData = new {
         local e = throw("faction slug must match faction subtype directory") 
       }
     }
-    when (p[3] == "unit") {
-      type = "unit" 
-      vision = 1800
-      when (p[4] == "harvester") { 
-        subtype = "harvester"; 
-        tier = "T0" 
-        hexite_cost = 175
-        build_time = 25
-        rebuild_time = 60
-        gathers_flux = 1.5
-        gathers_rich_flux = 3.0
-        hp = 400
-        speed = 450
-        armor_type = "medium"
-        rebuildable = true
-        supply = 0
-      }
-      when (p[4] == "builder") { subtype = "builder"; tier = "T0"; supply = 0 }
-      when (p[4] == "tier_1") { subtype = "army"; tier = "T1" }
-      when (p[4] == "tier_2") { subtype = "army"; tier = "T2" }
-      when (p[4] == "tier_3") { subtype = "army"; tier = "T3" }
-      when (p[4] == "hero") { 
-        subtype = "hero"; 
-        tier = "T2" 
-        build_time = 30
-        rebuild_time = 60
-        rebuildable = true
-        supply = 10
-      }
-      when (p[4] == "ultimate") { subtype = "ultimate"; tier = "T4"; supply = 0 }
-    }
-    when (p[3] == "building") {
-      type = "building"
-      vision = 1500
-
-      when (p[4] == "base") {
-        subtype = "base"
-        hp = 2000 
-        hexite_cost = 350
-      }
-      when (p[4] == "extractor") {
-        subtype = "extractor"
-        armor = 0
-        gathers_hexite = 1.0
-        gathers_empty_hexite = 0.35
-      }
-      when (p[4] == "supply") { subtype = "supply"; provides_supply = 15; hexite_cost = 100; build_time = 15; hp = 750 }
-      when (p[4] == "special") { subtype = "special" }
-      when (p[4].startsWith("tier_1")) { tier = "T1"; }
-      when (p[4].startsWith("tier_2")) { tier = "T2"; }
-      when (p[4].startsWith("tier_3")) { tier = "T3"; }
-      when (p[4] == "ultimate") { subtype = "ultimate"; tier = "Ultimate" }
-      when (p[4].endsWith("production")) {
-        subtype = "production"
-        build_time = 40
-        hp = 
-          if (tier == "T1") 1000
-          else if (tier == "T2") 1200
-          else if (tier == "T3") 1400
-          else null
-
-        hexite_cost = 
-          if (tier == "T1") 100
-          else if (tier == "T2") 150
-          else if (tier == "T3") 150
-          else null
-
-        flux_cost = 
-          if (tier == "T1") 0
-          else if (tier == "T2") 50
-          else if (tier == "T3") 150
-          else null
-      }
-      when (p[4].endsWith("_tech")) {
-        subtype = "tech"
-        build_time = 
-          if (tier == "T1") 25
-          else if (tier == "T2") 30
-          else if (tier == "T3") 35
-          else null
-
-        hp = 1000
-        hexite_cost = 100
-        flux_cost = 25
-      }
-    }
-    when (p[3] == "talent") {
-      type = "ability"
-      subtype = "faction-talent"
-      ability_of = faction
-
-      when (p[4].endsWith("column_1")) { column = 1 }
-      when (p[4].endsWith("column_2")) { column = 2 }
-      when (p[4].endsWith("column_3")) { column = 3 }
-
-      when (p[4].startsWith("level_1")) { level = 1 }
-      when (p[4].startsWith("level_2")) { level = 2 }
-      when (p[4].startsWith("level_3")) { level = 3 }
-      when (p[4].startsWith("level_4")) { level = 4 }
-      when (p[4].startsWith("level_5")) { level = 5 }
-    }
-    when (p[3] == "passive") { type = "ability" ; subtype = "faction-passive"; ability_of = faction }
   }
+  when (p.contains("unit")) {
+    type = "unit" 
+    vision = 1800
+  }
+  when (p.contains("harvester")) {
+    subtype = "harvester"; 
+    tier = "T0" 
+    hexite_cost = 175
+    build_time = 25
+    rebuild_time = 60
+    gathers_flux = 1.5
+    gathers_rich_flux = 3.0
+    hp = 400
+    speed = 450
+    armor_type = "medium"
+    rebuildable = true
+    supply = 0
+  }
+  when (p.contains("builder")) { subtype = "builder"; tier = "T0"; supply = 0 }
+  when (p.contains("tier_1")) {
+    when (p.contains("unit")) { subtype = "army" }
+    tier = "T1" 
+  }
+  when (p.contains("tier_2")) {
+    when (p.contains("unit")) { subtype = "army" }
+    tier = "T2" 
+  }
+  when (p.contains("tier_3")) {
+    when (p.contains("unit")) { subtype = "army" }
+    tier = "T3" 
+  }
+  when (p.contains("hero")) { 
+    when (!p.contains("tier_2")) { tier = "T2" }
+    subtype = "hero"; 
+    build_time = 30
+    rebuild_time = 60
+    rebuildable = true
+    supply = 10
+  }
+  when (p.contains("ultimate")) { 
+    when (p.contains("unit")) { subtype = "ultimate"; tier = "T4"; supply = 0  }
+    when (p.contains("building")) { subtype = "ultimate"; tier = "T4" }
+  }
+  when (p.contains("building")) {
+    type = "building"
+    vision = 1500
+  }
+
+  when (p.contains("base")) {
+    subtype = "base"
+    hp = 2000 
+    hexite_cost = 350
+  }
+  when (p.contains("extractor")) {
+    subtype = "extractor"
+    armor = 0
+    gathers_hexite = 1.0
+    gathers_empty_hexite = 0.35
+  }
+  when (p.contains("supply")) { subtype = "supply"; provides_supply = 15; hexite_cost = 100; build_time = 15; hp = 750 }
+  when (p.contains("special")) { subtype = "special" }
+
+  when (p.contains("production")) {
+    subtype = "production"
+    build_time = 40
+  }
+
+  when (p.contains("tech")) {
+    subtype = "tech"
+    hp = 1000
+    hexite_cost = 100
+    flux_cost = 25
+  }
+
+  when (p.contains("level_1")) { level = 1 }
+  when (p.contains("level_2")) { level = 2 }
+  when (p.contains("level_3")) { level = 3 }
+  when (p.contains("level_4")) { level = 4 }
+  when (p.contains("level_5")) { level = 5 }
+  when (p.contains("column_1")) { column = 1 }
+  when (p.contains("column_2")) { column = 2 }
+  when (p.contains("column_3")) { column = 3 }
+  when (p.contains("slot_1")) { slot = 1 }
+  when (p.contains("slot_2")) { slot = 2 }
+  when (p.contains("slot_3")) { slot = 3 }
+  when (p.contains("slot_4")) { slot = 4 }
+
+  when (p.contains("talent")) {
+    type = "faction-ability"
+    ability_type = "topbar"
+    ability_of = p[2]
+  }
+
+  when (p.contains("topbar")) {
+    type = "ability"
+    ability_type = "topbar-power"
+    ability_of = p[2]
+    when (p.contains("recall")) { topbar_type = "recall" }
+    when (p.contains("special")) { topbar_type = "special" }
+    when (p.contains("ultimate")) { topbar_type = "ultimate" }
+  }
+
+  when (p.contains("passive")) { type = "ability" ; subtype = "faction-passive"; ability_of = p[2] }
 }

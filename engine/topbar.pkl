@@ -1,24 +1,20 @@
 /// defines a topbar ability
-module topbar_power
-extends "ability.pkl"
-import "../types.pkl" as $t
+extends "faction_ability.pkl"
+import "types.pkl" as $t
 
 fixed subtype = List(super.subtype, topbar_type).join("/")
 ability_type = "topbar-power"
 activation_type = "activated"
 
 /// All main factions have a recall in slot 1 and a special in slot 2, which are unlocked at the beginning of the game, and an ultimate in each of slots 3/4, which are unlocked by talents.
-hidden topbar_type: TopbarType
+hidden topbar_type: TopbarType = from_path.topbar_type
 typealias TopbarType = "recall" | "special" | "ultimate"
 
-energy_cost = cost
+energy_cost: Number?
 energy_type = "topbar"
 
-/// topbar energy required, if it is a static number. if it's formulaic, describe it in the `notes` field.
-hidden cost: Int?
-
 /// the topbar has 4 ability slots
-slot: Int(isBetween(1,4))
+slot: Int(isBetween(1,4)) = from_path.slot
 
 /// slots 3/4 (ultimates) are unlocked by a talent
 unlocked_by: Listing<String>?

@@ -8,3 +8,29 @@ fixed subtype: "base" | "extractor" | "supply" | "production" | "tech" | "specia
 speed = 0
 vision = from_path.vision ?? 1500
 armor = from_path.armor ?? 1
+build_time = from_path.build_time ??
+          if (tier == "T1") 25
+          else if (tier == "T2") 30
+          else if (tier == "T3") 35
+          else null
+
+hp = from_path.hp ??
+  if (subtype == "production")
+    if (tier == "T1") 1000
+    else if (tier == "T2") 1200
+      else if (tier == "T3") 1400
+        else null
+  else null
+    
+
+hexite_cost = from_path.build_time ??
+  if (tier == "T1") 100
+  else if (tier == "T2") 150
+    else if (tier == "T3") 150
+      else null
+
+flux_cost = from_path.flux_cost ??
+  if (tier == "T1") 0
+  else if (tier == "T2") 50
+    else if (tier == "T3") 150
+      else null

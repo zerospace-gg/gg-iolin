@@ -24,7 +24,7 @@ SHOW=$(shell which bat || which cat)
 
 # all: ${TARGETS}
 all: ${ALL_PKL}
-	@pkl eval -m ${DIST} $(shell find zerospace -name '*.pkl')
+	@bash buildall.sh
 	@echo "All done"
 	@ls -lh ${DIST}
 

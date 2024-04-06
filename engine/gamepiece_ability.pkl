@@ -1,4 +1,0 @@
-module gamepiece_ability
-extends "ability.pkl"
-
-hidden ability_type: "attack" | "heal" | "spell" | "passive" | "toggle" 

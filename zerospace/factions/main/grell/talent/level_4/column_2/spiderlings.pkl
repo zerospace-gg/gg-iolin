@@ -1,0 +1,3 @@
+amends ".../engine/talent.pkl"
+name = "Spiderlings"
+description = "Your units spawn spiderlings on death. The amount scales with unit's supply cost."

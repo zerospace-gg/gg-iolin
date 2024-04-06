@@ -1,0 +1,5 @@
+module faction
+extends "data.pkl"
+
+hidden faction_contents: Mapping<String, Data>
+hidden guest_heroes: Listing<Data>

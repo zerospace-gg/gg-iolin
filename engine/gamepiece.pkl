@@ -4,7 +4,7 @@ extends "data.pkl"
 import "data.pkl"
 import "turret.pkl" as Turret
 import "parent_info.pkl" as ParentInfo
-import "gamepiece_ability.pkl" as Ability
+import "ability.pkl" as Ability
 import "types.pkl" as $t
 import "gamepiece.pkl" as me
 local methis = this

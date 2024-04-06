@@ -1,4 +1,4 @@
-abstract module ability
+open module ability
 extends "child.pkl"
 import "types.pkl" as $t
 import "ability.pkl" as me
@@ -12,8 +12,8 @@ activation_type: "auto" | "activated" | "passive" =
   else "activated"
 
 fixed type = "ability"
-fixed subtype = ability_type
-hidden ability_type: "attack" | "heal" | "spell" | "passive" | "toggle" | "faction-passive" | "topbar-power" | "faction-talent" 
+fixed subtype = from_path.ability_type ?? ability_type
+hidden ability_type: "attack" | "heal" | "spell" | "passive" | "toggle" 
 
 name = 
   if (subtype == "attack") "Attack" 
@@ -36,7 +36,7 @@ duration: Number?
 range: Number?
 /// also called damage point, attack delay, or cast point
 delay: Number?
-ability_of: String?
+ability_of: String? = from_path.ability_of
 
 shots: Number?
 volleys: Number? 
