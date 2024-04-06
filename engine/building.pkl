@@ -3,10 +3,10 @@ extends "gamepiece.pkl"
 import "types.pkl" as $t
 
 fixed type: String = "building"
-fixed subtype: String = from_path.subtype ?? building_type
-building_type: "base" | "extractor" | "supply" | "production" | "tech" | "special" | "constructing-unit" = from_path.subtype
+fixed subtype: String = fromPath.subtype ?? buildingType
+buildingType: "base" | "extractor" | "supply" | "production" | "tech" | "special" | "constructing-unit" = fromPath.subtype
 
-provides_biomass: Number? = 
+providesBiomass: Number? = 
   if (faction != "grell") null 
   else if (subtype == "base") 1500 
     else if (subtype == "extractor") 0 
@@ -14,15 +14,15 @@ provides_biomass: Number? =
         else 750
 
 speed: Number? = 0
-vision: Number? = from_path.vision ?? 1500
-armor: Number? = from_path.armor ?? 1
-build_time: Number? = from_path.build_time ??
+vision: Number? = fromPath.vision ?? 1500
+armor: Number? = fromPath.armor ?? 1
+buildTime: Number? = fromPath.buildTime ??
           if (tier == "T1") 25
           else if (tier == "T2") 30
           else if (tier == "T3") 35
           else null
 
-hp: Number? = from_path.hp ??
+hp: Number? = fromPath.hp ??
   if (subtype == "production")
     if (tier == "T1") 1000
     else if (tier == "T2") 1200
@@ -31,13 +31,13 @@ hp: Number? = from_path.hp ??
   else null
     
 
-hexite_cost: Number? = from_path.build_time ??
+hexiteCost: Number? = fromPath.buildTime ??
   if (tier == "T1") 100
   else if (tier == "T2") 150
     else if (tier == "T3") 150
       else null
 
-flux_cost: Number? = from_path.flux_cost ??
+fluxCost: Number? = fromPath.fluxCost ??
   if (tier == "T1") 0
   else if (tier == "T2") 50
     else if (tier == "T3") 150

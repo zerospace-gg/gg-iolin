@@ -6,7 +6,7 @@ description = "Protectorate builder unit. Has a repair/heal."
 hp = 50
 speed = 450
 
-created_by { 
+createdBy { 
   "operating-tower"
   "operating-tower-defensive"
 }

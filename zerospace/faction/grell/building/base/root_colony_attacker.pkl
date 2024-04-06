@@ -2,11 +2,11 @@ amends "root_colony.pkl"
 
 name = "Root Colony Attacker"
 flavor = "Devastating Defensive Tree"
-hexite_cost = 200
-created_by = null
-transforms_into = null
-transforms_from { "root-colony" }
-build_time = 5
+hexiteCost = 200
+createdBy = null
+transformsInto = null
+transformsFrom { "root-colony" }
+buildTime = 5
 
 attacks {
   ["Attack"] {

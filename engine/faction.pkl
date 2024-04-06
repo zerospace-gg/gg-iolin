@@ -2,10 +2,10 @@ module faction
 extends "data.pkl" 
 import "data.pkl" as Data
 
-hidden faction_contents: Mapping<String, Data>
+hidden factionContents: Mapping<String, Data>
 hidden guest_heroes: Listing<Data>
 
-local all = faction_contents.toMap().values
+local all = factionContents.toMap().values
 local guest = guest_heroes.toList()
 local getslug = (x) -> x.slug
 
@@ -20,7 +20,7 @@ local is_passive = (x) -> x.type == "faction-ability" && x.subtype == "passive"
 local function grab(x: List<Data>, y: (Data) -> Boolean) = x.filter(y).map(getslug)
 
 fixed faction: String? = slug
-merc_heroes_allowed: Boolean = true
+mercHeroesAllowed: Boolean = true
 
 fixed hero: Listing<String> = new {
   ...grab(guest, is_hero)

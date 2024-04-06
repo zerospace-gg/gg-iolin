@@ -2,7 +2,7 @@ amends ".../engine/unit.pkl"
 
 name = "Tech Hero"
 hp = 150
-armor_type = "medium"
+armorType = "medium"
 speed = 500
 
 attacks {
@@ -19,7 +19,7 @@ spells {
     hotkey = "z"
     cooldown = 25
     description = "A shot pierces enemies in line (up to 6) - damaging them and slowing them down. Enemy hits makes the companion buff permanently stronger: +40% max shields, +2% attack speed"
-    target_mode = "strip"
+    targetMode = "strip"
     targets { "map" }
   }
 
@@ -28,14 +28,14 @@ spells {
     cooldown = 10
     description = "Fire a projectile. If it hits an enemy unit, swap positions with it. If it doesn't hit one or the unit is too close, jump to the target location and leave a decoy behind. The minimum swap range is indicated by the secondary range circle. The decoy lasts 1 minute."
     targets { "map" }
-    target_mode = "location"
+    targetMode = "location"
   }
 
   ["Companion"] {
     hotkey = "c"
     cooldown = 20
     targets { "ground"; "air" }
-    target_mode = "gamepiece"
+    targetMode = "gamepiece"
     description = "A friendly unit can become your companion and gains power (+100 shields). When used on a AI-controlled unit (<= 2 supply cost), you gain control over it."
   }
 }

@@ -3,11 +3,11 @@ name = "Cultivator Attacker"
 flavor = "Angry Flower"
 description = "Provides vision and static defense, and is also very effective in forward positions where you have biomass nearby."
 hotkey = "e"
-hexite_cost = 75
+hexiteCost = 75
 hp = 500
-transforms_from { "cultivator" }
-transforms_into = null
-created_by = null
+transformsFrom { "cultivator" }
+transformsInto = null
+createdBy = null
 
 attacks { 
   ["Attack"] {

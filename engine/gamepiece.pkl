@@ -10,24 +10,24 @@ import "gamepiece.pkl" as me
 local methis = this
 
 hidden fixed extend_tags = (super.extend_tags) {
-  when (armor_type != "none") { "armor:\(armor_type)" }
-  when ((gathers_rich_flux ?? 0) > 0) { "gathers:flux" }
-  when ((gathers_flux ?? 0) > 0) { "gathers:flux" }
-  when ((gathers_hexite ?? 0) > 0) { "gathers:hexite" }
-  when ((gathers_empty_hexite ?? 0) > 0) { "gathers:hexite" }
+  when (armorType != "none") { "armor:\(armorType)" }
+  when ((gathersRichFlux ?? 0) > 0) { "gathers:flux" }
+  when ((gathersFlux ?? 0) > 0) { "gathers:flux" }
+  when ((gathersHexite ?? 0) > 0) { "gathers:hexite" }
+  when ((gathersEmptyHexite ?? 0) > 0) { "gathers:hexite" }
   when (domain == "air") { "flyer" }
   when ((armor ?? 0) > 0) { "armored" }
-  when ((provides_supply ?? 0) > 0) { "supply" }
-  when ((provides_biomass ?? 0) > 0) { "biomass" }
-  when ((provides_detection ?? 0) > 0) { "detection" }
-  when ((provides_upgrades_for?.length ?? 0) > 0) { "upgrades" }
-  when ((upgraded_by?.length ?? 0) > 0) { "upgradable" }
+  when ((provedsSupply ?? 0) > 0) { "supply" }
+  when ((providesBiomass ?? 0) > 0) { "biomass" }
+  when ((providesDetection ?? 0) > 0) { "detection" }
+  when ((providesUpgradesFor?.length ?? 0) > 0) { "upgrades" }
+  when ((upgradedBy?.length ?? 0) > 0) { "upgradable" }
   when ((shields ?? 0) > 0) { "shielded" }
-  when ((abes_energy ?? 0) > 0) { "abes" }
+  when ((abesEnergy ?? 0) > 0) { "abes" }
   when ((energy ?? 0) > 0) { "energy" }
-  when ((stun_resist ?? 0) > 0) { "resist:stun" }
-  when ((max_turrets ?? 0) > 0 && has_turret_type == "turret") { "has:turrets" }
-  when (has_turret_type == "sacrifice") { "sacrifices" }
+  when ((stunResist ?? 0) > 0) { "resist:stun" }
+  when ((maxTurrets ?? 0) > 0 && hasTurretType == "turret") { "has:turrets" }
+  when (hasTurretType == "sacrifice") { "sacrifices" }
 }
 
 /// short description of the purpose of this, to be used in summaries in UI. Many of these won't be in game. 
@@ -35,77 +35,102 @@ hidden fixed extend_tags = (super.extend_tags) {
 flavor: String?
 
 /// hexite cost to build. 0 for gamepieces that are cast
-hexite_cost: Number? 
-flux_cost: Number?
-build_count: Number? = 1
+hexiteCost: Number? 
+fluxCost: Number?
+buildCount: Number? = 1
 cooldown: Number?
-energy_cost: Number?
-energy_cost_type: $t.EnergyType? 
-build_time: Number?
+energyCost: Number?
+energyCostType: $t.EnergyType? 
+buildTime: Number?
 rebuildable: Boolean?
-rebuild_time: Number?
+rebuildTime: Number?
 domain: $t.DomainType = "ground"
 
 hotkey: $t.HotKey?
 
-gathers_flux: Number? = from_path.gathers_flux
-gathers_rich_flux: Number? = from_path.gathers_rich_flux
+gathersFlux: Number? = fromPath.gathersFlux
+gathersRichFlux: Number? = fromPath.gathersRichFlux
 
-gathers_hexite: Number? = from_path.gathers_hexite
-gathers_empty_hexite: Number? = from_path.gathers_empty_hexite
+gathersHexite: Number? = fromPath.gathersHexite
+gathersEmptyHexite: Number? = fromPath.gathersEmptyHexite
 
-supply: Number? = from_path.supply
-hp: Number? = from_path.hp
-vision: Number? = from_path.vision
-speed: Number? = from_path.speed
+supply: Number? = fromPath.supply
+hp: Number? = fromPath.hp
+vision: Number? = fromPath.vision
+speed: Number? = fromPath.speed
 shields: Number? 
-abes_energy: Number? 
+abesEnergy: Number? 
 energy: Number?
-armor: Number? = from_path.armor
+armor: Number? = fromPath.armor
 
-armor_type: $t.ArmorType = from_path.armor_type ?? "none" 
-stun_resist: Number? 
+armorType: $t.ArmorType = fromPath.armorType ?? "none" 
+stunResist: Number? 
 
-provides_supply: Number? = from_path.provides_supply
-provides_biomass: Number? = from_path.provides_biomass
-provides_detection: Number?
-provides_upgrades_for: Listing<String>(isDistinct)?
+provedsSupply: Number? = fromPath.provedsSupply
+providesBiomass: Number? = fromPath.providesBiomass
+providesDetection: Number?
+providesUpgradesFor: Listing<String>(isDistinct)?
 
-upgraded_by: Listing<String>(isDistinct)?
+upgradedBy: Listing<String>(isDistinct)?
 
-transforms_from: Listing<String>(isDistinct)?
-transforms_into: Listing<String>(isDistinct)?
+transformsFrom: Listing<String>(isDistinct)?
+transformsInto: Listing<String>(isDistinct)?
 
-max_turrets: Number?
-has_turret_type: "turret" | "sacrifice"? =
+maxTurrets: Number?
+hasTurretType: "turret" | "sacrifice"? =
   if (turrets.length == 0) null 
-  else throw("has_turret_type must be set if turrets is used.")
+  else throw("hasTurretType must be set if turrets is used.")
 
 local parent_info: ParentInfo = new {
   id = methis.id
   slug = methis.slug
   src = methis.src
-  from_path = methis.from_path
+  fromPath = methis.fromPath
 }
 
-attacks: Mapping<String, Ability> = new Mapping<String, Ability> {
-  default { key -> name = key; parent = parent_info; ability_type = "attack" }
+hidden attacks: Mapping<String, Ability> = new Mapping<String, Ability> {
+  default { key -> name = key; parent = parent_info; abilityType = "attack" }
+}
+attack: Mapping<String, Ability> = new {
+  for (_attack in attacks) {
+    [_attack.slug] = _attack
+  }
 }
 
-heals: Mapping<String, Ability> = new Mapping<String, Ability> {
-  default { key -> name = key; parent = parent_info; ability_type = "heal" }
+hidden heals: Mapping<String, Ability> = new Mapping<String, Ability> {
+  default { key -> name = key; parent = parent_info; abilityType = "heal" }
+}
+heal: Mapping<String, Ability> = new {
+  for (_heal in heals) {
+    [_heal.slug] = _heal
+  }
 }
 
-spells: Mapping<String, Ability> = new Mapping<String, Ability> {
-  default { key -> name = key; parent = parent_info; ability_type = "spell" }
+hidden spells: Mapping<String, Ability> = new Mapping<String, Ability> {
+  default { key -> name = key; parent = parent_info; abilityType = "spell" }
+}
+spell: Mapping<String, Ability> = new {
+  for (_spell in spells) {
+    [_spell.slug] = _spell
+  }
 }
 
-passives: Mapping<String, Ability> = new Mapping<String, Ability> {
-  default { key -> name = key; parent = parent_info; ability_type = "passive" }
+hidden passives: Mapping<String, Ability> = new Mapping<String, Ability> {
+  default { key -> name = key; parent = parent_info; abilityType = "passive" }
+}
+passive: Mapping<String, Ability> = new {
+  for (_passive in passives) {
+    [_passive.slug] = _passive
+  }
 }
 
-turrets: Mapping<String, Turret> = new Mapping<String, Turret> {
-  default { key -> name = key; parent = parent_info; turret_type = methis.has_turret_type }
+hidden turrets: Mapping<String, Turret> = new Mapping<String, Turret> {
+  default { key -> name = key; parent = parent_info; turretType = methis.hasTurretType }
+}
+turret: Mapping<String, Turret> = new {
+  for (_turret in turrets) {
+    [_turret.slug] = _turret
+  }
 }
 
 hidden fixed nested_mappings { 

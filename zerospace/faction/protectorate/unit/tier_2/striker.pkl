@@ -4,12 +4,12 @@ name = "Striker"
 description = "It has cool shooty missiles."
 tier = "T2"
 supply = 6
-hexite_cost = 100
-flux_cost = 125
-build_time = 50
+hexiteCost = 100
+fluxCost = 125
+buildTime = 50
 
 hp = 350
-armor_type = "medium"
+armorType = "medium"
 speed = 450
 
 attacks {
@@ -18,8 +18,8 @@ attacks {
     volleys = 12
     cooldown = 7.5
     range = 2000
-    splash_range = 150
-    splash_percent = 75
+    splashRange = 150
+    splashPercent = 75
   }
 }
 
@@ -46,7 +46,7 @@ upgrades {
   }
 }
 
-created_by {
+createdBy {
   "factory"
 }
 

@@ -3,16 +3,16 @@ import "kraegar.pkl" as me
 
 name = "Kraegar"
 hp = 300
-armor_type = "medium"
+armorType = "medium"
 speed = 500
-hexite_cost = 200
-flux_cost = 200
-build_time = 30
-stun_resist = 50
+hexiteCost = 200
+fluxCost = 200
+buildTime = 30
+stunResist = 50
 energy = 100
 
-unlocked_by { "altar" }
-created_by { "altar" }
+unlockedBy { "altar" }
+createdBy { "altar" }
 
 attacks {
   ["Attack"] {
@@ -26,15 +26,15 @@ attacks {
 spells {
   ["Piercing Shot"] {
     hotkey = "e"
-    energy_cost = 30
-    energy_type = "classic"
+    energyCost = 30
+    energyType = "classic"
     cooldown = 8
     description = "Deals 75 damage in a linear area"
   }
   ["Toxic Ammunition"] {
     hotkey = "r"
-    energy_cost = 25
-    energy_type = "classic"
+    energyCost = 25
+    energyType = "classic"
     cooldown = 10
     description = "Equips toxic ammunition, causing attacked units to take 30% additional damage and move 20% slower for 3s. Lasts 10 seconds."
   }

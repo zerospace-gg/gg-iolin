@@ -5,4 +5,4 @@ import "types.pkl" as $t
 slug: $t.Slug
 id: String
 src: String
-from_path: path_inspection.PathData
+fromPath: path_inspection.PathData

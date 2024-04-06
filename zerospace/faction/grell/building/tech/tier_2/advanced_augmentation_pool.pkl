@@ -3,7 +3,7 @@ amends ".../engine/building.pkl"
 name = "Advanced Augmentation Pool"
 tier = "T2.5"
 
-provides_upgrades_for { 
+providesUpgradesFor { 
   "lasher"
   "skrelling"
 }

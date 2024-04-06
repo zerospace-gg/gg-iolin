@@ -1,11 +1,11 @@
 amends ".../engine/faction.pkl"
 
 name = "Grell"
-zsgg_flavor = "Ballooning Bugs and their Blossoming Buds"
+flavor = "Ballooning Bugs and their Blossoming Buds"
 
-faction_contents = import*("grell/**pkl")
+factionContents = import*("grell/**pkl")
 guest_heroes {
   import("protectorate/unit/hero/prefect_nova.pkl")
   import("protectorate/unit/hero/tech_hero.pkl")
 }
-merc_heroes_allowed = true
+mercHeroesAllowed = true

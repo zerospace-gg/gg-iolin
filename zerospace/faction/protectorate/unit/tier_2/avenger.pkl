@@ -4,12 +4,12 @@ name = "Avenger"
 description = "A tank not long for this world. Being replaced soon. Say your goodbyes. :("
 tier = "T2"
 supply = 5
-hexite_cost = 125
-flux_cost = 25
-build_time = 50
+hexiteCost = 125
+fluxCost = 25
+buildTime = 50
 
 hp = 550
-armor_type = "heavy"
+armorType = "heavy"
 speed = 450
 
 attacks {
@@ -18,8 +18,8 @@ attacks {
     cooldown = 1.6
     range = 1200
     targets { "ground" }
-    bonus_vs_tags { "armor:heavy" }
-    bonus_percent = 30
+    bonusVsTags { "armor:heavy" }
+    bonusPercent = 30
   }
 }
 
@@ -45,7 +45,7 @@ upgrades {
   }
 }
 
-created_by {
+createdBy {
   "prot-factory"
 }
 

@@ -2,16 +2,16 @@ amends ".../engine/unit.pkl"
 
 name = "Galavax"
 hp = 300
-armor_type = "medium"
+armorType = "medium"
 speed = 500
-hexite_cost = 200
-flux_cost = 200
-build_time = 30
-stun_resist = 50
+hexiteCost = 200
+fluxCost = 200
+buildTime = 30
+stunResist = 50
 energy = 100
 
-unlocked_by { "altar" }
-created_by { "altar" }
+unlockedBy { "altar" }
+createdBy { "altar" }
 
 attacks {
   ["Attack"] {
@@ -25,15 +25,15 @@ attacks {
 spells {
   ["Fireball"] { 
     hotkey = "d"
-    energy_cost = 40
-    energy_type = "classic"
+    energyCost = 40
+    energyType = "classic"
     cooldown = 15
     description = "Hurl a fireball which slowly moves across battlefield and burns enemy units and structures"
   }
   ["Sacrificial Spear"] {
     hotkey = "f"
-    energy_cost = 25
-    energy_type = "classic"
+    energyCost = 25
+    energyType = "classic"
     cooldown = 10
     description = "Target a friendly Thrall or an enemy unit. Enemy unit will take 75 damage and be slowed for 4s. Friendly thrall will get sacrificied and heal friendly units for 300 HP over 30s. Double-clicking ability picks a thrall with the lowest health."
   }

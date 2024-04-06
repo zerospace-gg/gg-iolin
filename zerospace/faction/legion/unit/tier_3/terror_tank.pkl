@@ -7,18 +7,18 @@ name = "Terror Tank"
 
 tags { "massive" }
 
-hexite_cost = 200 
-flux_cost = 200
+hexiteCost = 200 
+fluxCost = 200
 supply = 20
 hp = 1500
 speed = 450
-armor_type = "heavy"
-stun_resist = 75
-build_time = 60
+armorType = "heavy"
+stunResist = 75
+buildTime = 60
 
-constructing_version {
+constructingVersion {
   name = "Terror Tank (Constructing)"
-  build_time = 60
+  buildTime = 60
   hp = 1500
 }
 
@@ -32,14 +32,14 @@ attacks {
 
 local main_weapon: String = "\(me.name)'s \(me.attacks["Main Gun"].name)"
 
-has_turret_type = "turret"
-max_turrets = 4
+hasTurretType = "turret"
+maxTurrets = 4
 turrets {
   default {
-    flux_cost = 125
-    build_time = 25
+    fluxCost = 125
+    buildTime = 25
     hp = 225
-    armor_type = "heavy"
+    armorType = "heavy"
   }
   ["Flame Turret"] {
     description = "Each \(name) adds splash damage to \(main_weapon)"
@@ -47,8 +47,8 @@ turrets {
       ["Turret Attack"] {
         damage = 25
         cooldown = 2
-        bonus_percent = 100
-        bonus_vs_tags { "armor:light" }
+        bonusPercent = 100
+        bonusVsTags { "armor:light" }
         range = 1100
       }
     }

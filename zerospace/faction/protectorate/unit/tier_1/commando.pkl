@@ -4,12 +4,12 @@ name = "Commando"
 flavor = "Jetpackin' Joyrider"
 description = "Protectorate's T1 marine-style unit. Has a jetpack for jumpin up cliffs and over things and often just for fun."
 supply = 2
-hexite_cost = 50
-build_time = 18
+hexiteCost = 50
+buildTime = 18
 tier = "T1"
 
 hp = 140
-armor_type = "light"
+armorType = "light"
 speed = 480
 
 attacks {
@@ -54,7 +54,7 @@ upgrades {
 }
 
 
-created_by {
+createdBy {
   "prot-barracks"
 }
 

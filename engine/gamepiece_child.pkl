@@ -16,7 +16,7 @@ fixed slug: $t.Slug =
 fixed id: $t.Id = "\(parent.id)/\(subtype)/\(slug)"
 fixed belongs_to: String = parent.slug
 
-fixed faction: String? = parent.from_path.faction
-fixed faction_type: String? = parent.from_path.faction_type
+fixed faction: String? = parent.fromPath.faction
+fixed factionType: String? = parent.fromPath.factionType
 
 hidden fixed extend_tags: Listing<String> = (super.extend_tags) { "belongs_to:\(parent.slug)" }

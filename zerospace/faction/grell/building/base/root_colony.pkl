@@ -9,9 +9,9 @@ creates {
   "grell-harvester"
   "grell-extractor"
 }
-created_by {
+createdBy {
   "seedling"
   "infused-seedling"
 }
-provides_biomass = 1500
-transforms_into { "root-colony-attacker" }
+providesBiomass = 1500
+transformsInto { "root-colony-attacker" }

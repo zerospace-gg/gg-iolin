@@ -11,19 +11,19 @@ class Rule {
   supply: Stat?
   hp: Stat?
   damage: Stat?
-  reload_time: Stat?
+  reloadTime: Stat?
   cooldown: Stat?
   tags: Listing<String>?
   domain: $t.DomainType
 }
 
-fixed default_rule: Rule = new {
+fixed defaultRule: Rule = new {
   supply = new StatMultiplier { num = 2.0 }
   hp = new StatMultiplier { num = 2.0 }
   cooldown = new StatMultiplier  { num = 0.5 }
 }
 
-fixed damage_rule: Rule = new {
+fixed damageRule: Rule = new {
   supply = new StatMultiplier  { num = 2.0 }
   hp = new StatMultiplier { num = 2.0 }
   damage = new StatMultiplier { num = 2.0 }

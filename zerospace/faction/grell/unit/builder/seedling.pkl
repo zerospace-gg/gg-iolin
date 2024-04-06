@@ -7,12 +7,12 @@ flavor = "Adorable Sentient Structure Seed"
 description = "Seedlings are built automatically from your Root Colonies, and are consumed in the creation of structures. Up to 5 of them are generated per base. When infused it becomes the best scouting unit in ZeroSpace."
 hp = 20
 speed = 360
-build_time = 5
+buildTime = 5
 
 infusable = true
-infuse_rule = $i.transform("infused-seedling")
+infuseRule = $i.transform("infused-seedling")
 
-created_by { 
+createdBy { 
   "root-colony"
   "root-colony-attacker"
 }
@@ -31,4 +31,4 @@ creates {
 
 notes { "While not on biomass, has 180 speed and loses 0.133 HP/s (1 HP every 7s)" }
 
-transforms_into { "infused-seedling" }
+transformsInto { "infused-seedling" }

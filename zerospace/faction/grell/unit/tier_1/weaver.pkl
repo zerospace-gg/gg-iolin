@@ -4,22 +4,22 @@ name = "Weaver"
 hotkey =  "e"
 description =  "The Weaver boosts all sources of healing for all nearby allies, and can heal and protect other units. It's also effective against air units."
 tier = "T1.5"
-hexite_cost = 50
-flux_cost = 100
-build_time = 30
+hexiteCost = 50
+fluxCost = 100
+buildTime = 30
 supply = 4
 hp = 200
-armor_type = "medium"
+armorType = "medium"
 speed = 450
-created_by { "incubator" }
-unlocked_by { "augmentation-pool" }
-upgraded_by { "augmentation-pool" }
+createdBy { "incubator" }
+unlockedBy { "augmentation-pool" }
+upgradedBy { "augmentation-pool" }
 
 attacks {
   ["Attack"] {
     damage = 20
-    bonus_percent = 100
-    bonus_vs_tags { "domain:air" }
+    bonusPercent = 100
+    bonusVsTags { "domain:air" }
     cooldown = 2 
     targets { "air"; "ground" }
   }
@@ -28,8 +28,8 @@ attacks {
 spells {
   ["Cocoon"] {
     description = "Traps the targeted unit in a cocoon, making it invulnerable (unable to attack, be attacked, use abilities, or be affected by abilities) for 3 seconds. If the targeted unit is an allied unit it will heal for 400 health"
-    energy_cost = 50
-    energy_type = "classic"
+    energyCost = 50
+    energyType = "classic"
   }
 }
 

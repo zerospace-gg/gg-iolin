@@ -4,16 +4,16 @@ name = "Stinger"
 description = "This fast melee skirmisher is the Grell's basic Tier 1 Hexite-only unit. They build two at a time and deal low damage quickly at short range, and have a lot of versatility through their upgrades."
 hotkey = "q"
 tier = "T1"
-hexite_cost = 50
-build_time = 18
+hexiteCost = 50
+buildTime = 18
 supply = 1 
-build_count = 2
+buildCount = 2
 hp = 100 
-armor_type = "light"
+armorType = "light"
 speed = 700
-created_by { "incubator" }
-unlocked_by { "incubator" }
-upgraded_by { "augmentation-pool" }
+createdBy { "incubator" }
+unlockedBy { "incubator" }
+upgradedBy { "augmentation-pool" }
 
 attacks {
   ["Attack"] {

@@ -7,42 +7,56 @@ import "turret.pkl" as me
 local methis = this
 
 fixed type: String = "turret"
-fixed subtype: String = turret_type
+fixed subtype: String = turretType
 
 hidden fixed extend_tags = (super.extend_tags) { 
   when (subtype == "turret") { "turret" } 
   when (subtype == "sacrifice") { "bonus:sacrifice" }
 }
-turret_type: "turret" | "sacrifice" 
+turretType: "turret" | "sacrifice" 
 
 local parent_info: ParentInfo = new {
   id = methis.id
   slug = methis.slug
   src = methis.src
-  from_path = methis.parent.from_path
+  fromPath = methis.parent.fromPath
 }
 
-attacks: Mapping<String, Ability> = (super.attacks) {
-  default { key -> name = $t.makeSlug(key); parent = parent_info; ability_type = "attack" }
+hidden attacks: Mapping<String, Ability> = (super.attacks) {
+  default { key -> name = $t.makeSlug(key); parent = parent_info; abilityType = "attack" }
+}
+attack: Mapping<String, Ability> = new {
+  for (_attack in attacks) {
+    [_attack.slug] = _attack
+  }
 }
 
-heals: Mapping<String, Ability> = (super.heals) {
-  default { key -> name = $t.makeSlug(key); parent = parent_info; ability_type = "heal" }
+hidden heals: Mapping<String, Ability> = (super.heals) {
+  default { key -> name = $t.makeSlug(key); parent = parent_info; abilityType = "heal" }
+}
+heal: Mapping<String, Ability> = new {
+  for (_heal in heals) {
+    [_heal.slug] = _heal
+  }
 }
 
-spells: Mapping<String, Ability> = (super.spells) {
-  default { key -> name = $t.makeSlug(key); parent = parent_info; ability_type = "spell" }
+
+hidden spells: Mapping<String, Ability> = (super.spells) {
+  default { key -> name = $t.makeSlug(key); parent = parent_info; abilityType = "spell" }
+}
+spell: Mapping<String, Ability> = new {
+  for (_spell in spells) {
+    [_spell.slug] = _spell
+  }
 }
 
-passives: Mapping<String, Ability> = (super.passives) {
-  default { key -> name = $t.makeSlug(key); parent = parent_info; ability_type = "passive" }
+hidden passives: Mapping<String, Ability> = (super.passives) {
+  default { key -> name = $t.makeSlug(key); parent = parent_info; abilityType = "passive" }
 }
-
-hidden fixed nested_mappings { 
-  "attacks"
-  "heals"
-  "spells"
-  "passives"
+passive: Mapping<String, Ability> = new {
+  for (_passive in passives) {
+    [_passive.slug] = _passive
+  }
 }
 
 hidden fixed children = List(attacks, heals, spells, passives).flatMap((x) -> x.toMap().values.toList())

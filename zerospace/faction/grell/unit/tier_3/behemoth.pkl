@@ -4,23 +4,23 @@ name = "Behemoth"
 hotkey = "d"
 description = "The Behemoth is a large flying insect with mysterious wings we haven't seen yet. Its role is to damage ground units from the air, providing decent flying support for your army."
 tier = "T3"
-hexite_cost = 100
-flux_cost = 200
-build_time = 60
+hexiteCost = 100
+fluxCost = 200
+buildTime = 60
 domain = "air"
 supply = 8
 hp = 625
-armor_type = "heavy"
+armorType = "heavy"
 speed = 400
-created_by { "large-incubator" }
-unlocked_by { "large-incubator" }
-upgraded_by { "special-augmentation-pool" }
+createdBy { "large-incubator" }
+unlockedBy { "large-incubator" }
+upgradedBy { "special-augmentation-pool" }
 
 attacks {
   ["Attack"] {
     damage = 30
-    bonus_percent = 100
-    bonus_vs_tags { "armor:heavy" }
+    bonusPercent = 100
+    bonusVsTags { "armor:heavy" }
     cooldown = 2
     range = 1400
     targets { "ground" }
@@ -48,8 +48,8 @@ upgrades {
 passives {
   ["Faerie Fire"] {
     targets { "ground" }
-    energy_cost = 10
-    energy_type = "abes"
+    energyCost = 10
+    energyType = "abes"
     autocast = "always"
     description = "Casts an AOE DOT spell on the ground. 200ish range"
   }

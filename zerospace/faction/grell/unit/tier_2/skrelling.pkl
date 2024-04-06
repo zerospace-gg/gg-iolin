@@ -4,17 +4,17 @@ name = "Skrelling"
 hotkey = "t"
 description = "The Skrelling is a light, fast air fighter skilled at anti-air thanks to its upgrades."
 tier = "T2"
-hexite_cost = 25
-flux_cost = 50
-build_time = 16
+hexiteCost = 25
+fluxCost = 50
+buildTime = 16
 domain = "air"
 supply = 2
 hp = 140
-armor_type = "light"
+armorType = "light"
 speed = 700
-created_by { "medium-incubator" }
-unlocked_by { "medium-incubator" }
-upgraded_by { "advanced-augmentation-pool" }
+createdBy { "medium-incubator" }
+unlockedBy { "medium-incubator" }
+upgradedBy { "advanced-augmentation-pool" }
 
 attacks {
   ["Attack"] {

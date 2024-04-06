@@ -3,16 +3,16 @@ import "inquisitress.pkl" as me
 
 name = "Inquisitress"
 hp = 400
-armor_type = "medium"
+armorType = "medium"
 speed = 500
-hexite_cost = 200
-flux_cost = 200
-build_time = 30
-stun_resist = 50
+hexiteCost = 200
+fluxCost = 200
+buildTime = 30
+stunResist = 50
 energy = 100
 
-unlocked_by { "altar" }
-created_by { "altar" }
+unlockedBy { "altar" }
+createdBy { "altar" }
 
 attacks {
   ["Attack"] {
@@ -27,16 +27,16 @@ spells {
   ["Cleave"] { 
     name = "Cleave"
     hotkey = "q"
-    energy_cost = 65
-    energy_type = "classic"
+    energyCost = 65
+    energyType = "classic"
     cooldown = 15
     description = "deals 65 damage to enemy units in front of Inquisitress"
   }
   ["Charge"] {
     name = "Charge"
     hotkey = "w"
-    energy_cost = 15
-    energy_type = "classic"
+    energyCost = 15
+    energyType = "classic"
     cooldown = 6
     description = "Charge to a location dealing 25 damage to enemy units in its way and slowing them down. Heroic units are not slowed. Gain increased +100% movement speed for 5s, requires vision"
   }

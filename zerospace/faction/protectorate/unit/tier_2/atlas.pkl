@@ -4,15 +4,15 @@ name = "Atlas"
 tier = "T2"
 description = "Yeah, I mean, I like commandos just fine. They're cool. But what if we made a robot commando?"
 supply = 6
-hexite_cost = 50
-flux_cost = 150
-build_time = 60
+hexiteCost = 50
+fluxCost = 150
+buildTime = 60
 energy = 100
 
 hp = 425
 speed = 450
 
-armor_type = "medium"
+armorType = "medium"
 
 attacks {
   ["Attack"] {
@@ -33,7 +33,7 @@ spells {
   ["Drone Strike"] {
     hotkey = "r"
     description = "65 Energy. Launch a drone that deals 200 damage over 5 seconds in the target area."
-    energy_cost = 65
+    energyCost = 65
   }
 }
 
@@ -59,7 +59,7 @@ upgrades {
   }
 }
 
-created_by { "factory" }
-unlocked_by { "mechanical-research-lab" }
+createdBy { "factory" }
+unlockedBy { "mechanical-research-lab" }
 
 

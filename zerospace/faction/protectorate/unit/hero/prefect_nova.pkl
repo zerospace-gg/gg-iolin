@@ -2,9 +2,9 @@ amends ".../engine/unit.pkl"
 
 name = "Prefect Nova"
 hp = 150
-armor_type = "medium"
+armorType = "medium"
 speed = 500
-stun_resist = 50
+stunResist = 50
 
 attacks {
   ["Attack"] {
@@ -21,14 +21,14 @@ spells {
     cooldown = 20
     description = "Fire a blast towards your enemies. The blast deals 50 damage and stuns enemies in a small area for 3s"
     targets { "ground" }
-    target_mode = "strip"
+    targetMode = "strip"
   }
 
   ["Charge"] {
     hotkey = "x"
     cooldown = 10
     description = "Charge to a location. Gain increased +30% attack speed for 5s upon landing."
-    target_mode = "strip"
+    targetMode = "strip"
     targets { "ground" }
   }
 
@@ -36,7 +36,7 @@ spells {
     hotkey = "c"
     cooldown = 80
     targets { "map" }
-    target_mode = "location" 
+    targetMode = "location" 
     description = "Construct a temporary light turret on the field. its beam attack increases significantly over 30s and slows the movement of the target by 50%."
   }
 }

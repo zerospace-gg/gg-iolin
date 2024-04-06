@@ -1,4 +1,4 @@
-module zsgg_data
+module zsggData
 
 import ".../engine/building.pkl" as Building
 import ".../engine/faction.pkl" as Faction
@@ -12,9 +12,9 @@ import ".../engine/types.pkl" as $t
 // grab everything at least one level down the tree
 local all = import*("*/**pkl").toMap().values
 
-zs_version: String = versioning.zs_version
-zsgg_data_version: String = versioning.zsgg_data_version
-zsgg_data_updated: String = versioning.zsgg_data_updated
+zsVersion: String = versioning.zsVersion
+zsggDataVersion: String = versioning.zsggDataVersion
+zsggDataUpdated: String = versioning.zsggDataUpdated
 release: String = versioning.release
 
 local is_fac = (x) -> x.type == "faction" && x.subtype == "main"

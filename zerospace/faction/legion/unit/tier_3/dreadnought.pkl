@@ -7,19 +7,19 @@ name = "Dreadnought"
 
 tags { "massive" }
 
-hexite_cost = 150 
-flux_cost = 250
+hexiteCost = 150 
+fluxCost = 250
 supply = 20
 hp = 1000
 speed = 500
-armor_type = "heavy"
-stun_resist = 75
-build_time = 60
+armorType = "heavy"
+stunResist = 75
+buildTime = 60
 domain = "air"
 
-constructing_version {
+constructingVersion {
   name = "Terror Tank (Constructing)"
-  build_time = 60
+  buildTime = 60
   hp = 1000
 }
 
@@ -30,8 +30,8 @@ attacks {
     damage = 5
     cooldown = 0.5
     range = 1400
-    bonus_percent = 200
-    bonus_vs_tags { "armor:heavy" }
+    bonusPercent = 200
+    bonusVsTags { "armor:heavy" }
   }
 }
 
@@ -45,27 +45,27 @@ spells {
     name = "Teleport"
     teleport = 4000
     cooldown = 0
-    unlocked_by { me.turrets["Command Module"].slug }
+    unlockedBy { me.turrets["Command Module"].slug }
   }
 }
 
 passives {
   ["Sensor"] {
     name = "Sensor"
-    provides_detection = 4000
-    unlocked_by { me.turrets["Command Module"].slug }
+    providesDetection = 4000
+    unlockedBy { me.turrets["Command Module"].slug }
   }
 }
 
 
-has_turret_type = "turret"
-max_turrets = 4
+hasTurretType = "turret"
+maxTurrets = 4
 turrets {
   default {
-    flux_cost = 150
-    build_time = 25
+    fluxCost = 150
+    buildTime = 25
     hp = 225
-    armor_type = "heavy"
+    armorType = "heavy"
   }
   ["Bomb Bay"] {
     description = "Each \(name) adds 3 bombs to \(me.name)'s \(me.spells["Bombardment Run"].name) spell. Total bomb damage 267/534/801/1068/1335 for 0/1/2/3/4."

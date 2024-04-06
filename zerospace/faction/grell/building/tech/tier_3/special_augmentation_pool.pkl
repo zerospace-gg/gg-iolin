@@ -3,7 +3,7 @@ amends ".../engine/building.pkl"
 name = "Special Augmentation Pool"
 tier = "T3.5"
 
-provides_upgrades_for { 
+providesUpgradesFor { 
   "reaver"
   "thresher"
   "behemoth"

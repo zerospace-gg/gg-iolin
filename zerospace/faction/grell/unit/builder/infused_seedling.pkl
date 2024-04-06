@@ -8,7 +8,7 @@ tier = "T0"
 hp = 120
 speed = 575
 infusable = false
-infuse_rule = null
+infuseRule = null
 
-transforms_into = null
-transforms_from { "seedling" }
+transformsInto = null
+transformsFrom { "seedling" }

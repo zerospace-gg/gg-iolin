@@ -3,13 +3,13 @@ amends ".../engine/unit.pkl"
 name = "Bastion"
 description = "Protectorate's T1 marine-style unit. Has a jetpack for jumpin up cliffs and over things and often just for fun."
 supply = 3
-hexite_cost = 50
-flux_cost = 25
-build_time = 22
+hexiteCost = 50
+fluxCost = 25
+buildTime = 22
 tier = "T1"
 
 hp = 300
-armor_type = "medium"
+armorType = "medium"
 speed = 500
 
 attacks {
@@ -18,8 +18,8 @@ attacks {
     volleys = 2
     cooldown = 0.96
     range = 500
-    bonus_vs_tags { "armor:light" }
-    bonus_percent = 30
+    bonusVsTags { "armor:light" }
+    bonusPercent = 30
   }
 }
 
@@ -45,7 +45,7 @@ upgrades {
   }
 }
 
-created_by {
+createdBy {
   "prot-barracks"
 }
 

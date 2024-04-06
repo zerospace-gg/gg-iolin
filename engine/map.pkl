@@ -2,17 +2,17 @@ module map
 extends "data.pkl"
 
 fixed type: String = "map"
-fixed subtype: String = map_type
+fixed subtype: String = mapType
 
 /// what type of game can be played on this map
-hidden map_type: MapType = "1v1"
+hidden mapType: MapType = "1v1"
 typealias MapType = "1v1" | "2v2" | "1p"
 
 /// the number of XP towers. currently this must be 2 or 3, with each providng +4.5 or +3 xp/sec respectively
-xp_towers: Number(isBetween(2,3))
+xpTowers: Number(isBetween(2,3))
 
 /// how far away flux is from your spawning point
-flux_distance: FluxDistance
+fluxDistance: FluxDistance
 typealias FluxDistance = "close" | "near" | "medium-far" | "distant"
 
 /// would be nice if we had actual dimensions here, these are the map sizes listed in the ui

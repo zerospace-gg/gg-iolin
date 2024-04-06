@@ -4,37 +4,37 @@ name = "Thresher"
 hotkey = "s"
 description = ""
 tier = "T3"
-hexite_cost = 100
-flux_cost = 200
-build_time = 50
+hexiteCost = 100
+fluxCost = 200
+buildTime = 50
 supply = 8
 hp = 400
-armor_type = "heavy"
+armorType = "heavy"
 speed = 450
-created_by { "large-incubator" }
-unlocked_by { "large-incubator" }
-upgraded_by { "special-augmentation-pool" }
+createdBy { "large-incubator" }
+unlockedBy { "large-incubator" }
+upgradedBy { "special-augmentation-pool" }
 
 attacks {
   ["Attack"] {
     damage = 110
-    bonus_percent = 50
-    bonus_vs_tags { "building" }
+    bonusPercent = 50
+    bonusVsTags { "building" }
     cooldown = 3.3
-    splash_percent = 85
-    splash_range = 250
+    splashPercent = 85
+    splashRange = 250
     range = 2700
     targets { "ground" }
-    requires_mode = "siege"
+    requiresMode = "siege"
   }
 }
 
 spells {
   ["Siege Mode"] {
-    ability_type = "toggle"
-    toggles_mode = "siege"
+    abilityType = "toggle"
+    togglesMode = "siege"
     hotkey = "d"
-    reverse_hotkey = "ctrl-d"
+    reverseHotKey = "ctrl-d"
     description = "Sieging is required for the thresher to attack. Movement requires being unsieged. 1.25s duration."
   }
 }

@@ -4,26 +4,26 @@ name = "Gunship"
 flavor = "An airship with TWO guns?!"
 tier = "T2"
 supply = 6
-hexite_cost = 50
-flux_cost = 100
-build_time = 45
+hexiteCost = 50
+fluxCost = 100
+buildTime = 45
 
 hp = 375
 speed = 575
 
 domain = "air"
-created_by { "factory" }
+createdBy { "factory" }
 
 attacks {
   ["Railgun"] {
     targets { "ground" }
     damage = 45 
-    bonus_percent = 100 
-    bonus_vs_tags { "armor:heavy" }
+    bonusPercent = 100 
+    bonusVsTags { "armor:heavy" }
     cooldown = 3
     range = 2100
-    splash_percent = 100
-    splash_range = 80
+    splashPercent = 100
+    splashRange = 80
   }
 
   ["Gatling Gun"] {
@@ -36,8 +36,8 @@ attacks {
 
 spells {
   ["Switch guns"] { 
-    ability_type = "toggle"
-    toggles_mode = "attack"
+    abilityType = "toggle"
+    togglesMode = "attack"
     description = "Switch between Gatling Gun and Railgun. Gatling Gun is effective against air units, while Railgun is effective against ground units."
     notes { "called \"Switch to gatling gun\" and \"Switch to railgun\" depending on mode" }
   }

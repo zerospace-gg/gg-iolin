@@ -14,7 +14,7 @@ hidden fixed dynamic_tags : Listing<String> = (super.dynamic_tags) {
   when (methis.infusable) { "infusable" }
 }
 
-constructing_version: ConstructingUnit? 
+constructingVersion: ConstructingUnit? 
 
 vision: Number? = 1800
 
@@ -22,19 +22,19 @@ local tag_list = tags.toList()
 
 infusable: Boolean = subtype == "army" && !tag_list.contains("massive")
 
-hidden infuse_rule: infuse.Rule = 
+hidden infuseRule: infuse.Rule = 
   if (!infusable) 
     null 
   else
-    infuse.default_rule
+    infuse.defaultRule
 
-infuse_cost: Number? = 
+infuseCost: Number? = 
   if (!infusable) 
     null 
   else
-    let (h = (hexite_cost ?? 0))
-    let (f = (flux_cost ?? 0))
-    let (b = (build_count ?? 1))
+    let (h = (hexiteCost ?? 0))
+    let (f = (fluxCost ?? 0))
+    let (b = (buildCount ?? 1))
     (((h + f) / b) / 10.0 ).floor + 1 // it may have been ceil but seedling cost was 1 before it was adjusted to 2 (seedling is 0 cost so 1 infuse means floor+1), but maybe 1 was a manual adjust and it was ceil all along
 
 
@@ -42,11 +42,16 @@ local parent_info: ParentInfo = new {
   id = methis.id
   slug = methis.slug
   src = methis.src
-  from_path = methis.from_path
+  fromPath = methis.fromPath
 }
 
-upgrades: Mapping<String, UnitUpgrade> = new Mapping<String, UnitUpgrade> {
+hidden upgrades: Mapping<String, UnitUpgrade> = new Mapping<String, UnitUpgrade> {
   default { key -> name = $t.makeSlug(key); parent = parent_info }
+}
+upgrade: Mapping<String, UnitUpgrade> = new {
+  for (_upgrade in upgrades) {
+    [_upgrade.slug] = _upgrade
+  }
 }
 
 hidden fixed nested_mappings { "upgrades" }

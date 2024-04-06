@@ -3,34 +3,34 @@ import "types.pkl" as $t
 
 class PathData {
   faction: String?
-  faction_type: ("main" | "merc" | "nonplayer")?
+  factionType: ("main" | "merc" | "nonplayer")?
   type: ("unit" | "building" | "turret" | "faction" | "ability" | "upgrade" | "map")?
   subtype: String?
 
   tier: $t.Tier?
-  hexite_cost: Number?
-  flux_cost: Number?
-  build_time: Number?
-  rebuild_time: Number?
-  gathers_flux: Number?
-  gathers_rich_flux: Number?
-  gathers_hexite: Number?
-  gathers_empty_hexite: Number?
+  hexiteCost: Number?
+  fluxCost: Number?
+  buildTime: Number?
+  rebuildTime: Number?
+  gathersFlux: Number?
+  gathersRichFlux: Number?
+  gathersHexite: Number?
+  gathersEmptyHexite: Number?
   hp: Number?
   supply: Number?
   speed: Number?
   vision: Number?
   armor: Number?
-  armor_type: $t.ArmorType?
+  armorType: $t.ArmorType?
   rebuildable: Boolean?
-  provides_supply: Number?
-  provides_biomass: Number?
+  provedsSupply: Number?
+  providesBiomass: Number?
 
   // abilities can be nested or in a full file, cant use subpath for this
-  ability_type: String?
-  ability_of: String?
+  abilityType: String?
+  abilityOf: String?
   slot: Number?
-  topbar_type: String?
+  topbarType: String?
   level: Number?
   column: Number?
 
@@ -44,6 +44,7 @@ function dataFromPath(p: List<String>): PathData = new {
   }
   when (p.first == "faction") {
     local len = p.length
+    faction = p[1]
     when (p.length == 1) {
       type = "faction"
       subtype = "main"
@@ -73,14 +74,14 @@ function dataFromPath(p: List<String>): PathData = new {
   when (p.contains("harvester")) {
     subtype = "harvester"; 
     tier = "T0" 
-    hexite_cost = 175
-    build_time = 25
-    rebuild_time = 60
-    gathers_flux = 1.5
-    gathers_rich_flux = 3.0
+    hexiteCost = 175
+    buildTime = 25
+    rebuildTime = 60
+    gathersFlux = 1.5
+    gathersRichFlux = 3.0
     hp = 400
     speed = 450
-    armor_type = "medium"
+    armorType = "medium"
     rebuildable = true
     supply = 0
   }
@@ -100,8 +101,8 @@ function dataFromPath(p: List<String>): PathData = new {
   when (p.contains("hero")) { 
     when (!p.contains("tier_2")) { tier = "T2" }
     subtype = "hero"; 
-    build_time = 30
-    rebuild_time = 60
+    buildTime = 30
+    rebuildTime = 60
     rebuildable = true
     supply = 10
   }
@@ -117,27 +118,27 @@ function dataFromPath(p: List<String>): PathData = new {
   when (p.contains("base")) {
     subtype = "base"
     hp = 2000 
-    hexite_cost = 350
+    hexiteCost = 350
   }
   when (p.contains("extractor")) {
     subtype = "extractor"
     armor = 0
-    gathers_hexite = 1.0
-    gathers_empty_hexite = 0.35
+    gathersHexite = 1.0
+    gathersEmptyHexite = 0.35
   }
-  when (p.contains("supply")) { subtype = "supply"; provides_supply = 15; hexite_cost = 100; build_time = 15; hp = 750 }
+  when (p.contains("supply")) { subtype = "supply"; provedsSupply = 15; hexiteCost = 100; buildTime = 15; hp = 750 }
   when (p.contains("special")) { subtype = "special" }
 
   when (p.contains("production")) {
     subtype = "production"
-    build_time = 40
+    buildTime = 40
   }
 
   when (p.contains("tech")) {
     subtype = "tech"
     hp = 1000
-    hexite_cost = 100
-    flux_cost = 25
+    hexiteCost = 100
+    fluxCost = 25
   }
 
   when (p.contains("level_1")) { level = 1 }
@@ -155,18 +156,18 @@ function dataFromPath(p: List<String>): PathData = new {
 
   when (p.contains("talent")) {
     type = "faction-ability"
-    ability_type = "talent"
-    ability_of = p[2]
+    abilityType = "talent"
+    abilityOf = p[2]
   }
 
   when (p.contains("topbar")) {
     type = "ability"
-    ability_type = "topbar-power"
-    ability_of = p[2]
-    when (p.contains("recall")) { topbar_type = "recall" }
-    when (p.contains("special")) { topbar_type = "special" }
-    when (p.contains("ultimate")) { topbar_type = "ultimate" }
+    abilityType = "topbar"
+    abilityOf = p[2]
+    when (p.contains("recall")) { topbarType = "recall" }
+    when (p.contains("special")) { topbarType = "special" }
+    when (p.contains("ultimate")) { topbarType = "ultimate" }
   }
 
-  when (p.contains("passive")) { type = "ability" ; subtype = "faction-passive"; ability_of = p[2] }
+  when (p.contains("passive")) { type = "ability" ; subtype = "faction-passive"; abilityOf = p[2] }
 }

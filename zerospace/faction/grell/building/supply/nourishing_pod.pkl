@@ -2,15 +2,15 @@ amends ".../engine/building.pkl"
 name = "Nourishing Pod"
 flavor = "Mrs. Sproutbriar"
 energy = 100
-build_time = 15 
+buildTime = 15 
 hp = 625
 
 heals {
   ["Heal"] {
     healing = 15
     cooldown = 1.0
-    energy_cost = 4
-    energy_type = "classic"
+    energyCost = 4
+    energyType = "classic"
   }
 }
 

@@ -1,8 +1,8 @@
 amends ".../engine/topbar.pkl"
 name = "Flowers"
 description = "Flowers deal damage to enemies and spawn hallucinations of friendly units. Enemy structures are stunned. 20s duration."
-energy_cost = 50
+energyCost = 50
 cooldown = 120
-unlocked_by { 
+unlockedBy { 
   import(".../grell/talent/level_5/column_1/flowers_talent.pkl").slug
 }

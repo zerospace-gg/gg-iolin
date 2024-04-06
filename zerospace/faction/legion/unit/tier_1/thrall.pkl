@@ -4,16 +4,16 @@ amends ".../engine/unit.pkl"
 name = "Thrall"
 hotkey = "q"
 tier = "T1"
-hexite_cost = 75
-build_time = 24
+hexiteCost = 75
+buildTime = 24
 supply = 1 
-build_count = 2
+buildCount = 2
 hp = 125 
-armor_type = "light"
+armorType = "light"
 speed = 500
-created_by { "barracks" }
-unlocked_by { "barracks" }
-upgraded_by { "warehouse" }
+createdBy { "barracks" }
+unlockedBy { "barracks" }
+upgradedBy { "warehouse" }
 
 attacks {
   ["Attack"] {

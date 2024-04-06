@@ -23,14 +23,14 @@ fixed slug: $t.Slug = src_file.replaceLast(".pkl", "").replaceAll("_", "-")
 fixed id: $t.Id = (src_dir_slugs + List(slug)).join("/")
 
 /// metadata pulled from path. this includes things used in multiple subclasses
-hidden fixed from_path: $p.PathData = $p.dataFromPath(src_dir_parts)
+hidden fixed fromPath: $p.PathData = $p.dataFromPath(src_dir_parts)
 
-zs_version: String = versioning.zs_version
-zsgg_data_version: String = versioning.zsgg_data_version
-zsgg_data_updated: String = versioning.zsgg_data_updated
+zsVersion: String = versioning.zsVersion
+zsggDataVersion: String = versioning.zsggDataVersion
+zsggDataUpdated: String = versioning.zsggDataUpdated
 release: String = versioning.release
 
-full_id: String = "\(id)@\(release)"
+fullId: String = "\(id)@\(release)"
 
 /// nicely formatted display name, as it appears in game (with the exception of things without lore names yet)
 name: String 
@@ -39,18 +39,18 @@ name: String
 description: String? = "[Submit a description on ZSGG Discord]"
 
 /// top-level type. overridden to a specific one of these by a subclass
-fixed type: String = from_path.type ?? path_parts.join(" -> ")
+fixed type: String = fromPath.type ?? path_parts.join(" -> ")
 
 /// sub-type. data subclasses will define this as a calculated field, based on a more
-fixed subtype: String = from_path.subtype ?? path_parts.join(" -> ")
+fixed subtype: String = fromPath.subtype ?? path_parts.join(" -> ")
 
 /// faction name. required if type isn't map. should not be defined for faction type
-fixed faction: String? = from_path.faction ?? path_parts.join(" -> ")
+fixed faction: String? = fromPath.faction ?? path_parts.join(" -> ")
 
 
-zsgg_flavor: String? = "[Submit a flavor snippet on ZSGG Discord]"
+flavor: String? = "[Submit a flavor snippet on ZSGG Discord]"
 
-tier: $t.Tier? = from_path.tier
+tier: $t.Tier? = fromPath.tier
 
 /// tags used in calculating effects of parts of the game, such as `unit` or `vehicle` or `massive`. these should be static tags based on type.
 tags: Listing<String>
@@ -58,32 +58,32 @@ tags: Listing<String>
 /// Used to add tags that are dependent on other fields
 hidden fixed dynamic_tags: Listing<String> = new {
   ...tags
-  ...from_path.tags
+  ...fromPath.tags
   type 
   "\(type):\(subtype)"
   when (faction != null) { "faction:\(faction)" }
 }
 
 /// whether or not this exists in the game at the current version
-in_game: Boolean = true
+inGame: Boolean = true
 
 /// additional notes and information about this gamepiece
 notes: Listing<String>
 
-/// creates handles things that build / produce / cast / otherwise create. should always be paired with created_by on the other side.
+/// creates handles things that build / produce / cast / otherwise create. should always be paired with createdBy on the other side.
 creates: Listing<$t.Slug>(isDistinct)?
 
 /// opposite side of creates, this should always be paired with unlocks on the other side
-created_by: Listing<$t.Slug>(isDistinct)?
+createdBy: Listing<$t.Slug>(isDistinct)?
 
-/// unlocks handles things that allow other things the ability to build / produce / cast / otherwise create. should always be paired with unlocked_by on the other side.
+/// unlocks handles things that allow other things the ability to build / produce / cast / otherwise create. should always be paired with unlockedBy on the other side.
 unlocks: Listing<$t.Slug>(isDistinct)?
 
 /// opposite side of unlocks, this should always be paired with unlocks on the other side
-unlocked_by: Listing<$t.Slug>(isDistinct)?
+unlockedBy: Listing<$t.Slug>(isDistinct)?
 
 /// currently only buildings do this, but its here because the other unlock/create logic is here. some non-gamepieces gamepieces unlock/create 
-unlocks_merc_tier: Listing<$t.Tier>(isDistinct)?
+unlocksMercTier: Listing<$t.Tier>(isDistinct)?
 
 hidden fixed nested_mappings: Listing<String> 
 local post_process_tags: Mapping<(Class|String), (unknown) -> Any> = new {
@@ -92,15 +92,15 @@ local post_process_tags: Mapping<(Class|String), (unknown) -> Any> = new {
 }
 hidden fixed post_process: Mapping<(Class|String), (unknown) -> Any> = new {
   ...post_process_tags
-  for (_key in nested_mappings.toList().distinct) {
-    [_key] = (v) -> v.toMap().values.map((v) -> v.id)
-  }
+  // for (_key in nested_mappings.toList().distinct) {
+  //   [_key] = (v) -> v.toMap().values.map((v) -> v.id)
+  // }
 }
 hidden fixed post_process_nested: Mapping<(Class|String), (unknown) -> Any> = new {
   ...post_process_tags
-  for (_key in nested_mappings.toList().distinct) {
-    [_key] = (v) -> v.toMap().mapKeys((k,v) -> v.id)
-  }
+  // for (_key in nested_mappings.toList().distinct) {
+  //   [_key] = (v) -> v.toMap().mapKeys((k,v) -> v.id)
+  // }
 }
 
 hidden fixed children: List<me> = List()
