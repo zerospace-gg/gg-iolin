@@ -155,7 +155,7 @@ function dataFromPath(p: List<String>): PathData = new {
 
   when (p.contains("talent")) {
     type = "faction-ability"
-    ability_type = "topbar"
+    ability_type = "talent"
     ability_of = p[2]
   }
 

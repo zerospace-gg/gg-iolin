@@ -1,0 +1,7 @@
+
+zs_version: String = "zs_v1223334444"
+zsgg_data_version: String = read?("prop:gg_version") ?? read?("env:ZSGG_VERSION") ?? "DevelVersion"
+zsgg_data_updated: String = read?("prop:gg_at") ?? read?("env:ZSGG_AT") ?? "UnknownTime"
+release: String = List(zsgg_data_version, zsgg_data_version, zsgg_data_updated).join("-")
+
+
