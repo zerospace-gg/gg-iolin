@@ -5,6 +5,13 @@ import "types.pkl" as $t
 fixed type = "building"
 fixed subtype: "base" | "extractor" | "supply" | "production" | "tech" | "special" | "constructing-unit" = from_path.subtype
 
+provides_biomass = 
+  if (faction != "grell") null 
+  else if (subtype == "base") 1500 
+    else if (subtype == "extractor") 0 
+      else if (subtype == "special") 1500 
+        else 750
+
 speed = 0
 vision = from_path.vision ?? 1500
 armor = from_path.armor ?? 1

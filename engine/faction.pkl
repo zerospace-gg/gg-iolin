@@ -1,5 +1,33 @@
 module faction
-extends "data.pkl"
+extends "data.pkl" 
+import "data.pkl" as Data
 
 hidden faction_contents: Mapping<String, Data>
 hidden guest_heroes: Listing<Data>
+
+local all = faction_contents.toMap().values
+local guest = guest_heroes.toList()
+local getslug = (x) -> x.slug
+
+local is_hero = (x) -> x.type == "unit" && x.subtype == "hero"
+local is_unit = (x) -> x.type == "unit" && x.subtype != "hero"
+local is_building = (x) -> x.type == "building"
+
+local is_talent = (x) -> x.type == "faction-ability" && x.subtype == "talent"
+local is_topbar = (x) -> x.type == "faction-ability" && x.subtype == "topbar"
+local is_passive = (x) -> x.type == "faction-ability" && x.subtype == "passive"
+
+local function grab(x: List<Data>, y: (Data) -> Boolean) = x.filter(y).map(getslug)
+
+fixed faction = slug
+merc_heroes_allowed: Boolean = true
+
+fixed heroes: Listing<String> = new {
+  ...grab(guest, is_hero)
+  ...grab(all, is_hero)
+}
+fixed units: Listing<String> = new { ...grab(all, is_unit) }
+fixed buildings: Listing<String> = new { ...grab(all, is_building) }
+fixed talents: Listing<String> = new { ...grab(all, is_talent) }
+fixed topbar_powers: Listing<String> = new { ...grab(all, is_topbar) }
+fixed passives: Listing<String> = new { ...grab(all, is_passive) }

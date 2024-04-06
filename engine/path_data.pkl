@@ -42,17 +42,28 @@ function dataFromPath(p: List<String>): PathData = new {
     type = "map"
     subtype = p[1]
   }
-  when (p.first == "factions") {
+  when (p.first == "faction") {
     local len = p.length
-    faction_type = p[1]
-    faction = p[2]
-    when (p.length == 3) {
+    when (p.length == 1) {
       type = "faction"
-      subtype = faction_type
-      tags { "faction:\(faction_type)" }
-      when (subtype != slug) {
-        local e = throw("faction slug must match faction subtype directory") 
-      }
+      subtype = "main"
+      tags { "faction:\(subtype)"; "faction" }
+    }
+  }
+  when (p.first == "merc") {
+    local len = p.length
+    when (p.length == 1) {
+      type = "faction"
+      subtype = "mercenary"
+      tags { "faction:\(subtype)"; "faction" }
+    }
+  }
+  when (p.first == "non_player") {
+    local len = p.length
+    when (p.length == 1) {
+      type = "faction"
+      subtype = "non-player"
+      tags { "faction:\(subtype)"; "faction" }
     }
   }
   when (p.contains("unit")) {

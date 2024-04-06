@@ -10,7 +10,7 @@ local meref = reflect.moduleOf(this)
 local isimpl = !meref.uri.matches(Regex("/engine/"))
 
 hidden path_parts: List<String> = meref.uri
-  .replaceAll(Regex(#"^.*(factions|maps|engine)/"#), "$1/")
+  .replaceAll(Regex(#"^.*/(faction|mercenary|non_player|maps|engine)/"#), "$1/")
   .split("/")
 
 hidden src_dir_parts: List<String> = path_parts.dropLast(1)
@@ -25,8 +25,8 @@ fixed id: $t.Id = (src_dir_slugs + List(slug)).join("/")
 hidden fixed from_path: $p.PathData = $p.dataFromPath(src_dir_parts)
 
 zs_version: String? = "zs_v1223334444"
-zsgg_version: String? = read("prop:gg_version") ?? read("env:ZSGG_VERSION") ?? "DevelVersion"
-zsgg_updated: String? = read("prop:gg_at") ?? read("env:ZSGG_AT") ?? "UnknownTime"
+zsgg_version: String? = read?("prop:gg_version") ?? read?("env:ZSGG_VERSION") ?? "DevelVersion"
+zsgg_updated: String? = read?("prop:gg_at") ?? read?("env:ZSGG_AT") ?? "UnknownTime"
 release = List(zsgg_version, zs_version, zsgg_updated).join("-")
 full_id: String = "\(id)@\(release)"
 
@@ -34,16 +34,19 @@ full_id: String = "\(id)@\(release)"
 name: String 
 
 /// in-game description of this
-description: String?
+description: String? = "[Submit a description on ZSGG Discord]"
 
 /// top-level type. overridden to a specific one of these by a subclass
-fixed type: String = from_path.type
+fixed type: String = from_path.type ?? path_parts.join(" -> ")
 
 /// sub-type. data subclasses will define this as a calculated field, based on a more
-fixed subtype: String = from_path.subtype
+fixed subtype: String = from_path.subtype ?? path_parts.join(" -> ")
 
 /// faction name. required if type isn't map. should not be defined for faction type
-fixed faction: String? = from_path.faction
+fixed faction: String? = from_path.faction ?? path_parts.join(" -> ")
+
+
+zsgg_flavor: String? = "[Submit a flavor snippet on ZSGG Discord]"
 
 tier: $t.Tier? = from_path.tier
 
