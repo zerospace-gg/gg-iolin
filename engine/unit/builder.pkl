@@ -1,3 +1,0 @@
-extends "unit.pkl"
-unit_type = "builder"
-tier = "T0"

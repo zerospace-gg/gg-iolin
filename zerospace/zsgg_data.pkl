@@ -7,6 +7,7 @@ import ".../engine/talent.pkl" as Talent
 import ".../engine/topbar.pkl" as TopBar
 import ".../engine/unit.pkl" as Unit
 import ".../engine/versioning.pkl" as versioning
+import ".../engine/types.pkl" as $t
 
 // grab everything at least one level down the tree
 local all = import*("*/**pkl").toMap().values
@@ -62,13 +63,12 @@ unit: Map<String, Unit> = all.filter(is_unit).toMap(to_slug, to_me)
 building: Map<String, Building> = all.filter(is_building).toMap(to_slug, to_me)
 
 talent: Map<String, Talent> = all.filter(is_talent).toMap(to_slug, to_me)
-topbar: Map<String, Any> = all.filter(is_topbar).toMap(to_slug, to_me)
+topbar: Map<String, TopBar> = all.filter(is_topbar).toMap(to_slug, to_me)
 
 maps: Map<String, ZSMap> = all.filter(is_map).toMap(to_slug, to_me)
 
-
 local methis = this
-output {
+hidden output {
   files {
     ["zsgg-data-full.json"] {
       renderer = new JsonRenderer { }

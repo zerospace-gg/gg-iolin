@@ -6,10 +6,10 @@ import "types.pkl" as $t
 import "turret.pkl" as me
 local methis = this
 
-fixed type = "turret"
-fixed subtype = turret_type
+fixed type: String = "turret"
+fixed subtype: String = turret_type
 
-tags { 
+hidden fixed extend_tags = (super.extend_tags) { 
   when (subtype == "turret") { "turret" } 
   when (subtype == "sacrifice") { "bonus:sacrifice" }
 }
@@ -22,23 +22,23 @@ local parent_info: ParentInfo = new {
   from_path = methis.parent.from_path
 }
 
-attacks {
+attacks: Mapping<String, Ability> = (super.attacks) {
   default { key -> name = $t.makeSlug(key); parent = parent_info; ability_type = "attack" }
 }
 
-heals {
+heals: Mapping<String, Ability> = (super.heals) {
   default { key -> name = $t.makeSlug(key); parent = parent_info; ability_type = "heal" }
 }
 
-spells {
+spells: Mapping<String, Ability> = (super.spells) {
   default { key -> name = $t.makeSlug(key); parent = parent_info; ability_type = "spell" }
 }
 
-passives {
+passives: Mapping<String, Ability> = (super.passives) {
   default { key -> name = $t.makeSlug(key); parent = parent_info; ability_type = "passive" }
 }
 
-fixed nested_mappings { 
+hidden fixed nested_mappings { 
   "attacks"
   "heals"
   "spells"

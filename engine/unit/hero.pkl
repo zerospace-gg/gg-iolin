@@ -1,6 +1,0 @@
-extends "unit.pkl"
-unit_type = "hero"
-tier = "Hero"
-tag { "hero" }
-build_time = 30
-rebuild_time = 60

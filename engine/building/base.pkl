@@ -1,6 +1,0 @@
-module base
-extends "building.pkl"
-tag { "base" }
-hp = 2000 
-hexite_cost = 350
-building_type = "base"

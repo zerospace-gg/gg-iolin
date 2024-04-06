@@ -2,11 +2,10 @@ module unit_upgrade
 extends "child.pkl"
 import "types.pkl" as $t
 
-fixed type = "upgrade"
-fixed subtype = "upgrade"
+fixed type: String = "upgrade"
+fixed subtype: String = "upgrade"
 
-tier: $t.UpgradeTier
-flux_cost: Number = 
+flux_cost: Number? = 
   if (tier == "T1.5") 100 else
   if (tier == "T2.5") 150 else 
   if (tier == "T3.5") 200 else 

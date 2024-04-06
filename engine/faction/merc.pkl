@@ -1,5 +1,0 @@
-module merc_faction 
-
-extends "faction.pkl"
-
-fixed faction_type = "merc"

@@ -1,8 +1,0 @@
-module extractor
-extends "building.pkl"
-tag { "extractor" }
-building_type = "extractor"
-armor = 0
-
-gathers_hexite = 1.0
-gathers_empty_hexite = 0.2

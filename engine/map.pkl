@@ -1,8 +1,8 @@
 module map 
 extends "data.pkl"
 
-fixed type = "map"
-fixed subtype = map_type
+fixed type: String = "map"
+fixed subtype: String = map_type
 
 /// what type of game can be played on this map
 hidden map_type: MapType = "1v1"

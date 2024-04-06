@@ -6,8 +6,8 @@ local methis = this
 
 activation_type: "activated" | "passive"
 
-fixed type = "faction-ability"
-fixed subtype = from_path.ability_type ?? ability_type
+fixed type: String = "faction-ability"
+fixed subtype: String = from_path.ability_type ?? ability_type
 hidden ability_type: "passive" | "topbar" | "talent" 
 
 hotkey: $t.HotKey?

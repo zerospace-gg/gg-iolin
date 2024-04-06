@@ -11,11 +11,11 @@ activation_type: "auto" | "activated" | "passive" =
   else if (type == "faction-talent") "passive"
   else "activated"
 
-fixed type = "ability"
-fixed subtype = from_path.ability_type ?? ability_type
+fixed type: String = "ability"
+fixed subtype: String = from_path.ability_type ?? ability_type
 hidden ability_type: "attack" | "heal" | "spell" | "passive" | "toggle" 
 
-name = 
+name: String = 
   if (subtype == "attack") "Attack" 
   else if (subtype == "heal") "Heal"
   else if (subtype == "passive") "Passive"

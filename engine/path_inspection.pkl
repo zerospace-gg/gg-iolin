@@ -1,4 +1,4 @@
-module path_data
+module path_inspection
 import "types.pkl" as $t
 
 class PathData {

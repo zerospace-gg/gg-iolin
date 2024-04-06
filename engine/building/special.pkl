@@ -1,3 +1,0 @@
-module special
-extends "building.pkl"
-building_type = "special"

@@ -1,5 +1,5 @@
 amends ".../engine/unit.pkl"
-import ".../engine/turret/turret.pkl" as Turret
+import ".../engine/turret.pkl" as Turret
 import ".../engine/types.pkl" as $t
 import "dreadnought.pkl" as me
 

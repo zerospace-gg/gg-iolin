@@ -19,7 +19,7 @@ local is_passive = (x) -> x.type == "faction-ability" && x.subtype == "passive"
 
 local function grab(x: List<Data>, y: (Data) -> Boolean) = x.filter(y).map(getslug)
 
-fixed faction = slug
+fixed faction: String? = slug
 merc_heroes_allowed: Boolean = true
 
 fixed hero: Listing<String> = new {

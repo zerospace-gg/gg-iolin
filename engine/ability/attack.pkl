@@ -1,8 +1,0 @@
-module attack 
-extends "ability.pkl"
-
-ability_type = "attack"
-activation_type = "auto"
-
-/// a lot of the attacks don't have names yet, don't wanna have to manually specify this until there's more complete data
-name = "Primary Attack"

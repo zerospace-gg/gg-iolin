@@ -2,7 +2,7 @@
 abstract module data
 import "pkl:reflect"
 import "types.pkl" as $t
-import "path_data.pkl" as $p
+import "path_inspection.pkl" as $p
 import "data.pkl" as me
 import "versioning.pkl"
 
@@ -112,7 +112,7 @@ hidden fixed rendered_files: Listing<String> = new Listing<String> {
   for (child in recursive_children) { "\(child.id).json" }
 }
 
-output {
+hidden output {
   files {
     ["\(id).json"] {
       renderer = new JsonRenderer { converters = post_process }

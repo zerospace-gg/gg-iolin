@@ -1,5 +1,0 @@
-module supply
-extends "building.pkl"
-hexite_cost = 100
-building_type = "supply"
-provides_supply = 15

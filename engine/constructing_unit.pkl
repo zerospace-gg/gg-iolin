@@ -1,6 +1,6 @@
 module constructing_unit
 extends "building.pkl"
-tag { "constructing-unit" }
+hidden fixed extend_tags { "constructing-unit" }
 building_type = "constructing-unit"
 vision = 800
 armor = 0

@@ -17,13 +17,13 @@ class Rule {
   domain: $t.DomainType
 }
 
-fixed default_rule = new Rule {
+fixed default_rule: Rule = new {
   supply = new StatMultiplier { num = 2.0 }
   hp = new StatMultiplier { num = 2.0 }
   cooldown = new StatMultiplier  { num = 0.5 }
 }
 
-fixed damage_rule = new Rule {
+fixed damage_rule: Rule = new {
   supply = new StatMultiplier  { num = 2.0 }
   hp = new StatMultiplier { num = 2.0 }
   damage = new StatMultiplier { num = 2.0 }

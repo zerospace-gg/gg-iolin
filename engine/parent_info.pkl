@@ -1,7 +1,8 @@
 module parent_info
-import "path_data.pkl"
+import "path_inspection.pkl"
+import "types.pkl" as $t
 
-slug: String
+slug: $t.Slug
 id: String
 src: String
-from_path: path_data.PathData
+from_path: path_inspection.PathData

@@ -5,18 +5,18 @@ import "parent_info.pkl" as ParentInfo
 import "types.pkl" as $t
 import "infuse.pkl" as infuse
 import "unit_upgrade.pkl" as UnitUpgrade
-import "building/constructing_unit.pkl" as ConstructingUnit
+import "constructing_unit.pkl" as ConstructingUnit
 import "unit.pkl" as me
 local methis = this
 local meref = reflect.moduleOf(this)
 
-fixed dynamic_tags {
+hidden fixed dynamic_tags : Listing<String> = (super.dynamic_tags) {
   when (methis.infusable) { "infusable" }
 }
 
-constructing_version: ConstructingUnit?
+constructing_version: ConstructingUnit? 
 
-vision = 1800
+vision: Number? = 1800
 
 local tag_list = tags.toList()
 
@@ -49,6 +49,6 @@ upgrades: Mapping<String, UnitUpgrade> = new Mapping<String, UnitUpgrade> {
   default { key -> name = $t.makeSlug(key); parent = parent_info }
 }
 
-fixed nested_mappings { "upgrades" }
+hidden fixed nested_mappings { "upgrades" }
 
 hidden fixed children = super.children + upgrades.toMap().values.toList()

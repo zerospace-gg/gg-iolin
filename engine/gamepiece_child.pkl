@@ -1,23 +1,22 @@
 abstract module gamepiece_child
 extends "gamepiece.pkl"
 import "parent_info.pkl" as ParentInfo
-import "path_data.pkl"
 import "types.pkl" as $t
 
 hidden parent: ParentInfo 
-hidden fixed sub_slug = $t.makeSlug(name)
+hidden fixed sub_slug: String = $t.makeSlug(name)
 
-fixed src = parent.src
-fixed slug = 
+fixed src: String = parent.src
+fixed slug: $t.Slug = 
   if (subtype == sub_slug) 
     "\(parent.slug)-\(sub_slug)" 
   else 
   "\(parent.slug)-\(subtype)-\(sub_slug)"
 
-fixed id = "\(parent.id)/\(subtype)/\(slug)"
-fixed belongs_to = parent.slug
+fixed id: $t.Id = "\(parent.id)/\(subtype)/\(slug)"
+fixed belongs_to: String = parent.slug
 
-fixed faction = parent.from_path.faction
-fixed faction_type = parent.from_path.faction_type
+fixed faction: String? = parent.from_path.faction
+fixed faction_type: String? = parent.from_path.faction_type
 
-fixed extend_tags { "belongs_to:\(parent.slug)" }
+hidden fixed extend_tags: Listing<String> = (super.extend_tags) { "belongs_to:\(parent.slug)" }
