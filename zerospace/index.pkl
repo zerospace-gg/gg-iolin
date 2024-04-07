@@ -1,4 +1,4 @@
-module index 
+module zsgg_data_index 
 import "everything.pkl"
 local methis = this
 
@@ -21,6 +21,8 @@ map: List<String> = everything.map_ids
 tags: Map<String, List<String>> = everything.tags
 
 index: Map<String, everything.DataIndex> = everything.index
+
+idToSlug: Map<String, String> = everything.ids_to_slugs
 
 hidden output {
   files {

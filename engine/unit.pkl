@@ -10,17 +10,17 @@ import "unit.pkl" as me
 local methis = this
 local meref = reflect.moduleOf(this)
 
-hidden fixed dynamic_tags : Listing<String> = (super.dynamic_tags) {
+hidden fixed tag_list : Listing<String> = (super.tag_list) {
   when (methis.infusable) { "infusable" }
+  when (methis.mindControllable) { "mind-controllable" }
 }
 
 constructingVersion: ConstructingUnit? 
 
 vision: Number? = 1800
 
-local tag_list = tags.toList()
-
-infusable: Boolean = subtype == "army" && !tag_list.contains("massive")
+infusable: Boolean = subtype == "army" && !tags.toList().contains("massive")
+mindControllable: Boolean = subtype != "hero"
 
 hidden infuseRule: infuse.Rule = 
   if (!infusable) 
@@ -53,7 +53,5 @@ upgrade: Mapping<String, UnitUpgrade> = new {
     [_upgrade.slug] = _upgrade
   }
 }
-
-hidden fixed nested_mappings { "upgrades" }
 
 hidden fixed children = super.children + upgrades.toMap().values.toList()

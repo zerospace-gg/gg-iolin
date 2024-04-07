@@ -77,8 +77,8 @@ hidden maps: Map<String, ZSMap> = mklist(is_map)
 hidden map_ids: List<String> = mkids(maps)
 hidden map_count: Number = map_ids.length
 
-hidden tag_names: List<String> = all.flatMap((x) -> x.dynamic_tags.toList()).distinct
-hidden tags: Map<String, List<String>> = tag_names.toMap(to_me, (x) -> all.filter((y) -> y.dynamic_tags.toList().contains(x)).map(to_slug))
+hidden tag_names: List<String> = all.flatMap((x) -> x.tag_list.toList()).distinct
+hidden tags: Map<String, List<String>> = tag_names.toMap(to_me, (x) -> all.filter((y) -> y.tag_list.toList().contains(x)).map(to_slug))
 
 hidden index: Map<String, DataIndex> = all.map((x) -> new DataIndex {
   when (is_fac.apply(x)) { type = "faction" }

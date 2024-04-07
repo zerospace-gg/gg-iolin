@@ -61,7 +61,7 @@ tier: $t.Tier? = fromPath.tier
 tags: Listing<String>
 
 /// Used to add tags that are dependent on other fields
-hidden fixed dynamic_tags: Listing<String> = new {
+fixed tag_list: Listing<String> = new {
   ...tags
   ...fromPath.tags
   type 
@@ -92,24 +92,6 @@ unlockedBy: Listing<$t.Slug>(isDistinct)?
 /// currently only buildings do this, but its here because the other unlock/create logic is here. some non-gamepieces gamepieces unlock/create 
 unlocksMercTier: Listing<$t.Tier>(isDistinct)?
 
-hidden fixed nested_mappings: Listing<String> 
-local post_process_tags: Mapping<(Class|String), (unknown) -> Any> = new {
-  ["tags"] = (v) -> dynamic_tags.toList().distinct
-  ["dynamic_tags"] = (v) -> null
-}
-hidden fixed post_process: Mapping<(Class|String), (unknown) -> Any> = new {
-  ...post_process_tags
-  // for (_key in nested_mappings.toList().distinct) {
-  //   [_key] = (v) -> v.toMap().values.map((v) -> v.id)
-  // }
-}
-hidden fixed post_process_nested: Mapping<(Class|String), (unknown) -> Any> = new {
-  ...post_process_tags
-  // for (_key in nested_mappings.toList().distinct) {
-  //   [_key] = (v) -> v.toMap().mapKeys((k,v) -> v.id)
-  // }
-}
-
 hidden fixed children: List<me> = List()
 hidden fixed recursive_children: List<me> = children + children.flatMap((c) -> c.recursive_children)
 
@@ -122,18 +104,18 @@ hidden fixed rendered_files: Listing<String> = new Listing<String> {
 hidden output {
   files {
     ["\(id).json"] {
-      renderer = new JsonRenderer { converters = post_process; indent = "" }
+      renderer = new JsonRenderer { indent = "" }
       value = methis
     }
     when (recursive_children.length > 0) {
       ["\(id)-nested.json"] {
-        renderer = new JsonRenderer { converters = post_process_nested; indent = "" }
+        renderer = new JsonRenderer { indent = "" }
         value = methis
       }
     }
     for (child in recursive_children) {
       ["\(child.id).json"] {
-        renderer = new JsonRenderer { converters = child.post_process; indent = "" }
+        renderer = new JsonRenderer { indent = "" }
         value = child
       }
     }

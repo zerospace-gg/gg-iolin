@@ -1,4 +1,4 @@
-module manifest 
+module zsgg_data_manifest 
 import "everything.pkl"
 local methis = this
 

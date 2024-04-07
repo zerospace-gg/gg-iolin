@@ -1,4 +1,4 @@
-module index 
+module zsgg_data_full 
 import "everything.pkl"
 import ".../engine/building.pkl" as Building
 import ".../engine/faction.pkl" as Faction
@@ -26,8 +26,8 @@ topbar: Map<String, TopBar> = everything.topbar_powers
 map: Map<String, ZSMap> = everything.maps
 
 tags: Map<String, List<String>> = everything.tags
-
 index: Map<String, everything.DataIndex> = everything.index
+idToSlug: Map<String, String> = everything.ids_to_slugs
 
 hidden output {
   files {

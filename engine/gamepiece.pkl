@@ -133,13 +133,5 @@ turret: Mapping<String, Turret> = new {
   }
 }
 
-hidden fixed nested_mappings { 
-  "attacks"
-  "heals"
-  "spells"
-  "passives"
-  "turrets"
-}
-
 hidden fixed children = List(attacks, heals, spells, passives, turrets).flatMap((x) -> x.toMap().values.toList())
 
