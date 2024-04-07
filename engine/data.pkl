@@ -30,25 +30,30 @@ zsggDataVersion: String = versioning.zsggDataVersion
 zsggDataUpdated: String = versioning.zsggDataUpdated
 release: String = versioning.release
 
-fullId: String = "\(id)@\(release)"
+// fullId: String = "\(id)@\(release)"
 
 /// nicely formatted display name, as it appears in game (with the exception of things without lore names yet)
 name: String 
 
+shortName: String = name
+
 /// in-game description of this
-description: String? = "[Submit a description on ZSGG Discord]"
+description: String? = "[in-game/informational description missing]"
 
 /// top-level type. overridden to a specific one of these by a subclass
-fixed type: String = fromPath.type ?? path_parts.join(" -> ")
+fixed type: String = fromPath.type
 
 /// sub-type. data subclasses will define this as a calculated field, based on a more
-fixed subtype: String = fromPath.subtype ?? path_parts.join(" -> ")
+fixed subtype: String = fromPath.subtype
 
 /// faction name. required if type isn't map. should not be defined for faction type
-fixed faction: String? = fromPath.faction ?? path_parts.join(" -> ")
+fixed faction: String? = fromPath.faction
 
+flavor: String? = "[Submit flavor @ zsgg discord]"
 
-flavor: String? = "[Submit a flavor snippet on ZSGG Discord]"
+// flavorDescription: String? = "[Missing a zsgg-style fun description of this. You can submit your idea on the zsgg discord!]"
+
+role: String? = "[Submit role @ zsgg discord]"
 
 tier: $t.Tier? = fromPath.tier
 
@@ -66,6 +71,8 @@ hidden fixed dynamic_tags: Listing<String> = new {
 
 /// whether or not this exists in the game at the current version
 inGame: Boolean = true
+
+fromFuture: Boolean = false
 
 /// additional notes and information about this gamepiece
 notes: Listing<String>
@@ -115,18 +122,18 @@ hidden fixed rendered_files: Listing<String> = new Listing<String> {
 hidden output {
   files {
     ["\(id).json"] {
-      renderer = new JsonRenderer { converters = post_process }
+      renderer = new JsonRenderer { converters = post_process; indent = "" }
       value = methis
     }
     when (recursive_children.length > 0) {
       ["\(id)-nested.json"] {
-        renderer = new JsonRenderer { converters = post_process_nested }
+        renderer = new JsonRenderer { converters = post_process_nested; indent = "" }
         value = methis
       }
     }
     for (child in recursive_children) {
       ["\(child.id).json"] {
-        renderer = new JsonRenderer { converters = child.post_process }
+        renderer = new JsonRenderer { converters = child.post_process; indent = "" }
         value = child
       }
     }

@@ -1,0 +1,6 @@
+amends ".../engine/faction.pkl"
+
+name = "Koru"
+inGame = false
+fromFuture = true
+// factionContents = import*("koru/**pkl")

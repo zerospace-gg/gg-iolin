@@ -1,0 +1,5 @@
+amends ".../engine/faction.pkl"
+
+name = "Protectorate"
+factionContents = import*("protectorate/**pkl")
+mercHeroesAllowed = true

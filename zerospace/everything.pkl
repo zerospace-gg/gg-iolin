@@ -1,0 +1,94 @@
+import ".../engine/data.pkl" as Data
+import ".../engine/building.pkl" as Building
+import ".../engine/faction.pkl" as Faction
+import ".../engine/map.pkl" as ZSMap
+import ".../engine/talent.pkl" as Talent
+import ".../engine/topbar.pkl" as TopBar
+import ".../engine/unit.pkl" as Unit
+import ".../engine/versioning.pkl" as versioning
+import ".../engine/types.pkl" as $t
+
+// grab everything at least one level down the tree
+hidden all: List<Data> = import*("*/**pkl").toMap().filter((k,v) -> !k.startsWith("misc")).values
+
+hidden zsVersion: String = versioning.zsVersion
+hidden zsggDataVersion: String = versioning.zsggDataVersion
+hidden zsggDataUpdated: String = versioning.zsggDataUpdated
+hidden release: String = versioning.release
+
+hidden is_fac = (x) -> x.type == "faction" && x.subtype == "main"
+hidden is_merc = (x) -> x.type == "faction" && x.subtype == "mercenary"
+hidden is_nonplayer = (x) -> x.type == "faction" && x.subtype == "nonplayer"
+hidden is_hero = (x) -> x.type == "unit" && x.subtype == "hero"
+hidden is_unit = (x) -> x.type == "unit" && x.subtype != "hero"
+hidden is_building = (x) -> x.type == "building"
+hidden is_talent = (x) -> x.type == "faction-ability" && x.subtype == "talent"
+hidden is_topbar = (x) -> x.type == "faction-ability" && x.subtype == "topbar"
+hidden is_map = (x) -> x.type == "map"
+hidden to_slug = (x) -> x.slug
+hidden to_id = (x) -> x.id
+hidden to_me = (x) -> x
+
+class Index {
+  type: ("faction" | "merc" | "nonplayer" | "hero" | "unit" | "building" | "talent" | "topbar" | "map")?
+  id: String
+  slug: String
+  name: String
+}
+
+function mklist(x: (Data) -> Boolean): Map<String, Data> = all.filter(x).toMap(to_slug, to_me)
+function mkids(x: Map<String, Data>): List<String> = x.keys.toList()
+
+hidden slugs: Map<String, String> = all.toMap(to_slug, to_id)
+
+hidden factions: Map<String, Faction> = mklist(is_fac)
+hidden faction_ids: List<String> = mkids(factions)
+
+hidden mercenaries: Map<String, Faction> = mklist(is_merc)
+hidden mercenary_ids: List<String> = mkids(mercenaries)
+
+hidden nonplayer_factions: Map<String, Faction> = mklist(is_nonplayer)
+hidden nonplayer_faction_ids: List<String> = mkids(nonplayer_factions)
+
+hidden heroes: Map<String, Unit> = mklist(is_hero)
+hidden hero_ids: List<String> = mkids(heroes)
+
+hidden units: Map<String, Unit> = mklist(is_unit)
+hidden unit_ids: List<String> = mkids(units)
+
+hidden buildings: Map<String, Building> = mklist(is_building)
+hidden building_ids: List<String> = mkids(buildings)
+
+hidden talents: Map<String, Talent> = mklist(is_talent)
+hidden talent_ids: List<String> = mkids(talents)
+
+hidden topbar_powers: Map<String, TopBar> = mklist(is_topbar)
+hidden topbar_power_ids: List<String> = mkids(topbar_powers)
+
+hidden maps: Map<String, ZSMap> = mklist(is_map)
+hidden map_ids: List<String> = mkids(maps)
+
+hidden tag_names: List<String> = all.flatMap((x) -> x.dynamic_tags.toList()).distinct
+hidden tags: Map<String, List<String>> = tag_names.toMap(to_me, (x) -> all.filter((y) -> y.dynamic_tags.toList().contains(x)).map(to_slug))
+
+hidden index: Map<String, Index> = all.map((x) -> new Index {
+  when (is_fac.apply(x)) { type = "faction" }
+  when (is_merc.apply(x)) { type = "merc" }
+  when (is_nonplayer.apply(x)) { type = "nonplayer" }
+  when (is_hero.apply(x)) { type = "hero" }
+  when (is_unit.apply(x)) { type = "unit" }
+  when (is_building.apply(x)) { type = "building" }
+  when (is_talent.apply(x)) { type = "talent" }
+  when (is_topbar.apply(x)) { type = "topbar" }
+  when (is_map.apply(x)) { type = "map" }
+  id = x.id 
+  slug = x.slug
+  name = x.name
+}).toMap(to_slug, to_me)
+
+local methis = this
+hidden output {
+  files {}
+}
+
+

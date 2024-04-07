@@ -1,0 +1,4 @@
+amends ".../engine/faction.pkl"
+
+name = "Dread Raiders"
+// factionContents = import*("dread/**pkl")

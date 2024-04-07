@@ -1,0 +1,12 @@
+// this is a ui helper for making all fields prettier. Some will be generated from other pkl files, some manually added. 
+
+class Label {
+  labelOf: String
+  label: String
+  shortLabel: String = label
+}
+
+// kinda no-op this whole thang
+hidden output {
+  files {}
+}

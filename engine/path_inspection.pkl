@@ -51,7 +51,7 @@ function dataFromPath(p: List<String>): PathData = new {
       tags { "faction:\(subtype)"; "faction" }
     }
   }
-  when (p.first == "merc") {
+  when (p.first == "mercenary") {
     local len = p.length
     when (p.length == 1) {
       type = "faction"

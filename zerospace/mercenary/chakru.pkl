@@ -1,0 +1,5 @@
+amends ".../engine/faction.pkl"
+
+shortName = "Cha'Kru"
+name = "Cha'Kru Kingdom"
+// factionContents = import*("chakru/**pkl")

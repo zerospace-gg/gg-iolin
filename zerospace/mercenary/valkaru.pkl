@@ -1,0 +1,4 @@
+amends ".../engine/faction.pkl"
+
+name = "Valkaru"
+// factionContents = import*("valkaru/**pkl")

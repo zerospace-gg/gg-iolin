@@ -1,0 +1,32 @@
+module index 
+import "everything.pkl"
+local methis = this
+
+zsVersion: String = everything.zsVersion
+zsggDataVersion: String = everything.zsggDataVersion
+zsggDataUpdated: String = everything.zsggDataUpdated
+release: String = everything.release
+
+faction: List<String> = everything.faction_ids
+mercenary: List<String> = everything.mercenary_ids
+nonplayer: List<String> = everything.nonplayer_faction_ids
+hero: List<String> = everything.hero_ids
+unit: List<String> = everything.unit_ids
+building: List<String> = everything.building_ids
+talent: List<String> = everything.talent_ids
+topbar: List<String> = everything.topbar_power_ids
+
+map: List<String> = everything.map_ids
+
+tags: Map<String, List<String>> = everything.tags
+
+index: Map<String, everything.Index> = everything.index
+
+hidden output {
+  files {
+    ["zsgg-data.manifest.json"] {
+      renderer = new JsonRenderer { indent = "" }
+      value = methis
+    }
+  }
+}
