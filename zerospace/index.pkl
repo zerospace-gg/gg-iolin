@@ -20,7 +20,7 @@ map: List<String> = everything.map_ids
 
 tags: Map<String, List<String>> = everything.tags
 
-index: Map<String, everything.Index> = everything.index
+index: Map<String, everything.DataIndex> = everything.index
 
 hidden output {
   files {

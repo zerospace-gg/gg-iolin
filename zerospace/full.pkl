@@ -27,7 +27,7 @@ map: Map<String, ZSMap> = everything.maps
 
 tags: Map<String, List<String>> = everything.tags
 
-index: Map<String, everything.Index> = everything.index
+index: Map<String, everything.DataIndex> = everything.index
 
 hidden output {
   files {

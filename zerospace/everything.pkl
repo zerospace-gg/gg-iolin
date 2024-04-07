@@ -29,7 +29,7 @@ hidden to_slug = (x) -> x.slug
 hidden to_id = (x) -> x.id
 hidden to_me = (x) -> x
 
-class Index {
+class DataIndex {
   type: ("faction" | "merc" | "nonplayer" | "hero" | "unit" | "building" | "talent" | "topbar" | "map")?
   id: String
   slug: String
@@ -39,7 +39,7 @@ class Index {
 function mklist(x: (Data) -> Boolean): Map<String, Data> = all.filter(x).toMap(to_slug, to_me)
 function mkids(x: Map<String, Data>): List<String> = x.keys.toList()
 
-hidden slugs: Map<String, String> = all.toMap(to_slug, to_id)
+hidden ids_to_slugs: Map<String, String> = all.toMap(to_slug, to_id)
 
 hidden factions: Map<String, Faction> = mklist(is_fac)
 hidden faction_ids: List<String> = mkids(factions)
@@ -80,7 +80,7 @@ hidden map_count: Number = map_ids.length
 hidden tag_names: List<String> = all.flatMap((x) -> x.dynamic_tags.toList()).distinct
 hidden tags: Map<String, List<String>> = tag_names.toMap(to_me, (x) -> all.filter((y) -> y.dynamic_tags.toList().contains(x)).map(to_slug))
 
-hidden index: Map<String, Index> = all.map((x) -> new Index {
+hidden index: Map<String, DataIndex> = all.map((x) -> new DataIndex {
   when (is_fac.apply(x)) { type = "faction" }
   when (is_merc.apply(x)) { type = "merc" }
   when (is_nonplayer.apply(x)) { type = "nonplayer" }
