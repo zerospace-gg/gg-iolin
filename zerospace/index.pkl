@@ -24,7 +24,7 @@ index: Map<String, everything.Index> = everything.index
 
 hidden output {
   files {
-    ["zsgg-data.manifest.json"] {
+    ["zsgg-data.index.json"] {
       renderer = new JsonRenderer { indent = "" }
       value = methis
     }

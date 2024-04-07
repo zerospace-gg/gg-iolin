@@ -1,0 +1,39 @@
+module index 
+import "everything.pkl"
+import ".../engine/building.pkl" as Building
+import ".../engine/faction.pkl" as Faction
+import ".../engine/map.pkl" as ZSMap
+import ".../engine/talent.pkl" as Talent
+import ".../engine/topbar.pkl" as TopBar
+import ".../engine/unit.pkl" as Unit
+import ".../engine/versioning.pkl" as versioning
+local methis = this
+
+zsVersion: String = everything.zsVersion
+zsggDataVersion: String = everything.zsggDataVersion
+zsggDataUpdated: String = everything.zsggDataUpdated
+release: String = everything.release
+
+faction: Map<String, Faction> = everything.factions
+mercenary: Map<String, Faction> = everything.mercenaries
+nonplayer: Map<String, Faction> = everything.nonplayer_factions
+hero: Map<String, Unit> = everything.heroes
+unit: Map<String, Unit> = everything.units
+building: Map<String, Building> = everything.buildings
+talent: Map<String, Talent> = everything.talents
+topbar: Map<String, TopBar> = everything.topbar_powers
+
+map: Map<String, ZSMap> = everything.maps
+
+tags: Map<String, List<String>> = everything.tags
+
+index: Map<String, everything.Index> = everything.index
+
+hidden output {
+  files {
+    ["zsgg-data.full.json"] {
+      renderer = new JsonRenderer { indent = "" }
+      value = methis
+    }
+  }
+}

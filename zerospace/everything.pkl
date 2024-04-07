@@ -43,30 +43,39 @@ hidden slugs: Map<String, String> = all.toMap(to_slug, to_id)
 
 hidden factions: Map<String, Faction> = mklist(is_fac)
 hidden faction_ids: List<String> = mkids(factions)
+hidden faction_count: Number = faction_ids.length
 
 hidden mercenaries: Map<String, Faction> = mklist(is_merc)
 hidden mercenary_ids: List<String> = mkids(mercenaries)
+hidden mercenary_count: Number = mercenary_ids.length
 
 hidden nonplayer_factions: Map<String, Faction> = mklist(is_nonplayer)
 hidden nonplayer_faction_ids: List<String> = mkids(nonplayer_factions)
+hidden nonplayer_faction_count: Number = nonplayer_faction_ids.length
 
 hidden heroes: Map<String, Unit> = mklist(is_hero)
 hidden hero_ids: List<String> = mkids(heroes)
+hidden hero_count: Number = hero_ids.length
 
 hidden units: Map<String, Unit> = mklist(is_unit)
 hidden unit_ids: List<String> = mkids(units)
+hidden unit_count: Number = unit_ids.length
 
 hidden buildings: Map<String, Building> = mklist(is_building)
 hidden building_ids: List<String> = mkids(buildings)
+hidden building_count: Number = building_ids.length
 
 hidden talents: Map<String, Talent> = mklist(is_talent)
 hidden talent_ids: List<String> = mkids(talents)
+hidden talent_count: Number = talent_ids.length
 
 hidden topbar_powers: Map<String, TopBar> = mklist(is_topbar)
 hidden topbar_power_ids: List<String> = mkids(topbar_powers)
+hidden topbar_power_count: Number = topbar_power_ids.length
 
 hidden maps: Map<String, ZSMap> = mklist(is_map)
 hidden map_ids: List<String> = mkids(maps)
+hidden map_count: Number = map_ids.length
 
 hidden tag_names: List<String> = all.flatMap((x) -> x.dynamic_tags.toList()).distinct
 hidden tags: Map<String, List<String>> = tag_names.toMap(to_me, (x) -> all.filter((y) -> y.dynamic_tags.toList().contains(x)).map(to_slug))

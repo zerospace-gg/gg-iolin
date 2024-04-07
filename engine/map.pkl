@@ -1,4 +1,4 @@
-module map 
+module rts_map
 extends "data.pkl"
 
 fixed type: String = "map"
