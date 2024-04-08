@@ -6,6 +6,7 @@ local methis = this
 zsVersion: String = everything.zsVersion
 zsggDataVersion: String = everything.zsggDataVersion
 zsggDataUpdated: String = everything.zsggDataUpdated
+zsggDataEpoch: String = everything.zsggDataEpoch
 release: String = everything.release
 
 faction: Number = everything.faction_count

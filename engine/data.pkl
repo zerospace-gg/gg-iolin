@@ -26,9 +26,9 @@ fixed id: $t.Id = (src_dir_slugs + List(slug)).join("/")
 hidden fixed fromPath: $p.PathData = $p.dataFromPath(src_dir_parts)
 
 zsVersion: String = versioning.zsVersion
-zsggDataVersion: String = versioning.zsggDataVersion
-zsggDataUpdated: String = versioning.zsggDataUpdated
-release: String = versioning.release
+// zsggDataVersion: String = versioning.zsggDataVersion
+updated: String = versioning.zsggDataUpdated
+// release: String = versioning.release
 
 // fullId: String = "\(id)@\(release)"
 
@@ -58,17 +58,16 @@ role: String? = "[Submit role @ zsgg discord]"
 tier: $t.Tier? = fromPath.tier
 
 /// tags used in calculating effects of parts of the game, such as `unit` or `vehicle` or `massive`. these should be static tags based on type.
-tags: Listing<String>
+hidden tags: Listing<String>
 
 /// Used to add tags that are dependent on other fields
-fixed tag_list: Listing<String> = new {
+fixed tagList: Listing<String> = new Listing<String> {
   ...tags
   ...fromPath.tags
   type 
   "\(type):\(subtype)"
   when (faction != null) { "faction:\(faction)" }
-}
-
+}.toList().distinct.toListing()
 /// whether or not this exists in the game at the current version
 inGame: Boolean = true
 

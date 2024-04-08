@@ -2,7 +2,8 @@
 
 set -euo pipefail
 VERSION=$(<zsgg_data_version.txt)
-AT=$(date +%Y%m%d%H%M%S)
+AT=$(node -e "console.log(new Date().toISOString())")
+TS=$(node -e "console.log(Math.trunc(Date.now() / 1000))")
 CAT=$(which bat || which cat)
 PKL=$(which pkl)
 FILES=$(find zerospace -name '*.pkl' | sort)
@@ -11,8 +12,8 @@ FILES=$(find zerospace -name '*.pkl' | sort)
 time (
   for i in $FILES; do
     printf "\n# \e[0;1;33m%s\e[0m\n" "$i"
-    echo "${PKL}" eval -m ./dist -p gg_version="$VERSION" -p gg_at="$AT" "$i"
-    "${PKL}" eval -m ./dist -p gg_version="$VERSION" -p gg_at="$AT" "$i"
+    echo "${PKL}" eval -m ./dist -p gg_version="$VERSION" -p gg_at="$AT" -p gg_ts="$TS" "$i"
+    "${PKL}" eval -m ./dist -p gg_version="$VERSION" -p gg_at="$AT" -p gg_ts="$TS" "$i"
     printf "\n"
   done
 )
