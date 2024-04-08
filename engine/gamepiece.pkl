@@ -88,49 +88,39 @@ local parent_info: ParentInfo = new {
   fromPath = methis.fromPath
 }
 
-hidden attacks: Mapping<String, Ability> = new Mapping<String, Ability> {
+attacks: Mapping<String, Ability> = new Mapping<String, Ability> {
   default { key -> name = key; parent = parent_info; abilityType = "attack" }
 }
-attack: Mapping<String, Ability> = new {
-  for (_attack in attacks) {
-    [_attack.slug] = _attack
-  }
+attack: Listing<String> = new {
+  for (_attack in attacks) { _attack.slug }
 }
 
-hidden heals: Mapping<String, Ability> = new Mapping<String, Ability> {
+heals: Mapping<String, Ability> = new Mapping<String, Ability> {
   default { key -> name = key; parent = parent_info; abilityType = "heal" }
 }
-heal: Mapping<String, Ability> = new {
-  for (_heal in heals) {
-    [_heal.slug] = _heal
-  }
+heal: Listing<String> = new {
+  for (_heal in heals) { _heal.slug }
 }
 
-hidden spells: Mapping<String, Ability> = new Mapping<String, Ability> {
+spells: Mapping<String, Ability> = new Mapping<String, Ability> {
   default { key -> name = key; parent = parent_info; abilityType = "spell" }
 }
-spell: Mapping<String, Ability> = new {
-  for (_spell in spells) {
-    [_spell.slug] = _spell
-  }
+spell: Listing<String> = new {
+  for (_spell in spells) { _spell.slug }
 }
 
-hidden passives: Mapping<String, Ability> = new Mapping<String, Ability> {
+passives: Mapping<String, Ability> = new Mapping<String, Ability> {
   default { key -> name = key; parent = parent_info; abilityType = "passive" }
 }
-passive: Mapping<String, Ability> = new {
-  for (_passive in passives) {
-    [_passive.slug] = _passive
-  }
+passive: Listing<String> = new {
+  for (_passive in passives) { _passive.slug }
 }
 
-hidden turrets: Mapping<String, Turret> = new Mapping<String, Turret> {
+turrets: Mapping<String, Turret> = new Mapping<String, Turret> {
   default { key -> name = key; parent = parent_info; turretType = methis.hasTurretType }
 }
-turret: Mapping<String, Turret> = new {
-  for (_turret in turrets) {
-    [_turret.slug] = _turret
-  }
+turret: Listing<String> = new {
+  for (_turret in turrets) { _turret.slug }
 }
 
 hidden fixed children = List(attacks, heals, spells, passives, turrets).flatMap((x) -> x.toMap().values.toList())

@@ -26,9 +26,9 @@ fixed id: $t.Id = (src_dir_slugs + List(slug)).join("/")
 hidden fixed fromPath: $p.PathData = $p.dataFromPath(src_dir_parts)
 
 zsVersion: String = versioning.zsVersion
-// zsggDataVersion: String = versioning.zsggDataVersion
+zsggDataVersion: String = versioning.zsggDataVersion
 updated: String = versioning.zsggDataUpdated
-// release: String = versioning.release
+release: String = versioning.release
 
 // fullId: String = "\(id)@\(release)"
 
@@ -38,7 +38,7 @@ name: String
 shortName: String = name
 
 /// in-game description of this
-description: String? = "[in-game/informational description missing]"
+description: String? 
 
 /// top-level type. overridden to a specific one of these by a subclass
 fixed type: String = fromPath.type
@@ -48,12 +48,6 @@ fixed subtype: String = fromPath.subtype
 
 /// faction name. required if type isn't map. should not be defined for faction type
 fixed faction: String? = fromPath.faction
-
-flavor: String? = "[Submit flavor @ zsgg discord]"
-
-// flavorDescription: String? = "[Missing a zsgg-style fun description of this. You can submit your idea on the zsgg discord!]"
-
-role: String? = "[Submit role @ zsgg discord]"
 
 tier: $t.Tier? = fromPath.tier
 
@@ -105,12 +99,6 @@ hidden output {
     ["\(id).json"] {
       renderer = new JsonRenderer { indent = "" }
       value = methis
-    }
-    when (recursive_children.length > 0) {
-      ["\(id)-nested.json"] {
-        renderer = new JsonRenderer { indent = "" }
-        value = methis
-      }
     }
     for (child in recursive_children) {
       ["\(child.id).json"] {

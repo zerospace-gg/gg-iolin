@@ -1,7 +1,7 @@
 amends ".../engine/unit.pkl"
 
 name = "Gunship"
-flavor = "An airship with TWO guns?!"
+//flavor = "An airship with TWO guns?!"
 tier = "T2"
 supply = 6
 hexiteCost = 50

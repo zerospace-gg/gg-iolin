@@ -22,41 +22,32 @@ local parent_info: ParentInfo = new {
   fromPath = methis.parent.fromPath
 }
 
-hidden attacks: Mapping<String, Ability> = (super.attacks) {
+attacks: Mapping<String, Ability> = (super.attacks) {
   default { key -> name = $t.makeSlug(key); parent = parent_info; abilityType = "attack" }
 }
-attack: Mapping<String, Ability> = new {
-  for (_attack in attacks) {
-    [_attack.slug] = _attack
-  }
+attack: Listing<String> = new {
+  for (_attack in attacks) { _attack.slug }
 }
 
-hidden heals: Mapping<String, Ability> = (super.heals) {
+heals: Mapping<String, Ability> = (super.heals) {
   default { key -> name = $t.makeSlug(key); parent = parent_info; abilityType = "heal" }
 }
-heal: Mapping<String, Ability> = new {
-  for (_heal in heals) {
-    [_heal.slug] = _heal
-  }
+heal: Listing<String> = new {
+  for (_heal in heals) { _heal.slug }
 }
 
-
-hidden spells: Mapping<String, Ability> = (super.spells) {
+spells: Mapping<String, Ability> = (super.spells) {
   default { key -> name = $t.makeSlug(key); parent = parent_info; abilityType = "spell" }
 }
-spell: Mapping<String, Ability> = new {
-  for (_spell in spells) {
-    [_spell.slug] = _spell
-  }
+spell: Listing<String> = new {
+  for (_spell in spells) { _spell.slug }
 }
 
-hidden passives: Mapping<String, Ability> = (super.passives) {
+passives: Mapping<String, Ability> = (super.passives) {
   default { key -> name = $t.makeSlug(key); parent = parent_info; abilityType = "passive" }
 }
-passive: Mapping<String, Ability> = new {
-  for (_passive in passives) {
-    [_passive.slug] = _passive
-  }
+passive: Listing<String> = new {
+  for (_passive in passives) { _passive.slug }
 }
 
 hidden fixed children = List(attacks, heals, spells, passives).flatMap((x) -> x.toMap().values.toList())

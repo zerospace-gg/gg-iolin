@@ -1,7 +1,7 @@
 amends ".../engine/unit.pkl"
 
 name = "Commando"
-flavor = "Jetpackin' Joyrider"
+//flavor = "Jetpackin' Joyrider"
 description = "Protectorate's T1 marine-style unit. Has a jetpack for jumpin up cliffs and over things and often just for fun."
 supply = 2
 hexiteCost = 50

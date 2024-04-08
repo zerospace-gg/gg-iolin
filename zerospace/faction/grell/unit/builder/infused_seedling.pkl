@@ -3,7 +3,7 @@ amends "seedling.pkl"
 name = "Infused Seedling"
 description = "When a seedling is infused, it gains the ability to fly and becomes one of the fastest units and the very best scouting unit in the game. It retains its abilities to build Grell structures, so it can also effectively create proxy and forward buildings easily."
 domain = "air"
-flavor = "Soaring Speedy Seedy"
+//flavor = "Soaring Speedy Seedy"
 tier = "T0"
 hp = 120
 speed = 575

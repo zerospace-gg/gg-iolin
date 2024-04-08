@@ -1,7 +1,7 @@
 amends ".../engine/faction.pkl"
 
 name = "Grell"
-flavor = "Ballooning Bugs and their Blossoming Buds"
+//flavor = "Ballooning Bugs and their Blossoming Buds"
 
 factionContents = import*("grell/**pkl")
 guest_heroes {

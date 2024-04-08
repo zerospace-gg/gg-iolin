@@ -1,6 +1,6 @@
 amends "cultivator.pkl"
 name = "Cultivator Attacker"
-flavor = "Angry Flower"
+//flavor = "Angry Flower"
 description = "Provides vision and static defense, and is also very effective in forward positions where you have biomass nearby."
 hotkey = "e"
 hexiteCost = 75

@@ -45,13 +45,11 @@ local parent_info: ParentInfo = new {
   fromPath = methis.fromPath
 }
 
-hidden upgrades: Mapping<String, UnitUpgrade> = new Mapping<String, UnitUpgrade> {
+upgrades: Mapping<String, UnitUpgrade> = new Mapping<String, UnitUpgrade> {
   default { key -> name = $t.makeSlug(key); parent = parent_info }
 }
-upgrade: Mapping<String, UnitUpgrade> = new {
-  for (_upgrade in upgrades) {
-    [_upgrade.slug] = _upgrade
-  }
+upgrade: Listing<String> = new {
+  for (_upgrade in upgrades) { _upgrade.slug }
 }
 
 hidden fixed children = super.children + upgrades.toMap().values.toList()

@@ -1,7 +1,7 @@
 amends "root_colony.pkl"
 
 name = "Root Colony Attacker"
-flavor = "Devastating Defensive Tree"
+//flavor = "Devastating Defensive Tree"
 hexiteCost = 200
 createdBy = null
 transformsInto = null

@@ -1,6 +1,6 @@
 amends ".../engine/building.pkl"
 name = "Nourishing Pod"
-flavor = "Mrs. Sproutbriar"
+//flavor = "Mrs. Sproutbriar"
 energy = 100
 buildTime = 15 
 hp = 625
