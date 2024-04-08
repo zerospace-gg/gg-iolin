@@ -3,7 +3,7 @@ import "types.pkl" as $t
 
 class PathData {
   faction: String?
-  factionType: ("main" | "merc" | "nonplayer")?
+  factionType: ("main" | "mercenary" | "nonplayer")?
   type: ("unit" | "building" | "turret" | "faction" | "ability" | "upgrade" | "map")?
   subtype: String?
 
@@ -48,22 +48,27 @@ function dataFromPath(p: List<String>): PathData = new {
     when (p.length == 1) {
       type = "faction"
       subtype = "main"
+      factionType = "main"
       tags { "faction:\(subtype)"; "faction" }
     }
   }
   when (p.first == "mercenary") {
     local len = p.length
+    faction = p[1]
     when (p.length == 1) {
       type = "faction"
       subtype = "mercenary"
+      factionType = "mercenary"
       tags { "faction:\(subtype)"; "faction" }
     }
   }
-  when (p.first == "non_player") {
+  when (p.first == "nonplayer") {
     local len = p.length
+    faction = p[1]
     when (p.length == 1) {
       type = "faction"
-      subtype = "non-player"
+      subtype = "nonplayer"
+      factionType = "nonplayer"
       tags { "faction:\(subtype)"; "faction" }
     }
   }
