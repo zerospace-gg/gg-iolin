@@ -1,5 +1,5 @@
 amends ".../engine/map.pkl"
 name = "Plains"
-size = "normal"
+mapSize = "normal"
 xpTowers = 3
 fluxDistance = "near"

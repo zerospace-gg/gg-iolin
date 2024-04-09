@@ -1,5 +1,5 @@
 amends ".../engine/map.pkl"
 name = "Starsand"
-size = "large"
+mapSize = "large"
 xpTowers = 3
 fluxDistance = "close"

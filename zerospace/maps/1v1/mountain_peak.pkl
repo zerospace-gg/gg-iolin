@@ -1,5 +1,5 @@
 amends ".../engine/map.pkl"
 name = "Mountain Peak"
-size = "small"
+mapSize = "small"
 xpTowers = 3
 fluxDistance = "medium-far"

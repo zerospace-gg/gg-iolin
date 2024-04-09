@@ -1,8 +1,8 @@
 
 zsVersion: String = "1223334444"
-zsggDataVersion: String = read?("prop:gg_version") ?? read?("env:ZSGG_VERSION") ?? "Dev"
-zsggDataUpdated: String = read?("prop:gg_at") ?? read?("env:ZSGG_AT") ?? "1987"
-zsggDataEpoch: String = read?("prop:gg_ts") ?? read?("env:ZSGG_TS") ?? "1987"
-release: String = List(zsggDataVersion, "zs\(zsVersion)", zsggDataEpoch).join("-")
+ggVersion: String = read?("prop:gg_version") ?? read?("env:ZSGG_VERSION") ?? "Dev"
+ggUpdated: String = read?("prop:gg_at") ?? read?("env:ZSGG_AT") ?? "1987"
+ggEpoch: String = read?("prop:gg_ts") ?? read?("env:ZSGG_TS") ?? "1987"
+ggRelease: String = List(ggVersion, "zs\(zsVersion)", ggEpoch).join("-")
 
 

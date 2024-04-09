@@ -15,8 +15,8 @@ xpTowers: Number(isBetween(2,3))
 fluxDistance: FluxDistance
 typealias FluxDistance = "close" | "near" | "medium-far" | "distant"
 
-/// would be nice if we had actual dimensions here, these are the map sizes listed in the ui
-size: MapSize = "normal"
+/// would be nice if we had actual dimensions here, these are the map mapSizes listed in the ui
+mapSize: MapSize = "normal"
 typealias MapSize = "small" | "normal" | "large"
 
 /// number of players this map allows, including AI

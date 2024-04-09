@@ -22,13 +22,18 @@ fixed src: String = List(src_dir, src_file).join("/")
 fixed slug: $t.Slug = src_file.replaceLast(".pkl", "").replaceAll("_", "-")
 fixed id: $t.Id = (src_dir_slugs + List(slug)).join("/")
 
+hidden repoSlug = "zerospace-gg/zsgg-librarian";
+
 /// metadata pulled from path. this includes things used in multiple subclasses
 hidden fixed fromPath: $p.PathData = $p.dataFromPath(src_dir_parts)
 
 zsVersion: String = versioning.zsVersion
-zsggDataVersion: String = versioning.zsggDataVersion
-updated: String = versioning.zsggDataUpdated
-release: String = versioning.release
+ggVersion: String = versioning.ggVersion
+ggUpdated: String = versioning.ggUpdated
+ggRelease: String = versioning.ggRelease
+ggUrl = "https://zerospace.gg/library/\(id)";
+githubUrl = "https://github.com/\(repoSlug)/blob/main/zerospace/\(src)";
+githubRawUrl = "https://raw.githubusercontent.com/\(repoSlug)/main/zerospace/\(src)";
 
 /// nicely formatted display name, as it appears in game (with the exception of things without lore names yet)
 name: String 
@@ -86,6 +91,14 @@ unlockedBy: Listing<$t.Slug>(isDistinct)?
 
 /// currently only buildings do this, but its here because the other unlock/create logic is here. some non-gamepieces gamepieces unlock/create 
 unlocksMercTier: Listing<$t.Tier>(isDistinct)?
+
+references: Listing<$t.Slug>(isDistinct)? = new Listing<$t.Slug> {
+  ...(creates ?? new Listing{})
+  ...(createdBy ?? new Listing{})
+  ...(unlocks ?? new Listing{})
+  ...(unlockedBy ?? new Listing{})
+  ...recursive_children.map((c) -> c.slug)
+}.toList().distinct.toListing()
 
 hidden fixed children: List<me> = List()
 hidden fixed recursive_children: List<me> = children + children.flatMap((c) -> c.recursive_children)

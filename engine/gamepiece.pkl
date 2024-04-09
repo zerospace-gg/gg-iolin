@@ -2,7 +2,7 @@
 abstract module gamepiece 
 extends "data.pkl"
 import "data.pkl"
-import "addOn.pkl" as AddOn
+import "add_on.pkl" as AddOn
 import "parent_info.pkl" as ParentInfo
 import "ability.pkl" as Ability
 import "types.pkl" as $t
@@ -78,7 +78,7 @@ transformsInto: Listing<String>(isDistinct)?
 
 maxAddOns: Number?
 hasAddOnType: ("turret" | "sacrifice" | "building-upgrade")? =
-  if (turrets.length == 0) null 
+  if (addOns.length == 0) null 
   else throw("hasAddOnType must be set if turrets is used.")
 
 local parent_info: ParentInfo = new {
@@ -116,12 +116,12 @@ passive: Listing<String> = new {
   for (_passive in passives) { _passive.slug }
 }
 
-hidden addOns: Mapping<String, Turret> = new Mapping<String, Turret> {
+hidden addOns: Mapping<String, AddOn> = new Mapping<String, AddOn> {
   default { key -> name = key; parent = parent_info; addOnType = methis.hasAddOnType }
 }
 addOn: Listing<String> = new {
   for (_addOn in addOns) { _addOn.slug }
 }
 
-hidden fixed children = List(attacks, heals, spells, passives, turrets).flatMap((x) -> x.toMap().values.toList())
+hidden fixed children = List(attacks, heals, spells, passives, addOns).flatMap((x) -> x.toMap().values.toList())
 

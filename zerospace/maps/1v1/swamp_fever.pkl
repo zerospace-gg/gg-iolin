@@ -1,5 +1,5 @@
 amends ".../engine/map.pkl"
 name = "Swamp Fever"
-size = "small"
+mapSize = "small"
 xpTowers = 2
 fluxDistance = "distant"

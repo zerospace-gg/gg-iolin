@@ -1,5 +1,5 @@
 amends ".../engine/unit.pkl"
-import ".../engine/turret.pkl" as Turret
+import ".../engine/add_on.pkl" as AddOn
 import ".../engine/types.pkl" as $t
 import "dreadnought.pkl" as me
 
@@ -45,7 +45,7 @@ spells {
     name = "Teleport"
     teleport = 4000
     cooldown = 0
-    unlockedBy { me.turrets["Command Module"].slug }
+    unlockedBy { me.addOns["Command Module"].slug }
   }
 }
 
@@ -53,14 +53,14 @@ passives {
   ["Sensor"] {
     name = "Sensor"
     providesDetection = 4000
-    unlockedBy { me.turrets["Command Module"].slug }
+    unlockedBy { me.addOns["Command Module"].slug }
   }
 }
 
 
 hasAddOnType = "turret"
 maxAddOns = 4
-turrets {
+addOns {
   default {
     fluxCost = 150
     buildTime = 25

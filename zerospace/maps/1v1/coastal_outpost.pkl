@@ -1,5 +1,5 @@
 amends ".../engine/map.pkl"
 name = "Coastal Outpost"
-size = "normal"
+mapSize = "normal"
 xpTowers = 2
 fluxDistance = "medium-far"
