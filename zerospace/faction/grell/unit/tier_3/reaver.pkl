@@ -2,7 +2,7 @@ amends ".../engine/unit.pkl"
 
 name = "Reaver"
 hotkey = "a"
-role = "T3 Melee Menace"
+// role = "T3 Melee Menace"
 //flavor = "Beeg Brutal Beetle"
 // description = "Reaver is hungy mama. It eat you. It eat your friends. It eat your whole family. It have bonk attack. Stingers born when it die. They eat you. They eat your friends. They eat your whole family."
 hexiteCost = 150

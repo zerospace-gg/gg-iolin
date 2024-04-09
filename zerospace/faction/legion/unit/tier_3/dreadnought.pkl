@@ -58,8 +58,8 @@ passives {
 }
 
 
-hasTurretType = "turret"
-maxTurrets = 4
+hasAddOnType = "turret"
+maxAddOns = 4
 turrets {
   default {
     fluxCost = 150

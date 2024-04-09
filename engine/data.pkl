@@ -30,8 +30,6 @@ zsggDataVersion: String = versioning.zsggDataVersion
 updated: String = versioning.zsggDataUpdated
 release: String = versioning.release
 
-// fullId: String = "\(id)@\(release)"
-
 /// nicely formatted display name, as it appears in game (with the exception of things without lore names yet)
 name: String 
 
@@ -54,13 +52,17 @@ tier: $t.Tier? = fromPath.tier
 /// tags used in calculating effects of parts of the game, such as `unit` or `vehicle` or `massive`. these should be static tags based on type.
 hidden tags: Listing<String>
 
-/// Used to add tags that are dependent on other fields
-fixed tagList: Listing<String> = new Listing<String> {
-  ...tags
-  ...fromPath.tags
+hidden fixed dynamicTags: Listing<String> = new {
   type 
   "\(type):\(subtype)"
   when (faction != null) { "faction:\(faction)" }
+}
+
+/// Used to add tags that are dependent on other fields
+fixed tagList: Listing<String> = new Listing<String> {
+  ...tags
+  ...dynamicTags
+  ...fromPath.tags
 }.toList().distinct.toListing()
 /// whether or not this exists in the game at the current version
 inGame: Boolean = true

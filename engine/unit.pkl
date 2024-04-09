@@ -10,10 +10,10 @@ import "unit.pkl" as me
 local methis = this
 local meref = reflect.moduleOf(this)
 
-hidden fixed tagList : Listing<String> = (super.tagList) {
+fixed dynamicTags {
   when (methis.infusable) { "infusable" }
   when (methis.mindControllable) { "mind-controllable" }
-}.toList().distinct.toListing()
+}
 
 constructingVersion: ConstructingUnit? 
 
@@ -45,7 +45,7 @@ local parent_info: ParentInfo = new {
   fromPath = methis.fromPath
 }
 
-upgrades: Mapping<String, UnitUpgrade> = new Mapping<String, UnitUpgrade> {
+hidden upgrades: Mapping<String, UnitUpgrade> = new Mapping<String, UnitUpgrade> {
   default { key -> name = $t.makeSlug(key); parent = parent_info }
 }
 upgrade: Listing<String> = new {

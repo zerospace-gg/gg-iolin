@@ -91,7 +91,7 @@ splashDisplay: String? =
 bonusPercent: Number?
 bonusVsTags: Listing<String>?
 
-requiresTurret: String?
+requiresAddOn: String?
 
 autocast: "always" | "toggle" | "never" = 
   if (activationType == "auto") "always" else "never"

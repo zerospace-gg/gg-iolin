@@ -2,14 +2,14 @@
 abstract module gamepiece 
 extends "data.pkl"
 import "data.pkl"
-import "turret.pkl" as Turret
+import "addOn.pkl" as AddOn
 import "parent_info.pkl" as ParentInfo
 import "ability.pkl" as Ability
 import "types.pkl" as $t
 import "gamepiece.pkl" as me
 local methis = this
 
-hidden fixed extend_tags = (super.extend_tags) {
+hidden fixed dynamicTags {
   when (armorType != "none") { "armor:\(armorType)" }
   when ((gathersRichFlux ?? 0) > 0) { "gathers:flux" }
   when ((gathersFlux ?? 0) > 0) { "gathers:flux" }
@@ -26,8 +26,8 @@ hidden fixed extend_tags = (super.extend_tags) {
   when ((abesEnergy ?? 0) > 0) { "abes" }
   when ((energy ?? 0) > 0) { "energy" }
   when ((stunResist ?? 0) > 0) { "resist:stun" }
-  when ((maxTurrets ?? 0) > 0 && hasTurretType == "turret") { "has:turrets" }
-  when (hasTurretType == "sacrifice") { "sacrifices" }
+  when ((maxAddOns ?? 0) > 0 && hasAddOnType == "turret") { "has:turrets" }
+  when (hasAddOnType == "sacrifice") { "sacrifices" }
 }
 
 /// short description of the purpose of this, to be used in summaries in UI. Many of these won't be in game. 
@@ -76,10 +76,10 @@ upgradedBy: Listing<String>(isDistinct)?
 transformsFrom: Listing<String>(isDistinct)?
 transformsInto: Listing<String>(isDistinct)?
 
-maxTurrets: Number?
-hasTurretType: "turret" | "sacrifice"? =
+maxAddOns: Number?
+hasAddOnType: ("turret" | "sacrifice" | "building-upgrade")? =
   if (turrets.length == 0) null 
-  else throw("hasTurretType must be set if turrets is used.")
+  else throw("hasAddOnType must be set if turrets is used.")
 
 local parent_info: ParentInfo = new {
   id = methis.id
@@ -88,39 +88,39 @@ local parent_info: ParentInfo = new {
   fromPath = methis.fromPath
 }
 
-attacks: Mapping<String, Ability> = new Mapping<String, Ability> {
+hidden attacks: Mapping<String, Ability> = new Mapping<String, Ability> {
   default { key -> name = key; parent = parent_info; abilityType = "attack" }
 }
 attack: Listing<String> = new {
   for (_attack in attacks) { _attack.slug }
 }
 
-heals: Mapping<String, Ability> = new Mapping<String, Ability> {
+hidden heals: Mapping<String, Ability> = new Mapping<String, Ability> {
   default { key -> name = key; parent = parent_info; abilityType = "heal" }
 }
 heal: Listing<String> = new {
   for (_heal in heals) { _heal.slug }
 }
 
-spells: Mapping<String, Ability> = new Mapping<String, Ability> {
+hidden spells: Mapping<String, Ability> = new Mapping<String, Ability> {
   default { key -> name = key; parent = parent_info; abilityType = "spell" }
 }
 spell: Listing<String> = new {
   for (_spell in spells) { _spell.slug }
 }
 
-passives: Mapping<String, Ability> = new Mapping<String, Ability> {
+hidden passives: Mapping<String, Ability> = new Mapping<String, Ability> {
   default { key -> name = key; parent = parent_info; abilityType = "passive" }
 }
 passive: Listing<String> = new {
   for (_passive in passives) { _passive.slug }
 }
 
-turrets: Mapping<String, Turret> = new Mapping<String, Turret> {
-  default { key -> name = key; parent = parent_info; turretType = methis.hasTurretType }
+hidden addOns: Mapping<String, Turret> = new Mapping<String, Turret> {
+  default { key -> name = key; parent = parent_info; addOnType = methis.hasAddOnType }
 }
-turret: Listing<String> = new {
-  for (_turret in turrets) { _turret.slug }
+addOn: Listing<String> = new {
+  for (_addOn in addOns) { _addOn.slug }
 }
 
 hidden fixed children = List(attacks, heals, spells, passives, turrets).flatMap((x) -> x.toMap().values.toList())

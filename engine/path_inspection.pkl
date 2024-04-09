@@ -4,7 +4,7 @@ import "types.pkl" as $t
 class PathData {
   faction: String?
   factionType: ("main" | "mercenary" | "nonplayer")?
-  type: ("unit" | "building" | "turret" | "faction" | "ability" | "upgrade" | "map")?
+  type: ("unit" | "building" | "addOn" | "faction" | "ability" | "upgrade" | "map")?
   subtype: String?
 
   tier: $t.Tier?

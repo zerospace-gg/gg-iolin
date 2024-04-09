@@ -1,5 +1,5 @@
 amends ".../engine/unit.pkl"
-import ".../engine/turret.pkl" as Turret
+import ".../engine/add_on.pkl" as AddOn
 import ".../engine/types.pkl" as $t
 import "terror_tank.pkl" as me
 
@@ -32,9 +32,9 @@ attacks {
 
 local main_weapon: String = "\(me.name)'s \(me.attacks["Main Gun"].name)"
 
-hasTurretType = "turret"
-maxTurrets = 4
-turrets {
+hasAddOnType = "turret"
+maxAddOns = 4
+addOns {
   default {
     fluxCost = 125
     buildTime = 25
