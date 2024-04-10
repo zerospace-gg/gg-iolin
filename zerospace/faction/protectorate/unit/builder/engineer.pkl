@@ -23,6 +23,6 @@ creates {
   "special-research-lab"
 }
 
-notes {
-  "has a repair ability on autocast, details will be added later"
-}
+// notes
+  // "has a repair ability on autocast, details will be added later"
+// }

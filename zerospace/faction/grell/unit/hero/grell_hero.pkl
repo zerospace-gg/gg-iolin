@@ -30,7 +30,7 @@ spells {
     description = "Teleports the hero to a visible location on biomass. Cannot be interrupted."
     effectArea = 300
     targets { "self" }
-    notes { "area is estimated" }
+    // notes "area is estimated" }
   }
 
   ["Consume"] { 

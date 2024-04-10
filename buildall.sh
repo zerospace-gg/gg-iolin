@@ -1,10 +1,12 @@
 #!/bin/bash	
 
+GG_VERSION=0.5.0
+ZS_VERSION=v123456789
+
 set -euo pipefail
-VERSION=$(<zsgg_data_version.txt)
 AT=$(node -e "console.log(new Date().toISOString())")
 TS=$(node -e "console.log(Math.trunc(Date.now() / 1000))")
-CAT=$(which bat || which cat)
+# CAT=$(which bat || which cat)
 PKL=$(which pkl)
 FILES=$(find zerospace -name '*.pkl' | sort)
 
@@ -12,8 +14,8 @@ FILES=$(find zerospace -name '*.pkl' | sort)
 time (
   for i in $FILES; do
     printf "\n# \e[0;1;33m%s\e[0m\n" "$i"
-    echo "${PKL}" eval -m ./dist -p gg_version="$VERSION" -p gg_at="$AT" -p gg_ts="$TS" "$i"
-    "${PKL}" eval -m ./dist -p gg_version="$VERSION" -p gg_at="$AT" -p gg_ts="$TS" "$i"
+    echo "${PKL}" eval -m ./dist/json -p zs_version="$ZS_VERSION" -p gg_version="$GG_VERSION" -p gg_at="$AT" -p gg_ts="$TS" "$i"
+    "${PKL}" eval -m ./dist/json -p zs_version="$ZS_VERSION" -p gg_version="$GG_VERSION" -p gg_at="$AT" -p gg_ts="$TS" "$i"
     printf "\n"
   done
 )
@@ -21,11 +23,22 @@ time (
 printf "\n# \e[0;1;32m%s\e[0m\n\n" "DONE [$(date +%Y-%m-%d\ %H:%M:%S)]"
 
 printf "\n# \e[0;1;36mTotal bytes of JSON rendered:\e[0m\n"
-find dist -name '*json' -exec cat {} \; | wc -c
+find dist/json -name '*json' -type f -exec cat {} \; | wc -c
 
-printf "\n# \e[0;1;36mRoot JSON files:\e[0m\n"
-ls -lh dist/zsgg-data.*.json
+printf "\n# \e[0;1;36mTotal number of JSON files rendered:\e[0m\n"
+find dist/json -name '*json' -type f | wc -l
 
-printf "\n# \e[0;1;36mManifest:\e[0m\n"
-"$CAT" dist/zsgg-data.manifest.json
+node ./strapi-seed/create-seed-data.mjs
+printf "\n# \e[0;1;36mSeed data:\e[0m\n"
+ls -l dist/strapi-seed/*.json
+
+# (cd dist && zip -qr library.zip json)
+# printf "\n# \e[0;1;36mSize of JSON zipped:\e[0m\n"
+# ls -lh dist/library.zip
+
+# printf "\n# \e[0;1;36mRoot JSON files:\e[0m\n"
+# ls -lh dist/zsgg-data.*.json
+
+# printf "\n# \e[0;1;36mManifest:\e[0m\n"
+# "$CAT" dist/zsgg-data.manifest.json
 

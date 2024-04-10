@@ -1,0 +1,12 @@
+import ".../engine/data.pkl" as Data
+all: List<Data> = import*("*/**pkl").toMap().filter((k,v) -> !k.startsWith("misc")).values
+
+local methis = this
+hidden output {
+  files {
+    ["all.json"] {
+      renderer = new JsonRenderer { indent = "" }
+      value = methis
+    }
+  }
+}

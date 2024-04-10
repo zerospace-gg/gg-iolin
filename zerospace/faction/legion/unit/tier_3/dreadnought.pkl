@@ -18,9 +18,11 @@ buildTime = 60
 domain = "air"
 
 constructingVersion {
-  name = "Terror Tank (Constructing)"
-  buildTime = 60
-  hp = 1000
+  new {
+    name = "Dreadnought (Constructing)"
+    buildTime = 60
+    hp = 1000
+  }
 }
 
 local main_weapon: String = "\(me.name)'s \(me.attacks[0].name)"

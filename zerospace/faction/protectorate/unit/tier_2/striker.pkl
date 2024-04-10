@@ -42,7 +42,7 @@ upgrades {
   ["Resonant Missiles"] {
     description = "+40% missile speed, +10% more missiles"
     tier = "T3.5"
-    notes { "10% to number of missiles fired. 13 missiles probably. will double check this value later" }
+    // notes "10% to number of missiles fired. 13 missiles probably. will double check this value later" }
   }
 }
 

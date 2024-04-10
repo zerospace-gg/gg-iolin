@@ -3,9 +3,9 @@ name = "Infuse"
 description = "Make a unit stronger. Doubles vitality, attack speed, cooldown rate, and supply cost. Unit heals 50% over 10s. Seedlings will be faster and fly. The cost is based on unit cost."
 cooldown = 120
 
-notes {
-  "Cost varies by unit. In general the formula is `(floor((fluxCost + hexCost) / 10)) + 1`, although sometimes this value is overridden for balance purposes."
-  "Effects vary by unit. Seedling transforms into a flying seedling (although it hovers low to the ground), and some units increase damage rather than attack speed. In most cases the listed effects are true."
-  "Requirements for infusing: Must be a unit, must not be massive, must not be a builder other than Seedling."
-  "In 2v2 games, or any other time a non-Grell unit is an ally to you, you can infuse your ally's units."
-}
+// notes {
+//   "Cost varies by unit. In general the formula is `(floor((fluxCost + hexCost) / 10)) + 1`, although sometimes this value is overridden for balance purposes."
+//   "Effects vary by unit. Seedling transforms into a flying seedling (although it hovers low to the ground), and some units increase damage rather than attack speed. In most cases the listed effects are true."
+//   "Requirements for infusing: Must be a unit, must not be massive, must not be a builder other than Seedling."
+//   "In 2v2 games, or any other time a non-Grell unit is an ally to you, you can infuse your ally's units."
+// }

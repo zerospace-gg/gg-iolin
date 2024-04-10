@@ -17,9 +17,11 @@ stunResist = 75
 buildTime = 60
 
 constructingVersion {
-  name = "Terror Tank (Constructing)"
-  buildTime = 60
-  hp = 1500
+  new {
+    name = "Terror Tank (Constructing)"
+    buildTime = 60
+    hp = 1500
+  }
 }
 
 attacks {

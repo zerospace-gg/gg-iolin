@@ -39,7 +39,7 @@ spells {
     abilityType = "toggle"
     togglesMode = "attack"
     description = "Switch between Gatling Gun and Railgun. Gatling Gun is effective against air units, while Railgun is effective against ground units."
-    notes { "called \"Switch to gatling gun\" and \"Switch to railgun\" depending on mode" }
+    // notes "called \"Switch to gatling gun\" and \"Switch to railgun\" depending on mode" }
   }
 }
 

@@ -52,7 +52,7 @@ upgrades {
   }
 }
 
-notes {
-  "An infused reaver is by far the toughest unit in the game, especially with Grell's infusion-related talents and its toughened carapace upgrade."
-}
+// notes
+  // "An infused reaver is by far the toughest unit in the game, especially with Grell's infusion-related talents and its toughened carapace upgrade."
+// }
 

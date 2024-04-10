@@ -55,6 +55,6 @@ passives {
   }
 }
 
-notes {
-  "Grows wings when it reaches ABES the first time, giving it +50% damage boost. The Faerie Fire does not go off when this happens."
-}
+// notes
+  // "Grows wings when it reaches ABES the first time, giving it +50% damage boost. The Faerie Fire does not go off when this happens."
+// }

@@ -14,4 +14,4 @@ heals {
   }
 }
 
-notes { "Heal range not listed in UI, needs to be investigated" }
+// notes "Heal range not listed in UI, needs to be investigated" }

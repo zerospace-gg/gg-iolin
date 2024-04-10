@@ -39,7 +39,7 @@ spells {
     areaDamage = 120
     areaRange = 100
     range = 1400
-    notes { "radius is estimated" }
+    // notes "radius is estimated" }
   }
 }
 

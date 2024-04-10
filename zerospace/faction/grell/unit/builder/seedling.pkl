@@ -29,6 +29,6 @@ creates {
   "special-augmentation-pool"
 }
 
-notes { "While not on biomass, has 180 speed and loses 0.133 HP/s (1 HP every 7s)" }
+// notes "While not on biomass, has 180 speed and loses 0.133 HP/s (1 HP every 7s)" }
 
 transformsInto { "infused-seedling" }

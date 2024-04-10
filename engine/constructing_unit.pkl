@@ -1,5 +1,5 @@
 module constructing_unit
-extends "building.pkl"
+extends "building_child.pkl"
 hidden fixed extend_tags { "constructing-unit" }
 buildingType = "constructing-unit"
 vision = 800

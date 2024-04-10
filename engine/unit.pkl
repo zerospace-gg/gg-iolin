@@ -15,7 +15,10 @@ fixed dynamicTags {
   when (methis.mindControllable) { "mind-controllable" }
 }
 
-constructingVersion: ConstructingUnit? 
+hidden constructingVersion: Listing<ConstructingUnit> = new {
+  default { key -> name = $t.makeSlug(key); parent = parent_info }
+}
+fixed constructingFormId: String? = if (constructingVersion.length > 0) constructingVersion[0]?.id else null
 
 vision: Number? = 1800
 
@@ -52,4 +55,11 @@ upgrade: Listing<String> = new {
   for (_upgrade in upgrades) { _upgrade.slug }
 }
 
-hidden fixed children = super.children + upgrades.toMap().values.toList()
+hidden fixed children = super.children +
+  upgrades.toMap().values.toList() +
+  if (constructingFormId != null) 
+    List(constructingVersion.toList().first) 
+  else 
+    List()
+
+

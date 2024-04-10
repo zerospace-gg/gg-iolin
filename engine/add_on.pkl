@@ -1,18 +1,18 @@
-module addOn
+module add_on
 extends "gamepiece_child.pkl"
 import "parent_info.pkl" as ParentInfo
 import "ability.pkl" as Ability
 import "types.pkl" as $t
-import "addOn.pkl" as me
+import "add_on.pkl" as me
 local methis = this
 
-fixed type: String = "addOn"
+fixed type: String = "add-on"
 fixed subtype: String = addOnType
 
 hidden fixed dynamicTags { 
   when (subtype == "turret") { "turret" } 
   when (subtype == "sacrifice") { "bonus:sacrifice" }
-  when (subtype == "building-upgrade") { "building:upgraded" }
+  when (subtype == "building-upgrade") { "building:upgrade" }
 }
 addOnType: "turret" | "sacrifice"  | "building-upgrade"
 

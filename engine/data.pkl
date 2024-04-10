@@ -32,9 +32,9 @@ ggVersion: String = versioning.ggVersion
 ggUpdated: String = versioning.ggUpdated
 ggRelease: String = versioning.ggRelease
 
-ggUrl = "https://zerospace.gg/library/\(id)/";
-githubUrl = "https://github.com/\(repoSlug)/blob/main/zerospace/\(src)";
-githubRawUrl = "https://raw.githubusercontent.com/\(repoSlug)/main/zerospace/\(src)";
+ggUrl: String = "https://zerospace.gg/library/\(id)/";
+githubUrl: String = "https://github.com/\(repoSlug)/blob/main/zerospace/\(src)";
+githubRawUrl: String = "https://raw.githubusercontent.com/\(repoSlug)/main/zerospace/\(src)";
 
 /// nicely formatted display name, as it appears in game (with the exception of things without lore names yet)
 name: String 
@@ -60,7 +60,7 @@ hidden tags: Listing<String>
 
 hidden fixed dynamicTags: Listing<String> = new {
   type 
-  "\(type):\(subtype)"
+  when (type != subtype) { "\(type):\(subtype)" }
   when (faction != null) { "faction:\(faction)" }
 }
 

@@ -14,6 +14,3 @@ energyType = "topbar"
 
 /// the topbar has 4 ability slots
 slot: Int(isBetween(1,4)) = fromPath.slot
-
-/// slots 3/4 (ultimates) are unlocked by a talent
-unlockedBy: Listing<String>?
