@@ -1,0 +1,19 @@
+amends ".../engine/unit.pkl"
+
+name = "Phoenix Guard"
+hexiteCost = 150
+fluxCost = 100
+buildCount = 2
+supply = 3
+hp = 275
+armorType = "medium"
+speed = 500
+
+attacks {
+  ["Attack"] {
+    targets { "ground"; "air" }
+    damage = 36
+    cooldown = 0.88
+    range = 700
+  }
+}

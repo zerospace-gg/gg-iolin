@@ -1,0 +1,22 @@
+amends ".../engine/unit.pkl"
+
+name = "Horned Mech"
+hexiteCost = 175
+fluxCost = 100
+buildCount = 2
+supply = 3
+hp = 350
+armorType = "heavy"
+speed = 450
+armor = 2
+
+attacks {
+  ["Attack"] {
+    targets { "ground" }
+    damage = 40 
+    splashPercent = 100
+    splashRange = 50
+    cooldown = 3
+    range = 1300
+  }
+}

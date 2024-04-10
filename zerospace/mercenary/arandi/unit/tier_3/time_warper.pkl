@@ -1,0 +1,35 @@
+amends ".../engine/unit.pkl"
+
+name = "Time Warper"
+hexiteCost = 50
+fluxCost = 200 
+supply = 6
+hp = 450 
+armorType = "light"
+speed = 500
+
+
+attacks {
+  ["Attack"] {
+    targets { "ground"; "air" }
+    damage = 15
+    cooldown = 0.7 
+    range = 1200
+  }
+}
+
+spells {
+  ["Teleport"] {
+    hotkey = "b"
+    cooldown = 120
+    description = "Teleport friendly units to the caster location. Editors note: If you cast this while the time warper is over a chasm tthe units will largely not come with unless they can fly"
+  }
+
+  ["Phase"] {
+    hotkey = "n"
+    cooldown = 1
+    description = "Siege ability. Slow attack and movement speed of enemy units in area (-50%)"
+    abilityType = "toggle"
+    togglesMode = "siege"
+  }
+}

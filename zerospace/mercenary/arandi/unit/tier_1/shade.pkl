@@ -1,0 +1,18 @@
+amends ".../engine/unit.pkl"
+
+name = "Shade"
+hexiteCost = 250
+buildCount = 3
+supply = 2
+hp = 250
+speed = 650
+armorType = "light"
+
+attacks {
+  ["Attack"] {
+    targets { "ground" }
+    damage = 22
+    range = 160
+    cooldown = 0.9
+  }
+}

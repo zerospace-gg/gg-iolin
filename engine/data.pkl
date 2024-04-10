@@ -31,7 +31,8 @@ zsVersion: String = versioning.zsVersion
 ggVersion: String = versioning.ggVersion
 ggUpdated: String = versioning.ggUpdated
 ggRelease: String = versioning.ggRelease
-ggUrl = "https://zerospace.gg/library/\(id)";
+
+ggUrl = "https://zerospace.gg/library/\(id)/";
 githubUrl = "https://github.com/\(repoSlug)/blob/main/zerospace/\(src)";
 githubRawUrl = "https://raw.githubusercontent.com/\(repoSlug)/main/zerospace/\(src)";
 

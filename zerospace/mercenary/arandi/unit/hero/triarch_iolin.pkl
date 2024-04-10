@@ -1,0 +1,37 @@
+amends ".../engine/unit.pkl"
+
+name = "TriArch I'Olin"
+hp = 150
+shields = 150
+armorType = "medium"
+speed = 500
+
+attacks {
+  ["Attack"] {
+    damage = 26
+    range = 1200
+    cooldown = 1.63
+  }
+}
+
+spells {
+  ["Singularity"] {
+    hotkey = "q"
+    cooldown = 20
+    description = "Fire a bolt of energy dealing 40 damage and slowing enemies for 4s. Bolt flies back to the caster."
+  }
+
+  ["Teleport"] {
+    hotkey = "w"
+    cooldown = 13
+    description = "Teleport to target location."
+    targets {"map"}
+    targetMode = "location"
+  }
+
+  ["Black Hole"] {
+    hotkey = "e"
+    cooldown = 30
+    description = "Root and pull units to the caster"
+  }
+}
