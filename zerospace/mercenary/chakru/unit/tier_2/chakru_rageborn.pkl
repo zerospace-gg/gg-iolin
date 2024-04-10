@@ -1,0 +1,25 @@
+amends ".../engine/unit.pkl"
+name = "Cha'Kru Rageborn"
+flavor = "Stompy Boi"
+hexiteCost = 225
+fluxCost = 125
+buildCount = 2
+supply = 4
+hp = 625
+armorType = "medium"
+attacks {
+  ["Attack"] {
+    damage = 20
+    cooldown = 1.8
+    range = 200
+    targets { "ground" }
+  }
+}
+spells {
+  ["Stomp"] {
+    areaRange = 325
+    areaDamage = 25
+    energyCost = 4
+    energyType = "abes"
+  }
+}

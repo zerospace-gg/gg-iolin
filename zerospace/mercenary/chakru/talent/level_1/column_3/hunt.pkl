@@ -1,0 +1,3 @@
+amends ".../engine/talent.pkl"
+name = "Hunt"
+description = "Units gain stealth after not moving for 5s"
