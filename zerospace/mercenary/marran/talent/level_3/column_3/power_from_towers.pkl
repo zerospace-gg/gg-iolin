@@ -1,0 +1,3 @@
+amends ".../engine/talent.pkl"
+name = "Power from Towers"
+description = "Gain topbar power when holding xp towers (1 power every 10s for each tower)"

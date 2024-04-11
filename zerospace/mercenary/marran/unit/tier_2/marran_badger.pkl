@@ -1,0 +1,22 @@
+amends ".../engine/unit.pkl"
+name = "Marran Badger"
+buildCount = 2
+hexiteCost = 125
+fluxCost = 125
+supply = 3
+hp = 225
+shields = 225
+armorType = "heavy"
+speed = 450
+attacks {
+  new {
+    damage = 19
+    cooldown = 1.5
+    range = 1000
+    targets { "air"; "ground" }
+  }
+}
+
+notes {
+  "does additional 75 aoe damage after hitting same target repeatedly"
+}

@@ -1,0 +1,17 @@
+amends ".../engine/unit.pkl"
+name = "Valkaru Hound"
+build_count = 4
+hexite_cost = 250
+flux_cost = 0
+supply = 2
+hp = 350
+armor_type = "medium"
+speed = 575
+attacks {
+  ["Attack"] {
+    damage = 21
+    cooldown = 1.31
+    range = 75
+    targets { "ground" }
+  }
+}

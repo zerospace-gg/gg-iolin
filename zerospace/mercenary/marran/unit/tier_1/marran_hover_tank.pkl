@@ -1,0 +1,23 @@
+amends ".../engine/unit.pkl"
+name = "Marran Hover Tank"
+buildCount = 2
+hexiteCost = 200
+fluxCost = 0
+supply = 3
+hp = 150
+shields = 150
+armorType = "medium"
+speed = 700 
+attacks {
+  ["Attack"] {
+    damage = 11 
+    cooldown = 0.6 
+    range = 700
+    targets { "air"; "ground" }
+  }
+}
+passives {
+  ["Charge Shields"] {
+    description = "Gives shields to nearby units"
+  }
+}

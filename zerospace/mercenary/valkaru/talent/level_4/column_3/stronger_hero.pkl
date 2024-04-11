@@ -1,0 +1,3 @@
+amends ".../engine/talent.pkl"
+name = "Stronger Hero"
+description = "+100% attack speed, +25% damage reduction, +25% movement speed (half effect on Legion heroes)"

@@ -1,0 +1,3 @@
+amends ".../engine/talent.pkl"
+name = "Shield Explosion"
+description = "Shields explode when depleted. Nearby enemy units take 50 damage and are slowed by 50%. Last 3s, 60s cooldown"

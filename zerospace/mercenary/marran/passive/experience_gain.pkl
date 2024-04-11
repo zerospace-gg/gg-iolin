@@ -1,0 +1,3 @@
+amends ".../engine/faction_passive.pkl"
+name = "Experience Gain"
+description = "+25% passive and tower XP gain"

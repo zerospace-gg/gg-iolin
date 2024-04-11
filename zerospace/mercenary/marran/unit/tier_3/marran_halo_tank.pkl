@@ -1,0 +1,19 @@
+amends ".../engine/unit.pkl"
+name = "Marran Halo Tank"
+tier = "T3"
+buildCount = 1
+hexiteCost = 100
+fluxCost = 225
+supply = 7
+hp = 350
+shields = 350
+armorType = "heavy"
+speed = 400
+attacks {
+  ["Attack"] {
+    damage = 60
+    cooldown = 436
+    range = 1400
+    targets { "ground" }
+  }
+}

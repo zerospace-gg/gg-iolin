@@ -1,0 +1,25 @@
+amends ".../engine/unit.pkl"
+name = "Marran Sharpshooter"
+buildCount = 3
+hexiteCost = 50
+fluxCost = 200
+supply = 3
+hp = 100
+shields = 75
+armorType = "light"
+speed = 450 
+attacks {
+  ["Attack"] {
+    damage = 15
+    cooldown = 1.0 
+    range = 1200
+    targets { "air"; "ground" }
+  }
+}
+spells {
+  ["Firing Position"] {
+    cooldown = 45.0
+    delay = 0.3 
+    description = "45s cooldown. 0.3s to set up. gain 100% range and 50% attack speed against against units in a limited arc. cannot move while in firing position"
+  }
+}

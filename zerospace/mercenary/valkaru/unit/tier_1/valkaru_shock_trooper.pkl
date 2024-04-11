@@ -1,0 +1,19 @@
+amends ".../engine/unit.pkl"
+name = "Valkaru Shock Trooper"
+buildCount = 2
+hexiteCost = 200
+fluxCost = 75
+supply = 4
+hp = 400
+speed = 400
+armorType = "medium"
+attacks {
+  ["Attack"] {
+    damage = 40
+    splashPercent = 50
+    splashRange = 150
+    cooldown = 3
+    range = 1200
+    targets { "ground" }
+  }
+}
