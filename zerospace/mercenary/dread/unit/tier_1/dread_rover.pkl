@@ -1,0 +1,22 @@
+amends ".../engine/unit.pkl"
+
+name = "Dread Rover"
+buildCount = 2
+hexiteCost = 200
+fluxCost = 50
+supply = 6
+hp = 275
+armorType = "light"
+speed = 650
+attacks {
+  ["Attack"] {
+    damage = 4
+    volleys = 2
+    cooldown = 0.47
+    range = 700
+    targets { "air"; "ground" }
+  }
+}
+notes {
+  "close-up attack rate: 175%, close-up range: 225"
+}

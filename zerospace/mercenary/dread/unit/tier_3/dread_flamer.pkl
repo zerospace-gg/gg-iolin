@@ -1,0 +1,23 @@
+amends ".../engine/unit.pkl"
+name = "Dread Flamer"
+buildCount = 3
+hexiteCost = 100
+fluxCost = 200
+supply = 8
+hp = 1250
+armorType = "heavy"
+speed = 650
+attacks { 
+  ["Attack"] {
+    damage = 8 
+    volleys = 2
+    bonusPercent = 25
+    bonusVsTags { "armor:light"; "building" }
+    cooldown = 0.25
+    range = 350
+    targets { "ground" }
+  }
+}
+notes {
+  "flame arc angle: 40"
+}

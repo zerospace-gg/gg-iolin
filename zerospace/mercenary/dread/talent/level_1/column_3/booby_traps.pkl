@@ -1,0 +1,3 @@
+amends ".../engine/talent.pkl"
+name = "Booby Traps"
+description = "Your buildings and harvesters are booby-trapped and explode when killed, dealing 90 damage"

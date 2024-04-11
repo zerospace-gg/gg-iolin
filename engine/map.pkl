@@ -1,12 +1,8 @@
 module rts_map
 extends "data.pkl"
 
-fixed type: String = "map"
-fixed subtype: String = mapType
-
-/// what type of game can be played on this map
-hidden mapType: MapType = "1v1"
-typealias MapType = "1v1" | "2v2" | "1p"
+fixed type: String = fromPath.type
+fixed subtype: "1v1" | "2v2" | "1p" = fromPath.subtype
 
 /// the number of XP towers. currently this must be 2 or 3, with each providng +4.5 or +3 xp/sec respectively
 xpTowers: Number(isBetween(2,3))

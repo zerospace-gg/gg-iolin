@@ -1,0 +1,39 @@
+amends ".../engine/unit.pkl"
+name = "Dread Hero"
+hp = 210
+armorType = "medium"
+speed = 500
+
+attacks {
+  ["Attack"] {
+    damage = 29
+    cooldown = 1.5
+    range = 1200
+    targets { "ground"; "air" }
+  }
+}
+
+spells {
+  ["Disrupting Shot"] {
+    hotkey = "z"
+    cooldown = 20
+    description = "The blast deals 50 damage, slows enemies, and prevents them from using weapons and abilities for 5s."
+    targets { "ground" }
+    targetMode = "strip"
+  }
+
+  ["Shadow Walk"] {
+    hotkey = "x"
+    cooldown = 25
+    description = "Cloak, +50% movement speed and 50% dodge chance for 4s"
+    targets { "self" }
+  }
+
+  ["Sticky Bomb"] {
+    hotkey = "c"
+    cooldown = 20
+    targets { "ground" }
+    description = "Throw a sticky bomb. After 7s it explodes damaging enemies for 50 and stunning them for 4s. If the target dies early the radius is reduced."
+  }
+}
+

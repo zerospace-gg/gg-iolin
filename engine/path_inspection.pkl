@@ -38,7 +38,7 @@ class PathData {
 }
 
 function dataFromPath(p: List<String>): PathData = new {
-  when (p.first == "maps") {
+  when (p.first == "map") {
     type = "map"
     subtype = p[1]
   }

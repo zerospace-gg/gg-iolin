@@ -1,0 +1,7 @@
+module faction_passive 
+extends "faction_ability.pkl"
+import "types.pkl" as $t
+
+abilityType = "passive"
+activationType = "passive"
+

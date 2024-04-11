@@ -1,0 +1,3 @@
+amends ".../engine/talent.pkl"
+name = "Pillage More Mercs"
+description = "Destroying enemy harvesters and buildings reduces merc cooldown 40s per havester, 60s per structure"

@@ -1,0 +1,3 @@
+amends ".../engine/talent.pkl"
+name = "Advanced Sensors"
+description = "+40% unit vision"

@@ -1,0 +1,27 @@
+amends ".../engine/unit.pkl"
+name = "Dread Sniper"
+buildCount = 2
+hexiteCost = 75
+fluxCost = 225
+supply = 8
+hp = 125
+shields = 125
+armorType = "light"
+speed = 450
+attacks {
+  ["Attack"] {
+    damage = 30
+    bonusPercent = 75
+    bonusVsTags { "armor:light" }
+    cooldown = 2.2 
+    range = 1500
+    targets { "air"; "ground" }
+  }
+}
+spells {
+  ["Crippling Shot"] {
+    damage = 50
+    cooldown = 75.0
+    description = "75s cooldown. deals 50 damage, slows target by 50% for 2 seconds"
+  }
+}

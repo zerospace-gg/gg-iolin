@@ -1,0 +1,23 @@
+amends ".../engine/unit.pkl"
+name = "Dread Raider"
+buildCount = 2
+hexiteCost = 250 
+fluxCost = 0
+supply = 6
+hp = 175
+speed = 575
+armorType = "light"
+attacks {
+  ["Attack"] {
+    damage = 18
+    cooldown = 1.5
+    range = 800
+    targets { "air"; "ground" }
+  }
+}
+spells {
+  ["Thieve"] {
+    cooldown = 60.0
+    description = "60s cooldown. Steals 100 hexite from target extractor or harvester after 5 seconds. The owner does not lose resources."
+  }
+}

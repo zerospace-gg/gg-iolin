@@ -1,0 +1,30 @@
+
+amends ".../engine/unit.pkl"
+name = "Dread Hovercraft"
+buildCount = 2
+hexiteCost = 200
+fluxCost = 125
+supply = 8
+hp = 375
+armorType = "medium"
+speed = 550
+attacks { 
+  ["Attack"] {
+    damage = 10 
+    volleys = 3
+    shots = 2
+    cooldown = 3.0
+    range = 900
+    targets { "air"; "ground" }
+  }
+}
+spells {
+  ["Lay Mines"] {
+    cooldown = 75.0
+    range = 400
+    description = "75s cooldown. lay 3 mines which deal 30 damage and slow enemies upon contact. max 3 charges. cast range 400"
+  }
+}
+notes {
+  "3 mines max"
+}
