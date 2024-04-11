@@ -1,9 +1,0 @@
-amends ".../engine/building/tech.pkl"
-
-name = "Advanced Augmentation Pool"
-tier = "T2.5"
-
-provides_upgrades_for { 
-  "lasher"
-  "skrelling"
-}

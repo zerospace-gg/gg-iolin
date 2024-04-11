@@ -1,6 +1,0 @@
-amends ".../engine/building/extractor.pkl"
-name = "Grell Extractor"
-created_by {
-  "root-colony"
-  "root-colony-attacker"
-}
