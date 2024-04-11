@@ -1,11 +1,11 @@
 amends ".../engine/unit.pkl"
 name = "Valkaru Hound"
-build_count = 4
-hexite_cost = 250
-flux_cost = 0
+buildCount = 4
+hexiteCost = 250
+fluxCost = 0
 supply = 2
 hp = 350
-armor_type = "medium"
+armorType = "medium"
 speed = 575
 attacks {
   ["Attack"] {

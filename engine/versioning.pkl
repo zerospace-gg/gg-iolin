@@ -1,7 +1,7 @@
-zsVersion: String = read?("prop:zs_version") ?? read?("env:ZS_VERSION") ?? "1234"
-ggVersion: String = read?("prop:gg_version") ?? read?("env:ZSGG_VERSION") ?? "0.0.0"
-ggUpdated: String = read?("prop:gg_at") ?? read?("env:ZSGG_AT") ?? "june 1987"
-ggEpoch: String = read?("prop:gg_ts") ?? read?("env:ZSGG_TS") ?? "123"
+zsVersion: String = read?("prop:zsVersion") ?? read?("env:ZS_VERSION") ?? "1234"
+ggVersion: String = read?("prop:ggVersion") ?? read?("env:ZSGG_VERSION") ?? "0.0.0"
+ggUpdated: String = read?("prop:ggAt") ?? read?("env:ZSGG_AT") ?? "june 1987"
+ggEpoch: String = read?("prop:ggTs") ?? read?("env:ZSGG_TS") ?? "123"
 ggRelease: String = List(ggVersion, "zs\(zsVersion)", ggEpoch).join("-")
 
 

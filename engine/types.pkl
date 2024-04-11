@@ -56,7 +56,7 @@ function makeSlug(s: String): String =
     .replaceAll(Regex("[^a-z0-9]+"), "-")
     .replaceAll(Regex("(^-+|-+$)"), "")
 
-function makeRecursiveSlug(name: String, of_key: String, type_key: String): String =
+function makeRecursiveSlug(name: String, ofKey: String, typeKey: String): String =
   let (s = $t.makeSlug(name)) 
-  let (z = if (s == type_key) "" else "-\(s)") 
-  "\(of_key)-\(type_key)\(z)"
+  let (z = if (s == typeKey) "" else "-\(s)") 
+  "\(ofKey)-\(typeKey)\(z)"

@@ -44,12 +44,12 @@ volleys: Number?
 teleport: Number?
 providesDetection: Number? 
 
-local function xPerSec(val: Number?, num_shots: Number?, num_volleys: Number?, cd: Number?) =
+local function xPerSec(val: Number?, numShots: Number?, numVolleys: Number?, cd: Number?) =
   if (val == null) null else 
   if (cd == null) null else
   let (amt = val)
-  let (s = (num_shots ?? 1))
-  let (vo = (num_volleys ?? 1))
+  let (s = (numShots ?? 1))
+  let (vo = (numVolleys ?? 1))
   ((amt * s * vo) / cd).round().toInt()
 
 effectArea: Number?

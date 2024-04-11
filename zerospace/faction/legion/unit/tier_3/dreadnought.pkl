@@ -25,7 +25,7 @@ constructingVersion {
   }
 }
 
-local main_weapon: String = "\(me.name)'s \(me.attacks[0].name)"
+local mainWeapon: String = "\(me.name)'s \(me.attacks[0].name)"
 
 attacks {
   ["Main Beam Weapon"] {

@@ -1,4 +1,4 @@
-module unit_upgrade
+module unitUpgrade
 extends "child.pkl"
 import "types.pkl" as $t
 

@@ -10,22 +10,22 @@ local methis = this
 local meref = reflect.moduleOf(this)
 local isimpl = !meref.uri.matches(Regex("/engine/"))
 
-hidden path_parts: List<String> = meref.uri
+hidden pathParts: List<String> = meref.uri
   .replaceAll(Regex(#"^.*/(faction|mercenary|nonplayer|map|engine)/"#), "$1/")
   .split("/")
 
-hidden src_dir_parts: List<String> = path_parts.dropLast(1)
-hidden src_dir_slugs: List<String> = src_dir_parts.map((x) -> x.replaceAll("_", "-"))
-hidden fixed src_dir: String = src_dir_parts.join("/")
-hidden fixed src_file: String = path_parts.takeLast(1).first
-fixed src: String = List(src_dir, src_file).join("/")
-fixed slug: $t.Slug = src_file.replaceLast(".pkl", "").replaceAll("_", "-")
-fixed id: $t.Id = (src_dir_slugs + List(slug)).join("/")
+hidden srcDirParts: List<String> = pathParts.dropLast(1)
+hidden srcDirSlugs: List<String> = srcDirParts.map((x) -> x.replaceAll("_", "-"))
+hidden fixed srcDir: String = srcDirParts.join("/")
+hidden fixed srcFile: String = pathParts.takeLast(1).first
+fixed src: String = List(srcDir, srcFile).join("/")
+fixed slug: $t.Slug = srcFile.replaceLast(".pkl", "").replaceAll("_", "-")
+fixed id: $t.Id = (srcDirSlugs + List(slug)).join("/")
 
 hidden repoSlug = "zerospace-gg/zsgg-librarian";
 
 /// metadata pulled from path. this includes things used in multiple subclasses
-hidden fixed fromPath: $p.PathData = $p.dataFromPath(src_dir_parts)
+hidden fixed fromPath: $p.PathData = $p.dataFromPath(srcDirParts)
 
 zsVersion: String = versioning.zsVersion
 ggVersion: String = versioning.ggVersion
@@ -98,16 +98,16 @@ references: Listing<$t.Slug>(isDistinct)? = new Listing<$t.Slug> {
   ...(createdBy ?? new Listing{})
   ...(unlocks ?? new Listing{})
   ...(unlockedBy ?? new Listing{})
-  ...recursive_children.map((c) -> c.slug)
+  ...recursiveChildren.map((c) -> c.slug)
 }.toList().distinct.toListing()
 
 hidden fixed children: List<me> = List()
-hidden fixed recursive_children: List<me> = children + children.flatMap((c) -> c.recursive_children)
+hidden fixed recursiveChildren: List<me> = children + children.flatMap((c) -> c.recursiveChildren)
 
-hidden fixed rendered_files: Listing<String> = new Listing<String> {
+hidden fixed renderedFiles: Listing<String> = new Listing<String> {
   "\(id).json"
-  when (recursive_children.length > 0) { "\(id)-nested.json" }
-  for (child in recursive_children) { "\(child.id).json" }
+  when (recursiveChildren.length > 0) { "\(id)-nested.json" }
+  for (child in recursiveChildren) { "\(child.id).json" }
 }
 
 hidden output {
@@ -116,7 +116,7 @@ hidden output {
       renderer = new JsonRenderer { indent = "" }
       value = methis
     }
-    for (child in recursive_children) {
+    for (child in recursiveChildren) {
       ["\(child.id).json"] {
         renderer = new JsonRenderer { indent = "" }
         value = child

@@ -3,19 +3,19 @@ extends "data.pkl"
 import "data.pkl" as Data
 
 hidden factionContents: Mapping<String, Data>
-hidden guest_heroes: Listing<Data>
+hidden guestHeroes: Listing<Data>
 
 local all = factionContents.toMap().values
-local guest = guest_heroes.toList()
+local guest = guestHeroes.toList()
 local getslug = (x) -> x.slug
 
-local is_hero = (x) -> x.type == "unit" && x.subtype == "hero"
-local is_unit = (x) -> x.type == "unit" && x.subtype != "hero"
-local is_building = (x) -> x.type == "building"
+local isHero = (x) -> x.type == "unit" && x.subtype == "hero"
+local isUnit = (x) -> x.type == "unit" && x.subtype != "hero"
+local isBuilding = (x) -> x.type == "building"
 
-local is_talent = (x) -> x.type == "faction-ability" && x.subtype == "talent"
-local is_topbar = (x) -> x.type == "faction-ability" && x.subtype == "topbar"
-local is_passive = (x) -> x.type == "faction-ability" && x.subtype == "passive"
+local isTalent = (x) -> x.type == "faction-ability" && x.subtype == "talent"
+local isTopbar = (x) -> x.type == "faction-ability" && x.subtype == "topbar"
+local isPassive = (x) -> x.type == "faction-ability" && x.subtype == "passive"
 
 local function grab(x: List<Data>, y: (Data) -> Boolean) = x.filter(y).map(getslug)
 
@@ -23,11 +23,11 @@ fixed faction: String? = slug
 mercHeroesAllowed: Boolean = true
 
 fixed hero: Listing<String> = new {
-  ...grab(guest, is_hero)
-  ...grab(all, is_hero)
+  ...grab(guest, isHero)
+  ...grab(all, isHero)
 }
-fixed unit: Listing<String> = new { ...grab(all, is_unit) }
-fixed building: Listing<String> = new { ...grab(all, is_building) }
-fixed talent: Listing<String> = new { ...grab(all, is_talent) }
-fixed topbar: Listing<String> = new { ...grab(all, is_topbar) }
-fixed passive: Listing<String> = new { ...grab(all, is_passive) }
+fixed unit: Listing<String> = new { ...grab(all, isUnit) }
+fixed building: Listing<String> = new { ...grab(all, isBuilding) }
+fixed talent: Listing<String> = new { ...grab(all, isTalent) }
+fixed topbar: Listing<String> = new { ...grab(all, isTopbar) }
+fixed passive: Listing<String> = new { ...grab(all, isPassive) }

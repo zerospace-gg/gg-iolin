@@ -16,7 +16,7 @@ fixed dynamicTags {
 }
 
 hidden constructingVersion: Listing<ConstructingUnit> = new {
-  default { key -> name = $t.makeSlug(key); parent = parent_info }
+  default { key -> name = $t.makeSlug(key); parent = parentInfo }
 }
 fixed constructingFormId: String? = if (constructingVersion.length > 0) constructingVersion[0]?.id else null
 
@@ -41,7 +41,7 @@ infuseCost: Number? =
     (((h + f) / b) / 10.0 ).floor + 1 // it may have been ceil but seedling cost was 1 before it was adjusted to 2 (seedling is 0 cost so 1 infuse means floor+1), but maybe 1 was a manual adjust and it was ceil all along
 
 
-local parent_info: ParentInfo = new {
+local parentInfo: ParentInfo = new {
   id = methis.id
   slug = methis.slug
   src = methis.src
@@ -49,10 +49,10 @@ local parent_info: ParentInfo = new {
 }
 
 hidden upgrades: Mapping<String, UnitUpgrade> = new Mapping<String, UnitUpgrade> {
-  default { key -> name = $t.makeSlug(key); parent = parent_info }
+  default { key -> name = $t.makeSlug(key); parent = parentInfo }
 }
 upgrade: Listing<String> = new {
-  for (_upgrade in upgrades) { _upgrade.slug }
+  for (Upgrade in upgrades) { Upgrade.slug }
 }
 
 hidden fixed children = super.children +

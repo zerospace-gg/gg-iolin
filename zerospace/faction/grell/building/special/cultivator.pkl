@@ -6,7 +6,7 @@ hexiteCost = 5
 hp = 250
 hotkey = "e"
 providesBiomass = 1500
-transformsInto { "cultivator_attacker" }
+transformsInto { "cultivatorAttacker" }
 
 createdBy { 
   "seedling"

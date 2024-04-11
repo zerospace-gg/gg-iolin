@@ -1,22 +1,22 @@
-abstract module building_child
+abstract module buildingChild
 extends "building.pkl"
 import "parent_info.pkl" as ParentInfo
 import "types.pkl" as $t
 
 hidden parent: ParentInfo 
-hidden fixed sub_slug: String = $t.makeSlug(name)
+hidden fixed subSlug: String = $t.makeSlug(name)
 
 fixed src: String = parent.src
 fixed slug: $t.Slug = 
-  if (subtype == sub_slug) 
-    "\(parent.slug)-\(sub_slug)" 
+  if (subtype == subSlug) 
+    "\(parent.slug)-\(subSlug)" 
   else 
-  "\(parent.slug)-\(subtype)-\(sub_slug)"
+  "\(parent.slug)-\(subtype)-\(subSlug)"
 
 fixed id: $t.Id = "\(parent.id)/\(subtype)/\(slug)"
-fixed belongs_to: String = parent.slug
+fixed belongsTo: String = parent.slug
 
 fixed faction: String? = parent.fromPath.faction
 fixed factionType: String? = parent.fromPath.factionType
 
-hidden fixed extend_tags: Listing<String> = (super.extend_tags) { "belongs_to:\(parent.slug)" }
+hidden fixed extendTags: Listing<String> = (super.extendTags) { "belongsTo:\(parent.slug)" }

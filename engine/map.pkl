@@ -1,4 +1,4 @@
-module rts_map
+module rtsMap
 extends "data.pkl"
 
 fixed type: String = fromPath.type

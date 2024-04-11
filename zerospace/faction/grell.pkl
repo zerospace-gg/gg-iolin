@@ -4,7 +4,7 @@ name = "Grell"
 //flavor = "Ballooning Bugs and their Blossoming Buds"
 
 factionContents = import*("grell/**pkl")
-guest_heroes {
+guestHeroes {
   import("protectorate/unit/hero/prefect_nova.pkl")
   import("protectorate/unit/hero/tech_hero.pkl")
 }

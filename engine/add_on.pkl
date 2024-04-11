@@ -1,4 +1,4 @@
-module add_on
+module addOn
 extends "gamepiece_child.pkl"
 import "parent_info.pkl" as ParentInfo
 import "ability.pkl" as Ability
@@ -16,7 +16,7 @@ hidden fixed dynamicTags {
 }
 addOnType: "turret" | "sacrifice"  | "building-upgrade"
 
-local parent_info: ParentInfo = new {
+local parentInfo: ParentInfo = new {
   id = methis.id
   slug = methis.slug
   src = methis.src
@@ -24,31 +24,31 @@ local parent_info: ParentInfo = new {
 }
 
 hidden attacks: Mapping<String, Ability> = (super.attacks) {
-  default { key -> name = $t.makeSlug(key); parent = parent_info; abilityType = "attack" }
+  default { key -> name = $t.makeSlug(key); parent = parentInfo; abilityType = "attack" }
 }
 attack: Listing<String> = new {
-  for (_attack in attacks) { _attack.slug }
+  for (Attack in attacks) { Attack.slug }
 }
 
 hidden heals: Mapping<String, Ability> = (super.heals) {
-  default { key -> name = $t.makeSlug(key); parent = parent_info; abilityType = "heal" }
+  default { key -> name = $t.makeSlug(key); parent = parentInfo; abilityType = "heal" }
 }
 heal: Listing<String> = new {
-  for (_heal in heals) { _heal.slug }
+  for (Heal in heals) { Heal.slug }
 }
 
 hidden spells: Mapping<String, Ability> = (super.spells) {
-  default { key -> name = $t.makeSlug(key); parent = parent_info; abilityType = "spell" }
+  default { key -> name = $t.makeSlug(key); parent = parentInfo; abilityType = "spell" }
 }
 spell: Listing<String> = new {
-  for (_spell in spells) { _spell.slug }
+  for (Spell in spells) { Spell.slug }
 }
 
 hidden passives: Mapping<String, Ability> = (super.passives) {
-  default { key -> name = $t.makeSlug(key); parent = parent_info; abilityType = "passive" }
+  default { key -> name = $t.makeSlug(key); parent = parentInfo; abilityType = "passive" }
 }
 passive: Listing<String> = new {
-  for (_passive in passives) { _passive.slug }
+  for (Passive in passives) { Passive.slug }
 }
 
 hidden fixed children = List(attacks, heals, spells, passives).flatMap((x) -> x.toMap().values.toList())

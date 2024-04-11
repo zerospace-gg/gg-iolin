@@ -1,4 +1,4 @@
-module parent_info
+module parentInfo
 import "path_inspection.pkl"
 import "types.pkl" as $t
 
