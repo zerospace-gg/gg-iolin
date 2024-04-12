@@ -14,7 +14,7 @@ hidden fixed dynamicTags {
   when (subtype == "sacrifice") { "bonus:sacrifice" }
   when (subtype == "building-upgrade") { "building:upgrade" }
 }
-addOnType: "turret" | "sacrifice"  | "building-upgrade"
+addOnType: "turret" | "sacrifice"  | "building-upgrade" | "building-turret"
 
 local parentInfo: ParentInfo = new {
   id = methis.id

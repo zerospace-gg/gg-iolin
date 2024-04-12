@@ -6,9 +6,23 @@ hexiteCost = 5
 hp = 250
 hotkey = "e"
 providesBiomass = 1500
-transformsInto { "cultivatorAttacker" }
 
 createdBy { 
-  "seedling"
-  "grell-harvester"
+  import("../../unit/builder/seedling.pkl").slug
+  import("../../unit/harvester/grell_harvester.pkl").slug
+}
+
+maxAddOns = 1
+hasAddOnType = "building-turret"
+addOns {
+  ["Cultivator Attacker"] {
+    attacks { 
+      ["Attack"] {
+        damage = 12 
+        volleys = 3
+        cooldown = 3.5
+        range = 1500
+      }
+    }
+  }
 }

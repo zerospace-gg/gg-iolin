@@ -1,0 +1,3 @@
+amends ".../engine/faction.pkl"
+name = "Jungle AI"
+description = "Hostile Non-Player Faction. Just the Bulky Spiderlings who guard the XP towers currently."

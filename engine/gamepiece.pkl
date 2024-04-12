@@ -77,7 +77,7 @@ transformsFrom: Listing<String>(isDistinct)?
 transformsInto: Listing<String>(isDistinct)?
 
 maxAddOns: Number?
-hasAddOnType: ("turret" | "sacrifice" | "building-upgrade")? =
+hasAddOnType: ("turret" | "sacrifice" | "building-upgrade" | "building-turret")? =
   if (addOns.length == 0) null 
   else throw("hasAddOnType must be set if turrets is used.")
 

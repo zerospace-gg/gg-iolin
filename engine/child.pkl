@@ -9,9 +9,9 @@ hidden fixed subSlug = $t.makeSlug(name)
 fixed src: String = parent.src
 fixed slug: $t.Slug = 
   if (subtype == subSlug) 
-    "\(parent.slug)-\(subSlug)" 
+    "\(parent.slug)-\(subSlug)\(appendSlug)" 
   else 
-  "\(parent.slug)-\(subtype)-\(subSlug)"
+  "\(parent.slug)-\(subtype)-\(subSlug)\(appendSlug)"
 
 fixed id: $t.Id = "\(parent.id)/\(subtype)/\(slug)"
 fixed belongsTo: String = parent.slug

@@ -1,0 +1,3 @@
+amends ".../engine/faction.pkl"
+name = "Neutral"
+description = "Neutral faction. Just the destructible rocks and the XP towers currently."

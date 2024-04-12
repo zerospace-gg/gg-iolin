@@ -1,6 +1,5 @@
 amends ".../engine/building.pkl"
 name = "Grell Extractor"
 createdBy {
-  "root-colony"
-  "root-colony-attacker"
+  import("../base/root_colony.pkl").slug
 }

@@ -10,25 +10,27 @@ speed = 360
 buildTime = 5
 
 infusable = true
-infuseRule = $i.transform("infused-seedling")
+
+infuseRule = new {
+  appendSlug = "-infused"
+  name = "\(super.name) (Infused)"
+  supply = super.supply * 2
+  hp = super.hp * 2
+  domain = "air"
+}
 
 createdBy { 
-  "root-colony"
-  "root-colony-attacker"
+  import("../../building/base/root_colony.pkl").slug
 }
 
 creates {
-  "root-colony"
-  "nourishing-pod"
-  "cultivator"
-  "incubator"
-  "medium-incubator"
-  "large-incubator"
-  "augmentation-pool"
-  "advanced-augmentation-pool"
-  "special-augmentation-pool"
+  import("../../building/base/root_colony.pkl").slug
+  import("../../building/supply/nourishing_pod.pkl").slug
+  import("../../building/special/cultivator.pkl").slug
+  import("../../building/production/tier_1/incubator.pkl").slug
+  import("../../building/production/tier_2/medium_incubator.pkl").slug
+  import("../../building/production/tier_3/large_incubator.pkl").slug
+  import("../../building/tech/tier_1/augmentation_pool.pkl").slug
+  import("../../building/tech/tier_2/advanced_augmentation_pool.pkl").slug
+  import("../../building/tech/tier_3/special_augmentation_pool.pkl").slug
 }
-
-// notes "While not on biomass, has 180 speed and loses 0.133 HP/s (1 HP every 7s)" }
-
-transformsInto { "infused-seedling" }

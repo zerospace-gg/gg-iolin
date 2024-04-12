@@ -19,7 +19,8 @@ hidden srcDirSlugs: List<String> = srcDirParts.map((x) -> x.replaceAll("_", "-")
 hidden fixed srcDir: String = srcDirParts.join("/")
 hidden fixed srcFile: String = pathParts.takeLast(1).first
 fixed src: String = List(srcDir, srcFile).join("/")
-fixed slug: $t.Slug = srcFile.replaceLast(".pkl", "").replaceAll("_", "-")
+fixed slug: $t.Slug = srcFile.replaceLast(".pkl", "").replaceAll("_", "-") + appendSlug
+hidden appendSlug : String = ""
 fixed id: $t.Id = (srcDirSlugs + List(slug)).join("/")
 
 hidden repoSlug = "zerospace-gg/zsgg-librarian";

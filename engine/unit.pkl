@@ -25,11 +25,58 @@ vision: Number? = 1800
 infusable: Boolean = subtype == "army" && !tags.toList().contains("massive")
 mindControllable: Boolean = subtype != "hero"
 
-hidden infuseRule: infuse.Rule = 
+hidden infuseRule: Mixin<me> = new {
+  appendSlug = "-infused"
+  name = "\(super.name) (Infused)"
+  supply = super.supply * 2
+  hp = super.hp * 2
+
+  attacks {
+    for (nm, _ in (super.attacks)) {
+      [nm] { cooldown = if (super.cooldown != null) (super.cooldown / 2) else null }
+    }
+  }
+
+  heals {
+    for (nm, _ in (super.heals)) {
+      [nm] { cooldown = if (super.cooldown != null) (super.cooldown / 2) else null }
+    }
+  }
+}
+
+hidden damageBasedInfuseRule: Mixin<me> = new {
+  appendSlug = "-infused"
+  name = "\(super.name) (Infused)"
+  supply = super.supply * 2
+  hp = super.hp * 2
+
+  attacks {
+    for (nm, _ in (super.attacks)) {
+      [nm] {
+        damage = if (super.damage != null) (super.damage * 2) else null
+      }
+    }
+  }
+
+  heals {
+    for (nm, _ in (super.attacks)) {
+      [nm] {
+        damage = if (super.damage != null) (super.damage * 2) else null?.slug
+      }
+    }
+  }
+}
+
+hidden fixed infusedVersion: me? = 
   if (!infusable) 
     null 
-  else
-    infuse.defaultRule
+  else 
+    (this |> infuseRule) { 
+      infusable = false
+      tags { "infused" } 
+  }
+
+fixed infused: String? = infusedVersion?.slug
 
 infuseCost: Number? = 
   if (!infusable) 
@@ -57,9 +104,10 @@ upgrade: Listing<String> = new {
 
 hidden fixed children = super.children +
   upgrades.toMap().values.toList() +
-  if (constructingFormId != null) 
+  (if (constructingFormId != null) 
     List(constructingVersion.toList().first) 
   else 
-    List()
+    List()) +
+  if (infusedVersion != null) List(infusedVersion) else List()
 
 

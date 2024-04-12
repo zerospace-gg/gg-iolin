@@ -1,7 +1,7 @@
 amends ".../engine/faction.pkl"
 
 name = "Xol"
-// factionContents = import*("protectorate/**pkl")
+description = "Xol is an unreleased faction that was still in the concept phases in December 2012."
 mercHeroesAllowed = true
 inGame = false
 fromFuture = true
