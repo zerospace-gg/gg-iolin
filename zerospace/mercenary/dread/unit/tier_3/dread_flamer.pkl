@@ -16,8 +16,6 @@ attacks {
     cooldown = 0.25
     range = 350
     targets { "ground" }
+    arcAngle = 40
   }
-}
-notes {
-  "flame arc angle: 40"
 }

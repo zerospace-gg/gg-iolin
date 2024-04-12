@@ -53,6 +53,9 @@ local function xPerSec(val: Number?, numShots: Number?, numVolleys: Number?, cd:
   ((amt * s * vo) / cd).round().toInt()
 
 effectArea: Number?
+arcAngle: Number?
+chargeTime: Number?
+chargeMaxMultiplier: Number?
 
 damage: Number?
 damageOverTime: Number? // dps will have to change based on this as well

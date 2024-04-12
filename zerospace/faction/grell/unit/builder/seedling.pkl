@@ -1,9 +1,8 @@
 amends ".../engine/unit.pkl" 
-import ".../engine/infuse.pkl" as $i
 
 name = "Seedling"
 domain = "ground"
-description = "Seedlings are built automatically from your Root Colonies, and are consumed in the creation of structures. Up to 5 of them are generated per base. When infused it becomes the best scouting unit in ZeroSpace."
+description = "Seedlings are built automatically from your Root Colonies, and are consumed in the creation of structures. Up to 5 of them are generated per base. When infused it gains the ability to fly and becomes the best scouting unit in ZeroSpace."
 hp = 20
 speed = 360
 buildTime = 5
@@ -11,10 +10,9 @@ buildTime = 5
 infusable = true
 
 infuseRule = new {
-  appendSlug = "-infused"
   name = "\(super.name) (Infused)"
-  supply = super.supply * 2
-  hp = super.hp * 2
+  hp = 120
+  speed = 575
   domain = "air"
 }
 

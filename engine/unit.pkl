@@ -3,7 +3,6 @@ extends "gamepiece.pkl"
 import "pkl:reflect"
 import "parent_info.pkl" as ParentInfo
 import "types.pkl" as $t
-import "infuse.pkl" as infuse
 import "unit_upgrade.pkl" as UnitUpgrade
 import "constructing_unit.pkl" as ConstructingUnit
 import "unit.pkl" as me
