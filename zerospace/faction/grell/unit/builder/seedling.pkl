@@ -3,7 +3,6 @@ import ".../engine/infuse.pkl" as $i
 
 name = "Seedling"
 domain = "ground"
-//flavor = "Adorable Sentient Structure Seed"
 description = "Seedlings are built automatically from your Root Colonies, and are consumed in the creation of structures. Up to 5 of them are generated per base. When infused it becomes the best scouting unit in ZeroSpace."
 hp = 20
 speed = 360
@@ -26,7 +25,7 @@ creates {
   import("../../building/production/tier_1/incubator.pkl").slug
   import("../../building/production/tier_2/medium_incubator.pkl").slug
   import("../../building/production/tier_3/large_incubator.pkl").slug
-  import("../../building/tech/tier_1/augmentation_pool.pkl").slug
-  import("../../building/tech/tier_2/advanced_augmentation_pool.pkl").slug
-  import("../../building/tech/tier_3/special_augmentation_pool.pkl").slug
+  import("../../building/tech/tier_1_5/augmentation_pool.pkl").slug
+  import("../../building/tech/tier_2_5/advanced_augmentation_pool.pkl").slug
+  import("../../building/tech/tier_3_5/special_augmentation_pool.pkl").slug
 }

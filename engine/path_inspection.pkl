@@ -103,6 +103,19 @@ function dataFromPath(p: List<String>): PathData = new {
     when (p.contains("unit")) { subtype = "army" }
     tier = "T3" 
   }
+  when (p.contains("tier_1_5")) { 
+    when (p.contains("unit")) { subtype = "army" }
+    tier = "T1.5" 
+  }
+  when (p.contains("tier_2_5")) { 
+    when (p.contains("unit")) { subtype = "army" }
+    tier = "T2.5" 
+  }
+  when (p.contains("tier_3_5")) { 
+    when (p.contains("unit")) { subtype = "army" }
+    tier = "T3.5" 
+  }
+
   when (p.contains("hero")) { 
     when (!p.contains("tier_2")) { tier = "T2" }
     subtype = "hero"; 

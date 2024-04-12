@@ -1,12 +1,13 @@
 amends ".../engine/building.pkl"
 
-name = "Incubator"
-creates {
+name = "Augmentation Pool"
+
+unlocks { 
+  import("../../../unit/tier_1_5/weaver.pkl").slug
+}
+
+providesUpgradesFor { 
   import("../../../unit/tier_1/stinger.pkl").slug
   import("../../../unit/tier_1/harbinger.pkl").slug
   import("../../../unit/tier_1_5/weaver.pkl").slug
-}
-unlocks {
-  import("../../../unit/tier_1/stinger.pkl").slug
-  import("../../../unit/tier_1/harbinger.pkl").slug
 }

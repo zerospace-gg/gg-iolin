@@ -49,7 +49,7 @@ description: String?
 fixed type: String = fromPath.type
 
 /// sub-type. data subclasses will define this as a calculated field, based on a more
-fixed subtype: String = fromPath.subtype
+fixed subtype: String = fromPath.subtype ?? throw("cant find subtype in \(id): \(fromPath)")
 
 /// faction name. required if type isn't map. should not be defined for faction type
 fixed faction: String? = fromPath.faction
@@ -82,19 +82,17 @@ notes: Listing<String>
 /// creates handles things that build / produce / cast / otherwise create
 creates: Listing<$t.Slug>(isDistinct)?
 
-
 /// unlocks handles things that allow other things the ability to build / produce / cast / otherwise create. should always be paired with unlockedBy on the other side.
 unlocks: Listing<$t.Slug>(isDistinct)?
-
 
 /// currently only buildings do this, but its here because the other unlock/create logic is here. some non-gamepieces gamepieces unlock/create 
 unlocksMercTier: Listing<$t.Tier>(isDistinct)?
 
-references: Listing<$t.Slug>(isDistinct)? = new Listing<$t.Slug> {
-  ...(creates ?? new Listing{})
-  ...(unlocks ?? new Listing{})
-  ...recursiveChildren.map((c) -> c.slug)
-}.toList().distinct.toListing()
+// references: Listing<$t.Slug>(isDistinct)? = new Listing<$t.Slug> {
+//   ...(creates ?? new Listing{})
+//   ...(unlocks ?? new Listing{})
+//   ...recursiveChildren.map((c) -> c.slug)
+// }.toList().distinct.toListing()
 
 hidden fixed children: List<me> = List()
 hidden fixed recursiveChildren: List<me> = children + children.flatMap((c) -> c.recursiveChildren)
