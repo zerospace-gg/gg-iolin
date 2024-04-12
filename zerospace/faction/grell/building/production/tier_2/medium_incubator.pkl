@@ -1,12 +1,11 @@
 amends ".../engine/building.pkl"
 
 name = "Medium Incubator"
-tier = "T2"
 creates {
-  "lasher"
-  "skrelling"
+  import("../../../unit/tier_2/lasher.pkl").slug
+  import("../../../unit/tier_2/skrelling.pkl").slug
 }
 unlocks {
-  "lasher"
-  "skrelling"
+  import("../../../unit/tier_2/lasher.pkl").slug
+  import("../../../unit/tier_2/skrelling.pkl").slug
 }

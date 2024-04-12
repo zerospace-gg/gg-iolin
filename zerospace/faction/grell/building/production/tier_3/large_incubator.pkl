@@ -1,14 +1,13 @@
 amends ".../engine/building.pkl"
 
 name = "Large Incubator"
-tier = "T3"
 creates {
-  "reaver"
-  "thresher"
-  "behemoth"
+  import("../../../unit/tier_3/reaver.pkl").slug
+  import("../../../unit/tier_3/thresher.pkl").slug
+  import("../../../unit/tier_3/behemoth.pkl").slug
 }
 unlocks {
-  "reaver"
-  "thresher"
-  "behemoth"
+  import("../../../unit/tier_3/reaver.pkl").slug
+  import("../../../unit/tier_3/thresher.pkl").slug
+  import("../../../unit/tier_3/behemoth.pkl").slug
 }

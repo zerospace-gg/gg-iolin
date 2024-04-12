@@ -1,10 +1,9 @@
 amends ".../engine/building.pkl"
 
 name = "Special Augmentation Pool"
-tier = "T3.5"
 
 providesUpgradesFor { 
-  "reaver"
-  "thresher"
-  "behemoth"
+  import("../../../unit/tier_3/reaver.pkl").slug
+  import("../../../unit/tier_3/thresher.pkl").slug
+  import("../../../unit/tier_3/behemoth.pkl").slug
 }
