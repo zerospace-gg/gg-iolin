@@ -21,7 +21,6 @@ hidden fixed dynamicTags {
   when ((providesBiomass ?? 0) > 0) { "biomass" }
   when ((providesDetection ?? 0) > 0) { "detection" }
   when ((providesUpgradesFor?.length ?? 0) > 0) { "upgrades" }
-  when ((upgradedBy?.length ?? 0) > 0) { "upgradable" }
   when ((shields ?? 0) > 0) { "shielded" }
   when ((abesEnergy ?? 0) > 0) { "abes" }
   when ((energy ?? 0) > 0) { "energy" }
@@ -70,11 +69,6 @@ provedsSupply: Number? = fromPath.provedsSupply
 providesBiomass: Number? = fromPath.providesBiomass
 providesDetection: Number?
 providesUpgradesFor: Listing<String>(isDistinct)?
-
-upgradedBy: Listing<String>(isDistinct)?
-
-transformsFrom: Listing<String>(isDistinct)?
-transformsInto: Listing<String>(isDistinct)?
 
 maxAddOns: Number?
 hasAddOnType: ("turret" | "sacrifice" | "building-upgrade" | "building-turret")? =

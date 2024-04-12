@@ -44,8 +44,3 @@ upgrades {
     tier = "T2.5"
   }
 }
-
-createdBy {
-  "prot-barracks"
-}
-

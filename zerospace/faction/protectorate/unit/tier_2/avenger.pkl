@@ -44,8 +44,3 @@ upgrades {
     tier = "T3.5"
   }
 }
-
-createdBy {
-  "prot-factory"
-}
-

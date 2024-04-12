@@ -11,8 +11,6 @@ buildTime = 30
 stunResist = 50
 energy = 100
 
-unlockedBy { "altar" }
-createdBy { "altar" }
 
 attacks {
   ["Attack"] {

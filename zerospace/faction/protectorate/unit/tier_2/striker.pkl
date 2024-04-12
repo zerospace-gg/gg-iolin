@@ -46,7 +46,4 @@ upgrades {
   }
 }
 
-createdBy {
-  "factory"
-}
 

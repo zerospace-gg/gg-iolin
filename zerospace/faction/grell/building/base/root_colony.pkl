@@ -8,9 +8,6 @@ creates {
   import("../../unit/harvester/grell_harvester.pkl").slug
   import("../extractor/grell_extractor.pkl").slug
 }
-createdBy {
-  import("../../unit/builder/seedling.pkl").slug
-}
 providesBiomass = 1500
 
 hasAddOnType = "building-turret"

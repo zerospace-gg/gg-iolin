@@ -19,10 +19,6 @@ infuseRule = new {
   domain = "air"
 }
 
-createdBy { 
-  import("../../building/base/root_colony.pkl").slug
-}
-
 creates {
   import("../../building/base/root_colony.pkl").slug
   import("../../building/supply/nourishing_pod.pkl").slug

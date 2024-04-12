@@ -7,11 +7,6 @@ hp = 250
 hotkey = "e"
 providesBiomass = 1500
 
-createdBy { 
-  import("../../unit/builder/seedling.pkl").slug
-  import("../../unit/harvester/grell_harvester.pkl").slug
-}
-
 maxAddOns = 1
 hasAddOnType = "building-turret"
 addOns {

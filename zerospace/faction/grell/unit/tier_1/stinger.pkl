@@ -11,9 +11,6 @@ buildCount = 2
 hp = 100 
 armorType = "light"
 speed = 700
-createdBy { "incubator" }
-unlockedBy { "incubator" }
-upgradedBy { "augmentation-pool" }
 
 attacks {
   ["Attack"] {

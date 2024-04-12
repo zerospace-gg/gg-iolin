@@ -12,7 +12,6 @@ hp = 375
 speed = 575
 
 domain = "air"
-createdBy { "factory" }
 
 attacks {
   ["Railgun"] {

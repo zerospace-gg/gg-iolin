@@ -2,7 +2,6 @@ amends ".../engine/unit.pkl"
 
 name = "Protectorate Harvester"
 description = "Protectorate Harvester has a healing ability"
-createdBy { "operating-tower" }
 providesBiomass = 375
 
 spells {

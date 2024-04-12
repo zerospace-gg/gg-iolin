@@ -10,9 +10,6 @@ supply = 1
 hp = 250 
 armorType = "medium"
 speed = 675
-createdBy { "barracks" }
-unlockedBy { "barracks" }
-upgradedBy { "warehouse" }
 
 attacks {
   ["Attack"] {

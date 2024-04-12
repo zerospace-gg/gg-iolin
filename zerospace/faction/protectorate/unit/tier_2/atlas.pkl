@@ -59,7 +59,5 @@ upgrades {
   }
 }
 
-createdBy { "factory" }
-unlockedBy { "mechanical-research-lab" }
 
 

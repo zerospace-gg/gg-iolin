@@ -1,5 +1,5 @@
 amends ".../engine/talent.pkl"
-import ".../topbar/slot_3/ultimate/flowers.pkl" as tbp
+import ".../topbar/slot_3/ultimate/flowers_topbar.pkl" as tbp
 name = "\(tbp.name) (Talent)"
 description = "Unlocks The \(tbp.name) topbar power: \(tbp.description)"
 unlocks { tbp.slug }

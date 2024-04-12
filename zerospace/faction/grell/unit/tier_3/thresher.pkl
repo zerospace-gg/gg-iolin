@@ -11,9 +11,6 @@ supply = 8
 hp = 400
 armorType = "heavy"
 speed = 450
-createdBy { "large-incubator" }
-unlockedBy { "large-incubator" }
-upgradedBy { "special-augmentation-pool" }
 
 attacks {
   ["Attack"] {

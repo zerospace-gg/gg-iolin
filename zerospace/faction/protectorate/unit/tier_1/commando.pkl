@@ -53,8 +53,3 @@ upgrades {
   }
 }
 
-
-createdBy {
-  "prot-barracks"
-}
-

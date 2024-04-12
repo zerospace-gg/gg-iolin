@@ -11,9 +11,6 @@ supply = 4
 hp = 200
 armorType = "medium"
 speed = 450
-createdBy { "incubator" }
-unlockedBy { "augmentation-pool" }
-upgradedBy { "augmentation-pool" }
 
 attacks {
   ["Attack"] {

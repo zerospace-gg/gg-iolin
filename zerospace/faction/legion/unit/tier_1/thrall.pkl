@@ -11,9 +11,6 @@ buildCount = 2
 hp = 125 
 armorType = "light"
 speed = 500
-createdBy { "barracks" }
-unlockedBy { "barracks" }
-upgradedBy { "warehouse" }
 
 attacks {
   ["Attack"] {

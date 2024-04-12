@@ -5,7 +5,6 @@ domain = "ground"
 hp = 50
 speed = 450
 buildTime = 5
-createdBy { "garrison-tower" }
 creates { 
   "garrison-tower"
   "idal-conduit"

@@ -79,26 +79,20 @@ fromFuture: Boolean = false
 /// additional notes and information about this gamepiece
 notes: Listing<String>
 
-/// creates handles things that build / produce / cast / otherwise create. should always be paired with createdBy on the other side.
+/// creates handles things that build / produce / cast / otherwise create
 creates: Listing<$t.Slug>(isDistinct)?
 
-/// opposite side of creates, this should always be paired with unlocks on the other side
-createdBy: Listing<$t.Slug>(isDistinct)?
 
 /// unlocks handles things that allow other things the ability to build / produce / cast / otherwise create. should always be paired with unlockedBy on the other side.
 unlocks: Listing<$t.Slug>(isDistinct)?
 
-/// opposite side of unlocks, this should always be paired with unlocks on the other side
-unlockedBy: Listing<$t.Slug>(isDistinct)?
 
 /// currently only buildings do this, but its here because the other unlock/create logic is here. some non-gamepieces gamepieces unlock/create 
 unlocksMercTier: Listing<$t.Tier>(isDistinct)?
 
 references: Listing<$t.Slug>(isDistinct)? = new Listing<$t.Slug> {
   ...(creates ?? new Listing{})
-  ...(createdBy ?? new Listing{})
   ...(unlocks ?? new Listing{})
-  ...(unlockedBy ?? new Listing{})
   ...recursiveChildren.map((c) -> c.slug)
 }.toList().distinct.toListing()
 

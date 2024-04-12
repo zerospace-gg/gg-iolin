@@ -11,9 +11,6 @@ supply = 3
 hp = 250
 armorType = "light"
 speed = 450
-createdBy { "medium-incubator" }
-unlockedBy { "medium-incubator" }
-upgradedBy { "advanced-augmentation-pool" }
 
 attacks {
   ["Attack"] {

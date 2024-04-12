@@ -11,9 +11,6 @@ supply = 3
 hp = 250
 armorType = "heavy"
 speed = 450
-createdBy { "incubator" }
-unlockedBy { "incubator" }
-upgradedBy { "augmentation-pool" }
 
 infuseCost = 10
 

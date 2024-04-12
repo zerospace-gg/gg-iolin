@@ -11,9 +11,6 @@ hp = 320
 armor = 1
 armorType = "medium"
 speed = 525
-createdBy { "barracks" }
-unlockedBy { "barracks" }
-upgradedBy { "warehouse" }
 
 attacks {
   ["Attack"] {

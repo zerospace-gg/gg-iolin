@@ -1,5 +1,4 @@
 amends ".../engine/unit.pkl"
 
 name = "Legion Harvester"
-createdBy { "garrison-tower" }
 
