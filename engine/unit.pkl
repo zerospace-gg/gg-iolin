@@ -95,10 +95,10 @@ local parentInfo: ParentInfo = new {
 }
 
 hidden upgrades: Mapping<String, UnitUpgrade> = new Mapping<String, UnitUpgrade> {
-  default { key -> name = $t.makeSlug(key); parent = parentInfo }
+  default { key -> name = $t.makeSlug(key); parent = parentInfo; upgradeOf = methis.slug }
 }
 upgrade: Listing<String> = new {
-  for (Upgrade in upgrades) { Upgrade.slug }
+  for (u in upgrades) { u.slug }
 }
 
 hidden fixed children = super.children +

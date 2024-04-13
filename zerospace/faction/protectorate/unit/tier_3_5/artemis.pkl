@@ -1,0 +1,28 @@
+amends ".../engine/unit.pkl"
+
+name = "Artemis"
+hexiteCost = 125
+fluxCost = 225
+supply = 8
+domain = "air"
+hp = 500
+armorType = "medium"
+speed = 600
+armor = 1
+
+attacks {
+  ["Attack"] {
+    damage = 15
+    cooldown = 0.7
+    range = 1400
+    targets { "air"; "ground" }
+  }
+}
+
+spells {
+  ["EMP"] {
+    description = "Drain 50 energy and knockback and breifly slow enemy units"
+    energyCost = 75
+    energyType = "classic"
+  }
+}

@@ -6,14 +6,14 @@ hp = 50
 speed = 450
 buildTime = 5
 creates { 
-  "garrison-tower"
-  "idal-conduit"
-  "altar"
-  "barracks"
-  "terror-tank"
-  "dreadnought"
-  "warehouse"
-  "armory"
+  // "garrison-tower"
+  // "idal-conduit"
+  // "altar"
+  // "barracks"
+  // "terror-tank"
+  // "dreadnought"
+  // "warehouse"
+  // "armory"
 }
 
 heals {

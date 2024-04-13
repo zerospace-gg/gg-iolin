@@ -12,6 +12,10 @@ hp = 250
 armorType = "heavy"
 speed = 450
 
+createdBy { import("../../building/production/tier_1/incubator.pkl").slug }
+unlockedBy { import("../../building/production/tier_1/incubator.pkl").slug }
+upgradedBy { import("../../building/tech/tier_1_5/augmentation_pool.pkl").slug }
+
 infuseCost = 10
 
 attacks {

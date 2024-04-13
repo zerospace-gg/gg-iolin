@@ -36,7 +36,7 @@ duration: Number?
 range: Number?
 /// also called damage point, attack delay, or cast point
 delay: Number?
-abilityOf: String? = fromPath.abilityOf
+abilityOf: String? = fromPath.abilityOf ?? parent.slug
 
 shots: Number?
 volleys: Number? 

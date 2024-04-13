@@ -4,6 +4,7 @@ import "types.pkl" as $t
 
 fixed type: String = "upgrade"
 fixed subtype: String = "upgrade"
+upgradeOf: String
 
 fluxCost: Number? = 
   if (tier == "T1.5") 100 else

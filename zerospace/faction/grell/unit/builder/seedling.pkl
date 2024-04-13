@@ -27,3 +27,6 @@ creates {
   import("../../building/tech/tier_2_5/advanced_augmentation_pool.pkl").slug
   import("../../building/tech/tier_3_5/special_augmentation_pool.pkl").slug
 }
+createdBy {
+  import("../../building/base/root_colony.pkl").slug
+}

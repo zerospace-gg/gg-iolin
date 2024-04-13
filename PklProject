@@ -1,1 +1,4 @@
 amends "pkl:project"
+tests {
+  ...import*("tests/**.pkl").keys
+}

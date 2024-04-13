@@ -7,15 +7,15 @@ hp = 50
 speed = 450
 
 creates {
-  "operating-tower"
-  "supply-platform"
-  "airstrip"
-  "barracks"
-  "factory"
-  "advanced-factory"
-  "research-lab"
-  "mechanical-research-lab"
-  "special-research-lab"
+  // "operating-tower"
+  // "supply-platform"
+  // "airstrip"
+  // "barracks"
+  // "factory"
+  // "advanced-factory"
+  // "research-lab"
+  // "mechanical-research-lab"
+  // "special-research-lab"
 }
 
 // notes

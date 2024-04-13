@@ -13,6 +13,10 @@ hp = 625
 armorType = "heavy"
 speed = 400
 
+createdBy { import("../../building/production/tier_3/large_incubator.pkl").slug }
+unlockedBy { import("../../building/production/tier_3/large_incubator.pkl").slug }
+upgradedBy { import("../../building/tech/tier_3_5/special_augmentation_pool.pkl").slug }
+
 attacks {
   ["Attack"] {
     damage = 30

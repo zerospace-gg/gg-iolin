@@ -15,6 +15,7 @@ hidden fixed dynamicTags {
   when (subtype == "building-upgrade") { "building:upgrade" }
 }
 addOnType: "turret" | "sacrifice"  | "building-upgrade" | "building-turret"
+addOnOf: String = parent.slug
 
 local parentInfo: ParentInfo = new {
   id = methis.id
@@ -27,28 +28,28 @@ hidden attacks: Mapping<String, Ability> = (super.attacks) {
   default { key -> name = $t.makeSlug(key); parent = parentInfo; abilityType = "attack" }
 }
 attack: Listing<String> = new {
-  for (Attack in attacks) { Attack.slug }
+  for (a in attacks) { a.slug }
 }
 
 hidden heals: Mapping<String, Ability> = (super.heals) {
   default { key -> name = $t.makeSlug(key); parent = parentInfo; abilityType = "heal" }
 }
 heal: Listing<String> = new {
-  for (Heal in heals) { Heal.slug }
+  for (h in heals) { h.slug }
 }
 
 hidden spells: Mapping<String, Ability> = (super.spells) {
   default { key -> name = $t.makeSlug(key); parent = parentInfo; abilityType = "spell" }
 }
 spell: Listing<String> = new {
-  for (Spell in spells) { Spell.slug }
+  for (s in spells) { s.slug }
 }
 
 hidden passives: Mapping<String, Ability> = (super.passives) {
   default { key -> name = $t.makeSlug(key); parent = parentInfo; abilityType = "passive" }
 }
 passive: Listing<String> = new {
-  for (Passive in passives) { Passive.slug }
+  for (p in passives) { p.slug }
 }
 
 hidden fixed children = List(attacks, heals, spells, passives).flatMap((x) -> x.toMap().values.toList())

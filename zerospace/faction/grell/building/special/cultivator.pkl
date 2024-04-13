@@ -21,3 +21,7 @@ addOns {
     }
   }
 }
+createdBy { 
+  import("../../unit/builder/seedling.pkl").slug
+  import("../../unit/harvester/grell_harvester.pkl").slug
+}

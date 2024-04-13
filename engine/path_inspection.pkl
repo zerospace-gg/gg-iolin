@@ -4,7 +4,7 @@ import "types.pkl" as $t
 class PathData {
   faction: String?
   factionType: ("main" | "mercenary" | "nonplayer")?
-  type: ("unit" | "building" | "addOn" | "faction" | "ability" | "upgrade" | "map")?
+  type: ("unit" | "building" | "addOn" | "faction" | "ability" | "upgrade" | "map" | "faction-ability")?
   subtype: String?
 
   tier: $t.Tier?
@@ -137,15 +137,17 @@ function dataFromPath(p: List<String>): PathData = new {
     subtype = "base"
     hp = 2000 
     hexiteCost = 350
+    tier = "T0"
   }
   when (p.contains("extractor")) {
     subtype = "extractor"
     armor = 0
     gathersHexite = 1.0
     gathersEmptyHexite = 0.35
+    tier = "T0"
   }
-  when (p.contains("supply")) { subtype = "supply"; provedsSupply = 15; hexiteCost = 100; buildTime = 15; hp = 750 }
-  when (p.contains("special")) { subtype = "special" }
+  when (p.contains("supply")) { subtype = "supply"; provedsSupply = 15; hexiteCost = 100; buildTime = 15; hp = 750; tier = "T0" }
+  when (p.contains("special")) { subtype = "special"; tier = "T0" }
 
   when (p.contains("production")) {
     subtype = "production"
@@ -187,5 +189,5 @@ function dataFromPath(p: List<String>): PathData = new {
     when (p.contains("ultimate")) { topbarType = "ultimate" }
   }
 
-  when (p.contains("passive")) { type = "ability" ; subtype = "faction-passive"; abilityOf = p[2] }
+  when (p.contains("passive")) { type = "ability" ; subtype = "faction-passive"; abilityOf = p[1] }
 }

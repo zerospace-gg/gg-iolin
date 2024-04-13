@@ -3,4 +3,5 @@ name = "Tree of Life (TopBar)"
 description = "Revives units killed nearby and heals friendly units. Radius: 1500. Starting energy: 30."
 energyCost = 50
 cooldown = 120
+unlockedBy { import("../../../talent/level_5/column_2/tree_of_life_talent.pkl").slug }
 

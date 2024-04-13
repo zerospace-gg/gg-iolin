@@ -1,0 +1,2 @@
+amends ".../engine/building.pkl"
+name = "XP Tower"

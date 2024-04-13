@@ -69,6 +69,11 @@ provedsSupply: Number? = fromPath.provedsSupply
 providesBiomass: Number? = fromPath.providesBiomass
 providesDetection: Number?
 providesUpgradesFor: Listing<String>(isDistinct)?
+upgradedBy: Listing<String>(isDistinct)?
+
+targetable: Boolean? = true
+
+carryCapacity: Number?
 
 maxAddOns: Number?
 hasAddOnType: ("turret" | "sacrifice" | "building-upgrade" | "building-turret")? =
@@ -93,28 +98,28 @@ hidden heals: Mapping<String, Ability> = new Mapping<String, Ability> {
   default { key -> name = key; parent = parentInfo; abilityType = "heal" }
 }
 heal: Listing<String> = new {
-  for (Heal in heals) { Heal.slug }
+  for (h in heals) { h.slug }
 }
 
 hidden spells: Mapping<String, Ability> = new Mapping<String, Ability> {
   default { key -> name = key; parent = parentInfo; abilityType = "spell" }
 }
 spell: Listing<String> = new {
-  for (Spell in spells) { Spell.slug }
+  for (s in spells) { s.slug }
 }
 
 hidden passives: Mapping<String, Ability> = new Mapping<String, Ability> {
   default { key -> name = key; parent = parentInfo; abilityType = "passive" }
 }
 passive: Listing<String> = new {
-  for (Passive in passives) { Passive.slug }
+  for (p in passives) { p.slug }
 }
 
 hidden addOns: Mapping<String, AddOn> = new Mapping<String, AddOn> {
   default { key -> name = key; parent = parentInfo; addOnType = methis.hasAddOnType }
 }
 addOn: Listing<String> = new {
-  for (AddOn in addOns) { AddOn.slug }
+  for (a in addOns) { a.slug }
 }
 
 hidden fixed children = List(attacks, heals, spells, passives, addOns).flatMap((x) -> x.toMap().values.toList())

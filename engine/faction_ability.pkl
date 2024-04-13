@@ -9,6 +9,8 @@ activationType: "activated" | "passive"
 fixed type: String = "faction-ability"
 fixed subtype: String = fromPath.abilityType ?? abilityType
 hidden abilityType: "passive" | "topbar" | "talent" 
+abilityOf: String = fromPath.abilityOf 
+erf = fromPath
 
 hotkey: $t.HotKey?
 reverseHotKey: $t.HotKey?

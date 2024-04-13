@@ -11,6 +11,9 @@ supply = 4
 hp = 200
 armorType = "medium"
 speed = 450
+createdBy { import("../../building/production/tier_1/incubator.pkl").slug }
+unlockedBy { import("../../building/tech/tier_1_5/augmentation_pool.pkl").slug }
+upgradedBy { import("../../building/tech/tier_1_5/augmentation_pool.pkl").slug }
 
 attacks {
   ["Attack"] {

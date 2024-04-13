@@ -4,6 +4,7 @@ name = "Tech Hero"
 hp = 150
 armorType = "medium"
 speed = 500
+stunResist = 50
 
 attacks {
   ["Attack"] {

@@ -1,11 +1,13 @@
 module faction
 extends "data.pkl" 
 import "data.pkl" as Data
+import "types.pkl" as $t
 
 hidden factionContents: Mapping<String, Data>
 hidden guestHeroes: Listing<Data>
 
-local all = factionContents.toMap().values
+hidden fixed all = factionContents.toMap().values
+
 local guest = guestHeroes.toList()
 local getslug = (x) -> x.slug
 

@@ -9,3 +9,4 @@ guestHeroes {
   import("protectorate/unit/hero/tech_hero.pkl")
 }
 mercHeroesAllowed = true
+

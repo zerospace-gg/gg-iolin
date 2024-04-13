@@ -47,6 +47,7 @@ spells {
     name = "Teleport"
     teleport = 4000
     cooldown = 0
+    unlockedBy {me.addOns["Command Module"].slug}
   }
 }
 
@@ -54,6 +55,7 @@ passives {
   ["Sensor"] {
     name = "Sensor"
     providesDetection = 4000
+    unlockedBy {me.addOns["Command Module"].slug}
   }
 }
 

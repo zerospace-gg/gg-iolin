@@ -1,0 +1,32 @@
+amends ".../engine/unit.pkl"
+
+name = "Juggernaut"
+hotkey = "s"
+hexiteCost = 150
+fluxCost = 150
+supply = 8
+buildTime = 60
+hp = 1000
+armorType = "heavy"
+speed = 450
+armor = 1
+
+attacks {
+  ["Attack"] {
+    damage = 38
+    cooldown = 0.8
+    range = 1200
+    targets { "ground" }
+  }
+}
+
+upgrades {
+  ["Attack Speed Aura"] {
+    tier = "T3.5"
+    description = "+15% attack speed aura"
+  }
+  ["Heat Discharge Radius"] {
+    tier = "T3.5"
+    description = "+30% heat discharge radius"
+  }
+}

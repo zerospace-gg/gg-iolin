@@ -7,3 +7,7 @@ providesUpgradesFor {
   import("../../../unit/tier_3/thresher.pkl").slug
   import("../../../unit/tier_3/behemoth.pkl").slug
 }
+createdBy {
+  import("../../../unit/builder/seedling.pkl").slug
+  import("../../../unit/builder/seedling.pkl").infusedVersion.slug
+}

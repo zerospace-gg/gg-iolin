@@ -6,14 +6,23 @@ ZS_VERSION=v123456789
 set -euo pipefail
 AT=$(node -e "console.log(new Date().toISOString())")
 TS=$(node -e "console.log(Math.trunc(Date.now() / 1000))")
-# CAT=$(which bat || which cat)
+CAT=$(which bat || which cat)
 PKL=$(which pkl)
 FILES=$(find zerospace -name '*.pkl' | sort)
+META=$(find meta -name '*.pkl' | sort)
 
+printf "\n# \e[0;1;33mpkl level tests\e[0m\n"
+pkl test
 
 time (
   for i in $FILES; do
-    printf "\n# \e[0;1;33m%s\e[0m\n" "$i"
+    printf "\n# \e[0;1;33mCORE: %s\e[0m\n" "$i"
+    echo "${PKL}" eval -m ./dist/json -p zs_version="$ZS_VERSION" -p gg_version="$GG_VERSION" -p gg_at="$AT" -p gg_ts="$TS" "$i"
+    "${PKL}" eval -m ./dist/json -p zs_version="$ZS_VERSION" -p gg_version="$GG_VERSION" -p gg_at="$AT" -p gg_ts="$TS" "$i"
+    printf "\n"
+  done
+  for i in $META; do 
+    printf "\n# \e[0;1;33mMETA: %s\e[0m\n" "$i"
     echo "${PKL}" eval -m ./dist/json -p zs_version="$ZS_VERSION" -p gg_version="$GG_VERSION" -p gg_at="$AT" -p gg_ts="$TS" "$i"
     "${PKL}" eval -m ./dist/json -p zs_version="$ZS_VERSION" -p gg_version="$GG_VERSION" -p gg_at="$AT" -p gg_ts="$TS" "$i"
     printf "\n"
@@ -28,17 +37,15 @@ find dist/json -name '*json' -type f -exec cat {} \; | wc -c
 printf "\n# \e[0;1;36mTotal number of JSON files rendered:\e[0m\n"
 find dist/json -name '*json' -type f | wc -l
 
+printf "\n# \e[0;1;33mValidating relationships\e[0m\n"
+node ./strapi-seed/generate.mjs
+
+printf "\n# \e[0;1;33mCreating seed data\e[0m\n"
 node ./strapi-seed/create-seed-data.mjs
+
 printf "\n# \e[0;1;36mSeed data:\e[0m\n"
 ls -l dist/strapi-seed/*.json
 
-# (cd dist && zip -qr library.zip json)
-# printf "\n# \e[0;1;36mSize of JSON zipped:\e[0m\n"
-# ls -lh dist/library.zip
-
-# printf "\n# \e[0;1;36mRoot JSON files:\e[0m\n"
-# ls -lh dist/zsgg-data.*.json
-
-# printf "\n# \e[0;1;36mManifest:\e[0m\n"
-# "$CAT" dist/zsgg-data.manifest.json
+printf "\n# \e[0;1;35mDetails:\e[0m\n"
+"$CAT" dist/strapi-seed/seed-info.json 
 

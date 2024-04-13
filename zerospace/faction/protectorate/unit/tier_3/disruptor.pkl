@@ -1,0 +1,39 @@
+amends ".../engine/unit.pkl"
+
+name = "Disruptor"
+hotkey = "f"
+hexiteCost = 100
+fluxCost = 175
+supply = 6
+buildTime = 45
+hp = 600
+armorType = "heavy"
+speed = 550
+
+infuseRule = damageBasedInfuseRule
+
+attacks {
+  ["Attack"]  {
+    damage = 8
+    bonusPercent = 100
+    bonusVsTags { "armor:heavy" }
+    cooldown = 0.4
+    range = 1600
+    chargeTime = 8
+    chargeMaxMultiplier = 2
+    notes { "leash range: 40%" }
+    targets { "air"; "ground" }
+  }
+}
+
+upgrades {
+  ["Charge Speed"] {
+    description = "-50% charge time"
+    tier = "T3.5"
+  }
+
+  ["Slow"] {
+    description = "Attacks reduce movement speed by 20%"
+    tier = "T3.5"
+  }
+}

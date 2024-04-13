@@ -14,6 +14,10 @@ armorType = "heavy"
 speed = 525
 infuseCost = 31
 
+createdBy { import("../../building/production/tier_3/large_incubator.pkl").slug }
+unlockedBy { import("../../building/production/tier_3/large_incubator.pkl").slug }
+upgradedBy { import("../../building/tech/tier_3_5/special_augmentation_pool.pkl").slug }
+
 attacks {
   ["Attack"] {
     damage = 55

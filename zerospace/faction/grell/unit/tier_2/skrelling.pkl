@@ -13,6 +13,10 @@ hp = 140
 armorType = "light"
 speed = 700
 
+createdBy { import("../../building/production/tier_2/medium_incubator.pkl").slug }
+unlockedBy { import("../../building/production/tier_2/medium_incubator.pkl").slug }
+upgradedBy { import("../../building/tech/tier_2_5/advanced_augmentation_pool.pkl").slug }
+
 attacks {
   ["Attack"] {
     damage = 10

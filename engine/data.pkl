@@ -23,7 +23,7 @@ fixed slug: $t.Slug = srcFile.replaceLast(".pkl", "").replaceAll("_", "-") + app
 hidden appendSlug : String = ""
 fixed id: $t.Id = (srcDirSlugs + List(slug)).join("/")
 
-hidden repoSlug = "zerospace-gg/zsgg-librarian";
+hidden repoSlug = "zerospace-gg/iolin";
 
 /// metadata pulled from path. this includes things used in multiple subclasses
 hidden fixed fromPath: $p.PathData = $p.dataFromPath(srcDirParts)
@@ -81,9 +81,11 @@ notes: Listing<String>
 
 /// creates handles things that build / produce / cast / otherwise create
 creates: Listing<$t.Slug>(isDistinct)?
+createdBy: Listing<$t.Slug>(isDistinct)?
 
 /// unlocks handles things that allow other things the ability to build / produce / cast / otherwise create. should always be paired with unlockedBy on the other side.
 unlocks: Listing<$t.Slug>(isDistinct)?
+unlockedBy: Listing<$t.Slug>(isDistinct)?
 
 /// currently only buildings do this, but its here because the other unlock/create logic is here. some non-gamepieces gamepieces unlock/create 
 unlocksMercTier: Listing<$t.Tier>(isDistinct)?

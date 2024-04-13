@@ -11,6 +11,9 @@ buildCount = 2
 hp = 100 
 armorType = "light"
 speed = 700
+createdBy { import("../../building/production/tier_1/incubator.pkl").slug }
+unlockedBy { import("../../building/production/tier_1/incubator.pkl").slug }
+upgradedBy { import("../../building/tech/tier_1_5/augmentation_pool.pkl").slug }
 
 attacks {
   ["Attack"] {
