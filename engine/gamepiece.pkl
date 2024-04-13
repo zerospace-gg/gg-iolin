@@ -90,36 +90,41 @@ local parentInfo: ParentInfo = new {
 hidden attacks: Mapping<String, Ability> = new Mapping<String, Ability> {
   default { key -> name = key; parent = parentInfo; abilityType = "attack" }
 }
-attack: Listing<String> = new {
-  for (Attack in attacks) { Attack.slug }
+attack: Mapping<String, Ability> = new {
+  // for (h in attacks) { h.slug }
+  for (n, a in attacks) { [a.slug] = a }
 }
 
 hidden heals: Mapping<String, Ability> = new Mapping<String, Ability> {
   default { key -> name = key; parent = parentInfo; abilityType = "heal" }
 }
-heal: Listing<String> = new {
-  for (h in heals) { h.slug }
+heal: Mapping<String, Ability> = new {
+  // for (h in heals) { h.slug }
+  for (n, h in heals) { [h.slug] = h }
 }
 
 hidden spells: Mapping<String, Ability> = new Mapping<String, Ability> {
   default { key -> name = key; parent = parentInfo; abilityType = "spell" }
 }
-spell: Listing<String> = new {
-  for (s in spells) { s.slug }
+spell: Mapping<String, Ability> = new {
+  // for (s in spells) { s.slug }
+  for (n, s in spells) { [s.slug] = s }
 }
 
 hidden passives: Mapping<String, Ability> = new Mapping<String, Ability> {
   default { key -> name = key; parent = parentInfo; abilityType = "passive" }
 }
-passive: Listing<String> = new {
-  for (p in passives) { p.slug }
+passive: Mapping<String, Ability> = new {
+  // for (p in passives) { p.slug }
+  for (n, p in spells) { [p.slug] = p }
 }
 
 hidden addOns: Mapping<String, AddOn> = new Mapping<String, AddOn> {
   default { key -> name = key; parent = parentInfo; addOnType = methis.hasAddOnType }
 }
-addOn: Listing<String> = new {
-  for (a in addOns) { a.slug }
+addOn: Mapping<String, AddOn> = new {
+  // for (a in addOns) { a.slug }
+  for (n, a in addOns) { [a.slug] = a }
 }
 
 hidden fixed children = List(attacks, heals, spells, passives, addOns).flatMap((x) -> x.toMap().values.toList())

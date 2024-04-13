@@ -1,0 +1,13 @@
+import ".../engine/data.pkl" as Data
+all: List<Data> = import*("../zerospace/**pkl").toMap().filter((k,v) -> !k.startsWith("../special")).values
+hidden bySlug: Map<String, Data> = all.toMap((v) -> v.slug, (v) -> v);
+
+local methis = this
+hidden output {
+  files {
+    ["all.json"] {
+      renderer = new JsonRenderer { indent = "" }
+      value = methis
+    }
+  }
+}

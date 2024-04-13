@@ -5,7 +5,6 @@ buildTime = 15
 hp = 625
 createdBy {
   import("../../unit/builder/seedling.pkl").slug
-  import("../../unit/builder/seedling.pkl").infusedVersion.slug
 }
 
 heals {

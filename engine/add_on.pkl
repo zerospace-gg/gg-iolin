@@ -27,28 +27,28 @@ local parentInfo: ParentInfo = new {
 hidden attacks: Mapping<String, Ability> = (super.attacks) {
   default { key -> name = $t.makeSlug(key); parent = parentInfo; abilityType = "attack" }
 }
-attack: Listing<String> = new {
-  for (a in attacks) { a.slug }
+attack: Mapping<String, Ability> = new {
+  for (a in attacks) { [a.slug] = a }
 }
 
 hidden heals: Mapping<String, Ability> = (super.heals) {
   default { key -> name = $t.makeSlug(key); parent = parentInfo; abilityType = "heal" }
 }
-heal: Listing<String> = new {
+heal: Mapping<String, Ability> = new {
   for (h in heals) { h.slug }
 }
 
 hidden spells: Mapping<String, Ability> = (super.spells) {
   default { key -> name = $t.makeSlug(key); parent = parentInfo; abilityType = "spell" }
 }
-spell: Listing<String> = new {
+spell: Mapping<String, Ability> = new {
   for (s in spells) { s.slug }
 }
 
 hidden passives: Mapping<String, Ability> = (super.passives) {
   default { key -> name = $t.makeSlug(key); parent = parentInfo; abilityType = "passive" }
 }
-passive: Listing<String> = new {
+passive: Mapping<String, Ability> = new {
   for (p in passives) { p.slug }
 }
 

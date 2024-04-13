@@ -37,15 +37,15 @@ find dist/json -name '*json' -type f -exec cat {} \; | wc -c
 printf "\n# \e[0;1;36mTotal number of JSON files rendered:\e[0m\n"
 find dist/json -name '*json' -type f | wc -l
 
-printf "\n# \e[0;1;33mValidating relationships\e[0m\n"
-node ./strapi-seed/generate.mjs
+# printf "\n# \e[0;1;33mValidating relationships\e[0m\n"
+# node ./strapi-seed/generate.mjs
 
-printf "\n# \e[0;1;33mCreating seed data\e[0m\n"
-node ./strapi-seed/create-seed-data.mjs
+# printf "\n# \e[0;1;33mCreating seed data\e[0m\n"
+# node ./strapi-seed/create-seed-data.mjs
 
-printf "\n# \e[0;1;36mSeed data:\e[0m\n"
-ls -l dist/strapi-seed/*.json
+# printf "\n# \e[0;1;36mSeed data:\e[0m\n"
+# ls -l dist/strapi-seed/*.json
 
-printf "\n# \e[0;1;35mDetails:\e[0m\n"
-"$CAT" dist/strapi-seed/seed-info.json 
+# printf "\n# \e[0;1;35mDetails:\e[0m\n"
+# "$CAT" dist/strapi-seed/seed-info.json 
 

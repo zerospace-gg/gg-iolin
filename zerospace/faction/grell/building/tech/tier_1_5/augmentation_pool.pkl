@@ -7,7 +7,6 @@ unlocks {
 }
 createdBy {
   import("../../../unit/builder/seedling.pkl").slug
-  import("../../../unit/builder/seedling.pkl").infusedVersion.slug
 }
 
 providesUpgradesFor { 

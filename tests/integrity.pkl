@@ -1,0 +1,17 @@
+amends "pkl:test"
+import ".../meta/all.pkl"
+import ".../engine/types.pkl" as $t
+import ".../engine/gamepiece.pkl"
+
+local emptySlugList = new Listing<$t.Slug> {}
+
+facts {
+  for (slug, entity in all.bySlug) {
+    ["\(slug): Unique Slug"] {
+      (all.all
+        .filter((v) -> v.slug == slug)
+        .map((v) -> Map("id", v.id, "slug", v.slug))
+        == List(Map("id", entity.id, "slug", slug)))
+    }
+  }
+}

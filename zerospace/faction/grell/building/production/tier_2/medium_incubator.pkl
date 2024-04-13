@@ -7,7 +7,6 @@ creates {
 }
 createdBy {
   import("../../../unit/builder/seedling.pkl").slug
-  import("../../../unit/builder/seedling.pkl").infusedVersion.slug
 }
 unlocks {
   import("../../../unit/tier_2/lasher.pkl").slug

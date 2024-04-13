@@ -17,7 +17,8 @@ fixed dynamicTags {
 hidden constructingVersion: Listing<ConstructingUnit> = new {
   default { key -> name = $t.makeSlug(key); parent = parentInfo }
 }
-fixed constructingFormId: String? = if (constructingVersion.length > 0) constructingVersion[0]?.id else null
+// constructingFormId: String? = if (constructingVersion.length > 0) constructingVersion[0]?.id else null
+constructingForm: ConstructingUnit? = if (constructingVersion.length > 0) constructingVersion.toList().first else null
 
 vision: Number? = 1800
 
@@ -66,7 +67,7 @@ hidden damageBasedInfuseRule: Mixin<me> = new {
   }
 }
 
-hidden fixed infusedVersion: me? = 
+fixed infusedForm: me? = 
   if (!infusable) 
     null 
   else 
@@ -74,8 +75,6 @@ hidden fixed infusedVersion: me? =
       infusable = false
       tags { "infused" } 
   }
-
-fixed infused: String? = infusedVersion?.slug
 
 infuseCost: Number? = 
   if (!infusable) 
@@ -97,16 +96,16 @@ local parentInfo: ParentInfo = new {
 hidden upgrades: Mapping<String, UnitUpgrade> = new Mapping<String, UnitUpgrade> {
   default { key -> name = $t.makeSlug(key); parent = parentInfo; upgradeOf = methis.slug }
 }
-upgrade: Listing<String> = new {
-  for (u in upgrades) { u.slug }
+upgrade: Mapping<String, UnitUpgrade> = new {
+  for (u in upgrades) { [u.slug] = u }
 }
 
 hidden fixed children = super.children +
   upgrades.toMap().values.toList() +
-  (if (constructingFormId != null) 
+  (if (constructingForm != null) 
     List(constructingVersion.toList().first) 
   else 
     List()) +
-  if (infusedVersion != null) List(infusedVersion) else List()
+  if (infusedForm != null) List(infusedForm) else List()
 
 
