@@ -1,4 +1,4 @@
-amends ".../engine/map.pkl"
+amends ".../engine/rts_map.pkl"
 name = "Swamp Fever"
 mapSize = "small"
 xpTowers = 2

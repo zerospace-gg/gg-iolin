@@ -1,4 +1,4 @@
-amends ".../engine/map.pkl"
+amends ".../engine/rts_map.pkl"
 name = "Plains"
 mapSize = "normal"
 xpTowers = 3

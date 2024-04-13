@@ -18,24 +18,24 @@ hidden srcDirParts: List<String> = pathParts.dropLast(1)
 hidden srcDirSlugs: List<String> = srcDirParts.map((x) -> x.replaceAll("_", "-"))
 hidden fixed srcDir: String = srcDirParts.join("/")
 hidden fixed srcFile: String = pathParts.takeLast(1).first
-fixed src: String = List(srcDir, srcFile).join("/")
+fixed src: String? = List(srcDir, srcFile).join("/")
 fixed slug: $t.Slug = srcFile.replaceLast(".pkl", "").replaceAll("_", "-") + appendSlug
 hidden appendSlug : String = ""
-fixed id: $t.Id = (srcDirSlugs + List(slug)).join("/")
+fixed id: $t.Id? = (srcDirSlugs + List(slug)).join("/")
 
 hidden repoSlug = "zerospace-gg/iolin";
 
 /// metadata pulled from path. this includes things used in multiple subclasses
 hidden fixed fromPath: $p.PathData = $p.dataFromPath(srcDirParts)
 
-zsVersion: String = versioning.zsVersion
-ggVersion: String = versioning.ggVersion
-ggUpdated: String = versioning.ggUpdated
-ggRelease: String = versioning.ggRelease
+zsVersion: String? = versioning.zsVersion
+ggVersion: String? = versioning.ggVersion
+ggUpdated: String? = versioning.ggUpdated
+ggRelease: String? = versioning.ggRelease
 
-ggUrl: String = "https://zerospace.gg/library/\(id)/";
-githubUrl: String = "https://github.com/\(repoSlug)/blob/main/zerospace/\(src)";
-githubRawUrl: String = "https://raw.githubusercontent.com/\(repoSlug)/main/zerospace/\(src)";
+ggUrl: String? = "https://zerospace.gg/library/\(id)/";
+githubUrl: String? = "https://github.com/\(repoSlug)/blob/main/zerospace/\(src)";
+githubRawUrl: String? = "https://raw.githubusercontent.com/\(repoSlug)/main/zerospace/\(src)";
 
 /// nicely formatted display name, as it appears in game (with the exception of things without lore names yet)
 name: String 
@@ -93,23 +93,23 @@ unlocksMercTier: Listing<$t.Tier>(isDistinct)?
 hidden fixed children: List<me> = List()
 hidden fixed recursiveChildren: List<me> = children + children.flatMap((c) -> c.recursiveChildren)
 
-hidden fixed renderedFiles: Listing<String> = new Listing<String> {
-  "\(id).json"
-  for (child in recursiveChildren) { "\(child.id).json" }
-}
+// hidden fixed renderedFiles: Listing<String> = new Listing<String> {
+//   "\(id).json"
+//   for (child in recursiveChildren) { "\(child.id).json" }
+// }
 
 hidden output {
   files {
     ["\(id).json"] {
-      renderer = new JsonRenderer { indent = "" }
+      renderer = new JsonRenderer { indent = "  " }
       value = methis
     }
-    for (child in recursiveChildren) {
-      ["\(child.id).json"] {
-        renderer = new JsonRenderer { indent = "" }
-        value = child
-      }
-    }
+    // for (child in recursiveChildren) {
+    //   ["\(child.id).json"] {
+    //     renderer = new JsonRenderer { indent = "" }
+    //     value = child
+    //   }
+    // }
   }
 }
 

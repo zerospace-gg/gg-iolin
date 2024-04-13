@@ -2,7 +2,7 @@ module rtsMap
 extends "data.pkl"
 
 fixed type: String = fromPath.type
-fixed subtype: "1v1" | "2v2" | "1p" = fromPath.subtype
+fixed subtype: String = fromPath.subtype
 
 /// the number of XP towers. currently this must be 2 or 3, with each providng +4.5 or +3 xp/sec respectively
 xpTowers: Number(isBetween(2,3))

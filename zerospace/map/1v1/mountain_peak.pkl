@@ -1,4 +1,4 @@
-amends ".../engine/map.pkl"
+amends ".../engine/rts_map.pkl"
 name = "Mountain Peak"
 mapSize = "small"
 xpTowers = 3

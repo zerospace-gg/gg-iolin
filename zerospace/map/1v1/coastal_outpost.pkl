@@ -1,4 +1,4 @@
-amends ".../engine/map.pkl"
+amends ".../engine/rts_map.pkl"
 name = "Coastal Outpost"
 mapSize = "normal"
 xpTowers = 2
