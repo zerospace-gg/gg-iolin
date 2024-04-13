@@ -1,5 +1,5 @@
 open module factionAbility
-extends "data.pkl"
+extends "entity.pkl"
 import "types.pkl" as $t
 import "ability.pkl" as me
 local methis = this

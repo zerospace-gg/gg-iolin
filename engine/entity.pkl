@@ -1,9 +1,9 @@
 /// root object of this engine. basic data type for all game objects & effects.
-abstract module data
+abstract module entity
 import "pkl:reflect"
 import "types.pkl" as $t
 import "path_inspection.pkl" as $p
-import "data.pkl" as me
+import "entity.pkl" as me
 import "versioning.pkl"
 
 local methis = this

@@ -1,6 +1,6 @@
-import ".../engine/data.pkl" as Data
-all: List<Data> = import*("../zerospace/**pkl").toMap().filter((k,v) -> !k.startsWith("../special")).values
-hidden bySlug: Map<String, Data> = all.toMap((v) -> v.slug, (v) -> v);
+import ".../engine/entity.pkl" as Entity
+all: List<Entity> = import*("../zerospace/**pkl").toMap().filter((k,v) -> !k.startsWith("../special")).values
+hidden bySlug: Map<String, Entity> = all.toMap((v) -> v.slug, (v) -> v);
 
 local methis = this
 hidden output {

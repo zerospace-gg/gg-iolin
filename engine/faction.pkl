@@ -1,10 +1,10 @@
 module faction
-extends "data.pkl" 
-import "data.pkl" as Data
+extends "entity.pkl" 
+import "entity.pkl" as Entity
 import "types.pkl" as $t
 
-hidden factionContents: Mapping<String, Data>
-hidden guestHeroes: Listing<Data>
+hidden factionContents: Mapping<String, Entity>
+hidden guestHeroes: Listing<Entity>
 
 hidden fixed all = factionContents.toMap().values
 
@@ -19,7 +19,7 @@ local isTalent = (x) -> x.type == "faction-ability" && x.subtype == "talent"
 local isTopbar = (x) -> x.type == "faction-ability" && x.subtype == "topbar"
 local isPassive = (x) -> x.type == "faction-ability" && x.subtype == "passive"
 
-local function grab(x: List<Data>, y: (Data) -> Boolean) = x.filter(y).map(getslug)
+local function grab(x: List<Entity>, y: (Entity) -> Boolean) = x.filter(y).map(getslug)
 
 fixed faction: String? = slug
 mercHeroesAllowed: Boolean = true

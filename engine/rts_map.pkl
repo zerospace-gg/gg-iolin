@@ -1,5 +1,5 @@
 module rtsMap
-extends "data.pkl"
+extends "entity.pkl"
 
 fixed type: String = fromPath.type
 fixed subtype: String = fromPath.subtype

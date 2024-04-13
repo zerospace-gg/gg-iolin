@@ -1,7 +1,7 @@
 /// gamepiece is the superclass for units, buildings, etc, and represents an on-screen, in-game object. 
 abstract module gamepiece 
-extends "data.pkl"
-import "data.pkl"
+extends "entity.pkl"
+import "entity.pkl"
 import "add_on.pkl" as AddOn
 import "parent_info.pkl" as ParentInfo
 import "ability.pkl" as Ability

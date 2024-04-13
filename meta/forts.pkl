@@ -1,0 +1,25 @@
+import "all.pkl"
+
+import ".../engine/entity.pkl" as Entity
+import ".../engine/unit.pkl" as Unit
+import ".../engine/building.pkl" as Building
+import ".../engine/faction.pkl" as Faction
+import ".../engine/rts_map.pkl" as RTSMap
+import ".../engine/talent.pkl" as Talent
+import ".../engine/topbar.pkl" as Topbar
+import ".../engine/faction_passive.pkl" as Passive
+
+local function find(f: (Entity) -> Boolean) = all.all.filter(f)
+
+units: List<Unit> = find((x) -> x.type == "unit")
+buildings: List<Building> = find((x) -> x.type == "building")
+factions: List<Faction> = find((x) -> x.type == "faction")
+maps: List<RTSMap> = find((x) -> x.type == "map")
+talents: List<Talent> = find((x) -> x.subtype == "talent")
+passives: List<Passive> = find((x) -> x.subtype == "passive")
+topbars: List<Topbar> = find((x) -> x.subtype == "topbar")
+
+local count: Number = (units + buildings + factions + maps + talents + passives + topbars).length
+local should: Number = all.all.length
+local check = if (count != should) throw("oh no some things arent being categorized nicely") else null
+
