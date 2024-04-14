@@ -1,5 +1,5 @@
-/// gamepiece is the superclass for units, buildings, etc, and represents an on-screen, in-game object. 
-abstract module gamepiece 
+/// gamepiece is the superclass for units, buildings, etc, and represents an on-screen, in-game object.
+abstract module gamepiece
 extends "entity.pkl"
 import "entity.pkl"
 import "add_on.pkl" as AddOn
@@ -29,17 +29,17 @@ hidden fixed dynamicTags {
   when (hasAddOnType == "sacrifice") { "sacrifices" }
 }
 
-/// short description of the purpose of this, to be used in summaries in UI. Many of these won't be in game. 
+/// short description of the purpose of this, to be used in summaries in UI. Many of these won't be in game.
 /// examples: "fast melee attacker" for a unit, "vision buff" for an upgrade, etc
 flavor: String?
 
 /// hexite cost to build. 0 for gamepieces that are cast
-hexiteCost: Number? 
+hexiteCost: Number?
 fluxCost: Number?
 buildCount: Number? = 1
 cooldown: Number?
 energyCost: Number?
-energyCostType: $t.EnergyType? 
+energyCostType: $t.EnergyType?
 buildTime: Number?
 rebuildable: Boolean?
 rebuildTime: Number?
@@ -57,13 +57,13 @@ supply: Number? = fromPath.supply
 hp: Number? = fromPath.hp
 vision: Number? = fromPath.vision
 speed: Number? = fromPath.speed
-shields: Number? 
-abesEnergy: Number? 
+shields: Number?
+abesEnergy: Number?
 energy: Number?
 armor: Number? = fromPath.armor
 
-armorType: $t.ArmorType = fromPath.armorType ?? "none" 
-stunResist: Number? 
+armorType: $t.ArmorType = fromPath.armorType ?? "none"
+stunResist: Number?
 
 provedsSupply: Number? = fromPath.provedsSupply
 providesBiomass: Number? = fromPath.providesBiomass
@@ -77,7 +77,7 @@ carryCapacity: Number?
 
 maxAddOns: Number?
 hasAddOnType: ("turret" | "sacrifice" | "building-upgrade" | "building-turret")? =
-  if (addOns.length == 0) null 
+  if (addOns.length == 0) null
   else throw("hasAddOnType must be set if turrets is used.")
 
 local parentInfo: ParentInfo = new {
@@ -99,7 +99,6 @@ hidden heals: Mapping<String, Ability> = new Mapping<String, Ability> {
   default { key -> name = key; parent = parentInfo; abilityType = "heal" }
 }
 heal: Mapping<String, Ability> = new {
-  // for (h in heals) { h.slug }
   for (n, h in heals) { [h.slug] = h }
 }
 
@@ -107,7 +106,6 @@ hidden spells: Mapping<String, Ability> = new Mapping<String, Ability> {
   default { key -> name = key; parent = parentInfo; abilityType = "spell" }
 }
 spell: Mapping<String, Ability> = new {
-  // for (s in spells) { s.slug }
   for (n, s in spells) { [s.slug] = s }
 }
 
@@ -115,7 +113,6 @@ hidden passives: Mapping<String, Ability> = new Mapping<String, Ability> {
   default { key -> name = key; parent = parentInfo; abilityType = "passive" }
 }
 passive: Mapping<String, Ability> = new {
-  // for (p in passives) { p.slug }
   for (n, p in spells) { [p.slug] = p }
 }
 
@@ -123,9 +120,7 @@ hidden addOns: Mapping<String, AddOn> = new Mapping<String, AddOn> {
   default { key -> name = key; parent = parentInfo; addOnType = methis.hasAddOnType }
 }
 addOn: Mapping<String, AddOn> = new {
-  // for (a in addOns) { a.slug }
   for (n, a in addOns) { [a.slug] = a }
 }
 
 hidden fixed children = List(attacks, heals, spells, passives, addOns).flatMap((x) -> x.toMap().values.toList())
-

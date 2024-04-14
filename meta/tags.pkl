@@ -1,80 +1,394 @@
+import ".../engine/types.pkl" as $t
+class Info { tag: String; label: String; description: String; slug: String }
 
-tags: Mapping<String, String> = new {
-  ["ability"] = "Ability"
-  ["ability:attack"] = "Attack"
-  ["ability:heal"] = "Heal"
-  ["ability:passive"] = "Passive"
-  ["ability:spell"] = "Spell"
-  ["ability:toggle"] = "Toggle Ability"
-  ["add-on"] = "Add On"
-  ["add-on:turret"] = "Turret"
-  ["armor:heavy"] = "Heavy Armor"
-  ["armor:light"] = "Light Armor"
-  ["armor:medium"] = "Medium Armor"
-  ["armored"] = "Armored"
-  ["biomass"] = "Spreads Biomass"
-  ["building"] = "Building"
-  ["building:base"] = "Base/OT"
-  ["building:constructing-unit"] = "Under Construction"
-  ["building:extractor"] = "Hexite Extractor"
-  ["building:production"] = "Production"
-  ["building:special"] = "Faction-specific Building"
-  ["building:supply"] = "Supply Structure"
-  ["building:tech"] = "Tech/Upgrades"
-  ["energy"] = "Has Energy"
-  ["faction"] = "Faction"
-  ["faction-ability"] = "Faction Ability"
-  ["faction-ability:talent"] = "Talent"
-  ["faction-ability:topbar"] = "TopBar Ability"
-  ["faction:arandi"] ="Arandi"
-  ["faction:chakru"] ="Cha'Kru"
-  ["faction:dread"] ="Dread Raiders"
-  ["faction:grell"] ="Grell"
-  ["faction:koru"] ="Koru"
-  ["faction:legion"] = "Legion"
-  ["faction:main"] = "Main Faction"
-  ["faction:marran"] = "Marran"
-  ["faction:mercenary"] = "Mercenary Faction"
-  ["faction:protectorate"] = "Protectorate"
-  ["faction:valkaru"] = "Valkaru"
-  ["faction:xol"] = "Xol"
-  ["faction:zs-future-merc"] = "Edolians"
-  ["flyer"] = "Flyer"
-  ["gathers:flux"] = "+Flux"
-  ["gathers:hexite"] = "+Flux"
-  ["has:turrets"] = "Has Turret(s)"
-  ["infusable"] = "MAKE GO BIG"
-  ["map"] = "Map"
-  ["map:1v1"] = "1v1 PVP"
-  ["map:2v2"] = "2v2 PVP"
-  ["massive"] = "Massive Unit"
-  ["mind-controllable"] = "Mind Controllable"
-  ["resist:stun"] = "Stun Resistant"
-  ["shielded"] = "Has Shields"
-  ["supply"] = "Provides Supply"
-  ["turret"] = "Turret"
-  ["unit"] = "Unit"
-  ["unit:army"] = "Army"
-  ["unit:builder"] = "Builder"
-  ["unit:harvester"] = "Flux Harvester"
-  ["unit:hero"] = "Hero"
-  ["upgradable"] = "Can be Upgraded"
-  ["upgrade"] = "Upgrade"
-  ["upgrades"] = "Upgrades Units"
-  ["tier:0"] = "T0" 
-  ["tier:1"] = "T1" 
-  ["tier:2"] = "T2" 
-  ["tier:3"] = "T3" 
-  ["tier:1.5"] = "T1.5" 
-  ["tier:2.5"] = "T2.5" 
-  ["tier:3.5"] = "T3.5" 
-  ["tier:4"] = "T4"
+tags: Mapping<String, Info> = new {
+  default { key -> tag = key; slug = "tag-\($t.makeSlug(tag))" }
+
+  ["ability"] {
+    label = "Ability"
+    description = "Ability"
+  }
+
+  ["ability:attack"] {
+    label = "Attack"
+    description = "Attack"
+  }
+
+  ["ability:heal"] {
+    label = "Heal"
+    description = "Heal"
+  }
+
+  ["ability:passive"] {
+    label = "Passive"
+    description = "Passive"
+  }
+
+  ["ability:spell"] {
+    label = "Spell"
+    description = "Spell"
+  }
+
+  ["ability:toggle"] {
+    label = "Toggle Ability"
+    description = "Toggle Ability"
+  }
+
+  ["add-on"] {
+    label = "Add On"
+    description = "Add On"
+  }
+
+  ["add-on:turret"] {
+    label = "Turret"
+    description = "Turret"
+  }
+
+  ["armor:heavy"] {
+    label = "Heavy Armor"
+    description = "Heavy Armor"
+  }
+
+  ["armor:light"] {
+    label = "Light Armor"
+    description = "Light Armor"
+  }
+
+  ["armor:medium"] {
+    label = "Medium Armor"
+    description = "Medium Armor"
+  }
+
+  ["armored"] {
+    label = "Armored"
+    description = "Armored"
+  }
+
+  ["biomass"] {
+    label = "Spreads Biomass"
+    description = "Spreads Biomass"
+  }
+
+  ["building"] {
+    label = "Building"
+    description = "Building"
+  }
+
+  ["building:base"] {
+    label = "Base/OT"
+    description = "Base/OT"
+  }
+
+  ["building:constructing-unit"] {
+    label = "Under Construction"
+    description = "Under Construction"
+  }
+
+  ["building:extractor"] {
+    label = "Hexite Extractor"
+    description = "Hexite Extractor"
+  }
+
+  ["building:production"] {
+    label = "Production"
+    description = "Production"
+  }
+
+  ["building:special"] {
+    label = "Faction-specific Building"
+    description = "Faction-specific Building"
+  }
+
+  ["building:supply"] {
+    label = "Supply Structure"
+    description = "Supply Structure"
+  }
+
+  ["building:tech"] {
+    label = "Tech/Upgrades"
+    description = "Tech/Upgrades"
+  }
+
+  ["detection"] {
+    label = "Cloak Detection"
+    description = "Cloak Detection"
+  }
+
+  ["energy"] {
+    label = "Has Energy"
+    description = "Has Energy"
+  }
+
+  ["faction"] {
+    label = "Faction"
+    description = "Faction"
+  }
+
+  ["faction-ability"] {
+    label = "Faction Ability"
+    description = "Faction Ability"
+  }
+
+  ["faction-ability:talent"] {
+    label = "Talent"
+    description = "Talent"
+  }
+
+  ["faction-ability:topbar"] {
+    label = "TopBar Ability"
+    description = "TopBar Ability"
+  }
+
+  ["faction-ability:passive"] {
+    label = "Faction Passive"
+    description = "Faction Passive"
+  }
+
+  ["faction:arandi"] {
+    label = "Arandi"
+    description = "Arandi"
+  }
+  ["faction:chakru"] {
+    label = "Cha'Kru"
+    description = "Cha'Kru Kingdom"
+  }
+  ["faction:dread"] {
+    label = "Dread Raiders"
+    description = "Dread Raiders"
+  }
+
+  ["faction:grell"] {
+    label = "Grell"
+    description = "Grell"
+  }
+
+  ["faction:koru"] {
+    label = "Koru"
+    description = "Koru"
+  }
+
+  ["faction:legion"] {
+    label = "Legion"
+    description = "Legion"
+  }
+
+  ["faction:main"] {
+    label = "Main Faction"
+    description = "Main Faction"
+  }
+
+  ["faction:marran"] {
+    label = "Marran"
+    description = "Marran"
+  }
+
+  ["faction:mercenary"] {
+    label = "Mercenary Faction"
+    description = "Mercenary Faction"
+  }
+
+  ["faction:protectorate"] {
+    label = "Protectorate"
+    description = "Protectorate"
+  }
+
+  ["faction:valkaru"] {
+    label = "Valkaru"
+    description = "Valkaru"
+  }
+
+  ["faction:xol"] {
+    label = "Xol"
+    description = "Xol"
+  }
+
+  ["faction:zs-future-merc"] {
+    label = "Edolians"
+    description = "Edolians"
+  }
+
+  ["faction:nonplayer"] {
+    label = "Non-Playable Faction"
+    description = "Non-Playable Faction"
+  }
+
+  ["faction:jungle-ai"] {
+    label = "Jungle AI (Hostile)"
+    description = "Jungle AI (Hostile)"
+  }
+
+  ["faction:neutral"] {
+    label = "Neutral Unit"
+    description = "Neutral Unit"
+  }
+
+  ["flyer"] {
+    label = "Flyer"
+    description = "Flyer"
+  }
+
+  ["gathers:flux"] {
+    label = "+Flux"
+    description = "+Flux"
+  }
+
+  ["gathers:hexite"] {
+    label = "+Flux"
+    description = "+Flux"
+  }
+
+  ["has:turrets"] {
+    label = "Has Turret(s)"
+    description = "Has Turret(s)"
+  }
+
+  ["infusable"] {
+    label = "Infusable"
+    description = "This Unit may be infused by an owning/allied Grell unit"
+  }
+
+  ["infused"] {
+    label = "Infused"
+    description = "Infused version of a unit"
+  }
+
+  ["map"] {
+    label = "Map"
+    description = "Map"
+  }
+
+  ["map:1v1"] {
+    label = "1v1 PVP"
+    description = "1v1 PVP"
+  }
+
+  ["map:2v2"] {
+    label = "2v2 PVP"
+    description = "2v2 PVP"
+  }
+
+  ["massive"] {
+    label = "Massive Unit"
+    description = "Massive Unit"
+  }
+
+  ["mind-controllable"] {
+    label = "Mind Controllable"
+    description = "Mind Controllable"
+  }
+
+  ["resist:stun"] {
+    label = "Stun Resistant"
+    description = "Stun Resistant"
+  }
+
+  ["shielded"] {
+    label = "Has Shields"
+    description = "Has Shields"
+  }
+
+  ["supply"] {
+    label = "Provides Supply"
+    description = "Provides Supply"
+  }
+
+  ["turret"] {
+    label = "Turret"
+    description = "Turret"
+  }
+
+  ["unit"] {
+    label = "Unit"
+    description = "Unit"
+  }
+
+  ["unit:army"] {
+    label = "Army"
+    description = "Army"
+  }
+
+  ["unit:builder"] {
+    label = "Builder"
+    description = "Builder"
+  }
+
+  ["unit:harvester"] {
+    label = "Flux Harvester"
+    description = "Flux Harvester"
+  }
+
+  ["unit:hero"] {
+    label = "Hero"
+    description = "Hero"
+  }
+
+  ["unit:special"] {
+    label = "Special Unit"
+    description = "Special Unit"
+  }
+
+  ["upgradable"] {
+    label = "Can be Upgraded"
+    description = "Can be Upgraded"
+  }
+
+  ["upgrade"] {
+    label = "Upgrade"
+    description = "Upgrade"
+  }
+
+  ["upgrades"] {
+    label = "Upgrades Units"
+    description = "Upgrades Units"
+  }
+
+  ["tier:0"] {
+    label = "T0"
+    description = "T0"
+  }
+
+  ["tier:1"] {
+    label = "T1"
+    description = "T1"
+  }
+
+  ["tier:2"] {
+    label = "T2"
+    description = "T2"
+  }
+
+  ["tier:3"] {
+    label = "T3"
+    description = "T3"
+  }
+
+  ["tier:1.5"] {
+    label = "T1.5"
+    description = "T1.5"
+  }
+
+  ["tier:2.5"] {
+    label = "T2.5"
+    description = "T2.5"
+  }
+
+  ["tier:3.5"] {
+    label = "T3.5"
+    description = "T3.5"
+  }
+
+  ["tier:4"] {
+    label = "T4"
+    description = "T4"
+  }
+
 }
+
 local methis = this
 hidden output {
   files {
     ["tags.json"] {
-      renderer = new JsonRenderer { indent = "" }
+      renderer = new JsonRenderer { indent = "  " }
       value = methis
     }
   }

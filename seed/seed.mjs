@@ -24,14 +24,16 @@ async function main() {
   addDbFields(all);
   // console.log(tags);
   await seedData(strapi, all.tags);
+  await seedData(strapi, all.libraryPages);
   await seedData(strapi, all.entities);
+
   // console.log(insp(Object.keys(entities)));
   // console.log(Object.entries(entities)[37]);
-  await addRelationships(all);
-  // await writeFile(
-  //   resolve(seed, "seed-output.json"),
-  //   JSON.stringify(all, null, 2),
-  // );
+  await addRelationships(strapi, all);
+  await writeFile(
+    resolve(seed, "seed-output.json"),
+    JSON.stringify(all, null, 2),
+  );
 }
 
 async function init() {
@@ -76,25 +78,54 @@ function initStrapi() {
   return strapiClient;
 }
 
-function addDbFields({ tags, entities }) {
+function prepareEntity(e, parent) {
+  return {
+    ggId: e.id ?? `${parent.id}-${e.slug}`,
+    slug: e.slug,
+    name: e.name,
+    description: e.description,
+    srs: e.src,
+    type: e.type,
+    subtype: e.subtype,
+    fulltype: `${e.type}/${e.subtype}`,
+    inGame: e.inGame,
+    fromFuture: e.fromFuture,
+    data: JSON.stringify(e),
+  };
+}
+
+function addDbFields(all) {
+  const { tags, entities } = all;
+  all.libraryPages = {};
   for (const [slug, rec] of Object.entries(entities)) {
     const e = rec.data;
-    rec.prepared = {
-      ggId: e.id,
-      slug: e.slug,
-      name: e.name,
-      description: e.description,
-      srs: e.src,
-      type: e.type,
-      subtype: e.subtype,
-      fulltype: `${e.type}/${e.subtype}`,
-      inGame: e.inGame,
-      fromFuture: e.fromFuture,
-      data: JSON.stringify(e),
-    };
+    rec.prepared = prepareEntity(e);
     rec.me = slug;
     rec.tblkey = "slug";
     rec.tbl = "entities";
+
+    for (const variant of ["infusedForm", "constructingForm"]) {
+      if (rec.data[variant]) {
+        const vdata = rec.data[variant];
+        const vslug = vdata.slug;
+        entities[vslug] = {
+          data: vdata,
+          prepared: prepareEntity(vdata, rec.data),
+          me: vslug,
+          tblkey: "slug",
+          tbl: "entities",
+          [`${variant}Of`]: rec.data.slug,
+        };
+      }
+    }
+
+    all.libraryPages[slug] = {
+      data: { slug, id: rec.data.id, name: rec.data.name },
+      prepared: { slug, ggId: rec.data.id, name: rec.data.name },
+      me: slug,
+      tblkey: "slug",
+      tbl: "library-pages",
+    };
   }
   // console.log(tags);
   for (const [tag, rec] of Object.entries(tags)) {
@@ -107,13 +138,62 @@ function addDbFields({ tags, entities }) {
 }
 
 //MARK: what
-async function addRelationships({ tags, entities }) {
+async function addRelationships(strapiClient, { tags, entities }) {
+  const getTags = (x) => x.map((y) => tags[y].db.id);
+  const getEntities = (x) => x.map((y) => entities[y].db.id);
   for (const [slug, rec] of Object.entries(entities)) {
-    for (const tag of rec.data.tagList) {
-      console.log("ADD TAG RELATIONSHIP", slug, tag);
-      break;
-    }
-    break;
+    // console.log(rec);
+    const updateData = {
+      tags: { set: getTags(rec.data.tagList) },
+      creates: { set: getEntities(rec.data.creates ?? []) },
+      isCreatedBy: { set: getEntities(rec.data.createdBy ?? []) },
+      isUpgradedBy: { set: getEntities(rec.data.upgradedBy ?? []) },
+      providesUpgradesFor: {
+        set: getEntities(rec.data.providesUpgradesFor ?? []),
+      },
+      unlocks: { set: getEntities(rec.data.unlocks ?? []) },
+      isUnlockedBy: { set: getEntities(rec.data.unlockedBy ?? []) },
+      ...(rec.data.type === "faction" && {
+        facPassives: { set: getEntities(rec.data.passive ?? []) },
+      }),
+      ...(rec.data.type === "faction-ability" &&
+        rec.data.subyte === "passive" && {
+          facPassiveOf: entities[rec.data.faction].db.id,
+        }),
+      ...(rec.data.type === "faction" && {
+        facTalents: { set: getEntities(rec.data.talent ?? []) },
+      }),
+      ...(rec.data.type === "faction-ability" &&
+        rec.data.subyte === "talent" && {
+          facTalentOf: entities[rec.data.faction].db.id,
+        }),
+      ...(rec.data.type === "faction" && {
+        facTopbars: { set: getEntities(rec.data.topbar ?? []) },
+      }),
+      ...(rec.data.type === "faction-ability" &&
+        rec.data.subyte === "topbar" && {
+          facTopbarOf: entities[rec.data.faction].db.id,
+        }),
+      ...(rec.data.infusedForm && {
+        infusedForm: entities[rec.data.infusedForm.slug].db.id,
+      }),
+      ...(rec.infusedFormOf && {
+        infusedFormOf: entities[rec.infusedFormOf].db.id,
+      }),
+      ...(rec.data.constructingVersion && {
+        constructingForm: entities[rec.data.constructingVersion.slug].db.id,
+      }),
+      ...(rec.constructingFormOf && {
+        constructingFormOf: entities[rec.constructingFormOf].db.id,
+      }),
+    };
+    console.log("UPDATE", slug, updateData);
+    rec.dbWithRels = await update(
+      strapiClient,
+      rec.db.id,
+      updateData,
+      "entities",
+    );
   }
 }
 

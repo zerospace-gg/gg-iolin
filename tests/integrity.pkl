@@ -1,10 +1,11 @@
 amends "pkl:test"
 import ".../meta/all.pkl"
+import ".../meta/tags.pkl"
 import ".../engine/types.pkl" as $t
 import ".../engine/gamepiece.pkl"
 
 local emptySlugList = new Listing<$t.Slug> {}
-
+local allTags: List<String> = all.all.flatMap( (v) -> v.tagList.toList() ).distinct
 facts {
   for (slug, entity in all.bySlug) {
     ["\(slug): Unique Slug"] {
@@ -12,6 +13,11 @@ facts {
         .filter((v) -> v.slug == slug)
         .map((v) -> Map("id", v.id, "slug", v.slug))
         == List(Map("id", entity.id, "slug", slug)))
+    }
+  }
+  for (tag in allTags) {
+    ["Tag \(tag) must be defined in tags.pkl"] {
+      tags.tags.containsKey(tag)
     }
   }
 }

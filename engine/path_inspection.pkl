@@ -44,7 +44,7 @@ function dataFromPath(p: List<String>): PathData = new {
   }
   when (p.first == "faction") {
     local len = p.length
-    faction = p[1]
+    faction = $t.makeSlug(p[1])
     when (p.length == 1) {
       type = "faction"
       subtype = "main"
@@ -54,7 +54,7 @@ function dataFromPath(p: List<String>): PathData = new {
   }
   when (p.first == "mercenary") {
     local len = p.length
-    faction = p[1]
+    faction = $t.makeSlug(p[1])
     when (p.length == 1) {
       type = "faction"
       subtype = "mercenary"
@@ -63,8 +63,7 @@ function dataFromPath(p: List<String>): PathData = new {
     }
   }
   when (p.first == "nonplayer") {
-    local len = p.length
-    faction = p[1]
+    faction = $t.makeSlug(p[1])
     when (p.length == 1) {
       type = "faction"
       subtype = "nonplayer"
