@@ -63,6 +63,7 @@ hidden fixed dynamicTags: Listing<String> = new {
   type 
   when (type != subtype) { "\(type):\(subtype)" }
   when (faction != null) { "faction:\(faction)" }
+  when (tier != null) { "tier:\(tier.replaceFirst("T", ""))" }
 }
 
 /// Used to add tags that are dependent on other fields

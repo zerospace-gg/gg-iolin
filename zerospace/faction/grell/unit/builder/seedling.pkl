@@ -10,7 +10,6 @@ buildTime = 5
 infusable = true
 
 infuseRule = new {
-  name = "\(super.name) (Infused)"
   hp = 120
   speed = 575
   domain = "air"

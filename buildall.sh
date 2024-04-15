@@ -1,4 +1,4 @@
-#!/bin/bash	
+#!/bin/bash
 
 GG_VERSION=0.5.0
 ZS_VERSION=v123456789
@@ -21,7 +21,7 @@ time (
     "${PKL}" eval -m ./dist/json -p zs_version="$ZS_VERSION" -p gg_version="$GG_VERSION" -p gg_at="$AT" -p gg_ts="$TS" "$i"
     printf "\n"
   done
-  for i in $META; do 
+  for i in $META; do
     printf "\n# \e[0;1;33mMETA: %s\e[0m\n" "$i"
     echo "${PKL}" eval -m ./dist/json -p zs_version="$ZS_VERSION" -p gg_version="$GG_VERSION" -p gg_at="$AT" -p gg_ts="$TS" "$i"
     "${PKL}" eval -m ./dist/json -p zs_version="$ZS_VERSION" -p gg_version="$GG_VERSION" -p gg_at="$AT" -p gg_ts="$TS" "$i"
@@ -37,15 +37,5 @@ find dist/json -name '*json' -type f -exec cat {} \; | wc -c
 printf "\n# \e[0;1;36mTotal number of JSON files rendered:\e[0m\n"
 find dist/json -name '*json' -type f | wc -l
 
-# printf "\n# \e[0;1;33mValidating relationships\e[0m\n"
-# node ./strapi-seed/generate.mjs
-
-# printf "\n# \e[0;1;33mCreating seed data\e[0m\n"
-# node ./strapi-seed/create-seed-data.mjs
-
-# printf "\n# \e[0;1;36mSeed data:\e[0m\n"
-# ls -l dist/strapi-seed/*.json
-
-# printf "\n# \e[0;1;35mDetails:\e[0m\n"
-# "$CAT" dist/strapi-seed/seed-info.json 
-
+printf "\n# \e[0;1;35mRelease Details:\e[0m\n"
+jq -C . dist/json/release.json

@@ -73,6 +73,8 @@ fixed infusedForm: me? =
   else 
     (this |> infuseRule) { 
       infusable = false
+      infuseCost = null
+      infuseRule = null
       tags { "infused" } 
   }
 

@@ -11,13 +11,13 @@ import ".../engine/faction_passive.pkl" as Passive
 
 local function find(f: (Entity) -> Boolean) = all.all.filter(f)
 
-units: List<Unit> = find((x) -> x.type == "unit")
-buildings: List<Building> = find((x) -> x.type == "building")
-factions: List<Faction> = find((x) -> x.type == "faction")
-maps: List<RTSMap> = find((x) -> x.type == "map")
-talents: List<Talent> = find((x) -> x.subtype == "talent")
-passives: List<Passive> = find((x) -> x.subtype == "passive")
-topbars: List<Topbar> = find((x) -> x.subtype == "topbar")
+units: List<Unit> = find((x) -> x.type == "unit") as List<Unit>
+buildings: List<Building> = find((x) -> x.type == "building") as List<Building>
+factions: List<Faction> = find((x) -> x.type == "faction") as List<Faction>
+maps: List<RTSMap> = find((x) -> x.type == "map") as List<RTSMap>
+talents: List<Talent> = find((x) -> x.subtype == "talent") as List<Talent>
+passives: List<Passive> = find((x) -> x.subtype == "passive") as List<Passive>
+topbars: List<Topbar> = find((x) -> x.subtype == "topbar") as List<Topbar>
 
 local count: Number = (units + buildings + factions + maps + talents + passives + topbars).length
 local should: Number = all.all.length
