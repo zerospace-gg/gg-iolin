@@ -1,5 +1,6 @@
 amends ".../engine/unit.pkl"
-name = "Sensor Pod"
+shortName = "Sensor Pod"
+name = "Valkaru Sensor Pod"
 buildCount = 1
 hexiteCost = 75
 supply = 2
@@ -9,10 +10,10 @@ speed = 650
 vision = 2200
 domain = "air"
 providesDetection = vision
-attacks { 
+attacks {
   ["Attack"] {
     damage = 5
     cooldown = 0.7
     range = 1200
-  } 
+  }
 }

@@ -1,6 +1,6 @@
 amends ".../engine/unit.pkl"
 
-name = "Protectorate Harvester"
+name = "Harvester"
 description = "Protectorate Harvester has a healing ability"
 providesBiomass = 375
 

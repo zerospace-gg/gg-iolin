@@ -1,5 +1,5 @@
-
 amends ".../engine/unit.pkl"
+shortName = "Hovercraft"
 name = "Dread Hovercraft"
 buildCount = 2
 hexiteCost = 200
@@ -8,9 +8,9 @@ supply = 8
 hp = 375
 armorType = "medium"
 speed = 550
-attacks { 
+attacks {
   ["Attack"] {
-    damage = 10 
+    damage = 10
     volleys = 3
     shots = 2
     cooldown = 3.0

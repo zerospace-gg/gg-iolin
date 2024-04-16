@@ -1,4 +1,3 @@
 amends ".../engine/unit.pkl"
 
-name = "Legion Harvester"
-
+name = "Harvester"

@@ -1,4 +1,5 @@
 amends ".../engine/unit.pkl"
+shortName = "Shock Trooper"
 name = "Valkaru Shock Trooper"
 buildCount = 2
 hexiteCost = 200

@@ -1,3 +1,3 @@
 amends ".../engine/building.pkl"
-name = "Grell Extractor"
+name = "Extractor"
 createdBy { import("../base/root_colony.pkl").slug }

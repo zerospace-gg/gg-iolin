@@ -1,6 +1,7 @@
 amends ".../engine/unit.pkl"
 
-name = "Phoenix Guard"
+shortName = "Phoenix Guard"
+name = "Arandi Phoenix Guard"
 hexiteCost = 150
 fluxCost = 100
 buildCount = 2

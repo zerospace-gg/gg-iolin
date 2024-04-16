@@ -1,4 +1,5 @@
 amends ".../engine/unit.pkl"
+shortName = "Rageborn"
 name = "Cha'Kru Rageborn"
 flavor = "Stompy Boi"
 hexiteCost = 225

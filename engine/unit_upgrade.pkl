@@ -6,8 +6,9 @@ fixed type: String = "upgrade"
 fixed subtype: String = "upgrade"
 upgradeOf: String
 
-fluxCost: Number? = 
+
+fluxCost: Number? =
   if (tier == "T1.5") 100 else
-  if (tier == "T2.5") 150 else 
-  if (tier == "T3.5") 200 else 
+  if (tier == "T2.5") 150 else
+  if (tier == "T3.5") 200 else
   throw("do not know flux cost for tier \(tier)")

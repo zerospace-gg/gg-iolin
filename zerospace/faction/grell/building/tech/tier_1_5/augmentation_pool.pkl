@@ -1,15 +1,16 @@
 amends ".../engine/building.pkl"
 
+shortName = "Aug Pool"
 name = "Augmentation Pool"
 
-unlocks { 
+unlocks {
   import("../../../unit/tier_1_5/weaver.pkl").slug
 }
 createdBy {
   import("../../../unit/builder/seedling.pkl").slug
 }
 
-providesUpgradesFor { 
+providesUpgradesFor {
   import("../../../unit/tier_1/stinger.pkl").slug
   import("../../../unit/tier_1/harbinger.pkl").slug
   import("../../../unit/tier_1_5/weaver.pkl").slug

@@ -1,4 +1,5 @@
 amends ".../engine/unit.pkl"
+shortName = "Flame Walker"
 name = "Valkaru Flame Walker"
 buildCount = 1
 hexiteCost = 75

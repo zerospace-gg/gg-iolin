@@ -1,4 +1,5 @@
-amends ".../engine/unit.pkl"     
+amends ".../engine/unit.pkl"
+shortName = "Tow Bot"
 name = "Valkaru Tow Bot"
 buildCount = 1
 hexiteCost = 100

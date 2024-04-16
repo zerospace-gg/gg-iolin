@@ -1,4 +1,5 @@
 amends ".../engine/unit.pkl"
+shortName = "Charger"
 name = "Marran Charger"
 buildCount = 1
 hexiteCost = 100

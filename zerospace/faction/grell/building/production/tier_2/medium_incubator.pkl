@@ -1,5 +1,6 @@
 amends ".../engine/building.pkl"
 
+shortName = "Md. Incubator"
 name = "Medium Incubator"
 creates {
   import("../../../unit/tier_2/lasher.pkl").slug

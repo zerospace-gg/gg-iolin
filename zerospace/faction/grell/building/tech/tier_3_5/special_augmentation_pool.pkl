@@ -1,8 +1,9 @@
 amends ".../engine/building.pkl"
 
+shortName = "Spc. Aug Pool"
 name = "Special Augmentation Pool"
 
-providesUpgradesFor { 
+providesUpgradesFor {
   import("../../../unit/tier_3/reaver.pkl").slug
   import("../../../unit/tier_3/thresher.pkl").slug
   import("../../../unit/tier_3/behemoth.pkl").slug

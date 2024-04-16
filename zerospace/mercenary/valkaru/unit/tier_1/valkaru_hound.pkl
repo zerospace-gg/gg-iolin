@@ -1,4 +1,5 @@
 amends ".../engine/unit.pkl"
+shortName = "Hound"
 name = "Valkaru Hound"
 buildCount = 4
 hexiteCost = 250

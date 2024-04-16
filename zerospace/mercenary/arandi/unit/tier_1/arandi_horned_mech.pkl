@@ -1,6 +1,6 @@
 amends ".../engine/unit.pkl"
-
-name = "Horned Mech"
+shortName = "Horned Mech"
+name = "Arandi Horned Mech"
 hexiteCost = 175
 fluxCost = 100
 buildCount = 2
@@ -13,7 +13,7 @@ armor = 2
 attacks {
   ["Attack"] {
     targets { "ground" }
-    damage = 40 
+    damage = 40
     splashPercent = 100
     splashRange = 50
     cooldown = 3

@@ -1,4 +1,5 @@
 amends ".../engine/unit.pkl"
+shortName = "Wurm"
 name = "Cha'Kru Wurm"
 description = "The Cha'Kru Wurm is a heavy melee bruiser with a powerful zoning ability: It can draw a line through the battlefield, separating an army into two halves. This Rift shoots out in a straight line from the Wurm, meaning positioning the Wurm before casting rift is vital for ensuring its effectiveness."
 hexiteCost = 100

@@ -1,4 +1,5 @@
 amends ".../engine/unit.pkl"
+shortName = "Halo Tank"
 name = "Marran Halo Tank"
 tier = "T3"
 buildCount = 1

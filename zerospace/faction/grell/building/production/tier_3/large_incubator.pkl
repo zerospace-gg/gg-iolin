@@ -1,5 +1,5 @@
 amends ".../engine/building.pkl"
-
+shortName = "Lg. Incubator"
 name = "Large Incubator"
 creates {
   import("../../../unit/tier_3/reaver.pkl").slug

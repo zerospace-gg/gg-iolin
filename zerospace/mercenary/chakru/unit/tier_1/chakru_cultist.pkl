@@ -1,4 +1,5 @@
 amends ".../engine/unit.pkl"
+shortName = "Cultist"
 name = "Cha'Kru Cultist"
 hexiteCost = 100
 fluxCost = 200

@@ -102,8 +102,11 @@ function prepareEntity(e, parent) {
     src: e.src,
     slug: e.slug,
     name: e.name,
+    shortName: e.shortName,
     description: e.description,
-    srs: e.src,
+    faction: e.faction,
+    src: e.src,
+    tier: e.tier,
     type: e.type,
     subtype: e.subtype,
     fulltype: `${e.type}/${e.subtype}`,
@@ -123,20 +126,20 @@ function addDbFields(all) {
     rec.tblkey = "slug";
     rec.tbl = "entities";
 
-    for (const variant of ["infusedForm", "constructingForm"]) {
-      if (rec.data[variant]) {
-        const vdata = rec.data[variant];
-        const vslug = vdata.slug;
-        entities[vslug] = {
-          data: vdata,
-          prepared: prepareEntity(vdata, rec.data),
-          me: vslug,
-          tblkey: "slug",
-          tbl: "entities",
-          [`${variant}Of`]: rec.data.slug,
-        };
-      }
-    }
+    // for (const variant of ["infusedForm", "constructingForm"]) {
+    //   if (rec.data[variant]) {
+    //     const vdata = rec.data[variant];
+    //     const vslug = vdata.slug;
+    //     entities[vslug] = {
+    //       data: vdata,
+    //       prepared: prepareEntity(vdata, rec.data),
+    //       me: vslug,
+    //       tblkey: "slug",
+    //       tbl: "entities",
+    //       [`${variant}Of`]: rec.data.slug,
+    //     };
+    //   }
+    // }
 
     all.libraryPages[slug] = {
       data: { slug, id: rec.data.id, name: rec.data.name },
@@ -192,18 +195,18 @@ async function addRelationships(strapi, { tags, entities, libraryPages }) {
         rec.data.subyte === "topbar" && {
           facTopbarOf: entities[rec.data.faction].db.id,
         }),
-      ...(rec.data.infusedForm && {
-        infusedForm: entities[rec.data.infusedForm.slug].db.id,
-      }),
-      ...(rec.infusedFormOf && {
-        infusedFormOf: entities[rec.infusedFormOf].db.id,
-      }),
-      ...(rec.data.constructingVersion && {
-        constructingForm: entities[rec.data.constructingVersion.slug].db.id,
-      }),
-      ...(rec.constructingFormOf && {
-        constructingFormOf: entities[rec.constructingFormOf].db.id,
-      }),
+      // ...(rec.data.infusedForm && {
+      //   infusedForm: entities[rec.data.infusedForm.slug].db.id,
+      // }),
+      // ...(rec.infusedFormOf && {
+      //   infusedFormOf: entities[rec.infusedFormOf].db.id,
+      // }),
+      // ...(rec.data.constructingVersion && {
+      //   constructingForm: entities[rec.data.constructingVersion.slug].db.id,
+      // }),
+      // ...(rec.constructingFormOf && {
+      //   constructingFormOf: entities[rec.constructingFormOf].db.id,
+      // }),
     };
     // console.log("UPDATE", slug, updateData);
     rec.dbWithRels = await update(strapi, rec.db.id, updateData, "entities");

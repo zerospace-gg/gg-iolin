@@ -1,10 +1,11 @@
 amends ".../engine/unit.pkl"
 
-name = "Time Warper"
+shortName = "Time Warper"
+name = "Arandi Time Warper"
 hexiteCost = 50
-fluxCost = 200 
+fluxCost = 200
 supply = 6
-hp = 450 
+hp = 450
 armorType = "light"
 speed = 500
 
@@ -13,7 +14,7 @@ attacks {
   ["Attack"] {
     targets { "ground"; "air" }
     damage = 15
-    cooldown = 0.7 
+    cooldown = 0.7
     range = 1200
   }
 }

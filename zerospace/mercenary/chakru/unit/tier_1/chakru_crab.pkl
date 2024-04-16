@@ -1,4 +1,5 @@
 amends ".../engine/unit.pkl"
+shortName = "Crab"
 name = "Cha'Kru Crab"
 hexiteCost = 225
 fluxCost = 0

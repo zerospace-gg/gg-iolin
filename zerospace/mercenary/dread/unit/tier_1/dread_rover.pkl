@@ -1,5 +1,5 @@
 amends ".../engine/unit.pkl"
-
+shortName = "Rover"
 name = "Dread Rover"
 buildCount = 2
 hexiteCost = 200
