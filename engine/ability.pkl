@@ -4,19 +4,19 @@ import "types.pkl" as $t
 import "ability.pkl" as me
 local methis = this
 
-activationType: "auto" | "activated" | "passive" = 
+activationType: "auto" | "activated" | "passive" =
   if (type == "attack") "auto"
-  else if (type == "heal") "auto" 
+  else if (type == "heal") "auto"
   else if (type == "faction-passive") "passive"
   else if (type == "faction-talent") "passive"
   else "activated"
 
 fixed type: String = "ability"
 fixed subtype: String = fromPath.abilityType ?? abilityType
-hidden abilityType: "attack" | "heal" | "spell" | "passive" | "toggle" 
+hidden abilityType: "attack" | "heal" | "spell" | "passive" | "toggle"
 
-name: String = 
-  if (subtype == "attack") "Attack" 
+name: String =
+  if (subtype == "attack") "Attack"
   else if (subtype == "heal") "Heal"
   else if (subtype == "passive") "Passive"
   else null
@@ -26,7 +26,7 @@ reverseHotKey: $t.HotKey?
 targets: Listing<$t.TargetType>
 targetMode: $t.TargetMode?
 requiresMode: String?
-togglesMode: ("siege" | "attack")? 
+togglesMode: ("siege" | "attack")?
 energyCost: Number?
 energyType: $t.EnergyType?
 /// also called reloadTime
@@ -39,13 +39,13 @@ delay: Number?
 abilityOf: String? = fromPath.abilityOf ?? parent.slug
 
 shots: Number?
-volleys: Number? 
+volleys: Number?
 
 teleport: Number?
-providesDetection: Number? 
+providesDetection: Number?
 
 local function xPerSec(val: Number?, numShots: Number?, numVolleys: Number?, cd: Number?) =
-  if (val == null) null else 
+  if (val == null) null else
   if (cd == null) null else
   let (amt = val)
   let (s = (numShots ?? 1))
@@ -59,20 +59,20 @@ chargeMaxMultiplier: Number?
 
 damage: Number?
 damageOverTime: Number? // dps will have to change based on this as well
-damagePerSec: Number? = 
-  if (damageOverTime != null) null 
+damagePerSec: Number? =
+  if (damageOverTime != null) null
   else xPerSec(damage, shots, volleys, cooldown)
-damageDisplay: String =
+damageDisplay: String? = if (damage == null) null else
   "\(damage)"
   + (if ((shots ?? 1) > 1) " x\(shots)" else "")
   + (if ((volleys ?? 1) > 1) " x\(volleys)" else "")
 
 healing: Number?
 healingOverTime: Number?
-healingPerSec: Number? = 
-  if (healingOverTime != null) null 
+healingPerSec: Number? =
+  if (healingOverTime != null) null
   else xPerSec(healing, shots, volleys, cooldown)
-healingDisplay: String =
+healingDisplay: String? = if (healing == null) null else
   "\(healing)"
   + (if ((shots ?? 1) > 1) " x\(shots)" else "")
   + (if ((volleys ?? 1) > 1) " x\(volleys)" else "")
@@ -85,10 +85,10 @@ areaOverTime: Number?
 splashPercent: Number?
 splashRange: Number?
 splashOverTime: Number?
-splashDisplay: String? = 
-  if (splashPercent == null || splashRange == null) 
-    null 
-  else 
+splashDisplay: String? =
+  if (splashPercent == null || splashRange == null)
+    null
+  else
     "\(splashPercent)% over \(splashRange) range"
 
 bonusPercent: Number?
@@ -96,5 +96,5 @@ bonusVsTags: Listing<String>?
 
 requiresAddOn: String?
 
-autocast: "always" | "toggle" | "never" = 
+autocast: "always" | "toggle" | "never" =
   if (activationType == "auto") "always" else "never"

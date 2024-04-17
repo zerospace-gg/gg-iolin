@@ -107,6 +107,7 @@ function prepareEntity(e, parent) {
     faction: e.faction,
     src: e.src,
     tier: e.tier,
+    hotkey: e.hotkey,
     type: e.type,
     subtype: e.subtype,
     fulltype: `${e.type}/${e.subtype}`,

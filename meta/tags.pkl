@@ -343,8 +343,8 @@ tags: Mapping<String, Info> = new {
   }
 
   ["tier:0"] {
-    label = "T0"
-    description = "T0"
+    label = "Tier 0"
+    description = "Tier 0"
   }
 
   ["tier:1"] {
@@ -353,33 +353,33 @@ tags: Mapping<String, Info> = new {
   }
 
   ["tier:2"] {
-    label = "T2"
-    description = "T2"
+    label = "Tier 2"
+    description = "Tier 2"
   }
 
   ["tier:3"] {
-    label = "T3"
-    description = "T3"
+    label = "Tier 3"
+    description = "Tier 3"
   }
 
   ["tier:1.5"] {
-    label = "T1.5"
-    description = "T1.5"
+    label = "Tier 1.5"
+    description = "Tier 1.5"
   }
 
   ["tier:2.5"] {
-    label = "T2.5"
-    description = "T2.5"
+    label = "Tier 2.5"
+    description = "Tier 2.5"
   }
 
   ["tier:3.5"] {
-    label = "T3.5"
-    description = "T3.5"
+    label = "Tier 3.5"
+    description = "Tier 3.5"
   }
 
   ["tier:4"] {
-    label = "T4"
-    description = "T4"
+    label = "Tier 4"
+    description = "Tier 4"
   }
 
 }

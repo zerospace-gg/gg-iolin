@@ -113,7 +113,7 @@ hidden passives: Mapping<String, Ability> = new Mapping<String, Ability> {
   default { key -> name = key; parent = parentInfo; abilityType = "passive" }
 }
 passive: Mapping<String, Ability> = new {
-  for (n, p in spells) { [p.slug] = p }
+  for (n, p in passives) { [p.slug] = p }
 }
 
 hidden addOns: Mapping<String, AddOn> = new Mapping<String, AddOn> {
