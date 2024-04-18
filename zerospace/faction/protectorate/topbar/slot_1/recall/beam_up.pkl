@@ -1,0 +1,3 @@
+amends ".../engine/topbar.pkl"
+name = "Beam Up"
+description = "teleports a unit to the nearest operating tower.  Costs 0.3 power per supply. flat 2.5 second cooldown. Can't recall harvesters"

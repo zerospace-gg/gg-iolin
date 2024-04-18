@@ -1,0 +1,5 @@
+amends ".../engine/topbar.pkl"
+name = "Weapon X"
+description = "Call down a mech. Loses health over time and when destroyed sets up a nuclear explosion."
+energyCost = 50
+cooldown = 120

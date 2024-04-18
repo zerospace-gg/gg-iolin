@@ -1,0 +1,5 @@
+amends ".../engine/topbar.pkl"
+name = "Ritual"
+description = "Start ritual on one of XP towers. When ritual finishes, an Emperor projection will spawn for 90s. Sacrifice thralls to make it more powerful. From Thrall remains you also gain some resources back. If the ritual building is destroyed, the Emperor spawns with 60% hp."
+energyCost = 25
+cooldown = 180

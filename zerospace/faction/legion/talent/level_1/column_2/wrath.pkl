@@ -1,0 +1,3 @@
+amends ".../engine/talent.pkl"
+name = "Wrath"
+description = "Dying infantry replenish energy of nearby units, 4 energy per supply"

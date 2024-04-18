@@ -1,0 +1,4 @@
+amends ".../engine/topbar.pkl"
+name = "Reinforcements"
+description = "call down reinforcement units near allied operating towers. you can choose between different unit types"
+energyCost = 25

@@ -1,0 +1,3 @@
+amends ".../engine/talent.pkl"
+name = "Veteran Reinforcement"
+description = "Reinforcing units start at rank 1 veterancy"

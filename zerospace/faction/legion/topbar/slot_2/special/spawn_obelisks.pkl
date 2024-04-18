@@ -1,0 +1,4 @@
+amends ".../engine/topbar.pkl"
+name = "Recall"
+description = "Spawn various obelisks on the battlefield (See Legion Buildings), 3 spawn tim"
+energyCost = 15

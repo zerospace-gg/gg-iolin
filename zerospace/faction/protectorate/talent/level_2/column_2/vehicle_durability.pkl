@@ -1,0 +1,3 @@
+amends ".../engine/talent.pkl"
+name = "Vehicle Durability"
+description = "+12% health and shields for vehicles. Affects Avengers, Strikers, Disruptors, Juggernauts, and various mercenary units."

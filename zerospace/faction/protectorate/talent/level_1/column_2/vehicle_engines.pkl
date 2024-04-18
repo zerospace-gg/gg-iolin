@@ -1,0 +1,3 @@
+amends ".../engine/talent.pkl"
+name = "Vehicle Engines"
+description = "+15% movement speed for vehicles. Affects Avengers, Strikers, Disruptors, Juggernauts, and various mercenary units."

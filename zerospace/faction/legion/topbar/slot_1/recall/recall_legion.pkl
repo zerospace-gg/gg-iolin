@@ -1,0 +1,5 @@
+amends ".../engine/topbar.pkl"
+name = "Recall"
+description = "Recalls units to the nearest HQ or Outpost. First click to select units, click again where to recall."
+energyCost = 5
+cooldown = 110

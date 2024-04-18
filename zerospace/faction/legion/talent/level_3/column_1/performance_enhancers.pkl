@@ -1,0 +1,3 @@
+amends ".../engine/talent.pkl"
+name = "Performance Enhancers"
+description = "+16% movement speed and +10% weapon damage for infantry (excluding heroes)"

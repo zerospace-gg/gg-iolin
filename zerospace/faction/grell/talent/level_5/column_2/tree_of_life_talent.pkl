@@ -1,5 +1,5 @@
 amends ".../engine/talent.pkl"
 import ".../topbar/slot_4/ultimate/tree_of_life_topbar.pkl" as tbp
-name = "\(tbp.name) (Talent)"
+name = tbp.name
 description = "Unlocks The \(tbp.name) topbar power: \(tbp.description)"
 unlocks { tbp.slug }

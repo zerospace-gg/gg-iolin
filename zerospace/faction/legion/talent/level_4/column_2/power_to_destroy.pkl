@@ -1,0 +1,3 @@
+amends ".../engine/talent.pkl"
+name = "Power to Destroy"
+description = "Gain Topbar power by killing enemy structures and harvesters. (2.5% cost as power)"

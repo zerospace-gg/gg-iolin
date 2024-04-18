@@ -1,0 +1,4 @@
+amends ".../engine/topbar.pkl"
+name = "Airstrike"
+description = "Send a plane to bomb the area for 200 damage (100 vs buildings). Requires airstrips to be built. The airstrip limits increases with level."
+energyCost = 3

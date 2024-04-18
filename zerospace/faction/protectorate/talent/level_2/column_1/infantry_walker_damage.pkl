@@ -1,0 +1,3 @@
+amends ".../engine/talent.pkl"
+name = "Infantry Walker Damage"
+description = "+10% Weapon damage for infantry and walkers. Affects Commandos, Bastions, Atlas, Striders, and Various mercenary units"

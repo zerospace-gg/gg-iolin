@@ -1,0 +1,5 @@
+amends ".../engine/talent.pkl"
+import ".../topbar/slot_3/ultimate/ritual_topbar.pkl" as tbp
+name = tbp.name
+description = "unlocks the \(tbp.name) topbar power: \(tbp.description)"
+unlocks { tbp.slug }

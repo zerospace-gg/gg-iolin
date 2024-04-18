@@ -1,0 +1,3 @@
+amends ".../engine/talent.pkl"
+name = "War Experience"
+description = "Gain additional experience by destroying enemy units. (30% cost as XP)"

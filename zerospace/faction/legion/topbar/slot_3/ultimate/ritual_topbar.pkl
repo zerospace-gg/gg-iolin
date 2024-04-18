@@ -1,0 +1,5 @@
+amends ".../engine/topbar.pkl"
+name = "Spawn Monolith"
+description = "Spawn a monolith with a powerful weapon. If a nearby thrall dies, strike a random enemy target with energy. Lasts 45 seconds."
+energyCost = 50
+cooldown = 180

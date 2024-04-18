@@ -1,0 +1,3 @@
+amends ".../engine/talent.pkl"
+name = "Mercenary Reinforcement"
+description = "Reinforcements are accompanied by a random basic mercenary unit"
