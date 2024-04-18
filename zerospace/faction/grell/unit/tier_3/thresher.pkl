@@ -16,7 +16,7 @@ createdBy { import("../../building/production/tier_3/large_incubator.pkl").slug 
 unlockedBy { import("../../building/production/tier_3/large_incubator.pkl").slug }
 upgradedBy { import("../../building/tech/tier_3_5/special_augmentation_pool.pkl").slug }
 
-attacks {
+abilities {
   ["Attack"] {
     damage = 110
     bonusPercent = 50
@@ -27,10 +27,9 @@ attacks {
     range = 2700
     targets { "ground" }
     requiresMode = "siege"
+    abilityType = "attack"
   }
-}
 
-spells {
   ["Siege Mode"] {
     abilityType = "toggle"
     togglesMode = "siege"
@@ -46,9 +45,8 @@ upgrades {
     description = "Projectiles create a burning effect on ground (140 damage over 6s via 7dmg every 0.3s for 20 hits)"
   }
 
-  ["Fast Siege mode"] { 
+  ["Fast Siege mode"] {
     tier = "T3.5"
-    description = "Sieging and unsieging is 50% faster (0.625s)" 
+    description = "Sieging and unsieging is 50% faster (0.625s)"
   }
 }
-

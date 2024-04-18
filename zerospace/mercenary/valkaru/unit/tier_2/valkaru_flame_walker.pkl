@@ -8,7 +8,7 @@ supply = 6
 hp = 800
 speed = 375
 armorType = "heavy"
-attacks {
+abilities {
   ["Attack"] {
     damage = 6
     bonusPercent = 50
@@ -17,11 +17,11 @@ attacks {
     range = 950
     targets { "ground" }
     arcAngle = 5
+    abilityType = "attack"
   }
-}
-spells {
   ["Leap Smash"] {
     cooldown = 7.5
     description = "cooldown 7.5s. jumps to the target location after a small delay. slows nearby enemies for 2 seconds upon landing"
+    abilityType = "spell"
   }
 }

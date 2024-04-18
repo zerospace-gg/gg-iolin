@@ -6,17 +6,18 @@ hotkey = "w"
 tier = "T1"
 hexiteCost = 75
 buildTime = 22
-supply = 1 
-hp = 320 
+supply = 1
+hp = 320
 armor = 1
 armorType = "medium"
 speed = 525
 
-attacks {
+abilities {
   ["Attack"] {
     damage = 20
     cooldown = 1.37
-    range = 120 
+    range = 120
+    abilityType = "attack"
   }
 }
 
@@ -25,7 +26,7 @@ upgrades {
     description = "Each hit increases attack speed (+10% up to 70%)"
     tier = "T1.5"
   }
-  ["Charged Shot"] { 
+  ["Charged Shot"] {
     description = "+100% damage against light armor"
     tier = "T1.5"
   }

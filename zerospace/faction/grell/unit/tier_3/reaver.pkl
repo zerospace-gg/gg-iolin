@@ -15,7 +15,7 @@ createdBy { import("../../building/production/tier_3/large_incubator.pkl").slug 
 unlockedBy { import("../../building/production/tier_3/large_incubator.pkl").slug }
 upgradedBy { import("../../building/tech/tier_3_5/special_augmentation_pool.pkl").slug }
 
-attacks {
+abilities {
   ["Attack"] {
     damage = 55
     volleys = 2
@@ -24,10 +24,9 @@ attacks {
     splashRange = 60
     range = 100
     targets { "ground" }
+    abilityType = "attack"
   }
-}
 
-spells {
   ["Charge"] {
     hotkey = "r"
     cooldown = 30
@@ -35,6 +34,7 @@ spells {
     damage = 80
     targets { "ground" }
     targetMode = "strip"
+    abilityType = "spell"
   }
 }
 

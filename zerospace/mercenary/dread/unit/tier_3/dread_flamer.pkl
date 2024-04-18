@@ -8,7 +8,7 @@ supply = 8
 hp = 1250
 armorType = "heavy"
 speed = 650
-attacks {
+abilities {
   ["Attack"] {
     damage = 8
     volleys = 2
@@ -18,5 +18,6 @@ attacks {
     range = 350
     targets { "ground" }
     arcAngle = 40
+    abilityType = "attack"
   }
 }

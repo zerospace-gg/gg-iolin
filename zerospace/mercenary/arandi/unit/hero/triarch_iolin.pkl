@@ -6,19 +6,19 @@ shields = 150
 armorType = "medium"
 speed = 500
 
-attacks {
+abilities {
   ["Attack"] {
     damage = 26
     range = 1200
     cooldown = 1.63
+    abilityType = "attack"
   }
-}
 
-spells {
   ["Singularity"] {
     hotkey = "q"
     cooldown = 20
     description = "Fire a bolt of energy dealing 40 damage and slowing enemies for 4s. Bolt flies back to the caster."
+    abilityType = "spell"
   }
 
   ["Teleport"] {
@@ -27,11 +27,13 @@ spells {
     description = "Teleport to target location."
     targets {"map"}
     targetMode = "location"
+    abilityType = "spell"
   }
 
   ["Black Hole"] {
     hotkey = "e"
     cooldown = 30
     description = "Root and pull units to the caster"
+    abilityType = "spell"
   }
 }

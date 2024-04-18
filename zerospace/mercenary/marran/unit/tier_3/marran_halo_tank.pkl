@@ -10,11 +10,12 @@ hp = 350
 shields = 350
 armorType = "heavy"
 speed = 400
-attacks {
+abilities {
   ["Attack"] {
     damage = 60
     cooldown = 436
     range = 1400
     targets { "ground" }
+    abilityType = "attack"
   }
 }

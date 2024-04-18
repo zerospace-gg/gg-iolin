@@ -6,11 +6,12 @@ speed = 300
 description = "Guardians of the XP towers. Each tower spawns 8 of these at the beginning of the game, which you must clear to gain initial control of the tower"
 tier = "T0"
 
-attacks {
+abilities {
   ["Attack"] {
     damage = 4
     cooldown = 0.5
     range = 100
     targets { "ground" }
+    abilityType = "attack"
   }
 }

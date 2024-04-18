@@ -11,21 +11,20 @@ armorType = "heavy"
 speed = 300
 armor = 1
 
-carryCapacity = 8 
+carryCapacity = 8
 
-attacks {
+abilities {
   ["Attack"] {
     damage = 12
     volleys = 5
     cooldown = 3
     range = 1200
     targets { "ground" }
+    abilityType = "attack"
   }
-}
-
-passives {
   ["Repair Aura"] {
     description = "todo: fill in details here"
+    abilityType = "passive"
   }
 }
 

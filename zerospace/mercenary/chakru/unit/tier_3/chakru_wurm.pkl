@@ -7,17 +7,17 @@ fluxCost = 250
 supply = 7
 hp = 1000
 armorType = "heavy"
-attacks {
+abilities {
   ["Attack"] {
     damage = 100
     cooldown = 1.3
     range = 100
     targets { "ground" }
+    abilityType = "attack"
   }
-}
-spells {
   ["Rift"] {
     cooldown = 50.0
     description = "Create a rift that pushes all units away and creates unpathable area for 7s"
+    abilityType = "spell"
   }
 }

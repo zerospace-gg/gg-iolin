@@ -12,7 +12,7 @@ hp = 350
 armorType = "medium"
 speed = 450
 
-attacks {
+abilities {
   ["Attack"] {
     damage = 14
     volleys = 12
@@ -20,6 +20,7 @@ attacks {
     range = 2000
     splashRange = 150
     splashPercent = 75
+    abilityType = "attack"
   }
 }
 
@@ -33,7 +34,7 @@ upgrades {
     description = "Enables siege mode, +40% range when sieged"
     tier = "T2.5"
   }
-  
+
   ["Titan Reactor"] {
     description = "+20% movement speed"
     tier = "T3.5"
@@ -45,5 +46,3 @@ upgrades {
     // notes "10% to number of missiles fired. 13 missiles probably. will double check this value later" }
   }
 }
-
-

@@ -13,17 +13,18 @@ createdBy {
 }
 providesBiomass = 1500
 
-hasAddOnType = "building-turret"
 maxAddOns = 1
 addOns {
   ["Root Colony Attacker"] {
     hexiteCost = 200
     buildTime = 5
-    attacks {
+    addOnType = "building-turret"
+    abilities {
       ["Attack"] {
         damage = 55
         cooldown = 1.0
         range = 1800
+        abilityType = "attack"
       }
     }
   }

@@ -11,17 +11,18 @@ creates {
 createdBy {
   import("../../unit/builder/engineer.pkl").slug
 }
-hasAddOnType = "building-turret"
 maxAddOns = 1
 addOns {
   ["Operating Tower Defensive"] {
     hexiteCost = 200
     buildTime = 5
-    attacks {
+    addOnType = "building-turret"
+    abilities {
       ["Attack"] {
         damage = 55
         cooldown = 1.0
         range = 1800
+        abilityType = "attack"
       }
     }
   }

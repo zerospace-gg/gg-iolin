@@ -9,16 +9,16 @@ hp = 150
 shields = 150
 armorType = "medium"
 speed = 700
-attacks {
+abilities {
   ["Attack"] {
     damage = 11
     cooldown = 0.6
     range = 700
     targets { "air"; "ground" }
+    abilityType = "attack"
   }
-}
-passives {
   ["Charge Shields"] {
     description = "Gives shields to nearby units"
+    abilityType = "passive"
   }
 }

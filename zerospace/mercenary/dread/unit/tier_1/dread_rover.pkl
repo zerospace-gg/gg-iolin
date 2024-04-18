@@ -8,13 +8,14 @@ supply = 6
 hp = 275
 armorType = "light"
 speed = 650
-attacks {
+abilities {
   ["Attack"] {
     damage = 4
     volleys = 2
     cooldown = 0.47
     range = 700
     targets { "air"; "ground" }
+    abilityType = "attack"
   }
 }
 notes {

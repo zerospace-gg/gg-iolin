@@ -6,23 +6,23 @@ hotkey = "e"
 tier = "T1"
 hexiteCost = 75
 buildTime = 24
-supply = 1 
-hp = 250 
+supply = 1
+hp = 250
 armorType = "medium"
 speed = 675
 
-attacks {
+abilities {
   ["Attack"] {
     damage = 26
     cooldown = 1.4
-    range = 110 
+    range = 110
+    abilityType = "attack"
   }
-}
 
-spells {
   ["Knockback"] {
     description = "Autocasts when available. charges and knocks enemy back. knockback stacks."
     autocast = "always"
+    abilityType = "spell"
   }
 }
 

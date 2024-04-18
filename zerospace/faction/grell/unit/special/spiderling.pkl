@@ -6,11 +6,12 @@ description = "When you have the \(my_talent.name) talent, these spawn on unit d
 hp = 80
 speed = 300
 
-attacks {
+abilities {
   ["Attack"] {
     damage = 4
     cooldown = 0.5
     range = 100
     targets { "ground" }
+    abilityType = "attack"
   }
 }

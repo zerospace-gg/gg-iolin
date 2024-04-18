@@ -12,22 +12,21 @@ stunResist = 50
 energy = 100
 
 
-attacks {
+abilities {
   ["Attack"] {
     damage = 20
     cooldown = 1.2
     range = 1200
     targets { "ground" }
+    abilityType = "attack"
   }
-}
-
-spells {
   ["Piercing Shot"] {
     hotkey = "e"
     energyCost = 30
     energyType = "classic"
     cooldown = 8
     description = "Deals 75 damage in a linear area"
+    abilityType = "spell"
   }
   ["Toxic Ammunition"] {
     hotkey = "r"
@@ -35,6 +34,7 @@ spells {
     energyType = "classic"
     cooldown = 10
     description = "Equips toxic ammunition, causing attacked units to take 30% additional damage and move 20% slower for 3s. Lasts 10 seconds."
+    abilityType = "spell"
   }
 }
 
@@ -48,7 +48,7 @@ upgrades {
     tier = "T1.5"
   }
 
-  ["Piercing Shot Slow"] { 
+  ["Piercing Shot Slow"] {
     description = "Units hit by piercing shot are slowed (-50% for 4s)"
     tier = "T2.5"
   }

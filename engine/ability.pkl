@@ -37,6 +37,7 @@ range: Number?
 /// also called damage point, attack delay, or cast point
 delay: Number?
 abilityOf: String? = fromPath.abilityOf ?? parent.slug
+// abilityOf: String? = fromPath.abilityOf ?? "WHAT: \(name)"
 
 shots: Number?
 volleys: Number?

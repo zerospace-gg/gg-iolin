@@ -10,7 +10,7 @@ armorType = "heavy"
 speed = 450
 armor = 2
 
-attacks {
+abilities {
   ["Attack"] {
     targets { "ground" }
     damage = 40
@@ -18,5 +18,6 @@ attacks {
     splashRange = 50
     cooldown = 3
     range = 1300
+    abilityType = "attack"
   }
 }

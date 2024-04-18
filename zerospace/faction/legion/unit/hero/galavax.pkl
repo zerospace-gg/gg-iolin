@@ -11,22 +11,21 @@ stunResist = 50
 energy = 100
 
 
-attacks {
+abilities {
   ["Attack"] {
     damage = 26
     cooldown = 1.4
     range = 1200
     targets { "ground"; "air" }
+    abilityType = "attack"
   }
-}
-
-spells {
-  ["Fireball"] { 
+  ["Fireball"] {
     hotkey = "d"
     energyCost = 40
     energyType = "classic"
     cooldown = 15
     description = "Hurl a fireball which slowly moves across battlefield and burns enemy units and structures"
+    abilityType = "spell"
   }
   ["Sacrificial Spear"] {
     hotkey = "f"
@@ -34,6 +33,7 @@ spells {
     energyType = "classic"
     cooldown = 10
     description = "Target a friendly Thrall or an enemy unit. Enemy unit will take 75 damage and be slowed for 4s. Friendly thrall will get sacrificied and heal friendly units for 300 HP over 30s. Double-clicking ability picks a thrall with the lowest health."
+    abilityType = "spell"
   }
 }
 

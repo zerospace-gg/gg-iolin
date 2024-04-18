@@ -10,20 +10,20 @@ armorType = "light"
 speed = 500
 
 
-attacks {
+abilities {
   ["Attack"] {
     targets { "ground"; "air" }
     damage = 15
     cooldown = 0.7
     range = 1200
+    abilityType = "attack"
   }
-}
 
-spells {
   ["Teleport"] {
     hotkey = "b"
     cooldown = 120
     description = "Teleport friendly units to the caster location. Editors note: If you cast this while the time warper is over a chasm tthe units will largely not come with unless they can fly"
+    abilityType = "spell"
   }
 
   ["Phase"] {

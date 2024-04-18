@@ -6,21 +6,22 @@ hotkey = "q"
 tier = "T1"
 hexiteCost = 50
 buildTime = 18
-supply = 1 
+supply = 1
 buildCount = 2
-hp = 100 
+hp = 100
 armorType = "light"
 speed = 700
 createdBy { import("../../building/production/tier_1/incubator.pkl").slug }
 unlockedBy { import("../../building/production/tier_1/incubator.pkl").slug }
 upgradedBy { import("../../building/tech/tier_1_5/augmentation_pool.pkl").slug }
 
-attacks {
+abilities {
   ["Attack"] {
     damage = 5
     cooldown = 0.6
-    range = 100 
+    range = 100
     delay = 0.06 // one of the few damage point values we know
+    abilityType = "attack"
   }
 }
 
@@ -34,7 +35,7 @@ upgrades {
     description = "On BioMass, gain stealth and +50% attack speed"
     tier = "T1.5"
   }
-  
+
   ["Acid Rupture"] {
     description = "When Killed, Spray nearby enemies with acid. Deals 20 damage and targets take +30% damage for 3s."
     tier = "T2.5"

@@ -1,27 +1,28 @@
 amends ".../engine/building.pkl"
 name = "Cultivator"
 armor = 0
-buildTime = 8 
+buildTime = 8
 hexiteCost = 5
 hp = 250
 hotkey = "e"
 providesBiomass = 1500
 
 maxAddOns = 1
-hasAddOnType = "building-turret"
 addOns {
   ["Cultivator Attacker"] {
-    attacks { 
+    addOnType = "building-turret"
+    abilities {
       ["Attack"] {
-        damage = 12 
+        damage = 12
         volleys = 3
         cooldown = 3.5
         range = 1500
+        abilityType = "attack"
       }
     }
   }
 }
-createdBy { 
+createdBy {
   import("../../unit/builder/seedling.pkl").slug
   import("../../unit/harvester/grell_harvester.pkl").slug
 }

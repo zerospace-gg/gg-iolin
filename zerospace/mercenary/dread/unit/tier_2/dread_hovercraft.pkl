@@ -8,7 +8,7 @@ supply = 8
 hp = 375
 armorType = "medium"
 speed = 550
-attacks {
+abilities {
   ["Attack"] {
     damage = 10
     volleys = 3
@@ -16,13 +16,13 @@ attacks {
     cooldown = 3.0
     range = 900
     targets { "air"; "ground" }
+    abilityType = "attack"
   }
-}
-spells {
   ["Lay Mines"] {
     cooldown = 75.0
     range = 400
     description = "75s cooldown. lay 3 mines which deal 30 damage and slow enemies upon contact. max 3 charges. cast range 400"
+    abilityType = "spell"
   }
 }
 notes {

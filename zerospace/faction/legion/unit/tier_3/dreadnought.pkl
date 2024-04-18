@@ -7,7 +7,7 @@ name = "Dreadnought"
 
 tags { "massive" }
 
-hexiteCost = 150 
+hexiteCost = 150
 fluxCost = 250
 supply = 20
 hp = 1000
@@ -25,42 +25,42 @@ constructingVersion {
   }
 }
 
-local mainWeapon: String = "\(me.name)'s \(me.attacks[0].name)"
+local mainWeapon: String = "\(me.name)'s \(me.abilities[0].name)"
 
-attacks {
+abilities {
   ["Main Beam Weapon"] {
     damage = 5
     cooldown = 0.5
     range = 1400
     bonusPercent = 200
     bonusVsTags { "armor:heavy" }
+    abilityType = "attack"
   }
-}
 
-spells {
   ["Bombardment Run"] {
     volleys = 3
     cooldown = 1
     damage = 89
+    abilityType = "spell"
   }
+
   ["Teleport"] {
     name = "Teleport"
     teleport = 4000
     cooldown = 0
     unlockedBy {me.addOns["Command Module"].slug}
+    abilityType = "spell"
   }
-}
 
-passives {
   ["Sensor"] {
     name = "Sensor"
     providesDetection = 4000
     unlockedBy {me.addOns["Command Module"].slug}
+    abilityType = "passive"
   }
 }
 
 
-hasAddOnType = "turret"
 maxAddOns = 4
 addOns {
   default {
@@ -68,26 +68,28 @@ addOns {
     buildTime = 25
     hp = 225
     armorType = "heavy"
+    addOnType = "turret"
   }
   ["Bomb Bay"] {
-    description = "Each \(name) adds 3 bombs to \(me.name)'s \(me.spells["Bombardment Run"].name) spell. Total bomb damage 267/534/801/1068/1335 for 0/1/2/3/4."
+    description = "Each \(name) adds 3 bombs to \(me.name)'s \(me.abilities["Bombardment Run"].name) spell. Total bomb damage 267/534/801/1068/1335 for 0/1/2/3/4."
   }
-  ["Command Module"] { 
-    description = "Unlocks \(me.name)'s \(me.spells["Teleport"].name) spell and \(me.passives["Sensor"].name) passive. Both abilities have a base 4000 range, and each \(name) adds +1000 range. 5000/6000/7000/800 for 1/2/3/4."
-    unlocks { me.spells["Teleport"].slug; me.passives["Sensor"].slug }
+  ["Command Module"] {
+    description = "Unlocks \(me.name)'s \(me.abilities["Teleport"].name) spell and \(me.abilities["Sensor"].name) passive. Both abilities have a base 4000 range, and each \(name) adds +1000 range. 5000/6000/7000/800 for 1/2/3/4."
+    unlocks { me.abilities["Teleport"].slug; me.abilities["Sensor"].slug }
   }
   ["Beam Module"] {
-    description = "Each \(name) adds +30% damage to \(me.name)'s \(me.attacks["Main Beam Weapon"].name) attack. Main beam dmg: 5/7/8/10/11 for 0/1/2/3/4."
+    description = "Each \(name) adds +30% damage to \(me.name)'s \(me.abilities["Main Beam Weapon"].name) attack. Main beam dmg: 5/7/8/10/11 for 0/1/2/3/4."
   }
   ["Anti-Air Turret"] {
     description = "Attacks ground and air but does 3x dmg to air"
-    attacks {
+    abilities {
       ["Turret Attack"] {
         damage = 9
         volleys = 2
         cooldown = 2
         targets { "air"; "ground" }
         range = 2000
+        abilityType = "attack"
       }
     }
   }

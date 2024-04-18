@@ -14,26 +14,27 @@ speed = 450
 
 armorType = "medium"
 
-attacks {
+abilities {
   ["Attack"] {
-    damage = 6 
-    volleys = 2 
+    damage = 6
+    volleys = 2
     cooldown = 0.5
     range = 1550
+    abilityType = "attack"
   }
-}
 
-spells {
   ["Jump"] {
     hotkey = "d"
     description = "Jumps to the target point, bypassing any terrain. Can attack while jumping"
     cooldown = 18
+    abilityType = "spell"
   }
 
   ["Drone Strike"] {
     hotkey = "r"
     description = "65 Energy. Launch a drone that deals 200 damage over 5 seconds in the target area."
     energyCost = 65
+    abilityType = "spell"
   }
 }
 
@@ -58,6 +59,3 @@ upgrades {
     tier = "T2.5"
   }
 }
-
-
-

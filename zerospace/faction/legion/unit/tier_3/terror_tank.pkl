@@ -7,7 +7,7 @@ name = "Terror Tank"
 
 tags { "massive" }
 
-hexiteCost = 200 
+hexiteCost = 200
 fluxCost = 200
 supply = 20
 hp = 1500
@@ -24,17 +24,17 @@ constructingVersion {
   }
 }
 
-attacks {
+abilities {
   ["Main Gun"] {
     damage = 38
     cooldown = 0.9
     range = 1300
+    abilityType = "attack"
   }
 }
 
-local mainWeapon: String = "\(me.name)'s \(me.attacks["Main Gun"].name)"
+local mainWeapon: String = "\(me.name)'s \(me.abilities["Main Gun"].name)"
 
-hasAddOnType = "turret"
 maxAddOns = 4
 addOns {
   default {
@@ -42,26 +42,29 @@ addOns {
     buildTime = 25
     hp = 225
     armorType = "heavy"
+    addOnType = "turret"
   }
   ["Flame Turret"] {
     description = "Each \(name) adds splash damage to \(mainWeapon)"
-    attacks { 
-      ["Turret Attack"] {
+    abilities {
+      ["Attack"] {
         damage = 25
         cooldown = 2
         bonusPercent = 100
         bonusVsTags { "armor:light" }
         range = 1100
+        abilityType = "attack"
       }
     }
   }
   ["Gatling Gun"] {
     description = "Each \(name) adds +30% attack speed and +250 range to \(mainWeapon)"
-    attacks { 
-      ["Turret Attack"] {
+    abilities {
+      ["Attack"] {
         damage = 11
         cooldown = 0.5
         range = 1500
+        abilityType = "attack"
       }
     }
   }

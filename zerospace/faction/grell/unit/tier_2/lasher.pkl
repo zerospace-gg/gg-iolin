@@ -16,20 +16,20 @@ createdBy { import("../../building/production/tier_2/medium_incubator.pkl").slug
 unlockedBy { import("../../building/production/tier_2/medium_incubator.pkl").slug }
 upgradedBy { import("../../building/tech/tier_2_5/advanced_augmentation_pool.pkl").slug }
 
-attacks {
+abilities {
   ["Attack"] {
     damage = 32
     cooldown = 1.8
     range = 1000
     targets { "air"; "ground" }
+    abilityType = "attack"
   }
-}
 
-spells {
   ["Camouflage"] {
     hotkey = "q"
     cooldown = 30
     description = "gain light stealth and +20% movement speed for 10 seconds"
+    abilityType = "spell"
   }
 }
 
@@ -43,7 +43,7 @@ upgrades {
     tier = "T2.5"
     description = "Increase lasher movement speed by 30%"
   }
-  
+
   ["Attack Range"] {
     tier = "T3.5"
     description = "Increase lasher attack range by 20%"
@@ -54,4 +54,3 @@ upgrades {
     description = "-50% camouflage duration"
   }
 }
-

@@ -10,10 +10,11 @@ speed = 650
 vision = 2200
 domain = "air"
 providesDetection = vision
-attacks {
+abilities {
   ["Attack"] {
     damage = 5
     cooldown = 0.7
     range = 1200
+    abilityType = "attack"
   }
 }

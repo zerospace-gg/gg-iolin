@@ -8,11 +8,12 @@ supply = 2
 hp = 350
 armorType = "medium"
 speed = 575
-attacks {
+abilities {
   ["Attack"] {
     damage = 21
     cooldown = 1.31
     range = 75
     targets { "ground" }
+    abilityType = "attack"
   }
 }

@@ -18,16 +18,15 @@ upgradedBy { import("../../building/tech/tier_1_5/augmentation_pool.pkl").slug }
 
 infuseCost = 10
 
-attacks {
+abilities {
   ["Attack"] {
     damage = 21
     range = 800
     cooldown = 1.75
     targets { "ground"; "air" }
+    abilityType = "attack"
   }
-}
 
-spells {
   ["Eruption"] {
     name = "Eruption"
     description = "Deals 120 damage to units in the target area after 1.5 seconds"
@@ -40,6 +39,7 @@ spells {
     areaDamage = 120
     areaRange = 100
     range = 1400
+    abilityType = "spell"
     // notes "radius is estimated" }
   }
 }
@@ -54,7 +54,7 @@ upgrades {
     tier = "T1.5"
     description = "Affected units take 20% additional damage for 8 seconds"
   }
-  
+
   ["Rapid Regeneration"] {
     tier = "T2.5"
     description = "2% of health regenerated each second"
@@ -65,4 +65,3 @@ upgrades {
     description = "Increases the radius of eruption by 50%"
   }
 }
-

@@ -9,7 +9,7 @@ hp = 200
 speed = 550
 armor = 4
 armorType = "heavy"
-attacks {
+abilities {
   ["Attack"] {
     damage = 18
     volleys = 2
@@ -18,5 +18,6 @@ attacks {
     cooldown = 1.3
     range = 150
     targets { "ground" }
+    abilityType = "attack"
   }
 }

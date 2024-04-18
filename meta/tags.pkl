@@ -44,6 +44,11 @@ tags: Mapping<String, Info> = new {
     description = "Turret"
   }
 
+  ["alt-attack"] {
+    label = "Alternate Attack"
+    description = "Has multiple attack modes"
+  }
+
   ["armor:heavy"] {
     label = "Heavy Armor"
     description = "Heavy Armor"
@@ -64,9 +69,14 @@ tags: Mapping<String, Info> = new {
     description = "Armored"
   }
 
+  ["attacker"] {
+    label = "Attacker"
+    description = "Has a basic auto-attack"
+  }
+
   ["biomass"] {
     label = "Spreads Biomass"
-    description = "Spreads Biomass"
+    description = "Spreads Biomass in a radius around itself"
   }
 
   ["building"] {
@@ -107,6 +117,16 @@ tags: Mapping<String, Info> = new {
   ["building:tech"] {
     label = "Tech/Upgrades"
     description = "Tech/Upgrades"
+  }
+
+  ["building-upgrade:turret"] {
+    label = "Turret Upgrade"
+    description = "Turret Upgrade"
+  }
+
+  ["building-upgrade"] {
+    label = "Upgradeable Building"
+    description = "Has Building Upgrade(s)"
   }
 
   ["detection"] {
@@ -237,9 +257,19 @@ tags: Mapping<String, Info> = new {
     description = "+Flux"
   }
 
-  ["has:turrets"] {
+  ["has:turret"] {
     label = "Has Turret(s)"
     description = "Has Turret(s)"
+  }
+
+  ["has:passive"] {
+    label = "Has Passive"
+    description = "Has a passive ability"
+  }
+
+  ["healer"] {
+    label = "Healer"
+    description = "Heals or repairs units or buildings"
   }
 
   ["infusable"] {
@@ -282,9 +312,19 @@ tags: Mapping<String, Info> = new {
     description = "Stun Resistant"
   }
 
+  ["sieges"] {
+    label = "Sieges"
+    description = "Has an attack or other ability that requires a reconfiguration to a stationary mode"
+  }
+
   ["shielded"] {
     label = "Has Shields"
     description = "Has Shields"
+  }
+
+  ["spellcaster"] {
+    label = "Spellcaster"
+    description = "Has Activated Abilities"
   }
 
   ["supply"] {
@@ -325,6 +365,11 @@ tags: Mapping<String, Info> = new {
   ["unit:special"] {
     label = "Special Unit"
     description = "Special Unit"
+  }
+
+  ["untargetable"] {
+    label = "Untargetable"
+    description = "This unit or structure cannot be targeted by spells or abilities"
   }
 
   ["upgradable"] {

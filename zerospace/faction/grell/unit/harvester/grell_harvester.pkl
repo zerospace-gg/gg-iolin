@@ -7,8 +7,9 @@ providesBiomass = 375
 creates { import("../../building/special/cultivator.pkl").slug }
 createdBy { import("../../building/base/root_colony.pkl").slug }
 
-spells {
+abilities {
   ["Spawn Cultivator"] {
+    abilityType = "spell"
     description = "Spawns a free cultivator"
     hotkey = "g"
     cooldown = 60.0

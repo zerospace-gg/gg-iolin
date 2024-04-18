@@ -9,8 +9,8 @@ local methis = this
 fixed type: String = "add-on"
 fixed subtype: String = addOnType
 
-hidden fixed dynamicTags { 
-  when (subtype == "turret") { "turret" } 
+hidden fixed dynamicTags {
+  when (subtype == "turret") { "turret" }
   when (subtype == "sacrifice") { "bonus:sacrifice" }
   when (subtype == "building-upgrade") { "building:upgrade" }
 }
@@ -22,34 +22,6 @@ local parentInfo: ParentInfo = new {
   slug = methis.slug
   src = methis.src
   fromPath = methis.parent.fromPath
-}
-
-hidden attacks: Mapping<String, Ability> = (super.attacks) {
-  default { key -> name = $t.makeSlug(key); parent = parentInfo; abilityType = "attack" }
-}
-attack: Mapping<String, Ability> = new {
-  for (a in attacks) { [a.slug] = a }
-}
-
-hidden heals: Mapping<String, Ability> = (super.heals) {
-  default { key -> name = $t.makeSlug(key); parent = parentInfo; abilityType = "heal" }
-}
-heal: Mapping<String, Ability> = new {
-  for (h in heals) { h.slug }
-}
-
-hidden spells: Mapping<String, Ability> = (super.spells) {
-  default { key -> name = $t.makeSlug(key); parent = parentInfo; abilityType = "spell" }
-}
-spell: Mapping<String, Ability> = new {
-  for (s in spells) { s.slug }
-}
-
-hidden passives: Mapping<String, Ability> = (super.passives) {
-  default { key -> name = $t.makeSlug(key); parent = parentInfo; abilityType = "passive" }
-}
-passive: Mapping<String, Ability> = new {
-  for (p in passives) { p.slug }
 }
 
 hidden fixed children = List(attacks, heals, spells, passives).flatMap((x) -> x.toMap().values.toList())

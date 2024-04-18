@@ -17,12 +17,13 @@ createdBy { import("../../building/production/tier_2/medium_incubator.pkl").slug
 unlockedBy { import("../../building/production/tier_2/medium_incubator.pkl").slug }
 upgradedBy { import("../../building/tech/tier_2_5/advanced_augmentation_pool.pkl").slug }
 
-attacks {
+abilities {
   ["Attack"] {
     damage = 10
     cooldown = 1
     range = 150
     targets { "air"; "ground" }
+    abilityType = "attack"
   }
 }
 
@@ -38,7 +39,7 @@ upgrades {
     name = "Increased Vitality"
     description = "+30% Health"
   }
-  
+
   ["Fast Wings"] {
     tier = "T3.5"
     description = "+20% movement speed"
@@ -49,4 +50,3 @@ upgrades {
     description = "When killed, deal 40 damage to enemy units nearby"
   }
 }
-

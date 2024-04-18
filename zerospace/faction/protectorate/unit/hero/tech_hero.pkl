@@ -6,30 +6,31 @@ armorType = "medium"
 speed = 500
 stunResist = 50
 
-attacks {
+abilities {
   ["Attack"] {
     damage = 18
     cooldown = 1.0
     range = 1200
     targets { "ground"; "air" }
+    abilityType = "attack"
   }
-}
 
-spells {
   ["Energy Conduit"] {
     hotkey = "z"
     cooldown = 25
     description = "A shot pierces enemies in line (up to 6) - damaging them and slowing them down. Enemy hits makes the companion buff permanently stronger: +40% max shields, +2% attack speed"
     targetMode = "strip"
     targets { "map" }
+    abilityType = "spell"
   }
 
-  ["Swap"] { 
+  ["Swap"] {
     hotkey = "x"
     cooldown = 10
     description = "Fire a projectile. If it hits an enemy unit, swap positions with it. If it doesn't hit one or the unit is too close, jump to the target location and leave a decoy behind. The minimum swap range is indicated by the secondary range circle. The decoy lasts 1 minute."
     targets { "map" }
     targetMode = "location"
+    abilityType = "spell"
   }
 
   ["Companion"] {
@@ -38,5 +39,6 @@ spells {
     targets { "ground"; "air" }
     targetMode = "gamepiece"
     description = "A friendly unit can become your companion and gains power (+100 shields). When used on a AI-controlled unit (<= 2 supply cost), you gain control over it."
+    abilityType = "spell"
   }
 }

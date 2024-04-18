@@ -9,17 +9,17 @@ hp = 250
 shields = 250
 armorType = "medium"
 speed = 700
-attacks {
+abilities {
   ["Attack"] {
     damage = 3
     cooldown = 0.25
     range = 1200
     targets { "air"; "ground" }
+    abilityType = "attack"
   }
-}
-spells {
   ["Unload"] {
     cooldown = 0.2
     description = "0.2s cooldown. unload troops in targeted area"
+    abilityType = "spell"
   }
 }

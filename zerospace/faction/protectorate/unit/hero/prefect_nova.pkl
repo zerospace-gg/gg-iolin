@@ -6,22 +6,21 @@ armorType = "medium"
 speed = 500
 stunResist = 50
 
-attacks {
+abilities {
   ["Attack"] {
     damage = 16
     cooldown = 1.0
     range = 1200
     targets { "ground"; "air" }
+    abilityType = "attack"
   }
-}
-
-spells {
   ["Stun Blast"] {
     hotkey = "z"
     cooldown = 20
     description = "Fire a blast towards your enemies. The blast deals 50 damage and stuns enemies in a small area for 3s"
     targets { "ground" }
     targetMode = "strip"
+    abilityType = "spell"
   }
 
   ["Charge"] {
@@ -30,13 +29,15 @@ spells {
     description = "Charge to a location. Gain increased +30% attack speed for 5s upon landing."
     targetMode = "strip"
     targets { "ground" }
+    abilityType = "spell"
   }
 
   ["Construct Light Turret"] {
     hotkey = "c"
     cooldown = 80
     targets { "map" }
-    targetMode = "location" 
+    targetMode = "location"
     description = "Construct a temporary light turret on the field. its beam attack increases significantly over 30s and slows the movement of the target by 50%."
+    abilityType = "spell"
   }
 }

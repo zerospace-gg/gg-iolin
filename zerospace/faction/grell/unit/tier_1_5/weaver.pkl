@@ -15,27 +15,26 @@ createdBy { import("../../building/production/tier_1/incubator.pkl").slug }
 unlockedBy { import("../../building/tech/tier_1_5/augmentation_pool.pkl").slug }
 upgradedBy { import("../../building/tech/tier_1_5/augmentation_pool.pkl").slug }
 
-attacks {
+abilities {
   ["Attack"] {
     damage = 20
     bonusPercent = 100
     bonusVsTags { "domain:air" }
-    cooldown = 2 
+    cooldown = 2
     targets { "air"; "ground" }
+    abilityType = "attack"
   }
-}
 
-spells {
   ["Cocoon"] {
     description = "Traps the targeted unit in a cocoon, making it invulnerable (unable to attack, be attacked, use abilities, or be affected by abilities) for 3 seconds. If the targeted unit is an allied unit it will heal for 400 health"
     energyCost = 50
     energyType = "classic"
+    abilityType = "spell"
   }
-}
 
-passives {
   ["Healing Boost"] {
     description = "double passive healing in an area"
+    abilityType = "passive"
   }
 }
 
@@ -49,4 +48,3 @@ upgrades {
     description = "+100% healed by cocooon"
   }
 }
-

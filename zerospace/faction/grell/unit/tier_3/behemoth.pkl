@@ -17,7 +17,7 @@ createdBy { import("../../building/production/tier_3/large_incubator.pkl").slug 
 unlockedBy { import("../../building/production/tier_3/large_incubator.pkl").slug }
 upgradedBy { import("../../building/tech/tier_3_5/special_augmentation_pool.pkl").slug }
 
-attacks {
+abilities {
   ["Attack"] {
     damage = 30
     bonusPercent = 100
@@ -25,12 +25,22 @@ attacks {
     cooldown = 2
     range = 1400
     targets { "ground" }
+    abilityType = "attack"
   }
-}
-spells {
+
   ["Sacrifice"] {
     hotkey = "m"
     description = "Sacrifices itself, healing nearby units and damaging enemies. Autocast on death."
+    abilityType = "spell"
+  }
+
+  ["Faerie Fire"] {
+    targets { "ground" }
+    energyCost = 10
+    energyType = "abes"
+    autocast = "always"
+    description = "Casts an AOE DOT spell on the ground. 200ish range"
+    abilityType = "passive"
   }
 }
 
@@ -43,16 +53,6 @@ upgrades {
   ["Weapon Range"] {
     tier = "T3.5"
     description = "+50% weapon range"
-  }
-}
-
-passives {
-  ["Faerie Fire"] {
-    targets { "ground" }
-    energyCost = 10
-    energyType = "abes"
-    autocast = "always"
-    description = "Casts an AOE DOT spell on the ground. 200ish range"
   }
 }
 

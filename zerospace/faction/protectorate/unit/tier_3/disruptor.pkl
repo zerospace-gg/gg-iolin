@@ -12,7 +12,7 @@ speed = 550
 
 infuseRule = damageBasedInfuseRule
 
-attacks {
+abilities {
   ["Attack"]  {
     damage = 8
     bonusPercent = 100
@@ -23,6 +23,7 @@ attacks {
     chargeMaxMultiplier = 2
     notes { "leash range: 40%" }
     targets { "air"; "ground" }
+    abilityType = "attack"
   }
 }
 

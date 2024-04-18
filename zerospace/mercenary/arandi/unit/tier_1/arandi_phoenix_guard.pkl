@@ -10,11 +10,12 @@ hp = 275
 armorType = "medium"
 speed = 500
 
-attacks {
+abilities {
   ["Attack"] {
     targets { "ground"; "air" }
     damage = 36
     cooldown = 0.88
     range = 700
+    abilityType = "attack"
   }
 }

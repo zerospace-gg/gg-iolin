@@ -11,9 +11,6 @@ PKL=$(which pkl)
 FILES=$(find zerospace -name '*.pkl' | sort)
 META=$(find meta -name '*.pkl' | sort)
 
-printf "\n# \e[0;1;33mpkl level tests\e[0m\n"
-pkl test
-
 time (
   for i in $FILES; do
     printf "\n# \e[0;1;33mCORE: %s\e[0m\n" "$i"
@@ -28,6 +25,9 @@ time (
     printf "\n"
   done
 )
+
+printf "\n# \e[0;1;33mpkl level tests\e[0m\n"
+pkl test
 
 printf "\n# \e[0;1;32m%s\e[0m\n\n" "DONE [$(date +%Y-%m-%d\ %H:%M:%S)]"
 

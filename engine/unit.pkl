@@ -1,4 +1,4 @@
-module unit 
+module unit
 extends "gamepiece.pkl"
 import "pkl:reflect"
 import "parent_info.pkl" as ParentInfo
@@ -32,15 +32,13 @@ hidden infuseRule: Mixin<me> = new {
   supply = super.supply * 2
   hp = super.hp * 2
 
-  attacks {
+  abilities {
     for (nm, _ in (super.attacks)) {
-      [nm] { cooldown = if (super.cooldown != null) (super.cooldown / 2) else null }
-    }
-  }
-
-  heals {
-    for (nm, _ in (super.heals)) {
-      [nm] { cooldown = if (super.cooldown != null) (super.cooldown / 2) else null }
+      [nm] {
+        when ((abilityType == "attack" || abilityType == "heal") && super.cooldown != null) {
+          cooldown = super.cooldown / 2
+        }
+      }
     }
   }
 }
@@ -51,37 +49,31 @@ hidden damageBasedInfuseRule: Mixin<me> = new {
   supply = super.supply * 2
   hp = super.hp * 2
 
-  attacks {
-    for (nm, _ in (super.attacks)) {
+  abilities {
+    for (nm, _ in (super.abilities)) {
       [nm] {
-        damage = if (super.damage != null) (super.damage * 2) else null
-      }
-    }
-  }
-
-  heals {
-    for (nm, _ in (super.attacks)) {
-      [nm] {
-        damage = if (super.damage != null) (super.damage * 2) else null?.slug
+        when (super.damage != null) {
+          damage = (super.damage ?? 0) * 2
+        }
       }
     }
   }
 }
 
-fixed infusedForm: me? = 
-  if (!infusable) 
-    null 
-  else 
-    (this |> infuseRule) { 
+fixed infusedForm: me? =
+  if (!infusable)
+    null
+  else
+    (this |> infuseRule) {
       infusable = false
       infuseCost = null
       infuseRule = null
-      tags { "infused" } 
+      tags { "infused" }
   }
 
-infuseCost: Number? = 
-  if (!infusable) 
-    null 
+infuseCost: Number? =
+  if (!infusable)
+    null
   else
     let (h = (hexiteCost ?? 0))
     let (f = (fluxCost ?? 0))
@@ -105,10 +97,8 @@ upgrade: Mapping<String, UnitUpgrade> = new {
 
 hidden fixed children = super.children +
   upgrades.toMap().values.toList() +
-  (if (constructingForm != null) 
-    List(constructingVersion.toList().first) 
-  else 
+  (if (constructingForm != null)
+    List(constructingVersion.toList().first)
+  else
     List()) +
   if (infusedForm != null) List(infusedForm) else List()
-
-

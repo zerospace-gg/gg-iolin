@@ -12,7 +12,7 @@ hp = 300
 armorType = "medium"
 speed = 500
 
-attacks {
+abilities {
   ["Attack"] {
     damage = 5
     volleys = 2
@@ -20,6 +20,7 @@ attacks {
     range = 500
     bonusVsTags { "armor:light" }
     bonusPercent = 30
+    abilityType = "attack"
   }
 }
 
@@ -33,7 +34,7 @@ upgrades {
     description = "+25% health. knockback enemies on death."
     tier = "T1.5"
   }
-  
+
   ["Assault Mode"] {
     description = "+30% damage and weapon range"
     tier = "T2.5"

@@ -9,21 +9,20 @@ armorType = "light"
 speed = 500
 
 
-attacks {
+abilities {
   ["Attack"] {
     targets { "ground"; "air" }
     damage = 20
     cooldown = 2
     range = 1200
+    abilityType = "attack"
   }
-}
-
-spells {
   ["Mind Control"] {
     hotkey = "v"
     cooldown = 10
     description = "10 energy. Take over enemy unit. Consumes energy when channeling (based on enemy status resist). Enemies cannot use abilities.10 energy. Take over enemy unit. Consumes energy when channeling (based on enemy status resist). Enemies cannot use abilities. "
     energyCost = 10
     energyType = "abes"
+    abilityType = "spell"
   }
 }

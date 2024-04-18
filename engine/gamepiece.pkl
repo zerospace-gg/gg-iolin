@@ -25,9 +25,22 @@ hidden fixed dynamicTags {
   when ((abesEnergy ?? 0) > 0) { "abes" }
   when ((energy ?? 0) > 0) { "energy" }
   when ((stunResist ?? 0) > 0) { "resist:stun" }
-  when ((maxAddOns ?? 0) > 0 && hasAddOnType == "turret") { "has:turrets" }
-  when (hasAddOnType == "sacrifice") { "sacrifices" }
+  when (hasAddOnType("sacrifice")) { "sacrifices" }
+  when (hasAddOnType("turret")) { "has:turret" }
+  when (hasAddOnType("building-turret")) { "building-upgrade:turret" }
+  when (hasAddOnType("building-upgrade")) { "building-upgrade" }
+  when (hasAbilityType("attack")) { "attacker" }
+  when (hasAbilityType("heal")) { "healer" }
+  when (hasAbilityType("spell")) { "spellcaster" }
+  when (hasAbilityType("passive")) { "has:passive" }
+  when (hasToggleType("siege")) { "sieges" }
+  when (hasToggleType("attack")) { "alt-attack" }
+  when (untargetable) { "untargetable" }
+  when (rebuildable == true) { "respawns" }
 }
+function hasAddOnType(t: String) = addOns.toMap().values.any((a) -> a.addOnType == t)
+function hasAbilityType(t: String) = abilities.toMap().values.any((a) -> a.abilityType == t)
+function hasToggleType(t: String) = abilities.toMap().values.any((a) -> a.togglesMode == t)
 
 /// short description of the purpose of this, to be used in summaries in UI. Many of these won't be in game.
 /// examples: "fast melee attacker" for a unit, "vision buff" for an upgrade, etc
@@ -71,15 +84,11 @@ providesDetection: Number?
 providesUpgradesFor: Listing<String>(isDistinct)?
 upgradedBy: Listing<String>(isDistinct)?
 
-targetable: Boolean? = true
+untargetable: Boolean? = false
 
 carryCapacity: Number?
 
-maxAddOns: Number?
-hasAddOnType: ("turret" | "sacrifice" | "building-upgrade" | "building-turret")? =
-  if (addOns.length == 0) null
-  else throw("hasAddOnType must be set if turrets is used.")
-
+maxAddOns: Number? = 0
 local parentInfo: ParentInfo = new {
   id = methis.id
   slug = methis.slug
@@ -87,39 +96,18 @@ local parentInfo: ParentInfo = new {
   fromPath = methis.fromPath
 }
 
-hidden attacks: Mapping<String, Ability> = new Mapping<String, Ability> {
-  default { key -> name = key; parent = parentInfo; abilityType = "attack" }
+hidden abilities: Mapping<String, Ability> = new Mapping<String, Ability> {
+  default { key -> name = key; parent = parentInfo }
 }
-attack: Mapping<String, Ability> = new {
-  // for (h in attacks) { h.slug }
-  for (n, a in attacks) { [a.slug] = a }
-}
-
-hidden heals: Mapping<String, Ability> = new Mapping<String, Ability> {
-  default { key -> name = key; parent = parentInfo; abilityType = "heal" }
-}
-heal: Mapping<String, Ability> = new {
-  for (n, h in heals) { [h.slug] = h }
-}
-
-hidden spells: Mapping<String, Ability> = new Mapping<String, Ability> {
-  default { key -> name = key; parent = parentInfo; abilityType = "spell" }
-}
-spell: Mapping<String, Ability> = new {
-  for (n, s in spells) { [s.slug] = s }
-}
-
-hidden passives: Mapping<String, Ability> = new Mapping<String, Ability> {
-  default { key -> name = key; parent = parentInfo; abilityType = "passive" }
-}
-passive: Mapping<String, Ability> = new {
-  for (n, p in passives) { [p.slug] = p }
+fixed ability: Mapping<String, Ability> = new Mapping<String, Ability> {
+  for (n, a in abilities) { [a.slug] = a }
 }
 
 hidden addOns: Mapping<String, AddOn> = new Mapping<String, AddOn> {
-  default { key -> name = key; parent = parentInfo; addOnType = methis.hasAddOnType }
+  default { key -> name = key; parent = parentInfo }
 }
-addOn: Mapping<String, AddOn> = new {
+
+fixed addOn: Mapping<String, AddOn> = new {
   for (n, a in addOns) { [a.slug] = a }
 }
 

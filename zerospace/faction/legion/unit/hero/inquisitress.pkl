@@ -11,25 +11,25 @@ buildTime = 30
 stunResist = 50
 energy = 100
 
-
-attacks {
+abilities {
   ["Attack"] {
     damage = 30
     cooldown = 1.05
     range = 150
     targets { "ground" }
+    abilityType = "attack"
   }
-}
 
-spells {
-  ["Cleave"] { 
+  ["Cleave"] {
     name = "Cleave"
     hotkey = "q"
     energyCost = 65
     energyType = "classic"
     cooldown = 15
     description = "deals 65 damage to enemy units in front of Inquisitress"
+    abilityType = "spell"
   }
+
   ["Charge"] {
     name = "Charge"
     hotkey = "w"
@@ -37,12 +37,13 @@ spells {
     energyType = "classic"
     cooldown = 6
     description = "Charge to a location dealing 25 damage to enemy units in its way and slowing them down. Heroic units are not slowed. Gain increased +100% movement speed for 5s, requires vision"
+    abilityType = "spell"
   }
 }
 
 upgrades {
   ["Efficient Fighter"] {
-    description = "-30% energy cost for \(me.spells["Cleave"].name) and \(me.spells["Charge"].name)"
+    description = "-30% energy cost for \(me.abilities["Cleave"].name) and \(me.abilities["Charge"].name)"
     tier = "T1.5"
   }
 

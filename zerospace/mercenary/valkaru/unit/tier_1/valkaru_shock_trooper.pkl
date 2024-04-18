@@ -8,7 +8,7 @@ supply = 4
 hp = 400
 speed = 400
 armorType = "medium"
-attacks {
+abilities {
   ["Attack"] {
     damage = 40
     splashPercent = 50
@@ -16,5 +16,6 @@ attacks {
     cooldown = 3
     range = 1200
     targets { "ground" }
+    abilityType = "attack"
   }
 }

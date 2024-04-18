@@ -1,11 +1,11 @@
-amends ".../engine/unit.pkl" 
+amends ".../engine/unit.pkl"
 
 name = "Laborer"
 domain = "ground"
 hp = 50
 speed = 450
 buildTime = 5
-creates { 
+creates {
   // "garrison-tower"
   // "idal-conduit"
   // "altar"
@@ -16,10 +16,11 @@ creates {
   // "armory"
 }
 
-heals {
+abilities {
   ["Heal"] {
     healing = 5
     cooldown = 0.5
     range = 100
+    abilityType = "heal"
   }
 }

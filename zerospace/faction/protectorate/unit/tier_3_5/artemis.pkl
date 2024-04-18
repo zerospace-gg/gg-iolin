@@ -10,19 +10,19 @@ armorType = "medium"
 speed = 600
 armor = 1
 
-attacks {
+abilities {
   ["Attack"] {
     damage = 15
     cooldown = 0.7
     range = 1400
     targets { "air"; "ground" }
+    abilityType = "attack"
   }
-}
 
-spells {
   ["EMP"] {
     description = "Drain 50 energy and knockback and breifly slow enemy units"
     energyCost = 75
     energyType = "classic"
+    abilityType = "spell"
   }
 }

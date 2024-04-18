@@ -9,7 +9,7 @@ hp = 125
 shields = 125
 armorType = "light"
 speed = 450
-attacks {
+abilities {
   ["Attack"] {
     damage = 30
     bonusPercent = 75
@@ -17,12 +17,12 @@ attacks {
     cooldown = 2.2
     range = 1500
     targets { "air"; "ground" }
+    abilityType = "attack"
   }
-}
-spells {
   ["Crippling Shot"] {
     damage = 50
     cooldown = 75.0
     description = "75s cooldown. deals 50 damage, slows target by 50% for 2 seconds"
+    abilityType = "spell"
   }
 }

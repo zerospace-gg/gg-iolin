@@ -1,32 +1,34 @@
 amends ".../engine/unit.pkl"
 name = "Hel"
-hp = 150 
+hp = 150
 shields = 150
-speed = 500 
+speed = 500
 armorType = "medium"
-attacks {
+abilities {
   ["Attack"] {
     damage = 40
     cooldown = 2
     range = 1700
+    abilityType = "attack"
   }
-}
-spells {
   ["Shockwave Grenade"] {
     name = "Shockwave Grenade"
     hotkey = "q"
     cooldown = 15.0
     description = "Fire a grenade that pushes all units away. Enemy units also take 20 damage and are slowed."
+    abilityType = "spell"
   }
   ["Stealth"] {
     hotkey = "w"
     cooldown = 20.0
     description = "Stealth and +50% movement speed for 10s."
+    abilityType = "spell"
   }
   ["Snipe"] {
     name = "Snipe"
     hotkey = "e"
     cooldown = 40
     description = "Deal 3x weapon damage after 2s. If the target dies, reduce the next cooldown by half, and permanently increase Hel's sight and weapon range by 50. "
+    abilityType = "spell"
   }
 }

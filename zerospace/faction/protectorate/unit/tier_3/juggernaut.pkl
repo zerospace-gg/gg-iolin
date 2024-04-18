@@ -11,12 +11,13 @@ armorType = "heavy"
 speed = 450
 armor = 1
 
-attacks {
+abilities {
   ["Attack"] {
     damage = 38
     cooldown = 0.8
     range = 1200
     targets { "ground" }
+    abilityType = "attack"
   }
 }
 

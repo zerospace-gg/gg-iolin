@@ -6,30 +6,29 @@ shields = 200
 speed = 500
 stunResist = 50
 
-attacks {
+abilities {
   ["Attack"] {
     damage = 26
     cooldown = 1.05
     range = 150
+    abilityType = "attack"
   }
-}
-passives {
-  ["Mera Passive"] {
+  ["Passive"] {
     description = "with each attack Mera gains +5% movement and +10% attack speed. stacks 10x, 10s duration."
+    abilityType = "passive"
   }
-}
-
-spells {
   ["Dash"] {
     hotkey = "q"
     cooldown = 10
     description = "Dash while dealing 40 damage to enemy units and gaining +1 armor for each hit. 10s duration."
     duration = 10
+    abilityType = "spell"
   }
   ["Protective Barrier"] {
     hotkey = "w"
     cooldown = 40
     description = "All friendly units and structures under the barrier have +3 armor. Lasts 20s."
     duration = 20
+    abilityType = "spell"
   }
 }

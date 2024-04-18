@@ -4,7 +4,7 @@ name = "Harvester"
 description = "Protectorate Harvester has a healing ability"
 providesBiomass = 375
 
-spells {
+abilities {
   ["Healing Wave"] {
     description = "heals 150 in a 400 range area"
     hotkey = "l"
@@ -13,5 +13,6 @@ spells {
     range = 400
     targets { "friendly/ground"; "friendly/air" }
     targetMode = "around-self"
+    abilityType = "heal"
   }
 }
