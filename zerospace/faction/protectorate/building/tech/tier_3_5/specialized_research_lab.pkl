@@ -1,0 +1,19 @@
+amends ".../engine/building.pkl"
+
+shortName = "Spc. R. Lab"
+name = "Specialized Research Lab"
+
+createdBy {
+  import("../../../unit/builder/engineer.pkl").slug
+}
+
+unlocks {
+  import("../../../unit/tier_3_5/artemis.pkl").slug
+}
+
+providesUpgradesFor {
+  import("../../../unit/tier_3/disruptor.pkl").slug
+  import("../../../unit/tier_3/juggernaut.pkl").slug
+  import("../../../unit/tier_3/strider.pkl").slug
+  import("../../../unit/tier_3_5/artemis.pkl").slug
+}

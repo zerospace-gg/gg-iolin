@@ -1,0 +1,19 @@
+amends ".../engine/building.pkl"
+
+shortName = "Mech. R. Lab"
+name = "Mechanical Research Lab"
+
+createdBy {
+  import("../../../unit/builder/engineer.pkl").slug
+}
+
+unlocks {
+  import("../../../unit/tier_2_5/atlas.pkl").slug
+}
+
+providesUpgradesFor {
+  import("../../../unit/tier_2/avenger.pkl").slug
+  import("../../../unit/tier_2/gunship.pkl").slug
+  import("../../../unit/tier_2/striker.pkl").slug
+  import("../../../unit/tier_2_5/atlas.pkl").slug
+}

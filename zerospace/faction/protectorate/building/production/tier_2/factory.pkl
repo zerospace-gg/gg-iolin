@@ -1,0 +1,19 @@
+amends ".../engine/building.pkl"
+
+name = "Factory"
+creates {
+  import("../../../unit/tier_2/avenger.pkl").slug
+  import("../../../unit/tier_2/gunship.pkl").slug
+  import("../../../unit/tier_2/striker.pkl").slug
+  import("../../../unit/tier_2_5/atlas.pkl").slug
+}
+
+createdBy {
+  import("../../../unit/builder/engineer.pkl").slug
+}
+
+unlocks {
+  import("../../../unit/tier_2/avenger.pkl").slug
+  import("../../../unit/tier_2/gunship.pkl").slug
+  import("../../../unit/tier_2/striker.pkl").slug
+}

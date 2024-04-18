@@ -1,0 +1,8 @@
+amends ".../engine/building.pkl"
+name = "Supply Depot"
+energy = 100
+buildTime = 15
+hp = 625
+createdBy {
+  import("../../unit/builder/engineer.pkl").slug
+}
