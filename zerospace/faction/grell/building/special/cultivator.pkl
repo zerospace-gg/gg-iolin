@@ -1,4 +1,6 @@
 amends ".../engine/building.pkl"
+import ".../engine/building.pkl" as building
+import "cultivator.pkl" as cultivator
 name = "Cultivator"
 armor = 0
 buildTime = 8
@@ -22,6 +24,7 @@ addOns {
     }
   }
 }
+
 createdBy {
   import("../../unit/builder/seedling.pkl").slug
   import("../../unit/harvester/grell_harvester.pkl").slug

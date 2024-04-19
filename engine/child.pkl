@@ -3,14 +3,17 @@ extends "entity.pkl"
 import "parent_info.pkl" as ParentInfo
 import "types.pkl" as $t
 
-hidden parent: ParentInfo 
+// slightly different version of this logic in gamepiece for nested gamepieces,
+// this child module is for non-gamepiece entities
+
+hidden parent: ParentInfo
 hidden fixed subSlug = $t.makeSlug(name)
 
 // fixed src: String = parent.src
-fixed slug: $t.Slug = 
-  if (subtype == subSlug) 
-    "\(parent.slug)-\(subSlug)\(appendSlug)" 
-  else 
+fixed slug: $t.Slug =
+  if (subtype == subSlug)
+    "\(parent.slug)-\(subSlug)\(appendSlug)"
+  else
   "\(parent.slug)-\(subtype)-\(subSlug)\(appendSlug)"
 
 // fixed id: $t.Id = "\(parent.id)/\(subtype)/\(slug)"
@@ -21,7 +24,7 @@ fixed factionType: String? = parent.fromPath.factionType
 
 hidden fixed extendTags: Listing<String> = (super.extendTags) { "belongsTo:\(parent.slug)" }
 
-fixed id = null 
+fixed id = null
 fixed src = null
 zsVersion = null
 ggVersion = null

@@ -1,7 +1,0 @@
-amends ".../engine/faction.pkl"
-
-name = "Edolians" // guess who i voted for :p
-description = "The 7th merc faction could be one of 3 choices: Sanctuary (medic/buff bots), Endari (peace loving eldritch hippies), or Edolians (Froggy mech suit space gorillas). Sanctuary currently leads the poll."
-inGame = false
-fromFuture = true
-

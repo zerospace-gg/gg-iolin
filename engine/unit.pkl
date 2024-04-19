@@ -16,15 +16,22 @@ fixed dynamicTags {
 }
 
 hidden constructingVersion: Listing<ConstructingUnit> = new {
-  default { key -> name = $t.makeSlug(key); parent = parentInfo }
+  default { key -> name = $t.makeSlug(key); parent = parentInfo; }
 }
-// constructingFormId: String? = if (constructingVersion.length > 0) constructingVersion[0]?.id else null
-constructingForm: ConstructingUnit? = if (constructingVersion.length > 0) constructingVersion.toList().first else null
 
 vision: Number? = 1800
 
 infusable: Boolean = subtype == "army" && !tags.toList().contains("massive")
 mindControllable: Boolean = subtype != "hero"
+
+variants {
+  when (infusable) {
+    ["\(methis.name) (Infused)"] = infusedForm
+  }
+  when (constructingVersion.toList().length > 0) {
+    ["\(methis.name) (Constructing)"] = constructingVersion.toList().first
+  }
+}
 
 hidden infuseRule: Mixin<me> = new {
   appendSlug = "-infused"
@@ -60,7 +67,7 @@ hidden damageBasedInfuseRule: Mixin<me> = new {
   }
 }
 
-fixed infusedForm: me? =
+hidden fixed infusedForm: me? =
   if (!infusable)
     null
   else
@@ -94,6 +101,7 @@ hidden upgrades: Mapping<String, UnitUpgrade> = new Mapping<String, UnitUpgrade>
 upgrade: Mapping<String, UnitUpgrade> = new {
   for (u in upgrades) { [u.slug] = u }
 }
+
 
 hidden fixed children = super.children +
   upgrades.toMap().values.toList() +

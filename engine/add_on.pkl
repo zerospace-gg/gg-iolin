@@ -1,5 +1,5 @@
-module addOn
-extends "gamepiece_child.pkl"
+module add_on
+extends "gamepiece.pkl"
 import "parent_info.pkl" as ParentInfo
 import "ability.pkl" as Ability
 import "types.pkl" as $t
@@ -16,12 +16,5 @@ hidden fixed dynamicTags {
 }
 addOnType: "turret" | "sacrifice"  | "building-upgrade" | "building-turret"
 addOnOf: String = parent.slug
-
-local parentInfo: ParentInfo = new {
-  id = methis.id
-  slug = methis.slug
-  src = methis.src
-  fromPath = methis.parent.fromPath
-}
 
 hidden fixed children = List(attacks, heals, spells, passives).flatMap((x) -> x.toMap().values.toList())

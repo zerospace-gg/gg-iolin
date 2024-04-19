@@ -1,0 +1,6 @@
+amends ".../engine/faction.pkl"
+
+name = "Edolians"
+description = "Look i'm not changing this to sanctuary until i've accepted it and that's gonna take a while"
+inGame = false
+fromFuture = true

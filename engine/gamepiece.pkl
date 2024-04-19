@@ -42,6 +42,20 @@ function hasAddOnType(t: String) = addOns.toMap().values.any((a) -> a.addOnType 
 function hasAbilityType(t: String) = abilities.toMap().values.any((a) -> a.abilityType == t)
 function hasToggleType(t: String) = abilities.toMap().values.any((a) -> a.togglesMode == t)
 
+hidden parent: ParentInfo?
+hidden fixed subSlug: String = $t.makeSlug(name)
+
+um_parent: ParentInfo? = parent
+
+fixed slug: $t.Slug =
+  if (parent != null)
+    "\(parent.slug)-\(subtype)-\(subSlug)\(appendSlug)"
+  else
+    super.slug
+
+fixed belongsTo: String? = parent?.slug
+fixed faction: String? = parent?.fromPath?.faction ?? super.faction
+
 /// short description of the purpose of this, to be used in summaries in UI. Many of these won't be in game.
 /// examples: "fast melee attacker" for a unit, "vision buff" for an upgrade, etc
 flavor: String?
@@ -96,6 +110,8 @@ local parentInfo: ParentInfo = new {
   fromPath = methis.fromPath
 }
 
+um_me_parent = parentInfo
+
 hidden abilities: Mapping<String, Ability> = new Mapping<String, Ability> {
   default { key -> name = key; parent = parentInfo }
 }
@@ -111,4 +127,39 @@ fixed addOn: Mapping<String, AddOn> = new {
   for (n, a in addOns) { [a.slug] = a }
 }
 
+variantOf: String?
+variantOfId: String?
+variantSiblings: List<String>?
+
+hidden variants: Mapping<String, me> = new Mapping<String, me> {
+  default { key -> name = key; parent = parentInfo; variantOf = methis.slug }
+}
+local allVariantSlugs = variants.toMap().values.map((v) -> v.slug).toList()
+
+fixed variant: Mapping<String, me> = new {
+  for (n, a in variants) {
+    [a.slug] = a
+  }
+}
+
 hidden fixed children = List(attacks, heals, spells, passives, addOns).flatMap((x) -> x.toMap().values.toList())
+// hidden output {
+//   files {
+//     ["\(methis.id).json"] {
+//       renderer = new JsonRenderer { indent = "" }
+//       value = (methis.toDynamic()) {
+//         variant = null
+//         variantSlugs = allVariantSlugs
+//       }
+//     }
+//     for (k, v in variant) {
+//       ["\(v.id).json"] {
+//         renderer = new JsonRenderer { indent = "" }
+//         value = (v.toDynamic()) {
+//           variantOf = methis.slug
+//           variantOfId = methis.id
+//         }
+//       }
+//     }
+//   }
+// }

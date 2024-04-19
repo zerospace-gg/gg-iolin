@@ -222,9 +222,9 @@ tags: Mapping<String, Info> = new {
     description = "Xol"
   }
 
-  ["faction:zs-future-merc"] {
-    label = "Edolians"
-    description = "Edolians"
+  ["faction:sanctuary"] {
+    label = "Not Edolians :("
+    description = "Sanctuary"
   }
 
   ["faction:nonplayer"] {
