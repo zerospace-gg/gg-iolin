@@ -1,0 +1,3 @@
+amends ".../engine/faction_passive.pkl"
+name = "Fast Upgrades"
+description = "Unit researches 200% faster (50% research time)"

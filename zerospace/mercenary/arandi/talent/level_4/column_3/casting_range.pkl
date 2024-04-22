@@ -1,0 +1,3 @@
+amends ".../engine/talent.pkl"
+name = "Casting Range"
+description = "+25% casting range for all activated abilities (spells)"

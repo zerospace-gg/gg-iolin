@@ -6,7 +6,7 @@ hexiteCost = 175
 fluxCost = 125
 supply = 6
 buildTime = 60
-hp = 1000
+hp = 1100
 armorType = "heavy"
 speed = 300
 armor = 1
@@ -25,6 +25,12 @@ abilities {
   ["Repair Aura"] {
     description = "todo: fill in details here"
     abilityType = "passive"
+  }
+
+  ["Unload"] {
+    cooldown = 0.2
+    description = "0.2s cooldown. unload troops in targeted area"
+    abilityType = "spell"
   }
 }
 

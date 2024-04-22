@@ -11,7 +11,7 @@ armorType = "medium"
 speed = 500
 
 abilities {
-  ["Attack"] {
+  ["Void Blaster"] {
     targets { "ground"; "air" }
     damage = 36
     cooldown = 0.88

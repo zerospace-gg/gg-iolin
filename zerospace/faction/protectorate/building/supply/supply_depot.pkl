@@ -1,8 +1,42 @@
 amends ".../engine/building.pkl"
 name = "Supply Depot"
-energy = 100
 buildTime = 15
-hp = 625
+hp = 750
 createdBy {
   import("../../unit/builder/engineer.pkl").slug
+}
+
+maxAddOns = 1
+addOns {
+  ["Enhanced Supply Platform"] {
+    buildTime = 3
+    hexiteCost = 100
+    addOnType = "building-upgrade"
+    supply = 25
+    hp = 1250
+    // should maybe be add_hp 500 after, and same with 250/125 below. but need to implement that as a buff in buff system when i do buff system
+  }
+  ["Sensor Platform"] {
+    addOnType = "building-upgrade"
+    hp = 1000
+    vision = 3600
+    hexiteCost = 50
+    buildTime = 15
+  }
+  ["Turret Platform"] {
+    addOnType = "building-turret"
+    hp = 875
+    hexiteCost = 75
+    buildTime = 20
+    abilities {
+      ["Attack"] {
+        abilityType = "attack"
+        damage = 10
+        volleys = 3
+        targets { "air"; "ground" }
+        cooldown = 1.5
+        range = 1500
+      }
+    }
+  }
 }

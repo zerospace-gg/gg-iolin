@@ -7,7 +7,11 @@ createdBy {
   import("../../../unit/builder/engineer.pkl").slug
 }
 
+unlocks {
+  import("../../../unit/tier_1_5/bastion.pkl").slug
+}
+
 providesUpgradesFor {
   import("../../../unit/tier_1/commando.pkl").slug
-  import("../../../unit/tier_1/bastion.pkl").slug
+  import("../../../unit/tier_1_5/bastion.pkl").slug
 }

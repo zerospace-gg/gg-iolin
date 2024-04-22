@@ -13,7 +13,7 @@ armorType = "light"
 speed = 480
 
 abilities {
-  ["Attack"] {
+  ["S-10 Combat Rifle"] {
     damage = 8
     cooldown = 0.8
     range = 800

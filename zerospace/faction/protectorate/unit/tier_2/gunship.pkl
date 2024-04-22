@@ -8,7 +8,7 @@ hexiteCost = 50
 fluxCost = 100
 buildTime = 45
 
-hp = 375
+hp = 350
 speed = 575
 
 domain = "air"
@@ -29,7 +29,7 @@ abilities {
   ["Gatling Gun"] {
     targets { "ground"; "air" }
     damage = 20
-    cooldown = 3
+    cooldown = 1
     range = 1000
     abilityType = "attack"
   }

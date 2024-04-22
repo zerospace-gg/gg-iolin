@@ -10,7 +10,7 @@ speed = 650
 armorType = "light"
 
 abilities {
-  ["Attack"] {
+  ["Shadow Cleave"] {
     targets { "ground" }
     damage = 22
     range = 160

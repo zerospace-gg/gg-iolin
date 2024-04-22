@@ -18,7 +18,7 @@ abilities {
   ["Attack"] {
     damage = 6
     volleys = 2
-    cooldown = 0.5
+    cooldown = 0.6
     range = 1550
     abilityType = "attack"
   }

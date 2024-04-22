@@ -11,7 +11,7 @@ speed = 500
 
 
 abilities {
-  ["Attack"] {
+  ["Light Pulse Cannon"] {
     targets { "ground"; "air" }
     damage = 15
     cooldown = 0.7

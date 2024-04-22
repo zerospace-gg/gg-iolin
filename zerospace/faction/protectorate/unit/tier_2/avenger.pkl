@@ -24,6 +24,33 @@ abilities {
   }
 }
 
+addOns {
+  ["Turret"] {
+    addOnType = "turret"
+    name = "Avenger Turret"
+    description = "Adds a permanent turret that hits both air and ground targets"
+    abilities {
+      ["Attack"] {
+        damage = 2
+        cooldown = 0.3
+        targets { "air"; "ground" }
+        range = 1400
+        abilityType = "attack"
+      }
+    }
+  }
+  ["Armor Aura Module"] {
+    addOnType = "turret"
+    description = "+20% damage reduction to all nearby units"
+    abilities {
+      ["Aura"] {
+        abilityType = "passive"
+        range = 1500
+      }
+    }
+  }
+}
+
 upgrades {
   ["Shredding Bolt"] {
     description = "Avenger's cannon will periodically shoot a projectile causing enemy to take +30% damage for 8s. Up to +60% more damage. Combines with Piercing Bolt"

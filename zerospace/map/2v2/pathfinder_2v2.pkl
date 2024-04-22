@@ -1,0 +1,5 @@
+amends ".../engine/rts_map.pkl"
+name = "Pathfinder 2v2"
+mapSize = "small"
+xpTowers = 2
+fluxDistance = "medium-far"

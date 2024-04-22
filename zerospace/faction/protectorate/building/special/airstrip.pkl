@@ -1,0 +1,10 @@
+amends ".../engine/building.pkl"
+name = "Airstrip"
+description = "Enabled the Airstrike top bar ability."
+
+hp = 1000
+hexiteCost = 100
+buildTime = 15
+unlockedBy {
+  import("../../talent/level_5/column_1/airstrike_talent.pkl").slug
+}

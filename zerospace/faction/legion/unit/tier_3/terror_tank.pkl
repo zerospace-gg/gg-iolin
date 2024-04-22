@@ -45,7 +45,7 @@ addOns {
     addOnType = "turret"
   }
   ["Flame Turret"] {
-    description = "Each \(name) adds splash damage to \(mainWeapon)"
+    description = "Each \(this.name) adds splash damage to \(mainWeapon)"
     abilities {
       ["Attack"] {
         damage = 25
@@ -58,7 +58,7 @@ addOns {
     }
   }
   ["Gatling Gun"] {
-    description = "Each \(name) adds +30% attack speed and +250 range to \(mainWeapon)"
+    description = "Each \(this.name) adds +30% attack speed and +250 range to \(mainWeapon)"
     abilities {
       ["Attack"] {
         damage = 11
@@ -69,9 +69,9 @@ addOns {
     }
   }
   ["Pulseforge Accelerator"] {
-    description = "Each \(name) adds +30% attack speed and +250 range to \(mainWeapon)"
+    description = "Each \(this.name) adds +30% attack speed and +250 range to \(mainWeapon)"
   }
   ["Shield Generator"] {
-    description = "Each \(name) adds 4 shields charges to the \(me.name). +75 shields for 8 seconds to nearby unit."
+    description = "Each \(this.name) adds 4 shields charges to the \(me.name). +75 shields for 8 seconds to nearby unit."
   }
 }

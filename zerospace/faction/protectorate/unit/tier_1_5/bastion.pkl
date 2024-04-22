@@ -13,14 +13,17 @@ armorType = "medium"
 speed = 500
 
 abilities {
-  ["Attack"] {
+  ["S-53 Light Cannons"] {
     damage = 5
     volleys = 2
     cooldown = 0.96
     range = 500
     bonusVsTags { "armor:light" }
     bonusPercent = 30
+    splashPercent = 30
+    splashRange = 100
     abilityType = "attack"
+    targets { "ground" }
   }
 }
 

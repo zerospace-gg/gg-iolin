@@ -1,0 +1,3 @@
+amends ".../engine/talent.pkl"
+name = "Cheaper Upgrades"
+description = "-50% unit research cost"
