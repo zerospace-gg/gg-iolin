@@ -1,7 +1,7 @@
 amends ".../engine/faction.pkl"
 
 name = "Xol"
-description = "Xol is an unreleased faction that was still in the concept phases in December 2012."
+description = "Xol is an unreleased faction that is still in the concept phase currently. Starlance is listening to community suggestions now, so suggest your ideas on the official ZS discord!"
 mercHeroesAllowed = true
 inGame = false
 fromFuture = true
