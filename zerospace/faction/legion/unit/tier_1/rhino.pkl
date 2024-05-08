@@ -7,22 +7,28 @@ tier = "T1"
 hexiteCost = 75
 buildTime = 24
 supply = 1
-hp = 250
+hp = 225
 armorType = "medium"
-speed = 675
+speed = 700
+energy = 10
+vision = 2300
 
 abilities {
   ["Attack"] {
-    damage = 26
+    damage = 22
     cooldown = 1.4
-    range = 110
+    range = 220
     abilityType = "attack"
+    targets { "ground" }
   }
 
   ["Knockback"] {
     description = "Autocasts when available. charges and knocks enemy back. knockback stacks."
     autocast = "always"
     abilityType = "spell"
+    energyType = "abes"
+    energyCost = 10
+    targets { "ground" }
   }
 }
 

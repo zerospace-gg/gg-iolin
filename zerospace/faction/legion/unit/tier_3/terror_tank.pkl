@@ -11,8 +11,9 @@ hexiteCost = 200
 fluxCost = 200
 supply = 20
 hp = 1500
-speed = 450
+speed = 540
 armorType = "heavy"
+armor = 1
 stunResist = 75
 buildTime = 60
 
@@ -30,6 +31,9 @@ abilities {
     cooldown = 0.9
     range = 1300
     abilityType = "attack"
+    bonusVsTags { "armor:heavy" }
+    bonusPercent = 50
+    targets { "ground" }
   }
 }
 
@@ -50,10 +54,13 @@ addOns {
       ["Attack"] {
         damage = 25
         cooldown = 2
-        bonusPercent = 100
+        bonusPercent = 50
         bonusVsTags { "armor:light" }
         range = 1100
         abilityType = "attack"
+        splashPercent = 100
+        splashRadius = 120
+        targets { "ground" }
       }
     }
   }
@@ -65,6 +72,7 @@ addOns {
         cooldown = 0.5
         range = 1500
         abilityType = "attack"
+        targets { "ground" }
       }
     }
   }

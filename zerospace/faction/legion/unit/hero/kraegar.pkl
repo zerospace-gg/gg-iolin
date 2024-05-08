@@ -17,7 +17,7 @@ abilities {
     damage = 20
     cooldown = 1.2
     range = 1200
-    targets { "ground" }
+    targets { "ground"; "air" }
     abilityType = "attack"
   }
   ["Piercing Shot"] {

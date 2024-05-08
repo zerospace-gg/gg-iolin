@@ -1,0 +1,15 @@
+amends ".../engine/building.pkl"
+name = "Barracks"
+creates {
+  import("../../../unit/tier_1/thrall.pkl").slug
+  import("../../../unit/tier_1/armored_thrall.pkl").slug
+  import("../../../unit/tier_1/rhino.pkl").slug
+}
+createdBy {
+  import("../../../unit/builder/laborer.pkl").slug
+}
+unlocks {
+  import("../../../unit/tier_1/thrall.pkl").slug
+  import("../../../unit/tier_1/armored_thrall.pkl").slug
+  import("../../../unit/tier_1/rhino.pkl").slug
+}

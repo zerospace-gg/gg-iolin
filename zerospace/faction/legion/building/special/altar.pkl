@@ -1,0 +1,16 @@
+amends ".../engine/building.pkl"
+
+name = "Altar"
+creates {
+  import("../../unit/hero/galavax.pkl").slug
+  import("../../unit/hero/inquisitress.pkl").slug
+  import("../../unit/hero/kraegar.pkl").slug
+}
+createdBy {
+  import("../../unit/builder/laborer.pkl").slug
+}
+unlocks {
+  import("../../unit/hero/galavax.pkl").slug
+  import("../../unit/hero/inquisitress.pkl").slug
+  import("../../unit/hero/kraegar.pkl").slug
+}

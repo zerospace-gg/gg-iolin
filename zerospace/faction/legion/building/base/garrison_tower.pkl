@@ -1,0 +1,31 @@
+amends ".../engine/building.pkl"
+
+name = "Root Colony"
+description = "Grows flowers in its attacker form"
+hotkey = "q"
+creates {
+  import("../../unit/builder/laborer.pkl").slug
+  import("../../unit/harvester/legion_harvester.pkl").slug
+  import("../extractor/legion_extractor.pkl").slug
+}
+createdBy {
+  import("../../unit/builder/laborer.pkl").slug
+}
+
+maxAddOns = 1
+addOns {
+  ["Garrison Tower Attacker"] {
+    hexiteCost = 200
+    buildTime = 5
+    addOnType = "building-turret"
+    abilities {
+      ["Attack"] {
+        damage = 20
+        cooldown = 0.5
+        range = 1800
+        abilityType = "attack"
+        targets { "ground"; "air" }
+      }
+    }
+  }
+}

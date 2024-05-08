@@ -14,10 +14,11 @@ speed = 500
 
 abilities {
   ["Attack"] {
-    damage = 5
-    cooldown = 0.7
+    damage = 6
+    cooldown = 0.84
     range = 800
     abilityType = "attack"
+    targets { "air"; "ground" }
   }
 }
 

@@ -1,0 +1,13 @@
+amends ".../engine/building.pkl"
+
+name = "Armory"
+hp = 1000
+createdBy {
+  import("../../../unit/builder/laborer.pkl").slug
+}
+
+providesUpgradesFor {
+  import("../../../unit/hero/galavax.pkl").slug
+  import("../../../unit/hero/inquisitress.pkl").slug
+  import("../../../unit/hero/kraegar.pkl").slug
+}

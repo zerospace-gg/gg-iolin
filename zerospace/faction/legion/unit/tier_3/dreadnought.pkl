@@ -29,12 +29,13 @@ local mainWeapon: String = "\(me.name)'s \(me.abilities[0].name)"
 
 abilities {
   ["Main Beam Weapon"] {
-    damage = 5
+    damage = 10
     cooldown = 0.5
-    range = 1400
-    bonusPercent = 200
+    range = 1200
+    bonusPercent = 100
     bonusVsTags { "armor:heavy" }
     abilityType = "attack"
+    targets { "air"; "ground" }
   }
 
   ["Bombardment Run"] {
@@ -42,6 +43,7 @@ abilities {
     cooldown = 1
     damage = 89
     abilityType = "spell"
+    targets { "ground" }
   }
 
   ["Teleport"] {
@@ -90,6 +92,8 @@ addOns {
         targets { "air"; "ground" }
         range = 2000
         abilityType = "attack"
+        bonusVsTags { "flyer" }
+        bonusPercent = 200
       }
     }
   }
