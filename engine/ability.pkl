@@ -13,7 +13,7 @@ activationType: "auto" | "activated" | "passive" =
 
 fixed type: String = "ability"
 fixed subtype: String = fromPath.abilityType ?? abilityType
-hidden abilityType: "attack" | "heal" | "spell" | "passive" | "toggle"
+hidden abilityType: "attack" | "heal" | "spell" | "passive" | "toggle" | "recharge-energy";
 
 name: String =
   if (subtype == "attack") "Attack"
@@ -75,6 +75,16 @@ healingPerSec: Number? =
   else xPerSec(healing, shots, volleys, cooldown)
 healingDisplay: String? = if (healing == null) null else
   "\(healing)"
+  + (if ((shots ?? 1) > 1) " x\(shots)" else "")
+  + (if ((volleys ?? 1) > 1) " x\(volleys)" else "")
+
+energyRecharge: Number?
+energyRechargeOverTime: Number?
+energyRechargePerSec: Number? =
+  if (energyRechargeOverTime != null) null
+  else xPerSec(energyRecharge, shots, volleys, cooldown)
+energyRechargeDisplay: String? = if (energyRecharge == null) null else
+  "\(energyRecharge)"
   + (if ((shots ?? 1) > 1) " x\(shots)" else "")
   + (if ((volleys ?? 1) > 1) " x\(volleys)" else "")
 

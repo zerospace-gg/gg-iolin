@@ -5,7 +5,7 @@ import "terror_tank.pkl" as me
 
 name = "Terror Tank"
 
-tags { "massive" }
+// tags { "massive" }
 
 hexiteCost = 200
 fluxCost = 200
@@ -59,7 +59,7 @@ addOns {
         range = 1100
         abilityType = "attack"
         splashPercent = 100
-        splashRadius = 120
+        splashRange = 120
         targets { "ground" }
       }
     }

@@ -45,7 +45,7 @@ function hasToggleType(t: String) = abilities.toMap().values.any((a) -> a.toggle
 hidden parent: ParentInfo?
 hidden fixed subSlug: String = $t.makeSlug(name)
 
-um_parent: ParentInfo? = parent
+// um_parent: ParentInfo? = parent
 
 fixed slug: $t.Slug =
   if (parent != null)
@@ -110,7 +110,7 @@ local parentInfo: ParentInfo = new {
   fromPath = methis.fromPath
 }
 
-um_me_parent = parentInfo
+// um_me_parent = parentInfo
 
 hidden abilities: Mapping<String, Ability> = new Mapping<String, Ability> {
   default { key -> name = key; parent = parentInfo }

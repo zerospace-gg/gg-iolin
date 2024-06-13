@@ -1,0 +1,31 @@
+amends ".../engine/building.pkl"
+local methis = this
+name = "Guardian Obelisk"
+armor = 0
+hp = 500
+
+abilities {
+  ["Attack"] {
+    targets { "air" ; "ground" }
+    damage = 50
+    cooldown = 1.5
+    range = 1600
+    abilityType = "attack"
+  }
+}
+
+maxAddOns = 1
+addOns {
+  ["\(methis.name) (Armed)"] {
+    addOnType = "building-turret"
+    abilities {
+      ["Attack"] {
+        damage = 8
+        cooldown = 0.8
+        range = 1000
+        abilityType = "attack"
+        targets { "ground"; "air" }
+      }
+    }
+  }
+}

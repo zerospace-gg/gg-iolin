@@ -1,7 +1,6 @@
 amends ".../engine/building.pkl"
 
-name = "Root Colony"
-description = "Grows flowers in its attacker form"
+name = "Garrison Tower"
 hotkey = "q"
 creates {
   import("../../unit/builder/laborer.pkl").slug

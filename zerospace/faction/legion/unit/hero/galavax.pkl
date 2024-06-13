@@ -13,7 +13,7 @@ energy = 100
 
 abilities {
   ["Attack"] {
-    damage = 26
+    damage = 25
     cooldown = 1.4
     range = 1200
     targets { "ground"; "air" }

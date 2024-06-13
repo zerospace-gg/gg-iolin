@@ -1,0 +1,34 @@
+amends ".../engine/building.pkl"
+local methis = this
+name = "Recharging Obelisk"
+armor = 0
+hp = 500
+energy = 100
+
+abilities {
+  ["Recharge Energy"] {
+    targets { "air" ; "ground" }
+    energyRecharge = 20
+    cooldown = 0.5
+    range = 800
+    energyCost = 4
+    energyType = "classic"
+    abilityType = "recharge-energy"
+  }
+}
+
+maxAddOns = 1
+addOns {
+  ["\(methis.name) (Armed)"] {
+    addOnType = "building-turret"
+    abilities {
+      ["Attack"] {
+        damage = 8
+        cooldown = 0.8
+        range = 1000
+        abilityType = "attack"
+        targets { "ground"; "air" }
+      }
+    }
+  }
+}

@@ -1,4 +1,4 @@
-open module building 
+open module building
 extends "gamepiece.pkl"
 import "types.pkl" as $t
 
@@ -6,11 +6,11 @@ fixed type: String = "building"
 fixed subtype: String = fromPath.subtype ?? buildingType
 buildingType: "base" | "extractor" | "supply" | "production" | "tech" | "special" | "constructing-unit" = fromPath.subtype
 
-providesBiomass: Number? = 
-  if (faction != "grell") null 
-  else if (subtype == "base") 1500 
-    else if (subtype == "extractor") 0 
-      else if (subtype == "special") 1500 
+providesBiomass: Number? =
+  if (faction != "grell") null
+  else if (subtype == "base") 1500
+    else if (subtype == "extractor") 0
+      else if (subtype == "special") 1500
         else 750
 
 speed: Number? = 0
@@ -29,9 +29,9 @@ hp: Number? = fromPath.hp ??
       else if (tier == "T3") 1400
         else null
   else null
-    
 
-hexiteCost: Number? = fromPath.buildTime ??
+
+hexiteCost: Number? = fromPath.hexiteCost ??
   if (tier == "T1") 100
   else if (tier == "T2") 150
     else if (tier == "T3") 150

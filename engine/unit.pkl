@@ -38,6 +38,8 @@ hidden infuseRule: Mixin<me> = new {
   name = "\(super.name) (Infused)"
   supply = super.supply * 2
   hp = super.hp * 2
+  hexiteCost = 0
+  fluxCost = 0
 
   abilities {
     for (nm, _ in (super.attacks)) {

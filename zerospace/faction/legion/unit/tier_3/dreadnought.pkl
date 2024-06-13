@@ -5,8 +5,6 @@ import "dreadnought.pkl" as me
 
 name = "Dreadnought"
 
-tags { "massive" }
-
 hexiteCost = 150
 fluxCost = 250
 supply = 20
