@@ -42,10 +42,10 @@ hidden infuseRule: Mixin<me> = new {
   fluxCost = 0
 
   abilities {
-    for (nm, _ in (super.attacks)) {
-      [nm] {
-        when ((abilityType == "attack" || abilityType == "heal") && super.cooldown != null) {
-          cooldown = super.cooldown / 2
+    for (nm, x in (super.abilities)) {
+      [nm] = (x) {
+        when ((x.abilityType == "attack" || x.abilityType == "heal") && x.cooldown != null) {
+          cooldown = x.cooldown / 2
         }
       }
     }
@@ -59,10 +59,10 @@ hidden damageBasedInfuseRule: Mixin<me> = new {
   hp = super.hp * 2
 
   abilities {
-    for (nm, _ in (super.abilities)) {
-      [nm] {
-        when (super.damage != null) {
-          damage = (super.damage ?? 0) * 2
+    for (nm, x in (super.abilities)) {
+      [nm] = (x) {
+        when ((x.abilityType == "attack" || x.abilityType == "heal") && x.damage != null) {
+          damage = (x.damage ?? 0) * 2
         }
       }
     }
