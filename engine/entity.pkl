@@ -28,14 +28,14 @@ hidden repoSlug = "zerospace-gg/gg-iolin";
 /// metadata pulled from path. this includes things used in multiple subclasses
 hidden fixed fromPath: $p.PathData = $p.dataFromPath(srcDirParts)
 
-zsVersion: String? = versioning.zsVersion
-ggVersion: String? = versioning.ggVersion
-ggUpdated: String? = versioning.ggUpdated
-ggRelease: String? = versioning.ggRelease
+// zsVersion: String? = versioning.zsVersion
+// ggVersion: String? = versioning.ggVersion
+// ggUpdated: String? = versioning.ggUpdated
+// ggRelease: String? = versioning.ggRelease
 
-ggUrl: String? = "https://zerospace.gg/library/\(id)/";
-githubUrl: String? = "https://github.com/\(repoSlug)/blob/main/zerospace/\(src)";
-githubRawUrl: String? = "https://raw.githubusercontent.com/\(repoSlug)/main/zerospace/\(src)";
+// ggUrl: String? = "https://zerospace.gg/library/\(id)/";
+// githubUrl: String? = "https://github.com/\(repoSlug)/blob/main/zerospace/\(src)";
+// githubRawUrl: String? = "https://raw.githubusercontent.com/\(repoSlug)/main/zerospace/\(src)";
 
 /// nicely formatted display name, as it appears in game (with the exception of things without lore names yet)
 name: String

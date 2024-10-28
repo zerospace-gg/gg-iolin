@@ -1,0 +1,41 @@
+import "all.pkl" as $a
+import "tags.pkl" as $tags
+import ".../engine/entity.pkl" as Entity
+
+local function find(f: (Entity) -> Boolean) = $a.all.filter(f).map((x) -> x.id)
+
+class Summary {
+  id: String;
+  slug: String;
+  name: String;
+  shortName: String;
+  type: String;
+  subtype: String;
+  faction: String?;
+  tier: String?;
+  hotkey: String?;
+}
+
+all: Map<String, Summary> = $a.all.toMap((x) -> x.id, (x) -> new Summary {
+  id = x.id
+  slug = x.slug
+  name = x.name
+  shortName = x.shortName
+  type = x.type
+  subtype = x.subtype
+  faction = x.faction
+  tier = x.tier
+  hotkey = if (x.type == "unit" || x.type == "building") x.hotkey else null
+})
+
+ids: Map<String, String> = $a.all.toMap((x) -> x.slug, (x) -> x.id)
+
+local methis = this
+hidden output {
+  files {
+    ["idx.json"] {
+      renderer = new JsonRenderer { indent = "" }
+      value = methis
+    }
+  }
+}

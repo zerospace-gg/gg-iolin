@@ -1,5 +1,10 @@
+import "all.pkl" as $a
 import ".../engine/types.pkl" as $t
-class Info { tag: String; label: String; description: String; slug: String }
+class Info { tag: String; label: String; description: String; slug: String; tagged: List<String>; }
+
+local function find(tag: String): List<String> = $a.all.filter((x) -> x.tagList.toList().contains(tag)).map((x) -> x.id)
+
+hidden tagged: Map<String, List<String>> = tags.toMap().map((k,v) -> Pair(k, find(k)))
 
 tags: Mapping<String, Info> = new {
   default { key -> tag = key; slug = "tag-\($t.makeSlug(tag))" }
@@ -223,7 +228,7 @@ tags: Mapping<String, Info> = new {
   }
 
   ["faction:sanctuary"] {
-    label = "Not Edolians :("
+    label = "Sanctuary"
     description = "Sanctuary"
   }
 
@@ -394,7 +399,7 @@ tags: Mapping<String, Info> = new {
 
   ["tier:1"] {
     label = "T1"
-    description = "T1"
+    description = "Tier 1"
   }
 
   ["tier:2"] {

@@ -1,6 +1,9 @@
 module faction
-extends "entity.pkl" 
+extends "entity.pkl"
 import "entity.pkl" as Entity
+import "talent.pkl" as Talent
+import "topbar.pkl" as TopBar
+import "faction_passive.pkl" as FactionPassive
 import "types.pkl" as $t
 
 hidden factionContents: Mapping<String, Entity>
@@ -20,6 +23,7 @@ local isTopbar = (x) -> x.type == "faction-ability" && x.subtype == "topbar"
 local isPassive = (x) -> x.type == "faction-ability" && x.subtype == "passive"
 
 local function grab(x: List<Entity>, y: (Entity) -> Boolean) = x.filter(y).map(getslug)
+local function grabFull(x: List<Entity>, y: (Entity) -> Boolean) = x.filter(y)
 
 fixed faction: String? = slug
 mercHeroesAllowed: Boolean = true
@@ -30,6 +34,6 @@ fixed hero: Listing<String> = new {
 }
 fixed unit: Listing<String> = new { ...grab(all, isUnit) }
 fixed building: Listing<String> = new { ...grab(all, isBuilding) }
-fixed talent: Listing<String> = new { ...grab(all, isTalent) }
-fixed topbar: Listing<String> = new { ...grab(all, isTopbar) }
-fixed passive: Listing<String> = new { ...grab(all, isPassive) }
+fixed talent: Mapping<String, Talent> = new { ...grabFull(all, isTalent).toMap((e) -> e.slug, (e) -> e) }
+fixed topbar: Mapping<String, TopBar> = new { ...grabFull(all, isTopbar).toMap((e) -> e.slug, (e) -> e) }
+fixed passive: Mapping<String, FactionPassive> = new { ...grabFull(all, isPassive).toMap((e) -> e.slug, (e) -> e) }

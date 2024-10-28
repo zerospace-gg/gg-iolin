@@ -16,9 +16,9 @@ class Counts {
   buildings: Number = 0
   factions: Number = 0
   maps: Number = 0
-  talents: Number = 0
-  passives: Number = 0
-  topbars: Number = 0
+  // talents: Number = 0
+  // passives: Number = 0
+  // topbars: Number = 0
   total: Number = 0
 }
 
@@ -28,10 +28,10 @@ counts: Counts = new {
   buildings = find((x) -> x.type == "building").length
   factions = find((x) -> x.type == "faction").length
   maps = find((x) -> x.type == "map").length
-  talents = find((x) -> x.subtype == "talent").length
-  passives = find((x) -> x.subtype == "passive").length
-  topbars = find((x) -> x.subtype == "topbar").length
-  total = tags + units + buildings + factions + maps + talents + passives + topbars
+  // talents = find((x) -> x.subtype == "talent").length
+  // passives = find((x) -> x.subtype == "passive").length
+  // topbars = find((x) -> x.subtype == "topbar").length
+  total = tags + units + buildings + factions + maps // + talents + passives + topbars
 }
 
 local methis = this

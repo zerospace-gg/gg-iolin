@@ -72,12 +72,12 @@ function dataFromPath(p: List<String>): PathData = new {
     }
   }
   when (p.contains("unit")) {
-    type = "unit" 
+    type = "unit"
     vision = 1800
   }
   when (p.contains("harvester")) {
-    subtype = "harvester"; 
-    tier = "T0" 
+    subtype = "harvester";
+    tier = "T0"
     hexiteCost = 175
     buildTime = 25
     rebuildTime = 60
@@ -92,38 +92,38 @@ function dataFromPath(p: List<String>): PathData = new {
   when (p.contains("builder")) { subtype = "builder"; tier = "T0"; supply = 0 }
   when (p.contains("tier_1")) {
     when (p.contains("unit")) { subtype = "army" }
-    tier = "T1" 
+    tier = "T1"
   }
   when (p.contains("tier_2")) {
     when (p.contains("unit")) { subtype = "army" }
-    tier = "T2" 
+    tier = "T2"
   }
   when (p.contains("tier_3")) {
     when (p.contains("unit")) { subtype = "army" }
-    tier = "T3" 
+    tier = "T3"
   }
-  when (p.contains("tier_1_5")) { 
+  when (p.contains("tier_1_5")) {
     when (p.contains("unit")) { subtype = "army" }
-    tier = "T1.5" 
+    tier = "T1.5"
   }
-  when (p.contains("tier_2_5")) { 
+  when (p.contains("tier_2_5")) {
     when (p.contains("unit")) { subtype = "army" }
-    tier = "T2.5" 
+    tier = "T2.5"
   }
-  when (p.contains("tier_3_5")) { 
+  when (p.contains("tier_3_5")) {
     when (p.contains("unit")) { subtype = "army" }
-    tier = "T3.5" 
+    tier = "T3.5"
   }
 
-  when (p.contains("hero")) { 
+  when (p.contains("hero")) {
     when (!p.contains("tier_2")) { tier = "T2" }
-    subtype = "hero"; 
+    subtype = "hero";
     buildTime = 30
     rebuildTime = 60
     rebuildable = true
     supply = 10
   }
-  when (p.contains("ultimate")) { 
+  when (p.contains("ultimate")) {
     when (p.contains("unit")) { subtype = "ultimate"; tier = "T4"; supply = 0  }
     when (p.contains("building")) { subtype = "ultimate"; tier = "T4" }
   }
@@ -134,7 +134,7 @@ function dataFromPath(p: List<String>): PathData = new {
 
   when (p.contains("base")) {
     subtype = "base"
-    hp = 2000 
+    hp = 2000
     hexiteCost = 350
     tier = "T0"
   }
@@ -176,13 +176,13 @@ function dataFromPath(p: List<String>): PathData = new {
   when (p.contains("talent")) {
     type = "faction-ability"
     abilityType = "talent"
-    abilityOf = p[2]
+    abilityOf = p[1]
   }
 
   when (p.contains("topbar")) {
     type = "ability"
     abilityType = "topbar"
-    abilityOf = p[2]
+    abilityOf = p[1]
     when (p.contains("recall")) { topbarType = "recall" }
     when (p.contains("special")) { topbarType = "special" }
     when (p.contains("ultimate")) { topbarType = "ultimate" }
