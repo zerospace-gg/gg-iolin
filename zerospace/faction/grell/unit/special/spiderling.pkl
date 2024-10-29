@@ -5,6 +5,7 @@ name = "Spiderling"
 description = "When you have the \(my_talent.name) talent, these spawn on unit death at a rate based on supply of units lost"
 hp = 80
 speed = 300
+inGame = false
 
 abilities {
   ["Attack"] {

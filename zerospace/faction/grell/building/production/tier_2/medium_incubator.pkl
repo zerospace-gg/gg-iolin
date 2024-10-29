@@ -3,13 +3,13 @@ amends ".../engine/building.pkl"
 shortName = "Md. Incubator"
 name = "Medium Incubator"
 creates {
-  import("../../../unit/tier_2/lasher.pkl").slug
-  import("../../../unit/tier_2/skrelling.pkl").slug
+  import("../../../unit/tier_2/harbinger.pkl").slug
+  import("../../../unit/tier_2/man_eater.pkl").slug
 }
 createdBy {
   import("../../../unit/builder/seedling.pkl").slug
 }
 unlocks {
-  import("../../../unit/tier_2/lasher.pkl").slug
-  import("../../../unit/tier_2/skrelling.pkl").slug
+  import("../../../unit/tier_2/harbinger.pkl").slug
+  import("../../../unit/tier_2/man_eater.pkl").slug
 }

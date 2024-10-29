@@ -7,8 +7,8 @@ speed = 450
 
 abilities {
   ["Attack"] {
-    damage = 34
-    cooldown = 1.82
+    damage = 59
+    cooldown = 1.8
     range = 1200
     targets { "ground"; "air" }
     abilityType = "attack"
@@ -26,11 +26,10 @@ abilities {
   ["Deep Burrow"] {
     hotkey = "x"
     cooldown = 60
-    description = "Teleports the hero to a visible location on biomass. Cannot be interrupted."
+    description = "Teleports the hero to a visible location on biomass anywhere on the map. Cannot be interrupted."
     effectArea = 300
     targets { "self" }
     abilityType = "spell"
-    // notes "area is estimated" }
   }
 
   ["Consume"] {

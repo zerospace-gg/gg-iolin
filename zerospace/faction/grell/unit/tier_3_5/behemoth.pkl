@@ -2,7 +2,6 @@ amends ".../engine/unit.pkl"
 
 name = "Behemoth"
 hotkey = "d"
-description = "The Behemoth is a large flying insect with mysterious wings we haven't seen yet. Its role is to damage ground units from the air, providing decent flying support for your army."
 tier = "T3"
 hexiteCost = 100
 fluxCost = 200
@@ -33,26 +32,21 @@ abilities {
     description = "Sacrifices itself, healing nearby units and damaging enemies. Autocast on death."
     abilityType = "spell"
   }
-
-  ["Faerie Fire"] {
-    targets { "ground" }
-    energyCost = 10
-    energyType = "abes"
-    autocast = "always"
-    description = "Casts an AOE DOT spell on the ground. 200ish range"
-    abilityType = "passive"
-  }
 }
 
 upgrades {
-  ["Worthy Sacrifice"] {
+  ["Attack Speed"] {
     tier = "T3.5"
-    description = "+100% damage and heal from sacrifice."
+    description = "+40% attack speed"
+    fluxCost = 100
+    researchTime = 50
   }
 
   ["Weapon Range"] {
     tier = "T3.5"
     description = "+50% weapon range"
+    fluxCost = 100
+    researchTime = 50
   }
 }
 

@@ -10,7 +10,7 @@ hp = 600
 armorType = "heavy"
 speed = 550
 
-infuseRule = damageBasedInfuseRule
+// infuseRule = damageBasedInfuseRule
 
 abilities {
   ["Attack"]  {

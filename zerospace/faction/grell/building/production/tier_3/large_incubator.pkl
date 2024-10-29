@@ -3,14 +3,13 @@ shortName = "Lg. Incubator"
 name = "Large Incubator"
 creates {
   import("../../../unit/tier_3/reaver.pkl").slug
-  import("../../../unit/tier_3/thresher.pkl").slug
-  import("../../../unit/tier_3/behemoth.pkl").slug
+  import("../../../unit/tier_3/weaver.pkl").slug
+  import("../../../unit/tier_3_5/behemoth.pkl").slug
 }
 createdBy {
   import("../../../unit/builder/seedling.pkl").slug
 }
 unlocks {
   import("../../../unit/tier_3/reaver.pkl").slug
-  import("../../../unit/tier_3/thresher.pkl").slug
-  import("../../../unit/tier_3/behemoth.pkl").slug
+  import("../../../unit/tier_3/weaver.pkl").slug
 }

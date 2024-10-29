@@ -1,10 +1,9 @@
-amends ".../engine/unit.pkl" 
+amends ".../engine/unit.pkl"
 
 name = "Seedling"
 domain = "ground"
-description = "Seedlings are built automatically from your Root Colonies, and are consumed in the creation of structures. Up to 5 of them are generated per base. When infused it gains the ability to fly and becomes the best scouting unit in ZeroSpace."
 hp = 20
-speed = 360
+speed = 180
 buildTime = 5
 
 infusable = true

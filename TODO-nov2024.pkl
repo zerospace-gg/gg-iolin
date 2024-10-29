@@ -1,0 +1,13 @@
+* root colony (other bases too?) turret is only available @ main?
+
+
+infuse:
+
+* stinger 2, 50/0 1
+* lasher 4 50/25 2
+* harb 6, 100/25 3
+* maneater 8, 125/25 5
+* skrelling 4, 50/25 2
+* weaver 8, 50/100 4
+* reaver 15, 200/100 8
+* behemoth 16, 100/200 8

@@ -137,9 +137,11 @@ function dataFromPath(p: List<String>): PathData = new {
     hp = 2000
     hexiteCost = 350
     tier = "T0"
+    buildTime = 60
   }
   when (p.contains("extractor")) {
     subtype = "extractor"
+    hp = 300
     armor = 0
     gathersHexite = 1.0
     gathersEmptyHexite = 0.35

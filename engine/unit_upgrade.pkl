@@ -3,9 +3,9 @@ extends "child.pkl"
 import "types.pkl" as $t
 
 fixed type: String = "upgrade"
-fixed subtype: String = "upgrade"
+fixed subtype: String = "unit"
 upgradeOf: String
-
+researchTime: Number = 50
 
 fluxCost: Number? =
   if (tier == "T1.5") 100 else

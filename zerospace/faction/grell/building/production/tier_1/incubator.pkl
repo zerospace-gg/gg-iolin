@@ -3,13 +3,13 @@ amends ".../engine/building.pkl"
 name = "Incubator"
 creates {
   import("../../../unit/tier_1/stinger.pkl").slug
-  import("../../../unit/tier_1/harbinger.pkl").slug
-  import("../../../unit/tier_1_5/weaver.pkl").slug
+  import("../../../unit/tier_1_5/lasher.pkl").slug
+  import("../../../unit/tier_2_5/skrelling.pkl").slug
 }
 createdBy {
   import("../../../unit/builder/seedling.pkl").slug
 }
 unlocks {
   import("../../../unit/tier_1/stinger.pkl").slug
-  import("../../../unit/tier_1/harbinger.pkl").slug
+  import("../../../unit/tier_1_5/lasher.pkl").slug
 }

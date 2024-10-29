@@ -2,11 +2,21 @@ amends ".../engine/building.pkl"
 
 shortName = "Adv. Aug Pool"
 name = "Advanced Augmentation Pool"
+hexiteCost = 100
+fluxCost = 25
+buildTime = 30
+hp = 1000
 
 providesUpgradesFor {
-  import("../../../unit/tier_2/lasher.pkl").slug
-  import("../../../unit/tier_2/skrelling.pkl").slug
+  import("../../../unit/tier_2/harbinger.pkl").slug
+  import("../../../unit/tier_2/man_eater.pkl").slug
+  import("../../../unit/tier_2_5/thresher.pkl").slug
 }
+
+unlocks {
+  import("./skrelling_nest.pkl").slug
+}
+
 createdBy {
   import("../../../unit/builder/seedling.pkl").slug
 }

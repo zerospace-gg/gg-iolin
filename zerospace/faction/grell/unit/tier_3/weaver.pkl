@@ -2,18 +2,17 @@ amends ".../engine/unit.pkl"
 
 name = "Weaver"
 hotkey =  "e"
-description =  "The Weaver boosts all sources of healing for all nearby allies, and can heal and protect other units. It's also effective against air units."
-tier = "T1.5"
 hexiteCost = 50
 fluxCost = 100
 buildTime = 30
 supply = 4
-hp = 200
+hp = 300
 armorType = "medium"
 speed = 450
-createdBy { import("../../building/production/tier_1/incubator.pkl").slug }
-unlockedBy { import("../../building/tech/tier_1_5/augmentation_pool.pkl").slug }
-upgradedBy { import("../../building/tech/tier_1_5/augmentation_pool.pkl").slug }
+inGame = true
+createdBy { import("../../building/production/tier_3/large_incubator.pkl").slug }
+unlockedBy { import("../../building/production/tier_3/large_incubator.pkl").slug }
+upgradedBy { import("../../building/tech/tier_3_5/special_augmentation_pool.pkl").slug }
 
 abilities {
   ["Attack"] {
@@ -39,12 +38,16 @@ abilities {
 }
 
 upgrades {
-  ["Cocoon Duration"] {
-    tier = "T1.5"
-    description = "Duration increased from 3 to 5 seconds"
+  ["Cocoon Slow"] {
+    tier = "T3.5"
+    description = "Slow enemy units around cocooned unit by 50%"
+    fluxCost = 100
+    researchTime = 50
   }
   ["Cocoon Healing"] {
-    tier = "T1.5"
+    tier = "T3.5"
     description = "+100% healed by cocooon"
+    fluxCost = 100
+    researchTime = 50
   }
 }

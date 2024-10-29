@@ -4,8 +4,8 @@ import "cultivator.pkl" as cultivator
 name = "Cultivator"
 armor = 0
 buildTime = 8
-hexiteCost = 5
-hp = 250
+hexiteCost = 10
+hp = 200
 hotkey = "e"
 providesBiomass = 1500
 
@@ -13,6 +13,7 @@ maxAddOns = 1
 addOns {
   ["Cultivator Attacker"] {
     addOnType = "building-turret"
+    description = "increases hp to 400, grants attack ability"
     abilities {
       ["Attack"] {
         damage = 12

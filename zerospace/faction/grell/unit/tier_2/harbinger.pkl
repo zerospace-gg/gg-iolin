@@ -2,26 +2,23 @@ amends ".../engine/unit.pkl"
 
 name = "Harbinger"
 hotkey = "w"
-description = "Grell's T1 ranged attacker. Has a decent ranged attack and a high damage targeted spell."
-tier = "T1"
-hexiteCost = 75
+hexiteCost = 100
 fluxCost = 25
-buildTime =  25
+buildTime = 26
 supply = 3
-hp = 250
+hp = 425
 armorType = "heavy"
-speed = 450
+armor = 1
+speed = 500
 
-createdBy { import("../../building/production/tier_1/incubator.pkl").slug }
-unlockedBy { import("../../building/production/tier_1/incubator.pkl").slug }
-upgradedBy { import("../../building/tech/tier_1_5/augmentation_pool.pkl").slug }
-
-infuseCost = 10
+createdBy { import("../../building/production/tier_2/medium_incubator.pkl").slug }
+unlockedBy { import("../../building/production/tier_2/medium_incubator.pkl").slug }
+upgradedBy { import("../../building/tech/tier_2_5/advanced_augmentation_pool.pkl").slug }
 
 abilities {
-  ["Attack"] {
-    damage = 21
-    range = 800
+  ["Acidic Spit"] {
+    damage = 22
+    range = 900
     cooldown = 1.75
     targets { "ground"; "air" }
     abilityType = "attack"
@@ -40,28 +37,28 @@ abilities {
     areaRange = 100
     range = 1400
     abilityType = "spell"
-    // notes "radius is estimated" }
   }
 }
 
 upgrades {
-  ["Chitinous Carapace"] {
-    description = "+15% damage reduction"
-    tier = "T1.5"
-  }
-
   ["Shredding Eruption"] {
-    tier = "T1.5"
-    description = "Affected units take 20% additional damage for 8 seconds"
+    tier = "T2.5"
+    description = "Augments Eruption: Affected units take 20% additional damage for 8 seconds. Stacks up to 5 times."
+    researchTime = 50
+    fluxCost = 100
   }
 
   ["Rapid Regeneration"] {
     tier = "T2.5"
     description = "2% of health regenerated each second"
+    researchTime = 60
+    fluxCost = 150
   }
 
   ["Wide Eruption"] {
     tier = "T2.5"
     description = "Increases the radius of eruption by 50%"
+    researchTime = 60
+    fluxCost = 150
   }
 }

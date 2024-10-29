@@ -17,9 +17,9 @@ speed: Number? = 0
 vision: Number? = fromPath.vision ?? 1500
 armor: Number? = fromPath.armor ?? 1
 buildTime: Number? = fromPath.buildTime ??
-          if (tier == "T1") 25
-          else if (tier == "T2") 30
-          else if (tier == "T3") 35
+          if (tier == "T1") 35
+          else if (tier == "T2") 35
+          else if (tier == "T3") 40
           else null
 
 hp: Number? = fromPath.hp ??
@@ -33,12 +33,12 @@ hp: Number? = fromPath.hp ??
 
 hexiteCost: Number? = fromPath.hexiteCost ??
   if (tier == "T1") 100
-  else if (tier == "T2") 150
+  else if (tier == "T2") 125
     else if (tier == "T3") 150
       else null
 
 fluxCost: Number? = fromPath.fluxCost ??
   if (tier == "T1") 0
   else if (tier == "T2") 50
-    else if (tier == "T3") 150
+    else if (tier == "T3") 100
       else null

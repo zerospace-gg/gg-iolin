@@ -27,6 +27,7 @@ mindControllable: Boolean = subtype != "hero"
 variants {
   when (infusable) {
     ["\(methis.name) (Infused)"] = infusedForm
+    ["\(methis.name) (Double Infused)"] = doubleInfusedForm
   }
   when (constructingVersion.toList().length > 0) {
     ["\(methis.name) (Constructing)"] = constructingVersion.toList().first
@@ -36,26 +37,22 @@ variants {
 hidden infuseRule: Mixin<me> = new {
   appendSlug = "-infused"
   name = "\(super.name) (Infused)"
-  supply = super.supply * 2
-  hp = super.hp * 2
-  hexiteCost = 0
-  fluxCost = 0
+  hp = super.hp * 1.5
 
   abilities {
     for (nm, x in (super.abilities)) {
       [nm] = (x) {
-        when ((x.abilityType == "attack" || x.abilityType == "heal") && x.cooldown != null) {
-          cooldown = x.cooldown / 2
+        when ((x.abilityType == "attack" || x.abilityType == "heal") && x.damage != null) {
+          damage = (x.damage ?? 0) * 1.5
         }
       }
     }
   }
 }
 
-hidden damageBasedInfuseRule: Mixin<me> = new {
-  appendSlug = "-infused"
-  name = "\(super.name) (Infused)"
-  supply = super.supply * 2
+hidden doubleInfuseRule: Mixin<me> = new {
+  appendSlug = "-double-infused"
+  name = "\(super.name) (Double Infused)"
   hp = super.hp * 2
 
   abilities {
@@ -70,24 +67,39 @@ hidden damageBasedInfuseRule: Mixin<me> = new {
 }
 
 hidden fixed infusedForm: me? =
-  if (!infusable)
+  if (tagList.toList().contains("infused") || !infusable)
     null
   else
     (this |> infuseRule) {
       infusable = false
       infuseCost = null
       infuseRule = null
+      variants {}
       tags { "infused" }
+  }
+
+hidden fixed doubleInfusedForm: me? =
+  if (tagList.toList().contains("double-infused") || !infusable)
+    null
+  else
+    (this |> doubleInfuseRule) {
+      infusable = false
+      infuseCost = null
+      infuseRule = null
+      variants {}
+      tags { "infused"; "double-infused" }
   }
 
 infuseCost: Number? =
   if (!infusable)
     null
   else
-    let (h = (hexiteCost ?? 0))
-    let (f = (fluxCost ?? 0))
-    let (b = (buildCount ?? 1))
-    (((h + f) / b) / 10.0 ).floor + 1 // it may have been ceil but seedling cost was 1 before it was adjusted to 2 (seedling is 0 cost so 1 infuse means floor+1), but maybe 1 was a manual adjust and it was ceil all along
+    let (s = (supply ?? 0))
+    (s * 2).floor
+    // let (h = (hexiteCost ?? 0))
+    // let (f = (fluxCost ?? 0))
+    // let (b = (buildCount ?? 1))
+    // (((h + f) / b) / 10.0 ).floor + 1 // it may have been ceil but seedling cost was 1 before it was adjusted to 2 (seedling is 0 cost so 1 infuse means floor+1), but maybe 1 was a manual adjust and it was ceil all along
 
 
 local parentInfo: ParentInfo = new {
@@ -98,7 +110,7 @@ local parentInfo: ParentInfo = new {
 }
 
 hidden upgrades: Mapping<String, UnitUpgrade> = new Mapping<String, UnitUpgrade> {
-  default { key -> name = $t.makeSlug(key); parent = parentInfo; upgradeOf = methis.slug }
+  default { key -> name = key; parent = parentInfo; upgradeOf = methis.slug }
 }
 upgrade: Mapping<String, UnitUpgrade> = new {
   for (u in upgrades) { [u.slug] = u }
