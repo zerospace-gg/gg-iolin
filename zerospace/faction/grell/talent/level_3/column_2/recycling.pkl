@@ -1,3 +1,0 @@
-amends ".../engine/talent.pkl"
-name = "Recycling"
-description = "Gain resources from killed enemies. 20% of their total cost in hexite."

@@ -44,7 +44,7 @@ function dataFromPath(p: List<String>): PathData = new {
   }
   when (p.first == "faction") {
     local len = p.length
-    faction = $t.makeSlug(p[1])
+    faction = if (len > 1) $t.makeSlug(p[1]) else null
     when (p.length == 1) {
       type = "faction"
       subtype = "main"
@@ -182,7 +182,7 @@ function dataFromPath(p: List<String>): PathData = new {
   }
 
   when (p.contains("topbar")) {
-    type = "ability"
+    type = "faction-ability"
     abilityType = "topbar"
     abilityOf = p[1]
     when (p.contains("recall")) { topbarType = "recall" }

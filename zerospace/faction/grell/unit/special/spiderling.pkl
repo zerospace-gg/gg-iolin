@@ -1,8 +1,7 @@
 amends ".../engine/unit.pkl"
-import ".../../talent/level_4/column_2/spiderlings.pkl" as my_talent
 
 name = "Spiderling"
-description = "When you have the \(my_talent.name) talent, these spawn on unit death at a rate based on supply of units lost"
+description = "These spawn on unit death at a rate based on supply of units lost"
 hp = 80
 speed = 300
 inGame = false

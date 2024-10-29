@@ -1,5 +1,5 @@
 open module factionAbility
-extends "entity.pkl"
+extends "child.pkl"
 import "types.pkl" as $t
 import "ability.pkl" as me
 local methis = this
@@ -8,8 +8,8 @@ activationType: "activated" | "passive"
 
 fixed type: String = "faction-ability"
 fixed subtype: String = fromPath.abilityType ?? abilityType
-hidden abilityType: "passive" | "topbar" | "talent" 
-abilityOf: String = fromPath.abilityOf 
+hidden abilityType: "passive" | "topbar" | "talent"
+abilityOf: String = fromPath.abilityOf
 
 hotkey: $t.HotKey?
 reverseHotKey: $t.HotKey?
@@ -23,13 +23,13 @@ range: Number?
 delay: Number?
 
 shots: Number?
-volleys: Number? 
+volleys: Number?
 
 teleport: Number?
-providesDetection: Number? 
+providesDetection: Number?
 
 local function xPerSec(val: Number?, numShots: Number?, numVolleys: Number?, cd: Number?) =
-  if (val == null) null else 
+  if (val == null) null else
   if (cd == null) null else
   let (amt = val)
   let (s = (numShots ?? 1))
@@ -40,8 +40,8 @@ effectArea: Number?
 
 damage: Number?
 damageOverTime: Number? // dps will have to change based on this as well
-damagePerSec: Number? = 
-  if (damageOverTime != null) null 
+damagePerSec: Number? =
+  if (damageOverTime != null) null
   else xPerSec(damage, shots, volleys, cooldown)
 damageDisplay: String =
   "\(damage)"
@@ -50,8 +50,8 @@ damageDisplay: String =
 
 healing: Number?
 healingOverTime: Number?
-healingPerSec: Number? = 
-  if (healingOverTime != null) null 
+healingPerSec: Number? =
+  if (healingOverTime != null) null
   else xPerSec(healing, shots, volleys, cooldown)
 healingDisplay: String =
   "\(healing)"
@@ -66,10 +66,10 @@ areaOverTime: Number?
 splashPercent: Number?
 splashRange: Number?
 splashOverTime: Number?
-splashDisplay: String? = 
-  if (splashPercent == null || splashRange == null) 
-    null 
-  else 
+splashDisplay: String? =
+  if (splashPercent == null || splashRange == null)
+    null
+  else
     "\(splashPercent)% over \(splashRange) range"
 
 bonusPercent: Number?

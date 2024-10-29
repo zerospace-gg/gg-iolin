@@ -1,6 +1,0 @@
-amends ".../engine/topbar.pkl"
-name = "Flowers (TopBar)"
-description = "Flowers deal damage to enemies and spawn hallucinations of friendly units. Enemy structures are stunned. 20s duration."
-energyCost = 50
-cooldown = 120
-unlockedBy { import("../../../talent/level_5/column_1/flowers_talent.pkl").slug }

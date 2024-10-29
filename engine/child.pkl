@@ -26,10 +26,10 @@ hidden fixed extendTags: Listing<String> = (super.extendTags) { "belongsTo:\(par
 
 fixed id = null
 fixed src = null
-zsVersion = null
-ggVersion = null
-ggUpdated = null
-ggRelease = null
-ggUrl = null
-githubUrl = null
-githubRawUrl = null
+// zsVersion = null
+// ggVersion = null
+// ggUpdated = null
+// ggRelease = null
+// ggUrl = null
+// githubUrl = null
+// githubRawUrl = null

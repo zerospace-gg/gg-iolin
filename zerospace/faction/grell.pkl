@@ -1,12 +1,90 @@
 amends ".../engine/faction.pkl"
+import "grell.pkl" as me
 
 name = "Grell"
 //flavor = "Ballooning Bugs and their Blossoming Buds"
 
-factionContents = import*("grell/**pkl")
+factionContents = import*("grell/{unit,building}/**pkl")
 guestHeroes {
   import("protectorate/unit/hero/prefect_nova.pkl")
   import("protectorate/unit/hero/tech_hero.pkl")
 }
 mercHeroesAllowed = true
 
+talents {
+  ["Bio Nourishment"] {
+    level = 0
+    description = "+50% nourishing pods healing. +100% biomass healing (4 HP/s)"
+  }
+
+  ["Cultivator Range"] {
+    level = 0
+    description = "+100% Cultivator vision and biomass generation range"
+  }
+
+  ["Flourishment"] {
+    level = 1
+    description = "+50% faster building construction"
+  }
+
+  ["Battle Infusion"] {
+    level = 2
+    description = "4x faster infuse. +40% Attack and Move Speed for 15s"
+  }
+
+  ["Improved Infusion"] {
+    level = 2
+    description = "+200 Range for Ranged Units"
+  }
+
+  ["Improved Speed"] {
+    level = 3
+    description = "+12% Attack and Move Speed for all units"
+  }
+
+  ["Flowers"] {
+    level = 4
+    description = "Unlocks the \(me.topbars["Flowers"].name) Topbar Power: \(me.topbars["Flowers"].description)"
+    unlocks { me.topbars["Flowers"].slug }
+  }
+
+  ["Tree of Life"] {
+    level = 4
+    description = "Unlocks the \(me.topbars["Tree of Life"].name) Topbar Power: \(me.topbars["Tree of Life"].description)"
+  }
+
+  ["Infuse Up"] {
+    level = 5
+    description = "Units can be infused a second time"
+  }
+}
+
+topbars {
+  ["Underground Transport"] {
+    topbarType = "recall"
+    slot = 1
+    energyCost = 5
+    description = "Call a worm to transport your units to the nearest root colony. Click to select designated location, after a few seconds a worm will arrive and devour your units"
+  }
+  ["Infuse"] {
+    topbarType = "special"
+    slot = 2
+    description = "Increases Health, Attack Damage, and Regeneration of a friendly unit. The target heals while infusing. Seedlings gain bonus move speed and become flying units. Energy cost is based on unit supply."
+  }
+  ["Flowers"] {
+    topbarType = "ultimate"
+    slot = 3
+    unlockedBy { me.talents["Flowers"].slug }
+    description = "Flowers deal damage to enemies and spawn hallucinations of friendly units. 20s duration."
+    energyCost = 30
+    cooldown = 180
+  }
+  ["Tree of Life"] {
+    topbarType = "ultimate"
+    slot = 4
+    unlockedBy { me.talents["Tree of Life"].slug }
+    description = "Revives units killed nearby and heals friendly units. Radius: 1500. Starting energy: 30."
+    energyCost = 50
+    cooldown = 120
+  }
+}

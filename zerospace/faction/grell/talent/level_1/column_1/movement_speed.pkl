@@ -1,3 +1,0 @@
-amends ".../engine/talent.pkl"
-name = "Movement Speed"
-description = "+8% movement speed"

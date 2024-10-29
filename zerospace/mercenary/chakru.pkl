@@ -3,4 +3,4 @@ amends ".../engine/faction.pkl"
 shortName = "Cha'Kru"
 name = "Cha'Kru Kingdom"
 description = "Crabs."
-factionContents = import*("chakru/**pkl")
+factionContents = import*("chakru/{unit,building}/**pkl")

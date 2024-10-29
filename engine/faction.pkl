@@ -4,6 +4,7 @@ import "entity.pkl" as Entity
 import "talent.pkl" as Talent
 import "topbar.pkl" as TopBar
 import "faction_passive.pkl" as FactionPassive
+import "parent_info.pkl" as ParentInfo
 import "types.pkl" as $t
 
 hidden factionContents: Mapping<String, Entity>
@@ -27,6 +28,7 @@ local function grabFull(x: List<Entity>, y: (Entity) -> Boolean) = x.filter(y)
 
 fixed faction: String? = slug
 mercHeroesAllowed: Boolean = true
+local methis = this
 
 fixed hero: Listing<String> = new {
   ...grab(guest, isHero)
@@ -34,6 +36,39 @@ fixed hero: Listing<String> = new {
 }
 fixed unit: Listing<String> = new { ...grab(all, isUnit) }
 fixed building: Listing<String> = new { ...grab(all, isBuilding) }
-fixed talent: Mapping<String, Talent> = new { ...grabFull(all, isTalent).toMap((e) -> e.slug, (e) -> e) }
-fixed topbar: Mapping<String, TopBar> = new { ...grabFull(all, isTopbar).toMap((e) -> e.slug, (e) -> e) }
-fixed passive: Mapping<String, FactionPassive> = new { ...grabFull(all, isPassive).toMap((e) -> e.slug, (e) -> e) }
+// fixed talent: Mapping<String, Talent> = new { ...grabFull(all, isTalent).toMap((e) -> e.slug, (e) -> e) }
+// fixed topbar: Mapping<String, TopBar> = new { ...grabFull(all, isTopbar).toMap((e) -> e.slug, (e) -> e) }
+// fixed passive: Mapping<String, FactionPassive> = new { ...grabFull(all, isPassive).toMap((e) -> e.slug, (e) -> e) }
+
+local parentInfo: ParentInfo = new {
+  id = methis.id
+  slug = methis.slug
+  src = methis.src
+  fromPath = methis.fromPath
+}
+
+hidden talents: Mapping<String, Talent> = new Mapping<String, Talent> {
+  default { key -> name = key; parent = parentInfo; abilityOf = methis.slug }
+  when (subtype == "main") {
+    ["Resource Control"] {
+      level = 6
+      description = "Control Towers generate resource and flux"
+    }
+    ["Power Control"] {
+      level = 6
+      description = "Control Towers generate faction power"
+    }
+  }
+}
+
+talent: Mapping<String, Talent> = new {
+  for (t in talents) { [t.slug] = t }
+}
+
+hidden topbars: Mapping<String, TopBar> = new Mapping<String, TopBar> {
+  default { key -> name = key; parent = parentInfo; abilityOf = methis.slug }
+}
+
+topbar: Mapping<String, TopBar> = new {
+  for (t in topbars) { [t.slug] = t }
+}

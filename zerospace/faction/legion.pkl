@@ -1,5 +1,5 @@
 amends ".../engine/faction.pkl"
 
 name = "Legion"
-factionContents = import*("legion/**pkl")
+factionContents = import*("legion/{unit,building}/**pkl")
 mercHeroesAllowed = false

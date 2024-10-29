@@ -1,3 +1,0 @@
-amends ".../engine/talent.pkl"
-name = "Improved Infusion"
-description = "+10% movement speed"

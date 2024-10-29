@@ -2,13 +2,10 @@ module talent
 extends "faction_ability.pkl"
 import "types.pkl" as $t
 
-abilityType = "faction-talent"
+fixed faction = abilityOf
+abilityType = "talent"
 activationType = "passive"
 
 /// the talent level / rank / row number
 level: TalentLevel = fromPath.level
-typealias TalentLevel = Number(isBetween(1, 5))
-
-/// which column this appears in in the ui. 1/2 are main factions, 3 is merc factions
-column: TalentColumn = fromPath.column
-typealias TalentColumn = Number(isBetween(1, 3))
+typealias TalentLevel = Number(isBetween(0, 6))

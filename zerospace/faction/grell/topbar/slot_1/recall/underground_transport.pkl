@@ -1,5 +1,0 @@
-amends ".../engine/topbar.pkl"
-name = "Underground Transport"
-description = "Call a worm to transport your units to the nearest root colony. Click to select designated location, after a few seconds a worm will arrive and devour your units"
-energyCost = 5
-cooldown = 120
