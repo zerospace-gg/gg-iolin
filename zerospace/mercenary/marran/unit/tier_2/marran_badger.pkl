@@ -13,12 +13,8 @@ abilities {
   ["Attack"] {
     damage = 19
     cooldown = 1.5
-    range = 1000
+    range = 1450
     targets { "air"; "ground" }
     abilityType = "attack"
   }
-}
-
-notes {
-  "does additional 75 aoe damage after hitting same target repeatedly"
 }

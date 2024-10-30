@@ -51,11 +51,11 @@ hidden talents: Mapping<String, Talent> = new Mapping<String, Talent> {
   default { key -> name = key; parent = parentInfo; abilityOf = methis.slug }
   when (subtype == "main") {
     ["Resource Control"] {
-      level = 6
+      level = 7
       description = "Control Towers generate resource and flux"
     }
     ["Power Control"] {
-      level = 6
+      level = 7
       description = "Control Towers generate faction power"
     }
   }

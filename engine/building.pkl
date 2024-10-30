@@ -4,7 +4,7 @@ import "types.pkl" as $t
 
 fixed type: String = "building"
 fixed subtype: String = fromPath.subtype ?? buildingType
-buildingType: "base" | "extractor" | "supply" | "production" | "tech" | "special" | "constructing-unit" = fromPath.subtype
+buildingType: "base" | "extractor" | "supply" | "production" | "tech" | "special" | "constructing-unit" | "merc-outpost" = fromPath.subtype
 
 providesBiomass: Number? =
   if (faction != "grell") null

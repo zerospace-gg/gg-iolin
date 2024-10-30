@@ -8,4 +8,4 @@ activationType = "passive"
 
 /// the talent level / rank / row number
 level: TalentLevel = fromPath.level
-typealias TalentLevel = Number(isBetween(0, 6))
+typealias TalentLevel = Number(isBetween(1, 7))

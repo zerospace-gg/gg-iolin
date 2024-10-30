@@ -2,3 +2,23 @@ amends ".../engine/faction.pkl"
 
 name = "Marran"
 factionContents = import*("marran/**pkl")
+
+talents {
+  ["Wisdom"] {
+    level = 2
+    description = "+50% XP Gain"
+  }
+  ["Advanced Weaponry"] {
+    level = 4
+    description = "+15% Range and Attack Speed"
+  }
+}
+
+topbars {
+  ["Pulse Barrage"] {
+    slot = 5
+    energyCost = 20
+    cooldown = 60
+    description = "Fire a barrage to targetted location. Enemy units take damage and are slowed. 938 total damage in 14 shots, 67 dmg each."
+  }
+}

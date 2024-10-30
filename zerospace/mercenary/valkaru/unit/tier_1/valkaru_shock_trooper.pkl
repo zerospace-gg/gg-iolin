@@ -6,15 +6,15 @@ hexiteCost = 200
 fluxCost = 75
 supply = 4
 hp = 400
-speed = 400
+speed = 480
 armorType = "medium"
 abilities {
   ["Attack"] {
     damage = 40
     splashPercent = 50
-    splashRange = 150
+    splashRange = 160
     cooldown = 3
-    range = 1200
+    range = 1250
     targets { "ground" }
     abilityType = "attack"
   }

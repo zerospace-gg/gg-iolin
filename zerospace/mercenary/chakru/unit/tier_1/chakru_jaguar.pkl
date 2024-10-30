@@ -1,0 +1,19 @@
+amends ".../engine/unit.pkl"
+shortName = "Jaguar"
+name = "Cha'Kru Jaguar"
+hexiteCost = 75
+fluxCost = 150
+buildCount = 6
+supply = 2
+hp = 80
+speed = 550
+armorType = "light"
+abilities {
+  ["Attack"] {
+    damage = 4
+    cooldown = 1
+    range = 100
+    targets { "ground" }
+    abilityType = "attack"
+  }
+}

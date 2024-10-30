@@ -2,7 +2,7 @@ amends ".../engine/unit.pkl"
 shortName = "Raider"
 name = "Dread Raider"
 buildCount = 2
-hexiteCost = 250
+hexiteCost = 175
 fluxCost = 0
 supply = 6
 hp = 175

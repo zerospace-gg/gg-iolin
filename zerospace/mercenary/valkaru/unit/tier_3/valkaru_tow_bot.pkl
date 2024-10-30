@@ -8,11 +8,9 @@ supply = 8
 hp = 1000
 speed = 600
 armorType = "heavy"
-// infuseRule = damageBasedInfuseRule
 abilities {
   ["Attack"] {
-    damage = 5
-    volleys = 2
+    damage = 8
     cooldown = 0.4
     range = 1400
     targets { "ground" }
@@ -21,8 +19,8 @@ abilities {
     abilityType = "attack"
   }
   ["Pull"] {
-    cooldown = 15
-    description = "cooldown 15s. pull any targets in targeted area towards itself. pull duration 2s."
+    cooldown = 30
+    description = "pull any targets in targeted area towards itself. pull duration 2s."
     abilityType = "spell"
   }
 }

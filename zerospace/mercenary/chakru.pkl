@@ -4,3 +4,28 @@ shortName = "Cha'Kru"
 name = "Cha'Kru Kingdom"
 description = "Crabs."
 factionContents = import*("chakru/{unit,building}/**pkl")
+
+talents {
+  ["Revive"] {
+    level = 2
+    description = "Chakru units revive at their temples. 90s cooldown per Temple."
+  }
+}
+
+topbars {
+  ["Sacrifice to Pachamama"] {
+    topbarType = "summon"
+    slot = 5
+    energyCost = 15
+    cooldown = 120
+    description = "Earthquake erupts around the targeted unit for sacrifice. Enemy units nearby are slowed and take damage. After 10s the unit dies."
+  }
+
+  ["Sacrifice to Illapu"] {
+    topbarType = "summon"
+    slot = 5
+    energyCost = 15
+    cooldown = 120
+    description = "Rain falls around the targetd unit for sacrifice. Friendly units nearby are regenerated and gain increased attack and movement speed (+15%). Health regeneration scales with the target's maximum health. After 10s the unit dies."
+  }
+}

@@ -17,8 +17,4 @@ abilities {
     targets { "air"; "ground" }
     abilityType = "attack"
   }
-  ["Charge Shields"] {
-    description = "Gives shields to nearby units"
-    abilityType = "passive"
-  }
 }

@@ -6,9 +6,9 @@ speed = 500
 armorType = "medium"
 abilities {
   ["Attack"] {
-    damage = 40
-    cooldown = 2
-    range = 1700
+    damage = 34
+    cooldown = 1.8
+    range = 1600
     abilityType = "attack"
   }
   ["Shockwave Grenade"] {
@@ -21,14 +21,14 @@ abilities {
   ["Stealth"] {
     hotkey = "w"
     cooldown = 20.0
-    description = "Stealth and +50% movement speed for 10s."
+    description = "Stealth and +25% movement speed for 8s."
     abilityType = "spell"
   }
   ["Snipe"] {
     name = "Snipe"
     hotkey = "e"
     cooldown = 40
-    description = "Deal 3x weapon damage after 2s. If the target dies, reduce the next cooldown by half, and permanently increase Hel's sight and weapon range by 50. "
+    description = "Deal 2x weapon damage and reduces the target's move speed and damage mitigation by 30% for 3s"
     abilityType = "spell"
   }
 }

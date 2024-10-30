@@ -43,8 +43,9 @@ function dataFromPath(p: List<String>): PathData = new {
     subtype = p[1]
   }
   when (p.first == "faction") {
-    local len = p.length
-    faction = if (len > 1) $t.makeSlug(p[1]) else null
+    when (p.length > 1) {
+      faction = $t.makeSlug(p[1])
+    }
     when (p.length == 1) {
       type = "faction"
       subtype = "main"
@@ -53,8 +54,9 @@ function dataFromPath(p: List<String>): PathData = new {
     }
   }
   when (p.first == "mercenary") {
-    local len = p.length
-    faction = $t.makeSlug(p[1])
+    when (p.length > 1) {
+      faction = $t.makeSlug(p[1])
+    }
     when (p.length == 1) {
       type = "faction"
       subtype = "mercenary"
@@ -63,7 +65,9 @@ function dataFromPath(p: List<String>): PathData = new {
     }
   }
   when (p.first == "nonplayer") {
-    faction = $t.makeSlug(p[1])
+    when (p.length > 1) {
+      faction = $t.makeSlug(p[1])
+    }
     when (p.length == 1) {
       type = "faction"
       subtype = "nonplayer"
@@ -149,6 +153,15 @@ function dataFromPath(p: List<String>): PathData = new {
   }
   when (p.contains("supply")) { subtype = "supply"; provedsSupply = 15; hexiteCost = 100; buildTime = 15; hp = 750; tier = "T0" }
   when (p.contains("special")) { subtype = "special"; tier = "T0" }
+
+  when (p.contains("outpost")) {
+    subtype = "merc-outpost"
+    tier = "T1"
+    hp = 1200
+    hexiteCost = 100
+    fluxCost = 25
+    buildTime = 45
+  }
 
   when (p.contains("production")) {
     subtype = "production"

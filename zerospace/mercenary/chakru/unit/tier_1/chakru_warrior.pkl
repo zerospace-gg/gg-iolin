@@ -2,22 +2,17 @@ amends ".../engine/unit.pkl"
 shortName = "Warrior"
 name = "Cha'Kru Warrior"
 hexiteCost = 200
-fluxCost = 100
+fluxCost = 0
 buildCount = 2
 supply = 3
-hp = 250
+hp = 200
+speed = 700
 armorType = "light"
 abilities {
-  ["Attack"] {
-    damage = 40
+  ["Knife Throw"] {
+    damage = 18
     cooldown = 1.75
     range = 1000
     abilityType = "attack"
-  }
-  ["Ghost Crabs"] {
-    energyCost = 14
-    energyType = "abes"
-    description = "Spawns 3 ghost crabs that last 30 seconds"
-    abilityType = "spell"
   }
 }

@@ -1,16 +1,16 @@
 amends ".../engine/unit.pkl"
 shortName = "Rageborn"
 name = "Cha'Kru Rageborn"
-flavor = "Stompy Boi"
 hexiteCost = 225
 fluxCost = 125
 buildCount = 2
 supply = 4
 hp = 625
+speed = 550
 armorType = "medium"
 abilities {
   ["Attack"] {
-    damage = 20
+    damage = 50
     cooldown = 1.8
     range = 200
     targets { "ground" }
@@ -18,9 +18,10 @@ abilities {
   }
   ["Stomp"] {
     areaRange = 325
-    areaDamage = 25
+    areaDamage = 50
     energyCost = 4
     energyType = "abes"
     abilityType = "spell"
+    autocast = "always"
   }
 }

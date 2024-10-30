@@ -1,0 +1,10 @@
+amends ".../engine/building.pkl"
+
+name = "Arandi Merc Outpost"
+
+creates {
+  import("../../unit/tier_1/arandi_shade.pkl").slug
+  import("../../unit/tier_1/arandi_horned_mech.pkl").slug
+  import("../../unit/tier_2/arandi_amplifier.pkl").slug
+  import("../../unit/tier_3/arandi_time_warper.pkl").slug
+}

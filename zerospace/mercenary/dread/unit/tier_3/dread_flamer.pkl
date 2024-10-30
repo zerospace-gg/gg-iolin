@@ -4,10 +4,10 @@ name = "Dread Flamer"
 buildCount = 3
 hexiteCost = 100
 fluxCost = 200
-supply = 8
+supply = 6
 hp = 1250
 armorType = "heavy"
-speed = 650
+speed = 500
 abilities {
   ["Attack"] {
     damage = 8

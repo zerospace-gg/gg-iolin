@@ -29,11 +29,4 @@ abilities {
     targetMode = "location"
     abilityType = "spell"
   }
-
-  ["Black Hole"] {
-    hotkey = "e"
-    cooldown = 30
-    description = "Root and pull units to the caster"
-    abilityType = "spell"
-  }
 }

@@ -103,6 +103,10 @@ tags: Mapping<String, Info> = new {
     label = "Hexite Extractor"
     description = "Hexite Extractor"
   }
+  ["building:merc-outpost"] {
+    label = "Mercenary Outpost"
+    description = "Mercenary Outpost"
+  }
 
   ["building:production"] {
     label = "Production"

@@ -1,0 +1,19 @@
+amends ".../engine/unit.pkl"
+
+shortName = "Oathguard"
+name = "Arandi Oathguard"
+buildCount = 4
+supply = 3
+hp = 300
+armorType = "medium"
+speed = 500
+
+abilities {
+  ["Healing Beam"] {
+    targets { "ground"; "air" }
+    healing = 12
+    cooldown = 0.25
+    range = 1300
+    abilityType = "heal"
+  }
+}

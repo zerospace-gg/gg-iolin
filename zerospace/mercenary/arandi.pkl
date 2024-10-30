@@ -2,3 +2,37 @@ amends ".../engine/faction.pkl"
 
 name = "Arandi"
 factionContents = import*("arandi/{unit,building}/**pkl")
+
+talents {
+  ["Free Harvester"] {
+    level = 2
+    description = "+1 Harvester. +10% Flux Income"
+  }
+
+  ["Casting Range"] {
+    level = 4
+    description = "+25% Casting Range & -30% Ability Cooldown"
+  }
+}
+
+topbars {
+  ["Call in the Phoenix Guard"] {
+    topbarType = "summon"
+    slot = 5
+    energyCost = 20
+    description = "Send four Arandi Phoenix Guard from the Mothership to the location. The Phoenix Guard attacks enemies but cannot be controlled. 45s duration. Currently limited around hero, will be limited around merc outpost later."
+    creates {
+      import("arandi/unit/special/arandi_phoenix_guard.pkl").slug
+    }
+  }
+
+  ["Call in the Oathguard"] {
+    topbarType = "summon"
+    slot = 5
+    energyCost = 20
+    description = "Send four Arandi Oathguard from the Mothership to the location. The Oathguards heals allies but cannot be controlled. 45s duration. Currently limited around hero, will be limited around merc outpost later."
+    creates {
+      import("arandi/unit/special/arandi_oathguard.pkl").slug
+    }
+  }
+}

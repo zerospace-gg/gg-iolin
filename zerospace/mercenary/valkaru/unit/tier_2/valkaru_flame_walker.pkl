@@ -5,12 +5,13 @@ buildCount = 1
 hexiteCost = 75
 fluxCost = 175
 supply = 6
-hp = 800
+hp = 750
 speed = 375
 armorType = "heavy"
 abilities {
   ["Attack"] {
-    damage = 6
+    damage = 3
+    volleys = 2
     bonusPercent = 50
     bonusVsTags { "armor:light" }
     cooldown = 0.17
@@ -19,9 +20,9 @@ abilities {
     arcAngle = 5
     abilityType = "attack"
   }
-  ["Leap Smash"] {
-    cooldown = 7.5
-    description = "cooldown 7.5s. jumps to the target location after a small delay. slows nearby enemies for 2 seconds upon landing"
+  ["Leap-Smash"] {
+    cooldown = 15
+    description = "jumps to the target location after a small delay. slows nearby enemies for 2 seconds upon landing"
     abilityType = "spell"
   }
 }

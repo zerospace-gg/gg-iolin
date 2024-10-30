@@ -7,18 +7,20 @@ buildCount = 2
 supply = 3
 hp = 250
 armorType = "light"
+speed = 500
+energy = 100
 abilities {
-  ["Attack"] {
+  ["Acidic Throw"] {
     damage = 22
     cooldown = 1.3
     range = 1200
-    targets { "ground" }
+    targets { "air"; "ground" }
     abilityType = "attack"
   }
   ["Heal"] {
-    energyCost = 8
-    energyType = "abes"
-    description = "Heals target for 250 HP and provides stealth and +25% movement speed for 10s"
+    energyCost = 40
+    energyType = "classic"
+    description = "Heals target for 250 HP and provides stealth and +25% movement speed for 8s. Only targets non-mechanical units."
     abilityType = "heal"
   }
 }

@@ -12,5 +12,5 @@ typealias TopbarType = "recall" | "special" | "ultimate" | "mercenary"
 energyCost: Number?
 energyType = "topbar"
 
-/// the topbar has 4 ability slots
-slot: Int(isBetween(1,4)) = fromPath.slot
+/// the topbar has 6 possible ability slots
+slot: Int(isBetween(1,6)) = fromPath.slot

@@ -2,20 +2,18 @@ amends ".../engine/unit.pkl"
 
 shortName = "Phoenix Guard"
 name = "Arandi Phoenix Guard"
-hexiteCost = 150
-fluxCost = 100
-buildCount = 2
+buildCount = 4
 supply = 3
-hp = 275
+hp = 300
 armorType = "medium"
 speed = 500
 
 abilities {
   ["Void Blaster"] {
     targets { "ground"; "air" }
-    damage = 36
-    cooldown = 0.88
-    range = 700
+    damage = 70
+    cooldown = 1.75
+    range = 600
     abilityType = "attack"
   }
 }

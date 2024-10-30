@@ -12,10 +12,19 @@ armorType = "heavy"
 speed = 400
 abilities {
   ["Attack"] {
-    damage = 60
-    cooldown = 436
+    damage = 50
+    cooldown = 1.3
     range = 1400
     targets { "ground" }
     abilityType = "attack"
+  }
+
+  ["Laser"] {
+    damage = 40
+    targets { "ground" }
+    description = "Does 80 damage in a line"
+    abilityType = "spell"
+    energyCost = 4
+    energyType = "abes"
   }
 }

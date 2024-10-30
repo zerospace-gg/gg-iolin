@@ -92,6 +92,9 @@ areaRange: Number?
 areaDamage: Number?
 areaOverTime: Number?
 
+chainTargets: Number?
+chainReductionPercent: Number?
+
 // like area, but splash should only be attached to a direct dmg amount
 splashPercent: Number?
 splashRange: Number?

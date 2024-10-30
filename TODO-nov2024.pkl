@@ -1,4 +1,5 @@
 * root colony (other bases too?) turret is only available @ main?
+* building armor type
 
 
 infuse:

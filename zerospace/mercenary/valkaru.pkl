@@ -2,3 +2,21 @@ amends ".../engine/faction.pkl"
 
 name = "Valkaru"
 factionContents = import*("valkaru/**pkl")
+
+talents {
+  ["Merc Cooldown"] {
+    level = 2
+    description = "+100% faster mercenary charges"
+  }
+  ["Heavy Plating"] {
+    level = 4
+    description = "All units +1 Armor & +25% HP"
+  }
+}
+
+topbars {
+  ["Valkaru Beast"] {
+    slot = 5
+    description = "Summons a valkaru beast"
+  }
+}

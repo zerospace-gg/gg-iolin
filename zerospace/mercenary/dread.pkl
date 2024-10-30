@@ -2,3 +2,23 @@ amends ".../engine/faction.pkl"
 
 name = "Dread Raiders"
 factionContents = import*("dread/**pkl")
+
+talents {
+  ["Pillage"] {
+    level = 2
+    description = "Destroying harvesters and buildings provides hexite"
+  }
+  ["Advanced Sensors"] {
+    level = 4
+    description = "+50% vision & +15% movement speed"
+  }
+}
+
+topbars {
+  ["Sandbags"] {
+    energyCost = 1
+    cooldown = 2
+    slot = 6
+    description = "Drop sandbags at targeted location. Sandbags block enemy shots and movement. Sandbags have 200 HP."
+  }
+}

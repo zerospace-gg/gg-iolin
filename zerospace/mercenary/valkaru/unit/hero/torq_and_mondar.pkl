@@ -1,0 +1,33 @@
+amends ".../engine/unit.pkl"
+
+name = "Torq & Mondar"
+hp = 320
+speed = 600
+buildCount = 2
+armorType = "medium"
+abilities {
+  ["Attack (Hammer)"] {
+    damage = 16
+    cooldown = 1
+    range = 150
+    abilityType = "attack"
+    chainTargets = 3
+    chainReductionPercent = 66
+    targets { "ground" }
+  }
+
+  ["Attack (Gun)"] {
+    targets { "air"; "ground" }
+    damage = 12
+    cooldown = 1
+    range = 1200
+    abilityType = "attack"
+  }
+
+  ["Hammer Throw"] {
+    description = "Throw the hammer to the other hero. Hammer damages enemy units on its path for 60 damage. Each hit increases the attack speed of the hero with the hammer by up to 10%"
+    hotkey = "q"
+    cooldown = 6
+    abilityType = "spell"
+  }
+}
