@@ -13,6 +13,10 @@ armor = 1
 
 carryCapacity = 8
 
+createdBy { import("../../building/production/tier_3/advanced_factory.pkl").slug }
+unlockedBy { import("../../building/production/tier_3/advanced_factory.pkl").slug }
+upgradedBy { import("../../building/tech/tier_3_5/specialized_research_lab.pkl").slug }
+
 abilities {
   ["Attack"] {
     damage = 12
@@ -41,6 +45,6 @@ upgrades {
     tier = "T3.5"
     description = "+100% carry capacity"
     fluxCost = 100
-    researchTiem = 50
+    researchTime = 50
   }
 }

@@ -14,11 +14,11 @@ creates {
 }
 
 createdBy {
-  import("../../../unit/builder/engineer.pkl").slug
+  import("../../../unit/builder/prot_build_drone.pkl").slug
 }
 
 unlocks {
-  import("../../../unit/tier_2/avenger.pkl").slug
+  import("../../../unit/tier_2/predator.pkl").slug
   import("../../../unit/tier_2/gunship.pkl").slug
   import("../../../unit/tier_2/striker.pkl").slug
 }

@@ -1,5 +1,7 @@
 amends ".../engine/unit.pkl"
 
+shortName = "Beast"
+name = "Valkaru Beast"
 hp = 1925
 armor = 0
 armorType = "light"

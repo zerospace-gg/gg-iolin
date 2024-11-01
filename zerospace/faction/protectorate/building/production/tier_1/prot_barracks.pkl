@@ -10,7 +10,7 @@ creates {
   import("../../../unit/tier_1_5/bastion.pkl").slug
 }
 createdBy {
-  import("../../../unit/builder/engineer.pkl").slug
+  import("../../../unit/builder/prot_build_drone.pkl").slug
 }
 unlocks {
   import("../../../unit/tier_1/commando.pkl").slug

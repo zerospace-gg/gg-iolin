@@ -22,8 +22,8 @@ abilities {
   ["Teleport"] {
     hotkey = "b"
     cooldown = 120
-    radius = 300
-    description = "Teleport friendly units to the caster location. Editors note: If you cast this while the time warper is over a chasm tthe units will largely not come with unless they can fly"
+    // radius = 300
+    description = "Teleport friendly units to the caster location. Editors note: If you cast this while the time warper is over a chasm tthe units will largely not come with unless they can fly. 300 radius."
     abilityType = "spell"
   }
 

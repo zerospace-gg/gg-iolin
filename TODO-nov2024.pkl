@@ -1,5 +1,8 @@
 * root colony (other bases too?) turret is only available @ main?
 * building armor type
+* cargo load space is not exactly supply always, dread sniper has 5, marran sharpshooter 4, check other units and add a new field
+* energyRegen weaver 3
+* hero scaling
 
 
 infuse:

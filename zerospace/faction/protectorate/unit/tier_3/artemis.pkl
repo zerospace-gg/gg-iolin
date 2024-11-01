@@ -10,9 +10,9 @@ armorType = "medium"
 speed = 600
 armor = 1
 
-createdBy { import("../../buildings/production/tier_2/advanced_factory.pkl").slug }
-unlockedBy { import("../../buildings/production/tier_2/advanced_factory.pkl").slug }
-upgradedBy { import("../../buildings/tech/tier_3_5/specialized_research_lab.pkl").slug }
+createdBy { import("../../building/production/tier_3/advanced_factory.pkl").slug }
+unlockedBy { import("../../building/production/tier_3/advanced_factory.pkl").slug }
+upgradedBy { import("../../building/tech/tier_3_5/specialized_research_lab.pkl").slug }
 
 abilities {
   ["Attack"] {
@@ -33,10 +33,10 @@ abilities {
   }
 
   ["EMP"] {
-    description = "Drain 50 energy and knockback and breifly slow enemy units"
+    description = "Drain 50 energy and knockback and breifly slow enemy units. 220 radius effect"
     energyCost = 75
     energyType = "classic"
-    radius = 220
+    // radius = 220
     abilityType = "spell"
   }
 }

@@ -8,7 +8,7 @@ speed = 500
 stunResist = 50
 
 creates {
-  import("../../buildings/special/light_turret.pkl")
+  import("../../building/special/light_turret.pkl").slug
 }
 
 abilities {

@@ -34,9 +34,9 @@ abilities {
     hotkey = "c"
     cooldown = 20
     targets { "ground" }
-    description = "Throw a sticky bomb. After 7s it explodes damaging enemies for 50 and stunning them for 4s. If the target dies early the radius is reduced."
+    description = "Throw a sticky bomb. After 7s it explodes damaging enemies for 50 and stunning them for 4s. If the target dies early the radius is reduced. radius 225"
     abilityType = "spell"
-    radius = 225
+    // radius = 225
     delay = 5
   }
 }

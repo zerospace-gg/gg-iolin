@@ -11,6 +11,7 @@ abilities {
     damage = 3
     cooldown = 0.2
     range = 1400
+    abilityType = "attack"
   }
 }
 

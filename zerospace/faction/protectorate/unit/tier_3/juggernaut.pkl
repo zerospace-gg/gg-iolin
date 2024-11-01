@@ -12,9 +12,9 @@ speed = 475
 armor = 1
 energy = 8
 
-createdBy { import("../../buildings/production/tier_2/advanced_factory.pkl").slug }
-unlockedBy { import("../../buildings/production/tier_2/advanced_factory.pkl").slug }
-upgradedBy { import("../../buildings/tech/tier_3_5/specialized_research_lab.pkl").slug }
+createdBy { import("../../building/production/tier_3/advanced_factory.pkl").slug }
+unlockedBy { import("../../building/production/tier_3/advanced_factory.pkl").slug }
+upgradedBy { import("../../building/tech/tier_3_5/specialized_research_lab.pkl").slug }
 
 abilities {
   ["Attack"] {
@@ -26,11 +26,12 @@ abilities {
   }
 
   ["Heat Discharge"] {
-    description = "deals 250 damage to nearby enemies over 5 seconds. cannot move while active"
+    description = "deals 250 damage to nearby enemies over 5 seconds. cannot move while active. 200 radius"
     energyCost = 20
     energyType = "abes"
     damage = 250
-    radius = 200
+    // radius = 200
+    abilityType = "spell"
   }
 }
 

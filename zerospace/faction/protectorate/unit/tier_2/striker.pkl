@@ -24,9 +24,10 @@ abilities {
   ["Flare"] {
     cooldown = 30
     range = 4000
-    radius = 2000
+    // radius = 2000
     duration = 12
     abilityType = "spell"
+    description = "Reveals target area (2000 radius) for 12 seconds."
   }
 }
 

@@ -64,10 +64,10 @@ upgrades {
   }
 
   ["From Ashes"] {
-    description = "When a hero dies nearby, revive them at 50% vitality. 120s cooldown."
+    description = "When a hero dies nearby, revive them at 50% vitality. 90s cooldown."
     fluxCost = 200
     researchTime = 60
-    cooldown = 90
+    // cooldown = 90
     tier = "T3.5"
   }
   ["Storm"] {

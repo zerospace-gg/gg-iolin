@@ -23,6 +23,7 @@ abilities {
   ["Lay Mine"] {
     description = "Lay a mine which deals 30 damage and slows enemies upon contact"
     cooldown = 120
+    abilityType = "spell"
   }
 }
 

@@ -12,7 +12,7 @@ unlocks {
 }
 
 providesUpgradesFor {
-  import("../../../unit/tier_2/avenger.pkl").slug
+  import("../../../unit/tier_2/predator.pkl").slug
   import("../../../unit/tier_2/gunship.pkl").slug
   import("../../../unit/tier_2/striker.pkl").slug
   import("../../../unit/tier_2_5/atlas.pkl").slug

@@ -35,7 +35,7 @@ upgrades {
     description = "+25% health. knockback enemies on death."
     tier = "T1.5"
     fluxCost = 75
-    reseachTime = 40
+    researchTime = 40
   }
 
   ["Shredding Rounds"] {

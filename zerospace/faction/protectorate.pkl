@@ -40,7 +40,7 @@ talents {
   ["Weapon X"] {
     level = 5
     description = "Calls down a temporary Mech. Explodes on death dealing massive damage."
-    creates { import("protectorate/units/special/weapon_x.pkl").slug }
+    creates { import("protectorate/unit/special/weapon_x.pkl").slug }
   }
 
   ["Hot Landing Zone"] {
