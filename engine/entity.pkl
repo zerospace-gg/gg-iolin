@@ -77,6 +77,8 @@ inGame: Boolean = true
 
 fromFuture: Boolean = false
 
+maxOwned: Number?
+
 /// additional notes and information about this gamepiece
 notes: Listing<String>
 

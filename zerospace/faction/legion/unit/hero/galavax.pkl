@@ -10,7 +10,6 @@ buildTime = 30
 stunResist = 50
 energy = 100
 
-
 abilities {
   ["Attack"] {
     damage = 25
@@ -38,30 +37,42 @@ abilities {
 }
 
 upgrades {
-  ["Lightning"] {
-    description = "Every 10s or when a nearby thrall dies, strike a random enemy unit with lightning for 60 dmg"
+  ["Lightning Spear"] {
+    description = "Sacrificial Spear releases lightning upon impact, dealing 40 damage and slowing 4 nearby enemies."
+    fluxCost = 125
+    researchTime = 40
     tier = "T1.5"
   }
   ["Improved Sacrifice"] {
     description = "+40% damage and slow duration of sacrificial spear. +40% radius and duration for sacrificial site."
+    fluxCost = 125
+    researchTime = 40
     tier = "T1.5"
   }
 
   ["Burning Fireball"] {
     description = "Fireball explodes when it reaches the target setting the ground on fire."
+    fluxCost = 175
+    researchTime = 50
     tier = "T2.5"
   }
-  ["More Sacrifice"] {
-    description = "When a thrall dies in range of a sacrificial site, it will create a new one. Cooldown 3s."
+  ["Lightning Rod"] {
+    description = "Sacrificial Site strikes an enemy with lightning when a friendly infantry unit dies in radius. +200% sacrificial site health."
+    fluxCost = 175
+    researchTime = 50
     tier = "T2.5"
   }
 
   ["From Ashes"] {
     description = "When a hero dies nearby, revive them at 50% vitality. 120s cooldown."
+    fluxCost = 225
+    researchTime = 60
     tier = "T3.5"
   }
-  ["Sacrificial Bite"] {
-    description = "Sacrificial Sites have an attack that slows enemy units"
+  ["Storm"] {
+    description = "Creates a lightning storm upon attacking. 20s cooldown, 15s duration."
+    fluxCost = 225
+    researchTime = 60
     tier = "T3.5"
   }
 }

@@ -6,7 +6,7 @@ creates {
   import("../../../unit/tier_1/rhino.pkl").slug
 }
 createdBy {
-  import("../../../unit/builder/laborer.pkl").slug
+  import("../../../unit/builder/legion_build_drone.pkl").slug
 }
 unlocks {
   import("../../../unit/tier_1/thrall.pkl").slug

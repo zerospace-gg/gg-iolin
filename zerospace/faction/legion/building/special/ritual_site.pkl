@@ -1,0 +1,17 @@
+amends ".../engine/building.pkl"
+
+name = "Ritual Site"
+hp = 1000
+armor = 2
+
+creates {
+  import("../../unit/special/emperor_projection.pkl").slug
+}
+
+abilities {
+  ["Spawn Emperor"] {
+    delay = 40
+    description = "After 40s spawns a projection of the Emperor, then destroys itself. Each supply of thralls sacrificed within range of the ritual site (up to 30 supply worth of thralls), grants +50HP and +5dmg to the summoned Emperor."
+    abilityType = "passive"
+  }
+}

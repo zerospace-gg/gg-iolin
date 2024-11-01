@@ -5,8 +5,8 @@ name = "Armored Thrall"
 hotkey = "w"
 tier = "T1"
 hexiteCost = 75
-buildTime = 22
-supply = 1
+buildTime = 24
+supply = 2
 hp = 320
 armor = 1
 armorType = "medium"
@@ -24,10 +24,20 @@ abilities {
 upgrades {
   ["Alloy Armor"] {
     description = "Each hit increases attack speed (+10% up to 70%)"
+    fluxCost = 100
+    researchTime = 40
     tier = "T1.5"
   }
-  ["Charged Shot"] {
-    description = "+100% damage against light armor"
+  ["Saw"] {
+    description = "+60% damage against light armor"
+    fluxCost = 100
+    researchTime = 40
     tier = "T1.5"
+  }
+  ["Performance Enhancers"] {
+    description = "+25% Attack and Move Speed"
+    fluxCost = 250
+    researchTime = 60
+    tier = "T2.5"
   }
 }

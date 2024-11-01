@@ -59,6 +59,7 @@ fixed faction: String? = parent?.fromPath?.faction ?? super.faction
 /// short description of the purpose of this, to be used in summaries in UI. Many of these won't be in game.
 /// examples: "fast melee attacker" for a unit, "vision buff" for an upgrade, etc
 flavor: String?
+timedLife: Number?
 
 /// hexite cost to build. 0 for gamepieces that are cast
 hexiteCost: Number?

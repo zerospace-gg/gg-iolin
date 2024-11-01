@@ -7,6 +7,7 @@ class PathData {
   type: ("unit" | "building" | "addOn" | "faction" | "ability" | "upgrade" | "map" | "faction-ability")?
   subtype: String?
 
+
   tier: $t.Tier?
   hexiteCost: Number?
   fluxCost: Number?
@@ -26,6 +27,7 @@ class PathData {
   provedsSupply: Number?
   providesBiomass: Number?
 
+  maxOwned: Number?
   // abilities can be nested or in a full file, cant use subpath for this
   abilityType: String?
   abilityOf: String?
@@ -84,9 +86,10 @@ function dataFromPath(p: List<String>): PathData = new {
     tier = "T0"
     hexiteCost = 175
     buildTime = 25
+    maxOwned = 5
     rebuildTime = 60
-    gathersFlux = 1.5
-    gathersRichFlux = 3.0
+    gathersFlux = 1.8
+    gathersRichFlux = 3.6
     hp = 400
     speed = 450
     armorType = "medium"
@@ -147,8 +150,8 @@ function dataFromPath(p: List<String>): PathData = new {
     subtype = "extractor"
     hp = 300
     armor = 0
-    gathersHexite = 1.0
-    gathersEmptyHexite = 0.35
+    gathersHexite = 1.4
+    gathersEmptyHexite = 0.56
     tier = "T0"
   }
   when (p.contains("supply")) { subtype = "supply"; provedsSupply = 15; hexiteCost = 100; buildTime = 15; hp = 750; tier = "T0" }
@@ -161,6 +164,7 @@ function dataFromPath(p: List<String>): PathData = new {
     hexiteCost = 100
     fluxCost = 25
     buildTime = 45
+    maxOwned = 1
   }
 
   when (p.contains("production")) {

@@ -4,6 +4,7 @@ name = "Recharging Obelisk"
 armor = 0
 hp = 500
 energy = 100
+timedLife = 150
 
 abilities {
   ["Recharge Energy"] {
@@ -14,21 +15,5 @@ abilities {
     energyCost = 4
     energyType = "classic"
     abilityType = "recharge-energy"
-  }
-}
-
-maxAddOns = 1
-addOns {
-  ["\(methis.name) (Armed)"] {
-    addOnType = "building-turret"
-    abilities {
-      ["Attack"] {
-        damage = 8
-        cooldown = 0.8
-        range = 1000
-        abilityType = "attack"
-        targets { "ground"; "air" }
-      }
-    }
   }
 }

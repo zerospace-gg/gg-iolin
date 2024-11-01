@@ -8,5 +8,5 @@ unlocks {
   import("../../../unit/tier_3/dreadnought.pkl").slug
 }
 createdBy {
-  import("../../../unit/builder/laborer.pkl").slug
+  import("../../../unit/builder/legion_build_drone.pkl").slug
 }

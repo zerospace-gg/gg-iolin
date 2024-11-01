@@ -11,7 +11,6 @@ buildTime = 30
 stunResist = 50
 energy = 100
 
-
 abilities {
   ["Attack"] {
     damage = 20
@@ -40,29 +39,41 @@ abilities {
 
 upgrades {
   ["Killer Instinct"] {
-    description = "Hitting enemy units with Piercing shots boosts hero's attack (40%) and movement speed (10%) for 6s."
+    description = "Hitting enemy units with Piercing shots boosts hero's attack (35%) and movement speed (10%) for 6s."
+    fluxCost = 125
+    researchTime = 40
     tier = "T1.5"
   }
   ["Stronger Toxins"] {
     description = "Increase Toxic Ammunition slow and damage multiplier by 20%"
+    fluxCost = 125
+    researchTime = 40
     tier = "T1.5"
   }
 
   ["Piercing Shot Slow"] {
     description = "Units hit by piercing shot are slowed (-50% for 4s)"
+    fluxCost = 175
+    researchTime = 50
     tier = "T2.5"
   }
   ["Attack Range Aura"] {
     description = "Increasess attack range of nearby ranged units by 300"
+    fluxCost = 175
+    researchTime = 50
     tier = "T2.5"
   }
 
   ["Explosive Warhead"] {
     description = "The piercing shot explodes at the end dealing 300 damage in area. Handling such heavy ammo increases cooldown and channel time"
+    fluxCost = 225
+    researchTime = 50
     tier = "T3.5"
   }
   ["Multishot"] {
     description = "Weapon fires 2 additional projectiles at nearby enemies"
+    fluxCost = 225
+    researchTime = 50
     tier = "T3.5"
   }
 }

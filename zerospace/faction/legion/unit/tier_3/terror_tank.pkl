@@ -9,13 +9,15 @@ name = "Terror Tank"
 
 hexiteCost = 200
 fluxCost = 200
-supply = 20
+supply = 15
 hp = 1500
-speed = 540
+speed = 450
 armorType = "heavy"
 armor = 1
 stunResist = 75
-buildTime = 60
+buildTime = 40
+createdBy { import("../../unit/builder/legion_build_drone.pkl").slug }
+unlockedBy { import("../../building/production/tier_3/terror_tower.pkl").slug }
 
 constructingVersion {
   new {

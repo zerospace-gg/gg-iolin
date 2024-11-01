@@ -1,5 +1,82 @@
 amends ".../engine/faction.pkl"
+import "legion.pkl" as me
 
 name = "Legion"
 factionContents = import*("legion/{unit,building}/**pkl")
 mercHeroesAllowed = false
+
+talents {
+  ["Value in Death"] {
+    level = 1
+    description = "Dying Infrantry heal lowest nearby hero 25 Life & 5 Energy"
+  }
+  ["Reused Equipment"] {
+    level = 1
+    description = "Thralls refund 25% of their cost on death"
+  }
+
+  ["Efficient Upgrades"] {
+    level = 2
+    description = "+50% research speed & -50% research cost"
+  }
+
+  ["Boosting Obelisk"] {
+    level = 3
+    description = "Unlocks Bosting Obelisk and increases Obelisk's range by 30%"
+  }
+  ["Portal Obelisk"] {
+    level = 3
+    description = "Unlocks Portal Obelisk. +50% Obelisk Duration"
+  }
+
+  ["legion L4 talent - to be named"] {
+    level = 4
+    description = "+50% Energy Regen & -30% Ability Cooldown"
+  }
+
+  ["Ritual"] {
+    level = 5
+    description = "Unlocks a ritual site that summons a temporal projection of the Emperor"
+    unlocks { me.topbars["Ritual"].slug }
+  }
+
+  ["Spawn Monolith"] {
+    level = 5
+    description = "Spawn powerful defensive structure on battlefield"
+    unlocks { me.topbars["Spawn Monolith"].slug }
+  }
+
+  ["Advanced Production"] {
+    level = 6
+    description = "Reduce Cost of Thralls and Rhinos by 20%"
+  }
+}
+
+topbars {
+  ["Recall"] {
+    topbarType = "recall"
+    slot = 1
+    energyCost = 5
+    cooldown = 90
+    description = "Recalls units to the nearest Garrison Tower. Click minimap to choose which base."
+  }
+  ["Spawn Obelisk"] {
+    topbarType = "special"
+    slot = 2
+    energyCost = 12
+    description = "Spawn various obelisks on the battlefield (See Legion Buildings)"
+  }
+  ["Ritual"] {
+    slot = 3
+    description = "Start ritual on one of XP towers. When ritual finishes, an Emperor projection will spawn for 90s. Sacrifice thralls to make it more powerful. From Thrall remains you also gain some resources back. If the ritual building is destroyed, the Emperor spawns with 60% hp."
+    energyCost = 25
+    cooldown = 180
+    unlockedBy { me.talents["Ritual"].slug }
+  }
+  ["Spawn Monolith"] {
+    slot = 4
+    description = "Spawn a powerful defensive structure on the battlefield"
+    unlockedBy { me.talents["Spawn Monolith"].slug }
+  }
+
+}

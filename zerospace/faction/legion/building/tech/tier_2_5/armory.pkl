@@ -3,7 +3,7 @@ amends ".../engine/building.pkl"
 name = "Armory"
 hp = 1000
 createdBy {
-  import("../../../unit/builder/laborer.pkl").slug
+  import("../../../unit/builder/legion_build_drone.pkl").slug
 }
 
 providesUpgradesFor {

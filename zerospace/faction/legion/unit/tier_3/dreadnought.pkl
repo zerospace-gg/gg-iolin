@@ -8,11 +8,11 @@ name = "Dreadnought"
 hexiteCost = 150
 fluxCost = 250
 supply = 20
-hp = 1000
+hp = 800
 speed = 500
 armorType = "heavy"
 stunResist = 75
-buildTime = 60
+buildTime = 30
 domain = "air"
 
 constructingVersion {
@@ -27,9 +27,9 @@ local mainWeapon: String = "\(me.name)'s \(me.abilities[0].name)"
 
 abilities {
   ["Main Beam Weapon"] {
-    damage = 10
+    damage = 9
     cooldown = 0.5
-    range = 1200
+    range = 1100
     bonusPercent = 100
     bonusVsTags { "armor:heavy" }
     abilityType = "attack"
@@ -78,7 +78,7 @@ addOns {
     unlocks { me.abilities["Teleport"].slug; me.abilities["Sensor"].slug }
   }
   ["Beam Module"] {
-    description = "Each \(name) adds +30% damage to \(me.name)'s \(me.abilities["Main Beam Weapon"].name) attack. Main beam dmg: 5/7/8/10/11 for 0/1/2/3/4."
+    description = "Each \(name) adds +30% damage and 100 range to \(me.name)'s \(me.abilities["Main Beam Weapon"].name) attack. Main beam dmg: 5/7/8/10/11 for 0/1/2/3/4."
   }
   ["Anti-Air Turret"] {
     description = "Attacks ground and air but does 3x dmg to air"

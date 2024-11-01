@@ -396,6 +396,11 @@ tags: Mapping<String, Info> = new {
     description = "Upgrades Units"
   }
 
+  ["sacrifices"] {
+    label = "Sacrifices Units"
+    description = "Sacrifices Units"
+  }
+
   ["tier:0"] {
     label = "Tier 0"
     description = "Tier 0"

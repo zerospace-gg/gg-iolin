@@ -14,7 +14,7 @@ speed = 500
 
 abilities {
   ["Attack"] {
-    damage = 6
+    damage = 7
     cooldown = 0.84
     range = 800
     abilityType = "attack"
@@ -25,10 +25,20 @@ abilities {
 upgrades {
   ["Battle Frenzy"] {
     description = "Each hit increases attack speed (+10% up to 70%)"
+    fluxCost = 100
+    researchTime = 40
     tier = "T1.5"
   }
   ["Charged Shot"] {
-    description = "Every 15s an attack deals 2x damage"
+    description = "Every 10s an attack deals +100% damage"
+    fluxCost = 100
+    researchTime = 40
     tier = "T1.5"
+  }
+  ["Performance Enhancers"] {
+    description = "+25% attack and move speed"
+    fluxCost = 250
+    researchTime = 60
+    tier = "T2.5"
   }
 }

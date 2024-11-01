@@ -1,6 +1,0 @@
-amends ".../engine/unit.pkl"
-
-name = "Harvester"
-
-abilities {
-}

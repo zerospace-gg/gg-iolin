@@ -3,12 +3,12 @@ amends ".../engine/building.pkl"
 name = "Garrison Tower"
 hotkey = "q"
 creates {
-  import("../../unit/builder/laborer.pkl").slug
-  import("../../unit/harvester/legion_harvester.pkl").slug
+  import("../../unit/builder/legion_build_drone.pkl").slug
+  import("../../unit/harvester/legion_laborer.pkl").slug
   import("../extractor/legion_extractor.pkl").slug
 }
 createdBy {
-  import("../../unit/builder/laborer.pkl").slug
+  import("../../unit/builder/legion_build_drone.pkl").slug
 }
 
 maxAddOns = 1
@@ -20,8 +20,8 @@ addOns {
     abilities {
       ["Attack"] {
         damage = 20
-        cooldown = 0.5
-        range = 1800
+        cooldown = 0.4
+        range = 2100
         abilityType = "attack"
         targets { "ground"; "air" }
       }

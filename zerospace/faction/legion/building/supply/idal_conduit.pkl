@@ -4,7 +4,7 @@ energy = 100
 buildTime = 15
 hp = 750
 createdBy {
-  import("../../unit/builder/laborer.pkl").slug
+  import("../../unit/builder/legion_build_drone.pkl").slug
 }
 
 abilities {

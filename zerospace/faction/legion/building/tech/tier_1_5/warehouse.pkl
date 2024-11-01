@@ -2,7 +2,7 @@ amends ".../engine/building.pkl"
 name = "Warehouse"
 
 createdBy {
-  import("../../../unit/builder/laborer.pkl").slug
+  import("../../../unit/builder/legion_build_drone.pkl").slug
 }
 
 providesUpgradesFor {

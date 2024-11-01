@@ -6,7 +6,7 @@ hotkey = "e"
 tier = "T1"
 hexiteCost = 75
 buildTime = 24
-supply = 1
+supply = 2
 hp = 225
 armorType = "medium"
 speed = 700
@@ -14,31 +14,20 @@ energy = 10
 vision = 2300
 
 abilities {
-  ["Attack"] {
+  ["Spear Throw"] {
     damage = 22
-    cooldown = 1.4
-    range = 220
+    cooldown = 1.7
+    range = 500
     abilityType = "attack"
-    targets { "ground" }
-  }
-
-  ["Knockback"] {
-    description = "Autocasts when available. charges and knocks enemy back. knockback stacks."
-    autocast = "always"
-    abilityType = "spell"
-    energyType = "abes"
-    energyCost = 10
-    targets { "ground" }
+    targets { "air"; "ground" }
   }
 }
 
 upgrades {
-  ["Fast Recovery"] {
-    description = "Energy for Knockback ability regenerates twice as fast"
-    tier = "T1.5"
-  }
   ["Maul"] {
-    description = "Knockbacked enemy is slowed by 75% for 4s"
+    description = "Attacks deal bonus damage and slow"
+    fluxCost = 100
+    researchTime = 50
     tier = "T1.5"
   }
 }

@@ -1,0 +1,13 @@
+amends ".../engine/building.pkl"
+
+name = "Sacrificial Site"
+hp = 150
+armor = 2
+
+abilities {
+  ["Heal"] {
+    abilityType = "heal"
+    cooldown = 1
+    healing = 15
+  }
+}

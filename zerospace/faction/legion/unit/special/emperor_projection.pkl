@@ -1,0 +1,31 @@
+amends ".../engine/unit.pkl"
+
+name = "Emperor"
+hp = 2000
+armorType = "medium"
+armor = 2
+speed = 600
+
+abilities {
+  ["Attack"] {
+    abilityType = "attack"
+    damage = 100
+    range = 300
+    cooldown = 1.4
+    bonusPercent = 200
+    bonusVsTags { "building" }
+    splashRange = 100
+    splashPercent = 100
+  }
+}
+
+
+maxAddOns = 30
+addOns {
+  default {
+    addOnType = "sacrifice"
+  }
+  ["Thrall Soul"] {
+    description = "Each gives emperor +50 HP and +5 attack damage"
+  }
+}
