@@ -6,7 +6,7 @@ factionContents = import*("arandi/{unit,building}/**pkl")
 talents {
   ["Free Harvester"] {
     level = 2
-    description = "+1 Harvester. +10% Flux Income"
+    description = "+1 Harvester. +15% Flux Income"
   }
 
   ["Casting Range"] {

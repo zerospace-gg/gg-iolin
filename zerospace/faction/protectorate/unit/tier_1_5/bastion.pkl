@@ -29,22 +29,17 @@ abilities {
 
 upgrades {
   ["Fragmentation Shells"] {
-    description = "weapons do full damage in splash radius with a larger radius. New stat: 100% over 150 range."
+    description = "Weapons deal full damage in splash radius"
     tier = "T1.5"
   }
 
   ["Reactive Armor"] {
-    description = "+25% health. knockback enemies on death."
+    description = "+25% health and +1 armor"
     tier = "T1.5"
   }
 
-  ["Assault Mode"] {
-    description = "+30% damage and weapon range"
-    tier = "T2.5"
-  }
-
   ["Kinetic Mode"] {
-    description = "After 2s of movement gain +40% movement speed.The first attack deals bonus splash damage (19dmg over ???) and slows (??% for ??s)"
+    description = "Gains +40% movement speed outside of combat"
     tier = "T2.5"
   }
 }

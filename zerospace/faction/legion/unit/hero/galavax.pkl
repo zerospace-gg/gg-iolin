@@ -57,16 +57,17 @@ upgrades {
     tier = "T2.5"
   }
   ["Lightning Rod"] {
-    description = "Sacrificial Site strikes an enemy with lightning when a friendly infantry unit dies in radius. +200% sacrificial site health."
-    fluxCost = 175
+    description = "Sacrificial Site strikes an enemy with lightning when a friendly infantry unit dies in radius. +300% sacrificial site health."
+    fluxCost = 150
     researchTime = 50
     tier = "T2.5"
   }
 
   ["From Ashes"] {
     description = "When a hero dies nearby, revive them at 50% vitality. 120s cooldown."
-    fluxCost = 225
+    fluxCost = 200
     researchTime = 60
+    cooldown = 90
     tier = "T3.5"
   }
   ["Storm"] {

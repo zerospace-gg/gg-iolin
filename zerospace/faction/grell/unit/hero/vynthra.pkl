@@ -1,15 +1,17 @@
 amends ".../engine/unit.pkl"
 
-name = "Grell Hero"
-hp = 300
+name = "Vynthra"
+hp = 320
 armorType = "medium"
 speed = 450
+// hp regen 6
 
 abilities {
   ["Attack"] {
     damage = 59
     cooldown = 1.8
     range = 1200
+    delay = 0.14
     targets { "ground"; "air" }
     abilityType = "attack"
   }

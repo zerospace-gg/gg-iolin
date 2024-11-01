@@ -2,7 +2,7 @@ amends ".../engine/unit.pkl"
 
 name = "Protectorate Harvester"
 description = "Protectorate Harvester has a healing ability"
-providesBiomass = 375
+hp = 400
 
 abilities {
   ["Healing Wave"] {

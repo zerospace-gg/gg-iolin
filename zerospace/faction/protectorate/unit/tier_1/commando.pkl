@@ -10,12 +10,12 @@ tier = "T1"
 
 hp = 140
 armorType = "light"
-speed = 480
+speed = 520
 
 abilities {
   ["S-10 Combat Rifle"] {
     damage = 8
-    cooldown = 0.8
+    cooldown = 0.84
     range = 800
     abilityType = "attack"
   }
@@ -24,31 +24,38 @@ abilities {
     name = "Jetpack"
     hotkey = "d"
     cooldown = 8
-    description = "jumps to the target point, bypassing any terrain"
+    description = "jumps to the target point, bypassing any terrain. Jump speed: 1000"
     abilityType = "spell"
   }
 }
 
 upgrades {
-  ["Shredding Rounds"] {
-    name = "Shredding Rounds"
-    description = "weapons do full damage in splash radius with a larger radius. New stat: 100% over 150 range."
-    tier = "T1.5"
-  }
 
-  ["Marksman Rifle"] {
-    name = "Marksman Rifle"
+  ["High Power Jetpacks"] {
     description = "+25% health. knockback enemies on death."
     tier = "T1.5"
+    fluxCost = 75
+    reseachTime = 40
   }
 
-  ["Assault Mode"] {
-    description = "+30% damage and weapon range"
+  ["Shredding Rounds"] {
+    description = "Each hit causes target to take 1.6% more damage for 8s"
     tier = "T2.5"
+    fluxCost = 150
+    researchTime = 50
   }
 
-  ["Kinetic Mode"] {
-    description = "After 2s of movement gain +40% movement speed.The first attack deals bonus splash damage (19dmg over ???) and slows (??% for ??s)"
+  ["Improved Rifles"] {
+    description = "Increases range by +200"
     tier = "T2.5"
+    fluxCost = 125
+    researchTime = 45
+  }
+
+  ["Eagle Sense"] {
+    description = "Gains +50% attack and move speed after jetpack finishes"
+    tier = "T2.5"
+    fluxCost = 150
+    researchTime = 60
   }
 }

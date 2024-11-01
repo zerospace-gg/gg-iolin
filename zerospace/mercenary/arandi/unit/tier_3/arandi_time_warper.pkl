@@ -5,7 +5,7 @@ name = "Arandi Time Warper"
 hexiteCost = 50
 fluxCost = 200
 supply = 6
-hp = 450
+hp = 350
 armorType = "light"
 speed = 500
 
@@ -22,6 +22,7 @@ abilities {
   ["Teleport"] {
     hotkey = "b"
     cooldown = 120
+    radius = 300
     description = "Teleport friendly units to the caster location. Editors note: If you cast this while the time warper is over a chasm tthe units will largely not come with unless they can fly"
     abilityType = "spell"
   }

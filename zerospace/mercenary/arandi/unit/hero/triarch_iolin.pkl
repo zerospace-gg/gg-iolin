@@ -1,8 +1,8 @@
 amends ".../engine/unit.pkl"
 
 name = "TriArch I'Olin"
-hp = 150
-shields = 150
+hp = 135
+shields = 135
 armorType = "medium"
 speed = 500
 
@@ -17,7 +17,8 @@ abilities {
   ["Singularity"] {
     hotkey = "q"
     cooldown = 20
-    description = "Fire a bolt of energy dealing 40 damage and slowing enemies for 4s. Bolt flies back to the caster."
+    damage = 30
+    description = "Fire a bolt of energy dealing 30 damage and slowing enemies for 4s. Bolt flies back to the caster."
     abilityType = "spell"
   }
 

@@ -4,16 +4,17 @@ import "types.pkl" as $t
 import "ability.pkl" as me
 local methis = this
 
-activationType: "auto" | "activated" | "passive" =
-  if (type == "attack") "auto"
-  else if (type == "heal") "auto"
-  else if (type == "faction-passive") "passive"
-  else if (type == "faction-talent") "passive"
+activationType: "auto" | "activated" | "passive" | "triggered" =
+  if (subtype == "attack") "auto"
+  else if (subtype == "heal") "auto"
+  else if (subtype == "faction-passive") "passive"
+  else if (subtype == "faction-talent") "passive"
+  else if (subtype == "death-triggered") "triggered"
   else "activated"
 
 fixed type: String = "ability"
 fixed subtype: String = fromPath.abilityType ?? abilityType
-hidden abilityType: "attack" | "heal" | "spell" | "passive" | "toggle" | "recharge-energy";
+hidden abilityType: "attack" | "heal" | "spell" | "passive" | "toggle" | "recharge-energy" | "death-triggered";
 
 name: String =
   if (subtype == "attack") "Attack"

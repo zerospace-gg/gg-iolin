@@ -2,7 +2,7 @@ amends ".../engine/unit.pkl"
 
 shortName = "Oathguard"
 name = "Arandi Oathguard"
-buildCount = 4
+buildCount = 3
 supply = 3
 hp = 300
 armorType = "medium"

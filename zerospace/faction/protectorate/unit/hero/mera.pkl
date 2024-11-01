@@ -7,15 +7,17 @@ speed = 500
 stunResist = 50
 
 abilities {
-  ["Attack"] {
+  ["Sword Attack"] {
     damage = 26
     cooldown = 1.05
     range = 150
     abilityType = "attack"
   }
-  ["Passive"] {
-    description = "with each attack Mera gains +5% movement and +10% attack speed. stacks 10x, 10s duration."
-    abilityType = "passive"
+  ["Blaster Attack"] {
+    damage = 24
+    cooldown = 1.5
+    range = 1200
+    abilityType = "attack"
   }
   ["Dash"] {
     hotkey = "q"
@@ -30,5 +32,12 @@ abilities {
     description = "All friendly units and structures under the barrier have +3 armor. Lasts 20s."
     duration = 20
     abilityType = "spell"
+  }
+  ["Weapon Switch"] {
+    cooldown = 10
+    description = "Mera switches between a Sword and a Blaster. Gains +30% attack speed for 5s."
+    hotkey = "e"
+    abilityType = "toggle"
+    togglesMode = "attack"
   }
 }

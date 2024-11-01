@@ -2,13 +2,14 @@ amends ".../engine/unit.pkl"
 
 name = "Tech Hero"
 hp = 150
+shields = 150
 armorType = "medium"
 speed = 500
 stunResist = 50
 
 abilities {
   ["Attack"] {
-    damage = 18
+    damage = 16
     cooldown = 1.0
     range = 1200
     targets { "ground"; "air" }
@@ -24,10 +25,15 @@ abilities {
     abilityType = "spell"
   }
 
+  ["Energy Conduit (Passive)"] {
+    description = "Up to 6 hits per cast of energy conduit make the companion shield permanently stronger: +4 max shield and +2% attack speed."
+    abilityType = "passive"
+  }
+
   ["Swap"] {
     hotkey = "x"
     cooldown = 10
-    description = "Fire a projectile. If it hits an enemy unit, swap positions with it. If it doesn't hit one or the unit is too close, jump to the target location and leave a decoy behind. The minimum swap range is indicated by the secondary range circle. The decoy lasts 1 minute."
+    description = "Fire a projectile. If it hits an enemy unit, swap positions with it. If it doesn't hit one or the unit is too close, jump to the target location. The minimum swap range is indicated by the secondary range circle. The decoy lasts 1 minute."
     targets { "map" }
     targetMode = "location"
     abilityType = "spell"

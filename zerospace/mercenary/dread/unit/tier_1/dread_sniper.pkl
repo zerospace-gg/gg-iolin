@@ -22,7 +22,8 @@ abilities {
   ["Crippling Shot"] {
     damage = 50
     cooldown = 75.0
-    description = "75s cooldown. deals 50 damage, slows target by 50% for 2 seconds"
+    description = "75s cooldown. deals 50 damage, slows target by 70% for 2 seconds"
     abilityType = "spell"
+    delay = 0.3
   }
 }

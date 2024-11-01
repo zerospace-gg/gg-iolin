@@ -2,10 +2,10 @@ amends ".../engine/unit.pkl"
 shortName = "Tow Bot"
 name = "Valkaru Tow Bot"
 buildCount = 1
-hexiteCost = 100
-fluxCost = 200
+hexiteCost = 75
+fluxCost = 150
 supply = 8
-hp = 1000
+hp = 700
 speed = 600
 armorType = "heavy"
 abilities {

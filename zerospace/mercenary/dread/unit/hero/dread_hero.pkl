@@ -1,6 +1,6 @@
 amends ".../engine/unit.pkl"
 name = "Dread Hero"
-hp = 210
+hp = 175
 armorType = "medium"
 speed = 500
 
@@ -36,5 +36,7 @@ abilities {
     targets { "ground" }
     description = "Throw a sticky bomb. After 7s it explodes damaging enemies for 50 and stunning them for 4s. If the target dies early the radius is reduced."
     abilityType = "spell"
+    radius = 225
+    delay = 5
   }
 }

@@ -1,9 +1,9 @@
 amends ".../engine/unit.pkl"
 shortName = "Badger"
 name = "Marran Badger"
-buildCount = 2
-hexiteCost = 125
-fluxCost = 125
+buildCount = 3
+hexiteCost = 175
+fluxCost = 150
 supply = 3
 hp = 225
 shields = 225
@@ -11,7 +11,7 @@ armorType = "heavy"
 speed = 450
 abilities {
   ["Attack"] {
-    damage = 19
+    damage = 18
     cooldown = 1.5
     range = 1450
     targets { "air"; "ground" }

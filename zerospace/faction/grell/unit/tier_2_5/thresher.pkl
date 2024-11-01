@@ -6,7 +6,7 @@ hexiteCost = 150
 fluxCost = 150
 buildTime = 50
 supply = 8
-hp = 400
+hp = 350
 armorType = "heavy"
 speed = 450
 

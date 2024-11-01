@@ -1,6 +1,10 @@
 amends ".../engine/building.pkl"
 
 name = "Barracks"
+hexiteCost = 100
+hp = 1000
+buildTime = 30
+
 creates {
   import("../../../unit/tier_1/commando.pkl").slug
   import("../../../unit/tier_1_5/bastion.pkl").slug

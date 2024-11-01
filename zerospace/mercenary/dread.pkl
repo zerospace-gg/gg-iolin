@@ -10,7 +10,7 @@ talents {
   }
   ["Advanced Sensors"] {
     level = 4
-    description = "+50% vision & +15% movement speed"
+    description = "+60% vision & +20% movement speed"
   }
 }
 

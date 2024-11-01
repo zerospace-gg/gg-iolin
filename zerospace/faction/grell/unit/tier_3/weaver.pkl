@@ -3,12 +3,12 @@ amends ".../engine/unit.pkl"
 name = "Weaver"
 hotkey =  "e"
 hexiteCost = 50
-fluxCost = 100
+fluxCost = 150
 buildTime = 30
 supply = 4
-hp = 300
+hp = 375
 armorType = "medium"
-speed = 450
+speed = 650
 inGame = true
 createdBy { import("../../building/production/tier_3/large_incubator.pkl").slug }
 unlockedBy { import("../../building/production/tier_3/large_incubator.pkl").slug }

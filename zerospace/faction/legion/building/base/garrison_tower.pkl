@@ -5,6 +5,7 @@ hotkey = "q"
 creates {
   import("../../unit/builder/legion_build_drone.pkl").slug
   import("../../unit/harvester/legion_laborer.pkl").slug
+  import("../../unit/special/legion_scout_drone.pkl").slug
   import("../extractor/legion_extractor.pkl").slug
 }
 createdBy {

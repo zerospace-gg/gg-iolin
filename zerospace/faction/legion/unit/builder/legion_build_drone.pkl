@@ -1,9 +1,11 @@
 amends ".../engine/unit.pkl"
 
+shortName = "Build Drone (Legion)"
 name = "Legion Build Drone"
 hp = 100
 speed = 500
 armorType = "medium"
+domain = "air"
 
 createdBy {
   import("../../building/base/garrison_tower.pkl").slug

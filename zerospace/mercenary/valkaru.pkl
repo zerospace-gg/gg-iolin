@@ -6,7 +6,7 @@ factionContents = import*("valkaru/**pkl")
 talents {
   ["Merc Cooldown"] {
     level = 2
-    description = "+100% faster mercenary charges"
+    description = "+125% faster mercenary charges"
   }
   ["Heavy Plating"] {
     level = 4
@@ -18,5 +18,7 @@ topbars {
   ["Valkaru Beast"] {
     slot = 5
     description = "Summons a valkaru beast"
+    energyCost = 20
+    energyType = "topbar"
   }
 }

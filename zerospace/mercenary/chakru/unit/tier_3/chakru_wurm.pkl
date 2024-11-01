@@ -3,7 +3,7 @@ shortName = "Wurm"
 name = "Cha'Kru Wurm"
 description = "The Cha'Kru Wurm is a heavy melee bruiser with a powerful zoning ability: It can draw a line through the battlefield, separating an army into two halves. This Rift shoots out in a straight line from the Wurm, meaning positioning the Wurm before casting rift is vital for ensuring its effectiveness."
 hexiteCost = 100
-fluxCost = 250
+fluxCost = 225
 supply = 7
 hp = 1000
 armorType = "heavy"
@@ -19,5 +19,6 @@ abilities {
     cooldown = 50
     description = "Create a rift that pushes all units away and creates unpathable area for 7s"
     abilityType = "spell"
+    delay = 0.44
   }
 }

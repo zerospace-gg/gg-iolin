@@ -19,9 +19,9 @@ addOns {
     addOnType = "building-turret"
     abilities {
       ["Attack"] {
-        damage = 55
-        cooldown = 1.0
-        range = 1800
+        damage = 20
+        cooldown = 0.39
+        range = 2100
         abilityType = "attack"
       }
     }

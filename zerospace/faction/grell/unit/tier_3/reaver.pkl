@@ -6,11 +6,12 @@ hexiteCost = 200
 fluxCost = 100
 buildTime = 60
 supply = 8
-hp = 1200
+hp = 1100
 armorType = "heavy"
 armor = 2
 speed = 525
 infuseCost = 15
+stunResist = 50
 
 createdBy { import("../../building/production/tier_3/large_incubator.pkl").slug }
 unlockedBy { import("../../building/production/tier_3/large_incubator.pkl").slug }

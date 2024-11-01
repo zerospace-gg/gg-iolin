@@ -2,13 +2,18 @@ amends ".../engine/unit.pkl"
 
 name = "Prefect Nova"
 hp = 150
+shields = 150
 armorType = "medium"
 speed = 500
 stunResist = 50
 
+creates {
+  import("../../buildings/special/light_turret.pkl")
+}
+
 abilities {
   ["Attack"] {
-    damage = 16
+    damage = 18
     cooldown = 1.0
     range = 1200
     targets { "ground"; "air" }
@@ -17,7 +22,7 @@ abilities {
   ["Stun Blast"] {
     hotkey = "z"
     cooldown = 20
-    description = "Fire a blast towards your enemies. The blast deals 50 damage and stuns enemies in a small area for 3s"
+    description = "The blast deals 50 damage and stuns enemies in a small area for 3s"
     targets { "ground" }
     targetMode = "strip"
     abilityType = "spell"
@@ -37,7 +42,7 @@ abilities {
     cooldown = 80
     targets { "map" }
     targetMode = "location"
-    description = "Construct a temporary light turret on the field. its beam attack increases significantly over 30s and slows the movement of the target by 50%."
+    description = "Construct a Light Turret which slows and attacks enemies."
     abilityType = "spell"
   }
 }

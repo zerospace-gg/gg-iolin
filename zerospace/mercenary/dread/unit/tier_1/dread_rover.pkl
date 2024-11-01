@@ -5,7 +5,7 @@ buildCount = 2
 hexiteCost = 200
 fluxCost = 50
 supply = 6
-hp = 275
+hp = 320
 armorType = "light"
 speed = 650
 abilities {

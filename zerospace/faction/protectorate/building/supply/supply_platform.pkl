@@ -1,9 +1,9 @@
 amends ".../engine/building.pkl"
-name = "Supply Depot"
+name = "Supply Platform"
 buildTime = 15
 hp = 750
 createdBy {
-  import("../../unit/builder/engineer.pkl").slug
+  import("../../unit/builder/prot_build_drone.pkl").slug
 }
 
 maxAddOns = 1

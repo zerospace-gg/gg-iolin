@@ -6,19 +6,20 @@ description = "Yeah, I mean, I like commandos just fine. They're cool. But what 
 supply = 6
 hexiteCost = 50
 fluxCost = 150
-buildTime = 60
-energy = 100
+buildTime = 40
 
 hp = 425
-speed = 450
+speed = 525
 
 armorType = "medium"
 
 abilities {
   ["Attack"] {
-    damage = 6
+    targets { "air"; "ground" }
+    damage = 5
     volleys = 2
-    cooldown = 0.6
+    shots = 2
+    cooldown = 0.65
     range = 1550
     abilityType = "attack"
   }
@@ -29,33 +30,11 @@ abilities {
     cooldown = 18
     abilityType = "spell"
   }
-
-  ["Drone Strike"] {
-    hotkey = "r"
-    description = "65 Energy. Launch a drone that deals 200 damage over 5 seconds in the target area."
-    energyCost = 65
-    abilityType = "spell"
-  }
 }
 
 upgrades {
-  ["Faster Legs"] {
-    description = "+20% Movement Speed"
-    tier = "T2.5"
-  }
-
-  ["Improved Drone Strike"] {
-    description = "+40% casting range"
-    tier = "T2.5"
-  }
-
-  ["Improved Jump"] {
-    description = "Gain 150 shields after jumping, lasts 3s. -50% jump cooldown."
-    tier = "T2.5"
-  }
-
-  ["Extra Explosion"] {
-    description = "Upon expiration, drone explodes dealing 100 damage to nearby enemies. Drone spins faster. "
+  ["Jump"] {
+    description = "Unlocks the Jump ability"
     tier = "T2.5"
   }
 }

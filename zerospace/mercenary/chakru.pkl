@@ -10,6 +10,11 @@ talents {
     level = 2
     description = "Chakru units revive at their temples. 90s cooldown per Temple."
   }
+
+  ["Lifesteal"] {
+    level = 4
+    description = "+2 Armor and +15% lifesteal"
+  }
 }
 
 topbars {
@@ -26,6 +31,7 @@ topbars {
     slot = 5
     energyCost = 15
     cooldown = 120
-    description = "Rain falls around the targetd unit for sacrifice. Friendly units nearby are regenerated and gain increased attack and movement speed (+15%). Health regeneration scales with the target's maximum health. After 10s the unit dies."
+    description = "Rain falls around the targeted unit for sacrifice. Friendly units nearby are regenerated and gain increased attack and movement speed (+15%). Health regeneration scales with the target's maximum health. After 10s the unit dies."
+    duration = 14
   }
 }

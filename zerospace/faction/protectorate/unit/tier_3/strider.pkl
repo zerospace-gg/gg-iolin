@@ -8,7 +8,7 @@ supply = 6
 buildTime = 60
 hp = 1100
 armorType = "heavy"
-speed = 300
+speed = 450
 armor = 1
 
 carryCapacity = 8
@@ -22,10 +22,6 @@ abilities {
     targets { "ground" }
     abilityType = "attack"
   }
-  ["Repair Aura"] {
-    description = "todo: fill in details here"
-    abilityType = "passive"
-  }
 
   ["Unload"] {
     cooldown = 0.2
@@ -35,12 +31,16 @@ abilities {
 }
 
 upgrades {
-  ["Bigger Repair Aura"] {
+  ["Infantry Armor"] {
     tier = "T3.5"
-    description = "+50% aura radius"
+    description = "Reduce damage taken of nearby infantry by 20%"
+    fluxCost = 0
+    researchTime = 20
   }
   ["Bunker Capacity"] {
     tier = "T3.5"
     description = "+100% carry capacity"
+    fluxCost = 100
+    researchTiem = 50
   }
 }

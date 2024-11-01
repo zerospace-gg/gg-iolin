@@ -1,0 +1,18 @@
+amends ".../engine/unit.pkl"
+
+hp = 1925
+armor = 0
+armorType = "light"
+speed = 632
+
+abilities {
+  ["Attack"] {
+    targets { "ground" }
+    damage = 15
+    cooldown = 1.31
+    range = 74
+    abilityType = "attack"
+  }
+}
+
+// targets ground dmg 15 cd 1.31 range 74 speed 632 hp 1925 armor 0 light armor

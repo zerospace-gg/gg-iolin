@@ -6,13 +6,14 @@ fluxCost = 0
 buildCount = 2
 supply = 3
 hp = 200
-speed = 700
+speed = 625
 armorType = "light"
 abilities {
   ["Knife Throw"] {
     damage = 18
-    cooldown = 1.75
+    cooldown = 1.6
     range = 1000
+    delay = 0.2
     abilityType = "attack"
   }
 }

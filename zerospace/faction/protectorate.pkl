@@ -3,3 +3,81 @@ amends ".../engine/faction.pkl"
 name = "Protectorate"
 factionContents = import*("protectorate/{unit,building}/**pkl")
 mercHeroesAllowed = true
+
+talents {
+  ["Improved Beam Up"]  {
+    level = 1
+    description = "-25% Beam up delay, +100% healed amount"
+  }
+  ["Veterancy"] {
+    level = 1
+    description = "+50% faster veterancy gain"
+  }
+
+  ["Production Efficiency"] {
+    level = 2
+    description = "+25% faster unit training speed"
+  }
+
+  ["Mercenary Reinforcement"] {
+    level = 3
+    description = "Reinforcements call down additional random Tier 1 Mercenaries"
+  }
+  ["T3 Reinforcements"] {
+    level = 3
+    description = "Replaces reinforceable unit types with Gunship/Artemes/Strider/Juggernaut/Disruptor"
+  }
+
+  ["Advanced Weaponry"] {
+    level = 4
+    description = "+15% damage and range"
+  }
+
+  ["Airstrike"] {
+    level = 5
+    description = "Call down an airstrike, dealing 200 damage. Requires Airstrips to be built."
+  }
+  ["Weapon X"] {
+    level = 5
+    description = "Calls down a temporary Mech. Explodes on death dealing massive damage."
+    creates { import("protectorate/units/special/weapon_x.pkl").slug }
+  }
+
+  ["Hot Landing Zone"] {
+    level = 6
+    description = "Reinforcements is no longer limited to locations around Operating Towers"
+  }
+}
+
+topbars {
+  ["Beam Up"] {
+    description = "Teleports a unit to any Operating Tower and Heals it by 100. Costs 0.3 power per supply. Click on minimap to choose operating toweer to beam up to."
+    slot = 1
+    topbarType = "recall"
+    cooldown = 2
+  }
+
+  ["Reinforcements"] {
+    slot = 2
+    topbarType = "special"
+    description = "Calls down reinforcements of the selected type. Can only be used near Operating Towers. Available units: Commando, Bastion, Predator, Striker, Atlas."
+    energyCost = 20
+  }
+
+  ["Airstrike"] {
+    slot = 3
+    topbarType = "ultimate"
+    energyType = "topbar"
+    energyCost = 3
+    description = "Calls down an airstrike, dealing 200 damage. Requires Airstrips to be built."
+  }
+
+  ["Weapon X"] {
+    slot = 4
+    topbarType = "ultimate"
+    description = "Calls down a temporary Mech. Explodes on death dealing massive damage."
+    energyCost = 40
+    energyType = "topbar"
+    cooldown = 120
+  }
+}

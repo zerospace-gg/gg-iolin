@@ -8,8 +8,13 @@ supply = 8
 buildTime = 60
 hp = 1000
 armorType = "heavy"
-speed = 450
+speed = 475
 armor = 1
+energy = 8
+
+createdBy { import("../../buildings/production/tier_2/advanced_factory.pkl").slug }
+unlockedBy { import("../../buildings/production/tier_2/advanced_factory.pkl").slug }
+upgradedBy { import("../../buildings/tech/tier_3_5/specialized_research_lab.pkl").slug }
 
 abilities {
   ["Attack"] {
@@ -19,15 +24,27 @@ abilities {
     targets { "ground" }
     abilityType = "attack"
   }
+
+  ["Heat Discharge"] {
+    description = "deals 250 damage to nearby enemies over 5 seconds. cannot move while active"
+    energyCost = 20
+    energyType = "abes"
+    damage = 250
+    radius = 200
+  }
 }
 
 upgrades {
-  ["Attack Speed Aura"] {
+  ["Enhanced Engines"] {
+    description = "Allows the juggernaut to move while Heat Discharge is Active"
+    fluxCost = 150
+    researchTime = 50
     tier = "T3.5"
-    description = "+15% attack speed aura"
   }
   ["Heat Discharge Radius"] {
     tier = "T3.5"
-    description = "+30% heat discharge radius"
+    fluxCost = 150
+    researchTime = 50
+    description = "Increases the radius of Heat Discharge by 40%"
   }
 }

@@ -1,12 +1,12 @@
 amends ".../engine/unit.pkl"
 
 name = "Gunship"
-//flavor = "An airship with TWO guns?!"
 tier = "T2"
 supply = 6
 hexiteCost = 50
 fluxCost = 100
 buildTime = 45
+energy = 100
 
 hp = 350
 speed = 575
@@ -14,18 +14,6 @@ speed = 575
 domain = "air"
 
 abilities {
-  ["Railgun"] {
-    targets { "ground" }
-    damage = 45
-    bonusPercent = 100
-    bonusVsTags { "armor:heavy" }
-    cooldown = 3
-    range = 2100
-    splashPercent = 100
-    splashRange = 80
-    abilityType = "attack"
-  }
-
   ["Gatling Gun"] {
     targets { "ground"; "air" }
     damage = 20
@@ -34,31 +22,28 @@ abilities {
     abilityType = "attack"
   }
 
-  ["Switch guns"] {
-    abilityType = "toggle"
-    togglesMode = "attack"
-    description = "Switch between Gatling Gun and Railgun. Gatling Gun is effective against air units, while Railgun is effective against ground units."
+  ["Rocket Barrage"] {
+    abilityType = "spell"
+    range = 200
+    damage = 10
+    volleys = 6
+    description = "Fires a barrage of rockets at a target location. 150 range area of effect."
   }
 }
 
 upgrades {
-  ["Scouting Drone"] {
-    description = "send a drone to scout the location. The drone cannot be shot down."
+  ["Rocket Barrage"] {
+    description = "Unlocks the rocket barrage ability"
     tier = "T2.5"
   }
 
-  ["Scouting Drone Clone"] {
-    description = "send a drone to scout the location. The drone cannot be shot down."
+  ["Enhanced Engines"] {
+    description = "Gain +30% movement speed"
     tier = "T2.5"
   }
 
   ["Bonus Shield"] {
-    description = "Bonus Shield"
-    tier = "T3.5"
-  }
-
-  ["Bonus Shield Clone"] {
-    description = "Bonus Shield"
+    description = "Gain +100 shields"
     tier = "T3.5"
   }
 }

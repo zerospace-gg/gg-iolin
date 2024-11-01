@@ -6,11 +6,13 @@ hexiteCost = 100
 fluxCost = 175
 supply = 6
 buildTime = 45
-hp = 600
+hp = 450
 armorType = "heavy"
 speed = 550
 
-// infuseRule = damageBasedInfuseRule
+createdBy { import("../../buildings/production/tier_2/advanced_factory.pkl").slug }
+unlockedBy { import("../../buildings/production/tier_2/advanced_factory.pkl").slug }
+upgradedBy { import("../../buildings/tech/tier_3_5/specialized_research_lab.pkl").slug }
 
 abilities {
   ["Attack"]  {
@@ -18,10 +20,9 @@ abilities {
     bonusPercent = 100
     bonusVsTags { "armor:heavy" }
     cooldown = 0.4
-    range = 1600
-    chargeTime = 8
-    chargeMaxMultiplier = 2
-    notes { "leash range: 40%" }
+    range = 1400
+    chargeTime = 1.2
+    chargeMaxMultiplier = 1.6
     targets { "air"; "ground" }
     abilityType = "attack"
   }
@@ -29,12 +30,16 @@ abilities {
 
 upgrades {
   ["Charge Speed"] {
-    description = "-50% charge time"
+    description = "-50% beam charge time"
+    fluxCost = 100
+    researchTime = 50
     tier = "T3.5"
   }
 
   ["Slow"] {
     description = "Attacks reduce movement speed by 20%"
+    fluxCost = 100
+    researchTime = 50
     tier = "T3.5"
   }
 }

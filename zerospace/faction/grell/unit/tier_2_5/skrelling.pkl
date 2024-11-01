@@ -10,7 +10,8 @@ domain = "air"
 supply = 2
 hp = 140
 armorType = "light"
-speed = 700
+speed = 840
+vision = 1400
 
 createdBy { import("../../building/production/tier_1/incubator.pkl").slug }
 unlockedBy { import("../../building/tech/tier_2_5/skrelling_nest.pkl").slug }
@@ -46,5 +47,12 @@ upgrades {
     description = "When killed, deal 40 damage to enemy units nearby"
     fluxCost = 150
     researchTime = 60
+  }
+
+  ["Suicide"] {
+    tier = "T3.5"
+    description = "Suicide itself on enemy air units dealing 300 damage"
+    fluxCost = 100
+    researchTime = 50
   }
 }

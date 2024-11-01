@@ -2,19 +2,25 @@ amends ".../engine/building.pkl"
 
 shortName = "Adv Factory"
 name = "Advanced Factory"
+hexiteCost = 150
+fluxCost = 100
+hp = 1400
+buildTime = 35
+
 creates {
   import("../../../unit/tier_3/disruptor.pkl").slug
   import("../../../unit/tier_3/juggernaut.pkl").slug
   import("../../../unit/tier_3/strider.pkl").slug
-  import("../../../unit/tier_3_5/artemis.pkl").slug
+  import("../../../unit/tier_3/artemis.pkl").slug
 }
 
 createdBy {
-  import("../../../unit/builder/engineer.pkl").slug
+  import("../../../unit/builder/prot_build_drone.pkl").slug
 }
 
 unlocks {
   import("../../../unit/tier_3/disruptor.pkl").slug
   import("../../../unit/tier_3/juggernaut.pkl").slug
   import("../../../unit/tier_3/strider.pkl").slug
+  import("../../../unit/tier_3/artemis.pkl").slug
 }

@@ -5,9 +5,10 @@ buildCount = 1
 hexiteCost = 75
 fluxCost = 175
 supply = 6
-hp = 750
+hp = 800
 speed = 375
 armorType = "heavy"
+armor = 1
 abilities {
   ["Attack"] {
     damage = 3
