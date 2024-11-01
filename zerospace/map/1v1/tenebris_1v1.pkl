@@ -1,5 +1,5 @@
 amends ".../engine/rts_map.pkl"
-name = "Swamp Fever"
+name = "Tenebris 1v1"
 mapSize = "small"
 xpTowers = 2
 fluxDistance = "distant"

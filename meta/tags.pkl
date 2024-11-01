@@ -306,6 +306,11 @@ tags: Mapping<String, Info> = new {
     description = "2v2 PVP"
   }
 
+  ["map:ffa"] {
+    label = "FFA PVP"
+    description = "FFA PVP"
+  }
+
   ["massive"] {
     label = "Massive Unit"
     description = "Massive Unit"

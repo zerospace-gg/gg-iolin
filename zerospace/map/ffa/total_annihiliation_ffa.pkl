@@ -1,0 +1,5 @@
+amends ".../engine/rts_map.pkl"
+name = "Total Annihiliation FFA"
+mapSize = "large"
+xpTowers = 8
+fluxDistance = "near"

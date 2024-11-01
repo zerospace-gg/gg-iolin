@@ -1,5 +1,0 @@
-amends ".../engine/rts_map.pkl"
-name = "Plains 2v2"
-mapSize = "normal"
-xpTowers = 3
-fluxDistance = "near"

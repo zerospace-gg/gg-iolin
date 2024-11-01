@@ -1,5 +1,0 @@
-amends ".../engine/rts_map.pkl"
-name = "Mountain Peak"
-mapSize = "small"
-xpTowers = 3
-fluxDistance = "medium-far"

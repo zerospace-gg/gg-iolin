@@ -1,0 +1,5 @@
+amends ".../engine/rts_map.pkl"
+name = "Starsand 1v1"
+mapSize = "large"
+xpTowers = 3
+fluxDistance = "close"

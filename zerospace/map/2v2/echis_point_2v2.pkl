@@ -1,5 +1,5 @@
 amends ".../engine/rts_map.pkl"
-name = "Coastal Outpost"
+name = "Echis Point 2v2"
 mapSize = "normal"
 xpTowers = 2
 fluxDistance = "medium-far"

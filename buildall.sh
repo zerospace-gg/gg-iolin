@@ -1,7 +1,7 @@
 #!/bin/bash
 
 GG_VERSION=0.5.0
-ZS_VERSION=v14030468
+ZS_VERSION=v16266963
 
 set -euo pipefail
 AT=$(node -e "console.log(new Date().toISOString())")

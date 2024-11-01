@@ -1,0 +1,6 @@
+
+amends ".../engine/rts_map.pkl"
+name = "Lost Expedition 2v2"
+mapSize = "large"
+xpTowers = 4
+fluxDistance = "near"
