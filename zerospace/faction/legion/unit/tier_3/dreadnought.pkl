@@ -11,6 +11,7 @@ supply = 20
 hp = 800
 speed = 500
 armorType = "heavy"
+armor = 1
 stunResist = 75
 buildTime = 30
 domain = "air"

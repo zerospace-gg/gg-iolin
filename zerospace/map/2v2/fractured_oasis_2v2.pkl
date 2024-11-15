@@ -1,5 +1,6 @@
 amends ".../engine/rts_map.pkl"
 name = "Fractured Oasis 2v2"
+shortName = "Fractured Oasis"
 mapSize = "large"
 xpTowers = 3
 fluxDistance = "distant"

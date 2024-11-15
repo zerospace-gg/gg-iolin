@@ -1,5 +1,6 @@
 amends ".../engine/rts_map.pkl"
 name = "Ascension 1v1"
+shortName = "Ascension"
 mapSize = "small"
 xpTowers = 3
 fluxDistance = "medium-far"

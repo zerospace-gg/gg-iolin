@@ -14,6 +14,7 @@ class Summary {
   faction: String?;
   tier: String?;
   hotkey: String?;
+  inGame: Boolean;
 }
 
 all: Map<String, Summary> = $a.all.toMap((x) -> x.id, (x) -> new Summary {
@@ -26,6 +27,7 @@ all: Map<String, Summary> = $a.all.toMap((x) -> x.id, (x) -> new Summary {
   faction = x.faction
   tier = x.tier
   hotkey = if (x.type == "unit" || x.type == "building") x.hotkey else null
+  inGame = x.inGame
 })
 
 ids: Map<String, String> = $a.all.toMap((x) -> x.slug, (x) -> x.id)

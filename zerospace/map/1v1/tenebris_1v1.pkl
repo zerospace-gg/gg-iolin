@@ -1,5 +1,6 @@
 amends ".../engine/rts_map.pkl"
 name = "Tenebris 1v1"
+shortName = "Tenebris"
 mapSize = "small"
 xpTowers = 2
 fluxDistance = "distant"

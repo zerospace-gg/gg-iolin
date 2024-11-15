@@ -1,6 +1,7 @@
 amends ".../engine/unit.pkl"
 
 name = "TriArch I'Olin"
+shortName = "I'Olin"
 hp = 135
 shields = 135
 armorType = "medium"

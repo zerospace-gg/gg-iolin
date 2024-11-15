@@ -1,6 +1,7 @@
 amends ".../engine/faction.pkl"
 
 name = "Dread Raiders"
+shortName = "Dread"
 factionContents = import*("dread/**pkl")
 
 talents {

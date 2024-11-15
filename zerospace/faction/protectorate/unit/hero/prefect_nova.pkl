@@ -1,6 +1,7 @@
 amends ".../engine/unit.pkl"
 
 name = "Prefect Nova"
+shortName = "Nova"
 hp = 150
 shields = 150
 armorType = "medium"

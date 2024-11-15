@@ -69,6 +69,11 @@ tags: Mapping<String, Info> = new {
     description = "Medium Armor"
   }
 
+  ["armor:building"] {
+    label = "Building Armor"
+    description = "Building Armor"
+  }
+
   ["armored"] {
     label = "Armored"
     description = "Armored"

@@ -1,4 +1,4 @@
-module types 
+module types
 import "types.pkl" as $t
 
 local slugrx = Regex(#"^([a-z0-9]+)(-[a-z0-9]+)*$"#)
@@ -6,18 +6,18 @@ local slugrx = Regex(#"^([a-z0-9]+)(-[a-z0-9]+)*$"#)
 /// this could just be a regex directly instead of a helper, but this way we can provide a more helpful error message
 function slugOk (t: String, s: String) =
   if (s.matches(slugrx))
-    true 
-  else 
+    true
+  else
     throw("Invalid \(t): '\(s)'. Should be chunks of lower-case letters and digits, separated by dashes. examples: 'thing', 'other-thing', '3rd-thing'")
 
 /// slugpath is essentially a `/`-separated list of slugs
 function slugpathOk (t: String, s: String) =
-  if (s == "") true 
-  else 
+  if (s == "") true
+  else
     let (ct = s.split("/").filter((i) -> !i.matches(slugrx)).length)
-    if (ct == 0) 
+    if (ct == 0)
       true
-    else 
+    else
       throw("Invalid \(t): '\(s)'. example valid names: 'one', 'one-two', 'one-two/three/four-five'")
 
 typealias Slug = String((s) -> $t.slugOk("Slug", s))
@@ -32,20 +32,20 @@ typealias Tier = "T0" | "T1" | "T2" | "T3" | "T1.5" | "T2.5" | "T3.5" | "T4"
 typealias UpgradeTier = "T1.5" | "T2.5" | "T3.5"
 
 typealias HotKey = String
-  // im not fixing this before zsgg website lauch lmao. maybe just 
-  // "q" | "w" | "e" | "r" | "t" | 
-  // "a" | "s" | "d" | "f" | "g" | "h" | 
-  // "z" | "x" | "c" | 
-  // "ctrl-q" | "ctrl-w" | "ctrl-e" | "ctrl-r" | "ctrl-t" | 
-  // "ctrl-a" | "ctrl-s" | "ctrl-d" | "ctrl-f" | "ctrl-g" | "ctrl-h" | 
+  // im not fixing this before zsgg website lauch lmao. maybe just
+  // "q" | "w" | "e" | "r" | "t" |
+  // "a" | "s" | "d" | "f" | "g" | "h" |
+  // "z" | "x" | "c" |
+  // "ctrl-q" | "ctrl-w" | "ctrl-e" | "ctrl-r" | "ctrl-t" |
+  // "ctrl-a" | "ctrl-s" | "ctrl-d" | "ctrl-f" | "ctrl-g" | "ctrl-h" |
   // "ctrl-z" | "ctrl-x" | "ctrl-c"
 
-typealias ArmorType = "none" | "light" | "medium" | "heavy"
+typealias ArmorType = "none" | "light" | "medium" | "heavy" | "building"
 typealias DomainType = "air" | "ground"
 
 typealias AllyDomainType = "friendly/air" | "friendly/ground"
 typealias TargetType = DomainType | AllyDomainType | "self" | "map"
-typealias TargetMode = "gamepiece" | "location" | "around-self" | "strip" 
+typealias TargetMode = "gamepiece" | "location" | "around-self" | "strip"
 
 typealias EnergyType = "classic" | "abes" | "topbar"
 
@@ -57,6 +57,6 @@ function makeSlug(s: String): String =
     .replaceAll(Regex("(^-+|-+$)"), "")
 
 function makeRecursiveSlug(name: String, ofKey: String, typeKey: String): String =
-  let (s = $t.makeSlug(name)) 
-  let (z = if (s == typeKey) "" else "-\(s)") 
+  let (s = $t.makeSlug(name))
+  let (z = if (s == typeKey) "" else "-\(s)")
   "\(ofKey)-\(typeKey)\(z)"

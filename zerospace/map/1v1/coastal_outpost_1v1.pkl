@@ -1,5 +1,6 @@
 amends ".../engine/rts_map.pkl"
 name = "Coastal Outpost 1v1"
+shortName = "Coastal Outpost"
 mapSize = "normal"
 xpTowers = 2
 fluxDistance = "medium-far"

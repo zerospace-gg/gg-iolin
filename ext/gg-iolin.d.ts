@@ -43,11 +43,21 @@ export type AddOnType =
   | "building-upgrade"
   | "building-turret";
 
-export type AbilityActivationType = "auto" | "activated" | "passive";
+export type AbilityActivationType =
+  | "auto"
+  | "activated"
+  | "passive"
+  | "trigger";
 
 export type AbilityToggleMode = "siege" | "attack";
 
-export type AbilityType = "attack" | "heal" | "spell" | "passive" | "toggle";
+export type AbilityType =
+  | "attack"
+  | "heal"
+  | "spell"
+  | "passive"
+  | "toggle"
+  | "trigger";
 
 export type AutoCastMode = "always" | "toggle" | "never";
 
@@ -117,6 +127,8 @@ export interface Ability extends Entity {
   areaRange?: number;
   areaDamage?: number;
   areaOverTime?: number;
+  chainTargets?: number;
+  chainReductionPercent?: number;
   splashPercent?: number;
   splashRange?: number;
   splashOverTime?: number;
@@ -294,6 +306,7 @@ export interface MetaIdxSummary {
   faction?: string;
   tier?: string;
   hotkey?: string;
+  inGame: boolean;
 }
 
 export interface MetaIdx {

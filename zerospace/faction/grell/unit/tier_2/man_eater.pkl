@@ -20,7 +20,7 @@ upgradedBy { import("../../building/tech/tier_2_5/advanced_augmentation_pool.pkl
 abilities {
   ["Attack"] {
     damage = 30
-    range = 800
+    range = 325
     cooldown = 1.78
     targets { "ground" }
     abilityType = "attack"

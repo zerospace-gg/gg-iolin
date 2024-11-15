@@ -1,5 +1,6 @@
 amends ".../engine/rts_map.pkl"
 name = "Echis Point 2v2"
+shortName = "Echis Point"
 mapSize = "normal"
 xpTowers = 2
 fluxDistance = "medium-far"
