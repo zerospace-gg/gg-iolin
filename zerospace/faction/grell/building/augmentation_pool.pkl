@@ -1,0 +1,21 @@
+amends ".../engine/tech_building.pkl"
+tier = "T1.5"
+
+shortName = "Aug Pool"
+name = "Augmentation Pool"
+hp = 1000
+hexiteCost = 100
+fluxCost = 25
+buildTime = 25
+
+unlocks {
+  import("../unit/lasher.pkl").slug
+}
+createdBy {
+  import("../unit/seedling.pkl").slug
+}
+
+providesUpgradesFor {
+  import("../unit/stinger.pkl").slug
+  import("../unit/lasher.pkl").slug
+}

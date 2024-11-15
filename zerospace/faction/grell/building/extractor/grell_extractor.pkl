@@ -1,3 +1,0 @@
-amends ".../engine/building.pkl"
-name = "Extractor"
-createdBy { import("../base/root_colony.pkl").slug }

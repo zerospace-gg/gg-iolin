@@ -1,0 +1,47 @@
+amends ".../engine/hero.pkl"
+
+name = "Vynthra"
+unitType = "hero"
+hp = 320
+armorType = "medium"
+speed = 450
+// hp regen 6
+
+abilities {
+  ["Attack"] {
+    damage = 59
+    cooldown = 1.8
+    range = 1200
+    delay = 0.14
+    targets { "ground"; "air" }
+    abilityType = "attack"
+  }
+
+  ["Deadly Vines"] {
+    hotkey = "z"
+    cooldown = 15
+    description = "Throw a tangle of vines. At its location, enemy ground units are slowed, can't use movement abilities, and take 60 damage over 10 seconds"
+    targets { "map" }
+    targetMode = "location"
+    abilityType = "spell"
+  }
+
+  ["Deep Burrow"] {
+    hotkey = "x"
+    cooldown = 60
+    description = "Teleports the hero to a visible location on biomass anywhere on the map. Cannot be interrupted."
+    effectArea = 300
+    targets { "self" }
+    abilityType = "spell"
+  }
+
+  ["Consume"] {
+    hotkey = "c"
+    cooldown = 45
+    damage = 250
+    healing = 250
+    targets { "friendly/ground"; "friendly/air"; "self" }
+    description = "Consume 250 health from a friendly unit, healing the hero for the same amount and granting a 20% movement speed boost for 10 seconds. Can be cast on self, affecting nearby friendly units instead."
+    abilityType = "spell"
+  }
+}

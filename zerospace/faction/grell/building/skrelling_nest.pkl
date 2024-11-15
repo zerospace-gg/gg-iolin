@@ -1,0 +1,24 @@
+
+amends ".../engine/tech_building.pkl"
+tier = "T2.5"
+shortName = "Skrelling Nest"
+name = "Skrelling Nest"
+hp = 1000
+buildTime = 25
+hexiteCost = 100
+fluxCost = 25
+
+unlocks {
+  import("../unit/skrelling.pkl").slug
+  import("../unit/behemoth.pkl").slug
+}
+unlockedBy {
+  import("./advanced_augmentation_pool.pkl").slug
+}
+providesUpgradesFor {
+  import("../unit/skrelling.pkl").slug
+  import("../unit/behemoth.pkl").slug
+}
+createdBy {
+  import("../unit/seedling.pkl").slug
+}

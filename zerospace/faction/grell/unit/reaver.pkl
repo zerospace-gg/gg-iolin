@@ -1,0 +1,60 @@
+amends ".../engine/unit.pkl"
+
+name = "Reaver"
+tier = "T3"
+unitType = "army"
+hotkey = "a"
+hexiteCost = 200
+fluxCost = 100
+buildTime = 60
+supply = 8
+hp = 1100
+armorType = "heavy"
+armor = 2
+speed = 525
+infuseCost = 15
+stunResist = 50
+
+createdBy { import("../building/large_incubator.pkl").slug }
+unlockedBy { import("../building/large_incubator.pkl").slug }
+upgradedBy { import("../building/special_augmentation_pool.pkl").slug }
+
+abilities {
+  ["Attack"] {
+    damage = 51
+    volleys = 2
+    cooldown = 2
+    splashPercent = 50
+    splashRange = 60
+    range = 175
+    targets { "ground" }
+    abilityType = "attack"
+  }
+
+  ["Charge"] {
+    hotkey = "r"
+    energyCost = 30
+    energyType = "classic"
+    description = "Charge into enemies knocking them back and dealing 80 damage"
+    damage = 80
+    targets { "ground" }
+    targetMode = "strip"
+    abilityType = "spell"
+  }
+}
+
+upgrades {
+  ["Improved Charge"] {
+    tier = "T3.5"
+    description = "Charge deals +50% damage"
+    fluxCost = 100
+    researchTime = 50
+  }
+
+  ["Toughened Carapace"] {
+    tier = "T3.5"
+    description = "+15% Health +1 armor"
+    fluxCost = 100
+    researchTime = 50
+  }
+}

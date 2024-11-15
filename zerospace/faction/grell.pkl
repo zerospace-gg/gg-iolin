@@ -6,8 +6,8 @@ name = "Grell"
 
 factionContents = import*("grell/{unit,building}/**pkl")
 guestHeroes {
-  import("protectorate/unit/hero/prefect_nova.pkl")
-  import("protectorate/unit/hero/tech_hero.pkl")
+  // import("protectorate/unit/hero/prefect_nova.pkl")
+  // import("protectorate/unit/hero/tech_hero.pkl")
 }
 mercHeroesAllowed = true
 

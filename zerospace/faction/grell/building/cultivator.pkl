@@ -1,0 +1,34 @@
+amends ".../engine/building.pkl"
+import ".../engine/building.pkl" as building
+import "cultivator.pkl" as cultivator
+name = "Cultivator"
+buildingType = "special"
+tier = "T0"
+armor = 0
+buildTime = 8
+hexiteCost = 10
+hp = 200
+hotkey = "e"
+providesBiomass = 1500
+
+maxAddOns = 1
+addOns {
+  ["Cultivator Attacker"] {
+    addOnType = "building-turret"
+    description = "increases hp to 400, grants attack ability"
+    abilities {
+      ["Attack"] {
+        damage = 12
+        volleys = 3
+        cooldown = 3.5
+        range = 1500
+        abilityType = "attack"
+      }
+    }
+  }
+}
+
+createdBy {
+  import("../unit/seedling.pkl").slug
+  import("../unit/grell_harvester.pkl").slug
+}

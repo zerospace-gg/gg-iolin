@@ -1,0 +1,59 @@
+amends ".../engine/unit.pkl"
+
+name = "Skrelling"
+hotkey = "t"
+tier = "T2.5"
+unitType = "army"
+hexiteCost = 25
+fluxCost = 50
+buildTime = 16
+domain = "air"
+supply = 2
+hp = 140
+armorType = "light"
+speed = 840
+vision = 1400
+
+createdBy { import("../building/incubator.pkl").slug }
+unlockedBy { import("../building/skrelling_nest.pkl").slug }
+upgradedBy { import("../building/skrelling_nest.pkl").slug }
+
+abilities {
+  ["Attack"] {
+    damage = 10
+    cooldown = 1
+    range = 150
+    targets { "air"; "ground" }
+    abilityType = "attack"
+  }
+}
+
+upgrades {
+  ["Fast Wings"] {
+    tier = "T2.5"
+    description = "+20% movement speed"
+    fluxCost = 100
+    researchTime = 50
+  }
+
+  ["Increased Vitality"] {
+    tier = "T2.5"
+    description = "+30% Health"
+    fluxCost = 100
+    researchTime = 50
+  }
+
+  ["Volatile Acids"] {
+    tier = "T3.5"
+    description = "When killed, deal 40 damage to enemy units nearby"
+    fluxCost = 150
+    researchTime = 60
+  }
+
+  ["Suicide"] {
+    tier = "T3.5"
+    description = "Suicide itself on enemy air units dealing 300 damage"
+    fluxCost = 100
+    researchTime = 50
+  }
+}

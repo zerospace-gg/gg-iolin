@@ -3,7 +3,7 @@ extends "gamepiece.pkl"
 import "types.pkl" as $t
 
 fixed type: String = "building"
-fixed subtype: String = fromPath.subtype ?? buildingType
+fixed subtype: String = buildingType
 buildingType: "base" | "extractor" | "supply" | "production" | "tech" | "special" | "constructing-unit" | "merc-outpost" = fromPath.subtype
 
 providesBiomass: Number? =
@@ -14,16 +14,16 @@ providesBiomass: Number? =
         else 750
 
 speed: Number? = 0
-vision: Number? = fromPath.vision ?? 1500
-armor: Number? = fromPath.armor ?? 1
+vision: Number? = 1500
+armor: Number? = 1
 armorType: $t.ArmorType = "building"
-buildTime: Number? = fromPath.buildTime ??
+buildTime: Number? =
           if (tier == "T1") 35
           else if (tier == "T2") 35
           else if (tier == "T3") 40
           else null
 
-hp: Number? = fromPath.hp ??
+hp: Number? =
   if (subtype == "production")
     if (tier == "T1") 1000
     else if (tier == "T2") 1200
@@ -33,13 +33,13 @@ hp: Number? = fromPath.hp ??
 
 hpInitial: Number? = if (hp == null) null else (hp * 0.4).floor
 
-hexiteCost: Number? = fromPath.hexiteCost ??
+hexiteCost: Number? =
   if (tier == "T1") 100
   else if (tier == "T2") 125
     else if (tier == "T3") 150
       else null
 
-fluxCost: Number? = fromPath.fluxCost ??
+fluxCost: Number? =
   if (tier == "T1") 0
   else if (tier == "T2") 50
     else if (tier == "T3") 100

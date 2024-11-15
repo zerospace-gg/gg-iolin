@@ -1,0 +1,16 @@
+amends ".../engine/production_building.pkl"
+tier = "T1"
+
+name = "Incubator"
+creates {
+  import("../unit/stinger.pkl").slug
+  import("../unit/lasher.pkl").slug
+  import("../unit/skrelling.pkl").slug
+}
+createdBy {
+  import("../unit/seedling.pkl").slug
+}
+unlocks {
+  import("../unit/stinger.pkl").slug
+  import("../unit/lasher.pkl").slug
+}

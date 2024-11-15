@@ -1,0 +1,9 @@
+extends "building.pkl"
+
+buildingType = "extractor"
+hp = 300
+armor = 0
+buildTime = 35
+gathersHexite = 1.4
+gathersEmptyHexite = 0.56
+tier = "T0"

@@ -1,0 +1,4 @@
+extends "unit.pkl"
+unitType = "builder"
+tier = "T0"
+supply = 0

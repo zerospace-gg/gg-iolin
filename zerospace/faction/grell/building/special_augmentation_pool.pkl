@@ -1,0 +1,17 @@
+amends ".../engine/tech_building.pkl"
+tier = "T3.5"
+
+shortName = "Spc. Aug Pool"
+name = "Special Augmentation Pool"
+hp = 1000
+buildTime = 35
+hexiteCost = 100
+fluxCost = 25
+
+providesUpgradesFor {
+  import("../unit/reaver.pkl").slug
+  import("../unit/weaver.pkl").slug
+}
+createdBy {
+  import("../unit/seedling.pkl").slug
+}

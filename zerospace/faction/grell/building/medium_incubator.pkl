@@ -1,0 +1,16 @@
+amends ".../engine/production_building.pkl"
+tier = "T2"
+
+shortName = "Md. Incubator"
+name = "Medium Incubator"
+creates {
+  import("../unit/harbinger.pkl").slug
+  import("../unit/man_eater.pkl").slug
+}
+createdBy {
+  import("../unit/seedling.pkl").slug
+}
+unlocks {
+  import("../unit/harbinger.pkl").slug
+  import("../unit/man_eater.pkl").slug
+}

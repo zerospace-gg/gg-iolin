@@ -1,0 +1,68 @@
+amends ".../engine/unit.pkl"
+import "lasher.pkl" as me
+
+name = "Lasher"
+unitType = "army"
+tier = "T1.5"
+hotkey = "r"
+hexiteCost = 50
+fluxCost = 25
+buildTime = 20
+supply = 2
+hp = 200
+armorType = "light"
+speed = 475
+
+createdBy { import("../building/incubator.pkl").slug }
+unlockedBy { import("../building/augmentation_pool.pkl").slug }
+upgradedBy { import("../building/augmentation_pool.pkl").slug }
+
+abilities {
+  ["Attack"] {
+    damage = 18
+    cooldown = 1
+    range = 700
+    targets { "air"; "ground" }
+    abilityType = "attack"
+  }
+
+  ["Camouflage"] {
+    hotkey = "x"
+    cooldown = 20
+    description = "+75% movement speed for 3s"
+    abilityType = "spell"
+    unlockedBy { me.upgrades["Camouflage"].slug }
+  }
+}
+
+upgrades {
+  ["Camouflage"] {
+    tier = "T1.5"
+    description = "Unlocks the Camouflage ability (+75% movement speed for 3s)"
+    unlocks { me.abilities["Camouflage"].slug }
+    researchTime = 50
+    fluxCost = 100
+  }
+
+  ["Fast Legs"] {
+    tier = "T1.5"
+    description = "Increase lasher movement speed by 30%"
+    researchTime = 50
+    fluxCost = 100
+  }
+
+  ["Corrosive Shots"] {
+    tier = "T2.5"
+    description = "+30% damage against heavy armor"
+    researchTime = 50
+    fluxCost = 100
+
+  }
+
+  ["Attack Range"] {
+    tier = "T3.5"
+    description = "Increase lasher attack range by 20%"
+    researchTime = 60
+    fluxCost = 150
+  }
+}

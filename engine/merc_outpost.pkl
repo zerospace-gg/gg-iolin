@@ -1,0 +1,9 @@
+extends "building.pkl"
+
+buildingType = "merc-outpost"
+tier = "T1"
+hp = 1200
+hexiteCost = 100
+fluxCost = 25
+buildTime = 45
+maxOwned = 1

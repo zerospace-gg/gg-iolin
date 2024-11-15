@@ -1,0 +1,31 @@
+amends ".../engine/builder.pkl"
+
+name = "Seedling"
+unitType = "builder"
+domain = "ground"
+hp = 20
+speed = 180
+buildTime = 5
+
+infusable = true
+
+infuseRule = new {
+  hp = 120
+  speed = 575
+  domain = "air"
+}
+
+creates {
+  import("../building/root_colony.pkl").slug
+  import("../building/nourishing_pod.pkl").slug
+  import("../building/cultivator.pkl").slug
+  import("../building/incubator.pkl").slug
+  import("../building/medium_incubator.pkl").slug
+  import("../building/large_incubator.pkl").slug
+  import("../building/augmentation_pool.pkl").slug
+  import("../building/advanced_augmentation_pool.pkl").slug
+  import("../building/special_augmentation_pool.pkl").slug
+}
+createdBy {
+  import("../building/root_colony.pkl").slug
+}

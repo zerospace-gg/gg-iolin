@@ -1,0 +1,9 @@
+module hero
+extends "unit.pkl"
+
+unitType = "hero"
+buildTime = 30
+rebuildTime = 60
+rebuildable = true
+supply = 10
+tier = "T2"

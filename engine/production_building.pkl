@@ -1,0 +1,4 @@
+extends "building.pkl"
+
+buildingType = "production"
+buildTime = 40

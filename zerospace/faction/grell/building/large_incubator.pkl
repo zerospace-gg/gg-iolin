@@ -1,0 +1,16 @@
+amends ".../engine/production_building.pkl"
+tier = "T3"
+shortName = "Lg. Incubator"
+name = "Large Incubator"
+creates {
+  import("../unit/reaver.pkl").slug
+  import("../unit/weaver.pkl").slug
+  import("../unit/behemoth.pkl").slug
+}
+createdBy {
+  import("../unit/seedling.pkl").slug
+}
+unlocks {
+  import("../unit/reaver.pkl").slug
+  import("../unit/weaver.pkl").slug
+}

@@ -1,0 +1,7 @@
+extends "building.pkl"
+buildingType = "supply"
+provedsSupply = 15
+hexiteCost = 100
+buildTime = 15
+hp = 750
+tier = "T0"

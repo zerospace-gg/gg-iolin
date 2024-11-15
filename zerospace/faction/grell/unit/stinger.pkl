@@ -1,0 +1,53 @@
+amends ".../engine/unit.pkl"
+
+name = "Stinger"
+unitType = "army"
+tier = "T1"
+hotkey = "q"
+hexiteCost = 50
+buildTime = 18
+supply = 1
+buildCount = 2
+hp = 120
+armorType = "light"
+speed = 625
+createdBy { import("../building/incubator.pkl").slug }
+unlockedBy { import("../building/incubator.pkl").slug }
+upgradedBy { import("../building/augmentation_pool.pkl").slug }
+
+abilities {
+  ["Attack"] {
+    damage = 5
+    cooldown = 0.6
+    range = 100
+    delay = 0.06 // one of the few damage point values we know
+    abilityType = "attack"
+  }
+}
+
+upgrades {
+  ["Fast Legs"] {
+    description = "Increase Stinger movement speed by 30%"
+    tier = "T1.5"
+    fluxCost = 75
+    researchTime = 40
+  }
+
+  ["Poison Sting"] {
+    description = "Attacks deal 8 dps and slows move speed by 25%. Lasts for 5 seconds."
+    tier = "T2.5"
+    fluxCost = 100
+    researchTime = 50
+  }
+
+  ["Cliff Jumping"] {
+    description = "Stingers can jump up and down normal cliffs. +20% movement speed."
+    tier = "T2.5"
+    fluxCost = 150
+    researchTime = 60
+  }
+}
+
+// notes
+  // "Stinger is the only unit whose damage point / attack delay is known publicly at the moment, due to patch notes during January 2024."
+// }

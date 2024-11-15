@@ -1,4 +1,4 @@
-module unit
+open module unit
 extends "gamepiece.pkl"
 import "pkl:reflect"
 import "parent_info.pkl" as ParentInfo
@@ -9,6 +9,9 @@ import "unit.pkl" as me
 
 local methis = this
 local meref = reflect.moduleOf(this)
+
+fixed subtype: String = unitType
+unitType: "army" | "hero" | "harvester" | "builder" | "special"
 
 fixed dynamicTags {
   when (methis.infusable) { "infusable" }

@@ -1,0 +1,6 @@
+extends "building.pkl"
+
+buildingType = "tech"
+hp = 1000
+hexiteCost = 100
+fluxCost = 25

@@ -1,0 +1,23 @@
+amends ".../engine/tech_building.pkl"
+tier = "T2.5"
+
+shortName = "Adv. Aug Pool"
+name = "Advanced Augmentation Pool"
+hexiteCost = 100
+fluxCost = 25
+buildTime = 30
+hp = 1000
+
+providesUpgradesFor {
+  import("../unit/harbinger.pkl").slug
+  import("../unit/man_eater.pkl").slug
+  import("../unit/thresher.pkl").slug
+}
+
+unlocks {
+  import("./skrelling_nest.pkl").slug
+}
+
+createdBy {
+  import("../unit/seedling.pkl").slug
+}

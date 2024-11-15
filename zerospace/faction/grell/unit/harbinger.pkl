@@ -1,0 +1,66 @@
+amends ".../engine/unit.pkl"
+
+name = "Harbinger"
+unitType = "army"
+tier = "T2"
+hotkey = "w"
+hexiteCost = 100
+fluxCost = 25
+buildTime = 26
+supply = 3
+hp = 425
+armorType = "heavy"
+armor = 1
+speed = 500
+
+createdBy { import("../building/medium_incubator.pkl").slug }
+unlockedBy { import("../building/medium_incubator.pkl").slug }
+upgradedBy { import("../building/advanced_augmentation_pool.pkl").slug }
+
+abilities {
+  ["Acidic Spit"] {
+    damage = 22
+    range = 900
+    cooldown = 1.75
+    targets { "ground"; "air" }
+    abilityType = "attack"
+  }
+
+  ["Eruption"] {
+    name = "Eruption"
+    description = "Deals 120 damage to units in the target area after 1.5 seconds"
+    targets { "air"; "ground"  }
+    targetMode = "location"
+    hotkey = "e"
+    energyType = "abes"
+    energyCost = 10
+    delay = 1.5
+    areaDamage = 120
+    areaRange = 100
+    range = 1400
+    abilityType = "spell"
+  }
+}
+
+upgrades {
+  ["Shredding Eruption"] {
+    tier = "T2.5"
+    description = "Augments Eruption: Affected units take 20% additional damage for 8 seconds. Stacks up to 5 times."
+    researchTime = 50
+    fluxCost = 100
+  }
+
+  ["Rapid Regeneration"] {
+    tier = "T2.5"
+    description = "2% of health regenerated each second"
+    researchTime = 60
+    fluxCost = 150
+  }
+
+  ["Wide Eruption"] {
+    tier = "T2.5"
+    description = "Increases the radius of eruption by 50%"
+    researchTime = 60
+    fluxCost = 150
+  }
+}

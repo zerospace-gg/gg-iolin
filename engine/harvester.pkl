@@ -1,0 +1,15 @@
+extends "unit.pkl"
+
+unitType = "harvester";
+tier = "T0"
+hexiteCost = 175
+buildTime = 25
+maxOwned = 5
+rebuildTime = 60
+gathersFlux = 1.8
+gathersRichFlux = 3.6
+hp = 400
+speed = 450
+armorType = "medium"
+rebuildable = true
+supply = 0
