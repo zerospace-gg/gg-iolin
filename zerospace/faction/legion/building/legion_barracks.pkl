@@ -1,0 +1,16 @@
+amends ".../engine/production_building.pkl"
+tier = "T1"
+name = "Barracks"
+creates {
+  import("../unit/thrall.pkl").slug
+  import("../unit/armored_thrall.pkl").slug
+  import("../unit/rhino.pkl").slug
+}
+createdBy {
+  import("../unit/legion_build_drone.pkl").slug
+}
+unlocks {
+  import("../unit/thrall.pkl").slug
+  import("../unit/armored_thrall.pkl").slug
+  import("../unit/rhino.pkl").slug
+}

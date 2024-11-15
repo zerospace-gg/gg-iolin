@@ -1,0 +1,14 @@
+amends ".../engine/tech_building.pkl"
+tier = "T2.5"
+
+name = "Armory"
+hp = 1000
+createdBy {
+  import("../unit/legion_build_drone.pkl").slug
+}
+
+providesUpgradesFor {
+  import("../hero/galavax.pkl").slug
+  import("../hero/inquisitress.pkl").slug
+  import("../hero/kraegar.pkl").slug
+}

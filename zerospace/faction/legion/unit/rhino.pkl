@@ -1,0 +1,37 @@
+
+amends ".../engine/unit.pkl"
+
+name = "Rhino"
+hotkey = "e"
+unitType = "army"
+tier = "T1"
+hexiteCost = 75
+buildTime = 24
+supply = 2
+hp = 225
+armorType = "medium"
+speed = 700
+energy = 10
+vision = 2300
+createdBy { import("../building/legion_barracks.pkl").slug }
+unlockedBy { import("../building/legion_barracks.pkl").slug }
+upgradedBy { import("../building/warehouse.pkl").slug }
+
+abilities {
+  ["Spear Throw"] {
+    damage = 22
+    cooldown = 1.7
+    range = 500
+    abilityType = "attack"
+    targets { "air"; "ground" }
+  }
+}
+
+upgrades {
+  ["Maul"] {
+    description = "Attacks deal bonus damage and slow"
+    fluxCost = 100
+    researchTime = 50
+    tier = "T1.5"
+  }
+}

@@ -1,0 +1,20 @@
+amends ".../engine/building.pkl"
+local methis = this
+name = "Healing Obelisk"
+buildingType = "special"
+armor = 0
+hp = 500
+energy = 100
+timedLife = 150
+
+abilities {
+  ["Heal"] {
+    targets { "air" ; "ground" }
+    healing = 20
+    cooldown = 0.5
+    range = 800
+    energyCost = 4
+    energyType = "classic"
+    abilityType = "heal"
+  }
+}

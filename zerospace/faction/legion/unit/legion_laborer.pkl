@@ -1,0 +1,24 @@
+amends ".../engine/harvester.pkl"
+
+name = "Laborer"
+
+hp = 150
+speed = 450
+hexiteCost = 75
+supply = 0
+maxOwned = 15
+gathersFlux = 0.6
+gathersRichFlux = 1.2
+
+abilities {
+  ["Heal"] {
+    healing = 5
+    cooldown = 0.5
+    range = 100
+    abilityType = "heal"
+  }
+}
+
+createdBy {
+  import("../building/garrison_tower.pkl").slug
+}

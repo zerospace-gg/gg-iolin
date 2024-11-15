@@ -2,7 +2,7 @@ amends ".../engine/faction.pkl"
 import "legion.pkl" as me
 
 name = "Legion"
-factionContents = import*("legion/{unit,building}/**pkl")
+factionContents = import*("legion/**pkl")
 mercHeroesAllowed = false
 
 talents {

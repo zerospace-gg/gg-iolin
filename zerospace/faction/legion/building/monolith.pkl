@@ -1,0 +1,16 @@
+amends ".../engine/building.pkl"
+
+name = "Monolith"
+buildingType = "special"
+hp = 2500
+armor = 0
+timedLife = 45
+
+abilities {
+  ["Attack"] {
+    damage = 60
+    cooldown = 0.6
+    range = 1700
+    abilityType = "attack"
+  }
+}

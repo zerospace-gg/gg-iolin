@@ -1,0 +1,103 @@
+amends ".../engine/unit.pkl"
+import ".../engine/add_on.pkl" as AddOn
+import ".../engine/types.pkl" as $t
+import "dreadnought.pkl" as me
+
+name = "Dreadnought"
+unitType = "army"
+tier = "T3"
+
+hexiteCost = 150
+fluxCost = 250
+supply = 20
+hp = 800
+speed = 500
+armorType = "heavy"
+armor = 1
+stunResist = 75
+buildTime = 30
+domain = "air"
+
+constructingVersion {
+  new {
+    name = "Dreadnought (Constructing)"
+    buildTime = 60
+    hp = 1000
+  }
+}
+createdBy { import("../unit/legion_build_drone.pkl").slug }
+unlockedBy { import("../building/terror_tower.pkl").slug }
+
+local mainWeapon: String = "\(me.name)'s \(me.abilities[0].name)"
+
+abilities {
+  ["Main Beam Weapon"] {
+    damage = 9
+    cooldown = 0.5
+    range = 1100
+    bonusPercent = 100
+    bonusVsTags { "armor:heavy" }
+    abilityType = "attack"
+    targets { "air"; "ground" }
+  }
+
+  ["Bombardment Run"] {
+    volleys = 3
+    cooldown = 1
+    damage = 89
+    abilityType = "spell"
+    targets { "ground" }
+  }
+
+  ["Teleport"] {
+    name = "Teleport"
+    teleport = 4000
+    cooldown = 0
+    unlockedBy {me.addOns["Command Module"].slug}
+    abilityType = "spell"
+  }
+
+  ["Sensor"] {
+    name = "Sensor"
+    providesDetection = 4000
+    unlockedBy {me.addOns["Command Module"].slug}
+    abilityType = "passive"
+  }
+}
+
+
+maxAddOns = 4
+addOns {
+  default {
+    fluxCost = 150
+    buildTime = 25
+    hp = 225
+    armorType = "heavy"
+    addOnType = "turret"
+  }
+  ["Bomb Bay"] {
+    description = "Each \(name) adds 3 bombs to \(me.name)'s \(me.abilities["Bombardment Run"].name) spell. Total bomb damage 267/534/801/1068/1335 for 0/1/2/3/4."
+  }
+  ["Command Module"] {
+    description = "Unlocks \(me.name)'s \(me.abilities["Teleport"].name) spell and \(me.abilities["Sensor"].name) passive. Both abilities have a base 4000 range, and each \(name) adds +1000 range. 5000/6000/7000/800 for 1/2/3/4."
+    unlocks { me.abilities["Teleport"].slug; me.abilities["Sensor"].slug }
+  }
+  ["Beam Module"] {
+    description = "Each \(name) adds +30% damage and 100 range to \(me.name)'s \(me.abilities["Main Beam Weapon"].name) attack. Main beam dmg: 5/7/8/10/11 for 0/1/2/3/4."
+  }
+  ["Anti-Air Turret"] {
+    description = "Attacks ground and air but does 3x dmg to air"
+    abilities {
+      ["Turret Attack"] {
+        damage = 9
+        volleys = 2
+        cooldown = 2
+        targets { "air"; "ground" }
+        range = 2000
+        abilityType = "attack"
+        bonusVsTags { "flyer" }
+        bonusPercent = 200
+      }
+    }
+  }
+}

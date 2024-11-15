@@ -1,0 +1,89 @@
+amends ".../engine/unit.pkl"
+import ".../engine/add_on.pkl" as AddOn
+import ".../engine/types.pkl" as $t
+import "terror_tank.pkl" as me
+
+name = "Terror Tank"
+unitType = "army"
+tier = "T3"
+
+// tags { "massive" }
+
+hexiteCost = 200
+fluxCost = 200
+supply = 15
+hp = 1500
+speed = 450
+armorType = "heavy"
+armor = 1
+stunResist = 75
+buildTime = 40
+createdBy { import("../unit/legion_build_drone.pkl").slug }
+unlockedBy { import("../building/terror_tower.pkl").slug }
+
+constructingVersion {
+  new {
+    name = "Terror Tank (Constructing)"
+    buildTime = 60
+    hp = 1500
+  }
+}
+
+abilities {
+  ["Main Gun"] {
+    damage = 38
+    cooldown = 0.9
+    range = 1300
+    abilityType = "attack"
+    bonusVsTags { "armor:heavy" }
+    bonusPercent = 50
+    targets { "ground" }
+  }
+}
+
+local mainWeapon: String = "\(me.name)'s \(me.abilities["Main Gun"].name)"
+
+maxAddOns = 4
+addOns {
+  default {
+    fluxCost = 125
+    buildTime = 25
+    hp = 225
+    armorType = "heavy"
+    addOnType = "turret"
+  }
+  ["Flame Turret"] {
+    description = "Each \(this.name) adds splash damage to \(mainWeapon)"
+    abilities {
+      ["Attack"] {
+        damage = 25
+        cooldown = 2
+        bonusPercent = 50
+        bonusVsTags { "armor:light" }
+        range = 1100
+        abilityType = "attack"
+        splashPercent = 100
+        splashRange = 120
+        targets { "ground" }
+      }
+    }
+  }
+  ["Gatling Gun"] {
+    description = "Each \(this.name) adds +30% attack speed and +250 range to \(mainWeapon)"
+    abilities {
+      ["Attack"] {
+        damage = 11
+        cooldown = 0.5
+        range = 1500
+        abilityType = "attack"
+        targets { "ground" }
+      }
+    }
+  }
+  ["Pulseforge Accelerator"] {
+    description = "Each \(this.name) adds +30% attack speed and +250 range to \(mainWeapon)"
+  }
+  ["Shield Generator"] {
+    description = "Each \(this.name) adds 4 shields charges to the \(me.name). +75 shields for 8 seconds to nearby unit."
+  }
+}

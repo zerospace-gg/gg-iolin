@@ -1,0 +1,13 @@
+amends ".../engine/building.pkl"
+local methis = this
+name = "Portal Obelisk"
+buildingType = "special"
+armor = 0
+hp = 500
+
+abilities {
+  ["Portal"] {
+    abilityType = "passive"
+    description = "Spawns 8 thralls over 16 seconds, then destroys itself."
+  }
+}

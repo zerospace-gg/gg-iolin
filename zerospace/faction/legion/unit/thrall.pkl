@@ -1,0 +1,48 @@
+
+amends ".../engine/unit.pkl"
+
+name = "Thrall"
+hotkey = "q"
+tier = "T1"
+unitType = "army"
+hexiteCost = 75
+buildTime = 24
+supply = 1
+buildCount = 2
+hp = 125
+armorType = "light"
+speed = 500
+createdBy { import("../building/legion_barracks.pkl").slug }
+unlockedBy { import("../building/legion_barracks.pkl").slug }
+upgradedBy { import("../building/warehouse.pkl").slug }
+
+abilities {
+  ["Attack"] {
+    damage = 7
+    cooldown = 0.84
+    range = 800
+    abilityType = "attack"
+    targets { "air"; "ground" }
+  }
+}
+
+upgrades {
+  ["Battle Frenzy"] {
+    description = "Each hit increases attack speed (+10% up to 70%)"
+    fluxCost = 100
+    researchTime = 40
+    tier = "T1.5"
+  }
+  ["Charged Shot"] {
+    description = "Every 10s an attack deals +100% damage"
+    fluxCost = 100
+    researchTime = 40
+    tier = "T1.5"
+  }
+  ["Performance Enhancers"] {
+    description = "+25% attack and move speed"
+    fluxCost = 250
+    researchTime = 60
+    tier = "T2.5"
+  }
+}

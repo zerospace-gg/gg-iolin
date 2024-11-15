@@ -1,0 +1,12 @@
+amends ".../engine/tech_building.pkl"
+
+name = "Terror Tower"
+hp = 1500
+
+unlocks {
+  import("../unit/terror_tank.pkl").slug
+  import("../unit/dreadnought.pkl").slug
+}
+createdBy {
+  import("../unit/legion_build_drone.pkl").slug
+}

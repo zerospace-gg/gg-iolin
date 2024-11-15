@@ -1,0 +1,12 @@
+amends ".../engine/tech_building.pkl"
+name = "Warehouse"
+
+createdBy {
+  import("../unit/legion_build_drone.pkl").slug
+}
+
+providesUpgradesFor {
+  import("../unit/thrall.pkl").slug
+  import("../unit/armored_thrall.pkl").slug
+  import("../unit/rhino.pkl").slug
+}

@@ -1,0 +1,47 @@
+
+amends ".../engine/unit.pkl"
+
+name = "Armored Thrall"
+hotkey = "w"
+unitType = "army"
+tier = "T1"
+hexiteCost = 75
+buildTime = 24
+supply = 2
+hp = 320
+armor = 1
+armorType = "medium"
+speed = 525
+createdBy { import("../building/legion_barracks.pkl").slug }
+unlockedBy { import("../building/legion_barracks.pkl").slug }
+upgradedBy { import("../building/warehouse.pkl").slug }
+
+abilities {
+  ["Attack"] {
+    damage = 20
+    cooldown = 1.37
+    range = 120
+    abilityType = "attack"
+  }
+}
+
+upgrades {
+  ["Alloy Armor"] {
+    description = "Each hit increases attack speed (+10% up to 70%)"
+    fluxCost = 100
+    researchTime = 40
+    tier = "T1.5"
+  }
+  ["Saw"] {
+    description = "+60% damage against light armor"
+    fluxCost = 100
+    researchTime = 40
+    tier = "T1.5"
+  }
+  ["Performance Enhancers"] {
+    description = "+25% Attack and Move Speed"
+    fluxCost = 250
+    researchTime = 60
+    tier = "T2.5"
+  }
+}

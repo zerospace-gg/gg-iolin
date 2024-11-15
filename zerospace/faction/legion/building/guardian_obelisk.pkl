@@ -1,0 +1,17 @@
+amends ".../engine/building.pkl"
+local methis = this
+name = "Guardian Obelisk"
+buildingType = "special"
+armor = 0
+hp = 500
+timedLife = 150
+
+abilities {
+  ["Attack"] {
+    targets { "air" ; "ground" }
+    damage = 50
+    cooldown = 1.5
+    range = 1600
+    abilityType = "attack"
+  }
+}

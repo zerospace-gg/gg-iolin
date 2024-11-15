@@ -2,9 +2,8 @@ amends ".../engine/faction.pkl"
 import "grell.pkl" as me
 
 name = "Grell"
-//flavor = "Ballooning Bugs and their Blossoming Buds"
 
-factionContents = import*("grell/{unit,building}/**pkl")
+factionContents = import*("grell/**pkl")
 guestHeroes {
   // import("protectorate/unit/hero/prefect_nova.pkl")
   // import("protectorate/unit/hero/tech_hero.pkl")

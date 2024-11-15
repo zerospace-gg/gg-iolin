@@ -10,6 +10,7 @@ import "unit.pkl" as me
 local methis = this
 local meref = reflect.moduleOf(this)
 
+fixed type = "unit"
 fixed subtype: String = unitType
 unitType: "army" | "hero" | "harvester" | "builder" | "special"
 

@@ -1,0 +1,23 @@
+amends ".../engine/builder.pkl"
+
+shortName = "Build Drone (Legion)"
+name = "Legion Build Drone"
+hp = 100
+speed = 500
+armorType = "medium"
+domain = "air"
+
+createdBy {
+  import("../building/garrison_tower.pkl").slug
+}
+
+creates {
+  import("../building/garrison_tower.pkl").slug
+  import("../building/idal_conduit.pkl").slug
+  import("../building/legion_barracks.pkl").slug
+  import("../building/terror_tower.pkl").slug
+  import("../building/warehouse.pkl").slug
+  import("../building/armory.pkl").slug
+  import("../unit/dreadnought.pkl").slug
+  import("../unit/terror_tank.pkl").slug
+}
