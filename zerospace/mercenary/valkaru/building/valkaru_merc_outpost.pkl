@@ -1,10 +1,10 @@
-amends ".../engine/building.pkl"
+amends ".../engine/merc_outpost.pkl"
 
 name = "Valkaru Merc Outpost"
 
 creates {
-  import("../../unit/tier_1/valkaru_hound.pkl").slug
-  import("../../unit/tier_1/valkaru_shock_trooper.pkl").slug
-  import("../../unit/tier_2/valkaru_tow_bot.pkl").slug
-  import("../../unit/tier_3/valkaru_flame_walker.pkl").slug
+  import("../unit/valkaru_hound.pkl").slug
+  import("../unit/valkaru_shock_trooper.pkl").slug
+  import("../unit/valkaru_tow_bot.pkl").slug
+  import("../unit/valkaru_flame_walker.pkl").slug
 }

@@ -1,4 +1,4 @@
-amends ".../engine/unit.pkl"
+amends ".../engine/hero.pkl"
 
 name = "Torq & Mondar"
 hp = 320

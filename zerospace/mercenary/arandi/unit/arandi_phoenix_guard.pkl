@@ -3,6 +3,7 @@ amends ".../engine/unit.pkl"
 shortName = "Phoenix Guard"
 name = "Arandi Phoenix Guard"
 unitType = "merc-topbar"
+tier = "T1"
 buildCount = 3
 supply = 3
 hp = 300

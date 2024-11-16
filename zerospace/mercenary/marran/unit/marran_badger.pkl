@@ -1,6 +1,8 @@
 amends ".../engine/unit.pkl"
 shortName = "Badger"
 name = "Marran Badger"
+unitType = "merc"
+tier = "T2"
 buildCount = 3
 hexiteCost = 175
 fluxCost = 150

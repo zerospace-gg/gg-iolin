@@ -1,6 +1,8 @@
 amends ".../engine/unit.pkl"
 shortName = "Hover Tank"
 name = "Marran Hover Tank"
+unitType = "merc"
+tier = "T1"
 buildCount = 2
 hexiteCost = 200
 fluxCost = 0

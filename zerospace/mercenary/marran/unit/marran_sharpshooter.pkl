@@ -1,6 +1,8 @@
 amends ".../engine/unit.pkl"
 shortName = "Sharpshooter"
 name = "Marran Sharpshooter"
+unitType = "merc"
+tier = "T1"
 buildCount = 3
 hexiteCost = 50
 fluxCost = 200

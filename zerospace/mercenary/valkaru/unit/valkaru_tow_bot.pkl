@@ -1,6 +1,8 @@
 amends ".../engine/unit.pkl"
 shortName = "Tow Bot"
 name = "Valkaru Tow Bot"
+unitType = "merc"
+tier = "T2"
 buildCount = 1
 hexiteCost = 75
 fluxCost = 150

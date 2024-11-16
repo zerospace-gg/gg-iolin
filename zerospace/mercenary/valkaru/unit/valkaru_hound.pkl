@@ -1,6 +1,8 @@
 amends ".../engine/unit.pkl"
 shortName = "Hound"
 name = "Valkaru Hound"
+unitType = "merc"
+tier = "T1"
 buildCount = 4
 hexiteCost = 250
 fluxCost = 0

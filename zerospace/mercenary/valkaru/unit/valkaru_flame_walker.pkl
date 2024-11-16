@@ -1,6 +1,8 @@
 amends ".../engine/unit.pkl"
 shortName = "Flame Walker"
 name = "Valkaru Flame Walker"
+unitType = "merc"
+tier = "T3"
 buildCount = 1
 hexiteCost = 75
 fluxCost = 175

@@ -1,6 +1,8 @@
 amends ".../engine/unit.pkl"
 shortName = "Flamer"
 name = "Dread Flamer"
+unitType = "merc"
+tier = "T3"
 buildCount = 3
 hexiteCost = 100
 fluxCost = 200

@@ -1,6 +1,8 @@
 amends ".../engine/unit.pkl"
 shortName = "Shock Trooper"
 name = "Valkaru Shock Trooper"
+unitType = "merc"
+tier = "T1"
 buildCount = 2
 hexiteCost = 200
 fluxCost = 75

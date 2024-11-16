@@ -1,4 +1,4 @@
-amends ".../engine/unit.pkl"
+amends ".../engine/hero.pkl"
 name = "Hel"
 hp = 150
 shields = 150

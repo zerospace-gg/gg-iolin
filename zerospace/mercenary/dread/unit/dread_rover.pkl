@@ -1,6 +1,8 @@
 amends ".../engine/unit.pkl"
 shortName = "Rover"
 name = "Dread Rover"
+unitType = "merc"
+tier = "T1"
 buildCount = 2
 hexiteCost = 200
 fluxCost = 50

@@ -1,6 +1,7 @@
 amends ".../engine/unit.pkl"
 shortName = "Halo Tank"
 name = "Marran Halo Tank"
+unitType = "merc"
 tier = "T3"
 buildCount = 1
 hexiteCost = 100

@@ -1,4 +1,4 @@
-amends ".../engine/unit.pkl"
+amends ".../engine/hero.pkl"
 name = "Dread Hero"
 hp = 175
 armorType = "medium"

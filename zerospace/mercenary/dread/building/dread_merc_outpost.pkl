@@ -1,10 +1,10 @@
-amends ".../engine/building.pkl"
+amends ".../engine/merc_outpost.pkl"
 
 name = "Dread Merc Outpost"
 
 creates {
-  import("../../unit/tier_1/dread_raider.pkl").slug
-  import("../../unit/tier_1/dread_rover.pkl").slug
-  import("../../unit/tier_1/dread_sniper.pkl").slug
-  import("../../unit/tier_3/dread_flamer.pkl").slug
+  import("../unit/dread_raider.pkl").slug
+  import("../unit/dread_rover.pkl").slug
+  import("../unit/dread_sniper.pkl").slug
+  import("../unit/dread_flamer.pkl").slug
 }
