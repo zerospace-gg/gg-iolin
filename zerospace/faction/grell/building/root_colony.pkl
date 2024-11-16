@@ -3,6 +3,7 @@ amends ".../engine/base.pkl"
 name = "Root Colony"
 description = "Grows flowers in its attacker form"
 hotkey = "q"
+armor = 2
 creates {
   import("../unit/seedling.pkl").slug
   import("../unit/grell_harvester.pkl").slug
@@ -23,7 +24,7 @@ addOns {
       ["Attack"] {
         damage = 30
         cooldown = 0.6
-        range = 2100
+        range = 2000
         abilityType = "attack"
       }
     }

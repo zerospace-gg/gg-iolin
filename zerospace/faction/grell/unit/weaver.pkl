@@ -9,6 +9,7 @@ fluxCost = 150
 buildTime = 30
 supply = 4
 hp = 375
+energy = 100
 armorType = "medium"
 speed = 650
 inGame = true
@@ -20,10 +21,11 @@ abilities {
   ["Attack"] {
     damage = 20
     bonusPercent = 100
-    bonusVsTags { "domain:air" }
+    bonusVsTags { "flyer" }
     cooldown = 2
     targets { "air"; "ground" }
     abilityType = "attack"
+    range = 1200
   }
 
   ["Cocoon"] {

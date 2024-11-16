@@ -4,14 +4,14 @@ name = "Skrelling"
 hotkey = "t"
 tier = "T2.5"
 unitType = "army"
-hexiteCost = 25
-fluxCost = 50
+hexiteCost = 50
+fluxCost = 25
 buildTime = 16
 domain = "air"
 supply = 2
 hp = 140
 armorType = "light"
-speed = 840
+speed = 700
 vision = 1400
 
 createdBy { import("../building/incubator.pkl").slug }
@@ -20,9 +20,11 @@ upgradedBy { import("../building/skrelling_nest.pkl").slug }
 
 abilities {
   ["Attack"] {
-    damage = 10
+    damage = 6
     cooldown = 1
     range = 150
+    bonusPercent = 100
+    bonusVsTags = { "flyer" }
     targets { "air"; "ground" }
     abilityType = "attack"
   }

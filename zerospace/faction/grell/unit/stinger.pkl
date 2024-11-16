@@ -16,8 +16,9 @@ unlockedBy { import("../building/incubator.pkl").slug }
 upgradedBy { import("../building/augmentation_pool.pkl").slug }
 
 abilities {
-  ["Attack"] {
+  ["Claws"] {
     damage = 5
+    targets { "ground" }
     cooldown = 0.6
     range = 100
     delay = 0.06 // one of the few damage point values we know
@@ -37,7 +38,7 @@ upgrades {
     description = "Attacks deal 8 dps and slows move speed by 25%. Lasts for 5 seconds."
     tier = "T2.5"
     fluxCost = 100
-    researchTime = 50
+    researchTime = 60
   }
 
   ["Cliff Jumping"] {

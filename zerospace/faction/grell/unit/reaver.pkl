@@ -33,8 +33,8 @@ abilities {
 
   ["Charge"] {
     hotkey = "r"
-    energyCost = 30
-    energyType = "classic"
+    energyCost = 15
+    energyType = "abes"
     description = "Charge into enemies knocking them back and dealing 80 damage"
     damage = 80
     targets { "ground" }

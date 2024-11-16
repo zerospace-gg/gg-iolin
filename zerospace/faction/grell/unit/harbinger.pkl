@@ -5,10 +5,10 @@ unitType = "army"
 tier = "T2"
 hotkey = "w"
 hexiteCost = 100
-fluxCost = 25
+fluxCost = 50
 buildTime = 26
-supply = 3
-hp = 425
+supply = 4
+hp = 450
 armorType = "heavy"
 armor = 1
 speed = 500
@@ -19,9 +19,9 @@ upgradedBy { import("../building/advanced_augmentation_pool.pkl").slug }
 
 abilities {
   ["Acidic Spit"] {
-    damage = 22
-    range = 900
-    cooldown = 1.75
+    damage = 27
+    range = 625
+    cooldown = 1.5
     targets { "ground"; "air" }
     abilityType = "attack"
   }
@@ -33,7 +33,7 @@ abilities {
     targetMode = "location"
     hotkey = "e"
     energyType = "abes"
-    energyCost = 10
+    energyCost = 8
     delay = 1.5
     areaDamage = 120
     areaRange = 100

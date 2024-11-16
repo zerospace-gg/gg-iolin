@@ -21,7 +21,7 @@ abilities {
   ["Attack"] {
     damage = 18
     cooldown = 1
-    range = 700
+    range = 725
     targets { "air"; "ground" }
     abilityType = "attack"
   }
@@ -53,7 +53,7 @@ upgrades {
 
   ["Corrosive Shots"] {
     tier = "T2.5"
-    description = "+30% damage against heavy armor"
+    description = "+50% damage against heavy armor"
     researchTime = 50
     fluxCost = 100
 

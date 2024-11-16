@@ -8,7 +8,7 @@ hotkey = "y"
 hexiteCost = 125
 fluxCost = 25
 buildTime = 36
-supply = 5
+supply = 4
 hp = 440
 armorType = "medium"
 armor = 1
@@ -35,6 +35,7 @@ abilities {
   ["Burrow"] {
     range = 1400
     cooldown = 20
+    delay = 1
     abilityType = "spell"
     targets { "ground" }
     description = "Burrows to the target point, bypassing any terrain"
