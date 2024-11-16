@@ -1,6 +1,8 @@
 amends ".../engine/unit.pkl"
 shortName = "Warrior"
 name = "Cha'Kru Warrior"
+unitType = "merc"
+tier = "T1"
 hexiteCost = 200
 fluxCost = 0
 buildCount = 2

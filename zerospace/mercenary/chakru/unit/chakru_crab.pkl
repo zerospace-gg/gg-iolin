@@ -1,6 +1,8 @@
 amends ".../engine/unit.pkl"
 shortName = "Crab"
 name = "Cha'Kru Crab"
+unitType = "merc"
+tier = "T1"
 hexiteCost = 225
 fluxCost = 0
 buildCount = 2

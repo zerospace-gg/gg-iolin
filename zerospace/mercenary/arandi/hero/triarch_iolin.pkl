@@ -1,4 +1,4 @@
-amends ".../engine/unit.pkl"
+amends ".../engine/hero.pkl"
 
 name = "TriArch I'Olin"
 shortName = "I'Olin"

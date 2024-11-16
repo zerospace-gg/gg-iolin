@@ -2,6 +2,8 @@ amends ".../engine/unit.pkl"
 
 shortName = "Time Warper"
 name = "Arandi Time Warper"
+unitType = "merc"
+tier = "T3"
 hexiteCost = 50
 fluxCost = 200
 supply = 6

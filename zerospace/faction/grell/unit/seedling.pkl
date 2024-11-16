@@ -1,7 +1,6 @@
 amends ".../engine/builder.pkl"
 
 name = "Seedling"
-unitType = "builder"
 domain = "ground"
 hp = 20
 speed = 180

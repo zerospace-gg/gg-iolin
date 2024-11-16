@@ -2,6 +2,8 @@ amends ".../engine/unit.pkl"
 
 name = "Arandi Shade"
 shortName = "Shade"
+unitType = "merc"
+tier = "T1"
 hexiteCost = 250
 buildCount = 3
 supply = 2

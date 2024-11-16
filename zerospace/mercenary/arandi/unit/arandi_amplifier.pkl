@@ -1,6 +1,8 @@
 amends ".../engine/unit.pkl"
 shortName = "Amplifier"
 name = "Arandi Amplifier"
+unitType = "merc"
+tier = "T2"
 hexiteCost = 50
 fluxCost = 175
 supply = 5

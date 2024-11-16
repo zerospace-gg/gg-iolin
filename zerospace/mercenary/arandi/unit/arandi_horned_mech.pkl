@@ -1,6 +1,8 @@
 amends ".../engine/unit.pkl"
 shortName = "Horned Mech"
 name = "Arandi Horned Mech"
+unitType = "merc"
+tier = "T1"
 hexiteCost = 175
 fluxCost = 100
 buildCount = 2

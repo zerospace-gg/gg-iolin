@@ -1,6 +1,8 @@
 amends ".../engine/unit.pkl"
 shortName = "Rageborn"
 name = "Cha'Kru Rageborn"
+unitType = "merc"
+tier = "T2"
 hexiteCost = 225
 fluxCost = 125
 buildCount = 2

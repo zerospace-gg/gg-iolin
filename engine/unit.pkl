@@ -12,7 +12,7 @@ local meref = reflect.moduleOf(this)
 
 fixed type = "unit"
 fixed subtype: String = unitType
-unitType: "army" | "hero" | "harvester" | "builder" | "special" | "ultimate" | "merc"
+unitType: "army" | "hero" | "harvester" | "builder" | "special" | "ultimate" | "merc" | "merc-topbar"
 
 fixed dynamicTags {
   when (methis.infusable) { "infusable" }

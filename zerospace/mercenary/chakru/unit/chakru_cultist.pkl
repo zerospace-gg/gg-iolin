@@ -1,6 +1,8 @@
 amends ".../engine/unit.pkl"
 shortName = "Cultist"
 name = "Cha'Kru Cultist"
+unitType = "merc"
+tier = "T1"
 hexiteCost = 100
 fluxCost = 200
 buildCount = 2
