@@ -1,0 +1,24 @@
+amends ".../engine/builder.pkl"
+
+shortName = "Build Drone (Prot)"
+name = "Protectorate Build Drone"
+hp = 100
+speed = 500
+armorType = "medium"
+domain = "air"
+
+createdBy {
+  import("../building/operating_tower.pkl").slug
+}
+
+creates {
+  import("../building/operating_tower.pkl").slug
+  import("../building/supply_platform.pkl").slug
+  import("../building/prot_barracks.pkl").slug
+  import("../building/factory.pkl").slug
+  import("../building/advanced_factory.pkl").slug
+  import("../building/research_lab.pkl").slug
+  import("../building/mechanical_research_lab.pkl").slug
+  import("../building/specialized_research_lab.pkl").slug
+  import("../building/airstrip.pkl").slug
+}

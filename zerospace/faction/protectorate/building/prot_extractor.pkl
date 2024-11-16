@@ -1,0 +1,3 @@
+amends ".../engine/extractor.pkl"
+name = "Extractor"
+createdBy { import("./operating_tower.pkl").slug }

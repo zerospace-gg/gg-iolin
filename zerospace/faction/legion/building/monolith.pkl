@@ -1,7 +1,8 @@
 amends ".../engine/building.pkl"
 
 name = "Monolith"
-buildingType = "special"
+buildingType = "ultimate"
+tier = "T4"
 hp = 2500
 armor = 0
 timedLife = 45

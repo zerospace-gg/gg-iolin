@@ -1,7 +1,8 @@
 amends ".../engine/unit.pkl"
 
 name = "Emperor"
-unitType = "special"
+unitType = "ultimate"
+tier = "T4"
 hp = 2000
 armorType = "medium"
 armor = 2

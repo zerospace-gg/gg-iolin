@@ -1,0 +1,58 @@
+amends ".../engine/unit.pkl"
+
+name = "Artemis"
+unitType = "army"
+tier = "T3"
+hexiteCost = 125
+fluxCost = 175
+supply = 6
+domain = "air"
+hp = 400
+armorType = "medium"
+speed = 600
+armor = 1
+
+createdBy { import("../building/advanced_factory.pkl").slug }
+unlockedBy { import("../building/advanced_factory.pkl").slug }
+upgradedBy { import("../building/specialized_research_lab.pkl").slug }
+
+abilities {
+  ["Attack"] {
+    damage = 15
+    cooldown = 0.7
+    range = 1400
+    targets { "air"; "ground" }
+    abilityType = "attack"
+  }
+
+  for (name in List("Heal Beam 1", "Heal Beam 2", "Heal Beam 3")) {
+    [name] {
+      healing = 2
+      cooldown = 0.25
+      range = 1300
+      abilityType = "heal"
+    }
+  }
+
+  ["EMP"] {
+    description = "Drain 50 energy and knockback and breifly slow enemy units. 220 radius effect"
+    energyCost = 75
+    energyType = "classic"
+    // radius = 220
+    abilityType = "spell"
+  }
+}
+
+upgrades {
+  ["EMP"] {
+    description = "Unlocks EMP ability"
+    fluxCost = 150
+    researchTime = 45
+    tier = "T3.5"
+  }
+  ["Improved Heal"] {
+    description = "Increase Healing Rate by 40%"
+    fluxCost = 150
+    researchTime = 60
+  }
+}

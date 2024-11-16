@@ -1,0 +1,20 @@
+amends ".../engine/harvester.pkl"
+
+name = "Protectorate Harvester"
+description = "Protectorate Harvester has a healing ability"
+hp = 400
+
+abilities {
+  ["Healing Wave"] {
+    description = "heals 150 in a 400 range area"
+    hotkey = "l"
+    cooldown = 60.0
+    cooldownAtBuild = true
+    range = 400
+    targets { "friendly/ground"; "friendly/air" }
+    targetMode = "around-self"
+    abilityType = "heal"
+  }
+}
+
+createdBy { import("../building/operating_tower.pkl").slug }

@@ -1,0 +1,22 @@
+amends ".../engine/building.pkl"
+name = "Light Turret"
+buildingType = "special"
+tier = "T0"
+
+hp = 150
+buildTime = 3
+timedLife = 120
+
+abilities {
+  ["Attack"] {
+    targets { "air"; "ground" }
+    damage = 3
+    cooldown = 0.2
+    range = 1400
+    abilityType = "attack"
+  }
+}
+
+createdBy {
+  import("../hero/prefect_nova.pkl").slug
+}

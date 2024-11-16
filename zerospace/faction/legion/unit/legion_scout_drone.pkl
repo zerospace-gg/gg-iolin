@@ -3,6 +3,7 @@ amends ".../engine/unit.pkl"
 shortName = "Scout Drone (Legion)"
 name = "Legion Scouting Drone"
 unitType = "special"
+tier = "T0"
 hexiteCost = 25
 supply = 1
 hp = 50

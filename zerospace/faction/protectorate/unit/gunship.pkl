@@ -1,0 +1,53 @@
+amends ".../engine/unit.pkl"
+
+name = "Gunship"
+tier = "T2"
+unitType = "army"
+supply = 6
+hexiteCost = 50
+fluxCost = 100
+buildTime = 45
+energy = 100
+createdBy { import("../building/factory.pkl").slug }
+upgradedBy { import("../building/mechanical_research_lab.pkl").slug }
+unlockedBy { import("../building/factory.pkl").slug }
+
+hp = 350
+speed = 575
+
+domain = "air"
+
+abilities {
+  ["Gatling Gun"] {
+    targets { "ground"; "air" }
+    damage = 20
+    cooldown = 1
+    range = 1000
+    abilityType = "attack"
+  }
+
+  ["Rocket Barrage"] {
+    abilityType = "spell"
+    range = 200
+    damage = 10
+    volleys = 6
+    description = "Fires a barrage of rockets at a target location. 150 range area of effect."
+  }
+}
+
+upgrades {
+  ["Rocket Barrage"] {
+    description = "Unlocks the rocket barrage ability"
+    tier = "T2.5"
+  }
+
+  ["Enhanced Engines"] {
+    description = "Gain +30% movement speed"
+    tier = "T2.5"
+  }
+
+  ["Bonus Shield"] {
+    description = "Gain +100 shields"
+    tier = "T3.5"
+  }
+}

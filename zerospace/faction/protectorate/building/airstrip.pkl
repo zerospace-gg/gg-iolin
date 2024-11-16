@@ -1,0 +1,9 @@
+amends ".../engine/building.pkl"
+name = "Airstrip"
+buildingType = "ultimate"
+tier = "T4"
+
+hp = 1000
+hexiteCost = 100
+buildTime = 15
+armor = 0

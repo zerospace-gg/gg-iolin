@@ -1,0 +1,43 @@
+amends ".../engine/hero.pkl"
+
+name = "Mera"
+hp = 200
+shields = 200
+speed = 500
+stunResist = 50
+
+abilities {
+  ["Sword Attack"] {
+    damage = 26
+    cooldown = 1.05
+    range = 150
+    abilityType = "attack"
+  }
+  ["Blaster Attack"] {
+    damage = 24
+    cooldown = 1.5
+    range = 1200
+    abilityType = "attack"
+  }
+  ["Dash"] {
+    hotkey = "q"
+    cooldown = 10
+    description = "Dash while dealing 40 damage to enemy units and gaining +1 armor for each hit. 10s duration."
+    duration = 10
+    abilityType = "spell"
+  }
+  ["Protective Barrier"] {
+    hotkey = "w"
+    cooldown = 40
+    description = "All friendly units and structures under the barrier have +3 armor. Lasts 20s."
+    duration = 20
+    abilityType = "spell"
+  }
+  ["Weapon Switch"] {
+    cooldown = 10
+    description = "Mera switches between a Sword and a Blaster. Gains +30% attack speed for 5s."
+    hotkey = "e"
+    abilityType = "toggle"
+    togglesMode = "attack"
+  }
+}

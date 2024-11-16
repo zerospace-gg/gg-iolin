@@ -1,0 +1,29 @@
+amends ".../engine/unit.pkl"
+
+name = "Weapon X"
+hp = 3000
+armorType = "heavy"
+speed = 380
+unitType = "ultimate"
+tier = "T4"
+
+abilities {
+  ["Attack"] {
+    targets { "ground" }
+    damage = 40
+    volleys = 2
+    cooldown = 0.5
+    range = 180
+    splashPercent = 500
+    splashRange = 50
+    abilityType = "attack"
+  }
+
+  ["Nuke"] {
+    description = "Explodes on death after a short delay. Explosion radius is 1000"
+    abilityType = "death-trigger"
+    damage = 1385
+    // radius = 1000
+    delay = 1
+  }
+}

@@ -1,0 +1,18 @@
+amends ".../engine/tech_building.pkl"
+
+shortName = "Research Lab"
+name = "Research Lab"
+tier = "T1.5"
+
+createdBy {
+  import("../unit/prot_build_drone.pkl").slug
+}
+
+unlocks {
+  import("../unit/bastion.pkl").slug
+}
+
+providesUpgradesFor {
+  import("../unit/commando.pkl").slug
+  import("../unit/bastion.pkl").slug
+}

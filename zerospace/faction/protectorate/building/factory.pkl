@@ -1,0 +1,25 @@
+amends ".../engine/production_building.pkl"
+
+name = "Factory"
+tier = "T2"
+hexiteCost = 125
+fluxCost = 25
+hp = 1200
+buildTime = 30
+
+creates {
+  import("../unit/predator.pkl").slug
+  import("../unit/gunship.pkl").slug
+  import("../unit/striker.pkl").slug
+  import("../unit/atlas.pkl").slug
+}
+
+createdBy {
+  import("../unit/prot_build_drone.pkl").slug
+}
+
+unlocks {
+  import("../unit/predator.pkl").slug
+  import("../unit/gunship.pkl").slug
+  import("../unit/striker.pkl").slug
+}

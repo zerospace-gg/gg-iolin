@@ -1,0 +1,15 @@
+amends ".../engine/unit.pkl"
+
+shortName = "Scout Drone (Prot)"
+name = "Protectorate Scouting Drone"
+unitType = "special"
+tier = "T0"
+hexiteCost = 25
+supply = 1
+hp = 50
+domain = "air"
+maxOwned = 2
+
+createdBy {
+  import("../building/operating_tower.pkl").slug
+}

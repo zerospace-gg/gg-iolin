@@ -1,0 +1,29 @@
+amends ".../engine/base.pkl"
+
+name = "Operating Tower"
+description = "Grows flowers in its attacker form"
+hotkey = "q"
+creates {
+  import("../unit/prot_build_drone.pkl").slug
+  import("../unit/prot_harvester.pkl").slug
+  import("./prot_extractor.pkl").slug
+}
+createdBy {
+  import("../unit/prot_build_drone.pkl").slug
+}
+maxAddOns = 1
+addOns {
+  ["Operating Tower Defensive"] {
+    hexiteCost = 200
+    buildTime = 5
+    addOnType = "building-turret"
+    abilities {
+      ["Attack"] {
+        damage = 20
+        cooldown = 0.39
+        range = 2100
+        abilityType = "attack"
+      }
+    }
+  }
+}

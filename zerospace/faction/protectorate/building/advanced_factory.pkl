@@ -1,0 +1,27 @@
+amends ".../engine/production_building.pkl"
+
+shortName = "Adv Factory"
+name = "Advanced Factory"
+tier = "T3"
+hexiteCost = 150
+fluxCost = 100
+hp = 1400
+buildTime = 35
+
+creates {
+  import("../unit/disruptor.pkl").slug
+  import("../unit/juggernaut.pkl").slug
+  import("../unit/strider.pkl").slug
+  import("../unit/artemis.pkl").slug
+}
+
+createdBy {
+  import("../unit/prot_build_drone.pkl").slug
+}
+
+unlocks {
+  import("../unit/disruptor.pkl").slug
+  import("../unit/juggernaut.pkl").slug
+  import("../unit/strider.pkl").slug
+  import("../unit/artemis.pkl").slug
+}

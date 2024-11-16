@@ -1,7 +1,0 @@
-amends ".../engine/building.pkl"
-name = "Airstrip"
-
-hp = 1000
-hexiteCost = 100
-buildTime = 15
-armor = 0

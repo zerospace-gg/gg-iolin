@@ -1,0 +1,16 @@
+amends ".../engine/tech_building.pkl"
+
+shortName = "Spc. R. Lab"
+name = "Specialized Research Lab"
+tier = "T3.5"
+
+createdBy {
+  import("../unit/prot_build_drone.pkl").slug
+}
+
+providesUpgradesFor {
+  import("../unit/disruptor.pkl").slug
+  import("../unit/juggernaut.pkl").slug
+  import("../unit/strider.pkl").slug
+  import("../unit/artemis.pkl").slug
+}
