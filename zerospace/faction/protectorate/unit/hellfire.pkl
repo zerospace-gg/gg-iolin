@@ -1,10 +1,10 @@
 amends ".../engine/unit.pkl"
 
-name = "Striker"
+name = "Hellfire"
 unitType = "army"
-tier = "T2"
+tier = "T2.5"
 supply = 6
-hexiteCost = 125
+hexiteCost = 150
 fluxCost = 125
 buildTime = 50
 createdBy { import("../building/factory.pkl").slug }
@@ -21,9 +21,10 @@ abilities {
     volleys = 6
     cooldown = 5
     range = 2000
-    splashRange = 150
+    splashRange = 200
     splashPercent = 100
     abilityType = "attack"
+    targets { "ground" }
   }
   ["Flare"] {
     cooldown = 30
@@ -39,8 +40,8 @@ upgrades {
   ["Flare"] {
     description = "Unlocks the flare ability. Reveals target area for 12 seconds."
     tier = "T2.5"
-    fluxCost = 75
-    researchTime = 45
+    fluxCost = 50
+    researchTime = 30
   }
 
   ["Resonant Missiles"] {

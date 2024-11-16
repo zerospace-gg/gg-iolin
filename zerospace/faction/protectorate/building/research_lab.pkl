@@ -3,6 +3,7 @@ amends ".../engine/tech_building.pkl"
 shortName = "Research Lab"
 name = "Research Lab"
 tier = "T1.5"
+buildTime = 22
 
 createdBy {
   import("../unit/prot_build_drone.pkl").slug

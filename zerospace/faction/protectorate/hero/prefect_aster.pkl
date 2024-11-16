@@ -1,7 +1,7 @@
 amends ".../engine/hero.pkl"
 
-name = "Prefect Nova"
-shortName = "Nova"
+name = "Prefect Aster"
+shortName = "Aster"
 hp = 150
 shields = 150
 armorType = "medium"

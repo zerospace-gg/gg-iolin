@@ -5,7 +5,7 @@ description = "Protectorate's T1 marine-style unit. Has a jetpack for jumpin up 
 supply = 3
 hexiteCost = 50
 fluxCost = 25
-buildTime = 22
+buildTime = 24
 tier = "T1.5"
 unitType = "army"
 createdBy { import("../building/prot_barracks.pkl").slug }
@@ -17,13 +17,13 @@ armorType = "medium"
 speed = 500
 
 abilities {
-  ["S-53 Light Cannons"] {
+  ["G53 Light Flamethrower"] {
     damage = 5
     volleys = 2
     cooldown = 0.96
     range = 500
     bonusVsTags { "armor:light" }
-    bonusPercent = 30
+    bonusPercent = 50
     splashPercent = 30
     splashRange = 100
     abilityType = "attack"
@@ -35,16 +35,22 @@ upgrades {
   ["Fragmentation Shells"] {
     description = "Weapons deal full damage in splash radius"
     tier = "T1.5"
+    fluxCost = 100
+    researchTime = 50
   }
 
   ["Reactive Armor"] {
     description = "+25% health and +1 armor"
     tier = "T1.5"
+    fluxCost = 100
+    researchTime = 50
   }
 
   ["Kinetic Mode"] {
     description = "Gains +40% movement speed outside of combat"
     tier = "T2.5"
+    fluxCost = 150
+    researchTime = 60
   }
 }
 uuid = "09e41141-8b54-4634-bc20-499e82e9b3cc"

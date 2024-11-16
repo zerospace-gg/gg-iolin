@@ -21,7 +21,7 @@ addOns {
       ["Attack"] {
         damage = 20
         cooldown = 0.39
-        range = 2100
+        range = 2000
         abilityType = "attack"
       }
     }

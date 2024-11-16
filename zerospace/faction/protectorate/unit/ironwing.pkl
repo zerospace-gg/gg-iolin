@@ -1,9 +1,9 @@
 amends ".../engine/unit.pkl"
 
-name = "Gunship"
+name = "Ironwing"
 tier = "T2"
 unitType = "army"
-supply = 6
+supply = 5
 hexiteCost = 50
 fluxCost = 100
 buildTime = 45
@@ -39,16 +39,22 @@ upgrades {
   ["Rocket Barrage"] {
     description = "Unlocks the rocket barrage ability"
     tier = "T2.5"
+    fluxCost = 125
+    researchTime = 40
   }
 
   ["Enhanced Engines"] {
     description = "Gain +30% movement speed"
     tier = "T2.5"
+    fluxCost = 125
+    researchTime = 45
   }
 
   ["Bonus Shield"] {
     description = "Gain +100 shields"
     tier = "T3.5"
+    fluxCost = 150
+    researchTime = 60
   }
 }
 uuid = "d5cfcac4-2d5e-44b5-9728-a9a36038f57b"

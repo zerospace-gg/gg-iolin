@@ -22,14 +22,14 @@ addOns {
     hp = 1000
     vision = 3600
     hexiteCost = 50
-    buildTime = 15
+    buildTime = 12
     uuid = "4011c447-e19e-4483-8ef2-cd06ab4e9021"
   }
   ["Turret Platform"] {
     addOnType = "building-turret"
     hp = 875
     hexiteCost = 75
-    buildTime = 20
+    buildTime = 25
     abilities {
       ["Attack"] {
         abilityType = "attack"

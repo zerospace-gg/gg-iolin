@@ -1,6 +1,6 @@
 amends ".../engine/unit.pkl"
 
-name = "Artemis"
+name = "Griffin"
 unitType = "army"
 tier = "T3"
 hexiteCost = 125
@@ -18,8 +18,8 @@ upgradedBy { import("../building/specialized_research_lab.pkl").slug }
 
 abilities {
   ["Attack"] {
-    damage = 15
-    cooldown = 0.7
+    damage = 12
+    cooldown = 1.1
     range = 1400
     targets { "air"; "ground" }
     abilityType = "attack"

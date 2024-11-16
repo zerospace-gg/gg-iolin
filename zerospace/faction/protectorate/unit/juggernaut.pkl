@@ -12,7 +12,7 @@ hp = 1000
 armorType = "heavy"
 speed = 475
 armor = 1
-energy = 8
+energy = 20
 
 createdBy { import("../building/advanced_factory.pkl").slug }
 unlockedBy { import("../building/advanced_factory.pkl").slug }

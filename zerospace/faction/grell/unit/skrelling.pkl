@@ -24,7 +24,7 @@ abilities {
     cooldown = 1
     range = 150
     bonusPercent = 100
-    bonusVsTags = { "flyer" }
+    bonusVsTags { "flyer" }
     targets { "air"; "ground" }
     abilityType = "attack"
   }

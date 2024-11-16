@@ -1,10 +1,10 @@
 amends ".../engine/unit.pkl"
 
-name = "Atlas"
+name = "Titan"
 tier = "T2.5"
 unitType = "army"
 description = "Yeah, I mean, I like commandos just fine. They're cool. But what if we made a robot commando?"
-supply = 6
+supply = 5
 hexiteCost = 50
 fluxCost = 150
 buildTime = 40
@@ -14,16 +14,15 @@ unlockedBy { import("../building/factory.pkl").slug }
 
 hp = 425
 speed = 525
-
 armorType = "medium"
 
 abilities {
   ["Attack"] {
-    targets { "air"; "ground" }
-    damage = 5
+    targets { "ground" }
+    damage = 8
     volleys = 2
     shots = 2
-    cooldown = 0.65
+    cooldown = 1
     range = 1550
     abilityType = "attack"
   }
@@ -37,9 +36,11 @@ abilities {
 }
 
 upgrades {
-  ["Jump"] {
+  ["Jetpack"] {
     description = "Unlocks the Jump ability"
     tier = "T2.5"
+    fluxCost = 100
+    researchTime = 40
   }
 }
 uuid = "05d86203-d9ef-4ea8-bde2-a8801a1b122f"

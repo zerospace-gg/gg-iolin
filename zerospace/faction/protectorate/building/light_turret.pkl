@@ -3,21 +3,23 @@ name = "Light Turret"
 buildingType = "special"
 tier = "T0"
 
-hp = 150
+hp = 300
 buildTime = 3
 timedLife = 120
 
 abilities {
   ["Attack"] {
     targets { "air"; "ground" }
-    damage = 3
-    cooldown = 0.2
-    range = 1400
+    damage = 10
+    cooldown = 0.7
+    range = 1350
+    splashPercent = 100
+    splashRange = 60
     abilityType = "attack"
   }
 }
 
 createdBy {
-  import("../hero/prefect_nova.pkl").slug
+  import("../hero/prefect_aster.pkl").slug
 }
 uuid = "673bb3ae-8e9f-476a-b22d-27670c043de6"

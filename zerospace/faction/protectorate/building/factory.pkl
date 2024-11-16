@@ -9,9 +9,9 @@ buildTime = 30
 
 creates {
   import("../unit/predator.pkl").slug
-  import("../unit/gunship.pkl").slug
-  import("../unit/striker.pkl").slug
-  import("../unit/atlas.pkl").slug
+  import("../unit/ironwing.pkl").slug
+  import("../unit/hellfire.pkl").slug
+  import("../unit/titan.pkl").slug
 }
 
 createdBy {
@@ -20,7 +20,7 @@ createdBy {
 
 unlocks {
   import("../unit/predator.pkl").slug
-  import("../unit/gunship.pkl").slug
-  import("../unit/striker.pkl").slug
+  import("../unit/ironwing.pkl").slug
+  import("../unit/hellfire.pkl").slug
 }
 uuid = "5b1cd428-e8f0-4985-b21d-dd13023b1f1c"

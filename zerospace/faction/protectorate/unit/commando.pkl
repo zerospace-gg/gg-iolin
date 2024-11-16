@@ -12,7 +12,7 @@ createdBy { import("../building/prot_barracks.pkl").slug }
 upgradedBy { import("../building/research_lab.pkl").slug }
 unlockedBy { import("../building/research_lab.pkl").slug }
 
-hp = 140
+hp = 130
 armorType = "light"
 speed = 520
 
@@ -22,6 +22,7 @@ abilities {
     cooldown = 0.84
     range = 800
     abilityType = "attack"
+    targets { "air"; "ground" }
   }
 
   ["Jetpack"] {

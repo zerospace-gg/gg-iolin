@@ -4,7 +4,7 @@ name = "Predator"
 unitType = "army"
 tier = "T2"
 supply = 3
-hexiteCost = 125
+hexiteCost = 105
 fluxCost = 25
 buildTime = 32
 createdBy { import("../building/factory.pkl").slug }
@@ -12,7 +12,7 @@ upgradedBy { import("../building/mechanical_research_lab.pkl").slug }
 unlockedBy { import("../building/factory.pkl").slug }
 
 hp = 225
-armorType = "heavy"
+armorType = "light"
 speed = 700
 
 abilities {
@@ -36,11 +36,15 @@ upgrades {
   ["HEAT"] {
     description = "+50% damage against heavy targets"
     tier = "T2.5"
+    fluxCost = 100
+    researchTime = 40
   }
 
   ["Piercing Bolt"] {
     description = "The Predator's cannon will periodically shoot a projectile reducing enemy health by 20%."
     tier = "T3.5"
+    fluxCost = 150
+    researchTime = 60
   }
 
 }

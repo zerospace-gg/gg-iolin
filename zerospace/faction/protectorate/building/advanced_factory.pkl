@@ -9,10 +9,10 @@ hp = 1400
 buildTime = 35
 
 creates {
-  import("../unit/disruptor.pkl").slug
+  import("../unit/cyclops.pkl").slug
   import("../unit/juggernaut.pkl").slug
   import("../unit/strider.pkl").slug
-  import("../unit/artemis.pkl").slug
+  import("../unit/griffin.pkl").slug
 }
 
 createdBy {
@@ -20,9 +20,9 @@ createdBy {
 }
 
 unlocks {
-  import("../unit/disruptor.pkl").slug
+  import("../unit/cyclops.pkl").slug
   import("../unit/juggernaut.pkl").slug
   import("../unit/strider.pkl").slug
-  import("../unit/artemis.pkl").slug
+  import("../unit/griffin.pkl").slug
 }
 uuid = "b9dabb9e-5b8e-4318-84b7-1b8de42520e4"

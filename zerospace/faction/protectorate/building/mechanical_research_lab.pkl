@@ -3,19 +3,20 @@ amends ".../engine/tech_building.pkl"
 shortName = "Mech. R. Lab"
 tier = "T2.5"
 name = "Mechanical Research Lab"
+buildTime = 30
 
 createdBy {
   import("../unit/prot_build_drone.pkl").slug
 }
 
 unlocks {
-  import("../unit/atlas.pkl").slug
+  import("../unit/titan.pkl").slug
 }
 
 providesUpgradesFor {
   import("../unit/predator.pkl").slug
-  import("../unit/gunship.pkl").slug
-  import("../unit/striker.pkl").slug
-  import("../unit/atlas.pkl").slug
+  import("../unit/ironwing.pkl").slug
+  import("../unit/hellfire.pkl").slug
+  import("../unit/titan.pkl").slug
 }
 uuid = "47308d61-f17d-4191-85c8-95820671a372"
