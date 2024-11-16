@@ -21,3 +21,4 @@ creates {
   import("../unit/dreadnought.pkl").slug
   import("../unit/terror_tank.pkl").slug
 }
+uuid = "0954682a-c6bc-49ec-8763-574c74318833"

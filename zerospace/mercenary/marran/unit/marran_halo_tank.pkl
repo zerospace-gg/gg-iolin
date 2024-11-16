@@ -29,3 +29,4 @@ abilities {
     energyType = "abes"
   }
 }
+uuid = "0a88dc86-a065-46f6-9d26-35770f146c74"

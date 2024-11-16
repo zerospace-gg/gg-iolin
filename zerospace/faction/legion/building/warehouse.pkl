@@ -10,3 +10,4 @@ providesUpgradesFor {
   import("../unit/armored_thrall.pkl").slug
   import("../unit/rhino.pkl").slug
 }
+uuid = "2765bb2b-a3d5-4afb-a2d7-ab95c5011e65"

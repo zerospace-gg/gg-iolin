@@ -12,3 +12,4 @@ abilities {
     healing = 15
   }
 }
+uuid = "7ef26777-d15e-4877-b5e9-7b9631f92aba"

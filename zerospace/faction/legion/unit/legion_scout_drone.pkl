@@ -13,3 +13,4 @@ maxOwned = 3
 createdBy {
   import("../building/garrison_tower.pkl").slug
 }
+uuid = "985cec80-0dba-436f-bc47-104de0c1e722"

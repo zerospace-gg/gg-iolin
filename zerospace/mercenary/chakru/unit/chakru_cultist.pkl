@@ -26,3 +26,4 @@ abilities {
     abilityType = "heal"
   }
 }
+uuid = "e080a169-c298-4103-8380-3a8359abd1c7"

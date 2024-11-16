@@ -51,3 +51,4 @@ upgrades {
     description = "Increases the radius of Heat Discharge by 40%"
   }
 }
+uuid = "c934b44a-00b7-4fe9-aa48-ba35ab0ae196"

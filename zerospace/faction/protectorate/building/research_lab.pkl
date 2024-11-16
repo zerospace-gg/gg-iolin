@@ -16,3 +16,4 @@ providesUpgradesFor {
   import("../unit/commando.pkl").slug
   import("../unit/bastion.pkl").slug
 }
+uuid = "1f2d6c08-bb05-402f-8bb7-9232c3083ded"

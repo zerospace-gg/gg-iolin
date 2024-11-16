@@ -12,3 +12,4 @@ abilities {
     description = "Nearby units gain +25% attack and move speed"
   }
 }
+uuid = "6638f2ad-04e0-496e-a199-b0d6d6255dab"

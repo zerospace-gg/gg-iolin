@@ -9,3 +9,4 @@ creates {
   import("../unit/chakru_jaguar.pkl").slug
   import("../unit/chakru_wurm.pkl").slug
 }
+uuid = "7a7bd847-6f52-4afc-b8e7-504686fc7f77"

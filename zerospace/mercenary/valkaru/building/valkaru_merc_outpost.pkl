@@ -8,3 +8,4 @@ creates {
   import("../unit/valkaru_tow_bot.pkl").slug
   import("../unit/valkaru_flame_walker.pkl").slug
 }
+uuid = "4b85ed94-054e-45c7-a3c9-7ad81fe2a68e"

@@ -54,3 +54,4 @@ upgrades {
 // notes
   // "Grows wings when it reaches ABES the first time, giving it +50% damage boost. The Faerie Fire does not go off when this happens."
 // }
+uuid = "6774a583-46f9-41a8-9feb-ddaf997bc401"

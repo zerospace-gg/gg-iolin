@@ -28,3 +28,4 @@ creates {
 createdBy {
   import("../building/root_colony.pkl").slug
 }
+uuid = "f184e771-d2b9-4669-a9e3-99061a95c775"

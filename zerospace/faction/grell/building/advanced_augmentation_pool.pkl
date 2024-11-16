@@ -21,3 +21,4 @@ unlocks {
 createdBy {
   import("../unit/seedling.pkl").slug
 }
+uuid = "78f0d8d3-aa98-4285-8612-c282ce554e37"

@@ -14,3 +14,4 @@ unlocks {
   import("../unit/harbinger.pkl").slug
   import("../unit/man_eater.pkl").slug
 }
+uuid = "abb4b3c7-4be7-4be5-b72c-46abefd8411c"

@@ -8,3 +8,4 @@ creates {
   import("../unit/marran_badger.pkl").slug
   import("../unit/marran_halo_tank.pkl").slug
 }
+uuid = "101c544e-bcfc-47f1-8f38-3811a5a16187"

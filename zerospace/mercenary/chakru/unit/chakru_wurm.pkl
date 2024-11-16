@@ -24,3 +24,4 @@ abilities {
     delay = 0.44
   }
 }
+uuid = "68118f93-d0cc-457c-bbc2-e3e3802075b6"

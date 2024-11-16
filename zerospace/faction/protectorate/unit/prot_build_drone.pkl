@@ -22,3 +22,4 @@ creates {
   import("../building/specialized_research_lab.pkl").slug
   import("../building/airstrip.pkl").slug
 }
+uuid = "13b39476-cf10-477d-bd74-c8d8563aee7f"

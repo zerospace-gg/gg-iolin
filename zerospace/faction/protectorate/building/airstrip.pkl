@@ -7,3 +7,4 @@ hp = 1000
 hexiteCost = 100
 buildTime = 15
 armor = 0
+uuid = "20b0c56f-df66-4e5f-97f0-133e111b1255"

@@ -18,3 +18,4 @@ abilities {
     targetMode = "location"
   }
 }
+uuid = "3cba31af-7e39-4f33-94ba-dff08dd4a213"

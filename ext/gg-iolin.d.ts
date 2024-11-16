@@ -176,6 +176,7 @@ export interface Gamepiece extends Entity {
   hasAddOnType?: AddOnType;
   ability: Record<string, Ability>;
   addOn: Record<string, AddOn>;
+  uuid: string;
 }
 
 export interface AddOn extends Gamepiece {

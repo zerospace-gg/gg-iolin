@@ -51,3 +51,4 @@ upgrades {
 // notes
   // "Stinger is the only unit whose damage point / attack delay is known publicly at the moment, due to patch notes during January 2024."
 // }
+uuid = "234bc62d-ee5e-4033-ab5c-73abd6ae9947"

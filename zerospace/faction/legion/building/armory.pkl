@@ -12,3 +12,4 @@ providesUpgradesFor {
   import("../hero/inquisitress.pkl").slug
   import("../hero/kraegar.pkl").slug
 }
+uuid = "cdc86f55-32a9-4cdd-a7a1-7c222522885d"

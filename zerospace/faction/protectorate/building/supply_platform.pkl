@@ -14,6 +14,7 @@ addOns {
     addOnType = "building-upgrade"
     supply = 25
     hp = 1250
+    uuid = "57b079e0-387b-4e6f-9a90-230c62c22949"
     // should maybe be add_hp 500 after, and same with 250/125 below. but need to implement that as a buff in buff system when i do buff system
   }
   ["Sensor Platform"] {
@@ -22,6 +23,7 @@ addOns {
     vision = 3600
     hexiteCost = 50
     buildTime = 15
+    uuid = "4011c447-e19e-4483-8ef2-cd06ab4e9021"
   }
   ["Turret Platform"] {
     addOnType = "building-turret"
@@ -38,5 +40,7 @@ addOns {
         range = 1500
       }
     }
+    uuid = "19852a8c-40fd-46de-800c-bcfbf68f68e3"
   }
 }
+uuid = "3de70e15-5469-4834-aa4d-b86fbe7ceb55"

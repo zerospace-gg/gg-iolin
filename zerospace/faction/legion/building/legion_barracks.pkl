@@ -14,3 +14,4 @@ unlocks {
   import("../unit/armored_thrall.pkl").slug
   import("../unit/rhino.pkl").slug
 }
+uuid = "141ec536-0105-4be6-b680-17db25339f4f"

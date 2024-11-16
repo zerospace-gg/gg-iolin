@@ -19,3 +19,4 @@ providesUpgradesFor {
   import("../unit/stinger.pkl").slug
   import("../unit/lasher.pkl").slug
 }
+uuid = "3b98ee3d-d30f-495e-bb41-8dfc48f072ba"

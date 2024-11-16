@@ -41,3 +41,4 @@ abilities {
     togglesMode = "attack"
   }
 }
+uuid = "d729732c-6042-4155-8963-11fe8b06e132"

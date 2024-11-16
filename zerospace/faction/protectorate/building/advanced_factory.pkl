@@ -25,3 +25,4 @@ unlocks {
   import("../unit/strider.pkl").slug
   import("../unit/artemis.pkl").slug
 }
+uuid = "b9dabb9e-5b8e-4318-84b7-1b8de42520e4"

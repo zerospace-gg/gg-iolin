@@ -18,3 +18,4 @@ abilities {
 }
 
 createdBy { import("../building/operating_tower.pkl").slug }
+uuid = "9344860c-09c9-40e0-903b-f143d5a23ac9"

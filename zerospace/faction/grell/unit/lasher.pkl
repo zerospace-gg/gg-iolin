@@ -66,3 +66,4 @@ upgrades {
     fluxCost = 150
   }
 }
+uuid = "6c1ec0c5-af3f-4bb1-867f-bd16792d2de6"

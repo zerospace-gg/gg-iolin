@@ -17,3 +17,4 @@ abilities {
     autocast = "always"
   }
 }
+uuid = "a0b13c3f-9189-4552-8583-923e45d95b54"

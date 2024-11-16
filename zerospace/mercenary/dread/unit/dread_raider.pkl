@@ -24,3 +24,4 @@ abilities {
     abilityType = "passive"
   }
 }
+uuid = "20298043-24f6-48ac-968e-f915c9c2cde5"

@@ -23,3 +23,4 @@ abilities {
 notes {
   "close-up attack rate: 175%, close-up range: 225"
 }
+uuid = "02ebf5cc-78dd-4201-9f4a-7fea47f55c17"

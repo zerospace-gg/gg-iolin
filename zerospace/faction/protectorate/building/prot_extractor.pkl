@@ -1,3 +1,4 @@
 amends ".../engine/extractor.pkl"
 name = "Extractor"
 createdBy { import("./operating_tower.pkl").slug }
+uuid = "e05b1433-8866-4b78-908f-a3fcf860db94"

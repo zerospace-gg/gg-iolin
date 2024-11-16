@@ -8,3 +8,4 @@ creates {
   import("../unit/dread_sniper.pkl").slug
   import("../unit/dread_flamer.pkl").slug
 }
+uuid = "cae110a1-0f8b-4b41-a331-beaa0f85cf7b"

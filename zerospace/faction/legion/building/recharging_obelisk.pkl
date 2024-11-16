@@ -18,3 +18,4 @@ abilities {
     abilityType = "recharge-energy"
   }
 }
+uuid = "2b57a7a8-d7a6-441a-aead-4edbc9e7e88e"

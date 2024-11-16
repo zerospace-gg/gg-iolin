@@ -11,3 +11,4 @@ abilities {
     description = "Spawns 8 thralls over 16 seconds, then destroys itself."
   }
 }
+uuid = "d462ec22-6f82-4350-a4de-c85e6366a9f2"

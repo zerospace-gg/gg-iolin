@@ -16,3 +16,4 @@ createdBy {
 unlocks {
   import("../unit/commando.pkl").slug
 }
+uuid = "3308a32c-6c27-4a05-8342-f2a73d50a68f"

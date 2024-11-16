@@ -10,3 +10,4 @@ unlocks {
 createdBy {
   import("../unit/legion_build_drone.pkl").slug
 }
+uuid = "e082dba1-8083-4096-83f0-d0e4412a2f83"

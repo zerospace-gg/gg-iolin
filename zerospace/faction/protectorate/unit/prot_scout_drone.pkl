@@ -13,3 +13,4 @@ maxOwned = 2
 createdBy {
   import("../building/operating_tower.pkl").slug
 }
+uuid = "e638dca7-2de6-4204-b694-0033b943b504"

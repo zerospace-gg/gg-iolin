@@ -29,5 +29,7 @@ addOns {
   }
   ["Thrall Soul"] {
     description = "Each gives emperor +50 HP and +5 attack damage"
+    uuid = "ac41a10f-659d-4dd8-b7b1-79a3301edcfa"
   }
 }
+uuid = "02b5fb2f-8759-4c09-b9bd-0b2c2cf80d49"

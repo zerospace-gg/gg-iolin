@@ -14,3 +14,4 @@ providesUpgradesFor {
   import("../unit/strider.pkl").slug
   import("../unit/artemis.pkl").slug
 }
+uuid = "8c64c538-92eb-4e79-a9db-e20384502e0e"

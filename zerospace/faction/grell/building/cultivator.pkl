@@ -25,6 +25,7 @@ addOns {
         abilityType = "attack"
       }
     }
+    uuid = "91a53968-71d7-45c5-ae5b-009b7e6199aa"
   }
 }
 
@@ -32,3 +33,5 @@ createdBy {
   import("../unit/seedling.pkl").slug
   import("../unit/grell_harvester.pkl").slug
 }
+
+uuid = "6a63e0bb-cf32-4aab-85e8-b21d0567a3a1"

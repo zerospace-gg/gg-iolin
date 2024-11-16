@@ -8,3 +8,4 @@ creates {
   import("../unit/arandi_amplifier.pkl").slug
   import("../unit/arandi_time_warper.pkl").slug
 }
+uuid = "72f46e74-fe53-4809-a6d6-29a03c96a324"

@@ -18,3 +18,4 @@ providesUpgradesFor {
   import("../unit/striker.pkl").slug
   import("../unit/atlas.pkl").slug
 }
+uuid = "47308d61-f17d-4191-85c8-95820671a372"

@@ -3,3 +3,4 @@ name = "XP Tower"
 description = "Grants XP at a rate of 4 XP/sec if you control the tower."
 untargetable = true
 buildingType = "special"
+uuid = "990271f4-fe09-438d-973b-2593cc2088e5"

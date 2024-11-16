@@ -14,3 +14,4 @@ unlocks {
   import("../unit/reaver.pkl").slug
   import("../unit/weaver.pkl").slug
 }
+uuid = "8b2b7626-918e-490c-972c-13dc8adb2b8a"

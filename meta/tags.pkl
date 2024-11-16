@@ -133,6 +133,11 @@ tags: Mapping<String, Info> = new {
     description = "Tech/Upgrades"
   }
 
+  ["building:ultimate"] {
+    label = "Ultimate/T4 Building"
+    description = "Building unlocked by high level faction talent"
+  }
+
   ["building-upgrade:turret"] {
     label = "Turret Upgrade"
     description = "Turret Upgrade"
@@ -326,6 +331,11 @@ tags: Mapping<String, Info> = new {
     description = "Mind Controllable"
   }
 
+  ["respawns"] {
+    label = "Respawns"
+    description = "Respawns after death"
+  }
+
   ["resist:stun"] {
     label = "Stun Resistant"
     description = "Stun Resistant"
@@ -381,9 +391,24 @@ tags: Mapping<String, Info> = new {
     description = "Hero"
   }
 
+  ["unit:merc"] {
+    label = "Mercenary Unit"
+    description = "Mercenary Unit"
+  }
+
+  ["unit:merc-topbar"] {
+    label = "Mercenary Unit (Topbar)"
+    description = "Mercenary Unit (Topbar)"
+  }
+
   ["unit:special"] {
     label = "Special Unit"
     description = "Special Unit"
+  }
+
+  ["unit:ultimate"] {
+    label = "Ultimate/T4 Unit"
+    description = "Unit unlocked by high level faction talent"
   }
 
   ["untargetable"] {

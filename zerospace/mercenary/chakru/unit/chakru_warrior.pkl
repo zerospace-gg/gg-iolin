@@ -19,3 +19,4 @@ abilities {
     abilityType = "attack"
   }
 }
+uuid = "852c3449-fc4a-4e50-bc80-ec749d25ce04"

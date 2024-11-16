@@ -17,3 +17,4 @@ unlocks {
   import("../hero/inquisitress.pkl").slug
   import("../hero/kraegar.pkl").slug
 }
+uuid = "e2a1f14a-4a41-4583-9e16-ba09023a64e7"

@@ -44,6 +44,7 @@ function hasToggleType(t: String) = abilities.toMap().values.any((a) -> a.toggle
 
 hidden parent: ParentInfo?
 hidden fixed subSlug: String = $t.makeSlug(name)
+uuid: String
 
 // um_parent: ParentInfo? = parent
 

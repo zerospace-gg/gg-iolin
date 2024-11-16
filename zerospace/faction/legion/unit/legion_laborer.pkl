@@ -22,3 +22,4 @@ abilities {
 createdBy {
   import("../building/garrison_tower.pkl").slug
 }
+uuid = "8a5b5790-9747-4639-8596-398bf4f64c38"

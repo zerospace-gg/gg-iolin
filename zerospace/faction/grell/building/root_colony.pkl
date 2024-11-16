@@ -27,5 +27,7 @@ addOns {
         abilityType = "attack"
       }
     }
+    uuid = "dff51d95-904b-4dc1-b6ae-1de6b5a70ab3"
   }
 }
+uuid = "9f01463e-8972-4011-8364-6714d89d0a1e"

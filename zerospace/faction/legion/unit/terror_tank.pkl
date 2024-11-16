@@ -26,6 +26,7 @@ constructingVersion {
     name = "Terror Tank (Constructing)"
     buildTime = 60
     hp = 1500
+    uuid = "4e48f8df-948c-4395-8b76-27cd310923d9"
   }
 }
 
@@ -67,6 +68,7 @@ addOns {
         targets { "ground" }
       }
     }
+    uuid = "0c33da6d-056b-4e86-a5ba-1049d9a032d1"
   }
   ["Gatling Gun"] {
     description = "Each \(this.name) adds +30% attack speed and +250 range to \(mainWeapon)"
@@ -79,11 +81,15 @@ addOns {
         targets { "ground" }
       }
     }
+    uuid = "0b8e4d84-efa3-44ac-a502-7c1a41d5be8c"
   }
   ["Pulseforge Accelerator"] {
     description = "Each \(this.name) adds +30% attack speed and +250 range to \(mainWeapon)"
+    uuid = "6c8b0fbb-57d8-44e9-84c1-e58c0dcb2ebf"
   }
   ["Shield Generator"] {
     description = "Each \(this.name) adds 4 shields charges to the \(me.name). +75 shields for 8 seconds to nearby unit."
+    uuid = "ae22c5aa-354b-4b77-85d1-36b355524955"
   }
 }
+uuid = "b847ecfa-8cdc-41d6-a187-b8aaee952050"

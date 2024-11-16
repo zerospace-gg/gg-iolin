@@ -27,5 +27,7 @@ addOns {
         targets { "ground"; "air" }
       }
     }
+    uuid = "93a62194-12ca-4c6b-ad99-c1f8329e6527"
   }
 }
+uuid = "4d69e1d9-7c13-492d-a6ec-8bf8d0689795"

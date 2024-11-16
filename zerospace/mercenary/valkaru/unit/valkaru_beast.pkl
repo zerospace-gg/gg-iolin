@@ -19,3 +19,4 @@ abilities {
 }
 
 // targets ground dmg 15 cd 1.31 range 74 speed 632 hp 1925 armor 0 light armor
+uuid = "08c67bb8-e20d-4d3d-a379-cfa76c982e70"

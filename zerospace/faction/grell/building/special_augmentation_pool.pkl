@@ -15,3 +15,4 @@ providesUpgradesFor {
 createdBy {
   import("../unit/seedling.pkl").slug
 }
+uuid = "22d03f08-e363-4f1f-82e1-0f4e8546f857"

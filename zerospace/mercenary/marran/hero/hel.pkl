@@ -32,3 +32,4 @@ abilities {
     abilityType = "spell"
   }
 }
+uuid = "5a7201be-77b4-4464-865a-23c1d5d5882f"

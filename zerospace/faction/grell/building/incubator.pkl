@@ -14,3 +14,4 @@ unlocks {
   import("../unit/stinger.pkl").slug
   import("../unit/lasher.pkl").slug
 }
+uuid = "9ddf1f1e-3ddc-466f-9875-6dd9b36f6279"

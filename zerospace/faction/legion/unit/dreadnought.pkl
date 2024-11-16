@@ -23,6 +23,7 @@ constructingVersion {
     name = "Dreadnought (Constructing)"
     buildTime = 60
     hp = 1000
+    uuid = "4e48f8df-948c-4395-8b76-27cd310923d9"
   }
 }
 createdBy { import("../unit/legion_build_drone.pkl").slug }
@@ -77,13 +78,16 @@ addOns {
   }
   ["Bomb Bay"] {
     description = "Each \(name) adds 3 bombs to \(me.name)'s \(me.abilities["Bombardment Run"].name) spell. Total bomb damage 267/534/801/1068/1335 for 0/1/2/3/4."
+    uuid = "99053d56-779c-4bac-a8f9-5583712494b7"
   }
   ["Command Module"] {
     description = "Unlocks \(me.name)'s \(me.abilities["Teleport"].name) spell and \(me.abilities["Sensor"].name) passive. Both abilities have a base 4000 range, and each \(name) adds +1000 range. 5000/6000/7000/800 for 1/2/3/4."
     unlocks { me.abilities["Teleport"].slug; me.abilities["Sensor"].slug }
+    uuid = "9154c6c5-1f18-4b62-9f62-7f960ebc2571"
   }
   ["Beam Module"] {
     description = "Each \(name) adds +30% damage and 100 range to \(me.name)'s \(me.abilities["Main Beam Weapon"].name) attack. Main beam dmg: 5/7/8/10/11 for 0/1/2/3/4."
+    uuid = "151249d4-2f0b-4b09-9667-86d22310cc6e"
   }
   ["Anti-Air Turret"] {
     description = "Attacks ground and air but does 3x dmg to air"
@@ -99,5 +103,7 @@ addOns {
         bonusPercent = 200
       }
     }
+    uuid = "59d66aaa-3414-4731-9c05-40d23ad2bfa0"
   }
 }
+uuid = "7ecb8b22-f467-40b0-b12d-2869bdf7090c"

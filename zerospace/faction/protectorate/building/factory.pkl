@@ -23,3 +23,4 @@ unlocks {
   import("../unit/gunship.pkl").slug
   import("../unit/striker.pkl").slug
 }
+uuid = "5b1cd428-e8f0-4985-b21d-dd13023b1f1c"

@@ -20,3 +20,4 @@ abilities {
 createdBy {
   import("../hero/prefect_nova.pkl").slug
 }
+uuid = "673bb3ae-8e9f-476a-b22d-27670c043de6"

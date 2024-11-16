@@ -56,3 +56,4 @@ upgrades {
     researchTime = 60
   }
 }
+uuid = "e93b9c8e-9a24-470d-aa35-b65e262384ff"
