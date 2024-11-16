@@ -2,3 +2,4 @@ amends ".../engine/building.pkl"
 name = "XP Tower"
 description = "Grants XP at a rate of 4 XP/sec if you control the tower."
 untargetable = true
+buildingType = "special"
