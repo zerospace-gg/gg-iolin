@@ -301,6 +301,11 @@ tags: Mapping<String, Info> = new {
     description = "Infused version of a unit"
   }
 
+  ["legion:thrall"] {
+    label = "Thrall"
+    description = "Counts as a Thrall for all Legion abilities that reference a thrall."
+    }
+
   ["map"] {
     label = "Map"
     description = "Map"

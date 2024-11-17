@@ -4,18 +4,18 @@ name = "Marran Badger"
 unitType = "merc"
 tier = "T2"
 buildCount = 3
-hexiteCost = 175
+hexiteCost = 200
 fluxCost = 150
 supply = 3
-hp = 225
-shields = 225
+hp = 175
+shields = 175
 armorType = "heavy"
 speed = 450
 abilities {
   ["Attack"] {
-    damage = 18
-    cooldown = 1.5
-    range = 1450
+    damage = 16
+    cooldown = 1.7
+    range = 1300
     targets { "air"; "ground" }
     abilityType = "attack"
   }

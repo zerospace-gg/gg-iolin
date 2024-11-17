@@ -1,21 +1,21 @@
 amends ".../engine/hero.pkl"
 
 name = "Mera"
-hp = 200
-shields = 200
+hp = 175
+shields = 175
 speed = 500
 stunResist = 50
 
 abilities {
   ["Sword Attack"] {
-    damage = 26
+    damage = 23
     cooldown = 1.05
     range = 150
     abilityType = "attack"
   }
-  ["Blaster Attack"] {
+  ["Pulse Rifle"] {
     damage = 24
-    cooldown = 1.5
+    cooldown = 1.15
     range = 1200
     abilityType = "attack"
   }
@@ -30,7 +30,7 @@ abilities {
     hotkey = "w"
     cooldown = 40
     description = "All friendly units and structures under the barrier have +3 armor. Lasts 20s."
-    duration = 20
+    duration = 16
     abilityType = "spell"
   }
   ["Weapon Switch"] {

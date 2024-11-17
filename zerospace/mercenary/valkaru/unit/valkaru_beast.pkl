@@ -3,7 +3,7 @@ amends ".../engine/unit.pkl"
 shortName = "Beast"
 name = "Valkaru Beast"
 unitType = "merc-topbar"
-hp = 1925
+hp = 1750
 armor = 0
 armorType = "light"
 speed = 632
@@ -11,8 +11,8 @@ speed = 632
 abilities {
   ["Attack"] {
     targets { "ground" }
-    damage = 15
-    cooldown = 1.31
+    damage = 130
+    cooldown = 3
     range = 74
     abilityType = "attack"
   }

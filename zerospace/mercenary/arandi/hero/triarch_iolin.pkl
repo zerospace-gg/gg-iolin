@@ -2,14 +2,14 @@ amends ".../engine/hero.pkl"
 
 name = "TriArch I'Olin"
 shortName = "I'Olin"
-hp = 135
-shields = 135
+hp = 120
+shields = 120
 armorType = "medium"
 speed = 500
 
 abilities {
   ["Attack"] {
-    damage = 26
+    damage = 23
     range = 1200
     cooldown = 1.63
     abilityType = "attack"
@@ -17,7 +17,7 @@ abilities {
 
   ["Singularity"] {
     hotkey = "q"
-    cooldown = 20
+    cooldown = 24
     damage = 30
     description = "Fire a bolt of energy dealing 30 damage and slowing enemies for 4s. Bolt flies back to the caster."
     abilityType = "spell"
@@ -25,7 +25,7 @@ abilities {
 
   ["Teleport"] {
     hotkey = "w"
-    cooldown = 13
+    cooldown = 12
     description = "Teleport to target location."
     targets {"map"}
     targetMode = "location"

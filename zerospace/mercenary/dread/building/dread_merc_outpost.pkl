@@ -1,6 +1,7 @@
 amends ".../engine/merc_outpost.pkl"
 
 name = "Dread Merc Outpost"
+hp = 1200
 
 creates {
   import("../unit/dread_raider.pkl").slug

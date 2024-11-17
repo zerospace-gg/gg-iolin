@@ -9,7 +9,7 @@ tier = "T3"
 
 hexiteCost = 150
 fluxCost = 250
-supply = 20
+supply = 15
 hp = 800
 speed = 500
 armorType = "heavy"
@@ -22,7 +22,7 @@ constructingVersion {
   new {
     name = "Dreadnought (Constructing)"
     buildTime = 60
-    hp = 1000
+    hp = 800
     uuid = "4e48f8df-948c-4395-8b76-27cd310923d9"
   }
 }
@@ -43,9 +43,9 @@ abilities {
   }
 
   ["Bombardment Run"] {
-    volleys = 3
+    volleys = 4
     cooldown = 1
-    damage = 89
+    damage = 60
     abilityType = "spell"
     targets { "ground" }
   }

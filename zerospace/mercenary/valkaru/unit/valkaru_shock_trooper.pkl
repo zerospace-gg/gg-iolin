@@ -8,7 +8,7 @@ hexiteCost = 200
 fluxCost = 75
 supply = 4
 hp = 400
-speed = 480
+speed = 400
 armorType = "medium"
 abilities {
   ["Attack"] {

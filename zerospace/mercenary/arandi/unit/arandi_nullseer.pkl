@@ -1,6 +1,6 @@
 amends ".../engine/unit.pkl"
-shortName = "Amplifier"
-name = "Arandi Amplifier"
+shortName = "Nullseer"
+name = "Arandi Nullseer"
 unitType = "merc"
 tier = "T2"
 hexiteCost = 50

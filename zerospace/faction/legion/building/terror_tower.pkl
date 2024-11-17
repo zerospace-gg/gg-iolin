@@ -6,6 +6,7 @@ hp = 1500
 unlocks {
   import("../unit/terror_tank.pkl").slug
   import("../unit/dreadnought.pkl").slug
+  import("../unit/radiant.pkl").slug
 }
 createdBy {
   import("../unit/legion_build_drone.pkl").slug

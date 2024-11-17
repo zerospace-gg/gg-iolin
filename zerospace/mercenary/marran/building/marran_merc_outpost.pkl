@@ -1,6 +1,9 @@
 amends ".../engine/merc_outpost.pkl"
 
 name = "Marran Merc Outpost"
+hp = 1200
+armor = 1
+speed = 250
 
 creates {
   import("../unit/marran_hover_tank.pkl").slug

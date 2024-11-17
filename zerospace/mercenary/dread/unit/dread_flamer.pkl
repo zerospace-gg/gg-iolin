@@ -9,12 +9,13 @@ fluxCost = 200
 supply = 6
 hp = 1250
 armorType = "heavy"
+armor = 1
 speed = 500
 abilities {
   ["Attack"] {
     damage = 8
     volleys = 2
-    bonusPercent = 25
+    bonusPercent = 50
     bonusVsTags { "armor:light"; "building" }
     cooldown = 0.25
     range = 350

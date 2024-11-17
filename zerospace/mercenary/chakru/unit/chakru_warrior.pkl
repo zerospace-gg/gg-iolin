@@ -8,7 +8,7 @@ fluxCost = 0
 buildCount = 2
 supply = 3
 hp = 200
-speed = 625
+speed = 875
 armorType = "light"
 abilities {
   ["Knife Throw"] {

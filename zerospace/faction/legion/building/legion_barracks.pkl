@@ -3,15 +3,16 @@ tier = "T1"
 name = "Barracks"
 creates {
   import("../unit/thrall.pkl").slug
-  import("../unit/armored_thrall.pkl").slug
-  import("../unit/rhino.pkl").slug
+  import("../unit/steelsworn.pkl").slug
+  import("../unit/exalted.pkl").slug
+  import("../unit/radiant.pkl").slug
 }
 createdBy {
   import("../unit/legion_build_drone.pkl").slug
 }
 unlocks {
   import("../unit/thrall.pkl").slug
-  import("../unit/armored_thrall.pkl").slug
-  import("../unit/rhino.pkl").slug
+  import("../unit/steelsworn.pkl").slug
+  import("../unit/exalted.pkl").slug
 }
 uuid = "141ec536-0105-4be6-b680-17db25339f4f"

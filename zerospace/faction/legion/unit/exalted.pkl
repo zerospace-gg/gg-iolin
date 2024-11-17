@@ -1,7 +1,6 @@
-
 amends ".../engine/unit.pkl"
 
-name = "Rhino"
+name = "Exalted"
 hotkey = "e"
 unitType = "army"
 tier = "T1"

@@ -1,5 +1,7 @@
 amends ".../engine/building.pkl"
 
 name = "Rocks"
+hp = 1000
+armor = 0
 buildingType = "special"
 uuid = "371d87f4-c641-49e1-a24e-a090a916b3af"

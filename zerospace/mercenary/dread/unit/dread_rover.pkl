@@ -6,10 +6,10 @@ tier = "T1"
 buildCount = 2
 hexiteCost = 200
 fluxCost = 50
-supply = 6
+supply = 3
 hp = 320
 armorType = "light"
-speed = 650
+speed = 675
 abilities {
   ["Attack"] {
     damage = 4

@@ -1,15 +1,15 @@
 amends ".../engine/hero.pkl"
 
 name = "Tech Hero"
-hp = 150
-shields = 150
+hp = 130
+shields = 130
 armorType = "medium"
 speed = 500
 stunResist = 50
 
 abilities {
   ["Attack"] {
-    damage = 16
+    damage = 14
     cooldown = 1.0
     range = 1200
     targets { "ground"; "air" }
@@ -17,7 +17,7 @@ abilities {
   }
 
   ["Energy Conduit"] {
-    hotkey = "z"
+    hotkey = "w"
     cooldown = 25
     description = "A shot pierces enemies in line (up to 6) - damaging them and slowing them down. Enemy hits makes the companion buff permanently stronger: +40% max shields, +2% attack speed"
     targetMode = "strip"
@@ -32,7 +32,7 @@ abilities {
 
   ["Swap"] {
     hotkey = "x"
-    cooldown = 10
+    cooldown = 15
     description = "Fire a projectile. If it hits an enemy unit, swap positions with it. If it doesn't hit one or the unit is too close, jump to the target location. The minimum swap range is indicated by the secondary range circle. The decoy lasts 1 minute."
     targets { "map" }
     targetMode = "location"

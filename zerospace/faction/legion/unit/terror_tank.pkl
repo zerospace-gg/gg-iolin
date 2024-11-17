@@ -12,7 +12,7 @@ tier = "T3"
 hexiteCost = 200
 fluxCost = 200
 supply = 15
-hp = 1500
+hp = 1300
 speed = 450
 armorType = "heavy"
 armor = 1
@@ -25,7 +25,7 @@ constructingVersion {
   new {
     name = "Terror Tank (Constructing)"
     buildTime = 60
-    hp = 1500
+    hp = 1300
     uuid = "4e48f8df-948c-4395-8b76-27cd310923d9"
   }
 }
@@ -49,7 +49,6 @@ addOns {
   default {
     fluxCost = 125
     buildTime = 25
-    hp = 225
     armorType = "heavy"
     addOnType = "turret"
   }

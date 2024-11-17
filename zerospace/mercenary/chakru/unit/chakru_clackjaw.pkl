@@ -1,6 +1,6 @@
 amends ".../engine/unit.pkl"
-shortName = "Crab"
-name = "Cha'Kru Crab"
+shortName = "Clackjaw"
+name = "Cha'Kru Clackjaw"
 unitType = "merc"
 tier = "T1"
 hexiteCost = 225

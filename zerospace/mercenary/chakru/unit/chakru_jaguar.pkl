@@ -3,12 +3,12 @@ shortName = "Jaguar"
 name = "Cha'Kru Jaguar"
 unitType = "merc"
 tier = "T1"
-hexiteCost = 75
-fluxCost = 150
+hexiteCost = 50
+fluxCost = 125
 buildCount = 8
 supply = 2
 hp = 80
-speed = 550
+speed = 650
 armorType = "light"
 abilities {
   ["Attack"] {

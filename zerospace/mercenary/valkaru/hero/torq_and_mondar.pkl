@@ -1,14 +1,14 @@
 amends ".../engine/hero.pkl"
 
 name = "Torq & Mondar"
-hp = 320
-speed = 600
+hp = 280
+speed = 500
 buildCount = 2
 armorType = "medium"
 abilities {
   ["Attack (Hammer)"] {
-    damage = 16
-    cooldown = 1
+    damage = 10
+    cooldown = 1.2
     range = 150
     abilityType = "attack"
     chainTargets = 3
@@ -18,8 +18,8 @@ abilities {
 
   ["Attack (Gun)"] {
     targets { "air"; "ground" }
-    damage = 12
-    cooldown = 1
+    damage = 8
+    cooldown = 1.2
     range = 1200
     abilityType = "attack"
   }

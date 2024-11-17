@@ -13,11 +13,9 @@ speed = 450
 armor = 2
 
 abilities {
-  ["Attack"] {
+  ["Energy Pulsar"] {
     targets { "ground" }
     damage = 40
-    splashPercent = 100
-    splashRange = 50
     cooldown = 3
     range = 1300
     abilityType = "attack"

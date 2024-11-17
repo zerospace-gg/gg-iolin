@@ -16,6 +16,10 @@ createdBy { import("../building/legion_barracks.pkl").slug }
 unlockedBy { import("../building/legion_barracks.pkl").slug }
 upgradedBy { import("../building/warehouse.pkl").slug }
 
+tags {
+  "legion:thrall"
+}
+
 abilities {
   ["Attack"] {
     damage = 7

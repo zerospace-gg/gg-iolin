@@ -2,8 +2,8 @@ amends ".../engine/hero.pkl"
 
 name = "Prefect Aster"
 shortName = "Aster"
-hp = 150
-shields = 150
+hp = 130
+shields = 130
 armorType = "medium"
 speed = 500
 stunResist = 50
@@ -14,7 +14,7 @@ creates {
 
 abilities {
   ["Attack"] {
-    damage = 18
+    damage = 16
     cooldown = 1.0
     range = 1200
     targets { "ground"; "air" }
@@ -40,7 +40,7 @@ abilities {
 
   ["Construct Light Turret"] {
     hotkey = "c"
-    cooldown = 80
+    cooldown = 75
     targets { "map" }
     targetMode = "location"
     description = "Construct a Light Turret which slows and attacks enemies."

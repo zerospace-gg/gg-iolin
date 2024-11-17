@@ -2,17 +2,16 @@ amends ".../engine/hero.pkl"
 
 name = "Vynthra"
 unitType = "hero"
-hp = 320
+hp = 280
 armorType = "medium"
-speed = 450
+speed = 525
 // hp regen 6
 
 abilities {
   ["Attack"] {
-    damage = 59
+    damage = 30
     cooldown = 1.8
     range = 1200
-    delay = 0.14
     targets { "ground"; "air" }
     abilityType = "attack"
   }
@@ -27,16 +26,15 @@ abilities {
   }
 
   ["Deep Burrow"] {
-    hotkey = "x"
-    cooldown = 60
+    hotkey = "f"
+    cooldown = 30
     description = "Teleports the hero to a visible location on biomass anywhere on the map. Cannot be interrupted."
-    effectArea = 300
     targets { "self" }
     abilityType = "spell"
   }
 
   ["Consume"] {
-    hotkey = "c"
+    hotkey = "d"
     cooldown = 45
     damage = 250
     healing = 250

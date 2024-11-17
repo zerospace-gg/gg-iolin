@@ -1,11 +1,15 @@
 amends ".../engine/merc_outpost.pkl"
 
 name = "Arandi Merc Outpost"
+hp = 800
+armor = 1
+domain = "air"
+speed = 250
 
 creates {
   import("../unit/arandi_shade.pkl").slug
   import("../unit/arandi_horned_mech.pkl").slug
-  import("../unit/arandi_amplifier.pkl").slug
+  import("../unit/arandi_nullseer.pkl").slug
   import("../unit/arandi_time_warper.pkl").slug
 }
 uuid = "72f46e74-fe53-4809-a6d6-29a03c96a324"
