@@ -1,7 +1,6 @@
 amends ".../engine/base.pkl"
 
 name = "Root Colony"
-description = "Grows flowers in its attacker form"
 hotkey = "q"
 armor = 2
 creates {
@@ -17,6 +16,8 @@ providesBiomass = 1500
 maxAddOns = 1
 addOns {
   ["Root Colony Attacker"] {
+    description = "Adds a defensive turret and +1 armor"
+    hotkey = "e"
     hexiteCost = 200
     buildTime = 5
     addOnType = "building-turret"

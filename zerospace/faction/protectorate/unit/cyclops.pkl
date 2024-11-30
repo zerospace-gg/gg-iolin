@@ -18,11 +18,11 @@ upgradedBy { import("../building/specialized_research_lab.pkl").slug }
 
 abilities {
   ["Attack"]  {
-    damage = 8
-    bonusPercent = 100
+    damage = 6
+    bonusPercent = 167
     bonusVsTags { "armor:heavy" }
     cooldown = 0.4
-    range = 1400
+    range = 1300
     chargeTime = 1.2
     chargeMaxMultiplier = 1.6
     targets { "air"; "ground" }
@@ -39,7 +39,7 @@ upgrades {
   }
 
   ["Slow"] {
-    description = "Attacks reduce movement speed by 20%"
+    description = "Attacks reduce movement speed by 30%"
     fluxCost = 100
     researchTime = 50
     tier = "T3.5"

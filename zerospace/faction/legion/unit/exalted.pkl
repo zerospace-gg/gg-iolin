@@ -3,7 +3,7 @@ amends ".../engine/unit.pkl"
 name = "Exalted"
 hotkey = "e"
 unitType = "army"
-tier = "T1"
+tier = "T1.5"
 hexiteCost = 75
 buildTime = 24
 supply = 2
@@ -13,7 +13,7 @@ speed = 700
 energy = 10
 vision = 2300
 createdBy { import("../building/legion_barracks.pkl").slug }
-unlockedBy { import("../building/legion_barracks.pkl").slug }
+unlockedBy { import("../building/warehouse.pkl").slug }
 upgradedBy { import("../building/warehouse.pkl").slug }
 
 abilities {

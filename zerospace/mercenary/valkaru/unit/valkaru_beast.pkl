@@ -3,10 +3,10 @@ amends ".../engine/unit.pkl"
 shortName = "Beast"
 name = "Valkaru Beast"
 unitType = "merc-topbar"
-hp = 1750
+hp = 1400
 armor = 0
 armorType = "light"
-speed = 632
+speed = 575
 
 abilities {
   ["Attack"] {

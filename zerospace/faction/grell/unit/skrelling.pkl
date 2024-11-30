@@ -47,14 +47,14 @@ upgrades {
 
   ["Volatile Acids"] {
     tier = "T3.5"
-    description = "When killed, deal 40 damage to enemy units nearby"
-    fluxCost = 150
+    description = "Increases bonus vs air percent by 100%"
+    fluxCost = 125
     researchTime = 60
   }
 
   ["Suicide"] {
     tier = "T3.5"
-    description = "Suicide itself on enemy air units dealing 300 damage"
+    description = "Suicide itself on enemy air units dealing 150 damage + 50% area damage"
     fluxCost = 100
     researchTime = 50
   }

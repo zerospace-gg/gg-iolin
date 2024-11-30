@@ -17,7 +17,7 @@ talents {
 
   ["Efficient Upgrades"] {
     level = 2
-    description = "+50% research speed & -50% research cost"
+    description = "+40% research speed & -40% research cost"
   }
 
   ["Boosting Obelisk"] {

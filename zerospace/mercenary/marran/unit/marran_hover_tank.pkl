@@ -10,7 +10,7 @@ supply = 3
 hp = 150
 shields = 150
 armorType = "medium"
-speed = 850
+speed = 825
 abilities {
   ["Attack"] {
     damage = 11

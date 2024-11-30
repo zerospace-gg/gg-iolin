@@ -12,7 +12,7 @@ createdBy { import("../building/factory.pkl").slug }
 upgradedBy { import("../building/mechanical_research_lab.pkl").slug }
 unlockedBy { import("../building/factory.pkl").slug }
 
-hp = 350
+hp = 300
 speed = 575
 
 domain = "air"
@@ -43,15 +43,15 @@ upgrades {
     researchTime = 40
   }
 
-  ["Enhanced Engines"] {
-    description = "Gain +30% movement speed"
+  ["Bonus Shield"] {
+    description = "Gain +125 shields"
     tier = "T2.5"
     fluxCost = 125
-    researchTime = 45
+    researchTime = 50
   }
 
-  ["Bonus Shield"] {
-    description = "Gain +100 shields"
+  ["Enhanced Engines"] {
+    description = "Gain +30% movement speed"
     tier = "T3.5"
     fluxCost = 150
     researchTime = 60

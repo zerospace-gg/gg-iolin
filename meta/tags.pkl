@@ -490,5 +490,9 @@ hidden output {
       renderer = new JsonRenderer { indent = "  " }
       value = methis
     }
+    ["tagged.json"] {
+      renderer = new JsonRenderer { indent = "  " }
+      value = methis.tagged
+    }
   }
 }

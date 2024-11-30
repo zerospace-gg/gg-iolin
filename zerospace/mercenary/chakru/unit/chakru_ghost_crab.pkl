@@ -1,20 +1,23 @@
 amends ".../engine/unit.pkl"
-shortName = "Jaguar"
-name = "Cha'Kru Jaguar"
+shortName = "Ghost Crab"
+name = "Cha'Kru Ghost Crab"
 unitType = "merc"
 tier = "T1"
 hexiteCost = 50
-fluxCost = 125
+fluxCost = 100
 buildCount = 8
 supply = 2
 hp = 80
 speed = 650
 armorType = "light"
 abilities {
-  ["Attack"] {
-    damage = 4
+  ["Explode"] {
+    description = "Explodes and destroys itself, dealing 30 damage to all nearby enemies."
+    damage = 30
     cooldown = 1
     range = 100
+    splashPercent = 100
+    splashRadius = 300
     targets { "ground" }
     abilityType = "attack"
   }

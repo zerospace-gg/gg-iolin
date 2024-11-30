@@ -15,6 +15,8 @@ createdBy {
 maxAddOns = 1
 addOns {
   ["Garrison Tower Attacker"] {
+    description = "Adds a defensive turret and +1 armor"
+    hotkey = "e"
     hexiteCost = 200
     buildTime = 5
     addOnType = "building-turret"

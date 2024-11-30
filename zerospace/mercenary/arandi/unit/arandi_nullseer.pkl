@@ -10,6 +10,7 @@ hp = 200
 armorType = "light"
 speed = 500
 energy = 100
+energyType = "classic"
 
 
 abilities {

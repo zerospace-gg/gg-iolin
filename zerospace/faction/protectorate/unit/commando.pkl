@@ -1,7 +1,6 @@
 amends ".../engine/unit.pkl"
 
 name = "Commando"
-//flavor = "Jetpackin' Joyrider"
 description = "Protectorate's T1 infantry unit. Has a jetpack for jumpin up cliffs and over things and often just for fun."
 supply = 2
 hexiteCost = 50
@@ -44,7 +43,7 @@ upgrades {
   }
 
   ["Shredding Rounds"] {
-    description = "Each hit causes target to take 1.6% more damage for 8s"
+    description = "Each hit causes target to take 2% more damage for 8s"
     tier = "T2.5"
     fluxCost = 150
     researchTime = 50

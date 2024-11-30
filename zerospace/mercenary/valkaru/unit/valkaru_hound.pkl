@@ -9,7 +9,7 @@ fluxCost = 0
 supply = 2
 hp = 350
 armorType = "medium"
-speed = 575
+speed = 600
 abilities {
   ["Attack"] {
     damage = 21

@@ -13,12 +13,12 @@ mercHeroesAllowed = true
 talents {
   ["Bio Nourishment"] {
     level = 1
-    description = "+50% nourishing pods healing. +100% biomass healing (4 HP/s)"
+    description = "+50% healing & life regeneration"
   }
 
   ["Cultivator Range"] {
     level = 1
-    description = "+100% Cultivator vision and biomass generation range"
+    description = "+100% Cultivator vision and biomass generation range. 50% cheaper cultivators"
   }
 
   ["Flourishment"] {
@@ -33,7 +33,7 @@ talents {
 
   ["Improved Infusion"] {
     level = 3
-    description = "+200 Range for Ranged Units"
+    description = "+200 Range for infused ranged Units. +$20% health for infused melee units."
   }
 
   ["Improved Speed"] {

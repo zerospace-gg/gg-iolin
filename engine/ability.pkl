@@ -28,6 +28,7 @@ targets: Listing<$t.TargetType>
 targetMode: $t.TargetMode?
 requiresMode: String?
 togglesMode: ("siege" | "attack")?
+healthCost: Number?
 energyCost: Number?
 energyType: $t.EnergyType?
 /// also called reloadTime

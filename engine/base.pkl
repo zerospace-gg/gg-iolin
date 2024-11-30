@@ -5,4 +5,4 @@ hp = 2000
 hexiteCost = 350
 tier = "T0"
 buildTime = 60
-armor = 2
+armor = 1

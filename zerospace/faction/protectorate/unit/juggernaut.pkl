@@ -22,7 +22,7 @@ abilities {
   ["Attack"] {
     damage = 38
     cooldown = 0.8
-    range = 1200
+    range = 1100
     targets { "ground" }
     abilityType = "attack"
   }

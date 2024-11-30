@@ -21,7 +21,7 @@ abilities {
   ["Attack"] {
     damage = 18
     cooldown = 1
-    range = 725
+    range = 775
     targets { "air"; "ground" }
     abilityType = "attack"
   }
@@ -29,17 +29,16 @@ abilities {
   ["Camouflage"] {
     hotkey = "x"
     cooldown = 20
-    description = "+75% movement speed for 3s"
+    description = "Grants invisibility and +75% movement speed for 3s"
     abilityType = "spell"
     unlockedBy { me.upgrades["Camouflage"].slug }
   }
 }
 
 upgrades {
-  ["Camouflage"] {
-    tier = "T1.5"
-    description = "Unlocks the Camouflage ability (+75% movement speed for 3s)"
-    unlocks { me.abilities["Camouflage"].slug }
+  ["Attack Range"] {
+    tier = "T3.5"
+    description = "Increase lasher attack range by 200"
     researchTime = 50
     fluxCost = 100
   }
@@ -59,11 +58,13 @@ upgrades {
 
   }
 
-  ["Attack Range"] {
+  ["Camouflage"] {
     tier = "T3.5"
-    description = "Increase lasher attack range by 20%"
+    description = "Unlocks the Camouflage ability (+75% movement speed for 3s)"
+    unlocks { me.abilities["Camouflage"].slug }
     researchTime = 60
     fluxCost = 150
   }
+
 }
 uuid = "6c1ec0c5-af3f-4bb1-867f-bd16792d2de6"

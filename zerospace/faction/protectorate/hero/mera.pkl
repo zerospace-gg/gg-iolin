@@ -9,7 +9,7 @@ stunResist = 50
 abilities {
   ["Sword Attack"] {
     damage = 23
-    cooldown = 1.05
+    cooldown = 1.1
     range = 150
     abilityType = "attack"
   }
@@ -21,7 +21,7 @@ abilities {
   }
   ["Dash"] {
     hotkey = "q"
-    cooldown = 10
+    cooldown = 13
     description = "Dash while dealing 40 damage to enemy units and gaining +1 armor for each hit. 10s duration."
     duration = 10
     abilityType = "spell"

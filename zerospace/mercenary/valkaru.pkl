@@ -6,7 +6,7 @@ factionContents = import*("valkaru/**pkl")
 talents {
   ["Merc Cooldown"] {
     level = 2
-    description = "+125% faster mercenary charges"
+    description = "+100% faster mercenary charges"
   }
   ["Heavy Plating"] {
     level = 4

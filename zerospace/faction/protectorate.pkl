@@ -7,16 +7,16 @@ mercHeroesAllowed = true
 talents {
   ["Improved Beam Up"]  {
     level = 1
-    description = "-25% Beam up delay, +100% healed amount"
+    description = "-25% Beam up delay, +100% healed amount. Adds 10 max charges."
   }
   ["Veterancy"] {
     level = 1
-    description = "+50% faster veterancy gain"
+    description = "+25% faster veterancy gain. Enables Veterancy gain for Heroes."
   }
 
   ["Production Efficiency"] {
     level = 2
-    description = "+25% faster unit training speed"
+    description = "+75% faster unit training speed"
   }
 
   ["Mercenary Reinforcement"] {
@@ -45,7 +45,7 @@ talents {
 
   ["Hot Landing Zone"] {
     level = 6
-    description = "Reinforcements is no longer limited to locations around Operating Towers"
+    description = "Reinforcements can also be cast near friendly Heroes"
   }
 }
 

@@ -89,6 +89,7 @@ speed: Number? = fromPath.speed
 shields: Number?
 abesEnergy: Number?
 energy: Number?
+startingEnergy: Number? = energy
 armor: Number? = fromPath.armor
 
 armorType: $t.ArmorType = fromPath.armorType ?? "none"
