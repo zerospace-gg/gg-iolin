@@ -5,8 +5,8 @@ shortName = "Temple of Water"
 hotkey = "t"
 
 creates {
-  import("../unit/chakru_clackjaw.pkl").slug
-  import("../unit/chakru_jaguar.pkl").slug
+  import("../unit/chakru_clakjaw.pkl").slug
+  import("../unit/chakru_ghost_crab.pkl").slug
   import("../unit/chakru_hatun.pkl").slug
 }
 uuid = "7a7bd847-6f52-4afc-b8e7-504686fc7f77"

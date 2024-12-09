@@ -17,7 +17,7 @@ hidden fixed dynamicTags {
   when ((gathersEmptyHexite ?? 0) > 0) { "gathers:hexite" }
   when (domain == "air") { "flyer" }
   when ((armor ?? 0) > 0) { "armored" }
-  when ((provedsSupply ?? 0) > 0) { "supply" }
+  when ((providesSupply ?? 0) > 0) { "supply" }
   when ((providesBiomass ?? 0) > 0) { "biomass" }
   when ((providesDetection ?? 0) > 0) { "detection" }
   when ((providesUpgradesFor?.length ?? 0) > 0) { "upgrades" }
@@ -95,7 +95,7 @@ armor: Number? = fromPath.armor
 armorType: $t.ArmorType = fromPath.armorType ?? "none"
 stunResist: Number?
 
-provedsSupply: Number? = fromPath.provedsSupply
+providesSupply: Number? = fromPath.providesSupply
 providesBiomass: Number? = fromPath.providesBiomass
 providesDetection: Number?
 providesUpgradesFor: Listing<String>(isDistinct)?

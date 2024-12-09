@@ -24,7 +24,7 @@ class PathData {
   armor: Number?
   armorType: $t.ArmorType?
   rebuildable: Boolean?
-  provedsSupply: Number?
+  providesSupply: Number?
   providesBiomass: Number?
 
   maxOwned: Number?
@@ -155,7 +155,7 @@ function dataFromPath(p: List<String>): PathData = new {
     gathersEmptyHexite = 0.56
     tier = "T0"
   }
-  when (p.contains("supply")) { subtype = "supply"; provedsSupply = 15; hexiteCost = 100; buildTime = 15; hp = 750; tier = "T0" }
+  when (p.contains("supply")) { subtype = "supply"; providesSupply = 15; hexiteCost = 100; buildTime = 15; hp = 750; tier = "T0" }
   when (p.contains("special")) { subtype = "special"; tier = "T0" }
 
   when (p.contains("outpost")) {

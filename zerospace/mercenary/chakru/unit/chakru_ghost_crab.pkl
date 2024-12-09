@@ -17,7 +17,7 @@ abilities {
     cooldown = 1
     range = 100
     splashPercent = 100
-    splashRadius = 300
+    splashRange = 300
     targets { "ground" }
     abilityType = "attack"
   }
