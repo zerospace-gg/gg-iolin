@@ -1,0 +1,4 @@
+amends ".../engine/boon.pkl"
+
+name = "Air Supremacy"
+description = "Air units deal +50% damage"

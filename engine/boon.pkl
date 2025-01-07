@@ -1,0 +1,4 @@
+open module Boon
+extends "mutator.pkl"
+
+fixed subtype = "boon"

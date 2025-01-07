@@ -21,6 +21,7 @@ cooldown: Number?
 duration: Number?
 range: Number?
 delay: Number?
+charges: Number?
 
 shots: Number?
 volleys: Number?

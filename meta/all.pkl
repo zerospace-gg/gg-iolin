@@ -1,5 +1,5 @@
 import ".../engine/entity.pkl" as Entity
-all: List<Entity> = import*("../zerospace/**pkl").toMap().filter((k,v) -> !k.startsWith("../special")).values
+all: List<Entity> = import*("../zerospace/**pkl").toMap().filter((k,v) -> !k.startsWith("../zerospace/special")).values
 hidden bySlug: Map<String, Entity> = all.toMap((v) -> v.slug, (v) -> v);
 hidden byId: Map<String, Entity> = all.toMap((v) -> v.id, (v) -> v);
 

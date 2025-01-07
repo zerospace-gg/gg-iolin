@@ -1,0 +1,135 @@
+amends ".../engine/coop_commander.pkl"
+import "../../grell.pkl" as Grell
+local methis = this
+
+name = "Vynthra"
+commanderType = "support"
+
+hp = 600
+speed = 575
+infuseCost = 16
+
+commanderFaction = Grell.all
+  .filter((v) -> v.subtype != "hero" && v.slug != "skrelling" && v.slug != methis.slug)
+
+abilities {
+  ["Attack"] {
+    targets { "air"; "ground" }
+    abilityType = "attack"
+    damage = 30
+    cooldown = 1.8
+    range = 1200
+  }
+
+  ["Channel"] {
+    targets { "air"; "ground" }
+    hotkey = "q"
+    abilityType = "channel"
+    description = "Drain enemy health, slowing them and making them vulnerable to attack. 40/60/80% slow and bonus dmg based on Infusion level. OR Heal allies and make them attack faster. +50/75/100% attack speed based on Infusion level."
+  }
+
+  ["Thorny Shield"] {
+    cooldown = 60
+    hotkey = "w"
+    abilityType = "spell"
+    description = "The target unit is protected by thorns, takes 50% less damage, and returns 0/5/10 dmg based on infusion level."
+  }
+}
+
+commanderLevels {
+  ["Vynthra"] {
+    level = 1
+    description = "Vynthra is a support hero. Infusion Essence can be used on heroes."
+    unlocks {
+      methis.topbars["Infusion"].slug
+      ...methis.matchingSlugs(List("stinger", "lasher", "harbinger", "man-eater", "behemoth"))
+    }
+  }
+
+  ["Improved Infusion"] {
+    level = 2
+    description = "+200 Range for infused ranged units. +20% health for infused melee units."
+  }
+
+  ["Healing Pod"] {
+    level = 3
+    description = "New Topbar Ability: Spawn a Nourishing Pod and three seedlings anywhere you have vision. Cooldown: 60s. Charges: 5."
+    unlocks { methis.topbars["Nourishing Pod"].slug }
+  }
+
+  ["Next Evolution Tier (Medium)"] {
+    level = 4
+    description = "+15% movement speed"
+    unlocks {
+      ...methis.matchingSlugs(List("thresher"))
+    }
+  }
+
+  ["Protective Biomass"] {
+    level = 5
+    description = "Units on biomass take 25% less damage"
+  }
+
+  ["Double Infusion"] {
+    level = 6
+    description = "Units can be infused twice. Vynthra's units gain special bonuses on attack after the second infusion. Bonuses are different based on where they are produced -- slowing and exploding spores, spawning stingers, or dealing splash damage and stun"
+    unlocks { methis.topbars["Double Infusion"].slug }
+  }
+
+  ["Next Evolution Tier (Large)"] {
+    level = 7
+    description = "-50% unit research cost and time"
+    unlocks { ...methis.matchingSlugs(List("weaver", "reaver")) }
+  }
+
+  ["Rush"] {
+    level = 8
+    description = "New Unit Ability for all units: Lose 25% health and gain +50% attack and +30% movement speed for 20s."
+  }
+
+  ["Spore Surge"] {
+    level = 9
+    description = "cultivators attack faster, deal splash damage, and slow enemies"
+  }
+
+  ["Battle Infusion"] {
+    level = 10
+    description = "4x faster infuse. +40% attack and move speed for 15s."
+  }
+
+  ["Tree of Life"] {
+    level = 11
+    description = "New Topbar Ability: Spawn a Tree of Life that heals nearby units and revives nearby dead units. Cooldown: 360s."
+    unlocks { methis.topbars["Tree of Life"].slug }
+  }
+
+  ["Infused Lifesteal"] {
+    level = 12
+    description = "+15% Lifesteal for infused units"
+  }
+}
+
+topbars {
+  ["Infusion"] {
+    slot = 1
+    description = "Increases health, attack damage, and regeneration of a friendly unit. After acquring the double infusion talent, may be infused a second time. Double infusion bonuses: Hero/Basic unit attacks apply spores that slow enemy units and explode on death. T2 units attacks cause enemies to spawn stingers on death. T3 units do splash damave and stun every 7s."
+  }
+  ["Double Infusion"] {
+    slot = 1
+    description = "Units may be infused a second time. Double infusion bonuses: Hero/Basic unit attacks apply spores that slow enemy units and explode on death. T2 units attacks cause enemies to spawn stingers on death. T3 units do splash damave and stun every 7s."
+  }
+  ["Nourishing Pod"] {
+    slot = 2
+    charges = 5
+    cooldown = 60
+    description = "Spawns a free nourishing pod and 3 seedlings anywhere you have vision"
+  }
+  ["Tree of Life"] {
+    slot = 3
+    cooldown = 360
+    description = "Spawns a tree of life that heals nearby units and revives nearby dead units."
+  }
+}
+
+
+uuid = "85521f4e-b720-4266-9d69-6d774f94becd"

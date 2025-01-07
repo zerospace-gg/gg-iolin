@@ -1,0 +1,4 @@
+amends ".../engine/boon.pkl"
+
+name = "Goldrush"
+description = "3x faster mining"

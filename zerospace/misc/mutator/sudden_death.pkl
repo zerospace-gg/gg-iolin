@@ -1,0 +1,4 @@
+amends ".../engine/mutator.pkl"
+
+name = "Sudden Death"
+description = "Units and structures die in one hit"

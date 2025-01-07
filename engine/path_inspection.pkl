@@ -7,7 +7,6 @@ class PathData {
   type: ("unit" | "building" | "addOn" | "faction" | "ability" | "upgrade" | "map" | "faction-ability")?
   subtype: String?
 
-
   tier: $t.Tier?
   hexiteCost: Number?
   fluxCost: Number?

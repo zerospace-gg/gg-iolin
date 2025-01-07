@@ -1,0 +1,5 @@
+amends ".../engine/coop_mission.pkl"
+
+name = "Under Fire"
+description = "The Legion is intent on attacking a number of important historical sites of the Council. We must stop their invading ground troops and intercept their massive Dreadnoughts before they destroy the city."
+missionType = "assault-defense"

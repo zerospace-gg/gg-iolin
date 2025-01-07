@@ -1,0 +1,6 @@
+open module Mutator
+extends "entity.pkl"
+import "types.pkl" as $t
+
+fixed type = "mutator"
+fixed subtype: "negative" | "boon" = "negative"

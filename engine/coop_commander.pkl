@@ -1,0 +1,55 @@
+module coop_commander
+extends "hero.pkl"
+import "types.pkl" as $t
+import "topbar.pkl" as TopBar
+import "entity.pkl" as Entity
+import "parent_info.pkl" as ParentInfo
+import "child.pkl" as Child
+local methis = this
+
+local isUnit = (x) -> x.type == "unit" && x.subtype != "hero"
+local isBuilding = (x) -> x.type == "building"
+local toslug = (x) -> x.slug
+
+function matching(y: (Entity) -> Boolean) = commanderFaction.filter(y).map(toslug)
+function matchingSlug(y: String) = matching((x) -> x.slug == y)
+function matchingSlugs(y: List<String>) = matching((x) -> y.contains(x.slug))
+
+class CoopLevel extends Child {
+  fixed type: "coop-level"
+  fixed subtype: "coop-level"
+  level: Int(isBetween(1,20))
+  name: String
+  description: String
+  unlocks: Listing<$t.Slug>?
+  levelOf: $t.Slug
+}
+
+unitType = "coop-commander"
+commanderType: "support" | "frontline"
+infusable = true
+
+hidden commanderFaction: List<Entity>
+fixed unit: Listing<String> = new { ...commanderFaction.filter(isUnit).map(toslug) }
+fixed building: Listing<String> = new { ...commanderFaction.filter(isBuilding).map(toslug) }
+
+hidden commanderLevels: Mapping<String, CoopLevel> = new Mapping<String, CoopLevel> {
+  default { key -> name = key; parent = parentInfo; levelOf = methis.slug }
+}
+fixed commanderLevel: Mapping<String, CoopLevel> = new {
+  for (t in commanderLevels) { [t.slug] = t }
+}
+
+hidden topbars: Mapping<String, TopBar> = new Mapping<String, TopBar> {
+  default { key -> name = key; parent = parentInfo; abilityOf = methis.slug }
+}
+fixed topbar: Mapping<String, TopBar> = new {
+  for (t in topbars) { [t.slug] = t }
+}
+
+local parentInfo: ParentInfo = new {
+  id = methis.id
+  slug = methis.slug
+  src = methis.src
+  fromPath = methis.fromPath
+}

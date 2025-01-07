@@ -1,0 +1,4 @@
+amends ".../engine/boon.pkl"
+
+name = "Retribution"
+description = "Unit deaths empowers other nearby units"

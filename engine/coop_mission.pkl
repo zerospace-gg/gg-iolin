@@ -1,0 +1,8 @@
+extends "entity.pkl"
+
+fixed type = "coop-mission"
+fixed subtype = missionType
+missionType: "escort" | "survival" | "assault-defense"
+
+name: String
+description: String

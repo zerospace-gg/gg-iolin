@@ -1,0 +1,5 @@
+amends ".../engine/coop_mission.pkl"
+
+name = "Critical Delivery"
+description = "The Sol invictus is being deployed to breach the enemy fortress. Special gear and weapons were shipped but were separated when it landed on the planet. Recover the gear and then escort the Invictus to destroy the enemy fortress."
+missionType = "escort"

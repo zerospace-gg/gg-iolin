@@ -1,0 +1,4 @@
+amends ".../engine/boon.pkl"
+
+name = "Shielding"
+description = "Units gain 200 shields"

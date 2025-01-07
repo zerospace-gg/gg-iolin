@@ -53,6 +53,7 @@ export type AbilityToggleMode = "siege" | "attack";
 
 export type AbilityType =
   | "attack"
+  | "channel"
   | "heal"
   | "spell"
   | "passive"
@@ -69,6 +70,8 @@ export type BuildingType =
   | "tech"
   | "special"
   | "constructing-unit";
+
+export type MissionType = "coop" | "campaign" | "survival";
 
 export interface Entity {
   slug: string;
@@ -273,6 +276,23 @@ export interface RTSMap extends Entity {
   fluxDistance: "close" | "near" | "medium-far" | "distant";
   mapSize: "small" | "medium" | "large";
   players: number;
+}
+
+export interface CoopMission extends Entity {
+  missionType: MissionType;
+}
+
+export interface CoopLevel extends Entity {
+  level: number;
+  unlocks: string[];
+  levelOf: string;
+}
+
+export interface CoopCommander extends Entity {
+  unit: string[];
+  building: string[];
+  commanderLevel: Record<string, CoopLevel>;
+  topbar: Record<string, FactionTopbar>;
 }
 
 export type AnyGamepiece = Unit | Building | AddOn;

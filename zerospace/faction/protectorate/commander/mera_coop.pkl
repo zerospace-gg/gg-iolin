@@ -1,0 +1,158 @@
+amends ".../engine/coop_commander.pkl"
+import "../../protectorate.pkl" as Protectorate
+local methis = this
+
+name = "Mera"
+commanderType = "frontline"
+
+hp = 400
+shields = 400
+speed = 575
+armor = 1
+armorType = "medium"
+
+commanderFaction = Protectorate.all
+  .filter((v) -> v.subtype != "hero" && v.slug != "hellfire" && v.slug != methis.slug)
+  .toList()
+
+abilities {
+  ["Sword Attack"] {
+    damage = 23
+    cooldown = 1.1
+    range = 150
+    abilityType = "attack"
+  }
+  ["Pulse Rifle"] {
+    damage = 24
+    cooldown = 1.15
+    range = 1200
+    abilityType = "attack"
+  }
+  ["Dash"] {
+    hotkey = "q"
+    cooldown = 13
+    description = "Dash while dealing 80 damage to enemy units and recharging 80 shields for each hit"
+    duration = 10
+    abilityType = "spell"
+  }
+  ["Protective Barrier"] {
+    hotkey = "w"
+    cooldown = 40
+    description = "All friendly units and structures under the barrier take 33% less damage. Lasts 20s."
+    duration = 20
+    abilityType = "spell"
+  }
+  ["Weapon Switch"] {
+    cooldown = 10
+    description = "Mera switches between a Sword and a Blaster. Gains +30% attack speed for 5s."
+    hotkey = "e"
+    abilityType = "toggle"
+    togglesMode = "attack"
+  }
+}
+
+
+commanderLevels {
+  ["Mera"] {
+    level = 1
+    description = "Mera is a frontline hero. She gains topbar power faster."
+  }
+
+  ["Dash"] {
+    level = 2
+    description = "Mera's Dash deals double damage, and Mera recharges shield after dashing"
+  }
+
+  ["Airstrike"] {
+    level = 3
+    description = "New Topbar Ability: Airstrike targeted location."
+    unlocks {
+      ...methis.matchingSlug("airstrip")
+      methis.topbars["Airstrike"].slug
+    }
+  }
+
+  ["Vanguard"] {
+    level = 4
+    description = "Units gain +15% move speed and +15% attack range"
+  }
+
+  ["Improved Production"] {
+    level = 5
+    description = "+50% faster production."
+    unlocks { ...methis.matchingSlug("ironwing") }
+  }
+
+  ["Aegis Shield"] {
+    level = 6
+    description = "Mera avoids a killing blow every 90s. Her health is fully restored and enemies are thrown away."
+  }
+
+  ["Designate Officer"] {
+    level = 7
+    description = "New Topbar Ability: Targeted unit gains +3 ranks and heals. When it kills an enemy unit, nearby allied units gain +50% attack speed for 5s."
+    unlocks { methis.topbars["Designate Officer"].slug }
+  }
+
+  ["Advanced Production"] {
+    level = 8
+    description = "Unit flux cost reduced by 25."
+    unlocks { ...methis.matchingSlugs(List("cyclops", "strider")) }
+  }
+
+  ["Transport"] {
+    level = 9
+    description = "New Topbar Ability: Transport units to target location. Units are healed for 100 HP."
+    unlocks { methis.topbars["Transport"].slug }
+  }
+
+  ["Aegis Shield Recharge"] {
+    level = 10
+    description = "Attacking enemy units reduces Aegis Shield cooldown by 1s per hit. Hitting enemies with Dash ability counts."
+  }
+
+  ["Hot Landing Zone"] {
+    level = 11
+    description = "Reinforcements is no longer limited to locations around Operating Towers"
+  }
+
+  ["Battle Hardened"] {
+    level = 12
+    description = "Units can reach rank 4 veterancy and gain veterancy 50% faster. Allies can reach rank 1."
+  }
+}
+
+topbars {
+  ["Shockwave"] {
+    slot = 1
+    cooldown = 30
+    duration = 3
+    description = "Stuns enemy units in area for 3s"
+  }
+  ["Reinforcements"] {
+    slot = 2
+    energyCost = 50
+    energyType = "topbar"
+    description = "Calls down reinforcements of the selected type. Can only be used near Operating Towers"
+  }
+  ["Airstrike"] {
+    slot = 3
+    description = "Calls down an Airstrike, dealing 200 damage to ground units. Requires airstrips."
+  }
+  ["Designate Officer"] {
+    slot = 4
+    cooldown = 120
+    energyCost = 5
+    energyType = "topbar"
+    description = "Designated officer gains +3 ranks and is healed. When it kills an enemy unit, nearby allied units are inspired and gain +50% attack speed for 5s."
+  }
+  ["Transport"] {
+    slot = 5
+    energyCost = 10
+    energyType = "topbar"
+    cooldown = 60
+    description = "Quickly transport your and allied units. Units will be healed for 100 HP."
+  }
+}
+
+uuid = "5562f476-0611-4941-bc0a-d62d2b06a3d0"

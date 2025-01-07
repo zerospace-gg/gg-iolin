@@ -148,9 +148,29 @@ tags: Mapping<String, Info> = new {
     description = "Has Building Upgrade(s)"
   }
 
+  ["coop-mission"] {
+    label = "Co-Op Mission"
+    description = "Co-Op Mission for Galactic War"
+  }
+
+  ["coop-mission:assault-defense"] {
+    label = "Defense Mission"
+    description = "Defend multiple locations from assaults from the enemy"
+  }
+
+  ["coop-mission:escort"] {
+    label = "Escort Mission"
+    description = "Escort a VIP and defend them"
+  }
+
+  ["coop-mission:survival"] {
+    label = "Survival Mission"
+    description = "Survive multiple attack waves"
+  }
+
   ["detection"] {
     label = "Cloak Detection"
-    description = "Cloak Detection"
+    description = "Has the ability to detect cloaked units"
   }
 
   ["energy"] {
@@ -336,6 +356,21 @@ tags: Mapping<String, Info> = new {
     description = "Mind Controllable"
   }
 
+  ["mutator"] {
+    label = "Mutator"
+    description = "Mutator"
+  }
+
+  ["mutator:boon"] {
+    label = "Boon"
+    description = "Boon (Positive Mutator)"
+  }
+
+  ["mutator:negative"] {
+    label = "Negative Mutator"
+    description = "Negative Mutator"
+  }
+
   ["respawns"] {
     label = "Respawns"
     description = "Respawns after death"
@@ -377,13 +412,18 @@ tags: Mapping<String, Info> = new {
   }
 
   ["unit:army"] {
-    label = "Army"
+    label = "Army Unit"
     description = "Army"
   }
 
   ["unit:builder"] {
     label = "Builder"
     description = "Builder"
+  }
+
+  ["unit:coop-commander"] {
+    label = "Co-Op Commander"
+    description = "Co-Op Commander"
   }
 
   ["unit:harvester"] {

@@ -1,0 +1,4 @@
+amends ".../engine/boon.pkl"
+
+name = "Extra Protection"
+description = "+8 armor for units and structures"

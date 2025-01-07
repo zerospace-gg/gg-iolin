@@ -1,0 +1,4 @@
+amends ".../engine/mutator.pkl"
+
+name = "Lockdown"
+description = "Faction Powers are disabled"

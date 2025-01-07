@@ -14,7 +14,7 @@ activationType: "auto" | "activated" | "passive" | "trigger" =
 
 fixed type: String = "ability"
 fixed subtype: String = fromPath.abilityType ?? abilityType
-hidden abilityType: "attack" | "heal" | "spell" | "passive" | "toggle" | "recharge-energy" | "death-trigger";
+hidden abilityType: "attack" | "heal" | "spell" | "channel" | "passive" | "toggle" | "recharge-energy" | "death-trigger";
 
 name: String =
   if (subtype == "attack") "Attack"

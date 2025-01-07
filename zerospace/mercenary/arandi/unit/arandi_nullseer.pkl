@@ -27,7 +27,7 @@ abilities {
     description = "10 energy. Take over enemy unit. Consumes energy when channeling (based on enemy status resist). Enemies cannot use abilities.10 energy. Take over enemy unit. Consumes energy when channeling (based on enemy status resist). Enemies cannot use abilities. "
     energyCost = 10
     energyType = "classic"
-    abilityType = "spell"
+    abilityType = "channel"
   }
 }
 uuid = "b5b32137-195b-42f2-995a-537ca4035cc4"

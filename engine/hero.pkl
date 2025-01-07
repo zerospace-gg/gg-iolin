@@ -1,4 +1,4 @@
-module hero
+open module hero
 extends "unit.pkl"
 
 unitType = "hero"
@@ -7,3 +7,4 @@ rebuildTime = 60
 rebuildable = true
 supply = 10
 tier = "T2"
+armorType = "medium"

@@ -1,0 +1,4 @@
+amends ".../engine/boon.pkl"
+
+name = "Heavy Ordnance"
+description = "Buildings have +200% attack speed and +800 range"

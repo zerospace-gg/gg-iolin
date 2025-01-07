@@ -1,0 +1,5 @@
+amends ".../engine/coop_mission.pkl"
+
+name = "The Frozen Watch"
+description = "You are being deployed behind enemy lines. Your aim is to secure the area while a massive artillery gun is assembled, loaded, and fired. The team must repel the attacking Grell while the gun is reloaded. The gun will be fired each day to destroy a Grell tunnel being used to reinforce the area. For the Idals!"
+missionType = "survival"

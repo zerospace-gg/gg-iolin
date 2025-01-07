@@ -11,7 +11,7 @@ local meref = reflect.moduleOf(this)
 local isimpl = !meref.uri.matches(Regex("/engine/"))
 
 hidden pathParts: List<String> = meref.uri
-  .replaceAll(Regex(#"^.*/(faction|mercenary|nonplayer|map|engine)/"#), "$1/")
+  .replaceAll(Regex(#"^.*/(faction|mercenary|nonplayer|map|engine|mission|special|misc)/"#), "$1/")
   .split("/")
 
 hidden srcDirParts: List<String> = pathParts.dropLast(1)

@@ -1,0 +1,4 @@
+amends ".../engine/boon.pkl"
+
+name = "Extended Range"
+description = "+500 unit weapon and sight range"

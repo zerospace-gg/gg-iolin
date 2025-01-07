@@ -30,7 +30,7 @@ abilities {
     hotkey = "w"
     cooldown = 40
     description = "All friendly units and structures under the barrier have +3 armor. Lasts 20s."
-    duration = 16
+    duration = 20
     abilityType = "spell"
   }
   ["Weapon Switch"] {

@@ -1,0 +1,4 @@
+amends ".../engine/mutator.pkl"
+
+name = "Time Out"
+description = "No Heroes"

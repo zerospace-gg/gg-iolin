@@ -1,0 +1,4 @@
+amends ".../engine/boon.pkl"
+
+name = "Detonation"
+description = "Units explode on death"

@@ -1,0 +1,4 @@
+amends ".../engine/boon.pkl"
+
+name = "Battery Pack"
+description = "+100% attack speed, max energy, and energy regeneration for casters"

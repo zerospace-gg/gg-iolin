@@ -1,0 +1,4 @@
+amends ".../engine/boon.pkl"
+
+name = "Spiderlings"
+description = "Spiderlings spawn after a unit is killed"

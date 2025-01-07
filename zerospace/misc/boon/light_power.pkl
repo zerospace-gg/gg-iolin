@@ -1,0 +1,4 @@
+amends ".../engine/boon.pkl"
+
+name = "Light Power"
+description = "+50% weapon damage dealt by units with light armor"

@@ -1,0 +1,4 @@
+amends ".../engine/boon.pkl"
+
+name = "Endurance"
+description = "Units have double health and shields"

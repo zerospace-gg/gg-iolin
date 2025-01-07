@@ -1,0 +1,4 @@
+amends ".../engine/boon.pkl"
+
+name = "Haste"
+description = "+70% movement speed"

@@ -1,0 +1,4 @@
+amends ".../engine/boon.pkl"
+
+name = "Extra Supply"
+description = "+50 Max Supply"

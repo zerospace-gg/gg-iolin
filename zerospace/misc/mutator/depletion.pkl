@@ -1,0 +1,4 @@
+amends ".../engine/mutator.pkl"
+
+name = "Depletion"
+description = "-50% mining rate"
